@@ -3,15 +3,15 @@ import Image from "next/image";
 
 const FeelTheBenefitComponent = () => {
   return (
-    <div className=" px-0 pb-[120px] pt-[120px] pb-0 flex justify-center items-start">
+    <div className="px-0 pb-[120px] pt-[120px] pb-0 flex justify-center items-start">
       {/* Fotoğraf Bölümü */}
       <div className="photo-section relative w-[540px] h-[600px] bg-[#52B8AB] bg-opacity-55 rounded-tr-[100px] rounded-bl-[100px] overflow-hidden mr-8">
         <Image
           src="/assets/images/benefit.png"
           alt="Photo"
-          layout="fill"
-          objectFit="cover"
-          className="absolute w-[912px] h-[608px]"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover"
         />
       </div>
 
