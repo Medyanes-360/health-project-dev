@@ -3,6 +3,7 @@ import FeelTheBenefitComponent from "@/components/feelTheBenefitComponent";
 import FormSection from "@/components/form";
 import HeaderSection from "@/components/headerSection";
 import MostPopularVacanciesSection from "@/components/mostPopularVacanciesSection";
+import OurServicesComponent from "@/components/ourServicesComponent";
 import PopularClinicsComponent from "@/components/popularClinicsComponent";
 import QualifiedMedicalDoctors from "@/components/QualifiedMedicalDoctors/QualifiedMedicalDoctors";
 import TestimonialText from "@/components/Testimonial/TestimonialText";
@@ -15,9 +16,6 @@ const HomeContainer = () => {
       <MostPopularVacanciesSection />
       <FeelTheBenefitComponent />
       <PopularClinicsComponent />
-      <TestimonialText />
-      <QualifiedMedicalDoctors />
-      <FormSection />
     </div>
   );
 };
