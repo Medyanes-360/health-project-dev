@@ -14,8 +14,8 @@ const HomeContainer = () => {
       <MostPopularVacanciesSection />
       <FeelTheBenefitComponent />
       <PopularClinicsComponent />
-      <TestimonialText />
-      <QualifiedMedicalDoctors />
+       <TestimonialText />
+      <QualifiedMedicalDoctors /> 
     </div>
   );
 };
