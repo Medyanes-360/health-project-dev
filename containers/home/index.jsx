@@ -2,6 +2,7 @@ import ContactUsBandComponent from "@/components/contactUsBandComponent";
 import FeelTheBenefitComponent from "@/components/feelTheBenefitComponent";
 import HeaderSection from "@/components/headerSection";
 import MostPopularVacanciesSection from "@/components/mostPopularVacanciesSection";
+import OurServicesComponent from "@/components/ourServicesComponent";
 import PopularClinicsComponent from "@/components/popularClinicsComponent";
 
 const HomeContainer = () => {
@@ -12,6 +13,7 @@ const HomeContainer = () => {
       <MostPopularVacanciesSection />
       <FeelTheBenefitComponent />
       <PopularClinicsComponent />
+      <OurServicesComponent />
     </div>
   );
 };
