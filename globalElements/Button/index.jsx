@@ -1,7 +1,8 @@
 const CustomButton = ({
   title,
   onClick,
-  className,
+  type = "button",
+  className="",
   containerClassName,
   ...props
 }) => {
@@ -9,8 +10,9 @@ const CustomButton = ({
     <div className={`w-full  ${containerClassName}`}>
       <button
         onClick={onClick}
+        type={type}
         {...props}
-        className={`bg-primary py-4 px-7 text-xl w-fit text-white rounded-full`}
+        className={`bg-primary py-4 px-7 text-xl w-fit text-white rounded-full ${className}`}
       >
         {title}
       </button>

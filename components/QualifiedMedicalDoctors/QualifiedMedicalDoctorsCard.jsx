@@ -12,7 +12,7 @@ const QualifiedMedicalDoctorsCard = ({ icon, title, description }) => {
             alt="icon"
             className="object-cover object-center"
           />
-          <h1 className="text-3xl font-bold">{title}</h1>
+          <h1 className="text-2xl font-bold">{title}</h1>
           <p className="text-third text-xl">{description}</p>
         </div>
     </CardComponent>

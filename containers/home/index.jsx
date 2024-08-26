@@ -1,5 +1,6 @@
 import ContactUsBandComponent from "@/components/contactUsBandComponent";
 import FeelTheBenefitComponent from "@/components/feelTheBenefitComponent";
+import FormSection from "@/components/form";
 import HeaderSection from "@/components/headerSection";
 import MostPopularVacanciesSection from "@/components/mostPopularVacanciesSection";
 import PopularClinicsComponent from "@/components/popularClinicsComponent";
@@ -14,8 +15,9 @@ const HomeContainer = () => {
       <MostPopularVacanciesSection />
       <FeelTheBenefitComponent />
       <PopularClinicsComponent />
-       <TestimonialText />
-      <QualifiedMedicalDoctors /> 
+      <TestimonialText />
+      <QualifiedMedicalDoctors />
+      <FormSection />
     </div>
   );
 };
