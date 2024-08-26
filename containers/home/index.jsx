@@ -1,4 +1,5 @@
 import ContactUsBandComponent from "@/components/contactUsBandComponent";
+import FeelTheBenefitComponent from "@/components/feelTheBenefitComponent";
 import HeaderSection from "@/components/headerSection";
 import MostPopularVacanciesSection from "@/components/mostPopularVacanciesSection";
 
@@ -8,6 +9,7 @@ const HomeContainer = () => {
       <HeaderSection />
       <ContactUsBandComponent />
       <MostPopularVacanciesSection />
+      <FeelTheBenefitComponent />
     </div>
   );
 };
