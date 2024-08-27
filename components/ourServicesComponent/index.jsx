@@ -73,25 +73,35 @@ const OurServicesComponent = () => {
         {servicesData.map((service) => (
           <div
             key={service.id}
-            className="service-card bg-white p-6 rounded-lg shadow-[5px_0_10px_rgba(0,0,0,0.1)] transition-all transform hover:scale-105 hover:shadow-[10px_10px_20px_#52B8AB]"
+            className="service-card group bg-white p-6 rounded-lg shadow-[5px_0_10px_rgba(0,0,0,0.1)] transition-all transform hover:scale-105 relative z-10 overflow-hidden"
           >
-            <div className="mb-4">
-              <Image
-                src={service.icon}
-                alt={service.title}
-                width={50}
-                height={50}
-              />
+            <div
+              className="absolute top-0 left-0 w-full h-full pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+              style={{
+                borderRight: "5px solid #52B8AB",
+                borderBottom: "5px solid #52B8AB",
+              }}
+            ></div>
+
+            <div className="relative z-20">
+              <div className="mb-4">
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={50}
+                  height={50}
+                />
+              </div>
+              <h3 className="font-poppins font-bold text-[16px] leading-[24px] text-[#0B8071] mb-2">
+                {service.title}
+              </h3>
+              <p className="font-poppins font-light text-[16px] leading-[24px] text-[#7D7987] py-4">
+                {service.description}
+              </p>
+              <a href="#" className="text-teal-600 mt-4 block">
+                Read more →
+              </a>
             </div>
-            <h3 className="font-poppins font-bold text-[16px] leading-[24px] text-[#0B8071] mb-2">
-              {service.title}
-            </h3>
-            <p className="font-poppins font-light text-[16px] leading-[24px] text-[#7D7987] py-">
-              {service.description}
-            </p>
-            <a href="#" className="text-teal-600 mt-4 block">
-              Read more →
-            </a>
           </div>
         ))}
       </div>
