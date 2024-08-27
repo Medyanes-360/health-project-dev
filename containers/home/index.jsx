@@ -10,7 +10,7 @@ import TestimonialText from "@/components/Testimonial/TestimonialText";
 
 const HomeContainer = () => {
   return (
-    <div className="xl:container mx-auto">
+    <div className="">
       <HeaderSection />
       <ContactUsBandComponent />
       <MostPopularVacanciesSection />
