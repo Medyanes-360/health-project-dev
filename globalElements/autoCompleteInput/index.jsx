@@ -59,7 +59,7 @@ const AutoCompleteInput = ({
           }}
           className={`${
             (toRight && "right-0") || (toLeft && "left-0")
-          }   top-0 left-0 min-w-max  absolute       w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
+          }    left-0 min-w-max  absolute       w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
           <div className="  py-1 ">
             {options.map((option) => (

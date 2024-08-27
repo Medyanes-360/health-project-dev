@@ -1,24 +1,5 @@
-const CustomButton = ({
-  title,
-  onClick,
-  type = "button",
-  className="",
-  containerClassName,
-  ...props
-}) => {
+const ButtonComponent = (props) => {
   return (
-<<<<<<< Updated upstream
-    <div className={`w-full  ${containerClassName}`}>
-      <button
-        onClick={onClick}
-        type={type}
-        {...props}
-        className={`bg-primary py-4 px-7 text-xl w-fit text-white rounded-full ${className}`}
-      >
-        {title}
-      </button>
-    </div>
-=======
     <button
       onClick={props.onClick}
       {...props}
@@ -27,8 +8,7 @@ const CustomButton = ({
     >
       {props.title}
     </button>
->>>>>>> Stashed changes
   );
 };
 
-export default CustomButton;
+export default ButtonComponent;

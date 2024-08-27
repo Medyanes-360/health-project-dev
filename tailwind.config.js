@@ -17,15 +17,10 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
-<<<<<<< Updated upstream
-      colors: {
-        primary: "#52B8AB",
-=======
 
       colors: {
         primary: "#52B8AB",
         bgDarkWhite: "#F1F2F4",
->>>>>>> Stashed changes
         secondary: "#111827",
         third: "#7D7987",
       },

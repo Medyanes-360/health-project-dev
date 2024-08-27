@@ -15,13 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-<<<<<<< Updated upstream
-      <body className={`${inter.className} font-poppins text-secondary`}>
-        {children}
-      </body>
-=======
       <body className={poppins.className}>{children}</body>
->>>>>>> Stashed changes
     </html>
   );
 }
