@@ -19,8 +19,6 @@ export default function HomeLayout({ children }) {
       <NavbarComponent navbarData={navbarData} />
       <HeaderbarComponent />
       {children}
-
-      <p>Footer Component here</p>
     </div>
   );
 }
