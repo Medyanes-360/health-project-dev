@@ -30,7 +30,7 @@ const TrustedClients = () => {
     },
   ];
   return (
-    <div className="px-4">
+    <div className="xl:container mx-auto">
       {/* trusted client logos */}
       <div className="flex justify-between items-center">
         {images.map((img, i) => (

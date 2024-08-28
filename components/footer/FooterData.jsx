@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FooterData = () => {
   return (
-    <div className="px-4">
+    <div className="xl:container mx-auto">
       <div className="w-full flex justify-between items-center gap-12 text-fourth">
         <div className="flex gap-7">
           <div className="space-y-4 flex-1">
