@@ -18,10 +18,37 @@ module.exports = {
         poppins: ["var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
       },
-
+      screens: {
+        xs: "0px",
+      },
       colors: {
-        primary: "#52B8AB",
+        primary: {
+          DEFAULT: "#52B8AB",
+          dark: "#0B8071",
+          //darker:""
+          light: "rgba(175, 255, 245, 0.3)",
+          //lighter:""
+          // disabled:""
+        },
+        black: {
+          DEFAULT: "#000000",
+          light: "#18191C",
+          //lighter:"",
+          dark: "#1E1E1E",
+          //darker:"",
+          // disabled:""
+        },
+        white: {
+          DEFAULT: "#FFFFFF",
+          // gri renk:
+          dark: "#F1F2F4",
+          //darker:""
+          // disabled field'lar için:
+          // disabled:""
+        },
+        secondary: "#52B8AB",
         bgDarkWhite: "#F1F2F4",
+        bgDarkText: "#5E6670",
         secondary: "#111827",
         third: "#7D7987",
         fourth: "#FFFFFF",
