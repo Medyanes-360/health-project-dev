@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 
-// Örnek klinik verisi
+// Klinik verisi
 const clinicsData = [
   {
     id: 1,
@@ -31,7 +31,123 @@ const clinicsData = [
     image: "/assets/images/clinic2.png",
     rating: 5,
   },
+  {
+    id: 5,
+    name: "Clinic XYZ",
+    location: "Kadikoy/Istanbul",
+    image: "/assets/images/clinic1.png",
+    rating: 4,
+  },
+  {
+    id: 6,
+    name: "Clinic XYZ",
+    location: "Kadikoy/Istanbul",
+    image: "/assets/images/clinic2.png",
+    rating: 4,
+  },
+  {
+    id: 7,
+    name: "Clinic XYZ",
+    location: "Kadikoy/Istanbul",
+    image: "/assets/images/clinic3.png",
+    rating: 4,
+  },
+  {
+    id: 8,
+    name: "Clinic XYZ",
+    location: "Kadikoy/Istanbul",
+    image: "/assets/images/clinic1.png",
+    rating: 4,
+  },
+  {
+    id: 9,
+    name: "Clinic DEF",
+    location: "Besiktas/Istanbul",
+    image: "/assets/images/clinic2.png",
+    rating: 5,
+  },
+  {
+    id: 10,
+    name: "Clinic DEF",
+    location: "Besiktas/Istanbul",
+    image: "/assets/images/clinic3.png",
+    rating: 5,
+  },
+  {
+    id: 11,
+    name: "Clinic DEF",
+    location: "Besiktas/Istanbul",
+    image: "/assets/images/clinic1.png",
+    rating: 5,
+  },
+  {
+    id: 12,
+    name: "Clinic DEF",
+    location: "Besiktas/Istanbul",
+    image: "/assets/images/clinic2.png",
+    rating: 5,
+  },
+  {
+    id: 13,
+    name: "Clinic MNO",
+    location: "Sisli/Istanbul",
+    image: "/assets/images/clinic3.png",
+    rating: 4,
+  },
+  {
+    id: 14,
+    name: "Clinic MNO",
+    location: "Sisli/Istanbul",
+    image: "/assets/images/clinic1.png",
+    rating: 4,
+  },
+  {
+    id: 15,
+    name: "Clinic MNO",
+    location: "Sisli/Istanbul",
+    image: "/assets/images/clinic2.png",
+    rating: 4,
+  },
+  {
+    id: 16,
+    name: "Clinic MNO",
+    location: "Sisli/Istanbul",
+    image: "/assets/images/clinic3.png",
+    rating: 4,
+  },
+  {
+    id: 17,
+    name: "Clinic PQR",
+    location: "Beyoglu/Istanbul",
+    image: "/assets/images/clinic1.png",
+    rating: 3,
+  },
+  {
+    id: 18,
+    name: "Clinic PQR",
+    location: "Beyoglu/Istanbul",
+    image: "/assets/images/clinic2.png",
+    rating: 3,
+  },
+  {
+    id: 19,
+    name: "Clinic PQR",
+    location: "Beyoglu/Istanbul",
+    image: "/assets/images/clinic3.png",
+    rating: 3,
+  },
+  {
+    id: 20,
+    name: "Clinic PQR",
+    location: "Beyoglu/Istanbul",
+    image: "/assets/images/clinic1.png",
+    rating: 3,
+  },
 ];
+
+// Dinamik olarak yüklenen carousel bileşeni
+const ClinicCarousel = dynamic(() => import("./ClinicCarousel"), {
+});
 
 const PopularClinicsComponent = () => {
   return (
@@ -44,45 +160,7 @@ const PopularClinicsComponent = () => {
       </div>
 
       {/* Klinik Kartları Bölümü */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {clinicsData.map((clinic) => (
-          <div
-            key={clinic.id}
-            className="border-[0.5px] border-[#52B8AB] rounded-lg overflow-hidden shadow-md relative mt-4 mb-4"
-          >
-            <Image
-              src={clinic.image}
-              alt={clinic.name}
-              width={500}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="font-poppins font-bold text-[20px] text-[#1E1E1E] leading-[36px]">
-                {clinic.name}
-              </h3>
-              <p className="font-poppins font-light text-[16px] text-[#1E1E1E] leading-[24px]">
-                {clinic.location}
-              </p>
-            </div>
-            <div className="absolute bottom-4 right-4">
-              {[...Array(clinic.rating)].map((star, i) => (
-                <span key={i} className="text-[#FFAA00] text-xl">
-                  ★
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Tracker Bölümü */}
-      <div className="flex justify-center mt-4">
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-green-500 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-      </div>
+      <ClinicCarousel clinicsData={clinicsData} />
     </div>
   );
 };
