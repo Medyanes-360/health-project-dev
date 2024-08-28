@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 
 // Hizmet verileri
 const servicesData = [
@@ -51,11 +51,205 @@ const servicesData = [
     description: "20+ Doctors are available under this department who serve.",
     icon: "/assets/icons/Medicine.svg",
   },
+  {
+    id: 9,
+    title: "Food & Nutrition",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Food.svg",
+  },
+  {
+    id: 10,
+    title: "Dental Care",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Dental.svg",
+  },
+  {
+    id: 11,
+    title: "Surgery",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Surgery.svg",
+  },
+  {
+    id: 12,
+    title: "Orthopedic",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Orthopedic.svg",
+  },
+  {
+    id: 13,
+    title: "Neurology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Neurology.svg",
+  },
+  {
+    id: 14,
+    title: "Cardiology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Cardiology.svg",
+  },
+  {
+    id: 15,
+    title: "Medicine & Nephrology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Medicine.svg",
+  },
+  {
+    id: 16,
+    title: "Pediatrics",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Pediatrics.svg",
+  },
+  {
+    id: 17,
+    title: "Food & Nutrition",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Food.svg",
+  },
+  {
+    id: 18,
+    title: "Dental Care",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Dental.svg",
+  },
+  {
+    id: 19,
+    title: "Surgery",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Surgery.svg",
+  },
+  {
+    id: 20,
+    title: "Orthopedic",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Orthopedic.svg",
+  },
+  {
+    id: 21,
+    title: "Neurology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Neurology.svg",
+  },
+  {
+    id: 22,
+    title: "Cardiology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Cardiology.svg",
+  },
+  {
+    id: 23,
+    title: "Medicine & Nephrology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Medicine.svg",
+  },
+  {
+    id: 24,
+    title: "Pediatrics",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Pediatrics.svg",
+  },
+  {
+    id: 25,
+    title: "Food & Nutrition",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Food.svg",
+  },
+  {
+    id: 26,
+    title: "Dental Care",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Dental.svg",
+  },
+  {
+    id: 27,
+    title: "Surgery",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Surgery.svg",
+  },
+  {
+    id: 28,
+    title: "Orthopedic",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Orthopedic.svg",
+  },
+  {
+    id: 29,
+    title: "Neurology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Neurology.svg",
+  },
+  {
+    id: 30,
+    title: "Cardiology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Cardiology.svg",
+  },
+  {
+    id: 31,
+    title: "Medicine & Nephrology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Medicine.svg",
+  },
+  {
+    id: 32,
+    title: "Pediatrics",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Pediatrics.svg",
+  },
+  {
+    id: 33,
+    title: "Food & Nutrition",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Food.svg",
+  },
+  {
+    id: 34,
+    title: "Dental Care",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Dental.svg",
+  },
+  {
+    id: 35,
+    title: "Surgery",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Surgery.svg",
+  },
+  {
+    id: 36,
+    title: "Orthopedic",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Orthopedic.svg",
+  },
+  {
+    id: 37,
+    title: "Neurology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Neurology.svg",
+  },
+  {
+    id: 38,
+    title: "Cardiology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Cardiology.svg",
+  },
+  {
+    id: 39,
+    title: "Medicine & Nephrology",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Medicine.svg",
+  },
+  {
+    id: 40,
+    title: "Pediatrics",
+    description: "20+ Doctors are available under this department who serve.",
+    icon: "/assets/icons/Pediatrics.svg",
+  },
 ];
+
+const ServicesCarousel = dynamic(() => import("./ServicesCarousel"));
 
 const OurServicesComponent = () => {
   return (
-    <div className="services-section px-4 py-8">
+    <div className="services-section px-4 py-8 mb-10">
       {/* Başlık Bölümü */}
       <div className="text-center mb-10">
         <p className="text-[#52B8AB] font-poppins font-medium text-[14px] leading-[21px]">
@@ -68,51 +262,8 @@ const OurServicesComponent = () => {
         </h2>
       </div>
 
-      {/* Hizmet Kartları Bölümü */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-        {servicesData.map((service) => (
-          <div
-            key={service.id}
-            className="service-card group bg-white p-6 rounded-lg shadow-[5px_0_10px_rgba(0,0,0,0.1)] transition-all transform hover:scale-105 relative z-10 overflow-hidden"
-          >
-            <div
-              className="absolute top-0 left-0 w-full h-full pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              style={{
-                borderRight: "5px solid #52B8AB",
-                borderBottom: "5px solid #52B8AB",
-              }}
-            ></div>
-
-            <div className="relative z-20">
-              <div className="mb-4">
-                <Image
-                  src={service.icon}
-                  alt={service.title}
-                  width={50}
-                  height={50}
-                />
-              </div>
-              <h3 className="font-poppins font-bold text-[16px] leading-[24px] text-[#0B8071] mb-2">
-                {service.title}
-              </h3>
-              <p className="font-poppins font-light text-[16px] leading-[24px] text-[#7D7987] py-4">
-                {service.description}
-              </p>
-              <a href="#" className="text-teal-600 mt-4 block">
-                Read more →
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Tracker Bölümü */}
-      <div className="flex justify-center mt-4">
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-green-500 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-      </div>
+      {/* Hizmet Kartları Carousel Bölümü */}
+      <ServicesCarousel servicesData={servicesData} />
     </div>
   );
 };
