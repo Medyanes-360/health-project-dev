@@ -16,7 +16,7 @@ const navbarData = {
 };
 export default function HomeLayout({ children }) {
   return (
-    <div className=" ">
+    <div>
       <NavbarComponent navbarData={navbarData} />
       <HeaderbarComponent />
       {children}

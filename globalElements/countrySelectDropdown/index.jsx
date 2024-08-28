@@ -69,9 +69,9 @@ const CountrySelectDropdown = ({ toLeft, toRight }) => {
             <path
               d="M1 1L5 5L9 1"
               stroke="#5E6670"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>

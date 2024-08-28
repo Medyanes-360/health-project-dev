@@ -1,3 +1,4 @@
+"use client";
 import { countries as countryData } from "@/data/countries";
 import AutoCompleteInput from "@/globalElements/autoCompleteInput";
 import CountrySelectDropdown from "@/globalElements/countrySelectDropdown";
@@ -10,9 +11,9 @@ const HeaderbarSelectField = () => {
   const [selectedCountry, setSelectedCountry] = useState();
   const [searchValue, setSearchValue] = useState("");
   return (
-    <div className="bg-white   flex items-center  border-2 py-2 ">
+    <div className="bg-white h-11  flex items-center  border rounded-md py-2 ">
       <CountrySelectDropdown toLeft />
-      <div className="flex w-full  border-l-2 pl-2 ">
+      <div className="flex w-full  border-l pl-2 ">
         <Image
           src="/assets/icons/searchIcon.svg"
           alt=""
@@ -20,11 +21,12 @@ const HeaderbarSelectField = () => {
           height={24}
         />
         <AutoCompleteInput
+          style={{}}
           value={searchValue}
           onChange={(e) => {
             setSearchValue(e.currentTarget.value);
           }}
-          placeholder="Enter the disease, hospital or doctor"
+          placeholder="Enter  the disease, hospital or doctor"
         />
       </div>
     </div>

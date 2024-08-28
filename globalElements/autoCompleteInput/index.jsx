@@ -7,6 +7,7 @@ const AutoCompleteInput = ({
 
   onChange,
   toRight,
+  style,
   toLeft,
 }) => {
   const countries = countriesData;
@@ -38,6 +39,7 @@ const AutoCompleteInput = ({
         }}
         style={{
           width: `${placeholder.length}ch`,
+          ...style,
         }}
         placeholder={placeholder}
         type="text"
@@ -46,7 +48,7 @@ const AutoCompleteInput = ({
           onChange(e);
           changeHandler(e);
         }}
-        class="  w-full h-full border-none outline-none py-0 pl-2 block   -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+        className="  w-full h-full border-none outline-none py-0 pl-2 block   -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
       />
       {open && (
         <div
