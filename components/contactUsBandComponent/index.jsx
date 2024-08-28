@@ -18,7 +18,7 @@ const ContactUsBandComponent = () => {
         style={{
           background: "rgba(82, 184, 171,.6)",
         }}
-        className="h-full flex justify-center "
+        className="h-full flex justify-center"
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
         <div className="h-full w-full py-10  xl:container mx-auto flex justify-between items-center">
