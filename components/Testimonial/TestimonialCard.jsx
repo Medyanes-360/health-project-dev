@@ -20,6 +20,7 @@ const TestimonialCard = ({ data }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) => setCurrentSlide(current),
+    arrowarrows: false,
     appendDots: (dots) => (
       <div
         style={{
