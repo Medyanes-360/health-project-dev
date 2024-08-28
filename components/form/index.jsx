@@ -5,7 +5,7 @@ import ContactForm from "./contactForm";
 
 const FormSection = () => {
   return (
-    <div className="py-20">
+    <div className="py-20 px-4">
       <CardComponent>
         <div className="flex gap-7 items-center">
           <div className="flex-1 w-full aspect-[12/8] relative overflow-hidden">

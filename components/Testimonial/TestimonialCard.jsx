@@ -8,7 +8,7 @@ const TestimonialCard = ({ stars, text, img, name, job }) => {
     <CardComponent>
       <div className="flex flex-col gap-5 justify-center ">
         <div className="flex gap-2 flex-wrap items-center">
-          {/* starts */}
+          {/* stars */}
           {starsArray.map((i, index) => (
             <div key={index} className="text-lg">
               ⭐
@@ -21,6 +21,7 @@ const TestimonialCard = ({ stars, text, img, name, job }) => {
         </div>
 
         <div className="flex justify-between gap-3 items-center">
+          {/* the image job and the name */}
           <div className="flex gap-4 items-center">
             <Image
               src={img}

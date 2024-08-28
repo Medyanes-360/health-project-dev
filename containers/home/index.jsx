@@ -17,6 +17,7 @@ const HomeContainer = () => {
       <FeelTheBenefitComponent />
       <PopularClinicsComponent />
       <OurServicesComponent />
+      <ContactUsBandComponent/>
       <TestimonialText/>
       <QualifiedMedicalDoctors/>
       <FormSection/>
