@@ -73,9 +73,9 @@ const TestimonialCard = ({ data }) => {
                 <div className="flex gap-2 flex-wrap items-center">
                   {/* stars */}
                   {starsArray.map((i, index) => (
-                    <div key={index} className="text-lg">
-                      ⭐
-                    </div>
+                    <span key={i} className="text-[#FFAA00] text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
 
