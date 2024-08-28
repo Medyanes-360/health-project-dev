@@ -23,13 +23,12 @@ const HeaderSectionSearchInput = (props) => {
   };
   return (
     <>
-      {" "}
       <div
         style={{ width: "max-content" }}
         className="flex  border bg-white  rounded-md"
       >
-        <div className="h-16 px-1 py-1">
-          <div class="flex rounded-lg h-full p-2    ">
+        <div className="h-20 px-1 py-2 pl-3">
+          <div class="flex rounded-lg h-full px-2 py-1    ">
             <div className="flex  min-w-max  ">
               <Image
                 className="mr-2"
@@ -45,10 +44,9 @@ const HeaderSectionSearchInput = (props) => {
                   // !! width'inin placeholder'ın lengthine eşit olması için aşağıdaki prop'u veriyoruz. ch = character width demek.
                   width: `${"Enter the disease, hospital or doctor".length}ch`,
                 }}
-                className="w-full min-w-fit outline-none "
                 placeholder={"Enter the disease, hospital or doctor"}
                 type="text"
-                class="  w-full h-full border-none outline-none py-0 pl-2 block   -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                className="   h-full border-none outline-none py-0    text-sm"
               />
               {/* <AutoCompleteInput
                 value={searchValue}
@@ -58,7 +56,7 @@ const HeaderSectionSearchInput = (props) => {
                 placeholder="Enter the disease, hospital or doctor"
               /> */}
             </div>
-            <div className="relative flex mr-2 border-l-2 pl-2 w-full">
+            <div className="relative flex mr-2 border-l pl-2 w-full">
               <Image
                 src="/assets/icons/locationIcon.svg"
                 alt=""
@@ -70,7 +68,7 @@ const HeaderSectionSearchInput = (props) => {
                 onChange={(e) => {
                   setLocationValue(e.currentTarget.value);
                 }}
-                placeholder="Your Location"
+                placeholder="Your Location     "
               />
             </div>
 
@@ -81,14 +79,14 @@ const HeaderSectionSearchInput = (props) => {
                 background:
                   "linear-gradient(325.39deg, #4EC9E5 6.94%, #2EAECB 94.28%)",
               }}
-              className="bg-primary  rounded-sm  text-white"
+              className="text-base font-[600] bg-primary h-full   !rounded-[4px] px-6   text-white"
             >
               Search
             </ButtonComponent>
           </div>
         </div>
       </div>
-      <small className="mt-1 text-sm">
+      <small className="mt-6  text-sm">
         Suggestion:
         {data.suggestions.map((suggestion, index) => {
           return (

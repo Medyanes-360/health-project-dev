@@ -14,7 +14,7 @@ const HeaderSection = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundImage: "url(/assets/images/home-hero-image.png)",
-        height: "60vh",
+        height: "80vh",
 
         margin: "auto",
         position: "static",
@@ -32,7 +32,7 @@ const HeaderSection = () => {
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
         <div className="h-full  xl:container mx-auto text-center flex flex-col justify-center items-center">
-          <h1 className="w-3/4 text-6xl">
+          <h1 className="w-3/4 text-6xl  font-medium leading-[4rem]">
             {" "}
             World&apos;s Best Advanced <br /> Cross-Border Care
           </h1>

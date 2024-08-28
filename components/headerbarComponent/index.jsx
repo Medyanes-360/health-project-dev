@@ -7,7 +7,7 @@ const HeaderbarComponent = () => {
   return (
     <div className="">
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <div className="  xl:container mx-auto py-2 flex items-center justify-between">
+      <div className="  xl:container mx-auto py-5 h-20 flex items-center justify-between">
         <div className="flex  ">
           {" "}
           <div className="min-w-max min-h-max flex items-center justify-center">
@@ -33,13 +33,15 @@ const HeaderbarComponent = () => {
                   width={24}
                 />
               ))}
+              <span className=" my-auto ml-2 text-gray-400 font-bold">
+                5.0 RATING
+              </span>
             </span>
-            <p className=" my-auto ml-2 text-gray-400 font-bold">5.0 RATING</p>
           </div>
           <Link className="ml-5" href="/become-a-partner">
             <ButtonComponent
-              title="Become a Partner"
-              className="  text-white bg-primary py-2 "
+              title="Become A Partner"
+              className="font-inter font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
             />
           </Link>
         </div>
