@@ -1,6 +1,6 @@
 "use client";
 import CardComponent from "@/globalElements/Card";
-import React, { useState } from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
@@ -20,7 +20,7 @@ const TestimonialCard = ({ data }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) => setCurrentSlide(current),
-    arrowarrows: false,
+    arrows: false,
     appendDots: (dots) => (
       <div
         style={{

@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} font-poppins `}>
-        <main className="max-w-[100vw] overflow-x-hidden">{children}</main>
+        <main className="">{children}</main>
       </body>
     </html>
   );
