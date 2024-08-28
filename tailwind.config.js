@@ -7,7 +7,16 @@ module.exports = {
     "./containers/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      screens: {
+        "2xl": "1400px",
+        "3xl": "1760px", // Adding the custom 3xl breakpoint
+      },
+    },
     extend: {
+      screens: {
+        "3xl": "1760px", // Adding the custom 3xl breakpoint
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,9 +26,6 @@ module.exports = {
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
-      },
-      screens: {
-        xs: "0px",
       },
       colors: {
         primary: {

@@ -30,7 +30,7 @@ const TrustedClients = () => {
     },
   ];
   return (
-    <div>
+    <div className="px-4">
       {/* trusted client logos */}
       <div className="flex justify-between items-center">
         {images.map((img, i) => (

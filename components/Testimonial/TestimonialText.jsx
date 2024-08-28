@@ -53,7 +53,7 @@ const TestimonialText = () => {
   return (
     <div className="py-10 xl:container mx-auto">
       {/* header */}
-      <div className="flex justify-between gap-6 max-w-[99vw] overflow-hidden">
+      <div className="flex justify-between gap-6 ">
         <div className="max-w-[50%] min-h-full border-b-2 border-primary">
           <h1 className="text-3xl">
             Clients <span className="text-primary">Testimonial</span>
