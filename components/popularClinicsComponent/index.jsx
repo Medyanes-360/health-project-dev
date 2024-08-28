@@ -151,7 +151,7 @@ const ClinicCarousel = dynamic(() => import("./ClinicCarousel"), {
 
 const PopularClinicsComponent = () => {
   return (
-    <div className="popular-clinics-section px-4 py-8">
+    <div className="popular-clinics-section xl:container mx-auto py-8">
       {/* Başlık Bölümü */}
       <div className="text-center mb-6">
         <h2 className="text-[40px] font-poppins font-bold text-[#062126] leading-[60px] text-center">

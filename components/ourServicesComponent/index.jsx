@@ -95,9 +95,9 @@ const servicesData = [
   },
   {
     id: 16,
-    title: "Pediatrics",
+    title: "Medicine & Nephrology",
     description: "20+ Doctors are available under this department who serve.",
-    icon: "/assets/icons/Pediatrics.svg",
+    icon: "/assets/icons/Medicine.svg",
   },
   {
     id: 17,
@@ -143,9 +143,9 @@ const servicesData = [
   },
   {
     id: 24,
-    title: "Pediatrics",
+    title: "Medicine & Nephrology",
     description: "20+ Doctors are available under this department who serve.",
-    icon: "/assets/icons/Pediatrics.svg",
+    icon: "/assets/icons/Medicine.svg",
   },
   {
     id: 25,
@@ -191,9 +191,9 @@ const servicesData = [
   },
   {
     id: 32,
-    title: "Pediatrics",
+    title: "Medicine & Nephrology",
     description: "20+ Doctors are available under this department who serve.",
-    icon: "/assets/icons/Pediatrics.svg",
+    icon: "/assets/icons/Medicine.svg",
   },
   {
     id: 33,
@@ -239,9 +239,9 @@ const servicesData = [
   },
   {
     id: 40,
-    title: "Pediatrics",
+    title: "Medicine & Nephrology",
     description: "20+ Doctors are available under this department who serve.",
-    icon: "/assets/icons/Pediatrics.svg",
+    icon: "/assets/icons/Medicine.svg",
   },
 ];
 
@@ -249,7 +249,7 @@ const ServicesCarousel = dynamic(() => import("./ServicesCarousel"));
 
 const OurServicesComponent = () => {
   return (
-    <div className="services-section px-4 py-8 mb-10">
+    <div className="xl:container mx-auto services-section px-4 py-8 mb-10 mt-8">
       {/* Başlık Bölümü */}
       <div className="text-center mb-10">
         <p className="text-[#52B8AB] font-poppins font-medium text-[14px] leading-[21px]">
