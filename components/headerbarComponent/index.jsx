@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderbarSelectField from "./headerbarSelectField";
@@ -25,8 +24,9 @@ const HeaderbarComponent = () => {
         <div className="flex ">
           <div className="flex items-center ">
             <span className="flex">
-              {[...Array(5)].map((e, i) => (
+              {[...Array(5)].map((e, index) => (
                 <Image
+                  key={index}
                   src="/assets/icons/orangeStarIcon.svg"
                   alt="star"
                   height={24}
@@ -34,7 +34,7 @@ const HeaderbarComponent = () => {
                 />
               ))}
             </span>
-            <p className=" my-auto ml-2">5.0 RATING</p>
+            <p className=" my-auto ml-2 text-gray-400 font-bold">5.0 RATING</p>
           </div>
           <Link className="ml-5" href="/become-a-partner">
             <ButtonComponent

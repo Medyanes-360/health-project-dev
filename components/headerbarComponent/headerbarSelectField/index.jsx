@@ -1,3 +1,4 @@
+"use client";
 import { countries as countryData } from "@/data/countries";
 import AutoCompleteInput from "@/globalElements/autoCompleteInput";
 import CountrySelectDropdown from "@/globalElements/countrySelectDropdown";
