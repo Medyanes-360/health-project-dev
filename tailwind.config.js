@@ -25,17 +25,24 @@ module.exports = {
         primary: {
           DEFAULT: "#52B8AB",
           dark: "#0B8071",
+          //darker:""
           light: "rgba(175, 255, 245, 0.3)",
+          //lighter:""
+          // disabled:""
         },
         black: {
           DEFAULT: "#000000",
           light: "#18191C",
+          //lighter:"",
           dark: "#1E1E1E",
+          //darker:"",
+          // disabled:""
         },
         white: {
           DEFAULT: "#FFFFFF",
           // gri renk:
           dark: "#F1F2F4",
+          //darker:""
           // disabled field'lar için:
           // disabled:""
         },
