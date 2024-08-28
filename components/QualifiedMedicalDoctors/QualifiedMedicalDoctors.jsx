@@ -49,10 +49,14 @@ const QualifiedMedicalDoctors = () => {
               );
             })}
           </div>
+          <div className="w-full flex justify-center">
           <CustomButton
+          className="bg-primary rounded-2xl text-white"
             title={"View all doctors"}
             containerClassName={"flex justify-center"}
           />
+          </div>
+          
         </div>
     </div>
   );
