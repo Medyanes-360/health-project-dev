@@ -33,6 +33,7 @@ const ContactForm = () => {
         onChange={handlePhoneChange}
         placeholder="Enter your phone number"
         value={form.phone}
+        className="w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary"
       />
       <CustomInput
         type="input"
@@ -40,6 +41,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
         placeholder="Enter your name"
         value={form.name}
+        className=""
       />
       <CustomInput
         type="input"
@@ -47,6 +49,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
         placeholder="Enter your email"
         value={form.email}
+        className=""
       />
       <CustomInput
         type="textarea"
@@ -54,12 +57,16 @@ const ContactForm = () => {
         onChange={handleInputChange}
         placeholder="Enter your message"
         value={form.message}
+        className=""
       />
-      <CustomButton
-        type="submit"
-        containerClassName={"flex justify-end"}
-        title={"Submit"}
-      />
+      <div className="w-full flex justify-end">
+        <CustomButton
+        className="bg-primary text-white rounded-2xl"
+          type="submit"
+          containerClassName={"flex justify-end"}
+          title={"Submit"}
+        />
+      </div>
     </form>
   );
 };

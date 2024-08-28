@@ -1,7 +1,7 @@
 "use client";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import './phone.css'
+import "./phone.css";
 const InputType = ({
   type,
   inputType = "text",
@@ -21,7 +21,10 @@ const InputType = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary ${className}`}
+          className={
+            `w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary ` +
+            className
+          }
           {...props}
         />
       );
@@ -32,9 +35,12 @@ const InputType = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary ${className}`}
-          rows={5}
+          className={
+            `w-full bg-slate-100 py-3 px-5 border-none focus:border-primary ` +
+            className
+          }
           {...props}
+          rows={5}
         />
       );
 
@@ -48,8 +54,10 @@ const InputType = ({
             countryCallingCodeEditable
             value={value}
             onChange={onChange}
-            
-            className={`custom-phone-input w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary ${className}`}
+            className={
+              `custom-phone-input w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary ` +
+              className
+            }
           />
         </div>
       );

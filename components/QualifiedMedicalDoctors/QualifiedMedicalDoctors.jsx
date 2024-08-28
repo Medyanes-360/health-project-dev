@@ -28,7 +28,7 @@ const QualifiedMedicalDoctors = () => {
   ];
 
   return (
-    <div className="py-20 font-poppins">
+    <div className="py-20 font-poppins px-4">
         <div className="space-y-8">
           <h1 className="text-3xl text-center max-w-2xl mx-auto">
             Our Qualified Medical Doctors
@@ -49,10 +49,14 @@ const QualifiedMedicalDoctors = () => {
               );
             })}
           </div>
+          <div className="w-full flex justify-center">
           <CustomButton
+          className="bg-primary rounded-2xl text-white"
             title={"View all doctors"}
             containerClassName={"flex justify-center"}
           />
+          </div>
+          
         </div>
     </div>
   );

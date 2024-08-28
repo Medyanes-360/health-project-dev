@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import HeaderbarComponent from "@/components/headerbarComponent";
 import NavbarComponent from "@/components/navbarComponent";
 
@@ -19,6 +20,7 @@ export default function HomeLayout({ children }) {
       <NavbarComponent navbarData={navbarData} />
       <HeaderbarComponent />
       {children}
+      <Footer/>
     </div>
   );
 }

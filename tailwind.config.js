@@ -23,6 +23,7 @@ module.exports = {
         bgDarkWhite: "#F1F2F4",
         secondary: "#111827",
         third: "#7D7987",
+        fourth: "#FFFFFF",
       },
     },
   },
