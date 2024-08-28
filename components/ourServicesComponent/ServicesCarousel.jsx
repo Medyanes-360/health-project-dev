@@ -19,6 +19,7 @@ const ServicesCarousel = ({ servicesData }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) => setCurrentSlide(current),
+    arrows: false,
     appendDots: (dots) => (
       <div
         style={{
