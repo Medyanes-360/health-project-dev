@@ -25,10 +25,6 @@
   padding: 0;
 }
 
-body {
-  width: 100vw !important ;
-  height: 100vh;
-}
 
 @layer utilities {
   .text-balance {
