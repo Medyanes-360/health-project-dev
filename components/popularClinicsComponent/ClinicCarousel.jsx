@@ -68,9 +68,9 @@ const ClinicCarousel = ({ clinicsData }) => {
               alt={clinic.name}
               width={500}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover z-10"
             />
-            <div className="p-4">
+            <div className="p-4 bg-white">
               <h3 className="font-poppins font-bold text-[20px] text-[#1E1E1E] leading-[36px]">
                 {clinic.name}
               </h3>
