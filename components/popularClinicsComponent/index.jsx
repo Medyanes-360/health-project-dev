@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 // Klinik verisi
 const clinicsData = [
@@ -146,22 +147,32 @@ const clinicsData = [
 ];
 
 // Dinamik olarak yüklenen carousel bileşeni
-const ClinicCarousel = dynamic(() => import("./ClinicCarousel"), {
-});
+const ClinicCarousel = dynamic(() => import("./ClinicCarousel"), {});
 
 const PopularClinicsComponent = () => {
   return (
-    <div className="popular-clinics-section xl:container mx-auto py-8">
-      {/* Başlık Bölümü */}
-      <div className="text-center mb-6">
-        <h2 className="text-[40px] font-poppins font-bold text-[#062126] leading-[60px] text-center">
-          Popular Clinics
-        </h2>
+    <section className="relative">
+      {/* SVG */}
+      <div className="absolute inset-0 flex items-center justify-end top-[-480px] z-[-1]">
+        <Image
+          src="/assets/Ellipse108.svg"
+          alt="Orta SVG"
+          width={450}
+          height={450}
+          priority
+        />
       </div>
-
-      {/* Klinik Kartları Bölümü */}
-      <ClinicCarousel clinicsData={clinicsData} />
-    </div>
+      <div className="popular-clinics-section w-full xl:container mx-auto py-8 relative z-10">
+        {/* Başlık Bölümü */}
+        <div className="text-center mb-6">
+          <h2 className="text-[40px] font-poppins font-bold text-[#062126] leading-[60px] text-center">
+            Popular Clinics
+          </h2>
+        </div>
+        {/* Klinik Kartları Bölümü */}
+        <ClinicCarousel clinicsData={clinicsData} />
+      </div>
+    </section>
   );
 };
 
