@@ -12,7 +12,7 @@ const ClinicCarousel = ({ clinicsData }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: true,
@@ -31,7 +31,7 @@ const ClinicCarousel = ({ clinicsData }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gap: "8px", // Adjust the space between dots
+            gap: "8px", 
           }}
         >
           {dots}
@@ -53,7 +53,6 @@ const ClinicCarousel = ({ clinicsData }) => {
             currentSlide / settings.slidesToScroll === i
               ? "relative"
               : "static",
-          left: currentSlide / settings.slidesToScroll === i ? "-8px" : "0",
         }}
       ></div>
     ),

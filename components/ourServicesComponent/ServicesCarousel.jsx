@@ -12,7 +12,7 @@ const ServicesCarousel = ({ servicesData }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 4,
     slidesToScroll: 4,
     rows: 2,
@@ -54,7 +54,6 @@ const ServicesCarousel = ({ servicesData }) => {
             currentSlide / settings.slidesToScroll === i
               ? "relative"
               : "static",
-          left: currentSlide / settings.slidesToScroll === i ? "-8px" : "0",
         }}
       ></div>
     ),
