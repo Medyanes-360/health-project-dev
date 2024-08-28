@@ -21,7 +21,7 @@ const ContactUsBandComponent = () => {
         className="h-full flex justify-center "
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full w-full    py-10  xl:container mx-auto flex justify-between items-center">
+        <div className="h-full w-full py-10  xl:container mx-auto flex justify-between items-center">
           <div className="flex  ">
             <Image
               src="/assets/icons/stethescope.svg"

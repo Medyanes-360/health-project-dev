@@ -50,7 +50,7 @@ const FooterData = () => {
         <div className="">
             <ButtonComponent
             title ="Request a call"
-            className="text-fourth bg-primary rounded-2xl"
+            className="text-fourth bg-primary rounded-2xl text-3xl"
             />
         </div>
       </div>

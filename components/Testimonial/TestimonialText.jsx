@@ -1,4 +1,5 @@
-import TestimonialCard from "./TestimonialCard";
+import dynamic from "next/dynamic";
+// import TestimonialCard from "./TestimonialCard";
 
 const TestimonialText = () => {
   const data = [
@@ -30,13 +31,30 @@ const TestimonialText = () => {
       name: "Ahmad Hanki",
       text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
     },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Ahmad Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Ahmad Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
   ];
 
+  // Dinamik olarak yüklenen carousel bileşeni
+  const TestimonialCarousel = dynamic(() => import("./TestimonialCard"), {});
+
   return (
-    <div className="py-10 px-4">
+    <div className="py-10 xl:container mx-auto">
       {/* header */}
-      <div className="flex justify-between gap-6">
-        <div className="w-[50%] min-h-full border-b-2 border-primary">
+      <div className="flex justify-between gap-6 max-w-[99vw] overflow-hidden">
+        <div className="max-w-[50%] min-h-full border-b-2 border-primary">
           <h1 className="text-3xl">
             Clients <span className="text-primary">Testimonial</span>
           </h1>
@@ -47,28 +65,9 @@ const TestimonialText = () => {
           <h1 className="text-3xl">Patients</h1>
         </div>
       </div>
-      <div className="pt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {/* the cards section*/}
-          {data.map(({ img, job, name, stars, text }, i) => (
-            <TestimonialCard
-              img={img}
-              job={job}
-              name={name}
-              stars={stars}
-              text={text}
-              key={i}
-            />
-          ))}
-        </div>
-      </div>
+      <div className="pt-10"></div>
       {/* Tracker Bölümü */}
-      <div className="flex justify-center mt-4">
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-green-500 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-      </div>
+      <TestimonialCarousel data={data} />
     </div>
   );
 };
