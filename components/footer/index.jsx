@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="relative z-40 w-full h-full">
           {/* description */}
           <DescriptionSection />
-          <p className="font-light text-fourth lg:hidden text-center">
+          <p className="font-light text-fourth lg:hidden text-center pb-6">
             © 2024 Medyanes, All Rights Reserved
           </p>
         </div>
