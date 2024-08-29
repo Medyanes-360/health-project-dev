@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="absolute z-30 w-full h-full bg-black/50 " />
         {/* the content */}
         <div className="relative z-40 w-full h-full space-y-4 ">
-          <div className="absolute z-20 w-full h-full bg-primary/40 " />
+          <div className="absolute -z-10 w-full h-full bg-primary/40 " />
           <div className="py-20">
           {/* footers data */}
           <FooterData />
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="relative z-40 w-full h-full space-y-4 py-20">
+        <div className="relative z-40 w-full h-full py-20">
           {/* description */}
           <DescriptionSection />
         </div>
