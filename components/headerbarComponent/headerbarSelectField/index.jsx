@@ -5,14 +5,14 @@ import CountrySelectDropdown from "@/globalElements/countrySelectDropdown";
 import Image from "next/image";
 import { useState } from "react";
 
-const HeaderbarSelectField = () => {
+const HeaderbarSelectField = ({ countryNames, placeholder }) => {
   const countries = countryData;
 
   const [selectedCountry, setSelectedCountry] = useState();
   const [searchValue, setSearchValue] = useState("");
   return (
     <div className="bg-white h-11  flex items-center  border rounded-md py-2 ">
-      <CountrySelectDropdown toLeft />
+      <CountrySelectDropdown countryNames={countryNames} toLeft />
       <div className="flex w-full  border-l pl-2 ">
         <Image
           src="/assets/icons/searchIcon.svg"
@@ -26,7 +26,7 @@ const HeaderbarSelectField = () => {
           onChange={(e) => {
             setSearchValue(e.currentTarget.value);
           }}
-          placeholder="Enter  the disease, hospital or doctor"
+          placeholder={placeholder}
         />
       </div>
     </div>

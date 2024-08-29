@@ -7,7 +7,7 @@ const HeaderbarComponent = () => {
   return (
     <div className="">
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <div className="  xl:container mx-auto py-5 h-20 flex items-center justify-between">
+      <div className="  xl:container px-4 mx-auto py-5 h-20 flex items-center justify-between">
         <div className="flex  ">
           {" "}
           <div className="min-w-max min-h-max flex items-center justify-center">
@@ -19,7 +19,7 @@ const HeaderbarComponent = () => {
               src="/assets/images/company_logo.png"
             />
           </div>
-          <HeaderbarSelectField />
+          <HeaderbarSelectField placeholder="Enter the disease, hospital or doctor" />
         </div>
         <div className="flex ">
           <div className="flex items-center ">

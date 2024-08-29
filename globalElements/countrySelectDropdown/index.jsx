@@ -2,7 +2,7 @@ import { countries as countriesData } from "@/data/countries";
 import Image from "next/image";
 import { useState } from "react";
 
-const CountrySelectDropdown = ({ toLeft, toRight }) => {
+const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
   //  country data'mızı alıyoruz:
   const countries = countriesData;
 
@@ -35,16 +35,18 @@ const CountrySelectDropdown = ({ toLeft, toRight }) => {
                 alt={selectedCountry.name}
                 className="w-5 h-5 mr-2"
               />
-              <span
-                style={{
-                  whiteSpace: "nowrap",
-                  maxWidth: "75%",
-                  overflow: "hidden",
-                }}
-                title={selectedCountry.name}
-              >
-                {selectedCountry.name}
-              </span>
+              {countryNames && (
+                <span
+                  style={{
+                    whiteSpace: "nowrap",
+                    maxWidth: "75%",
+                    overflow: "hidden",
+                  }}
+                  title={selectedCountry.name}
+                >
+                  {selectedCountry.name}
+                </span>
+              )}
             </>
           ) : (
             <span
