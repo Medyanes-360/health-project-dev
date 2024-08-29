@@ -31,7 +31,7 @@ const HeaderSection = () => {
         className=" h-full "
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full px-4 py-16  xl:container mx-auto text-center flex flex-col justify-center items-center">
+        <div className="h-full px-4 xs:py-16 sm:py-28  xl:container mx-auto text-center flex flex-col justify-center items-center">
           <h1 className="w-3/4 xs:text-lg sm:text-6xl   font-medium xs:leading-[2rem] sm:leading-[4rem]">
             {" "}
             World&apos;s Best Advanced <br /> Cross-Border Care
