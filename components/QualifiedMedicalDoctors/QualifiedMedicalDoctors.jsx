@@ -28,16 +28,16 @@ const QualifiedMedicalDoctors = () => {
   ];
 
   return (
-    <div className="py-20 font-poppins xl:container mx-auto">
+    <div className="py-20 font-poppins xl:container mx-auto px-4">
         <div className="space-y-8">
-          <h1 className="text-3xl text-center max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-center max-w-2xl mx-auto">
             Our Qualified Medical Doctors
           </h1>
-          <p className="text-third text-center max-w-2xl mx-auto">
+          <p className="text-third sm:text-center max-w-2xl mx-auto">
             Here are more reasons why you choose to do business with us
             Medyanes360 is a leading online medical tourism platform.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2  md:grid-cols-4 gap-4">
           {data.map((item, i) => {
               return (
                 <QualifiedMedicalDoctorsCard
@@ -51,7 +51,7 @@ const QualifiedMedicalDoctors = () => {
           </div>
           <div className="w-full flex justify-center">
           <CustomButton
-          className="bg-primary rounded-2xl text-white"
+          className="bg-primary rounded-2xl text-white w-full sm:w-fit"
             title={"View all doctors"}
             containerClassName={"flex justify-center"}
           />

@@ -122,7 +122,7 @@ const TestimonialCard = ({ data }) => {
     <>
       {/* Big screen settings */}
 
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <Slider {...BigScreenSettings}>
           {data.map(({ stars, text, img, name, job }, i) => {
             const starsArray = Array.from({ length: stars });
@@ -130,7 +130,7 @@ const TestimonialCard = ({ data }) => {
             return (
               <div key={i} className="p-4">
                 <CardComponent>
-                  <div className="flex flex-col gap-5 justify-center ">
+                  <div className="flex flex-col gap-5 justify-center min-h-[300px]">
                     <div className="flex gap-2 items-center">
                       {/* stars */}
                       {starsArray.map((i, index) => (
@@ -155,8 +155,10 @@ const TestimonialCard = ({ data }) => {
                           alt="picture"
                         />
                         <div className="space-y-2">
-                          <h1 className="font-bold text-lg ">{name}</h1>
-                          <p className="font-light">{job}</p>
+                          <h1 className="font-bold text-lg whitespace-nowrap">
+                            {name}
+                          </h1>
+                          <p className="font-light whitespace-nowrap">{job}</p>
                         </div>
                       </div>
                       <Image
@@ -176,51 +178,51 @@ const TestimonialCard = ({ data }) => {
       </div>
 
       {/* small screen settings */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Slider {...SmallScreenSettings}>
           {data.map(({ stars, text, img, name, job }, i) => {
             const starsArray = Array.from({ length: stars });
 
             return (
               <div key={i} className="p-2">
-                  <div className="flex flex-col gap-5 justify-center min-h-[330px]">
-                    <div className="flex gap-2 flex-wrap items-center">
-                      {/* stars */}
-                      {starsArray.map((data, index) => (
-                        <span key={index} className="text-[#FFAA00] text-xl">
-                          ★
-                        </span>
-                      ))}
+                <div className="flex flex-col gap-5 justify-center min-h-[330px]">
+                  <div className="flex gap-2 flex-wrap items-center">
+                    {/* stars */}
+                    {starsArray.map((data, index) => (
+                      <span key={index} className="text-[#FFAA00] text-xl">
+                        ★
+                      </span>
+                    ))}
+                    <Image
+                      src={"/assets/images/Group.png"}
+                      className="object-cover object-center rounded-full ml-auto pr-3"
+                      width={30}
+                      height={30}
+                      alt="que"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-light">{text}</p>
+                  </div>
+
+                  <div className="flex justify-between gap-3 items-center">
+                    {/* the image job and the name */}
+                    <div className="flex gap-4 items-center">
                       <Image
-                        src={"/assets/images/Group.png"}
-                        className="object-cover object-center rounded-full ml-auto pr-3"
-                        width={30}
-                        height={30}
-                        alt="que"
+                        src={img}
+                        className="object-cover object-center rounded-full"
+                        width={40}
+                        height={40}
+                        alt="picture"
                       />
-                    </div>
-
-                    <div>
-                      <p className="font-light">{text}</p>
-                    </div>
-
-                    <div className="flex justify-between gap-3 items-center">
-                      {/* the image job and the name */}
-                      <div className="flex gap-4 items-center">
-                        <Image
-                          src={img}
-                          className="object-cover object-center rounded-full"
-                          width={40}
-                          height={40}
-                          alt="picture"
-                        />
-                        <div className="space-y-2">
-                          <h1 className="text-nowrap font-normal">{name}</h1>
-                          <p className=" text-nowrap font-extralight">{job}</p>
-                        </div>
+                      <div className="space-y-2">
+                        <h1 className="text-nowrap font-normal">{name}</h1>
+                        <p className=" text-nowrap font-extralight">{job}</p>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
             );
           })}
