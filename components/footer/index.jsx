@@ -7,27 +7,32 @@ import DescriptionSection from "./DescriptionSection";
 const Footer = () => {
   return (
     <div>
-      <div className="relative w-full min-h-[100vh] 3xl:min-h-[75vh] overflow-hidden max-w-[99vw]">
+      <div className="relative w-full min-h-[80vh] ">
         {/* the footer background image */}
         <Image
           src={"/assets/images/contactUsBandBackgroundImage.jpeg"}
           fill
           alt="footer"
-          className="object-cover brightness-[0.4]"
+          className="object-cover brightness-[0.4] w-full h-full absolute z-10"
         />
         {/* the background color */}
-        <div className="absolute z-10 w-full h-full bg-primary/40 " />
-
+        <div className="absolute z-30 w-full h-full bg-black/50 " />
         {/* the content */}
-        <div className="absolute z-20 w-full h-full pt-20 space-y-4">
+        <div className="relative z-40 w-full h-full space-y-4 ">
+          <div className="absolute z-20 w-full h-full bg-primary/40 " />
+          <div className="py-20">
           {/* footers data */}
           <FooterData />
           {/* clients */}
           <TrustedClients />
           {/* icons */}
-            <SocialMedia />
-            {/* description */}
-            <DescriptionSection/>
+          <SocialMedia />
+          </div>
+        </div>
+
+        <div className="relative z-40 w-full h-full space-y-4 py-20">
+          {/* description */}
+          <DescriptionSection />
         </div>
       </div>
     </div>
