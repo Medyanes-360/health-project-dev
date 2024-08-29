@@ -18,21 +18,29 @@ const Footer = () => {
         {/* the background color */}
         <div className="absolute z-30 w-full h-full bg-black/50 " />
         {/* the content */}
-        <div className="relative z-40 w-full h-full space-y-4 ">
+        <div className="relative z-40 w-full h-full ">
           <div className="absolute -z-10 w-full h-full bg-primary/40 " />
-          <div className="py-20">
-          {/* footers data */}
-          <FooterData />
-          {/* clients */}
-          <TrustedClients />
-          {/* icons */}
-          <SocialMedia />
+          <div className="py-20 space-y-10 lg:space-y-5 ">
+            {/* footers data */}
+            <FooterData />
+            {/* clients */}
+            <div className="lg:hidden">
+              <SocialMedia />
+            </div>
+            <TrustedClients />
+            {/* icons */}
+            <div className="hidden lg:block">
+              <SocialMedia />
+            </div>
           </div>
         </div>
 
-        <div className="relative z-40 w-full h-full py-20">
+        <div className="relative z-40 w-full h-full">
           {/* description */}
           <DescriptionSection />
+          <p className="font-light text-fourth lg:hidden text-center">
+            © 2024 Medyanes, All Rights Reserved
+          </p>
         </div>
       </div>
     </div>
