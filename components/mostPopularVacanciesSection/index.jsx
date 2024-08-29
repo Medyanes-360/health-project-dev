@@ -89,7 +89,7 @@ const MostPopularVacanciesSection = () => {
   return (
     <section>
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <div className=" px-4 xl:container mx-auto">
+      <div className="px-4 xl:container mx-auto">
         <div className="grid xs:grid-cols-2 sm:grid-cols-4  gap-6 mt-5 ">
           {data.features.map((feature, index) => {
             return <FeatureCard key={index} data={feature} />;
