@@ -14,10 +14,13 @@ const MobileNavigationSidebar = (props) => {
         borderBottomRightRadius: props.isOpen ? "0px" : "100%",
         transition: "all .25s ease-out",
         transform: props.isOpen ? "translateX(0%)" : "translateX(-100%)",
+        width: "100vw",
+        height: "100vh",
+        zIndex: 50000,
 
         position: "fixed",
       }}
-      className={`fixed top-0  bg-black/80 w-full h-full z-[1]`}
+      className={`fixed top-0  bg-black/80 w-full h-full `}
     >
       <div
         onClick={(e) => {
