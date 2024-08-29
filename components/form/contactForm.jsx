@@ -33,7 +33,7 @@ const ContactForm = () => {
         onChange={handlePhoneChange}
         placeholder="Enter your phone number"
         value={form.phone}
-        className="w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary"
+        className="w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary rounded-2xl"
       />
       <CustomInput
         type="input"
@@ -61,9 +61,9 @@ const ContactForm = () => {
       />
       <div className="w-full flex justify-end">
         <CustomButton
-        className="bg-primary text-white rounded-2xl"
+          className="bg-primary text-white rounded-2xl w-[50%] lg:w-fit"
           type="submit"
-          containerClassName={"flex justify-end"}
+          containerClassName={"flex justify-end w-full"}
           title={"Submit"}
         />
       </div>
