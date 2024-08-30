@@ -16,11 +16,10 @@ const MobileNavigationSidebar = (props) => {
         transform: props.isOpen ? "translateX(0%)" : "translateX(-100%)",
         width: "100vw",
         height: "100vh",
-        zIndex: 50000,
 
         position: "fixed",
       }}
-      className={`fixed top-0  bg-black/80 w-full h-full `}
+      className={`fixed top-0 z-[50000]  bg-black/80 w-full h-full `}
     >
       <div
         onClick={(e) => {
@@ -46,7 +45,11 @@ const MobileNavigationSidebar = (props) => {
             />
             <LanguageSelectDropdown />
           </div>
-          <HeaderbarSelectField countryNames={false} placeholder="Disease" />
+          <HeaderbarSelectField
+            flags
+            countryNames={false}
+            placeholder="Disease"
+          />
 
           <div className=" my-4 flex flex-col">
             {sidebarData.routes.map((route, index) => {

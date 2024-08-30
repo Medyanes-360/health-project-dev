@@ -11,16 +11,14 @@ const HeaderSection = () => {
   return (
     <section
       style={{
-        backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundImage: "url(/assets/images/home-hero-image.png)",
         maxHeight: "80vh",
 
         margin: "auto",
-        position: "static",
       }}
       // background'u sayfanın tümüne yaymak için width full.
-      className="min-w-full  "
+      className="min-w-full   "
     >
       <div
         // section backgroundu image'ı tutmak için var. aşağıdaki div'de ise backgroundun üstüne yaptığımız color filterı var.
@@ -31,12 +29,12 @@ const HeaderSection = () => {
         className=" h-full "
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full px-4 xs:py-16 sm:py-28  xl:container mx-auto text-center flex flex-col justify-center items-center">
-          <h1 className="w-3/4 xs:text-lg sm:text-6xl   font-medium xs:leading-[2rem] sm:leading-[4rem]">
+        <div className="h-full px-4  py-16 sm:py-auto   xl:container mx-auto text-center flex flex-col justify-center items-center">
+          <h1 className="w-3/4 text-lg sm:text-6xl   font-medium leading-[2rem] sm:leading-[4rem]">
             {" "}
             World&apos;s Best Advanced <br /> Cross-Border Care
           </h1>
-          <p className="mt-6 mb-8 xs:text-xs sm:text-lg">
+          <p className="sm:mt-6 sm:mb-8 my-3  text-xs sm:text-lg">
             Find The Best Hospitals and Doctors Across the world
           </p>
           <HeaderSectionSearchInput

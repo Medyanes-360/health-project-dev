@@ -5,14 +5,15 @@ import CountrySelectDropdown from "@/globalElements/countrySelectDropdown";
 import Image from "next/image";
 import { useState } from "react";
 
-const HeaderbarSelectField = ({ countryNames, placeholder }) => {
+const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
   const countries = countryData;
 
   const [selectedCountry, setSelectedCountry] = useState();
   const [searchValue, setSearchValue] = useState("");
   return (
+    // TODO: Grid olsun ve proplarla ayarlansın, Flag'lerin kalitesi, input width'i , dropdownlar focus gittiğinde otomatik kapanacak ,
     <div className="bg-white h-11  flex items-center  border rounded-md py-2 ">
-      <CountrySelectDropdown countryNames={countryNames} toLeft />
+      <CountrySelectDropdown flags={flags} countryNames={countryNames} toLeft />
       <div className="flex w-full  border-l pl-2 ">
         <Image
           src="/assets/icons/searchIcon.svg"

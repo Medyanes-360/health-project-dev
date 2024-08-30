@@ -22,8 +22,8 @@ const ContactUsBandComponent = () => {
         className="bg-primary-light h-full flex justify-center"
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full w-full sm:py-10 xs:py-3 px-4 xl:container mx-auto flex xs:flex-col  sm:flex-row  justify-between items-center">
-          <div className="flex items-center   ">
+        <div className="h-full w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
+          <div className="flex  items-center   ">
             <Image
               className=""
               src="/assets/icons/stethescope.svg"
@@ -31,7 +31,7 @@ const ContactUsBandComponent = () => {
               width={54}
               height={54}
             />
-            <div className="tracking-wide xs:text-xs xs:leading-[21px] font-inter flex ml-6 sm:text-lg text-white flex-col">
+            <div className="tracking-wide  text-sm leading-[21px] font-inter flex ml-6 sm:text-lg text-white flex-col">
               {" "}
               <h2 className="font-[600]">
                 Looking for professional & trusted medical healthcore?{" "}
@@ -40,12 +40,12 @@ const ContactUsBandComponent = () => {
             </div>
           </div>
           <Link
-            className="xs:w-full sm:w-auto xs:mt-3 sm:mt-0"
+            className="w-full md:w-auto mt-3 md:mt-0"
             href="/become-a-partner"
           >
             <ButtonComponent
               title="Become A Partner"
-              className="xs:w-full xs:py-2.5 xs:text-base shadow-[0_12px_48px_0px_#002C6D1A] font-inter font-[600] !rounded-[10px]  py-3 px-16     text-black bg-white "
+              className="w-full   text-base shadow-[0_12px_48px_0px_#002C6D1A] font-inter font-[600] !rounded-[10px]  py-3 px-16     text-black bg-white "
             />
           </Link>
         </div>

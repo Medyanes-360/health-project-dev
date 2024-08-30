@@ -17,11 +17,11 @@ const data = {
 export default function NavigationHeader() {
   return (
     <nav>
-      <div className="xs:hidden  sm:block">
+      <div className="hidden  md:block">
         <NavbarComponent navbarData={data} />
         <HeaderbarComponent />
       </div>
-      <div className="xs:block sm:hidden">
+      <div className="block md:hidden">
         <MobileNavigation sidebarData={data} />
       </div>
     </nav>

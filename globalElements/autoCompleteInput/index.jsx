@@ -29,7 +29,7 @@ const AutoCompleteInput = ({
     setOpen(true);
   };
   return (
-    <div className="relative   ">
+    <div className="relative w-full  ">
       <input
         onFocus={() => {
           setOpen(true);
@@ -38,7 +38,7 @@ const AutoCompleteInput = ({
           setOpen(false);
         }}
         style={{
-          width: `${placeholder.length}ch`,
+          minWidth: `${placeholder.length}ch`,
           ...style,
         }}
         placeholder={placeholder}
@@ -73,7 +73,7 @@ const AutoCompleteInput = ({
                 <Image
                   width={25}
                   height={25}
-                  src={`/assets/countryFlags/${option.code2l}.png`}
+                  src={`/assets/countryFlags/${option.code2l}.svg`}
                   alt={option.name}
                   className="w-5 h-5 mr-2"
                 />

@@ -40,7 +40,7 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
               <Image
                 width={24}
                 height={16}
-                src={`/assets/countryFlags/${selectedLanguage.countryCode}.png`}
+                src={`/assets/countryFlags/${selectedLanguage.countryCode}.svg`}
                 alt={selectedLanguage.name}
                 className=" "
               />
@@ -49,9 +49,9 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
                   whiteSpace: "nowrap",
                   maxWidth: "75%",
                   overflow: "hidden",
+                  paddingLeft: ".25rem",
                 }}
                 title={selectedLanguage.name}
-                className="ml-1"
               >
                 {selectedLanguage.name}
               </span>
@@ -104,7 +104,7 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
                 <Image
                   width={24}
                   height={16}
-                  src={`/assets/countryFlags/${language.countryCode}.png`}
+                  src={`/assets/countryFlags/${language.countryCode}.svg`}
                   alt={language.name}
                   className="w-8 h-auto mr-2"
                 />

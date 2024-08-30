@@ -89,14 +89,14 @@ const MostPopularVacanciesSection = () => {
   return (
     <section>
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <div className="px-4 xl:container mx-auto">
-        <div className="grid xs:grid-cols-2 sm:grid-cols-4  gap-6 mt-5 ">
+      <div className="px-4 xl:container mx-auto ">
+        <div className=" border-b border-opacity-50 pb-4  border-primary grid grid-cols-2 lg:grid-cols-4  gap-6 mt-5 ">
           {data.features.map((feature, index) => {
             return <FeatureCard key={index} data={feature} />;
           })}
         </div>
 
-        <div className="grid xs:grid-cols-1 sm:grid-cols-4 gap-6 mt-5 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-5 ">
           {data.departments.map((department, index) => {
             return <DepartmentCard key={index} data={department} />;
           })}

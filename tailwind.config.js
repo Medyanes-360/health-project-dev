@@ -16,7 +16,6 @@ module.exports = {
     extend: {
       screens: {
         "3xl": "1760px", // Adding the custom 3xl breakpoint
-        xs: "0px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

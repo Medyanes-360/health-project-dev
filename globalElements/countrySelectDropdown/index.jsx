@@ -17,23 +17,34 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
     setSelectedCountry(country);
     setIsOpen(false);
   };
+  window.addEventListener("click", (e) => {
+    setIsOpen(false);
+  });
 
   return (
-    <div className="relative inline-block text-left">
-      <div className="">
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        minWidth: "75px !important", //flag width
+        width: "fit-content",
+        maxWidth: "150px",
+      }}
+      className="relative w-full  inline-block text-left"
+    >
+      <div className="w-full">
         <button
-          type="button"
-          className="inline-flex items-center overflow-hidden justify-between w-32 border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
           onClick={toggleDropdown}
+          type="button"
+          className="inline-flex w-full   items-center   overflow-hidden justify-between  border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
         >
           {selectedCountry ? (
             <>
               <Image
-                width={25}
-                height={25}
-                src={`/assets/countryFlags/${selectedCountry.code2l}.png`}
+                width={30}
+                height={20}
+                src={`/assets/countryFlags/${selectedCountry.code2l}.svg`}
                 alt={selectedCountry.name}
-                className="w-5 h-5 mr-2"
+                className=""
               />
               {countryNames && (
                 <span
@@ -41,6 +52,7 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
                     whiteSpace: "nowrap",
                     maxWidth: "75%",
                     overflow: "hidden",
+                    paddingLeft: ".25rem",
                   }}
                   title={selectedCountry.name}
                 >
@@ -49,14 +61,7 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
               )}
             </>
           ) : (
-            <span
-              title={"Select a country"}
-              style={{
-                whiteSpace: "nowrap",
-                maxWidth: "75%",
-                overflow: "hidden",
-              }}
-            >
+            <span title={"Select a country"} style={{}}>
               Country
             </span>
           )}
@@ -96,11 +101,11 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
                 <Image
                   width={25}
                   height={25}
-                  src={`/assets/countryFlags/${country.code2l}.png`}
+                  src={`/assets/countryFlags/${country.code2l}.svg`}
                   alt={country.name}
-                  className="w-5 h-5 mr-2"
+                  className=" "
                 />
-                <span>{country.name}</span>
+                <span className="pl-2">{country.name}</span>
               </button>
             ))}
           </div>

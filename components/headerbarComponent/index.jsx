@@ -22,7 +22,7 @@ const HeaderbarComponent = () => {
           <HeaderbarSelectField placeholder="Enter the disease, hospital or doctor" />
         </div>
         <div className="flex ">
-          <div className="flex items-center ">
+          <div className="hidden mr-5 min-[1120px]:flex items-center ">
             <span className="flex">
               {[...Array(5)].map((e, index) => (
                 <Image
@@ -38,7 +38,7 @@ const HeaderbarComponent = () => {
               </span>
             </span>
           </div>
-          <Link className="ml-5" href="/become-a-partner">
+          <Link className="hidden min-[900px]:block" href="/become-a-partner">
             <ButtonComponent
               title="Become A Partner"
               className="font-inter font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "

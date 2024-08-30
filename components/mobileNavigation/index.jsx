@@ -12,10 +12,10 @@ export default function MobileNavigation(props) {
   };
 
   return (
-    <>
+    <div className="">
       <div className="  h-full  mb-14 bg-white w-full">
         {/* h-14: 56px navbar height, container'ındaki mb-14le eşleşmeli */}
-        <div className=" w-full  fixed top-0 h-14  bg-white flex px-4 py-2.5 justify-between items-center">
+        <div className=" z-[50000] w-full  fixed top-0 h-14  bg-white flex px-4 py-2.5 justify-between items-center">
           <Image
             className="cursor-pointer"
             src="/assets/icons/hamburgerMenuIcon.svg"
@@ -46,6 +46,6 @@ export default function MobileNavigation(props) {
         isOpen={isOpen}
         toggleSidebar={toggleSidebar}
       />
-    </>
+    </div>
   );
 }

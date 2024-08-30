@@ -23,14 +23,18 @@ const HeaderSectionSearchInput = (props) => {
   };
   return (
     <>
-      <div className="flex xs:w-full   sm:w-max  border bg-white  rounded-md">
-        <div className="xs:h-12  xs:w-full  sm:h-20 sm:px-1 sm:py-2 sm:pl-3">
-          <div class="flex xs:w-full justify-between  rounded-lg h-full xs:px-1 sm:px-2  py-1    ">
-            <div className="flex   xs:w-full  ">
+      {/* TODO: grid'le böl */}
+      <div
+        style={{ maxWidth: "750px" }}
+        className="flex w-full    border bg-white  rounded-md"
+      >
+        <div className=" h-full  w-full  sm:h-20 sm:px-1 sm:py-2 sm:pl-3">
+          <div class=" w-full   grid grid-cols-6  grid-flow-col gap-0 justify-between  rounded-lg h-full px-1 sm:px-2  py-1    ">
+            <div className="  col-span-5 sm:col-span-3 flex   w-full  ">
               <Image
-                className="mr-2 xs:hidden sm:block"
+                className="mr-2 hidden sm:block "
                 src="/assets/icons/searchIcon.svg"
-                alt=""
+                alt="search"
                 width={24}
                 height={24}
               />
@@ -44,7 +48,7 @@ const HeaderSectionSearchInput = (props) => {
                 }}
                 placeholder={"Enter the disease, hospital or doctor"}
                 type="text"
-                className=" xs:min-w-full xs:pr-2  sm:w-max-full sm:pr-12   sm:text-base xs:text-[10px]  h-full border-none outline-none py-0    text-sm"
+                className="pl-2 sm:pl-0 min-w-full pr-2  sm:w-max-full sm:pr-12   sm:text-base text-[10px]  h-full border-none outline-none py-0    text-sm"
               />
               {/* <AutoCompleteInput
                 value={searchValue}
@@ -54,7 +58,7 @@ const HeaderSectionSearchInput = (props) => {
                 placeholder="Enter the disease, hospital or doctor"
               /> */}
             </div>
-            <div className="xs:hidden sm:flex relative  mr-2 border-l pl-2 w-full">
+            <div className="hidden sm:flex col-span-2 relative  mr-2 border-l pl-2 w-full">
               <Image
                 src="/assets/icons/locationIcon.svg"
                 alt=""
@@ -62,15 +66,16 @@ const HeaderSectionSearchInput = (props) => {
                 height={24}
               />
               <AutoCompleteInput
+                style={{ width: "100%", paddingRight: "2rem" }}
                 value={locationValue}
                 onChange={(e) => {
                   setLocationValue(e.currentTarget.value);
                 }}
-                placeholder="Your Location     "
+                placeholder="Your Location"
               />
             </div>
 
-            <div>
+            <div className="col-span-1 ">
               <ButtonComponent
                 onClick={submitHandler}
                 title="Search"
@@ -78,7 +83,7 @@ const HeaderSectionSearchInput = (props) => {
                   background:
                     "linear-gradient(325.39deg, #4EC9E5 6.94%, #2EAECB 94.28%)",
                 }}
-                className=" sm:flex xs:hidden text-base font-[600] bg-primary h-full   !rounded-[4px] px-6   text-white"
+                className=" w-full sm:flex hidden text-base font-[600] bg-primary h-full   !rounded-[4px] px-6   text-white"
               />
 
               <ButtonComponent
@@ -87,7 +92,7 @@ const HeaderSectionSearchInput = (props) => {
                   background:
                     "linear-gradient(325.39deg, #4EC9E5 6.94%, #2EAECB 94.28%)",
                 }}
-                className=" sm:hidden  !py-3 h-full xs:flex  text-base font-[600] bg-primary    !rounded-[4px] !px-3   text-white"
+                className="  sm:hidden w-full  !py-3 h-full flex  text-base font-[600] bg-primary    !rounded-[4px] !px-3   text-white"
               >
                 <Image
                   className="filter  brightness-0 invert"
