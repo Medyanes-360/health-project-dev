@@ -33,7 +33,7 @@ const TrustedClients = () => {
     <div className="xl:container mx-auto px-4">
       {/* trusted client logos */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-1">
-        {images.map((img, i) => (
+        {images?.map((img, i) => (
           <Image
             key={i}
             src={img.src}

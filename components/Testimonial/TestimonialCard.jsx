@@ -190,7 +190,7 @@ const TestimonialCard = ({ data }) => {
                 <div className="flex flex-col gap-5 justify-center min-h-[330px]">
                   <div className="flex gap-2 flex-wrap items-center">
                     {/* stars */}
-                    {starsArray.map((data, index) => (
+                    {starsArray?.map((data, index) => (
                       <span key={index} className="text-[#FFAA00] text-xl">
                         ★
                       </span>

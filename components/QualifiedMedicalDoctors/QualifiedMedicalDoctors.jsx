@@ -38,7 +38,7 @@ const QualifiedMedicalDoctors = () => {
             Medyanes360 is a leading online medical tourism platform.
           </p>
           <div className="grid grid-cols-2  md:grid-cols-4 gap-4">
-          {data.map((item, i) => {
+          {data?.map((item, i) => {
               return (
                 <QualifiedMedicalDoctorsCard
                   description={item.description}
