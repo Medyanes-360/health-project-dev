@@ -64,28 +64,31 @@ const MobileClinicCarousel = ({ clinicsData }) => {
     <Slider {...settings}>
       {clinicsData.map((clinic, index) => (
         <div key={clinic.id} className="p-1">
-          <div
-            className="border-[1px] border-[#1CB5BD] rounded-[16.92px] overflow-hidden w-[185px] h-[231px] mx-auto"
-          >
+          <div className="border-[1px] border-[#1CB5BD] rounded-[16.92px] overflow-hidden w-[165px] h-[225px] mx-auto">
             <Image
               src={clinic.image}
               alt={clinic.name}
               width={500}
               height={500}
-              className="w-[185px] h-[157.37px] object-cover"
+              className="w-[165px] h-[157.37px] object-cover"
             />
-            <div className="p-2" style={{ backgroundColor: 'white' }}>
+            <div className="p-2" style={{ backgroundColor: "white" }}>
               <h3 className="font-poppins font-semibold text-[14px] leading-[21px] text-[#1E1E1E]">
                 {clinic.name}
               </h3>
-              <p className="font-poppins font-light text-[12px] leading-[18px] text-[#1E1E1E]">
+              <p className="font-poppins font-light text-[12px] leading-[18px] text-[#1E1E1E] mb-1">
                 {clinic.location}
               </p>
               <div className="flex justify-start">
                 {[...Array(clinic.rating)].map((_, i) => (
-                  <span key={i} className="text-[#FFAA00] text-lg">
-                    ★
-                  </span>
+                  <Image
+                    key={i}
+                    src="/assets/icons/star.svg"
+                    alt="Star Icon"
+                    width={12}
+                    height={12}
+                    className="text-[#FFAA00]"
+                  />
                 ))}
               </div>
             </div>
