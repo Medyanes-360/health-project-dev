@@ -32,7 +32,7 @@ const ClinicCarousel = ({ clinicsData }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gap: "8px", 
+            gap: "8px",
           }}
         >
           {dots}
@@ -71,19 +71,24 @@ const ClinicCarousel = ({ clinicsData }) => {
               height={200}
               className="w-full h-48 object-cover z-10"
             />
-            <div className="p-4 bg-white">
-              <h3 className="font-poppins font-bold text-[20px] text-[#1E1E1E] leading-[36px]">
+            <div className="p-6 bg-white ">
+              <h3 className="font-poppins font-bold text-[20px] text-[#1E1E1E] leading-[36px] ">
                 {clinic.name}
               </h3>
-              <p className="font-poppins font-light text-[16px] text-[#1E1E1E] leading-[24px]">
+              <p className="font-poppins font-light text-[16px] text-[#1E1E1E] leading-[24px] mb-4">
                 {clinic.location}
               </p>
             </div>
-            <div className="absolute bottom-4 right-4">
-              {[...Array(clinic.rating)].map((star, i) => (
-                <span key={i} className="text-[#FFAA00] text-xl">
-                  ★
-                </span>
+            <div className="absolute bottom-1 right-4 flex space-x-1 mb-2">
+              {[...Array(clinic.rating)].map((_, i) => (
+                <Image
+                  key={i}
+                  src="/assets/icons/star.svg"
+                  alt="Star Icon"
+                  width={16}
+                  height={16}
+                  className="text-[#FFAA00]"
+                />
               ))}
             </div>
           </div>

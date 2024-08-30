@@ -6,7 +6,7 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const MobileClinicCarousel = ({ clinicsData }) => {
+const MobileServicesCarousel = ({ servicesData }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const settings = {
@@ -15,11 +15,11 @@ const MobileClinicCarousel = ({ clinicsData }) => {
     speed: 400,
     slidesToShow: 2,
     slidesToScroll: 2,
+    rows: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) => setCurrentSlide(current),
     arrows: false,
-    centerMode: false,
     appendDots: (dots) => (
       <div
         style={{
@@ -62,36 +62,33 @@ const MobileClinicCarousel = ({ clinicsData }) => {
 
   return (
     <Slider {...settings}>
-      {clinicsData.map((clinic, index) => (
-        <div key={clinic.id} className="p-1">
-          <div className="border-[1px] border-[#1CB5BD] rounded-[16.92px] overflow-hidden w-[165px] h-[225px] mx-auto">
-            <Image
-              src={clinic.image}
-              alt={clinic.name}
-              width={500}
-              height={500}
-              className="w-[165px] h-[157.37px] object-cover"
-            />
-            <div className="p-2" style={{ backgroundColor: "white" }}>
-              <h3 className="font-poppins font-semibold text-[14px] leading-[21px] text-[#1E1E1E]">
-                {clinic.name}
+      {servicesData.map((service) => (
+        <div key={service.id} className="p-1">
+          <div className="rounded-[16.92px] overflow-hidden w-[166px] h-[245px] mx-auto bg-white shadow-[4px_4px_10px_rgba(0,0,0,0.1)] p-4 flex flex-col justify-between">
+            <div>
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={50}
+                height={50}
+                className="w-[50px] h-[50px] mb-2"
+              />
+              <h3 className="font-poppins font-bold text-[14px] leading-[21px] text-[#0B8071] mb-2">
+                {service.title}
               </h3>
-              <p className="font-poppins font-light text-[12px] leading-[18px] text-[#1E1E1E] mb-1">
-                {clinic.location}
+              <p className="font-poppins font-light text-[12px] leading-[18px] text-[#7D7987] mb-2">
+                {service.description}
               </p>
-              <div className="flex justify-start">
-                {[...Array(clinic.rating)].map((_, i) => (
-                  <Image
-                    key={i}
-                    src="/assets/icons/star.svg"
-                    alt="Star Icon"
-                    width={12}
-                    height={12}
-                    className="text-[#FFAA00]"
-                  />
-                ))}
-              </div>
             </div>
+            <a
+              href="#"
+              className="text-[#7D7987] text-[12px] font-semibold flex items-center"
+            >
+              Read more
+              <span className="ml-1" style={{ color: "#000000" }}>
+                →
+              </span>
+            </a>
           </div>
         </div>
       ))}
@@ -99,4 +96,4 @@ const MobileClinicCarousel = ({ clinicsData }) => {
   );
 };
 
-export default MobileClinicCarousel;
+export default MobileServicesCarousel;

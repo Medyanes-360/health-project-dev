@@ -12,6 +12,7 @@ const TestimonialCard = ({ data }) => {
   const [currentBigSlide, setCurrentBigSlide] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // desktop
   const BigScreenSettings = {
     dots: true,
     infinite: true,
@@ -64,6 +65,7 @@ const TestimonialCard = ({ data }) => {
       ></div>
     ),
   };
+  // mobile
   const SmallScreenSettings = {
     dots: true,
     infinite: true,
@@ -85,7 +87,7 @@ const TestimonialCard = ({ data }) => {
           style={{
             margin: "0px",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
             gap: "8px",
           }}

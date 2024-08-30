@@ -78,7 +78,7 @@ const clinicsData = [
 const PopularClinicsMobile = () => {
   return (
     <section style={{ backgroundColor: 'rgba(175, 255, 245, 0.31)' }}>
-      <div className="relative mx-4 py-8">
+      <div className="relative mx-2 py-8">
         <div className="popular-clinics-section w-full container py-6 relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-[30px] font-poppins font-medium text-[#062126] leading-[45px] text-left">
