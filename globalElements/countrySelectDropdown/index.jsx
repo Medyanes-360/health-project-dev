@@ -17,9 +17,9 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
     setSelectedCountry(country);
     setIsOpen(false);
   };
-  window.addEventListener("click", (e) => {
-    setIsOpen(false);
-  });
+  // window.addEventListener("click", (e) => {
+  //   setIsOpen(false);
+  // });
 
   return (
     <div

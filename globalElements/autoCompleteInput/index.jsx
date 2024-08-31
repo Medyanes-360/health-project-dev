@@ -28,6 +28,9 @@ const AutoCompleteInput = ({
     setValue(e.currentTarget.value);
     setOpen(true);
   };
+  // window.addEventListener("click", (e) => {
+  //   setOpen(false);
+  // });
   return (
     <div className="relative w-full  ">
       <input
