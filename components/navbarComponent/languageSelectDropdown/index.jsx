@@ -1,15 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const languagesData = [
-  { name: "English", countryCode: "US" },
-  { name: "Türkçe", countryCode: "TR" },
-  { name: "Deutsch", countryCode: "DE" },
-];
-
-const LanguageSelectDropdown = ({ toLeft, toRight }) => {
+const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
   //  country data'mızı alıyoruz:
-  const languages = languagesData;
 
   const [isOpen, setIsOpen] = useState(false);
   //default olarak english seçili

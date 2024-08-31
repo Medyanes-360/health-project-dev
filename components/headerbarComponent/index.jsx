@@ -12,7 +12,7 @@ const HeaderbarComponent = () => {
           {" "}
           <div className="min-w-max min-h-max flex items-center justify-center">
             <Image
-              className="mx-4 "
+              className="mr-4 "
               alt="company logo"
               width={140}
               height={24}

@@ -29,7 +29,7 @@ const HeaderSectionSearchInput = (props) => {
         className="flex w-full    border bg-white  rounded-md"
       >
         <div className=" h-full  w-full  sm:h-20 sm:px-1 sm:py-2 sm:pl-3">
-          <div class=" w-full   grid grid-cols-6  grid-flow-col gap-0 justify-between  rounded-lg h-full px-1 sm:px-2  py-1    ">
+          <div className=" w-full   grid grid-cols-6  grid-flow-col gap-0 justify-between  rounded-lg h-full px-1 sm:px-2  py-1    ">
             <div className="  col-span-5 sm:col-span-3 flex   w-full  ">
               <Image
                 className="mr-2 hidden sm:block "
@@ -66,6 +66,7 @@ const HeaderSectionSearchInput = (props) => {
                 height={24}
               />
               <AutoCompleteInput
+                includeCities
                 style={{ width: "100%", paddingRight: "2rem" }}
                 value={locationValue}
                 onChange={(e) => {
@@ -110,18 +111,16 @@ const HeaderSectionSearchInput = (props) => {
         Suggestion:
         {data.suggestions.map((suggestion, index) => {
           return (
-            <>
-              {" "}
+            <span key={index}>
               <span
                 onClick={autoFillHandler}
                 className="text-black hover:text-primary cursor-pointer"
-                key={index}
               >
                 {" "}
                 {suggestion}
               </span>
               {index == data.suggestions.length - 1 ? "" : ","}
-            </>
+            </span>
           );
         })}
       </small>

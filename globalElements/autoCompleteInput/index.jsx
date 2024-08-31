@@ -1,26 +1,29 @@
-import { countries as countriesData } from "@/data/countries";
-import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Country, State } from "country-state-city";
 
 const AutoCompleteInput = ({
   placeholder,
-
+  //TODO: cities eklenebilsin, arama state,city,country tümünde çalışsın
+  includeStates = false,
+  includeCities = false,
   onChange,
   toRight,
   style,
   toLeft,
 }) => {
-  const countries = countriesData;
-
+  const states = State.getAllStates();
+  const [dataLoading, setDataLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
-  const [options, setOptions] = useState(countries);
-  const handleSelect = (e) => {
-    console.log(e);
+  const [options, setOptions] = useState(states);
+
+  const handleSelect = (selectedState) => {
+    setValue(selectedState.name);
+    setOpen(false);
   };
 
   const changeHandler = (e) => {
-    const newOptions = countries.filter((option) =>
+    const newOptions = states.filter((option) =>
       option.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
     );
 
@@ -28,18 +31,26 @@ const AutoCompleteInput = ({
     setValue(e.currentTarget.value);
     setOpen(true);
   };
+  // TODO: window'a click yapıldığında açık olan dropdown kapatılacak. (useEffect ile window defined mı diye kontrol et)
   // window.addEventListener("click", (e) => {
   //   setOpen(false);
   // });
+  useEffect(() => {
+    if (window != undefined) {
+      window.addEventListener("click", (e) => {
+        setOpen(false);
+      });
+    }
+  }, []);
+
   return (
-    <div className="relative w-full  ">
+    <div
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+      className="relative w-full  "
+    >
       <input
-        onFocus={() => {
-          setOpen(true);
-        }}
-        onBlur={() => {
-          setOpen(false);
-        }}
         style={{
           minWidth: `${placeholder.length}ch`,
           ...style,
@@ -62,25 +73,50 @@ const AutoCompleteInput = ({
             overflow: "scroll",
             zIndex: "500",
           }}
+          a
           className={`${
             (toRight && "right-0") || (toLeft && "left-0")
-          }    left-0 min-w-max  absolute       w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
+          }    left-0 min-w-max   absolute       w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
           <div className="  py-1 ">
-            {options.map((option) => (
+            {options.slice(0, 20).map((option, index) => (
               <button
-                key={option.name}
-                onClick={() => handleSelect(option)}
-                className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onClick={(e) => handleSelect(option)}
+                key={index}
+                className="flex  items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
-                <Image
-                  width={25}
-                  height={25}
-                  src={`/assets/countryFlags/${option.code2l}.svg`}
-                  alt={option.name}
-                  className="w-5 h-5 mr-2"
-                />
-                <span>{option.name}</span>
+                <span className="pl-2">
+                  {option.name.slice(
+                    0,
+                    option.name
+                      .toLowerCase()
+                      .indexOf(value.trim().toLowerCase())
+                  )}
+                  <span className="font-semibold">
+                    {option.name.slice(
+                      option.name
+                        .toLowerCase()
+                        .indexOf(value.trim().toLowerCase()),
+                      option.name
+                        .toLowerCase()
+                        .indexOf(value.trim().toLowerCase()) +
+                        value.trim().length
+                    )}
+                  </span>
+                  {option.name.slice(
+                    option.name
+                      .toLowerCase()
+
+                      .indexOf(value.trim().toLowerCase()) + value.trim().length
+                  )}
+                </span>
+                ,
+                <span className="pl-2">
+                  {Country.getCountryByCode(option.countryCode).name}
+                </span>
+                <span className="pl-2 text-xl">
+                  {Country.getCountryByCode(option.countryCode).flag}
+                </span>
               </button>
             ))}
           </div>

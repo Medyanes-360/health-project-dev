@@ -22,6 +22,7 @@ const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
           height={24}
         />
         <AutoCompleteInput
+          includeStates
           style={{}}
           value={searchValue}
           onChange={(e) => {

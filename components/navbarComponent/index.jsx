@@ -39,7 +39,7 @@ const NavbarComponent = (props) => {
             {navbarData.info.phone}
           </span>
           <div className="">
-            <LanguageSelectDropdown toRight />
+            <LanguageSelectDropdown languages={navbarData.languages} toRight />
           </div>
         </div>
       </div>

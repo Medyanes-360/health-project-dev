@@ -43,7 +43,7 @@ const MobileNavigationSidebar = (props) => {
               width={143}
               height={24}
             />
-            <LanguageSelectDropdown />
+            <LanguageSelectDropdown languages={sidebarData.languages} />
           </div>
           <HeaderbarSelectField
             flags

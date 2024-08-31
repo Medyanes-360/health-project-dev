@@ -1,26 +1,46 @@
-import { countries as countriesData } from "@/data/countries";
-import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Country } from "country-state-city";
 
 const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
   //  country data'mızı alıyoruz:
-  const countries = countriesData;
+  const countries = Country.getAllCountries();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState(null);
 
+  //WARN selected country defaulted to türkiye
+  const [selectedCountry, setSelectedCountry] = useState(
+    countries.find((country) => country.isoCode == "TR")
+  );
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredCountries, setFilteredCountries] = useState(countries);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleFiltering = (e) => {
+    setSearchValue(e.currentTarget.value);
+    const filtered = countries.filter((country) =>
+      country.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilteredCountries(filtered);
+  };
   const handleSelect = (country) => {
     setSelectedCountry(country);
+    setFilteredCountries(countries);
+    setSearchValue("");
     setIsOpen(false);
   };
+  // TODO: window'a click yapıldığında açık olan dropdown kapatılacak. (useEffect ile window defined mı diye kontrol et)
   // window.addEventListener("click", (e) => {
   //   setIsOpen(false);
   // });
-
+  useEffect(() => {
+    if (window != undefined) {
+      window.addEventListener("click", (e) => {
+        setOpen(false);
+      });
+    }
+  }, []);
   return (
     <div
       onClick={(e) => e.stopPropagation()}
@@ -29,7 +49,7 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
         width: "fit-content",
         maxWidth: "150px",
       }}
-      className="relative w-full  inline-block text-left"
+      className="relative  w-full  inline-block text-left"
     >
       <div className="w-full">
         <button
@@ -39,13 +59,7 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
         >
           {selectedCountry ? (
             <>
-              <Image
-                width={30}
-                height={20}
-                src={`/assets/countryFlags/${selectedCountry.code2l}.svg`}
-                alt={selectedCountry.name}
-                className=""
-              />
+              <span className="text-3xl">{selectedCountry.flag}</span>
               {countryNames && (
                 <span
                   style={{
@@ -84,28 +98,63 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
         </button>
       </div>
 
-      {isOpen && (
+      {isOpen && countries && (
         <div
-          style={{ maxHeight: "15rem ", overflow: "scroll", zIndex: "500" }}
+          style={{
+            width: "300px",
+            maxHeight: "15rem ",
+            overflowX: "scroll",
+            zIndex: "500",
+          }}
           className={`${
             (toRight && "right-0") || (toLeft && "left-0")
-          }  origin-top-right absolute    mt-2 min-w-max rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
+          }  origin-top-right absolute      mt-2  rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
+          <div className="   w-full  mt-2  px-2  ">
+            <input
+              value={searchValue}
+              onChange={handleFiltering}
+              className=" w-full outline-none p-2  text-sm  border rounded-md  "
+              type="text"
+              placeholder="Search.."
+            />
+          </div>
           <div className=" py-1">
-            {countries.map((country) => (
+            {filteredCountries.map((country) => (
               <button
-                key={country.name}
+                key={country.isoCode}
                 onClick={() => handleSelect(country)}
                 className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
-                <Image
-                  width={25}
-                  height={25}
-                  src={`/assets/countryFlags/${country.code2l}.svg`}
-                  alt={country.name}
-                  className=" "
-                />
-                <span className="pl-2">{country.name}</span>
+                <span className="text-3xl ">{country.flag}</span>
+
+                <span className="pl-2">
+                  {country.name.slice(
+                    0,
+                    country.name
+                      .toLowerCase()
+
+                      .indexOf(searchValue.trim().toLowerCase())
+                  )}
+                  <span className="font-semibold">
+                    {country.name.slice(
+                      country.name
+                        .toLowerCase()
+                        .indexOf(searchValue.trim().toLowerCase()),
+                      country.name
+                        .toLowerCase()
+                        .indexOf(searchValue.trim().toLowerCase()) +
+                        searchValue.trim().length
+                    )}
+                  </span>
+                  {country.name.slice(
+                    country.name
+                      .toLowerCase()
+
+                      .indexOf(searchValue.trim().toLowerCase()) +
+                      searchValue.trim().length
+                  )}
+                </span>
               </button>
             ))}
           </div>

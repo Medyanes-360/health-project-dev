@@ -13,6 +13,11 @@ const data = {
   info: {
     phone: "+90-555-635-44-22",
   },
+  languages: [
+    { name: "English", countryCode: "US" },
+    { name: "Türkçe", countryCode: "TR" },
+    { name: "Deutsch", countryCode: "DE" },
+  ],
 };
 export default function NavigationHeader() {
   return (
