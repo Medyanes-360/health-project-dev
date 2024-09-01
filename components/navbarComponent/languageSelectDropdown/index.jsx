@@ -1,15 +1,14 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
-  //  country data'mızı alıyoruz:
-
   const [isOpen, setIsOpen] = useState(false);
-  //default olarak english seçili
   const [selectedLanguage, setSelectedLanguage] = useState({
     name: "English",
     countryCode: "US",
   });
+
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -20,9 +19,22 @@ const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative inline-block text-left">
-      <div className="">
+    <div className="relative inline-block text-left" ref={dropdownRef}>
+      <div>
         <button
           type="button"
           className="inline-flex items-center overflow-hidden justify-between w-32 border-gray-300 shadow-sm px-2 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
@@ -82,12 +94,12 @@ const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
 
       {isOpen && (
         <div
-          style={{ maxHeight: "15rem ", overflow: "scroll", zIndex: "500" }}
+          style={{ maxHeight: "15rem", overflow: "scroll", zIndex: 500 }}
           className={`${
             (toRight && "right-0") || (toLeft && "left-0")
-          }  origin-top-right absolute    mt-2 min-w-max rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
+          } origin-top-right absolute mt-2 min-w-max rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
-          <div className=" py-1">
+          <div className="py-1">
             {languages.map((language) => (
               <button
                 key={language.name}
@@ -110,4 +122,5 @@ const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
     </div>
   );
 };
+
 export default LanguageSelectDropdown;
