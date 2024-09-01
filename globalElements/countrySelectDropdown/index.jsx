@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Country } from "country-state-city";
 
 const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
@@ -9,10 +9,12 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
 
   //WARN selected country defaulted to türkiye
   const [selectedCountry, setSelectedCountry] = useState(
-    countries.find((country) => country.isoCode == "TR")
+    countries.find((country) => country.isoCode === "TR")
   );
   const [searchValue, setSearchValue] = useState("");
   const [filteredCountries, setFilteredCountries] = useState(countries);
+  const dropdownRef = useRef(null);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -24,38 +26,48 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
     );
     setFilteredCountries(filtered);
   };
+
   const handleSelect = (country) => {
     setSelectedCountry(country);
     setFilteredCountries(countries);
     setSearchValue("");
     setIsOpen(false);
   };
-  // TODO: window'a click yapıldığında açık olan dropdown kapatılacak. (useEffect ile window defined mı diye kontrol et)
-  // window.addEventListener("click", (e) => {
-  //   setIsOpen(false);
-  // });
+
   useEffect(() => {
-    if (window != undefined) {
-      window.addEventListener("click", (e) => {
-        setOpen(false);
-      });
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      document.addEventListener("click", handleClickOutside);
     }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        document.removeEventListener("click", handleClickOutside);
+      }
+    };
   }, []);
+
   return (
     <div
+      ref={dropdownRef}
       onClick={(e) => e.stopPropagation()}
       style={{
-        minWidth: "75px !important", //flag width
+        minWidth: "75px",
         width: "fit-content",
         maxWidth: "150px",
       }}
-      className="relative  w-full  inline-block text-left"
+      className="relative w-full inline-block text-left"
     >
       <div className="w-full">
         <button
           onClick={toggleDropdown}
           type="button"
-          className="inline-flex w-full   items-center   overflow-hidden justify-between  border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex w-full items-center overflow-hidden justify-between border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
         >
           {selectedCountry ? (
             <>
@@ -102,38 +114,36 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
         <div
           style={{
             width: "300px",
-            maxHeight: "15rem ",
+            maxHeight: "15rem",
             overflowX: "scroll",
             zIndex: "500",
           }}
           className={`${
-            (toRight && "right-0") || (toLeft && "left-0")
-          }  origin-top-right absolute      mt-2  rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
+            toRight ? "right-0" : toLeft ? "left-0" : ""
+          } origin-top-right absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
-          <div className="   w-full  mt-2  px-2  ">
+          <div className="w-full mt-2 px-2">
             <input
               value={searchValue}
               onChange={handleFiltering}
-              className=" w-full outline-none p-2  text-sm  border rounded-md  "
+              className="w-full outline-none p-2 text-sm border rounded-md"
               type="text"
               placeholder="Search.."
             />
           </div>
-          <div className=" py-1">
+          <div className="py-1">
             {filteredCountries.map((country) => (
               <button
                 key={country.isoCode}
                 onClick={() => handleSelect(country)}
                 className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
-                <span className="text-3xl ">{country.flag}</span>
-
+                <span className="text-3xl">{country.flag}</span>
                 <span className="pl-2">
                   {country.name.slice(
                     0,
                     country.name
                       .toLowerCase()
-
                       .indexOf(searchValue.trim().toLowerCase())
                   )}
                   <span className="font-semibold">
@@ -150,7 +160,6 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
                   {country.name.slice(
                     country.name
                       .toLowerCase()
-
                       .indexOf(searchValue.trim().toLowerCase()) +
                       searchValue.trim().length
                   )}
@@ -163,4 +172,5 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
     </div>
   );
 };
+
 export default CountrySelectDropdown;
