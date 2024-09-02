@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
-import { Country } from "country-state-city";
+import { useEffect, useRef, useState } from "react";
 
-const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
+const CountrySelectDropdown = ({
+  setSelectedCountry,
+  selectedCountry,
+  countries,
+  countryNames = true,
+  toLeft,
+  toRight,
+}) => {
   //  country data'mızı alıyoruz:
-  const countries = Country.getAllCountries();
-
+  const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  //WARN selected country defaulted to türkiye
-  const [selectedCountry, setSelectedCountry] = useState(
-    countries.find((country) => country.isoCode == "TR")
-  );
   const [searchValue, setSearchValue] = useState("");
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const toggleDropdown = () => {
@@ -34,16 +35,24 @@ const CountrySelectDropdown = ({ countryNames = true, toLeft, toRight }) => {
   // window.addEventListener("click", (e) => {
   //   setIsOpen(false);
   // });
-  useEffect(() => {
+  useEffect((e) => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
     if (window != undefined) {
-      window.addEventListener("click", (e) => {
-        setOpen(false);
-      });
+      window.addEventListener("click", handleClickOutside);
     }
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
   }, []);
   return (
     <div
-      onClick={(e) => e.stopPropagation()}
+      ref={dropdownRef}
+      // onClick={(e) => e.stopPropagation()}
       style={{
         minWidth: "75px !important", //flag width
         width: "fit-content",

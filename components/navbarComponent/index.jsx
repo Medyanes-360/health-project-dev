@@ -19,7 +19,6 @@ const NavbarComponent = (props) => {
                 className={`mx-2 first:ml-0 text-black border-b-current   ${
                   pathname == route.url && "border-b-2 text-primary "
                 }`}
-                f
                 href={route.url}
                 key={route.id}
               >

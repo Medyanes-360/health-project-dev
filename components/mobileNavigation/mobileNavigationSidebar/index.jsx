@@ -15,7 +15,7 @@ const MobileNavigationSidebar = (props) => {
         transition: "all .25s ease-out",
         transform: props.isOpen ? "translateX(0%)" : "translateX(-100%)",
         width: "100vw",
-        height: "100vh",
+        height: "100dvh",
 
         position: "fixed",
       }}

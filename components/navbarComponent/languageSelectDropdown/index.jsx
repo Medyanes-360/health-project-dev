@@ -1,11 +1,27 @@
-import Image from "next/image";
-import { useState } from "react";
+import { Country } from "country-state-city";
+import { useEffect, useRef, useState } from "react";
 
-const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
+const languages = [
+  {
+    name: "English",
+    languageCode: "en",
+    countryCode: "US",
+  },
+  { name: "Türkçe", languageCode: "tr", countryCode: "TR" },
+  { name: "Deutsch", languageCode: "de", countryCode: "DE" },
+];
+
+const LanguageSelectDropdown = ({ toLeft, toRight }) => {
   //  country data'mızı alıyoruz:
-
+  const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
+
   //default olarak english seçili
+
+  // HTML'den alma:
+  // document.querySelector("html").lang
+  // browser'dan user'ın en çok tercih ettiği dili alma:
+  // navigator.language
   const [selectedLanguage, setSelectedLanguage] = useState({
     name: "English",
     countryCode: "US",
@@ -19,30 +35,54 @@ const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
     setSelectedLanguage(language);
     setIsOpen(false);
   };
+  useEffect((e) => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    if (window != undefined) {
+      window.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="relative inline-block text-left">
+    <div
+      ref={dropdownRef}
+      // onClick={(e) => {
+      //   e.stopPropagation();
+      // }}
+      className="relative min-w-fit inline-block text-left"
+    >
       <div className="">
         <button
           type="button"
-          className="inline-flex items-center overflow-hidden justify-between w-32 border-gray-300 shadow-sm px-2 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex  items-center overflow-hidden justify-between w-full border-gray-300 shadow-sm px-2 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
           onClick={toggleDropdown}
         >
           {selectedLanguage ? (
             <>
-              <Image
+              {/* <Image
                 width={24}
                 height={16}
                 src={`/assets/countryFlags/${selectedLanguage.countryCode}.svg`}
                 alt={selectedLanguage.name}
                 className=" "
-              />
+              /> */}
+              <span className="text-3xl pr-1">
+                {Country.getCountryByCode(selectedLanguage.countryCode)
+                  ? Country.getCountryByCode(selectedLanguage.countryCode).flag
+                  : ""}
+              </span>
               <span
                 style={{
                   whiteSpace: "nowrap",
                   maxWidth: "75%",
                   overflow: "hidden",
-                  paddingLeft: ".25rem",
                 }}
                 title={selectedLanguage.name}
               >
@@ -94,13 +134,11 @@ const LanguageSelectDropdown = ({ languages, toLeft, toRight }) => {
                 onClick={() => handleSelect(language)}
                 className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
-                <Image
-                  width={24}
-                  height={16}
-                  src={`/assets/countryFlags/${language.countryCode}.svg`}
-                  alt={language.name}
-                  className="w-8 h-auto mr-2"
-                />
+                <span className="text-3xl pr-2">
+                  {Country.getCountryByCode(language.countryCode)
+                    ? Country.getCountryByCode(language.countryCode).flag
+                    : ""}
+                </span>
                 <span>{language.name}</span>
               </button>
             ))}
