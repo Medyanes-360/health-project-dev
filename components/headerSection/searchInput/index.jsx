@@ -88,15 +88,22 @@ const diseaseDoctorHospitalData = [
   { name: "Barış Demir", type: "doctor" },
   { name: "Selin Öztürk", type: "doctor" },
 ];
-
-const HeaderSectionSearchInput = (props) => {
-  const data = props.data;
+const popularSuggestions = [
+  { name: "Oncology", type: "disease" },
+  { name: "Endocrinology", type: "disease" },
+  { name: "Infertility", type: "disease" },
+  { name: "Mental Health", type: "disease" },
+  { name: "Cardiology", type: "disease" },
+];
+const HeaderSectionSearchInput = () => {
+  const suggestions = popularSuggestions;
   const diseaseSearchFieldData = diseaseDoctorHospitalData;
   const [searchValue, setSearchValue] = useState("");
   const [locationValue, setLocationValue] = useState("");
 
-  const autoFillHandler = (e) => {
-    setSearchValue(e.currentTarget.textContent);
+  const autoFillSuggestionHandler = (suggestion) => {
+    console.log(searchValue);
+    setSearchValue(suggestion);
   };
   const submitHandler = (e) => {
     e.preventDefault();
@@ -195,17 +202,19 @@ const HeaderSectionSearchInput = (props) => {
       </div>
       <small className="mt-6 text-left text-sm">
         Suggestion:
-        {data.suggestions.map((suggestion, index) => {
+        {suggestions.map((suggestion, index) => {
           return (
             <span key={index}>
               <span
-                onClick={autoFillHandler}
+                onClick={() => {
+                  autoFillSuggestionHandler(suggestion);
+                }}
                 className="text-black hover:text-primary cursor-pointer"
               >
                 {" "}
-                {suggestion}
+                {suggestion.name}
               </span>
-              {index == data.suggestions.length - 1 ? "" : ","}
+              {index == suggestions.length - 1 ? "" : ","}
             </span>
           );
         })}

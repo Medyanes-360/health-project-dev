@@ -1,13 +1,6 @@
 import HeaderSectionSearchInput from "./searchInput";
 
 const HeaderSection = () => {
-  const popularSuggestions = [
-    "Oncology",
-    "Endocrinology",
-    "Infertility",
-    "Mental Health",
-    "Cardiology",
-  ];
   return (
     <section
       style={{
@@ -37,9 +30,7 @@ const HeaderSection = () => {
           <p className="sm:mt-6 sm:mb-8 my-3  text-xs sm:text-lg">
             Find The Best Hospitals and Doctors Across the world
           </p>
-          <HeaderSectionSearchInput
-            data={{ suggestions: popularSuggestions }}
-          />
+          <HeaderSectionSearchInput />
         </div>
       </div>
     </section>

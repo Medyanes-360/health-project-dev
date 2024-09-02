@@ -105,11 +105,10 @@ export default function AutoCompleteInput({
       option.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
     );
     setOptions(newOptions);
-    setInputValue(e.currentTarget.value);
+
     setOpen(true);
   };
   const handleSelect = (selectedValue) => {
-    setInputValue(selectedValue.name);
     setValue(selectedValue);
     setOpen(false);
   };
@@ -138,7 +137,7 @@ export default function AutoCompleteInput({
           }}
           placeholder={placeholder}
           type="text"
-          value={inputValue}
+          value={value.name}
           onChange={changeHandler}
           className="   w-full h-full border-none outline-none py-0 pl-2 block     "
         />
@@ -170,25 +169,25 @@ export default function AutoCompleteInput({
                     0,
                     option.name
                       .toLowerCase()
-                      .indexOf(inputValue.trim().toLowerCase())
+                      .indexOf(value.name.trim().toLowerCase())
                   )}
                   <span className="font-semibold">
                     {option.name.slice(
                       option.name
                         .toLowerCase()
-                        .indexOf(inputValue.trim().toLowerCase()),
+                        .indexOf(value.name.trim().toLowerCase()),
                       option.name
                         .toLowerCase()
-                        .indexOf(inputValue.trim().toLowerCase()) +
-                        inputValue.trim().length
+                        .indexOf(value.name.trim().toLowerCase()) +
+                        value.name.trim().length
                     )}
                   </span>
                   {option.name.slice(
                     option.name
                       .toLowerCase()
 
-                      .indexOf(inputValue.trim().toLowerCase()) +
-                      inputValue.trim().length
+                      .indexOf(value.name.trim().toLowerCase()) +
+                      value.name.trim().length
                   )}
                 </span>
               </button>
