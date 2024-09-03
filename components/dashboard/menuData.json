@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "folder",
+    "items": [
+      { "title": "Dashboard 1", "link": "/dashboard/sub1" },
+      { "title": "Dashboard 2", "link": "/dashboard/sub2" },
+      { "title": "Dashboard 3", "link": "/dashboard/sub3" },
+      { "title": "Dashboard 4", "link": "/dashboard/sub4" }
+    ]
+  },
+  {
+    "title": "Appointments",
+    "icon": "event",
+    "items": [
+      { "title": "Appointments 1", "link": "/appointments/sub1" },
+      { "title": "Appointments 2", "link": "/appointments/sub2" },
+      { "title": "Appointments 3", "link": "/appointments/sub3" },
+      { "title": "Appointments 4", "link": "/appointments/sub4" }
+    ]
+  },
+  {
+    "title": "Patients",
+    "icon": "people",
+    "items": [
+      { "title": "Patients 1", "link": "/patients/sub1" },
+      { "title": "Patients 2", "link": "/patients/sub2" },
+      { "title": "Patients 3", "link": "/patients/sub3" },
+      { "title": "Patients 4", "link": "/patients/sub4" }
+    ]
+  },
+  {
+    "title": "Doctors",
+    "icon": "local_hospital",
+    "items": [
+      { "title": "Doctors 1", "link": "/doctors/sub1" },
+      { "title": "Doctors 2", "link": "/doctors/sub2" },
+      { "title": "Doctors 3", "link": "/doctors/sub3" },
+      { "title": "Doctors 4", "link": "/doctors/sub4" }
+    ]
+  },
+  {
+    "title": "Features",
+    "icon": "settings",
+    "items": [
+      { "title": "Features 1", "link": "/features/sub1" },
+      { "title": "Features 2", "link": "/features/sub2" },
+      { "title": "Features 3", "link": "/features/sub3" },
+      { "title": "Features 4", "link": "/features/sub4" }
+    ]
+  }
+]
