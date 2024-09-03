@@ -63,6 +63,7 @@ const QuestionsSection = () => {
     setCurrentQuestion((prev) => prev + 1);
   };
   const prevQuestionHandler = () => {
+    setError(false);
     setCurrentQuestion((prev) => prev - 1);
   };
 
@@ -70,8 +71,8 @@ const QuestionsSection = () => {
 
   return (
     <div className="w-full min-h-screen bg-white-dark grid place-content-center">
-      <div className="xl:container space-y-4">
-        <CardComponent className={"max-w-[500px] mx-auto bg-fourth py-14"}>
+      <div className="xl:container space-y-4 px-4">
+        <CardComponent className={" sm:max-w-[500px] mx-auto bg-fourth py-14 "}>
           {questions.map((question) => {
             if (currentQuestion == question.id) {
               return (
@@ -83,13 +84,15 @@ const QuestionsSection = () => {
               );
             }
           })}
-          <progress
-            value={progressValue}
-            max="100"
-            className="mx-auto w-full bg-primary transition-all duration-500"
-          />
+          <div className="px-6">
+            <progress
+              value={progressValue}
+              max="100"
+              className="mx-auto w-full bg-primary transition-all duration-500 "
+            />
+          </div>
 
-          <div className="flex w-full items-center">
+          <div className="flex w-full items-center px-6">
             <div className="flex-1">
               <div
                 className={cn(
@@ -115,13 +118,12 @@ const QuestionsSection = () => {
             </div>
           </div>
           {error && (
-            <p className="text-center text-red-500 ">
+            <p className="text-center text-red-500 px-6">
               *This Question is Needed
             </p>
           )}
         </CardComponent>
       </div>
-
 
       {/* just to make sure everything working just fine */}
 
