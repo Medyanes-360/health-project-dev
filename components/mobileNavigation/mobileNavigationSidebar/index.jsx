@@ -77,8 +77,8 @@ const MobileNavigationSidebar = (props) => {
                   width={24}
                 />
               ))}
-              <span className=" my-auto ml-2 text-gray-400 font-bold">
-                5.0 RATING
+              <span className=" my-auto ml-2 text-[#868686] font-bold">
+                5.0 Rating
               </span>
             </span>
           </div>
