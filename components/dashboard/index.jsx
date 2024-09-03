@@ -4,7 +4,7 @@ import Topbar from "./Topbar";
 
 const DashboardComponent = ({ children }) => {
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex bg-gray-100">
       {/* Sidebar - Sol tarafta yer alacak */}
       <Sidebar />
 

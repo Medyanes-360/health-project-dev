@@ -1,52 +1,92 @@
 [
   {
     "title": "Dashboard",
-    "icon": "folder",
+    "icon": "/assets/dashboard/1.svg",
     "items": [
-      { "title": "Dashboard 1", "link": "/dashboard/sub1" },
-      { "title": "Dashboard 2", "link": "/dashboard/sub2" },
-      { "title": "Dashboard 3", "link": "/dashboard/sub3" },
-      { "title": "Dashboard 4", "link": "/dashboard/sub4" }
+      { "title": "Dashboard 1" },
+      { "title": "Dashboard 2" },
+      { "title": "Dashboard 3" },
+      { "title": "Dashboard 4" }
     ]
   },
   {
     "title": "Appointments",
-    "icon": "event",
+    "icon": "/assets/dashboard/2.svg",
     "items": [
-      { "title": "Appointments 1", "link": "/appointments/sub1" },
-      { "title": "Appointments 2", "link": "/appointments/sub2" },
-      { "title": "Appointments 3", "link": "/appointments/sub3" },
-      { "title": "Appointments 4", "link": "/appointments/sub4" }
+      { "title": "Appointments 1" },
+      { "title": "Appointments 2" },
+      { "title": "Appointments 3" },
+      { "title": "Appointments 4" }
     ]
   },
   {
     "title": "Patients",
-    "icon": "people",
+    "icon": "/assets/dashboard/3.svg",
     "items": [
-      { "title": "Patients 1", "link": "/patients/sub1" },
-      { "title": "Patients 2", "link": "/patients/sub2" },
-      { "title": "Patients 3", "link": "/patients/sub3" },
-      { "title": "Patients 4", "link": "/patients/sub4" }
+      { "title": "Patients 1" },
+      { "title": "Patients 2" },
+      { "title": "Patients 3" },
+      { "title": "Patients 4" }
     ]
   },
   {
     "title": "Doctors",
-    "icon": "local_hospital",
+    "icon": "/assets/dashboard/4.svg",
     "items": [
-      { "title": "Doctors 1", "link": "/doctors/sub1" },
-      { "title": "Doctors 2", "link": "/doctors/sub2" },
-      { "title": "Doctors 3", "link": "/doctors/sub3" },
-      { "title": "Doctors 4", "link": "/doctors/sub4" }
+      { "title": "Doctors 1" },
+      { "title": "Doctors 2" },
+      { "title": "Doctors 3" },
+      { "title": "Doctors 4" }
     ]
   },
   {
     "title": "Features",
-    "icon": "settings",
+    "icon": "/assets/dashboard/5.svg",
     "items": [
-      { "title": "Features 1", "link": "/features/sub1" },
-      { "title": "Features 2", "link": "/features/sub2" },
-      { "title": "Features 3", "link": "/features/sub3" },
-      { "title": "Features 4", "link": "/features/sub4" }
+      { "title": "Features 1" },
+      { "title": "Features 2" },
+      { "title": "Features 3" },
+      { "title": "Features 4" }
+    ]
+  },
+  {
+    "title": "Forms, Tables & Charts",
+    "icon": "/assets/dashboard/6.svg",
+    "items": [
+      { "title": "Forms 1" },
+      { "title": "Tables 1" },
+      { "title": "Charts 1" },
+      { "title": "Reports 1" }
+    ]
+  },
+  {
+    "title": "Apps & Widgets",
+    "icon": "/assets/dashboard/7.svg",
+    "items": [
+      { "title": "Apps 1" },
+      { "title": "Widgets 1" },
+      { "title": "Widgets 2" },
+      { "title": "Apps 2" }
+    ]
+  },
+  {
+    "title": "Authentication",
+    "icon": "/assets/dashboard/8.svg",
+    "items": [
+      { "title": "Login" },
+      { "title": "Register" },
+      { "title": "Forgot Password" },
+      { "title": "Reset Password" }
+    ]
+  },
+  {
+    "title": "Miscellaneous",
+    "icon": "/assets/dashboard/9.svg",
+    "items": [
+      { "title": "Misc 1" },
+      { "title": "Misc 2" },
+      { "title": "Misc 3" },
+      { "title": "Misc 4" }
     ]
   }
 ]

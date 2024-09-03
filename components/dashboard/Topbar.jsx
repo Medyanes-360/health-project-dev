@@ -1,5 +1,6 @@
 // Topbar.jsx
 import React from "react";
+import Image from "next/image";
 
 const Topbar = () => {
   return (
@@ -22,10 +23,12 @@ const Topbar = () => {
           notifications
         </span>
         <div className="flex items-center space-x-2">
-          <img
-            src="/profile-pic.jpg" 
+          <Image
+            src="/profile-pic.jpg"
             alt="Profile"
-            className="w-8 h-8 rounded-full"
+            width={32}
+            height={32}
+            className="rounded-full"
           />
           <span className="text-gray-800">dr.reha genç</span>
           <span className="text-sm text-gray-500">Admin</span>
