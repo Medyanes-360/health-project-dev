@@ -224,7 +224,7 @@ const MostPopularVacanciesSection = () => {
     <section>
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
       <div className="px-4 xl:container mx-auto ">
-        <div className="   border-primary grid grid-cols-2 lg:grid-cols-4  gap-6 mt-5  ">
+        <div className="   border-primary grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6 mt-5  ">
           {data.slice(0, 4).map((feature, index) => {
             return (
               <div

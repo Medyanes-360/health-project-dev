@@ -41,12 +41,12 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
         setIsOpen(false);
       }
     };
-    if (window != undefined) {
-      window.addEventListener("click", handleClickOutside);
+    if (document != undefined) {
+      document.addEventListener("click", handleClickOutside);
     }
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 

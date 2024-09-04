@@ -1,23 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 import { Country, State } from "country-state-city";
 
+// value ve setValue input dışında tutulan useState'in değerleri.
+// toLeft ve toRight, dropdown'un sağa mı sola mı doğru açılacağını belirtir.
+// placeholder inputun placeholder texti.
+// inputstyle inputun style'ı.
+
+// eğer user kendisi ülkenin/şehrin adını yazmışsa error border'ı silinir. setValue fonksiyonuyla userın yazdığı isimde olan ülke seçilir.
+// eğer user listeden seçmişse yine error silinir. setValue fonksiyonuyla dropdown'dan seçilen ülke seçilir.
+// eğer error varsa dönen değer null'dür. error yoksa kullanıcının girdiği/seçtiği değer döner.
+
 const AutoCompleteLocationInput = ({
   placeholder,
-  onChange,
+
   toRight,
-  style,
+
+  setValue,
+  inputstyle,
   toLeft,
 }) => {
   const dropdownRef = useRef(null);
   const states = State.getAllStates();
   const countries = Country.getAllCountries();
-  const [dataLoading, setDataLoading] = useState(false);
+
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState(false);
   const [options, setOptions] = useState(countries);
 
-  const handleSelect = (selectedState) => {
-    setValue(selectedState.name);
+  const handleSelect = (selectedLocation) => {
+    setInputValue(selectedLocation.name);
+    setValue(selectedLocation);
+    setError(false);
     setOpen(false);
   };
 
@@ -31,27 +45,39 @@ const AutoCompleteLocationInput = ({
         option.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
       )
     );
+    const selectedOption = options.find(
+      (option) =>
+        option.name.toLowerCase() == e.currentTarget.value.toLowerCase()
+    );
 
+    if (selectedOption) {
+      setValue(selectedOption);
+      setInputValue(selectedOption.name);
+      setError(false);
+    }
+
+    if (!selectedOption) {
+      setValue(null);
+      setError(true);
+      setInputValue(e.currentTarget.value);
+    }
     setOptions(newOptions);
-    setValue(e.currentTarget.value);
+
     setOpen(true);
   };
-  // TODO: window'a click yapıldığında açık olan dropdown kapatılacak. (useEffect ile window defined mı diye kontrol et)
-  // window.addEventListener("click", (e) => {
-  //   setOpen(false);
-  // });
+
   useEffect((e) => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setOpen(false);
       }
     };
-    if (window != undefined) {
-      window.addEventListener("click", handleClickOutside);
+    if (document != undefined) {
+      document.addEventListener("click", handleClickOutside);
     }
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -63,20 +89,24 @@ const AutoCompleteLocationInput = ({
       ref={dropdownRef}
       className="relative w-full  "
     >
-      <div className="relative flex items-center w-full h-full p-0 m-0">
+      <div
+        style={{
+          borderBottom: "2px solid transparent",
+          borderBottomColor:
+            error && inputValue.trim() != "" ? "red" : "transparent",
+        }}
+        className="relative  flex items-center w-full h-full p-0 m-0"
+      >
         <input
           style={{
             minWidth: `${placeholder.length}ch`,
-            ...style,
+            ...inputstyle,
           }}
           placeholder={placeholder}
           type="text"
-          value={value}
-          onChange={(e) => {
-            onChange(e);
-            changeHandler(e);
-          }}
-          className="   w-full h-full border-none outline-none py-0 pl-2 block     "
+          value={inputValue}
+          onChange={changeHandler}
+          className="   w-full h-full border-none outline-none  py-0 pl-2 block     "
         />
       </div>
 
@@ -105,24 +135,25 @@ const AutoCompleteLocationInput = ({
                     0,
                     option.name
                       .toLowerCase()
-                      .indexOf(value.trim().toLowerCase())
+                      .indexOf(inputValue.trim().toLowerCase())
                   )}
                   <span className="font-semibold">
                     {option.name.slice(
                       option.name
                         .toLowerCase()
-                        .indexOf(value.trim().toLowerCase()),
+                        .indexOf(inputValue.trim().toLowerCase()),
                       option.name
                         .toLowerCase()
-                        .indexOf(value.trim().toLowerCase()) +
-                        value.trim().length
+                        .indexOf(inputValue.trim().toLowerCase()) +
+                        inputValue.trim().length
                     )}
                   </span>
                   {option.name.slice(
                     option.name
                       .toLowerCase()
 
-                      .indexOf(value.trim().toLowerCase()) + value.trim().length
+                      .indexOf(inputValue.trim().toLowerCase()) +
+                      inputValue.trim().length
                   )}
                 </span>
                 {/* seçenek bir country mi? öyleyse: */}

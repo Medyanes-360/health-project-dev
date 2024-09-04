@@ -48,7 +48,8 @@ const MobileNavigationSidebar = (props) => {
           <HeaderbarSelectField
             flags
             countryNames={false}
-            placeholder="Disease"
+            // placeholder length'ini istediğimiz length'e getirmek için space bırakıyoruz.
+            placeholder="Search..             "
           />
 
           <div className=" my-4 flex flex-col">

@@ -102,69 +102,54 @@ const HeaderSectionSearchInput = () => {
   const [locationValue, setLocationValue] = useState("");
 
   const autoFillSuggestionHandler = (suggestion) => {
-    console.log(searchValue);
     setSearchValue(suggestion);
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    alert(
-      "searched! searchValue: " +
-        searchValue +
-        ", locationValue: " +
-        locationValue
-    );
+    console.log("*************");
+    console.log("location:");
+    console.log(locationValue);
+    console.log("---");
+    console.log("search value:");
+    console.log(searchValue);
+    console.log("*************");
   };
   return (
     <>
-      {/* TODO: grid'le böl */}
       <div
         style={{ maxWidth: "750px" }}
         className="flex w-full    border bg-white  rounded-md"
       >
         <div className=" h-full  w-full  sm:h-20 sm:px-1 sm:py-2 sm:pl-3">
           <div className=" w-full   grid grid-cols-6  grid-flow-col gap-0 justify-between  rounded-lg h-full px-1 sm:px-2  py-1    ">
-            <div className="  col-span-5 sm:col-span-3 flex   w-full  ">
+            <div className=" col-span-5 relative  sm:col-span-3 flex    ">
               <Image
-                className="mr-2 hidden sm:block "
+                className=" hidden sm:block absolute left-0 mt-4 z-[1]  bg-white  "
                 src="/assets/icons/searchIcon.svg"
                 alt="search"
                 width={24}
                 height={24}
               />
-              {/* <input
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.currentTarget.value)}
-                style={{
-                  // !! width'inin placeholder'ın lengthine eşit olması için aşağıdaki prop'u veriyoruz. ch = character width demek.
 
-                  width: `${"Enter the disease, hospital or doctor".length}ch`,
-                }}
-                placeholder={"Enter the disease, hospital or doctor"}
-                type="text"
-                className="pl-2 sm:pl-0 min-w-full pr-2  sm:w-max-full sm:pr-12   sm:text-base text-[10px]  h-full border-none outline-none py-0    text-sm"
-              />{" "} */}
               <AutoCompleteInput
-                style={{}}
                 placeholder={"Enter the disease, hospital or doctor"}
                 data={diseaseSearchFieldData}
                 value={searchValue}
                 setValue={setSearchValue}
+                inputclassname={"text-sm  sm:pl-10  pr-2   sm:text-base "}
               />
             </div>
-            <div className="hidden sm:flex col-span-2 relative  mr-2 border-l pl-2 w-full">
+            <div className="hidden sm:flex   col-span-2 relative  mr-2 border-l pl-2 ">
               <Image
                 src="/assets/icons/locationIcon.svg"
                 alt=""
                 width={24}
                 height={24}
+                className=" "
               />
               <AutoCompleteLocationInput
-                includeCities
                 style={{ width: "100%", paddingRight: "2rem" }}
-                value={locationValue}
-                onChange={(e) => {
-                  setLocationValue(e.currentTarget.value);
-                }}
+                setValue={setLocationValue}
                 placeholder="Your Location"
               />
             </div>

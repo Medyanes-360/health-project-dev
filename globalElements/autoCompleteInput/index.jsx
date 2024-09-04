@@ -90,7 +90,8 @@ export default function AutoCompleteInput({
   placeholder,
   toRight,
   toLeft,
-  style,
+  inputstyle,
+  inputclassname,
 }) {
   const dropdownRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -119,28 +120,31 @@ export default function AutoCompleteInput({
         setOpen(false);
       }
     };
-    if (window != undefined) {
-      window.addEventListener("click", handleClickOutside);
+    if (document != undefined) {
+      document.addEventListener("click", handleClickOutside);
     }
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
   return (
-    <div ref={dropdownRef} className="relative w-full  ">
-      <div className="relative flex items-center w-full h-full p-0 m-0">
-        <input
-          style={{
-            minWidth: `${placeholder.length}ch`,
-            ...style,
-          }}
-          placeholder={placeholder}
-          type="text"
-          value={value.name}
-          onChange={changeHandler}
-          className="   w-full h-full border-none outline-none py-0 pl-2 block     "
-        />
+    <div ref={dropdownRef} className="  relative w-full  ">
+      <div className="relative flex      items-center w-full h-full p-0 m-0 ">
+        <div className="flex overflow-hidden w-min">
+          <input
+            style={{
+              width: `${placeholder.length - 5}ch`,
+              maxWidth: "100%!important",
+              ...inputstyle,
+            }}
+            placeholder={placeholder}
+            type="text"
+            value={value.name}
+            onChange={changeHandler}
+            className={` w-full h-full border-none outline-none py-0 pl-2 block  ${inputclassname}  `}
+          />
+        </div>
       </div>
 
       {open && (

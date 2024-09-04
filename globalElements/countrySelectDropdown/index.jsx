@@ -31,22 +31,18 @@ const CountrySelectDropdown = ({
     setSearchValue("");
     setIsOpen(false);
   };
-  // TODO: window'a click yapıldığında açık olan dropdown kapatılacak. (useEffect ile window defined mı diye kontrol et)
-  // window.addEventListener("click", (e) => {
-  //   setIsOpen(false);
-  // });
   useEffect((e) => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
-    if (window != undefined) {
-      window.addEventListener("click", handleClickOutside);
+    if (document != undefined) {
+      document.addEventListener("click", handleClickOutside);
     }
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
   return (
