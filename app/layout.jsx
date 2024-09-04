@@ -1,5 +1,6 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import QuestionsProvider from "@/context/QuestionsProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} font-poppins `}>
-        <main className="overflow-hidden">{children}</main>
+        <main className="overflow-hidden">
+          <QuestionsProvider>{children}</QuestionsProvider>
+        </main>
       </body>
     </html>
   );

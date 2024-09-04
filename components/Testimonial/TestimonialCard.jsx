@@ -219,8 +219,8 @@ const TestimonialCard = ({ data }) => {
                         alt="picture"
                       />
                       <div className="space-y-2">
-                        <h1 className="text-nowrap font-normal">{name}</h1>
-                        <p className=" text-nowrap font-extralight">{job}</p>
+                        <h1 className=" font-normal">{name}</h1>
+                        <p className=" font-extralight">{job}</p>
                       </div>
                     </div>
                   </div>

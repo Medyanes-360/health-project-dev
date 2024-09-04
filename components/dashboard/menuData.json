@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "/assets/dashboard/1.svg",
+    "items": [
+      { "title": "Dashboard 1" },
+      { "title": "Dashboard 2" },
+      { "title": "Dashboard 3" },
+      { "title": "Dashboard 4" }
+    ]
+  },
+  {
+    "title": "Appointments",
+    "icon": "/assets/dashboard/2.svg",
+    "items": [
+      { "title": "Appointments 1" },
+      { "title": "Appointments 2" },
+      { "title": "Appointments 3" },
+      { "title": "Appointments 4" }
+    ]
+  },
+  {
+    "title": "Patients",
+    "icon": "/assets/dashboard/3.svg",
+    "items": [
+      { "title": "Patients 1" },
+      { "title": "Patients 2" },
+      { "title": "Patients 3" },
+      { "title": "Patients 4" }
+    ]
+  },
+  {
+    "title": "Doctors",
+    "icon": "/assets/dashboard/4.svg",
+    "items": [
+      { "title": "Doctors 1" },
+      { "title": "Doctors 2" },
+      { "title": "Doctors 3" },
+      { "title": "Doctors 4" }
+    ]
+  },
+  {
+    "title": "Features",
+    "icon": "/assets/dashboard/5.svg",
+    "items": [
+      { "title": "Features 1" },
+      { "title": "Features 2" },
+      { "title": "Features 3" },
+      { "title": "Features 4" }
+    ]
+  },
+  {
+    "title": "Forms, Tables & Charts",
+    "icon": "/assets/dashboard/6.svg",
+    "items": [
+      { "title": "Forms 1" },
+      { "title": "Tables 1" },
+      { "title": "Charts 1" },
+      { "title": "Reports 1" }
+    ]
+  },
+  {
+    "title": "Apps & Widgets",
+    "icon": "/assets/dashboard/7.svg",
+    "items": [
+      { "title": "Apps 1" },
+      { "title": "Widgets 1" },
+      { "title": "Widgets 2" },
+      { "title": "Apps 2" }
+    ]
+  },
+  {
+    "title": "Authentication",
+    "icon": "/assets/dashboard/8.svg",
+    "items": [
+      { "title": "Login" },
+      { "title": "Register" },
+      { "title": "Forgot Password" },
+      { "title": "Reset Password" }
+    ]
+  },
+  {
+    "title": "Miscellaneous",
+    "icon": "/assets/dashboard/9.svg",
+    "items": [
+      { "title": "Misc 1" },
+      { "title": "Misc 2" },
+      { "title": "Misc 3" },
+      { "title": "Misc 4" }
+    ]
+  }
+]
