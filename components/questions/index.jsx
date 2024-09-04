@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import QuestionsContext from "@/context/QuestionsContext";
 import { useRouter } from "next/navigation";
 
+// data. must have id starts with 1
+
 const questions = [
   {
     q: "Are you interested in weight loss programs?",
@@ -42,21 +44,33 @@ const questions = [
 const QuestionsSection = () => {
   const router = useRouter();
   const { answers } = useContext(QuestionsContext);
+  // storing the answers in a global context state
+
   const [currentQuestion, setCurrentQuestion] = useState(1);
+  // to toggle between pages
+
   const [error, setError] = useState(false);
+  // to show error if needed
+
   const nextQuestionHandler = () => {
     const s = `answer${currentQuestion}`;
+    // to store the answer in an object
+    // the object name will be called
+    //answer[number] and this number is the id
+    // ex: answer2:Yes, answer4:No
 
     if (questions[currentQuestion - 1].required) {
       if (answers[s] == undefined || answers[s] == null) {
         setError(true);
         return;
       }
+      // check if required and not answered
     }
 
     if (currentQuestion == questions.length) {
       router.push("/");
       return;
+      // check if the last question
     }
 
     setError(false);
@@ -65,16 +79,19 @@ const QuestionsSection = () => {
   const prevQuestionHandler = () => {
     setError(false);
     setCurrentQuestion((prev) => prev - 1);
-  };
 
-  const progressValue = ((currentQuestion - 1) / (questions.length - 1)) * 100;
+    // previous question
+  };
 
   return (
     <div className="w-full min-h-screen bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
         <CardComponent className={" sm:max-w-[500px] mx-auto bg-fourth py-14 "}>
+            {/* using the component cad */}
           {questions.map((question) => {
+            //maping theou questions
             if (currentQuestion == question.id) {
+                // if the current question does not have the same id, it wont be shown
               return (
                 <QuestionCard
                   question={question.q}
@@ -84,12 +101,22 @@ const QuestionsSection = () => {
               );
             }
           })}
-          <div className="px-6">
-            <progress
-              value={progressValue}
-              max="100"
-              className="mx-auto w-full bg-primary transition-all duration-500 "
-            />
+ 
+          <div className="px-6 flex gap-2 items-center">
+            {questions.map((q) => {
+                // working on the progress bars based on the questions length
+              if (q.id == questions.length) return;
+
+              const value = currentQuestion > q.id;
+              const progress = value ? 100 : 0;
+
+              return (
+                <progress
+                  value={progress}
+                  className="mx-auto w-full bg-primary transition-all duration-500 "
+                />
+              );
+            })}
           </div>
 
           <div className="flex w-full items-center px-6">
@@ -100,6 +127,7 @@ const QuestionsSection = () => {
                   currentQuestion == 1 && "hidden"
                 )}
                 onClick={prevQuestionHandler}
+                // go back
               >
                 Go Back
               </div>
@@ -114,10 +142,12 @@ const QuestionsSection = () => {
                 {questions.length == currentQuestion
                   ? "Finish"
                   : "Move Forward"}
+                  {/* move forward of finish */}
               </div>
             </div>
           </div>
           {error && (
+            // error
             <p className="text-center text-red-500 px-6">
               *This Question is Needed
             </p>
