@@ -29,7 +29,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="h-screen p-4 bg-gray-100">
+    <div className="h-screen p-4 ">
       <div
         className="bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl
                    xs:w-3/4 sm:w-3/4 md:w-60 lg:w-72 xl:w-80
@@ -136,7 +136,7 @@ const Sidebar = () => {
             src="/assets/dashboard/sidebar-image.png"
             alt="Sidebar Image"
             width={150}
-            height={100}
+            height={150}
           />
         </div>
       </div>
