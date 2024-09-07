@@ -1,59 +1,73 @@
 export default function CostsTable() {
   return (
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table class="w-full  text-sm text-center rtl:text-right ">
+        <thead class="text-xs bg-[#F4F6F8] text-[#637381]   uppercase  ">
           <tr>
-            <th scope="col" class="px-6 py-3"></th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-6 py-3 font-semibold"></th>
+            <th scope="col" class="px-6 py-3 font-semibold">
               Turkey
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-6 py-3 font-semibold">
               Mexico
             </th>
-            <th scope="col" class="px-6 py-3 ">
+            <th scope="col" class="px-6 py-3 font-semibold ">
               United States of America
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <tbody className="text-black ">
+          <tr class="bg-white border-b   hover:bg-gray-50 ">
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              class="px-6 py-4 font-normal  text-left whitespace-nowrap "
             >
-              Apple MacBook Pro 17"
+              FUE hair transplant
             </th>
-            <td class="px-6 py-4">Silver</td>
-            <td class="px-6 py-4">Laptop</td>
-            <td class="px-6 py-4">$2999</td>
+            <td class="px-6 py-4">from $1671</td>
+            <td class="px-6 py-4">from $4000</td>
+            <td class="px-6 py-4">
+              {" "}
+              <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
+                from $4000
+              </span>
+            </td>
           </tr>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <tr class="bg-white border-b  hover:bg-gray-50 ">
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              class="px-6 py-4 font-normal text-left whitespace-nowrap "
             >
-              Microsoft Surface Pro
+              FUE hair transplant{" "}
             </th>
-            <td class="px-6 py-4">White</td>
-            <td class="px-6 py-4">Laptop PC</td>
-            <td class="px-6 py-4">$1999</td>
+            <td class="px-6 py-4">from $1671</td>
+            <td class="px-6 py-4">from $4000</td>
+            <td class="px-6 py-4">
+              {" "}
+              <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
+                from $4000
+              </span>
+            </td>
           </tr>
-          <tr class="bg-white border-b dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <tr class="bg-white border-bhover:bg-gray-50 ">
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              class="px-6 py-4 font-normal text-left  whitespace-nowrap "
             >
-              Magic Mouse 2
+              FUE hair transplant{" "}
             </th>
-            <td class="px-6 py-4">Black</td>
-            <td class="px-6 py-4">Accessories</td>
-            <td class="px-6 py-4">$99</td>
+            <td class="px-6 py-4">from $1671</td>
+            <td class="px-6 py-4">from $4000</td>
+            <td class="px-6 py-4">
+              <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
+                from $4000
+              </span>
+            </td>
           </tr>
         </tbody>
         <tfoot>
-          <tr>
-            <td className="p-4">
+          <tr className="relative">
+            <td colSpan={4} className="p-4 text-xs text-black text-left ">
               The total cost is calculated individually. It may range depending
               on your medical issue, doctor&apos;s qualification, procedure
               complexity and related complications (if they occur). You’ll get

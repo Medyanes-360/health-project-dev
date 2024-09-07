@@ -17,13 +17,13 @@ export default function OverviewTabs() {
   return (
     <div className="overflow-hidden">
       <div className="mb-4   no-scrollbar overflow-scroll ">
-        <div className="flex flex-nowrap w-full -mb-px text-sm font-medium text-center">
+        <div className="flex py-3 flex-nowrap w-full -mb-px text-sm font-medium text-center">
           <button
             onClick={clickHandler}
             data-overviewtabid="0"
             className={`${
               openPanel == 0 && "!border-b-primary !text-black "
-            }  inline-block  text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
+            }  inline-block   text-sm text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
             type="button"
           >
             Takeaways
@@ -34,7 +34,7 @@ export default function OverviewTabs() {
             data-overviewtabid="1"
             className={`${
               openPanel == 1 && "!border-b-primary !text-black "
-            }   inline-block   text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
+            }   inline-block text-sm  text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
             type="button"
           >
             Related procedures & Costs
@@ -45,7 +45,7 @@ export default function OverviewTabs() {
             data-overviewtabid="2"
             className={`${
               openPanel == 2 && "!border-b-primary !text-black "
-            }   inline-block  text-nowrap   p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
+            }   inline-block text-sm text-nowrap   p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
             type="button"
           >
             How it works
@@ -56,7 +56,7 @@ export default function OverviewTabs() {
             data-overviewtabid="3"
             className={`${
               openPanel == 3 && "!border-b-primary !text-black "
-            }   inline-block   text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
+            }   inline-block text-sm  text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
             type="button"
           >
             What to expect
@@ -67,7 +67,7 @@ export default function OverviewTabs() {
             data-overviewtabid="4"
             className={`${
               openPanel == 4 && "!border-b-primary !text-black "
-            }    inline-block   text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled  rounded-t-lg`}
+            }    inline-block text-sm  text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled  rounded-t-lg`}
             type="button"
           >
             Benefits
@@ -78,7 +78,7 @@ export default function OverviewTabs() {
             data-overviewtabid="5"
             className={`${
               openPanel == 5 && "!border-b-primary !text-black "
-            }    inline-block  text-nowrap   p-4 border-b-[3px] border-b-transparent text-black-disabled  rounded-t-lg`}
+            }    inline-block text-sm text-nowrap   p-4 border-b-[3px] border-b-transparent text-black-disabled  rounded-t-lg`}
             type="button"
           >
             Payment
