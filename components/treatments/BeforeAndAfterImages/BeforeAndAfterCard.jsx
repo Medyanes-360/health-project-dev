@@ -18,7 +18,12 @@ const BeforeAndAfterCard = ({ data }) => {
   const sliderMedium = useRef(null);
   const sliderSmall = useRef(null);
 
-  const createSliderSettings = (slidesToShow, slidesToScroll, screenType, ref) => ({
+  const createSliderSettings = (
+    slidesToShow,
+    slidesToScroll,
+    screenType,
+    ref
+  ) => ({
     infinite: true,
     speed: 400,
     slidesToShow,
@@ -31,23 +36,28 @@ const BeforeAndAfterCard = ({ data }) => {
   });
 
   const ReviewCard = ({ image }) => (
-    <CardComponent className={"px-3 py-5"}>
-      <div className="w-full relative aspect-[12/9] overflow-hidden rounded-2xl">
-        <Image
-          src={image}
-          fill
-          className="object-cover object-center"
-          alt="image"
-        />
-      </div>
-    </CardComponent>
+    <div className="px-4">
+      <CardComponent className={"px-3 py-5"}>
+        <div className="w-full relative aspect-[12/9] overflow-hidden rounded-2xl">
+          <Image
+            src={image}
+            fill
+            className="object-cover object-center"
+            alt="image"
+          />
+        </div>
+      </CardComponent>
+    </div>
   );
 
   return (
     <>
       {/* Big Slider */}
       <div className="hidden lg:block">
-        <Slider {...createSliderSettings(3, 3, "big", sliderBig)} ref={sliderBig}>
+        <Slider
+          {...createSliderSettings(3, 3, "big", sliderBig)}
+          ref={sliderBig}
+        >
           {data.map((item, i) => (
             <ReviewCard key={i} {...item} />
           ))}
@@ -71,7 +81,10 @@ const BeforeAndAfterCard = ({ data }) => {
 
       {/* Medium Slider */}
       <div className="hidden sm:block lg:hidden">
-        <Slider {...createSliderSettings(2, 2, "medium", sliderMedium)} ref={sliderMedium}>
+        <Slider
+          {...createSliderSettings(2, 2, "medium", sliderMedium)}
+          ref={sliderMedium}
+        >
           {data.map((item, i) => (
             <ReviewCard key={i} {...item} />
           ))}
@@ -95,7 +108,10 @@ const BeforeAndAfterCard = ({ data }) => {
 
       {/* Small Slider */}
       <div className="sm:hidden">
-        <Slider {...createSliderSettings(1, 1, "small", sliderSmall)} ref={sliderSmall}>
+        <Slider
+          {...createSliderSettings(1, 1, "small", sliderSmall)}
+          ref={sliderSmall}
+        >
           {data.map((item, i) => (
             <ReviewCard key={i} {...item} />
           ))}

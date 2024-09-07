@@ -19,7 +19,7 @@ const data = [
 
     clinicImages: [
       "/assets/images/656062cbcb546_b1.png",
-      "/assets/images/656062cbcb546_b1.png",
+      "/assets/images/656062cbcb54_b1.png",
       "/assets/images/656062cbcb546_b1.png",
     ],
 
@@ -83,7 +83,7 @@ const data = [
 
 const DiscoverMore = () => {
   return (
-    <div className="py-20 xl:container mx-auto space-y-4">
+    <div className="pb-20 xl:container mx-auto space-y-4">
       <h1 className="text-xl font-bold sm:text-2xl text-secondary pb-3">
         Discover More
       </h1>

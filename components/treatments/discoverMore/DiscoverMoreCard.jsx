@@ -113,8 +113,8 @@ const CardContent = ({ data }) => {
                 <div className="flex items-center gap-2">
                   <Image
                     src={clinicIcon}
-                    width={30}
-                    height={30}
+                    width={50}
+                    height={50}
                     className="object-cover object-center rounded-full overflow-hidden"
                     alt="clickIcon"
                   />
@@ -132,8 +132,8 @@ const CardContent = ({ data }) => {
                 <div className="flex items-center gap-2">
                   <Image
                     src={docIcon}
-                    width={30}
-                    height={30}
+                    width={50}
+                    height={50}
                     className="object-cover object-center rounded-full overflow-hidden"
                     alt="clickIcon"
                   />
@@ -151,8 +151,11 @@ const CardContent = ({ data }) => {
                   <div className="w-full flex items-center justify-between gap-[1px]">
                     {clinicImages.map((img, i) => (
                       <div
+                      onClick={()=> {
+                        setImage(img)
+                      }}
                         key={i}
-                        className="w-full h-24 relative overflow-hidden"
+                        className="w-full h-24 relative overflow-hidden cursor-pointer"
                       >
                         <Image
                           className="object-cover object-center"
