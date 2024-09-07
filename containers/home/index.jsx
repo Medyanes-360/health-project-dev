@@ -5,8 +5,8 @@ import HeaderSection from "@/components/headerSection";
 import MostPopularVacanciesSection from "@/components/mostPopularVacanciesSection";
 import OurServicesComponent from "@/components/ourServicesComponent";
 import PopularClinicsComponent from "@/components/popularClinicsComponent";
-import QualifiedMedicalDoctors from "@/components/QualifiedMedicalDoctors/QualifiedMedicalDoctors";
-import TestimonialText from "@/components/Testimonial/TestimonialText";
+import QualifiedMedicalDoctors from "@/components/qualifiedMedicalDoctors/QualifiedMedicalDoctors";
+import TestimonialText from "@/components/testimonial/TestimonialText";
 
 const HomeContainer = () => {
   return (

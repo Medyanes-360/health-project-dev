@@ -6,7 +6,9 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const BeforeAndAfterCard = ({ data }) => {
+const RelatedArticlesCard = ({ data }) => {
+  // array of {image, description, icon, name,  CreatedAt, seen }
+
   const [currentSlide, setCurrentSlide] = useState({
     big: 0,
     medium: 0,
@@ -35,21 +37,6 @@ const BeforeAndAfterCard = ({ data }) => {
     arrows: false, // Disable default arrows
   });
 
-  const CardContent = ({ image }) => (
-    <div className="px-4">
-      <CardComponent className={"px-3 py-5"}>
-        <div className="w-full relative aspect-[12/9] overflow-hidden rounded-2xl">
-          <Image
-            src={image}
-            fill
-            className="object-cover object-center"
-            alt="image"
-          />
-        </div>
-      </CardComponent>
-    </div>
-  );
-
   return (
     <>
       {/* Big Slider */}
@@ -59,7 +46,7 @@ const BeforeAndAfterCard = ({ data }) => {
           ref={sliderBig}
         >
           {data.map((item, i) => (
-            <CardContent key={i} {...item} />
+            <CardContent key={i} data={item} />
           ))}
         </Slider>
         {/* Custom forward and back buttons */}
@@ -86,7 +73,7 @@ const BeforeAndAfterCard = ({ data }) => {
           ref={sliderMedium}
         >
           {data.map((item, i) => (
-            <CardContent key={i} {...item} />
+            <CardContent key={i} data={item} />
           ))}
         </Slider>
         {/* Custom forward and back buttons */}
@@ -113,7 +100,7 @@ const BeforeAndAfterCard = ({ data }) => {
           ref={sliderSmall}
         >
           {data.map((item, i) => (
-            <CardContent key={i} {...item} />
+            <CardContent key={i} data={item} />
           ))}
         </Slider>
         {/* Custom forward and back buttons */}
@@ -136,4 +123,46 @@ const BeforeAndAfterCard = ({ data }) => {
   );
 };
 
-export default BeforeAndAfterCard;
+export default RelatedArticlesCard;
+
+const CardContent = ({ data }) => {
+  const { image, description, icon, name, createdAt, seen } = data;
+  return (
+    <div className="px-4">
+      <CardComponent className={"px-3 py-5"}>
+        <div className="space-y-4 min-h-[500px] flex flex-col justify-between">
+          <div className="space-y-3">
+            <div className="w-full relative aspect-[12/8] overflow-hidden rounded-2xl">
+              <Image
+                src={image}
+                fill
+                className="object-cover object-center"
+                alt="image"
+              />
+            </div>
+            <p>{description}</p>
+          </div>
+
+          <div className="flex justify-between gap-1 items-center">
+            <div className="flex gap-4 items-center ">
+              <Image
+                src={icon}
+                width={40}
+                height={40}
+                className="object-center object-cover rounded-full "
+                alt="icon"
+              />
+
+              <div className="space-y-2">
+                <h1 className="font-medium">{name}</h1>
+                <p className="font-light">{createdAt}</p>
+              </div>
+            </div>
+
+            <div className="px-3 py-1 rounded-full bg-primary">👁️ {seen}</div>
+          </div>
+        </div>
+      </CardComponent>
+    </div>
+  );
+};

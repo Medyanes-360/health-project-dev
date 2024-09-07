@@ -1,8 +1,9 @@
-import BeforeAndAfter from "@/components/treatments/BeforeAndAfterImages";
+import BeforeAndAfter from "@/components/treatments/beforeAndAfterImages";
 import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import DiscoverMore from "@/components/treatments/discoverMore";
 import MedicalAssessment from "@/components/treatments/medicalAssessment";
 import PageHeading from "@/components/treatments/pageHeading";
+import RelatedArticles from "@/components/treatments/relatedArtcles";
 import TreatmentCosts from "@/components/treatments/treatmentCosts";
 import TreatmentFilteringComponent from "@/components/treatments/treatmentFilteringComponent";
 import TreatmentOverview from "@/components/treatments/treatmentOverview";
@@ -21,6 +22,7 @@ export default function TreatmentPageContainer() {
       <BeforeAndAfter />
       <DiscoverMore />
       <MedicalAssessment />
+      <RelatedArticles/>
     </div>
   );
 }

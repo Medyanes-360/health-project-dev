@@ -42,7 +42,7 @@ const MedicalAssessmentCard = ({ data }) => {
           ref={sliderBig}
         >
           {data.map((item, i) => (
-            <CardContainer key={i} data={item} />
+            <CardContent key={i} data={item} />
           ))}
         </Slider>
         {/* Custom forward and back buttons */}
@@ -68,7 +68,7 @@ const MedicalAssessmentCard = ({ data }) => {
           ref={sliderSmall}
         >
           {data.map((item, i) => (
-            <CardContainer key={i} data={item} />
+            <CardContent key={i} data={item} />
           ))}
         </Slider>
         {/* Custom forward and back buttons */}
@@ -93,60 +93,64 @@ const MedicalAssessmentCard = ({ data }) => {
 
 export default MedicalAssessmentCard;
 
-const CardContainer = ({ data }) => {
+const CardContent = ({ data }) => {
   const { docName, location, reviews, image, description, icon } = data;
 
   return (
     <div className="px-4">
-    <CardComponent className={"p-0 space-y-7 "}>
-      <div className="flex justify-between gap-1 items-center bg-fourth px-5 py-4">
-        <div>
-          <Image
-            src={icon}
-            alt="image"
-            width={50}
-            height={50}
-            className="object-center object-cover rounded-full"
-          />
-        </div>
+      <CardComponent className={"p-0 space-y-7"}>
+        <div className="flex flex-col justify-between min-h-[840px]">
+          <div className="space-y-5 px-5 py-4">
+            <div className="flex justify-between gap-1 items-center bg-fourth ">
+              <div>
+                <Image
+                  src={icon}
+                  alt="image"
+                  width={50}
+                  height={50}
+                  className="object-center object-cover rounded-full"
+                />
+              </div>
 
-        <div className="space-y-2">
-          <h1>{docName} • Hair transplant</h1>
-          <p>{location}</p>
-        </div>
+              <div className="space-y-2">
+                <h1>{docName} • Hair transplant</h1>
+                <p>{location}</p>
+              </div>
 
-        <div className="space-y-2">
-          <h1 className>
-            <span className="text-[#FFAA00] text-3xl">★</span>
-            Good
-          </h1>
+              <div className="space-y-2">
+                <h1 className>
+                  <span className="text-[#FFAA00] text-3xl">★</span>
+                  Good
+                </h1>
 
-          <p>{reviews} Patient verified reviews</p>
+                <p>{reviews} Patient verified reviews</p>
+              </div>
+            </div>
+            <div className="w-full aspect-[12/8] relative overflow-hidden">
+              <Image
+                src={image}
+                alt="alt"
+                fill
+                className="object-center object-cover rounded-2xl"
+              />
+            </div>
+            <p className="font-medium">{description}</p>
+          </div>
+          <div className="px-10 py-4 space-y-5">
+            <div className="flex justify-between gap-2">
+              <ButtonComponent
+                className={"text-primary rounded-md bg-third/50 w-full"}
+                title={"Info"}
+              />
+              <ButtonComponent
+                className={"text-fourth rounded-md bg-primary w-full"}
+                title={"Enquire"}
+              />
+            </div>
+            <p className="text-center text-primary">More details</p>
+          </div>
         </div>
-      </div>
-      <div className="px-10 py-4 space-y-5">
-        <div className="w-full aspect-[12/8] relative overflow-hidden">
-          <Image
-            src={image}
-            alt="alt"
-            fill
-            className="object-center object-cover rounded-2xl"
-          />
-        </div>
-        <p className="font-medium">{description}</p>
-
-        <div className="flex justify-between gap-2">
-          <ButtonComponent
-            className={"text-primary rounded-md bg-third/50 w-full"}
-            title={"Info"}
-          />
-          <ButtonComponent
-            className={"text-fourth rounded-md bg-primary w-full"}
-            title={"Enquire"}
-          />
-        </div>
-      </div>
-    </CardComponent>
+      </CardComponent>
     </div>
   );
 };
