@@ -5,6 +5,7 @@ export default function HomeLayout({ children }) {
   return (
     <div>
       <NavigationHeader />
+
       {children}
       <Footer />
     </div>

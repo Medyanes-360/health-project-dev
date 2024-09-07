@@ -50,9 +50,7 @@ const CountrySelectDropdown = ({
       ref={dropdownRef}
       // onClick={(e) => e.stopPropagation()}
       style={{
-        minWidth: "75px !important", //flag width
-        width: "fit-content",
-        maxWidth: "150px",
+        width: "100px !important", //flag width
       }}
       className="relative  w-full  inline-block text-left"
     >
@@ -60,22 +58,22 @@ const CountrySelectDropdown = ({
         <button
           onClick={toggleDropdown}
           type="button"
-          className="inline-flex w-full   items-center   overflow-hidden justify-between  border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex w-fit   items-center   overflow-hidden justify-between  border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
         >
           {selectedCountry ? (
             <>
-              <span className="text-3xl">{selectedCountry.flag}</span>
+              <span className="text-3xl  ">{selectedCountry.flag}</span>
               {countryNames && (
                 <span
                   style={{
-                    whiteSpace: "nowrap",
                     maxWidth: "75%",
                     overflow: "hidden",
                     paddingLeft: ".25rem",
                   }}
+                  className=""
                   title={selectedCountry.name}
                 >
-                  {selectedCountry.name}
+                  {selectedCountry.isoCode}
                 </span>
               )}
             </>

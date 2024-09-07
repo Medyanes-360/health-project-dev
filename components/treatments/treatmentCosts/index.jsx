@@ -4,7 +4,7 @@ import CostsTable from "./costsTable";
 export default function TreatmentCosts() {
   return (
     <section className="mt-10 ">
-      <div className="flex mb-10 justify-between">
+      <div className="flex h-32 mb-6 items-center justify-between">
         <div>
           <h2 className="text-xl font-semibold">
             How Much Does Hair Transplant Cost? Find Out Now

@@ -16,8 +16,9 @@ const NavbarComponent = (props) => {
           {navbarData.routes.map((route) => {
             return (
               <Link
-                className={`mx-2 first:ml-0 text-black border-b-current   ${
-                  pathname == route.url && "border-b-2 text-primary "
+                className={`mx-2 first:ml-0 text-black border-b-current  hover:border-b-2 hover:text-primary   ${
+                  pathname == route.url &&
+                  "border-b-2 text-primary cursor-default"
                 }`}
                 href={route.url}
                 key={route.id}

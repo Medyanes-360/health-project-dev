@@ -10,7 +10,7 @@ import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQue
 
 export default function TreatmentPageContainer() {
   return (
-    <div className="xl:container px-4">
+    <div className="xl:container mx-auto px-4">
       <BreadCrumbComponent />
       <PageHeading />
       <TreatmentOverview />
