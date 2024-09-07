@@ -39,25 +39,25 @@ export default function ExpandingList({ title, children }) {
             <div className="!h-6 mr-2 !w-6 border    "></div> item
           </li>
           <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0s]
+            className="flex my-2  animate-fadeIn  [animation-delay:_0.05s]
 "
           >
             <div className="!h-6 mr-2 !w-6 border    "></div> item
           </li>
           <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0s]
+            className="flex my-2  animate-fadeIn  [animation-delay:_0.1s]
 "
           >
             <div className="!h-6 mr-2 !w-6 border    "></div> item
           </li>
           <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0s]
+            className="flex my-2  animate-fadeIn  [animation-delay:_0.15s]
 "
           >
             <div className="!h-6 mr-2 !w-6 border    "></div> item
           </li>
           <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0s]
+            className="flex my-2  animate-fadeIn  [animation-delay:_0.2s]
 "
           >
             <div className="!h-6 mr-2 !w-6 border    "></div> item
