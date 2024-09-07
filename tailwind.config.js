@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,6 +5,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./containers/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     container: {
       screens: {
@@ -42,7 +42,7 @@ module.exports = {
           //lighter:"",
           dark: "#1E1E1E",
           //darker:"",
-          // disabled:""
+          disabled: "#9199A3",
         },
         white: {
           DEFAULT: "#FFFFFF",
@@ -58,6 +58,15 @@ module.exports = {
         secondary: "#111827",
         third: "#7D7987",
         fourth: "#FFFFFF",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.5s ease-in-out 1 backwards",
       },
     },
   },
