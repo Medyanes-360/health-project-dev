@@ -1,5 +1,4 @@
-import dynamic from "next/dynamic";
-// import TestimonialCard from "./TestimonialCard";
+import TestimonialCard from "./TestimonialCard";
 
 const TestimonialText = () => {
   const data = [
@@ -31,11 +30,7 @@ const TestimonialText = () => {
       name: "Mohammad Hanki",
       text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
     },
-    
   ];
-
-  // Dinamik olarak yüklenen carousel bileşeni
-  const TestimonialCarousel = dynamic(() => import("./TestimonialCard"), {});
 
   return (
     <div className="py-10 xl:container mx-auto px-4">
@@ -54,7 +49,7 @@ const TestimonialText = () => {
       </div>
       <div className="pt-10"></div>
       {/* Tracker Bölümü */}
-      <TestimonialCarousel data={data} />
+      <TestimonialCard data={data} />
     </div>
   );
 };

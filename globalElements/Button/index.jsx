@@ -1,17 +1,17 @@
 import { cn } from "@/lib/utils";
 
-const ButtonComponent = (props) => {
+const ButtonComponent = ({ className, title, children, onClick, ...props }) => {
   return (
     <button
-      onClick={props.onClick}
+      onClick={onClick}
       {...props}
       //round ve color className prop'larda verilmeli
       className={cn(
         `flex items-center justify-center py-3 px-5 rounded-md text-xl w-fit`,
-        props.className
+        className
       )}
     >
-      {props.title ? props.title : props.children}
+      {title ? title : children}
     </button>
   );
 };
