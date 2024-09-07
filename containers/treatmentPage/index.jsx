@@ -1,3 +1,4 @@
+import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import PageHeading from "@/components/treatments/pageHeading";
 import TreatmentCosts from "@/components/treatments/treatmentCosts";
 import TreatmentFilteringComponent from "@/components/treatments/treatmentFilteringComponent";
@@ -7,6 +8,7 @@ import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQue
 export default function TreatmentPageContainer() {
   return (
     <div className="xl:container px-4">
+      <BreadCrumbComponent />
       <PageHeading />
       <TreatmentOverview />
       <TreatmentCosts />
