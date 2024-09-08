@@ -101,7 +101,7 @@ const CardContent = ({ data }) => {
       <CardComponent className={"p-0 space-y-7"}>
         <div className="flex flex-col justify-between min-h-[840px]">
           <div className="space-y-5 px-5 py-4">
-            <div className="flex justify-between gap-1 items-center bg-fourth ">
+            <div className="flex justify-between gap-1 items-center bg-white-dark ">
               <div>
                 <Image
                   src={icon}

@@ -5,7 +5,7 @@ import DiscoverMore from "@/components/treatments/discoverMore";
 import HottestPackagesSection from "@/components/treatments/hottestPackagesSection";
 import MedicalAssessment from "@/components/treatments/medicalAssessment";
 import PageHeading from "@/components/treatments/pageHeading";
-import RecentReviewsSection from "@/components/treatments/recentReviewsSection";
+import RecentHairTransplantReview from "@/components/treatments/recentHairTransplantReview";
 import RelatedArticles from "@/components/treatments/relatedArtcles";
 import TreatmentCostsSection from "@/components/treatments/treatmentCostsSection";
 import TreatmentFilteringSection from "@/components/treatments/treatmentFilteringSection";
@@ -21,7 +21,7 @@ export default function TreatmentPageContainer() {
       <TreatmentCostsSection />
       <TreatmentFilteringSection />
       <TreatmentQuestionBandComponent />
-      <RecentReviewsSection />
+      <RecentHairTransplantReview />
       <HottestPackagesSection />
       <DiscoverBestClinicsSection />
 
