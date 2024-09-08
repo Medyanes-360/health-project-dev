@@ -1,6 +1,4 @@
 import ButtonComponent from "@/globalElements/Button";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function TreatmentQuestionBandComponent() {
   return (
@@ -21,33 +19,34 @@ export default function TreatmentQuestionBandComponent() {
         }}
         className="bg-primary-light h-full flex justify-center"
       >
-        {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
-          <div className="flex  items-center   ">
-            <Image
-              className=""
-              src="/assets/icons/stethescope.svg"
-              alt="icon"
-              width={54}
-              height={54}
-            />
-            <div className="tracking-wide  text-sm leading-[21px] font-inter flex ml-6 sm:text-lg text-white flex-col">
-              {" "}
-              <h2 className="font-[600]">
-                Looking for professional & trusted medical healthcore?{" "}
-              </h2>
-              <p className="font-[900]">Don&apos;t hesitate to contact us.</p>
+        <div className="h-ful font-medium font-inter w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
+          <div className="flex text-white flex-col items-center justify-center w-full">
+            <p>
+              Take a test to find the best value-for-money Hair transplant
+              option
+            </p>
+            <p className="text-sm my-3.5">
+              What area would you like to improve with a hair transplant?
+            </p>
+            <div className="flex">
+              <ButtonComponent
+                className="bg-[#EAEAEA]  text-sm mr-1.5 text-primary"
+                title="Upper Part Of The Head"
+              />
+              <ButtonComponent
+                className="bg-[#EAEAEA]  text-sm mx-1.5 text-primary"
+                title="Temples"
+              />
+              <ButtonComponent
+                className="bg-[#EAEAEA]  text-sm mx-1.5 text-primary"
+                title="Beard Or Mustache"
+              />
+              <ButtonComponent
+                className="bg-[#EAEAEA]  text-sm ml-1.5 text-primary"
+                title="Other"
+              />
             </div>
           </div>
-          <Link
-            className="w-full md:w-auto mt-3 md:mt-0"
-            href="/become-a-partner"
-          >
-            <ButtonComponent
-              title="Become A Partner"
-              className="w-full   text-base shadow-[0_12px_48px_0px_#002C6D1A] font-inter font-[600] !rounded-[10px]  py-3 px-16     text-black bg-white "
-            />
-          </Link>
         </div>
       </div>
     </section>

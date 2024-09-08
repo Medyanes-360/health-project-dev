@@ -1,7 +1,7 @@
 import Image from "next/image";
 import OverviewTabs from "./overviewTabs";
 
-export default function TreatmentOverview() {
+export default function TreatmentOverviewSection() {
   return (
     <section className="grid py-8 mt-6 grid-cols-3 justify-between items-start">
       <div className="col-span-2    ">

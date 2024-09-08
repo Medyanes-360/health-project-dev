@@ -1,7 +1,7 @@
 import ButtonComponent from "@/globalElements/Button";
 import CostsTable from "./costsTable";
 
-export default function TreatmentCosts() {
+export default function TreatmentCostsSection() {
   return (
     <section className="mt-10 ">
       <div className="flex h-32 mb-6 items-center justify-between">

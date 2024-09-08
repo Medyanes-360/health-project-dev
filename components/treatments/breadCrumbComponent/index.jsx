@@ -19,7 +19,7 @@ export default function BreadCrumbComponent({
   }
 
   return (
-    <div className=" text-base  h-16 flex justify-between items-center">
+    <div className="   h-16 flex justify-between items-center">
       <ul className="flex items-center ">
         <li className="hover:underline mr-2">
           <Link href={"/"}>Home</Link>

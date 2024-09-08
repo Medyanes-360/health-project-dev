@@ -1,12 +1,15 @@
 import BeforeAndAfter from "@/components/treatments/beforeAndAfterImages";
 import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
+import DiscoverBestClinicsSection from "@/components/treatments/discoverBestClinicsSection";
 import DiscoverMore from "@/components/treatments/discoverMore";
+import HottestPackagesSection from "@/components/treatments/hottestPackagesSection";
 import MedicalAssessment from "@/components/treatments/medicalAssessment";
 import PageHeading from "@/components/treatments/pageHeading";
+import RecentReviewsSection from "@/components/treatments/recentReviewsSection";
 import RelatedArticles from "@/components/treatments/relatedArtcles";
-import TreatmentCosts from "@/components/treatments/treatmentCosts";
-import TreatmentFilteringComponent from "@/components/treatments/treatmentFilteringComponent";
-import TreatmentOverview from "@/components/treatments/treatmentOverview";
+import TreatmentCostsSection from "@/components/treatments/treatmentCostsSection";
+import TreatmentFilteringSection from "@/components/treatments/treatmentFilteringSection";
+import TreatmentOverviewSection from "@/components/treatments/treatmentOverviewSection";
 import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQuestionBandComponent";
 
 export default function TreatmentPageContainer() {
@@ -14,15 +17,18 @@ export default function TreatmentPageContainer() {
     <div className="xl:container mx-auto px-4">
       <BreadCrumbComponent />
       <PageHeading />
-      <TreatmentOverview />
-      <TreatmentCosts />
-      <TreatmentFilteringComponent />
+      <TreatmentOverviewSection />
+      <TreatmentCostsSection />
+      <TreatmentFilteringSection />
       <TreatmentQuestionBandComponent />
+      <RecentReviewsSection />
+      <HottestPackagesSection />
+      <DiscoverBestClinicsSection />
 
       <BeforeAndAfter />
       <DiscoverMore />
       <MedicalAssessment />
-      <RelatedArticles/>
+      <RelatedArticles />
     </div>
   );
 }

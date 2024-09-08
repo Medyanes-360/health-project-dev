@@ -1,7 +1,7 @@
 import FilteredClinicsMainComponent from "./filteredClinicsMainComponent";
 import FilterOptionsSidebarComponent from "./filterOptionsSidebarComponent";
 
-export default function TreatmentFilteringComponent() {
+export default function TreatmentFilteringSection() {
   return (
     <section className="mt-10 flex">
       <FilterOptionsSidebarComponent />
