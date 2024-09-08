@@ -20,7 +20,7 @@ export default function ClinicListItem() {
   };
   // TODO: IMAGE MODAL GLOBAL COMPONENTI OLUŞTURULACAK.
   return (
-    <div className="relative grid mb-3 grid-cols-9 gap-5 py-16 border  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
+    <div className="relative grid mb-3 grid-cols-9 gap-5 py-16 border min-w-[900px]  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
       <div className="col-span-3 h-full   flex flex-col items-center">
         <Image
           className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
