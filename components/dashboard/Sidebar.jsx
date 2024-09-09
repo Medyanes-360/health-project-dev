@@ -85,9 +85,10 @@ const Sidebar = () => {
                     width={20}
                     height={20}
                     className={`${
-                      activeIndex === index ? "text-[#52B8AB]" : ""
+                      activeIndex === index ? "brightness-250" : "grayscale"
                     }`}
                   />
+
                   <span className="text-[0.550rem] sm:text-base text-left pl-1">
                     {menuItem.title}
                   </span>
