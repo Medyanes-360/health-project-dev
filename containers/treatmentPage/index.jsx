@@ -41,7 +41,8 @@ export default function TreatmentPageContainer() {
         <HairTransplantReviews />
         <BookimedEditorialPolicy />
         <BookimedCeoAssurance />
-        <HowBookimedHelps/>
+        <HowBookimedHelps />
+        <GetFreeConsolation />
       </div>
     </>
   );
