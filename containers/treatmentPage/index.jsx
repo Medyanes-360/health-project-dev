@@ -1,5 +1,6 @@
 import BeforeAndAfter from "@/components/treatments/beforeAndAfterImages";
 import BookimedCeoAssurance from "@/components/treatments/bookimed/bookimedCeo";
+import HowBookimedHelps from "@/components/treatments/bookimed/bookimedHelp";
 import BookimedEditorialPolicy from "@/components/treatments/bookimed/bookimedPolicy";
 import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import DiscoverBestClinicsSection from "@/components/treatments/discoverBestClinicsSection";
@@ -39,6 +40,7 @@ export default function TreatmentPageContainer() {
         <HairTransplantReviews />
         <BookimedEditorialPolicy />
         <BookimedCeoAssurance />
+        <HowBookimedHelps/>
       </div>
     </>
   );
