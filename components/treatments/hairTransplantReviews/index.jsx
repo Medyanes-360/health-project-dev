@@ -1,6 +1,6 @@
-import TestimonialCard from "./TestimonialCard";
+import HairTransplantReviewsCard from "./HairTransplantReviewsCard";
 
-const TestimonialText = () => {
+const HairTransplantReviews = () => {
   const data = [
     {
       stars: 4,
@@ -33,25 +33,19 @@ const TestimonialText = () => {
   ];
 
   return (
-    <div className="py-10 xl:container mx-auto px-4">
+    <div className="pb-20 xl:container mx-auto px-4 space-y-6">
       {/* header */}
-      <div className="flex justify-between gap-6 items-end border-b-2 border-primary sm:border-none pb-2 sm:pb-0">
-        <div className="flex-1 sm:max-w-[50%] min-h-full sm:border-b-2 sm:border-primary">
-          <h1 className="text-xl sm:text-3xl whitespace-nowrap">
-            Clients <span className="text-primary">Testimonial</span>
-          </h1>
-        </div>
-
-        <div className="flex-1 sm:w-fit flex flex-col items-end gap-3">
-          <h1 className="text-2xl font-bold">Happy</h1>
-          <h1 className="text-3xl">Patients</h1>
-        </div>
+      <div className="flex items-center justify-between gap-5">
+        <h1 className="font-bold text-xl sm:text-2xl text-secondary">
+          Recent Hair Transplant Reviews
+        </h1>
+        <p>Check Real Patient Experience</p>
       </div>
       <div className="pt-10"></div>
       {/* Tracker Bölümü */}
-      <TestimonialCard data={data} />
+      <HairTransplantReviewsCard data={data} />
     </div>
   );
 };
 
-export default TestimonialText;
+export default HairTransplantReviews;

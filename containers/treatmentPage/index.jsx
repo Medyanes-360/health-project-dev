@@ -3,6 +3,7 @@ import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import DiscoverBestClinicsSection from "@/components/treatments/discoverBestClinicsSection";
 import DiscoverMore from "@/components/treatments/discoverMore";
 import Faqs from "@/components/treatments/faqs";
+import HairTransplantReviews from "@/components/treatments/hairTransplantReviews";
 import HottestPackagesSection from "@/components/treatments/hottestPackagesSection";
 import MedicalAssessment from "@/components/treatments/medicalAssessment";
 import PageHeading from "@/components/treatments/pageHeading";
@@ -31,6 +32,7 @@ export default function TreatmentPageContainer() {
       <MedicalAssessment />
       <RelatedArticles />
       <Faqs />
+      <HairTransplantReviews />
     </div>
   );
 }

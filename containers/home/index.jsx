@@ -6,7 +6,7 @@ import MostPopularVacanciesSection from "@/components/mostPopularVacanciesSectio
 import OurServicesComponent from "@/components/ourServicesComponent";
 import PopularClinicsComponent from "@/components/popularClinicsComponent";
 import QualifiedMedicalDoctors from "@/components/qualifiedMedicalDoctors/QualifiedMedicalDoctors";
-import TestimonialText from "@/components/testimonial/TestimonialText";
+import Testimonial from "@/components/testimonial";
 
 const HomeContainer = () => {
   return (
@@ -17,11 +17,10 @@ const HomeContainer = () => {
       <FeelTheBenefitComponent />
       <PopularClinicsComponent />
       <OurServicesComponent />
-      <ContactUsBandComponent/>
-      <TestimonialText/>
-      <QualifiedMedicalDoctors/>
-      <FormSection/>
-
+      <ContactUsBandComponent />
+      <Testimonial/>
+      <QualifiedMedicalDoctors />
+      <FormSection />
     </div>
   );
 };
