@@ -2,6 +2,7 @@ import BeforeAndAfter from "@/components/treatments/beforeAndAfterImages";
 import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import DiscoverBestClinicsSection from "@/components/treatments/discoverBestClinicsSection";
 import DiscoverMore from "@/components/treatments/discoverMore";
+import Faqs from "@/components/treatments/faqs";
 import HottestPackagesSection from "@/components/treatments/hottestPackagesSection";
 import MedicalAssessment from "@/components/treatments/medicalAssessment";
 import PageHeading from "@/components/treatments/pageHeading";
@@ -29,6 +30,7 @@ export default function TreatmentPageContainer() {
       <DiscoverMore />
       <MedicalAssessment />
       <RelatedArticles />
+      <Faqs />
     </div>
   );
 }
