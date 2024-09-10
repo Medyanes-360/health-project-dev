@@ -1,4 +1,6 @@
 import BeforeAndAfter from "@/components/treatments/beforeAndAfterImages";
+import BookimedCeoAssurance from "@/components/treatments/bookimed/bookimedCeo";
+import BookimedEditorialPolicy from "@/components/treatments/bookimed/bookimedPolicy";
 import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import DiscoverBestClinicsSection from "@/components/treatments/discoverBestClinicsSection";
 import DiscoverMore from "@/components/treatments/discoverMore";
@@ -16,23 +18,28 @@ import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQue
 
 export default function TreatmentPageContainer() {
   return (
-    <div className="xl:container mx-auto px-4">
-      <BreadCrumbComponent />
-      <PageHeading />
-      <TreatmentOverviewSection />
-      <TreatmentCostsSection />
-      <TreatmentFilteringSection />
-      <TreatmentQuestionBandComponent />
-      <RecentHairTransplantReview />
-      <HottestPackagesSection />
-      <DiscoverBestClinicsSection />
-
-      <BeforeAndAfter />
-      <DiscoverMore />
-      <MedicalAssessment />
-      <RelatedArticles />
-      <Faqs />
-      <HairTransplantReviews />
-    </div>
+    <>
+      <div className="xl:container mx-auto px-4">
+        <BreadCrumbComponent />
+        <PageHeading />
+        <TreatmentOverviewSection />
+        <TreatmentCostsSection />
+        <TreatmentFilteringSection />
+        <TreatmentQuestionBandComponent />
+        <RecentHairTransplantReview />
+        <HottestPackagesSection />
+        <DiscoverBestClinicsSection />
+      </div>
+      <div>
+        <BeforeAndAfter />
+        <DiscoverMore />
+        <MedicalAssessment />
+        <RelatedArticles />
+        <Faqs />
+        <HairTransplantReviews />
+        <BookimedEditorialPolicy />
+        <BookimedCeoAssurance />
+      </div>
+    </>
   );
 }

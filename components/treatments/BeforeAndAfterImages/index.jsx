@@ -29,7 +29,7 @@ const BeforeAndAfter = () => {
             {dynamicNumber} Before & After Photos
           </h1>
 
-          <p className="text-sm">
+          <p >
             Browse Hair transplant before & after photos shared by doctors from
             different clinics.
           </p>
