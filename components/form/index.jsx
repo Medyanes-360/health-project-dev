@@ -1,5 +1,4 @@
 import CardComponent from "@/globalElements/Card";
-import CustomInput from "@/globalElements/input";
 import Image from "next/image";
 import ContactForm from "./contactForm";
 

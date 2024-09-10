@@ -1,0 +1,95 @@
+import IconFacebook from "@/public/assets/icons/FaceBook";
+import IconInstagram from "@/public/assets/icons/Instagram";
+import IconLinkedin from "@/public/assets/icons/LinkedIn";
+import WhatsappIcon from "@/public/assets/icons/Whatsapp";
+import GetFreeConsolationForm from "./getFreeConsolationForm";
+
+const data = [
+  {
+    country: "Hair transplant in Poland",
+  },
+  {
+    country: "Hair transplant in Germany",
+  },
+  {
+    country: "Hair transplant in Spain",
+  },
+  {
+    country: "Hair transplant in Republic of korea",
+  },
+  {
+    country: "Hair transplant in Mexico",
+  },
+  {
+    country: "Hair transplant in Thailand",
+  },
+  {
+    country: "Hair transplant in Turkey",
+  },
+];
+
+const socialMedia = [
+  {
+    Img: IconInstagram,
+    id: 1,
+  },
+  {
+    Img: IconFacebook,
+    id: 2,
+  },
+  {
+    Img: IconLinkedin,
+    id: 3,
+  },
+  {
+    Img: WhatsappIcon,
+    id: 3,
+  },
+];
+
+const GetFreeConsolation = () => {
+  return (
+    <div className="pb-20">
+      <div className="xl:container mx-auto px-4">
+        <h1 className="font-bold text-xl sm:text-2xl text-secondary mb-5 text-center">
+          Get a free consolation
+        </h1>
+
+        <div className="flex flex-col sm:flex-row">
+          <FormText />
+          <GetFreeConsolationForm />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GetFreeConsolation;
+
+const FormText = () => {
+  return (
+    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0">
+      <div className="space-y-10">
+        <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
+
+        <div className="w-full space-y-3">
+          {data.map(({ country }, i) => (
+            <p key={i}>{`> ${country}`}</p>
+          ))}
+        </div>
+
+        <div className="space-y-3">
+          <p>Bizimle iletişime geçin:</p>
+
+          <div className="flex gap-1">
+            {socialMedia.map(({ Img, id }) => (
+              <div className="w-10 h-10 rounded-md grid place-content-center p-2 bg-primary-dark/40 cursor-pointer">
+                <Img className="w-6 h-6 text-white" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
