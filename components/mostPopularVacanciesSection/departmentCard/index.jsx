@@ -11,7 +11,7 @@ export default function DepartmentCard({ data, className }) {
           >
             {data}
           </p>
-          <span className="text-gray-400 text-sm">
+          <span className="text-gray-400 text-sm group-hover:opacity-100 group-hover:text-black-lightta opacity-70">
             See popular clinics {">>"}
           </span>
         </div>

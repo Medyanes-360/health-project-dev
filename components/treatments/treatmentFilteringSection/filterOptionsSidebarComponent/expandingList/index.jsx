@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export default function ExpandingList({ title, children }) {
@@ -9,10 +8,12 @@ export default function ExpandingList({ title, children }) {
     setIsExpanded(!isExpanded);
   };
 
+  const selectHandler = () => {};
+
   return (
-    <div className="my-5">
+    <div className="">
       <button
-        className="flex px-1 hover:bg-gray-400 items-center justify-between w-full"
+        className="flex  text-sm py-1 hover:bg-gray-200 rounded-xl  items-center justify-between w-full"
         onClick={toggleExpanded}
       >
         <p>{title}</p>
@@ -24,10 +25,9 @@ export default function ExpandingList({ title, children }) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             // added the transition if you don't mind, else you can delete it
-            className={cn(
-              "transition-all duration-200",
-              isExpanded ? "rotate-[-90deg]" : ""
-            )}
+            className={`transition-all duration-200 ${
+              isExpanded && "rotate-[-90deg]"
+            }`}
           >
             <path
               d="M12.5003 15.5013C12.2666 15.5017 12.0402 15.4204 11.8603 15.2713L5.8603 10.2713C5.43504 9.91781 5.37684 9.28653 5.7303 8.86128C6.08376 8.43602 6.71504 8.37781 7.1403 8.73128L12.5003 13.2113L17.8603 8.89128C18.0669 8.7235 18.3318 8.64501 18.5965 8.67316C18.8611 8.70131 19.1036 8.8338 19.2703 9.04128C19.4554 9.24913 19.5456 9.52475 19.519 9.80183C19.4924 10.0789 19.3516 10.3324 19.1303 10.5013L13.1303 15.3313C12.9452 15.4568 12.7234 15.5166 12.5003 15.5013Z"
@@ -37,7 +37,7 @@ export default function ExpandingList({ title, children }) {
         </span>
       </button>
       {isExpanded && !children && (
-        <ul className="px-2">
+        <ul className=" max-h-[240px] overflow-scroll">
           <li
             className="flex my-2  animate-fadeIn  [animation-delay:_0s]
 "
@@ -58,6 +58,12 @@ export default function ExpandingList({ title, children }) {
           </li>
           <li
             className="flex my-2  animate-fadeIn  [animation-delay:_0.15s]
+"
+          >
+            <div className="!h-6 mr-2 !w-6 border    "></div> item
+          </li>
+          <li
+            className="flex my-2  animate-fadeIn  [animation-delay:_0.2s]
 "
           >
             <div className="!h-6 mr-2 !w-6 border    "></div> item

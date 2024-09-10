@@ -8,6 +8,18 @@ import PanelFour from "./overviewTabPanels/panelFour";
 import PanelFive from "./overviewTabPanels/panelFive";
 import PanelSix from "./overviewTabPanels/panelSix";
 
+const data = {
+  patientsRecommend: "76",
+  rehabilitationDuration: "1 Day",
+  beforeAndAfterPhotosCount: 48,
+  bookimedFees: 0,
+  surgeryTime: "4 Hours",
+  anestesiaType: "Local Anesteshia",
+  verifiedPatientReviewsCount: 471,
+  stayInCountryDuration: "3 Days",
+  bestPrice: 1500,
+  processedRequestCount: 110449,
+};
 export default function OverviewTabs() {
   const [openPanel, setOpenPanel] = useState(0);
   const clickHandler = (e) => {
@@ -89,7 +101,7 @@ export default function OverviewTabs() {
         <div
           className={`${openPanel == 0 ? "block" : "hidden"} animate-fadeIn`}
         >
-          <PanelOne />
+          <PanelOne data={data} />
         </div>
         <div
           className={`${openPanel == 1 ? "block" : "hidden"} animate-fadeIn`}

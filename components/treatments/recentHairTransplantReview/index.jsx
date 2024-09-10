@@ -61,7 +61,7 @@ const RecentHairTransplantReview = () => {
   return (
     <div className="py-20">
       <div className="xl:container mx-auto px-4 space-y-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:justify-around sm:items-center">
+        <div className="flex flex-col gap-4 sm:flex-row justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
             {dynamicNumber} Recent Hair Transplant Reviews
           </h1>
