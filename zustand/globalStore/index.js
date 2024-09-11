@@ -1,18 +1,25 @@
 import { create } from "zustand";
 
 const useGlobalStore = create((set, get) => ({
+  isImageModalOpen: false,
   imageModalOptions: {
-    isOpen: false,
     imageSources: [],
+    imageSrcToShowFirst: "",
   },
-  openImageModal: ({ imageSources, imageSrcToShowFirst = true }) => {
+  openImageModal: ({ imageSources, imageSrcToShowFirst }) => {
     set((state) => ({
       ...state,
+      isImageModalOpen: true,
       imageModalOptions: {
-        isOpen: true,
         imageSources: imageSources,
-        imageToShowFirst: imageSrcToShowFirst,
+        imageSrcToShowFirst: imageSrcToShowFirst,
       },
+    }));
+  },
+  closeImageModal: () => {
+    set((state) => ({
+      ...state,
+      isImageModalOpen: false,
     }));
   },
 }));

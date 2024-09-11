@@ -14,6 +14,9 @@ module.exports = {
       },
     },
     extend: {
+      rotate: {
+        200: "200deg",
+      },
       screens: {
         "3xl": "1760px", // Adding the custom 3xl breakpoint
       },

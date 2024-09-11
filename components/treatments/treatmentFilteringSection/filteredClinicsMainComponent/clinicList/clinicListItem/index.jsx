@@ -4,10 +4,10 @@ import { useGlobalStore } from "@/zustand/globalStore";
 import Image from "next/image";
 
 const mockImageSources = [
-  "/assets/mocks/clinicImage.png",
-  "/assets/mocks/clinicImage.png",
-  "/assets/mocks/clinicImage.png",
-  "/assets/mocks/clinicImage.png",
+  "/assets/images/clinic1.png",
+  "/assets/images/clinic2.png",
+  "/assets/images/clinic3.png",
+  "/assets/images/clinicImage.png",
 ];
 export default function ClinicListItem() {
   const openImageModal = useGlobalStore((state) => state.openImageModal);
@@ -111,7 +111,7 @@ export default function ClinicListItem() {
         </div>
         <div className="mt-4 flex justify-between w-full">
           <ButtonComponent
-            className="bg-primary mr-3 text-white font-medium py-2 w-full text-sm"
+            className="bg-primary mr-3  text-white font-medium py-2 w-full text-sm"
             title="Get A Free Quota"
           />
           <ButtonComponent

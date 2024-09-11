@@ -35,7 +35,7 @@ export default function FilterOptionsSidebarComponent() {
     >
       <div
         id="filterOptionsSidebar"
-        className=" h-full p-5  border-2        rounded-3xl shadow-[0px_12px_24px_-4px_#919EAB1F] "
+        className=" h-full py-5  border-2        rounded-3xl shadow-[0px_12px_24px_-4px_#919EAB1F] "
       >
         {/* Head */}
         <p className="border-b text-center font-semibold p-4 text-[#212B36] border-b-[#919EAB3D] ">
@@ -43,7 +43,7 @@ export default function FilterOptionsSidebarComponent() {
         </p>
         {/* Body */}
         <div className=" overflow-hidden ">
-          <div className="my-5 ">
+          <div className="my-5 px-5 ">
             <label
               for="medium-range"
               class="block   font-semibold text-gray-900 dark:text-white"
@@ -52,10 +52,15 @@ export default function FilterOptionsSidebarComponent() {
             </label>
             {/* pure css ile price range verebilmek için iki inputu birleştirmek gerekiyor. bkz: https://stackoverflow.com/questions/4753946/html-slider-with-two-inputs-possible  */}
             <div className=" ">
-              <RangeSlider />
+              <RangeSlider
+                minimumValue={0}
+                maximumValue={50000}
+                steps={100}
+                minRangeValueGap={100}
+              />
             </div>
           </div>
-          <div className="my-5">
+          <div className="my-5 ">
             <ExpandingList title="Country" />
           </div>
           <div className="my-5">
@@ -77,7 +82,7 @@ export default function FilterOptionsSidebarComponent() {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <ButtonComponent className="border   w-full">
+          <ButtonComponent className="border mx-5  w-full">
             <svg
               width="24"
               height="24"

@@ -49,7 +49,7 @@ export default function CostsTable() {
               </span>
             </td>
           </tr>
-          <tr class="bg-white border-bhover:bg-gray-50 ">
+          <tr class="bg-white border-b hover:bg-gray-50 ">
             <th
               scope="row"
               class="px-6 py-4 font-normal text-left  whitespace-nowrap "

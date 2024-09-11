@@ -8,12 +8,20 @@ export default function ExpandingList({ title, children }) {
     setIsExpanded(!isExpanded);
   };
 
-  const selectHandler = () => {};
+  const selectHandler = (e) => {
+    if (e.currentTarget.textContent == "") {
+      e.currentTarget.textContent = "✔";
+      e.currentTarget.classList.add("border-blue-500");
+    } else {
+      e.currentTarget.textContent = "";
+      e.currentTarget.classList.remove("border-blue-500");
+    }
+  };
 
   return (
     <div className="">
       <button
-        className="flex  text-sm py-1 hover:bg-gray-200 rounded-xl  items-center justify-between w-full"
+        className="flex  text-sm py-1 px-5  hover:bg-gray-200   items-center justify-between w-full"
         onClick={toggleExpanded}
       >
         <p>{title}</p>
@@ -37,43 +45,22 @@ export default function ExpandingList({ title, children }) {
         </span>
       </button>
       {isExpanded && !children && (
-        <ul className=" max-h-[240px] overflow-scroll">
-          <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0s]
+        <ul className="px-5 max-h-[240px] overflow-scroll">
+          {[...Array(5)].map((e, i) => {
+            return (
+              <li
+                key={i}
+                className="flex my-2  animate-fadeIn  [animation-delay:_0s]
 "
-          >
-            <div className="!h-6 mr-2 !w-6 border    "></div> item
-          </li>
-          <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0.05s]
-"
-          >
-            <div className="!h-6 mr-2 !w-6 border    "></div> item
-          </li>
-          <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0.1s]
-"
-          >
-            <div className="!h-6 mr-2 !w-6 border    "></div> item
-          </li>
-          <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0.15s]
-"
-          >
-            <div className="!h-6 mr-2 !w-6 border    "></div> item
-          </li>
-          <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0.2s]
-"
-          >
-            <div className="!h-6 mr-2 !w-6 border    "></div> item
-          </li>
-          <li
-            className="flex my-2  animate-fadeIn  [animation-delay:_0.2s]
-"
-          >
-            <div className="!h-6 mr-2 !w-6 border    "></div> item
-          </li>
+              >
+                <div
+                  onClick={selectHandler}
+                  className="!h-6 mr-2 !w-6 border-2 rounded-md border-[#637381] text-blue-500 select-none cursor-pointer flex items-center justify-center  "
+                ></div>{" "}
+                item
+              </li>
+            );
+          })}
         </ul>
       )}
       {isExpanded && children && <>{children}</>}
