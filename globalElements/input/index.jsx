@@ -58,7 +58,7 @@ const InputType = ({
             value={value}
             onChange={onChange}
             className={cn(
-              ` w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl`,
+              `  w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl`,
               className,
               css ? "custom-phone-input border-none" : ""
             )}
@@ -94,6 +94,7 @@ const CustomInput = ({
         type={type}
         inputType={inputType}
         value={value}
+        css={css}
         {...props}
       />
     </div>

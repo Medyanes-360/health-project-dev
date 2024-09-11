@@ -17,23 +17,97 @@ const GetFreeConsolationForm = () => {
   const [error, setError] = useState({
     errorContent: "",
     isError: false,
+    name: "",
   });
 
   const handlePhoneChange = (value) => {
     setForm((prevForm) => ({ ...prevForm, phone: value }));
+
+    if (error.isError && error.name == "email or phone") {
+      const validationResult = validateForm();
+      if (!validationResult.isError || validationResult.name !== error.name) {
+        setError({ isError: false, errorContent: "", name: "" });
+      }
+    }
   };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     setForm((prevForm) => ({
       ...prevForm,
       [name]: type === "checkbox" ? checked : value,
     }));
+
+    // Clear error message if the current field passes the validation after change
+    if (error.isError && error.name != "agree") {
+      const validationResult = validateForm();
+      if (!validationResult.isError || validationResult.name !== error.name) {
+        setError({ isError: false, errorContent: "", name: "" });
+      }
+    }
+
+    if (checked && error.name == "agree") {
+      setError({ isError: false, errorContent: "", name: "" });
+    }
+  };
+
+  const validateForm = () => {
+    const { phone, email, name, description, agreed } = form;
+
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Simple regex for email validation
+
+    const isPhoneValid = phone != undefined && phone?.trim().length >= 10; // Basic phone validation (assumes at least 10 digits)
+
+    if (!isEmailValid && !isPhoneValid) {
+      return {
+        isError: true,
+        errorContent: "Please provide a valid email or phone number.",
+        name: "email or phone",
+      };
+    }
+
+    if (name.trim().length < 3) {
+      return {
+        isError: true,
+        errorContent: "Name must be at least 3 characters long.",
+        name: "name",
+      };
+    }
+
+    // Validate description (at least 10 characters)
+    if (description.trim().length < 10) {
+      return {
+        isError: true,
+        errorContent: "Description must be at least 10 characters long.",
+        name: "description",
+      };
+    }
+
+    if (!agreed) {
+      return {
+        isError: true,
+        errorContent: "You must agree to the terms of use and privacy policy.",
+        name: "agree",
+      };
+    }
+
+    // If all validations pass
+    return { isError: false, errorContent: "", name: "" };
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+
+    // Run validation before submitting
+    const validationResult = validateForm();
+    if (validationResult.isError) {
+      setError(validationResult);
+      return;
+    }
+
+    // Submit the form or perform any action here
+    console.log("Form submitted", form);
   };
 
   return (
@@ -92,13 +166,13 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             name={"agreed"}
             type="checkbox"
-            value={form.agreed}
+            checked={form.agreed}
             className="h-12 w-12"
           />
           <label htmlFor="agree">
             I agree to the Terms of use Privacy policy and receive marketing
             letters that may be of interest. This site is protected by reCAPTCHA
-            and the Google Privacy Policy andTerms of Service apply.
+            and the Google Privacy Policy and Terms of Service apply.
           </label>
         </div>
 
@@ -111,6 +185,9 @@ const GetFreeConsolationForm = () => {
           />
         </div>
       </form>
+      {error.isError && (
+        <p className="text-center text-red-600 text-xl">{error.errorContent}</p>
+      )}
     </CardComponent>
   );
 };
