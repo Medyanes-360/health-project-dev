@@ -11,6 +11,7 @@ const InputType = ({
   onChange,
   className,
   value,
+  css,
   ...props
 }) => {
   switch (type) {
@@ -23,7 +24,7 @@ const InputType = ({
           value={value}
           onChange={onChange}
           className={cn(
-            `w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary rounded-2xl`,
+            `w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl`,
             className
           )}
           {...props}
@@ -37,7 +38,7 @@ const InputType = ({
           value={value}
           onChange={onChange}
           className={cn(
-            `w-full bg-slate-100 py-3 px-5 border-none focus:border-primary rounded-2xl`,
+            `w-full bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl`,
             className
           )}
           {...props}
@@ -57,8 +58,9 @@ const InputType = ({
             value={value}
             onChange={onChange}
             className={cn(
-              `custom-phone-input w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary rounded-2xl`,
-              className
+              ` w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl`,
+              className,
+              css ? "custom-phone-input border-none" : ""
             )}
           />
         </div>
@@ -77,6 +79,7 @@ const CustomInput = ({
   onChange,
   value,
   name,
+  css,
   ...props
 }) => {
   // type only input or textarea
