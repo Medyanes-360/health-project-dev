@@ -11,10 +11,10 @@ export default function ExpandingList({ title, children }) {
   const selectHandler = (e) => {
     if (e.currentTarget.textContent == "") {
       e.currentTarget.textContent = "✔";
-      e.currentTarget.classList.add("border-blue-500");
+      e.currentTarget.classList.add("border-primary");
     } else {
       e.currentTarget.textContent = "";
-      e.currentTarget.classList.remove("border-blue-500");
+      e.currentTarget.classList.remove("border-primary");
     }
   };
 
@@ -55,7 +55,7 @@ export default function ExpandingList({ title, children }) {
               >
                 <div
                   onClick={selectHandler}
-                  className="!h-6 mr-2 !w-6 border-2 rounded-md border-[#637381] text-blue-500 select-none cursor-pointer flex items-center justify-center  "
+                  className="!h-6 mr-2 !w-6 border-2 rounded-md border-[#637381] text-primary select-none cursor-pointer flex items-center justify-center  "
                 ></div>{" "}
                 item
               </li>

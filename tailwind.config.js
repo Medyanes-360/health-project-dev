@@ -4,6 +4,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./containers/**/*.{js,ts,jsx,tsx}",
+    "./globalElements/**/*.{js,ts,jsx,tsx}",
   ],
 
   theme: {
@@ -14,9 +15,6 @@ module.exports = {
       },
     },
     extend: {
-      rotate: {
-        200: "200deg",
-      },
       screens: {
         "3xl": "1760px", // Adding the custom 3xl breakpoint
       },

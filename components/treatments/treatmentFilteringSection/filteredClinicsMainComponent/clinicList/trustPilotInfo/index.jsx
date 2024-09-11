@@ -23,10 +23,10 @@ export default function TrustPilotInfo() {
         </svg>
         <div className="flex flex-col ml-5">
           <p className="text-primary-dark font-medium text-xl mb-2">
-            We're rated “Excellent” on TrustPilot
+            We&apos;re rated “Excellent” on TrustPilot
           </p>
           <p className="text-sm">
-            We're rated “Excellent” on TrustPilot <br />
+            We&apos;re rated “Excellent” on TrustPilot <br />
             At Bookimed, we put your health first with safe and easy solutions.
             Our quality care is proven by excellent reviews from patients.
           </p>

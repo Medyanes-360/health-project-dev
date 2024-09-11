@@ -49,10 +49,8 @@ const CountrySelectDropdown = ({
     <div
       ref={dropdownRef}
       // onClick={(e) => e.stopPropagation()}
-      style={{
-        width: "100px !important", //flag width
-      }}
-      className="relative  w-full  inline-block text-left"
+
+      className="relative  !w-[100px]  inline-block text-left"
     >
       <div className="w-full">
         <button
@@ -65,12 +63,7 @@ const CountrySelectDropdown = ({
               <span className="text-3xl  ">{selectedCountry.flag}</span>
               {countryNames && (
                 <span
-                  style={{
-                    maxWidth: "75%",
-                    overflow: "hidden",
-                    paddingLeft: ".25rem",
-                  }}
-                  className=""
+                  className="max-w-[75%] overflow-hidden pl-[0.25rem]"
                   title={selectedCountry.name}
                 >
                   {selectedCountry.isoCode}
@@ -78,9 +71,7 @@ const CountrySelectDropdown = ({
               )}
             </>
           ) : (
-            <span title={"Select a country"} style={{}}>
-              Country
-            </span>
+            <span title={"Select a country"}>Country</span>
           )}
           <svg
             className="-mr-1 ml-2 h-5 w-4"
@@ -103,17 +94,11 @@ const CountrySelectDropdown = ({
 
       {isOpen && countries && (
         <div
-          style={{
-            width: "300px",
-            maxHeight: "15rem ",
-            overflowX: "scroll",
-            zIndex: "500",
-          }}
           className={`${
             (toRight && "right-0") || (toLeft && "left-0")
-          }  origin-top-right absolute      mt-2  rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
+          } w-[300px] max-h-[15rem] overflow-x-scroll z-[500] origin-top-right absolute      mt-2  rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
-          <div className="   w-full  mt-2  px-2  ">
+          <div className=" bg-white   w-full  mt-2  px-2  ">
             <input
               value={searchValue}
               onChange={handleFiltering}

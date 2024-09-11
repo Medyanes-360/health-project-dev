@@ -45,7 +45,7 @@ export default function FilterOptionsSidebarComponent() {
         <div className=" overflow-hidden ">
           <div className="my-5 px-5 ">
             <label
-              for="medium-range"
+              htmlFor="medium-range"
               class="block   font-semibold text-gray-900 dark:text-white"
             >
               Price range
@@ -77,7 +77,7 @@ export default function FilterOptionsSidebarComponent() {
           </div>
           <div className="my-5">
             <ExpandingList title="Booking Score">
-              <p>children here. won't be select list.</p>
+              <p>children here. won&apos;t be select list.</p>
             </ExpandingList>
           </div>
         </div>

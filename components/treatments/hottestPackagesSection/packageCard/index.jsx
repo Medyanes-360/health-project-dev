@@ -36,7 +36,7 @@ export default function PackageCard() {
           width={344}
           height={255}
         />
-        <div className="flex flex-col gap-6 mt-3 pl-1.5">
+        <div className="flex flex-col gap-6 mt-3.5 mb-3 pl-1.5">
           <span className=" gap-3 flex items-center ">
             <svg
               width="24"

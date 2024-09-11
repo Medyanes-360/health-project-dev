@@ -1,64 +1,64 @@
 export default function CostsTable() {
   return (
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-      <table class="w-full  text-sm text-center rtl:text-right ">
-        <thead class="text-xs bg-[#F4F6F8] text-[#637381]   uppercase  ">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+      <table className="w-full  text-sm text-center rtl:text-right ">
+        <thead className="text-xs bg-[#F4F6F8] text-[#637381]   uppercase  ">
           <tr>
-            <th scope="col" class="px-6 py-3 font-semibold"></th>
-            <th scope="col" class="px-6 py-3 font-semibold">
+            <th scope="col" className="px-6 py-3 font-semibold"></th>
+            <th scope="col" className="px-6 py-3 font-semibold">
               Turkey
             </th>
-            <th scope="col" class="px-6 py-3 font-semibold">
+            <th scope="col" className="px-6 py-3 font-semibold">
               Mexico
             </th>
-            <th scope="col" class="px-6 py-3 font-semibold ">
+            <th scope="col" className="px-6 py-3 font-semibold ">
               United States of America
             </th>
           </tr>
         </thead>
         <tbody className="text-black ">
-          <tr class="bg-white border-b   hover:bg-gray-50 ">
+          <tr className="bg-white border-b   hover:bg-gray-50 ">
             <th
               scope="row"
-              class="px-6 py-4 font-normal  text-left whitespace-nowrap "
+              className="px-6 py-4 font-normal  text-left whitespace-nowrap "
             >
               FUE hair transplant
             </th>
-            <td class="px-6 py-4">from $1671</td>
-            <td class="px-6 py-4">from $4000</td>
-            <td class="px-6 py-4">
+            <td className="px-6 py-4">from $1671</td>
+            <td className="px-6 py-4">from $4000</td>
+            <td className="px-6 py-4">
               {" "}
               <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
                 from $4000
               </span>
             </td>
           </tr>
-          <tr class="bg-white border-b  hover:bg-gray-50 ">
+          <tr className="bg-white border-b  hover:bg-gray-50 ">
             <th
               scope="row"
-              class="px-6 py-4 font-normal text-left whitespace-nowrap "
+              className="px-6 py-4 font-normal text-left whitespace-nowrap "
             >
               FUE hair transplant{" "}
             </th>
-            <td class="px-6 py-4">from $1671</td>
-            <td class="px-6 py-4">from $4000</td>
-            <td class="px-6 py-4">
+            <td className="px-6 py-4">from $1671</td>
+            <td className="px-6 py-4">from $4000</td>
+            <td className="px-6 py-4">
               {" "}
               <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
                 from $4000
               </span>
             </td>
           </tr>
-          <tr class="bg-white border-b hover:bg-gray-50 ">
+          <tr className="bg-white border-b hover:bg-gray-50 ">
             <th
               scope="row"
-              class="px-6 py-4 font-normal text-left  whitespace-nowrap "
+              className="px-6 py-4 font-normal text-left  whitespace-nowrap "
             >
               FUE hair transplant{" "}
             </th>
-            <td class="px-6 py-4">from $1671</td>
-            <td class="px-6 py-4">from $4000</td>
-            <td class="px-6 py-4">
+            <td className="px-6 py-4">from $1671</td>
+            <td className="px-6 py-4">from $4000</td>
+            <td className="px-6 py-4">
               <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
                 from $4000
               </span>
@@ -74,7 +74,7 @@ export default function CostsTable() {
               the exact price for a plastic surgery procedure after a
               consultation with a doctor.
             </td>
-          </tr>{" "}
+          </tr>
         </tfoot>
       </table>
     </div>
