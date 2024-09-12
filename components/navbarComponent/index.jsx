@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSelectDropdown from "./languageSelectDropdown";
-import ExtraLargePageContainer from "@/containers/largePageContainer";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const NavbarComponent = (props) => {
   const navbarData = props.navbarData;

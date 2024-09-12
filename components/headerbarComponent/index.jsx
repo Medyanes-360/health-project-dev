@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeaderbarSelectField from "./headerbarSelectField";
 import ButtonComponent from "@/globalElements/Button";
-import ExtraLargePageContainer from "@/containers/largePageContainer";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const HeaderbarComponent = () => {
   return (

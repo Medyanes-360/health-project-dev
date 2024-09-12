@@ -2,7 +2,7 @@
 import { useState } from "react";
 import DepartmentCard from "./departmentCard";
 import FeatureCard from "./featureCard";
-import ExtraLargePageContainer from "@/containers/largePageContainer";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const propsData = [
   {

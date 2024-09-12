@@ -1,4 +1,4 @@
-import ExtraLargePageContainer from "@/containers/largePageContainer";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import HeaderSectionSearchInput from "./searchInput";
 
 const HeaderSection = () => {

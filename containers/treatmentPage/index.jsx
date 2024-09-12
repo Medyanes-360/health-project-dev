@@ -17,7 +17,7 @@ import TreatmentCostsSection from "@/components/treatments/treatmentCostsSection
 import TreatmentFilteringSection from "@/components/treatments/treatmentFilteringSection";
 import TreatmentOverviewSection from "@/components/treatments/treatmentOverviewSection";
 import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQuestionBandComponent";
-import ExtraLargePageContainer from "../largePageContainer";
+import ExtraLargePageContainer from "../extraLargePageContainer";
 
 export default function TreatmentPageContainer({ treatment }) {
   return (

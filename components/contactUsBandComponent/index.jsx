@@ -1,4 +1,4 @@
-import ExtraLargePageContainer from "@/containers/largePageContainer";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import ButtonComponent from "@/globalElements/Button";
 import Image from "next/image";
 import Link from "next/link";
