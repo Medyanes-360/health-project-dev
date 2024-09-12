@@ -25,7 +25,7 @@ export default function TreatmentQuestionBandComponent({ data }) {
         }}
         className="bg-primary-light h-full flex justify-center"
       >
-        <div className="h-ful font-medium font-inter w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
+        <div className="h-full font-medium font-inter w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
           <div className="flex text-white flex-col items-center justify-center w-full">
             <p>{text}</p>
             <p className="text-sm my-3.5">{question}</p>

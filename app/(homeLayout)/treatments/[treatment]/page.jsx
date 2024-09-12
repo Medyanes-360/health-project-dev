@@ -1,4 +1,5 @@
 import TreatmentPageContainer from "@/containers/treatmentPage";
+import { notFound } from "next/navigation";
 
 //burada sayfanın propları alınarak container'a gönderilecek. container'dan tüm componentlara ilgili data gönderilecek.
 // sayfa tüm treatment'lar için aynı. yalnızca treatmentların bilgileri değişiyor.
@@ -337,6 +338,10 @@ export default async function treatmentPage({ params }) {
   // (res) => res.json()
 
   const currentTreatment = treatmentsData.find((elem) => elem.url == treatment);
+  //treatment'i fetchledik, eğer treatment yoksa? :
+  if (!currentTreatment) {
+    notFound(treatmentsData);
+  }
 
   return <TreatmentPageContainer treatment={currentTreatment} />;
 }

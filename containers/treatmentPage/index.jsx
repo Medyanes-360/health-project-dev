@@ -17,11 +17,12 @@ import TreatmentCostsSection from "@/components/treatments/treatmentCostsSection
 import TreatmentFilteringSection from "@/components/treatments/treatmentFilteringSection";
 import TreatmentOverviewSection from "@/components/treatments/treatmentOverviewSection";
 import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQuestionBandComponent";
+import ExtraLargePageContainer from "../largePageContainer";
 
 export default function TreatmentPageContainer({ treatment }) {
   return (
     <>
-      <div className="xl:container mx-auto px-4">
+      <ExtraLargePageContainer className="">
         <BreadCrumbComponent />
         <PageHeading
           data={{
@@ -43,7 +44,7 @@ export default function TreatmentPageContainer({ treatment }) {
         <RecentHairTransplantReview />
         <HottestPackagesSection />
         <DiscoverBestClinicsSection />
-      </div>
+      </ExtraLargePageContainer>
       <div>
         <BeforeAndAfter />
         <DiscoverMore />

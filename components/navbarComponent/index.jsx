@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSelectDropdown from "./languageSelectDropdown";
+import ExtraLargePageContainer from "@/containers/largePageContainer";
 
 const NavbarComponent = (props) => {
   const navbarData = props.navbarData;
@@ -11,7 +12,7 @@ const NavbarComponent = (props) => {
   return (
     <div className="bg-bgDarkWhite  text-sm  py-2   ">
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <div className="  xl:container px-4 mx-auto flex items-center justify-between">
+      <ExtraLargePageContainer className="  flex items-center justify-between">
         <div className="">
           {navbarData.routes.map((route) => {
             return (
@@ -42,7 +43,7 @@ const NavbarComponent = (props) => {
             <LanguageSelectDropdown languages={navbarData.languages} toRight />
           </div>
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

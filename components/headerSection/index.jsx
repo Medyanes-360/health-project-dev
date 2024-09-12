@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/largePageContainer";
 import HeaderSectionSearchInput from "./searchInput";
 
 const HeaderSection = () => {
@@ -22,7 +23,8 @@ const HeaderSection = () => {
         className=" h-full "
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full px-4  py-16 sm:py-auto   xl:container mx-auto text-center flex flex-col justify-center items-center">
+
+        <ExtraLargePageContainer className="h-full   py-16 sm:py-auto    text-center flex flex-col justify-center items-center">
           <h1 className="w-3/4 text-lg sm:text-6xl   font-medium leading-[2rem] sm:leading-[4rem]">
             {" "}
             World&apos;s Best Advanced <br /> Cross-Border Care
@@ -31,7 +33,7 @@ const HeaderSection = () => {
             Find The Best Hospitals and Doctors Across the world
           </p>
           <HeaderSectionSearchInput />
-        </div>
+        </ExtraLargePageContainer>
       </div>
     </section>
   );
