@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/largePageContainer";
 import ButtonComponent from "@/globalElements/Button";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ const ContactUsBandComponent = () => {
         className="bg-primary-light h-full flex justify-center"
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <div className="h-full w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
+        <ExtraLargePageContainer className="    py-3 h-full w-full md:py-10 flex flex-col  md:flex-row  justify-between items-start md:items-center">
           <div className="flex  items-center   ">
             <Image
               className=""
@@ -48,7 +49,7 @@ const ContactUsBandComponent = () => {
               className="w-full   text-base shadow-[0_12px_48px_0px_#002C6D1A] font-inter font-[600] !rounded-[10px]  py-3 px-16     text-black bg-white "
             />
           </Link>
-        </div>
+        </ExtraLargePageContainer>
       </div>
     </section>
   );

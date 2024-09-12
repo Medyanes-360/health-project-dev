@@ -2,6 +2,7 @@
 import { useState } from "react";
 import DepartmentCard from "./departmentCard";
 import FeatureCard from "./featureCard";
+import ExtraLargePageContainer from "@/containers/largePageContainer";
 
 const propsData = [
   {
@@ -223,7 +224,7 @@ const MostPopularVacanciesSection = () => {
   return (
     <section>
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <div className="px-4 xl:container mx-auto ">
+      <ExtraLargePageContainer className=" ">
         <div className="   border-primary grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6 mt-5  ">
           {data.slice(0, 4).map((feature, index) => {
             return (
@@ -272,7 +273,7 @@ const MostPopularVacanciesSection = () => {
               );
             })}
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </section>
   );
 };

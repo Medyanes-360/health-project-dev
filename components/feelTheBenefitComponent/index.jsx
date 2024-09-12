@@ -1,4 +1,3 @@
-import React from "react";
 import DesktopFeelTheBenefit from "./desktop";
 import MobileFeelTheBenefit from "./mobile";
 import TabletFeelTheBenefit from "./tablet"; // Yeni eklenen tablet bileşeni

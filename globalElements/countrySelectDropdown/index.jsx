@@ -52,11 +52,11 @@ const CountrySelectDropdown = ({
 
       className="relative  !w-[100px]  inline-block text-left"
     >
-      <div className="w-full">
+      <div className="w-full ">
         <button
           onClick={toggleDropdown}
           type="button"
-          className="inline-flex w-fit   items-center   overflow-hidden justify-between  border-gray-300 shadow-sm px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex  w-fit  overflow-hidden  items-center    justify-between   px-4  rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
         >
           {selectedCountry ? (
             <>
@@ -111,8 +111,9 @@ const CountrySelectDropdown = ({
             {filteredCountries.map((country) => (
               <button
                 key={country.isoCode}
+                title={country.name}
                 onClick={() => handleSelect(country)}
-                className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                className="flex items-center w-full truncate   px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
                 <span className="text-3xl ">{country.flag}</span>
 
