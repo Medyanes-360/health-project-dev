@@ -105,7 +105,7 @@ const ContactForm = () => {
         placeholder="Enter your phone number"
         value={form.phone}
         css={true}
-        className="w-full h-[40px] bg-slate-100 py-3 px-5 border-none focus:border-primary rounded-2xl"
+        className="!w-full !h-[40px] !bg-slate-100 !py-3 !px-5 !border-none !focus:border-primary !rounded-2xl"
       />
       <CustomInput
         type="input"
@@ -133,9 +133,8 @@ const ContactForm = () => {
       />
       <div className="w-full flex justify-end">
         <ButtonComponent
-          className="bg-primary text-white rounded-2xl w-[50%] lg:w-fit"
+          className="!bg-primary !text-white !rounded-2xl !w-[50%] lg:w-fit"
           type="submit"
-          containerClassName={"flex justify-end w-full"}
           title={"Submit"}
         />
       </div>

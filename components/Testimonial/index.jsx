@@ -30,6 +30,62 @@ const Testimonial = () => {
       name: "Mohammad Hanki",
       text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
     },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Ahmad Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Jous Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Nor Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Mohammad Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Ahmad Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Jous Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Nor Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
+    {
+      stars: 4,
+      img: "/assets/images/image.png",
+      job: "Software Engineer",
+      name: "Mohammad Hanki",
+      text: "eferg ertg ertgetre ertgergter rtegegte rtgerge ertgertge ertgertg retgergter retgergter rge",
+    },
   ];
 
   return (

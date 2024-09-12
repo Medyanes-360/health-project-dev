@@ -36,9 +36,9 @@ const BeforeAndAfterCard = ({ data }) => {
   });
 
   const CardContent = ({ image }) => (
-    <div className="px-4">
-      <CardComponent className={"px-3 py-5"}>
-        <div className="w-full relative aspect-[12/9] overflow-hidden rounded-2xl">
+    <div className="p-4">
+      <CardComponent className={"!px-3 !py-5"}>
+        <div className="w-full relative aspect-[12/9] rounded-2xl">
           <Image
             src={image}
             fill

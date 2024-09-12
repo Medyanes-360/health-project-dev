@@ -21,8 +21,8 @@ const DiscoverMoreCardContent = ({ data }) => {
   return (
     <>
       {/* not responsive yet */}
-      <div>
-        <CardComponent className={"p-0"}>
+      <div className={"py-4"}>
+        <CardComponent >
           <div className="space-y-5">
             <div className="bg-white-dark py-2 px-5 flex justify-between items-center gap-3">
               <div className="bg-white w-full mx-auto py-1 text-center">
@@ -109,31 +109,34 @@ const DiscoverMoreCardContent = ({ data }) => {
 
               <div className="w-full aspect-square flex flex-col justify-between">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-center gap-2">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <span key={i} className="text-[#FFAA00] text-3xl">
+                      <span key={i} className="text-[#FFAA00] text-3xl ">
                         ★
                       </span>
                     ))}
 
-                    <p>{stars}</p>
+                    <p className="">{stars}</p>
                   </div>
-                  <p>{serviceName}</p>
-
+                  <p className="text-center">{serviceName}</p>
+                  <div className="flex flex-col justify-center gap-1 w-full text-center">
+                    
                   <p>
                     {" "}
                     <span className="text-red-600 font-bold">{price}</span>
-                    /package
+                    
                   </p>
+                  <p>pre package</p>
+                  </div>
                 </div>
 
                 <div className="w-full space-y-3">
                   <ButtonComponent
-                    className={"bg-primary rounded-md text-fourth w-full"}
+                    className={"!bg-primary !rounded-md !text-fourth !w-full"}
                     title={"Get A Free Quote"}
                   />
                   <ButtonComponent
-                    className={"text-primary rounded-md bg-third/50 w-full"}
+                    className={"!text-primary !rounded-md !bg-third/50 !w-full"}
                     title={"Message Us"}
                   />
                 </div>

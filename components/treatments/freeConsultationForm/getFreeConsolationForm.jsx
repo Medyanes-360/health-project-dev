@@ -1,7 +1,6 @@
 "use client";
 
 import ButtonComponent from "@/globalElements/Button";
-import CardComponent from "@/globalElements/Card";
 import CustomInput from "@/globalElements/input";
 import { useState } from "react";
 
@@ -111,7 +110,7 @@ const GetFreeConsolationForm = () => {
   };
 
   return (
-    <CardComponent className="flex-1 w-full rounded-none rounded-r-2xl">
+    <div className="!flex-1 !w-full !rounded-none !rounded-r-2xl">
       <form onSubmit={handleSubmit} className="space-y-4 p-5">
         <div className="space-y-1">
           <label htmlFor="phone">Enter your phone number</label>
@@ -122,7 +121,7 @@ const GetFreeConsolationForm = () => {
             onChange={handlePhoneChange}
             placeholder="Enter your phone number"
             value={form.phone}
-            className="w-full h-[40px] bg-white py-3 px-5 border border-third  rounded-md"
+            className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !border-third  !rounded-md"
           />
         </div>
         <div className="space-y-1">
@@ -134,7 +133,7 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             placeholder="Enter your Email"
             value={form.email}
-            className="w-full h-[40px] bg-white py-3 px-5 border border-third rounded-md"
+            className="!w-full !h-[40px] !bg-white py-3 !px-5 !border !border-third !rounded-md"
           />
         </div>
         <div className="space-y-1">
@@ -146,7 +145,7 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             placeholder="Enter your name"
             value={form.name}
-            className="w-full h-[40px] bg-white py-3 px-5 border border-third rounded-md"
+            className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !border-third !rounded-md"
           />
         </div>
         <div className="space-y-1">
@@ -158,7 +157,7 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             placeholder="Short description"
             value={form.description}
-            className="w-full bg-white py-3 px-5 border border-third rounded-md"
+            className="!w-full !bg-white !py-3 !px-5 !border !border-third !rounded-md"
           />
         </div>
         <div className="flex gap-2 items-center">
@@ -178,7 +177,7 @@ const GetFreeConsolationForm = () => {
 
         <div className="w-full flex justify-end">
           <ButtonComponent
-            className="bg-primary text-white rounded-md w-[50%] lg:w-fit"
+            className="!bg-primary !text-white !rounded-md !w-[50%] lg:w-fit"
             type="submit"
             containerClassName={"flex justify-end w-full"}
             title={"Send Request"}
@@ -188,7 +187,7 @@ const GetFreeConsolationForm = () => {
       {error.isError && (
         <p className="text-center text-red-600 text-xl">{error.errorContent}</p>
       )}
-    </CardComponent>
+    </div>
   );
 };
 

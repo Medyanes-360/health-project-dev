@@ -2,7 +2,6 @@
 import CardComponent from "@/globalElements/Card";
 import QuestionCard from "./QuestionCard";
 import { useContext, useState } from "react";
-import { cn } from "@/lib/utils";
 import QuestionsContext from "@/context/QuestionsContext";
 import { useRouter } from "next/navigation";
 
@@ -86,7 +85,7 @@ const QuestionsSection = () => {
   return (
     <div className="w-full min-h-screen bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
-        <CardComponent className={" sm:max-w-[500px] mx-auto bg-fourth py-14 "}>
+        <CardComponent className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}>
             {/* using the component cad */}
           {questions.map((question) => {
             //maping theou questions
@@ -122,10 +121,10 @@ const QuestionsSection = () => {
           <div className="flex w-full items-center px-6">
             <div className="flex-1">
               <div
-                className={cn(
+                className={`
                   "w-fit py-2 px-3 border border-white-dark cursor-pointer mr-auto",
-                  currentQuestion == 1 && "hidden"
-                )}
+                  ${currentQuestion == 1 && "hidden"}
+                `}
                 onClick={prevQuestionHandler}
                 // go back
               >
@@ -134,9 +133,9 @@ const QuestionsSection = () => {
             </div>
             <div className="flex-1">
               <div
-                className={cn(
+                className={`
                   "w-fit py-2 px-3 border border-white-dark bg-primary cursor-pointer ml-auto"
-                )}
+                `}
                 onClick={nextQuestionHandler}
               >
                 {questions.length == currentQuestion

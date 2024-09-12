@@ -50,7 +50,7 @@ const ContentCard = ({ data }) => {
   const { description, icon, title } = data;
 
   return (
-    <CardComponent className={"w-full h-full rounded-2xl"}>
+    <CardComponent className={"!w-full !h-full !rounded-2xl"}>
       <div className="space-y-3">
         <Image src={icon} alt="icon" width={70} height={70} />
         <h1 className="text-xl sm:text-2xl">{title}</h1>

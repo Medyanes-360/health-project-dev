@@ -97,11 +97,11 @@ const CardContent = ({ data }) => {
   const { docName, location, reviews, image, description, icon } = data;
 
   return (
-    <div className="px-4">
-      <CardComponent className={"p-0 space-y-7"}>
-        <div className="flex flex-col justify-between min-h-[840px]">
-          <div className="space-y-5 px-5 py-4">
-            <div className="flex justify-between gap-1 items-center bg-white-dark ">
+    <div className="p-4">
+      <CardComponent className={"!p-0 !space-y-7"}>
+        <div className="flex flex-col justify-between sm:min-h-[900px]">
+          <div className="space-y-5">
+            <div className="flex justify-between gap-1 items-center bg-white-dark px-5 py-4">
               <div>
                 <Image
                   src={icon}
@@ -126,24 +126,27 @@ const CardContent = ({ data }) => {
                 <p>{reviews} Patient verified reviews</p>
               </div>
             </div>
-            <div className="w-full aspect-[12/8] relative overflow-hidden">
-              <Image
-                src={image}
-                alt="alt"
-                fill
-                className="object-center object-cover rounded-2xl"
-              />
+            <div className="px-5 py-4">
+              <div className="w-full aspect-[12/8] relative overflow-hidden ">
+                <Image
+                  src={image}
+                  alt="alt"
+                  fill
+                  className="object-center object-cover rounded-2xl"
+                />
+              </div>
             </div>
-            <p className="font-medium">{description}</p>
+
+            <p className="font-medium px-5 py-4">{description}</p>
           </div>
           <div className="px-10 py-4 space-y-5">
             <div className="flex justify-between gap-2">
               <ButtonComponent
-                className={"text-primary rounded-md bg-third/50 w-full"}
+                className={"!text-primary !rounded-md !bg-third/50 !w-full"}
                 title={"Info"}
               />
               <ButtonComponent
-                className={"text-fourth rounded-md bg-primary w-full"}
+                className={"!text-fourth !rounded-md !bg-primary !w-full"}
                 title={"Enquire"}
               />
             </div>
