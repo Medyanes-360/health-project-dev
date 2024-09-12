@@ -1,4 +1,4 @@
-import { Country } from "country-state-city";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const languages = [
@@ -56,32 +56,28 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
       // onClick={(e) => {
       //   e.stopPropagation();
       // }}
-      className="relative min-w-fit inline-block text-left"
+      className="relative min-w-fit  inline-block text-left"
     >
       <div className="">
         <button
           type="button"
-          className="inline-flex  items-center overflow-hidden justify-between w-full border-gray-300 shadow-sm px-2 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex max-w-[150px]  items-center overflow-hidden justify-between w-full border-gray-300 shadow-sm px-2 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
           onClick={toggleDropdown}
         >
           {selectedLanguage ? (
             <>
-              {/* <Image
+              <Image
                 width={24}
                 height={16}
-                src={`/assets/countryFlags/${selectedLanguage.countryCode}.svg`}
+                src={`/assets/countryFlags/${selectedLanguage.countryCode}.WEBP`}
                 alt={selectedLanguage.name}
-                className=" "
-              /> */}
-              <span className="text-3xl pr-1">
-                {Country.getCountryByCode(selectedLanguage.countryCode)
-                  ? Country.getCountryByCode(selectedLanguage.countryCode).flag
-                  : ""}
-              </span>
+                className="mr-1 "
+              />
+
               <span
                 style={{
                   whiteSpace: "nowrap",
-                  maxWidth: "75%",
+                  maxWidth: "80%",
                   overflow: "hidden",
                 }}
                 title={selectedLanguage.name}
@@ -134,11 +130,13 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
                 onClick={() => handleSelect(language)}
                 className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
-                <span className="text-3xl pr-2">
-                  {Country.getCountryByCode(language.countryCode)
-                    ? Country.getCountryByCode(language.countryCode).flag
-                    : ""}
-                </span>
+                <Image
+                  width={30}
+                  height={20}
+                  src={`/assets/countryFlags/${language.countryCode}.WEBP`}
+                  alt={language.name}
+                  className="mr-2 my-1"
+                />
                 <span>{language.name}</span>
               </button>
             ))}

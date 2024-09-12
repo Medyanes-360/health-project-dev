@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const CountrySelectDropdown = ({
@@ -50,20 +51,26 @@ const CountrySelectDropdown = ({
       ref={dropdownRef}
       // onClick={(e) => e.stopPropagation()}
 
-      className="relative  !w-[100px]  inline-block text-left"
+      className="relative  w-[120px]  inline-block text-left"
     >
       <div className="w-full ">
         <button
           onClick={toggleDropdown}
           type="button"
-          className="inline-flex  w-fit  overflow-hidden  items-center    justify-between   px-4  rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex   w-full py-2 h-full  overflow-hidden  items-center    justify-center   px-2  rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
         >
           {selectedCountry ? (
             <>
-              <span className="text-3xl  ">{selectedCountry.flag}</span>
+              {" "}
+              <Image
+                width={30}
+                height={20}
+                alt={selectedCountry.isoCode}
+                src={`/assets/countryFlags/${selectedCountry.isoCode}.WEBP`}
+              />
               {countryNames && (
                 <span
-                  className="max-w-[75%] overflow-hidden pl-[0.25rem]"
+                  className=" overflow-hidden pl-[0.25rem]"
                   title={selectedCountry.name}
                 >
                   {selectedCountry.isoCode}
@@ -115,7 +122,12 @@ const CountrySelectDropdown = ({
                 onClick={() => handleSelect(country)}
                 className="flex items-center w-full truncate   px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
               >
-                <span className="text-3xl ">{country.flag}</span>
+                <Image
+                  width={32}
+                  height={24}
+                  alt={country.isoCode}
+                  src={`/assets/countryFlags/${country.isoCode}.WEBP`}
+                />
 
                 <span className="pl-2">
                   {country.name.slice(

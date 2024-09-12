@@ -23,7 +23,7 @@ const HeaderbarComponent = () => {
           <HeaderbarSelectField placeholder="Enter the disease, hospital or doctor" />
         </div>
         <div className="flex ">
-          <div className="hidden mr-5 min-[1120px]:flex items-center ">
+          <div className="hidden mr-5 min-[1135px]:flex items-center ">
             <span className="flex">
               {[...Array(5)].map((e, index) => (
                 <Image
