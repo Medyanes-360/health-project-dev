@@ -3,6 +3,7 @@ import IconInstagram from "@/public/assets/icons/Instagram";
 import IconLinkedin from "@/public/assets/icons/LinkedIn";
 import WhatsappIcon from "@/public/assets/icons/Whatsapp";
 import GetFreeConsolationForm from "./getFreeConsolationForm";
+import CardComponent from "@/globalElements/Card";
 
 const data = [
   {
@@ -47,6 +48,8 @@ const socialMedia = [
   },
 ];
 
+const arr4 = [{}, {}, {}, {}];
+
 const GetFreeConsolation = () => {
   return (
     <div className="pb-20">
@@ -55,10 +58,12 @@ const GetFreeConsolation = () => {
           Get a free consolation
         </h1>
 
-        <div className="flex flex-col sm:flex-row">
-          <FormText />
-          <GetFreeConsolationForm />
-        </div>
+        <CardComponent>
+          <div className="flex flex-col sm:flex-row">
+            <FormText />
+            <GetFreeConsolationForm />
+          </div>
+        </CardComponent>
       </div>
     </div>
   );
@@ -68,7 +73,7 @@ export default GetFreeConsolation;
 
 const FormText = () => {
   return (
-    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0">
+    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative">
       <div className="space-y-10">
         <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
 
@@ -88,6 +93,14 @@ const FormText = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="absolute z-0  w-full h-full inset-0 flex justify-end">
+        <div className="grid grid-cols-2 gap-4 h-fit rotate-[45deg]">
+          {arr4.map((_, i) => (
+            <div className="w-20 h-20 rounded-xl bg-white/10" />
+          ))}
         </div>
       </div>
     </div>

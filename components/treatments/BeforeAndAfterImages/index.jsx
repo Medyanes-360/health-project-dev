@@ -24,7 +24,7 @@ const BeforeAndAfter = () => {
   return (
     <div className="py-20">
       <div className="xl:container mx-auto px-4 space-y-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:justify-around sm:items-center">
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
             {dynamicNumber} Before & After Photos
           </h1>

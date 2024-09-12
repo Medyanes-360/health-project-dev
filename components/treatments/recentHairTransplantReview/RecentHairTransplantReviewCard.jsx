@@ -141,7 +141,7 @@ const CardContent = ({ data }) => {
 
   return (
     <div className="px-4">
-      <CardComponent className={"px-0 py-5"}>
+      <CardComponent className={"!px-0 !py-5"}>
         <div className=" sm:min-h-[750px]">
           <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px]">
             {/* image */}
