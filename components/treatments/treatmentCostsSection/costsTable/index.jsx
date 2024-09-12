@@ -1,10 +1,17 @@
-export default function CostsTable() {
+export default function CostsTable({ data }) {
+  const { treatmentTypesAndCosts } = data;
+
+  //TODO: data nasıl ayarlanacak? direk ülkeye göre mi girilecek yoksa minimum fiyatları mı çekiyoruz?
+  // eğer minimum fiyatları çekiyorsak col sayısı 3'ten fazla mı oalcak?
+  // row ve col sayısı sabit mi?
+
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
       <table className="w-full  text-sm text-center rtl:text-right ">
         <thead className="text-xs bg-[#F4F6F8] text-[#637381]   uppercase  ">
           <tr>
             <th scope="col" className="px-6 py-3 font-semibold"></th>
+
             <th scope="col" className="px-6 py-3 font-semibold">
               Turkey
             </th>

@@ -20,7 +20,8 @@ const data = {
   bestPrice: 1500,
   processedRequestCount: 110449,
 };
-export default function OverviewTabs() {
+export default function OverviewTabs({ data }) {
+  const overview = data;
   const [openPanel, setOpenPanel] = useState(0);
   const clickHandler = (e) => {
     setOpenPanel(e.target.dataset.overviewtabid);
@@ -101,7 +102,7 @@ export default function OverviewTabs() {
         <div
           className={`${openPanel == 0 ? "block" : "hidden"} animate-fadeIn`}
         >
-          <PanelOne data={data} />
+          <PanelOne data={overview.takeAways} />
         </div>
         <div
           className={`${openPanel == 1 ? "block" : "hidden"} animate-fadeIn`}

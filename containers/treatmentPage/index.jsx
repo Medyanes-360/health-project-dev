@@ -18,16 +18,28 @@ import TreatmentFilteringSection from "@/components/treatments/treatmentFilterin
 import TreatmentOverviewSection from "@/components/treatments/treatmentOverviewSection";
 import TreatmentQuestionBandComponent from "@/components/treatments/treatmentQuestionBandComponent";
 
-export default function TreatmentPageContainer() {
+export default function TreatmentPageContainer({ treatment }) {
   return (
     <>
       <div className="xl:container mx-auto px-4">
         <BreadCrumbComponent />
-        <PageHeading />
-        <TreatmentOverviewSection />
-        <TreatmentCostsSection />
+        <PageHeading
+          data={{
+            title: treatment.title,
+            lastUpdateDate: treatment.lastUpdateDate,
+          }}
+        />
+        <TreatmentOverviewSection
+          data={{ overview: treatment.overview, title: treatment.title }}
+        />
+        <TreatmentCostsSection
+          data={{
+            costsOverview: treatment.costsOverview,
+            title: treatment.title,
+          }}
+        />
         <TreatmentFilteringSection />
-        <TreatmentQuestionBandComponent />
+        <TreatmentQuestionBandComponent data={treatment.bandTestQuestion} />
         <RecentHairTransplantReview />
         <HottestPackagesSection />
         <DiscoverBestClinicsSection />

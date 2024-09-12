@@ -1,6 +1,12 @@
 import ButtonComponent from "@/globalElements/Button";
 
-export default function TreatmentQuestionBandComponent() {
+export default function TreatmentQuestionBandComponent({ data }) {
+  const { text, question, options } = data;
+  //     bandTestQuestion: {
+  //   text: "Take a test to find the best Dental Implant treatment for you",
+  //   question: "How many teeth would you like to replace?",
+  //   options: ["1", "2", "Multiple", "Full Mouth"],
+  // },
   return (
     <section
       style={{
@@ -21,30 +27,18 @@ export default function TreatmentQuestionBandComponent() {
       >
         <div className="h-ful font-medium font-inter w-full md:py-10 py-3 px-4 xl:container mx-auto flex flex-col  md:flex-row  justify-between items-start md:items-center">
           <div className="flex text-white flex-col items-center justify-center w-full">
-            <p>
-              Take a test to find the best value-for-money Hair transplant
-              option
-            </p>
-            <p className="text-sm my-3.5">
-              What area would you like to improve with a hair transplant?
-            </p>
+            <p>{text}</p>
+            <p className="text-sm my-3.5">{question}</p>
             <div className="flex">
-              <ButtonComponent
-                className="bg-[#EAEAEA]  text-sm mr-1.5 text-primary"
-                title="Upper Part Of The Head"
-              />
-              <ButtonComponent
-                className="bg-[#EAEAEA]  text-sm mx-1.5 text-primary"
-                title="Temples"
-              />
-              <ButtonComponent
-                className="bg-[#EAEAEA]  text-sm mx-1.5 text-primary"
-                title="Beard Or Mustache"
-              />
-              <ButtonComponent
-                className="bg-[#EAEAEA]  text-sm ml-1.5 text-primary"
-                title="Other"
-              />
+              {options.map((option, index) => {
+                return (
+                  <ButtonComponent
+                    key={index}
+                    className="bg-[#EAEAEA]  text-sm mr-1.5 text-primary"
+                    title={option}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
