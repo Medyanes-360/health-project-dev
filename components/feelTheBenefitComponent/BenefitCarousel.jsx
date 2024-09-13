@@ -6,7 +6,7 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const MobileBenefitCarousel = () => {
+const BenefitCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -27,13 +27,17 @@ const MobileBenefitCarousel = () => {
   return (
     <Slider {...settings}>
       {images.map((src, index) => (
-        <div key={index} className="relative w-full h-[300px]">
+        <div
+          key={index}
+          className="relative w-full h-[300px] lg:w-[540px] lg:h-[600px] md:w-[500px] md:h-[500px] sm:w-[540px] sm:h-[600px]"
+        >
           <Image
             src={src}
             alt={`Benefit Image ${index + 1}`}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
+            style={{ objectFit: "cover" }}
           />
         </div>
       ))}
@@ -41,4 +45,4 @@ const MobileBenefitCarousel = () => {
   );
 };
 
-export default MobileBenefitCarousel;
+export default BenefitCarousel;
