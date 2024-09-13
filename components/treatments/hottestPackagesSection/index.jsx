@@ -1,8 +1,9 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import PackageCard from "./packageCard";
 
 export default function HottestPackagesSection() {
   return (
-    <section>
+    <ExtraLargePageContainer>
       {/* Heading: */}
       <div className="flex mt-6 mb-11     items-center">
         <h1 className="text-xl font-bold">
@@ -14,6 +15,6 @@ export default function HottestPackagesSection() {
         <PackageCard />
         <PackageCard />
       </div>
-    </section>
+    </ExtraLargePageContainer>
   );
 }

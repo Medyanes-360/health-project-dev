@@ -11,11 +11,11 @@ const HeaderbarComponent = () => {
       <ExtraLargePageContainer className="   py-5 h-20 flex items-center justify-between">
         <div className="flex  ">
           {" "}
-          <div className="min-w-max min-h-max flex items-center justify-center">
+          <div className=" flex items-center justify-center">
             <Image
               className="mr-4 "
               alt="company logo"
-              width={140}
+              width={143}
               height={24}
               src="/assets/images/company_logo.png"
             />
@@ -34,7 +34,7 @@ const HeaderbarComponent = () => {
                   width={24}
                 />
               ))}
-              <span className=" my-auto ml-2 text-[#868686] font-bold">
+              <span className=" my-auto ml-2 text-[#868686] font-bold text-nowrap">
                 5.0 Rating
               </span>
             </span>
@@ -42,7 +42,7 @@ const HeaderbarComponent = () => {
           <Link className="hidden min-[900px]:block" href="/become-a-partner">
             <ButtonComponent
               title="Become A Partner"
-              className="font-inter font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
+              className="font-inter text-nowrap font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
             />
           </Link>
         </div>

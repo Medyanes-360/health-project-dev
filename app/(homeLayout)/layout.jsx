@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
-import NavigationHeader from "@/components/navigationHeader";
+import NavigationHeader from "@/components/layout/navigationHeader";
+
 import ImageModal from "@/globalElements/imageModal";
 
 export default function HomeLayout({ children }) {

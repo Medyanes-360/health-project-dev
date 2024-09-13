@@ -1,5 +1,5 @@
-import HeaderbarSelectField from "@/components/headerbarComponent/headerbarSelectField";
-import LanguageSelectDropdown from "@/components/navbarComponent/languageSelectDropdown";
+import HeaderbarSelectField from "../../headerbarComponent/headerbarSelectField";
+import LanguageSelectDropdown from "../../navbarComponent/languageSelectDropdown";
 import ButtonComponent from "@/globalElements/Button";
 import Image from "next/image";
 import Link from "next/link";
@@ -78,7 +78,7 @@ const MobileNavigationSidebar = (props) => {
                   width={24}
                 />
               ))}
-              <span className=" my-auto ml-2 text-[#868686] font-bold">
+              <span className=" my-auto ml-2 text-[#868686] font-bold text-nowrap">
                 5.0 Rating
               </span>
             </span>
@@ -86,7 +86,7 @@ const MobileNavigationSidebar = (props) => {
           <Link className="" href="/become-a-partner">
             <ButtonComponent
               title="Become A Partner"
-              className=" !w-full font-inter font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
+              className="text-nowrap !w-full font-inter font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
             />
           </Link>
         </div>

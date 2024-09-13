@@ -132,7 +132,7 @@ const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
         />
 
         <AutoCompleteInput
-          style={{}}
+          inputstyle={{}}
           placeholder={placeholder}
           data={data}
           value={searchValue}

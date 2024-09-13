@@ -1,6 +1,6 @@
-import HeaderbarComponent from "../headerbarComponent";
-import MobileNavigation from "../mobileNavigation";
-import NavbarComponent from "../navbarComponent";
+import HeaderbarComponent from "./headerbarComponent";
+import MobileNavigation from "./mobileNavigation";
+import NavbarComponent from "./navbarComponent";
 
 const data = {
   routes: [

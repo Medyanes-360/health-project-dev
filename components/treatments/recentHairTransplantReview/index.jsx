@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import RecentHairTransplantReviewCard from "./RecentHairTransplantReviewCard";
 
 const data = [
@@ -59,7 +60,7 @@ const data = [
 const RecentHairTransplantReview = () => {
   const dynamicNumber = 473;
   return (
-    <div className="py-20">
+    <ExtraLargePageContainer className="py-20">
       <div className="xl:container mx-auto px-4 space-y-8">
         <div className="flex flex-col gap-4 sm:flex-row justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
@@ -73,7 +74,7 @@ const RecentHairTransplantReview = () => {
           <RecentHairTransplantReviewCard data={data} />
         </div>
       </div>
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

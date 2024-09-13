@@ -35,7 +35,7 @@ export default function FilterOptionsSidebarComponent() {
     >
       <div
         id="filterOptionsSidebar"
-        className=" h-full py-5  border-2        rounded-3xl shadow-[0px_12px_24px_-4px_#919EAB1F] "
+        className=" h-full py-5 rounded-3xl shadow-lg "
       >
         {/* Head */}
         <p className="border-b text-center font-semibold p-4 text-[#212B36] border-b-[#919EAB3D] ">
@@ -46,7 +46,7 @@ export default function FilterOptionsSidebarComponent() {
           <div className="my-5 px-5 ">
             <label
               htmlFor="medium-range"
-              class="block   font-semibold text-gray-900 dark:text-white"
+              className="block   font-semibold text-gray-900 dark:text-white"
             >
               Price range
             </label>
@@ -82,10 +82,10 @@ export default function FilterOptionsSidebarComponent() {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <ButtonComponent className="border mx-5  w-full">
+          <ButtonComponent className="border mx-5  py-[11px] font-semibold   !text-[15px] w-full">
             <svg
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ export default function FilterOptionsSidebarComponent() {
                 fill="#212B36"
               />
             </svg>
-            <p>Clear All</p>
+            <p className="pl-2">Clear All</p>
           </ButtonComponent>
         </div>
       </div>

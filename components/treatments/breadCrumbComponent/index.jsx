@@ -1,4 +1,5 @@
 "use client";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import ButtonComponent from "@/globalElements/Button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -19,9 +20,9 @@ export default function BreadCrumbComponent({
   }
 
   return (
-    <div className="   h-16 flex justify-between items-center">
+    <ExtraLargePageContainer className=" text-sm  h-16 flex justify-between items-center">
       <ul className="flex items-center ">
-        <li className="hover:underline mr-2">
+        <li className="hover:underline mr-2 ">
           <Link href={"/"}>Home</Link>
         </li>
         {pathNames.length > 0 && (
@@ -71,9 +72,9 @@ export default function BreadCrumbComponent({
         })}
       </ul>
       <ButtonComponent
-        className="text-base py-2 px-6 bg-transparent border-2 border-primary text-primary"
+        className="!text-base py-2 px-6 bg-transparent border-2 border-primary text-primary"
         title="View Doctors"
       />
-    </div>
+    </ExtraLargePageContainer>
   );
 }

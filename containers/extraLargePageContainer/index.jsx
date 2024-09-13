@@ -1,6 +1,9 @@
-const ExtraLargePageContainer = ({ children, className }) => {
+const ExtraLargePageContainer = ({ children, className, style }) => {
   return (
-    <div className={`!container !max-w-screen-xl !px-10 !mx-auto ${className}`}>
+    <div
+      style={{ ...style }}
+      className={`!container !max-w-screen-xl px-4 lg:px-10 !mx-auto ${className}`}
+    >
       {children}
     </div>
   );

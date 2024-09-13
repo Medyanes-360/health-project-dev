@@ -94,6 +94,7 @@ export default function AutoCompleteInput({
   inputclassname,
 }) {
   const dropdownRef = useRef(null);
+
   const [open, setOpen] = useState(false);
 
   const [options, setOptions] = useState(data);
@@ -128,13 +129,20 @@ export default function AutoCompleteInput({
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
   return (
     <div ref={dropdownRef} className="  relative w-full  ">
       <div className="relative flex      items-center w-full h-full p-0 m-0 ">
         <div className="flex overflow-hidden w-min">
+          {/* //input'un widthini placeholderla eşitlemek için: */}
+          <span
+            style={{ ...inputstyle }}
+            className={`pl-2 text-nowrap pr-2  z-[-50000] block ${inputclassname}`}
+          >
+            {placeholder}
+          </span>
           <input
             style={{
-              width: `${placeholder.length - 5}ch`,
               maxWidth: "100%!important",
               ...inputstyle,
             }}
@@ -142,12 +150,12 @@ export default function AutoCompleteInput({
             type="text"
             value={value.name}
             onChange={changeHandler}
-            className={` w-full h-full border-none outline-none py-0 pl-2 block  ${inputclassname}  `}
+            className={` w-full h-full absolute top-0 border-none outline-none py-0 pl-2 pr-2 block  ${inputclassname}  `}
           />
         </div>
       </div>
 
-      {open && (
+      {open && options.length > 0 && (
         <div
           style={{
             right: 0,

@@ -1,7 +1,7 @@
 "use client";
 import { useGlobalStore } from "@/zustand/globalStore";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ImageModal() {
   // Modal tetikleme:
@@ -19,6 +19,9 @@ export default function ImageModal() {
   const [imageSrcToShow, setImageSrcToShow] = useState(
     imageModalOptions.imageSrcToShowFirst
   );
+  useEffect(() => {
+    setImageSrcToShow(imageModalOptions.imageSrcToShowFirst);
+  }, [imageModalOptions]);
   if (!isModalOpen) {
     return null;
   }

@@ -22,11 +22,27 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "header-gradient":
+          "linear-gradient(90deg, rgba(82,184,171,1) 0%, rgba(82,184,171,1) 41%, rgba(1,185,255,1) 100%)",
+      },
+      textFillColor: {
+        transparent: "transparent",
+      },
+      backgroundClip: {
+        text: "text",
       },
 
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+      },
+      fontSize: {
+        "2xs": [
+          "10px",
+          {
+            lineHeight: "14px",
+          },
+        ],
       },
       colors: {
         primary: {

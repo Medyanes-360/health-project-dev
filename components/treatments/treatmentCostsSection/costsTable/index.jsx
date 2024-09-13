@@ -23,7 +23,7 @@ export default function CostsTable({ data }) {
             </th>
           </tr>
         </thead>
-        <tbody className="text-black ">
+        <tbody className="text-black text-sm ">
           <tr className="bg-white border-b   hover:bg-gray-50 ">
             <th
               scope="row"

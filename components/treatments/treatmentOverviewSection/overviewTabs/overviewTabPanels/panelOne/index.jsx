@@ -26,7 +26,7 @@ export default function PanelOne({ data }) {
     processedRequestCount,
   } = data;
   return (
-    <div className="animate-fadeIn grid grid-cols-3 grid-flow-row gap-3  ">
+    <div className="animate-fadeIn grid grid-cols-3 grid-flow-row gap-3  text-xs ">
       {/* thumbsUpIcon */}
       {/* rankingIcon */}
       {/* cameraIcon */}
@@ -42,9 +42,7 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">
-          Patients Recommend - {patientsRecommend}
-        </p>
+        <p className="font-medium ">Patients Recommend - {patientsRecommend}</p>
       </div>
       <div className="col-span-1 flex items-center gap-2.5">
         <Image
@@ -53,11 +51,11 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">Surgery Time - {surgeryTime}</p>
+        <p className="font-medium ">Surgery Time - {surgeryTime}</p>
       </div>
       <div className="col-span-1 flex items-center gap-2.5">
         <Image src="/assets/icons/homeIcon.svg" alt="" width={24} height={24} />
-        <p className="font-medium text-sm">
+        <p className="font-medium ">
           Stay In The Country - {stayInCountryDuration}
         </p>
       </div>
@@ -69,7 +67,7 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">
+        <p className="font-medium ">
           Rehabilitation - {rehabilitationDuration}
         </p>
       </div>
@@ -80,7 +78,7 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">Anesteshia - {anestesiaType}</p>
+        <p className="font-medium ">Anesteshia - {anestesiaType}</p>
       </div>
       <div className="col-span-1 flex items-center gap-2.5">
         <Image
@@ -89,7 +87,7 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">Best Price - {bestPrice}</p>
+        <p className="font-medium ">Best Price - {bestPrice}</p>
       </div>
       <div className="col-span-1 flex items-center gap-2.5">
         <Image
@@ -98,7 +96,7 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">
+        <p className="font-medium ">
           Before & After Photos - {beforeAndAfterPhotosCount}
         </p>
       </div>
@@ -109,7 +107,7 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">
+        <p className="font-medium ">
           Verified Patients Review - {verifiedPatientReviewsCount}
         </p>
       </div>
@@ -120,13 +118,13 @@ export default function PanelOne({ data }) {
           width={24}
           height={24}
         />
-        <p className="font-medium text-sm">
+        <p className="font-medium ">
           Requests Processed - {processedRequestCount}
         </p>
       </div>
       <div className="col-span-1 flex items-center gap-2.5">
         <Image src="/assets/icons/likeIcon.svg" alt="" width={24} height={24} />
-        <p className="font-medium text-sm">Bookimed Fees - {bookimedFees}</p>
+        <p className="font-medium ">Bookimed Fees - {bookimedFees}</p>
       </div>
     </div>
   );

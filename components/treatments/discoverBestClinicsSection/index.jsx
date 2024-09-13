@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import DiscoverMoreCardContent from "../reusable/DiscoverMoreCard";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const data = [
   {
@@ -83,7 +84,7 @@ const data = [
 ];
 export default function DiscoverBestClinicsSection() {
   return (
-    <section>
+    <ExtraLargePageContainer>
       {/* Heading: */}
       <div className="flex mt-16 mb-9 justify-between   items-center">
         <div>
@@ -106,6 +107,6 @@ export default function DiscoverBestClinicsSection() {
       <div className="flex items-center justify-center mt-6 text-primary font-semibold hover:underline">
         <Link href="/">See more deals</Link>
       </div>
-    </section>
+    </ExtraLargePageContainer>
   );
 }

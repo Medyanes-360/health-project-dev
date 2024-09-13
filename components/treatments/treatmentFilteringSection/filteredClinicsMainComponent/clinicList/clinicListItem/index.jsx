@@ -20,8 +20,8 @@ export default function ClinicListItem() {
   };
   // TODO: IMAGE MODAL GLOBAL COMPONENTI OLUŞTURULACAK.
   return (
-    <div className="relative grid mb-3 grid-cols-9 gap-5 py-16 border min-w-[900px]  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
-      <div className="col-span-3 h-full   flex flex-col items-center">
+    <div className="relative grid grid-flow-col-dense mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
+      <div className="col-span-3 h-full    flex flex-col justify-center items-center">
         <Image
           className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
           src={imageSources[0]}
@@ -32,7 +32,7 @@ export default function ClinicListItem() {
           width={100}
           height={100}
         />
-        <div className="grid grid-cols-3 w-full  ">
+        <div className="grid grid-cols-3 w-full items-center   ">
           {imageSources.slice(1).map((src, index) => {
             return (
               <Image
@@ -60,7 +60,9 @@ export default function ClinicListItem() {
             height={44}
           />
           <div className="ml-3 ">
-            <p className="font-semibold mb-2 ">Adem and Havva Medical Center</p>
+            <p className="font-semibold mb-2 text-sm ">
+              Adem and Havva Medical Center
+            </p>
             <span className="flex items-center">
               <Image
                 className="mr-2"
@@ -84,7 +86,9 @@ export default function ClinicListItem() {
             height={44}
           />
           <div className="ml-3 ">
-            <p className="font-semibold mb-2 ">Doctor Dr Fuzun Erdogan</p>
+            <p className="font-semibold mb-2 text-sm ">
+              Doctor Dr Fuzun Erdogan
+            </p>
             <span className="flex items-center">
               <Image
                 className="mr-2"
@@ -100,22 +104,22 @@ export default function ClinicListItem() {
           </div>
         </div>
         <div className="">
-          <p className="line-clamp-3 text-sm mb-1 text-ellipsis mt-4">
+          <p className="line-clamp-3 text-xs mb-1 text-ellipsis mt-4">
             Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained
             international recognition for Technique: FUE hair transplant,
             Technique: FUE hair transplant,
           </p>
-          <span className="text-sm font-medium hover:underline cursor-pointer">
+          <span className="text-xs font-medium hover:underline cursor-pointer">
             Read more {">>"}
           </span>
         </div>
         <div className="mt-4 flex justify-between w-full">
           <ButtonComponent
-            className="bg-primary mr-3  text-white font-medium py-2 w-full text-sm"
+            className="bg-primary mr-3  text-white font-medium !py-1.5 w-full !text-sm"
             title="Get A Free Quota"
           />
           <ButtonComponent
-            className="bg-white-dark text-primary font-medium py-2 w-full text-sm"
+            className="bg-white-dark text-primary font-medium !py-1.5 w-full !text-sm"
             title="View Deal"
           />
         </div>
@@ -129,10 +133,10 @@ export default function ClinicListItem() {
             width={100}
             height={100}
           />
-          <span className="absolute top-5 rounded-md p-1 px-1.5 text-sm font-light text-nowrap text-white  right-2 bg-[#00B8D9]">
+          <span className="absolute top-5 rounded-md p-1 px-1.5 text-xs font-light text-nowrap text-white  right-2 bg-[#00B8D9]">
             Limited-time deal
           </span>
-          <span className="absolute  top-14 right-2  rounded-md p-1 px-1.5 text-sm text-nowrap font-light text-white  bg-[#EB122B]">
+          <span className="absolute  top-14 right-2  rounded-md p-1 px-1.5 text-xs text-nowrap font-light text-white  bg-[#EB122B]">
             -%8 OFF Today
           </span>
         </div>
@@ -154,20 +158,22 @@ export default function ClinicListItem() {
               </svg>
             ))}
           </span>
-          <span>234</span>
+          <span className="text-sm">234</span>
         </div>
         <div className="mt-3">
-          <p className="line-clamp-2 text-center text-xs font-semibold ">
+          <p className="line-clamp-2 text-center text-2xs font-semibold ">
             FUE hair transplant (4500 Grafts) All Included
           </p>
         </div>
         <div className="mt-3 flex flex-col items-center text-center">
-          <span className="text-[#EB122B] font-semibold">$1750</span>
-          <span className="text-xs font-semibold">per package</span>
+          <span className="text-[#EB122B] text-[15px] font-semibold">
+            $1750
+          </span>
+          <span className="text-2xs font-semibold">per package</span>
         </div>
       </div>
-      <div className="absolute h-[65px] w-[110px] py-1  !top-0 right-7 bg-red-500">
-        <p className="text-xs  line-clamp-3  text-center text-white ">
+      <div className="absolute h-[65px] w-[110px] py-1  !top-0 right-5 bg-red-500">
+        <p className="text-2xs  line-clamp-3  text-center text-white ">
           Best selling package this month
         </p>
         <span
