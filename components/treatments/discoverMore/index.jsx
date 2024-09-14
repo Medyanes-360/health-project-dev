@@ -1,5 +1,6 @@
 import React from "react";
 import DiscoverMoreCard from "./DiscoverMoreCard";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const data = [
   {
@@ -83,13 +84,13 @@ const data = [
 
 const DiscoverMore = () => {
   return (
-    <div className="pb-20 xl:container mx-auto space-y-4">
+    <ExtraLargePageContainer className="pb-20">
       <h1 className="text-xl font-bold sm:text-2xl text-secondary pb-3">
         Discover More
       </h1>
 
       <DiscoverMoreCard data={data} />
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import IconFacebook from "@/public/assets/icons/FaceBook";
 import Image from "next/image";
 
@@ -5,7 +6,7 @@ const BookimedCeoAssurance = () => {
   return (
     <div className="pb-20 ">
       <div className="bg-[#E7F0FA] py-10">
-        <div className="xl:container mx-auto px-4 ">
+        <ExtraLargePageContainer>
           <h1 className="mb-7 font-bold text-xl sm:text-2xl">
             Bookimed Editorial Policy
           </h1>
@@ -45,7 +46,7 @@ const BookimedCeoAssurance = () => {
               </p>
             </div>
           </div>
-        </div>
+        </ExtraLargePageContainer>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 
 const TrustedClients = () => {
@@ -30,7 +31,7 @@ const TrustedClients = () => {
     },
   ];
   return (
-    <div className="xl:container mx-auto px-4">
+    <ExtraLargePageContainer>
       {/* trusted client logos */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-1">
         {images?.map((img, i) => (
@@ -43,7 +44,7 @@ const TrustedClients = () => {
           />
         ))}
       </div>
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

@@ -4,6 +4,7 @@ import IconLinkedin from "@/public/assets/icons/LinkedIn";
 import WhatsappIcon from "@/public/assets/icons/Whatsapp";
 import GetFreeConsolationForm from "./getFreeConsolationForm";
 import CardComponent from "@/globalElements/Card";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const data = [
   {
@@ -53,7 +54,7 @@ const arr4 = [{}, {}, {}, {}];
 const GetFreeConsolation = () => {
   return (
     <div className="pb-20">
-      <div className="xl:container mx-auto px-4">
+      <ExtraLargePageContainer >
         <h1 className="font-bold text-xl sm:text-2xl text-secondary mb-5 text-center">
           Get a free consolation
         </h1>
@@ -64,7 +65,7 @@ const GetFreeConsolation = () => {
             <GetFreeConsolationForm />
           </div>
         </CardComponent>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

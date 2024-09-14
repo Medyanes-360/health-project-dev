@@ -1,5 +1,6 @@
 import CardComponent from "@/globalElements/Card";
 import ExpandingQuestions from "./expand";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const data = [
   {
@@ -22,7 +23,7 @@ const data = [
 const Faqs = () => {
   return (
     <div className="pb-20">
-      <div className="xl:container px-4 mx-auto space-y-6">
+      <ExtraLargePageContainer className="space-y-6">
         <div className="flex items-center justify-between gap-5">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">Faqs</h1>
           <p>Articles</p>
@@ -39,7 +40,7 @@ const Faqs = () => {
             ))}
           </CardComponent>
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

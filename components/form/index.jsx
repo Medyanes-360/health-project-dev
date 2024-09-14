@@ -1,11 +1,12 @@
 import CardComponent from "@/globalElements/Card";
 import Image from "next/image";
 import ContactForm from "./contactForm";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const FormSection = () => {
   return (
     <div className="bg-primary/30 lg:bg-transparent mb-20">
-      <div className=" xl:container mx-auto">
+      <ExtraLargePageContainer >
         <CardComponent className={"!shadow-none xl:shadow-md"}>
           <div className="flex gap-7 items-center px-6 py-3">
             <div className="hidden lg:block flex-1 w-full aspect-[12/8] relative overflow-hidden ">
@@ -35,7 +36,7 @@ const FormSection = () => {
             </div>
           </div>
         </CardComponent>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

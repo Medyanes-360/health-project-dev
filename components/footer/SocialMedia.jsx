@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import IconFacebook from "@/public/assets/icons/FaceBook";
 import IconInstagram from "@/public/assets/icons/Instagram";
 import IconLinkedin from "@/public/assets/icons/LinkedIn";
@@ -18,7 +19,7 @@ const SocialMedia = () => {
     },
   ];
   return (
-    <div className="w-full space-y-10 pb-6 xl:container mx-auto">
+    <ExtraLargePageContainer className="w-full space-y-10 pb-6">
       <div className="flex items-center justify-center lg:justify-start gap-4">
         {images?.map((Icon) => (
           <div key={Icon.id} className="bg-fourth/30 p-3 rounded-full">
@@ -29,7 +30,7 @@ const SocialMedia = () => {
       <p className="font-light text-fourth hidden lg:block">
         © 2024 Medyanes, All Rights Reserved
       </p>
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

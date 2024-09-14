@@ -140,10 +140,10 @@ const CardContent = ({ data }) => {
   } = data;
 
   return (
-    <div className="px-4">
-      <CardComponent className={"!px-0 !py-5"}>
-        <div className=" sm:min-h-[750px]">
-          <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px]">
+    <div className="p-4 ">
+      <CardComponent className={"!p-0 "}>
+        <div className="sm:min-h-[750px]">
+          <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px] rounded-t-2xl">
             {/* image */}
             <div className="h-16 w-16 rounded-full grid place-content-center bg-primary/30">
               <div className="w-10 aspect-[12/12] relative overflow-hidden ">

@@ -1,7 +1,9 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+
 const DescriptionSection = () => {
   return (
     <div className="h-full pt-20 pb-10 lg:pb-20">
-      <div className="flex flex-col lg:flex-row justify-between gap-5 lg:gap-40 text-center lg:text-start xl:container mx-auto">
+      <ExtraLargePageContainer className="flex flex-col lg:flex-row justify-between gap-5 lg:gap-40 text-center lg:text-start ">
         <p className="text-fourth flex-1">
           Lorem ipsum dolor sit amet consectetur. Et eu dui diam mauris nulla
           morbi commodo. Mattis malesuada dignissim tempor dapibus habitant id
@@ -16,7 +18,7 @@ const DescriptionSection = () => {
           viverra et et. Arcu morbi et leo mauris accumsan in molestie tincidunt
           turpis.
         </p>
-      </div>
+      </ExtraLargePageContainer>
     
     </div>
   );

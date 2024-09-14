@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import CardComponent from "@/globalElements/Card";
 import Image from "next/image";
 
@@ -29,7 +30,7 @@ const HowBookimedHelps = () => {
   ];
   return (
     <div className="pb-20">
-      <div className="mx-auto xl:container px-4">
+      <ExtraLargePageContainer >
         <h1 className="mb-7 font-bold text-xl sm:text-2xl">
           How <span className="text-primary">Bookimed</span> Can Help You
         </h1>
@@ -39,7 +40,7 @@ const HowBookimedHelps = () => {
             <ContentCard key={i} data={items} />
           ))}
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

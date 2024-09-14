@@ -17,7 +17,12 @@ const HairTransplantReviewsCard = ({ data }) => {
   const sliderSmall = useRef(null);
 
   // Slider settings
-  const createSliderSettings = (slidesToShow, slidesToScroll, screenType, ref) => ({
+  const createSliderSettings = (
+    slidesToShow,
+    slidesToScroll,
+    screenType,
+    ref
+  ) => ({
     infinite: true,
     speed: 400,
     slidesToShow,
@@ -52,7 +57,8 @@ const HairTransplantReviewsCard = ({ data }) => {
         style={{
           borderRadius: "999px",
           display: "inline-block",
-          margin: currentSlide[screenType] / slidesToScroll === i ? "0" : "0 8px",
+          margin:
+            currentSlide[screenType] / slidesToScroll === i ? "0" : "0 8px",
         }}
       ></div>
     ),
@@ -62,7 +68,10 @@ const HairTransplantReviewsCard = ({ data }) => {
     <>
       {/* Big Screen Slider */}
       <div className="hidden lg:block">
-        <Slider {...createSliderSettings(4, 4, "big", sliderBig)} ref={sliderBig}>
+        <Slider
+          {...createSliderSettings(4, 4, "big", sliderBig)}
+          ref={sliderBig}
+        >
           {data?.map((item, i) => (
             <CardContent key={i} data={item} />
           ))}
@@ -86,9 +95,12 @@ const HairTransplantReviewsCard = ({ data }) => {
 
       {/* Small Screen Slider */}
       <div className="lg:hidden">
-        <Slider {...createSliderSettings(2, 2, "small", sliderSmall)} ref={sliderSmall}>
+        <Slider
+          {...createSliderSettings(2, 2, "small", sliderSmall)}
+          ref={sliderSmall}
+        >
           {data?.map((item, i) => (
-            <CardContent key={i} data={item} />
+            <SmallCardContent key={i} data={item} />
           ))}
         </Slider>
         {/* Custom forward and back buttons */}
@@ -120,23 +132,22 @@ const CardContent = ({ data }) => {
   return (
     <div className="p-4">
       <CardComponent>
-        <div className="flex flex-col gap-5 justify-between min-h-[250px]">
-          <div>
-            <div className="flex gap-2 items-center flex-wrap">
-              {/* stars */}
-              {starsArray.map((_, index) => (
-                <span key={index} className="text-[#FFAA00] text-xl">
-                  ★
-                </span>
-              ))}
-            </div>
-
-            <div>
-              <p className="font-light lg:font-normal">{text}</p>
-            </div>
+        <div className="flex flex-col gap-5 justify-center min-h-[300px]">
+          <div className="flex gap-2 items-center">
+            {/* stars */}
+            {starsArray.map((_, i) => (
+              <span key={i} className="text-[#FFAA00] text-xl">
+                ★
+              </span>
+            ))}
           </div>
+
+          <div>
+            <p>{text}</p>
+          </div>
+
           <div className="flex justify-between gap-3 items-center">
-            {/* the image, job, and name */}
+            {/* the image job and the name */}
             <div className="flex gap-4 items-center">
               <Image
                 src={img}
@@ -146,7 +157,7 @@ const CardContent = ({ data }) => {
                 alt="picture"
               />
               <div className="space-y-2">
-                <h1 className="font-bold text-lg">{name}</h1>
+                <h1 className="font-bold text-lg ">{name}</h1>
                 <p className="font-light">{job}</p>
               </div>
             </div>
@@ -155,8 +166,58 @@ const CardContent = ({ data }) => {
               className="object-cover object-center rounded-full"
               width={30}
               height={30}
-              alt="icon"
+              alt="que"
             />
+          </div>
+        </div>
+      </CardComponent>
+    </div>
+  );
+};
+
+const SmallCardContent = ({ data }) => {
+  const { stars, text, img, name, job } = data;
+  const starsArray = Array.from({ length: stars });
+
+  return (
+    <div className="p-1">
+      <CardComponent>
+        <div className="flex flex-col gap-5 justify-center min-h-[350px]">
+          <div className="flex gap-2 items-center">
+            {/* stars */}
+            {starsArray?.map((data, index) => (
+              <span key={index} className="text-[#FFAA00] text-xl">
+                ★
+              </span>
+            ))}
+            <Image
+              src={"/assets/images/Group.png"}
+              className="object-cover object-center rounded-full ml-auto pr-3"
+              width={30}
+              height={30}
+              alt="que"
+            />
+          </div>
+
+          <div>
+            <p className="font-light">{text}</p>
+          </div>
+
+          <div className="flex justify-between gap-3 items-center">
+            {/* the image job and the name */}
+            <div className="flex gap-4 items-center">
+              <Image
+                src={img}
+                className="object-cover object-center rounded-full"
+                width={40}
+                height={40}
+                alt="picture"
+              />
+              <div className="space-y-2">
+                <h1 className=" font-normal">{name}</h1>
+                <p className=" font-extralight">{job}</p>
+              </div>
+            </div>
           </div>
         </div>
       </CardComponent>

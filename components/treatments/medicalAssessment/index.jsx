@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import MedicalAssessmentCard from "./MedicalAssessmentCard";
 
 const data = [
@@ -45,7 +46,7 @@ const data = [
 const MedicalAssessment = () => {
   return (
     <div className="pb-20">
-      <div className="xl:container mx-auto px-4 space-y-8">
+      <ExtraLargePageContainer className=" space-y-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
             Get a Medical Assessment For Hair Transplant
@@ -57,7 +58,7 @@ const MedicalAssessment = () => {
         <div>
           <MedicalAssessmentCard data={data} />
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

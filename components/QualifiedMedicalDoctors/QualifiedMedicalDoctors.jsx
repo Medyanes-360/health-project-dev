@@ -1,5 +1,6 @@
 import CustomButton from "@/globalElements/Button";
 import QualifiedMedicalDoctorsCard from "./QualifiedMedicalDoctorsCard";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const QualifiedMedicalDoctors = () => {
   const data = [
@@ -28,7 +29,7 @@ const QualifiedMedicalDoctors = () => {
   ];
 
   return (
-    <div className="py-20 font-poppins xl:container mx-auto px-4">
+    <ExtraLargePageContainer className="py-20 font-poppins">
         <div className="space-y-8">
           <h1 className="text-3xl sm:text-center max-w-2xl mx-auto">
             Our Qualified Medical Doctors
@@ -58,7 +59,7 @@ const QualifiedMedicalDoctors = () => {
           </div>
           
         </div>
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

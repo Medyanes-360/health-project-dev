@@ -130,7 +130,7 @@ const CardContent = ({ data }) => {
   return (
     <div className="p-4">
       <CardComponent className={"!px-3 !py-5"}>
-        <div className="space-y-4 min-h-[500px] flex flex-col justify-between">
+        <div className="space-y-4 min-h-[450px] sm:min-h-[500px] flex flex-col justify-between">
           <div className="space-y-3">
             <div className="w-full relative aspect-[12/8] overflow-hidden rounded-2xl">
               <Image

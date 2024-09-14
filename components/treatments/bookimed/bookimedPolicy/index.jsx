@@ -1,10 +1,11 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 import React from "react";
 
 const BookimedEditorialPolicy = () => {
   return (
     <div className="pb-20">
-      <div className="xl:container px-4 mx-auto">
+      <ExtraLargePageContainer >
         <h1 className="mb-7 font-bold text-xl sm:text-2xl">
           Bookimed Editorial Policy
         </h1>
@@ -68,7 +69,7 @@ const BookimedEditorialPolicy = () => {
             </div>
           </div>
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

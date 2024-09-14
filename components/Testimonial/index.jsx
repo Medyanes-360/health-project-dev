@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import TestimonialCard from "./TestimonialCard";
 
 const Testimonial = () => {
@@ -89,7 +90,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <div className="py-10 xl:container mx-auto px-4">
+    <ExtraLargePageContainer className="py-10 ">
       {/* header */}
       <div className="flex justify-between gap-6 items-end border-b-2 border-primary sm:border-none pb-2 sm:pb-0">
         <div className="flex-1 sm:max-w-[50%] min-h-full sm:border-b-2 sm:border-primary">
@@ -106,7 +107,7 @@ const Testimonial = () => {
       <div className="pt-10"></div>
       {/* Tracker Bölümü */}
       <TestimonialCard data={data} />
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 
