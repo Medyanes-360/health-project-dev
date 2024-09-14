@@ -61,7 +61,7 @@ const RecentHairTransplantReview = () => {
   const dynamicNumber = 473;
   return (
     <ExtraLargePageContainer className="py-20">
-      <div className="xl:container mx-auto px-4 space-y-8">
+      <div className="space-y-8">
         <div className="flex flex-col gap-4 sm:flex-row justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
             {dynamicNumber} Recent Hair Transplant Reviews

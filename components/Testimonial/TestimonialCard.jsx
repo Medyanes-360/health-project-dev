@@ -157,10 +157,10 @@ const TestimonialCard = ({ data }) => {
                           alt="picture"
                         />
                         <div className="space-y-2">
-                          <h1 className="font-bold text-lg whitespace-nowrap">
+                          <h1 className="font-bold text-lg ">
                             {name}
                           </h1>
-                          <p className="font-light whitespace-nowrap">{job}</p>
+                          <p className="font-light">{job}</p>
                         </div>
                       </div>
                       <Image
@@ -188,7 +188,7 @@ const TestimonialCard = ({ data }) => {
             return (
               <div key={i} className="p-2">
                 <div className="flex flex-col gap-5 justify-center min-h-[330px]">
-                  <div className="flex gap-2 flex-wrap items-center">
+                  <div className="flex gap-2 items-center">
                     {/* stars */}
                     {starsArray?.map((data, index) => (
                       <span key={index} className="text-[#FFAA00] text-xl">

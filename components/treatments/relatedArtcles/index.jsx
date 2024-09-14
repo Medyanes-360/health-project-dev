@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import RelatedArticlesCard from "./RelatedArticlesCard";
 
 const data = [
@@ -69,7 +70,7 @@ const data = [
 const RelatedArticles = () => {
   return (
     <div className="pb-20">
-      <div className="xl:container mx-auto px-4 space-y-8">
+      <ExtraLargePageContainer className="space-y-8">
         <h1 className="font-bold text-xl sm:text-2xl text-secondary">
           Related Articles
         </h1>
@@ -77,7 +78,7 @@ const RelatedArticles = () => {
         <div>
           <RelatedArticlesCard data={data} />
         </div>
-      </div>
+      </ExtraLargePageContainer>
     </div>
   );
 };

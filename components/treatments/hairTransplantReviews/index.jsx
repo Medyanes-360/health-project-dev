@@ -1,3 +1,4 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import HairTransplantReviewsCard from "./HairTransplantReviewsCard";
 
 const HairTransplantReviews = () => {
@@ -33,7 +34,7 @@ const HairTransplantReviews = () => {
   ];
 
   return (
-    <div className="pb-20 xl:container mx-auto px-4 space-y-6">
+    <ExtraLargePageContainer className="pb-20 space-y-6">
       {/* header */}
       <div className="flex items-center justify-between gap-5">
         <h1 className="font-bold text-xl sm:text-2xl text-secondary">
@@ -41,10 +42,9 @@ const HairTransplantReviews = () => {
         </h1>
         <p>Check Real Patient Experience</p>
       </div>
-      <div className="pt-10"></div>
       {/* Tracker Bölümü */}
       <HairTransplantReviewsCard data={data} />
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

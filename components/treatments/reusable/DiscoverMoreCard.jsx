@@ -48,7 +48,7 @@ const DiscoverMoreCardContent = ({ data }) => {
                 />
               </div>
 
-              <div className="w-full aspect-square flex flex-col justify-between">
+              <div className="w-full aspect-square flex flex-col justify-between space-y-6">
                 <div className="flex items-center gap-2">
                   <Image
                     src={clinicIcon}

@@ -1,9 +1,10 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import ButtonComponent from "@/globalElements/Button";
 import Image from "next/image";
 
 const FooterData = () => {
   return (
-    <div className="xl:container mx-auto px-4">
+    <ExtraLargePageContainer>
       <div className="w-full flex flex-col justify-center lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-12 text-fourth">
         <div className="flex gap-7 flex-col lg:flex-row text-center lg:text-start">
           <div className="space-y-4 flex-1 ">
@@ -55,7 +56,7 @@ const FooterData = () => {
             />
         </div>
       </div>
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 

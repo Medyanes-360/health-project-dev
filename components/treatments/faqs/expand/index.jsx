@@ -12,14 +12,14 @@ export default function ExpandingQuestions({ title, description }) {
     <div className="my-1 flex justify-between gap-5 w-full ">
       <div className="flex-1">
         <button
-          className={`flex  cursor-pointer items-center justify-between w-full  transition-all duration-200 ${
+          className={`flex  cursor-pointer items-center justify-between w-full  transition-all duration-200 rounded-t-2xl ${
             isExpanded ? "bg-primary" : ""
           }`}
           onClick={toggleExpanded}
         >
           <div
             className={`
-              "w-full px-2 py-3 rounded-t-xl",
+              "w-full px-2 py-3 rounded-t-xl ",
               `}
           >
             <h1
@@ -36,11 +36,11 @@ export default function ExpandingQuestions({ title, description }) {
         {isExpanded && (
           <div
             className={`
-              "px-2 pb-3 animate-fadeIn rounded-b-xl transition-all duration-200",
+              " pb-3 animate-fadeIn px-2 rounded-b-xl transition-all duration-200",
               ${isExpanded ? "bg-primary/30" : ""}
             `}
           >
-            <p className="font-light">{description}</p>
+            <p className="font-light ">{description}</p>
           </div>
         )}
       </div>
