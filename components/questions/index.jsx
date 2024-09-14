@@ -85,12 +85,14 @@ const QuestionsSection = () => {
   return (
     <div className="w-full min-h-screen bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
-        <CardComponent className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}>
-            {/* using the component cad */}
+        <CardComponent
+          className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}
+        >
+          {/* using the component cad */}
           {questions.map((question) => {
             //maping theou questions
             if (currentQuestion == question.id) {
-                // if the current question does not have the same id, it wont be shown
+              // if the current question does not have the same id, it wont be shown
               return (
                 <QuestionCard
                   question={question.q}
@@ -100,26 +102,27 @@ const QuestionsSection = () => {
               );
             }
           })}
- 
+
           <div className="px-6 flex gap-2 items-center">
             {questions.map((q) => {
-                // working on the progress bars based on the questions length
-              if (q.id == questions.length) return;
-
-              const value = currentQuestion > q.id;
-              const progress = value ? 100 : 0;
-
-              return (
-                <progress
-                  value={progress}
-                  className="mx-auto w-full bg-primary transition-all duration-500 "
-                />
-              );
+              if (q.id == 1) return null;
+              if (currentQuestion > q.id) {
+                return (
+                  <div className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
+                );
+              } else if (currentQuestion == q.id) {
+                return (
+                  <div className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
+                );
+              } else
+                return (
+                  <div className="bg-[#D9D9D9] h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
+                );
             })}
           </div>
 
-          <div className="flex w-full items-center px-6">
-            <div className="flex-1">
+          <div className="flex w-full items-center px-6 justify-between">
+            <div className="w-fit">
               <div
                 className={`
                   "w-fit py-2 px-3 border border-white-dark cursor-pointer mr-auto",
@@ -128,20 +131,20 @@ const QuestionsSection = () => {
                 onClick={prevQuestionHandler}
                 // go back
               >
-                Go Back
+                ← Go Back
               </div>
             </div>
-            <div className="flex-1">
+            <div className="w-fit">
               <div
                 className={`
-                  "w-fit py-2 px-3 border border-white-dark bg-primary cursor-pointer ml-auto"
+                  "w-fit py-2 px-3  border-white-dark bg-primary cursor-pointer ml-auto"
                 `}
                 onClick={nextQuestionHandler}
               >
                 {questions.length == currentQuestion
                   ? "Finish"
-                  : "Move Forward"}
-                  {/* move forward of finish */}
+                  : "Move Forward →"}
+                {/* move forward of finish */}
               </div>
             </div>
           </div>

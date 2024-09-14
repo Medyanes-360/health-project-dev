@@ -19,7 +19,7 @@ const QuestionCard = ({ question, id }) => {
         {/*  the question */}
       </div>
       <div className="space-y-1 w-full">
-        <div className="w-full h-[40px] border border-third px-4 py-2 flex gap-5">
+        <div className="w-full h-[40px] border px-4 py-2 flex gap-5">
           <input
             onChange={handleOptionChange}
             name={id}
@@ -30,7 +30,7 @@ const QuestionCard = ({ question, id }) => {
           />
           <label>Yes</label>
         </div>
-        <div className="w-full h-[40px] border border-third px-4 py-2 flex gap-5">
+        <div className="w-full h-[40px] border  px-4 py-2 flex gap-5">
           <input
             onChange={handleOptionChange}
             name={id}

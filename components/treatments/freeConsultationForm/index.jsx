@@ -5,6 +5,7 @@ import WhatsappIcon from "@/public/assets/icons/Whatsapp";
 import GetFreeConsolationForm from "./getFreeConsolationForm";
 import CardComponent from "@/globalElements/Card";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import Image from "next/image";
 
 const data = [
   {
@@ -54,12 +55,12 @@ const arr4 = [{}, {}, {}, {}];
 const GetFreeConsolation = () => {
   return (
     <div className="pb-20">
-      <ExtraLargePageContainer >
+      <ExtraLargePageContainer>
         <h1 className="font-bold text-xl sm:text-2xl text-secondary mb-5 text-center">
           Get a free consolation
         </h1>
 
-        <CardComponent>
+        <CardComponent className={'!shadow-md'}>
           <div className="flex flex-col sm:flex-row">
             <FormText />
             <GetFreeConsolationForm />
@@ -74,13 +75,21 @@ export default GetFreeConsolation;
 
 const FormText = () => {
   return (
-    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative">
-      <div className="space-y-10">
+    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative ">
+      <div className="space-y-10 mx-auto">
         <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
 
         <div className="w-full space-y-3">
           {data.map(({ country }, i) => (
-            <p key={i}>{`> ${country}`}</p>
+            <div key={i} className="flex items-center gap-3">
+              <Image
+                src={"/assets/images/sms.png"}
+                alt="img"
+                width={30}
+                height={30}
+              />
+              <p className="text-2xl">{`${country}`}</p>
+            </div>
           ))}
         </div>
 

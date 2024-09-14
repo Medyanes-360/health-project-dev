@@ -189,7 +189,15 @@ const CardContent = ({ data }) => {
 
             <div className="flex gap-1">
               {/* location icon */}
-              <p className="text-primary">{hospitalName}</p>
+              <div className="flex gap-2 items-center">
+                <Image
+                  width={25}
+                  height={25}
+                  alt="img"
+                  src={"/assets/images/health.png"}
+                />
+                <p className="text-primary">{hospitalName}</p>
+              </div>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ const DiscoverMoreCardContent = ({ data }) => {
     <>
       {/* not responsive yet */}
       <div className={"py-4"}>
-        <CardComponent >
+        <CardComponent>
           <div className="space-y-5">
             <div className="bg-white-dark py-2 px-5 flex justify-between items-center gap-3">
               <div className="bg-white w-full mx-auto py-1 text-center">
@@ -60,7 +60,15 @@ const DiscoverMoreCardContent = ({ data }) => {
 
                   <div className="space-y-2">
                     <h1 className="font-bold">{clinicName}</h1>
-                    <p className="text-primary"> ¥ {location}</p>
+                    <div className="flex items-center gap-1">
+                      <Image
+                        src={"/assets/images/location.png"}
+                        alt="img"
+                        width={20}
+                        height={20}
+                      />
+                      <p className="text-primary"> {location}</p>
+                    </div>
                   </div>
                 </div>
 
@@ -79,9 +87,18 @@ const DiscoverMoreCardContent = ({ data }) => {
 
                   <div className="space-y-2">
                     <h1 className="font-bold">{docName}</h1>
-                    <p className="text-primary">
-                      {docExperience} years of experience
-                    </p>
+                    <div className="flex gap-1 items-center">
+                      <Image
+                        src={"/assets/images/timer.png"}
+                        alt="img"
+                        width={20}
+                        height={20}
+                      />
+                      
+                      <p className="text-primary">
+                        {docExperience} years of experience
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -120,13 +137,11 @@ const DiscoverMoreCardContent = ({ data }) => {
                   </div>
                   <p className="text-center">{serviceName}</p>
                   <div className="flex flex-col justify-center gap-1 w-full text-center">
-                    
-                  <p>
-                    {" "}
-                    <span className="text-red-600 font-bold">{price}</span>
-                    
-                  </p>
-                  <p>pre package</p>
+                    <p>
+                      {" "}
+                      <span className="text-red-500 font-bold text-3xl">${price}</span>
+                    </p>
+                    <p>pre package</p>
                   </div>
                 </div>
 

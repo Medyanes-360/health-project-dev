@@ -121,7 +121,7 @@ const GetFreeConsolationForm = () => {
             onChange={handlePhoneChange}
             placeholder="Enter your phone number"
             value={form.phone}
-            className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !border-third  !rounded-md"
+            className="!w-full !h-[40px] !bg-white !py-3 !px-5 border  !rounded-md"
           />
         </div>
         <div className="space-y-1">
@@ -133,7 +133,7 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             placeholder="Enter your Email"
             value={form.email}
-            className="!w-full !h-[40px] !bg-white py-3 !px-5 !border !border-third !rounded-md"
+            className="!w-full !h-[40px] !bg-white py-3 !px-5 !border !rounded-md"
           />
         </div>
         <div className="space-y-1">
@@ -145,7 +145,7 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             placeholder="Enter your name"
             value={form.name}
-            className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !border-third !rounded-md"
+            className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !rounded-md"
           />
         </div>
         <div className="space-y-1">
@@ -157,7 +157,7 @@ const GetFreeConsolationForm = () => {
             onChange={handleInputChange}
             placeholder="Short description"
             value={form.description}
-            className="!w-full !bg-white !py-3 !px-5 !border !border-third !rounded-md"
+            className="!w-full !bg-white !py-3 !px-5 !border !rounded-md"
           />
         </div>
         <div className="flex gap-2 items-center">
@@ -168,11 +168,16 @@ const GetFreeConsolationForm = () => {
             checked={form.agreed}
             className="h-12 w-12"
           />
-          <label htmlFor="agree">
-            I agree to the Terms of use Privacy policy and receive marketing
-            letters that may be of interest. This site is protected by reCAPTCHA
-            and the Google Privacy Policy and Terms of Service apply.
-          </label>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="agree">
+              I agree to the Terms of use Privacy policy and receive marketing
+              letters that may be of interest.
+            </label>
+            <label htmlFor="agree">
+              This site is protected by re captcha and the Google Privacy Policy
+              and Terms of Service apply.
+            </label>
+          </div>
         </div>
 
         <div className="w-full flex justify-end">
