@@ -6,7 +6,7 @@ const useGlobalStore = create((set, get) => ({
     imageSources: [],
     imageSrcToShowFirst: "",
   },
-  openImageModal: ({ imageSources, imageSrcToShowFirst }) => {
+  openImageModal: ({ imageSources = null, imageSrcToShowFirst }) => {
     set((state) => ({
       ...state,
       isImageModalOpen: true,
