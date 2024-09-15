@@ -1,6 +1,6 @@
 "use client";
 import ButtonComponent from "@/globalElements/Button";
-import { useGlobalStore } from "@/zustand/globalStore";
+import { useGlobalStore } from "@/utils/globalStore";
 import Image from "next/image";
 
 const mockImageSources = [
@@ -18,7 +18,7 @@ export default function ClinicListItem() {
       imageSrcToShowFirst: imageSrc,
     });
   };
-  // TODO: IMAGE MODAL GLOBAL COMPONENTI OLUŞTURULACAK.
+
   return (
     <div className="relative grid grid-flow-col-dense mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
       <div className="col-span-3 h-full    flex flex-col justify-center items-center">

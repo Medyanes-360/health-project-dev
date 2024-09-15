@@ -37,7 +37,7 @@ export default function FeatureCard({ active, ...props }) {
       <div className="bg-primary-light    lg:bg-white w-10 h-10   p-2 sm:w-20 sm:p-4  sm:h-16  rounded-md  group-hover:shadow-none  transition-all duration-200  flex items-center justify-center group-hover:bg-primary ">
         <Image
           className=" filter group-hover:brightness-0 group-hover:invert"
-          src={`/assets/icons/doctorsIcon.svg`}
+          src={data.icon}
           alt=""
           width={72}
           height={72}
@@ -51,7 +51,7 @@ export default function FeatureCard({ active, ...props }) {
           ref={overflowingElementRef}
           className={` truncate sm:text-xl text-base  `}
         >
-          {data.categoryname}asflvxclöblölş
+          {data.categoryname}
         </p>
         <span className="text-primary sm:text-base text-sm  transition-all duration-200">
           Turkey

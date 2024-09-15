@@ -1,16 +1,31 @@
+"use client";
+import { useGlobalStore } from "@/utils/globalStore";
 import Image from "next/image";
+const data = {
+  clinicName: "Mert Seker Aesthetic and Plastic Surgeon",
+  treatmentType: "Standard Hair transplant",
+  clinicLocation: "Istanbul, Turkey",
+  img: "/assets/mocks/clinicImage.png",
+};
 
 export default function PackageCard() {
+  const openImageModal = useGlobalStore((state) => state.openImageModal);
+  const clinicData = data;
+
+  // sample | ImageModal triggering with one image
+  const handleOpenImageModal = (imageSrc) => {
+    openImageModal({
+      imageSrcToShowFirst: imageSrc,
+    });
+  };
   return (
-    <div className=" shadow-[0px_12px_24px_-4px_#919EAB1F] overflow-hidden max-w-[400px] self-center  h-full rounded-xl">
+    <div className="w-[392px] shadow-[0px_12px_24px_-4px_#919EAB1F] overflow-hidden max-w-[400px] self-center  h-full rounded-xl">
       {/* Card Header */}
       <div className="bg-[#F9F9F9] p-3 grid  grid-cols-3   items-center justify-between w-full ">
         <div className="flex flex-col col-span-2   ">
-          <p className="text-[#383333]  font-medium">
-            MERT SECER AESTHETIC AND PLASTIC SURGEON
-          </p>
+          <p className="text-[#383333]  font-medium">{clinicData.clinicName}</p>
           <span className="text-xs  mt-3 text-[#7D7987]">
-            Standard Hair transplant
+            {clinicData.treatmentType}
           </span>
         </div>
 
@@ -23,20 +38,21 @@ export default function PackageCard() {
           />
           <span className="text-nowrap truncate text-xs text-[#7D7987]">
             {" "}
-            Istanbul, Turkey
+            {clinicData.clinicLocation}
           </span>
         </div>
       </div>
       {/*  Card Body */}
       <div className="p-6 flex flex-col mt-2.5 ">
         <Image
+          onClick={(e) => handleOpenImageModal(clinicData.img)}
           className="w-full max-h-[255px] rounded-3xl "
-          src="/assets/mocks/clinicImage.png"
+          src={clinicData.img}
           alt=""
           width={344}
           height={255}
         />
-        <div className="flex flex-col gap-6 mt-3.5 mb-3 pl-1.5">
+        <div className="flex text-sm flex-col gap-6 mt-3.5 mb-3 pl-1.5">
           <span className=" gap-3 flex items-center ">
             <svg
               width="24"

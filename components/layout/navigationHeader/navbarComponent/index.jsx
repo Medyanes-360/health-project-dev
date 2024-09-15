@@ -10,7 +10,7 @@ const NavbarComponent = (props) => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-bgDarkWhite  text-sm  py-2   ">
+    <div className="bg-white-dark  text-sm  py-2   ">
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
       <ExtraLargePageContainer className="  flex items-center justify-between">
         <div className="">

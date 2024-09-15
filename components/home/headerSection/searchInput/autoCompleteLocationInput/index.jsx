@@ -12,12 +12,18 @@ import { Country, State } from "country-state-city";
 
 const AutoCompleteLocationInput = ({
   placeholder,
-
+  inputclassname,
   toRight,
 
   setValue,
   inputstyle,
   toLeft,
+  locationToDisplayTop = [
+    { type: "state", stateIsoCode: "34", countryIsoCode: "TR" },
+    // INFO: iso code verilmeli. istanbul'unki "34", Türkiye'ninki "TR". Eğer ülkeyse type ve countryIsoCode, state ise type, stateIsoCode ve countryIsoCode
+    // { type: "country", countryIsoCode: "TR" },
+    // { type: "country", countryIsoCode: "US" },
+  ],
 }) => {
   const dropdownRef = useRef(null);
   const states = State.getAllStates();
@@ -38,11 +44,27 @@ const AutoCompleteLocationInput = ({
   const changeHandler = (e) => {
     const newOptions = [];
     newOptions.push(
-      ...states.filter((option) =>
-        option.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
+      ...states.filter(
+        (option) =>
+          option.name
+            .toLowerCase()
+            .includes(e.currentTarget.value.toLowerCase()) &&
+          !locationToDisplayTop.find(
+            (elem) =>
+              elem.type == "state" &&
+              elem.stateIsoCode == option.isoCode &&
+              elem.countryIsoCode == option.countryCode
+          )
       ),
-      ...countries.filter((option) =>
-        option.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
+      ...countries.filter(
+        (option) =>
+          option.name
+            .toLowerCase()
+            .includes(e.currentTarget.value.toLowerCase()) &&
+          !locationToDisplayTop.find(
+            (elem) =>
+              elem.type == "country" && elem.countryIsoCode == option.isoCode
+          )
       )
     );
     const selectedOption = options.find(
@@ -106,7 +128,7 @@ const AutoCompleteLocationInput = ({
           type="text"
           value={inputValue}
           onChange={changeHandler}
-          className="   w-full h-full border-none outline-none  py-0 pl-2 block     "
+          className={`   w-full h-full border-none outline-none  py-0 pl-2 block     ${inputclassname}`}
         />
       </div>
 
@@ -124,6 +146,77 @@ const AutoCompleteLocationInput = ({
           }    left-0 min-w-max   absolute       w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
         >
           <div className="  py-1 ">
+            {locationToDisplayTop.map((elem, index) => {
+              let option;
+              if (elem.type == "state") {
+                option = State.getStateByCodeAndCountry(
+                  elem.stateIsoCode,
+                  elem.countryIsoCode
+                );
+              } else {
+                option = Country.getCountryByCode(elem.countryIsoCode);
+              }
+
+              if (option) {
+                return (
+                  <button
+                    onClick={(e) => handleSelect(option)}
+                    key={index}
+                    className="flex  items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  >
+                    {option.name
+                      .toLowerCase()
+                      .indexOf(inputValue.trim().toLowerCase()) > -1 ? (
+                      <span className="pl-2">
+                        {option.name.slice(
+                          0,
+                          option.name
+                            .toLowerCase()
+                            .indexOf(inputValue.trim().toLowerCase())
+                        )}
+                        <span className="font-semibold">
+                          {option.name.slice(
+                            option.name
+                              .toLowerCase()
+                              .indexOf(inputValue.trim().toLowerCase()),
+                            option.name
+                              .toLowerCase()
+                              .indexOf(inputValue.trim().toLowerCase()) +
+                              inputValue.trim().length
+                          )}
+                        </span>
+                        {option.name.slice(
+                          option.name
+                            .toLowerCase()
+
+                            .indexOf(inputValue.trim().toLowerCase()) +
+                            inputValue.trim().length
+                        )}
+                      </span>
+                    ) : (
+                      <span className="pl-2">{option.name}</span>
+                    )}
+
+                    {/* seçenek bir country mi? öyleyse: */}
+                    {option.flag && (
+                      <span className="text-xl pl-2">{option.flag}</span>
+                    )}
+                    {/* seçenek bir state mi? öyleyse: */}
+                    {!option.flag && (
+                      <>
+                        ,
+                        <span className="pl-2">
+                          {Country.getCountryByCode(option.countryCode).name}
+                        </span>
+                        <span className="pl-2 text-xl">
+                          {Country.getCountryByCode(option.countryCode).flag}
+                        </span>
+                      </>
+                    )}
+                  </button>
+                );
+              }
+            })}
             {options.slice(0, 20).map((option, index) => (
               <button
                 onClick={(e) => handleSelect(option)}

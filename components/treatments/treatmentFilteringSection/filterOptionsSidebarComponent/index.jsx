@@ -2,8 +2,11 @@
 import ButtonComponent from "@/globalElements/Button";
 import ExpandingList from "./expandingList";
 import RangeSlider from "@/globalElements/rangeSlider";
+import StarSelector from "@/globalElements/starSelector";
+import { useState } from "react";
 
 export default function FilterOptionsSidebarComponent() {
+  const [bookingScore, setBookingScore] = useState(1);
   // Fixed to Top ??
   // useEffect(() => {
   //   if (window && document) {
@@ -77,7 +80,13 @@ export default function FilterOptionsSidebarComponent() {
           </div>
           <div className="my-5">
             <ExpandingList title="Booking Score">
-              <p>children here. won&apos;t be select list.</p>
+              <div className="flex px-5 my-2">
+                <StarSelector
+                  rating={bookingScore}
+                  setRating={setBookingScore}
+                  text="& Up"
+                />
+              </div>
             </ExpandingList>
           </div>
         </div>

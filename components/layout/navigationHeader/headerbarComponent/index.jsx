@@ -42,7 +42,7 @@ const HeaderbarComponent = () => {
           <Link className="hidden min-[900px]:block" href="/become-a-partner">
             <ButtonComponent
               title="Become A Partner"
-              className="font-inter text-nowrap font-[600] text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
+              className="font-inter text-nowrap font-[600] !text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
             />
           </Link>
         </div>

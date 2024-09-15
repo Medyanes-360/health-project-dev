@@ -46,7 +46,7 @@ const ContactUsBandComponent = () => {
           >
             <ButtonComponent
               title="Become A Partner"
-              className="w-full   text-base shadow-[0_12px_48px_0px_#002C6D1A] font-inter font-[600] !rounded-[10px]  py-3 px-16     text-black bg-white "
+              className="w-full   !text-base shadow-[0_12px_48px_0px_#002C6D1A] font-inter font-[600] !rounded-[10px]  py-3 px-16     text-black bg-white "
             />
           </Link>
         </ExtraLargePageContainer>
