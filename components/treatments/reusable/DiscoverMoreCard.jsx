@@ -105,7 +105,7 @@ const DiscoverMoreCardContent = ({ data }) => {
                 <div>
                   <p>Surgeons portfolio</p>
                   <div className="w-full flex items-center justify-between gap-[1px]">
-                    {clinicImages.map((img, i) => (
+                    {clinicImages?.map((img, i) => (
                       <div
                         onClick={() => {
                           setImage(img);
@@ -117,6 +117,7 @@ const DiscoverMoreCardContent = ({ data }) => {
                           className="object-cover object-center rounded-2xl"
                           src={img}
                           fill
+                          alt="alt"
                         />
                       </div>
                     ))}

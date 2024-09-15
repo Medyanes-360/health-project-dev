@@ -21,7 +21,7 @@ const BookimedEditorialPolicy = () => {
             comprehensive medical solutions, with updates from clinics to ensure
             trustworthiness. The content about Hair transplant, crafted by
             experienced medical authors and reviewed by specialists, adheres to
-            Bookimed"s Editorial Guidelines, reflecting the platform"s
+            Bookimed&qout;s Editorial Guidelines, reflecting the platform&qout;s
             commitment to delivering high-quality and clear health information.
             For more details or inquiries, feel free to contact us at
             marketing@bookimed.com or learn more about us and our mission here.

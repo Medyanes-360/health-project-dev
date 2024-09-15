@@ -41,7 +41,7 @@ const DiscoverMoreCard = ({ data }) => {
         <button onClick={handlePrev}>
           <Image
             src={"/assets/images/arrow-left.png"}
-            alt=""
+            alt="img"
             width={30}
             height={30}
           />
@@ -49,7 +49,7 @@ const DiscoverMoreCard = ({ data }) => {
         <button onClick={handleNext}>
           <Image
             src={"/assets/images/arrow-right.png"}
-            alt=""
+            alt="img"
             width={30}
             height={30}
           />

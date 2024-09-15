@@ -89,7 +89,7 @@ const QuestionsSection = () => {
           className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}
         >
           {/* using the component cad */}
-          {questions.map((question) => {
+          {questions?.map((question) => {
             //maping theou questions
             if (currentQuestion == question.id) {
               // if the current question does not have the same id, it wont be shown
@@ -104,19 +104,19 @@ const QuestionsSection = () => {
           })}
 
           <div className="px-6 flex gap-2 items-center">
-            {questions.map((q) => {
+            {questions?.map((q , i) => {
               if (q.id == 1) return null;
               if (currentQuestion > q.id) {
                 return (
-                  <div className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
+                  <div key={i} className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
                 );
               } else if (currentQuestion == q.id) {
                 return (
-                  <div className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
+                  <div key={i} className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
                 );
               } else
                 return (
-                  <div className="bg-[#D9D9D9] h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
+                  <div key={i} className="bg-[#D9D9D9] h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
                 );
             })}
           </div>

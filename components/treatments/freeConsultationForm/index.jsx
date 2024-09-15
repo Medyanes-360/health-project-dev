@@ -77,7 +77,7 @@ const FormText = () => {
         <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
 
         <div className="w-full space-y-3">
-          {data.map(({ country }, i) => (
+          {data?.map(({ country }, i) => (
             <div key={i} className="flex items-center gap-3">
               <Image
                 src={"/assets/images/sms.png"}
@@ -94,8 +94,11 @@ const FormText = () => {
           <p>Bizimle iletişime geçin:</p>
 
           <div className="flex gap-1">
-            {socialMedia.map(({ Img, id }) => (
-              <div className="w-10 h-10 rounded-md grid place-content-center p-2 bg-primary-dark/40 cursor-pointer">
+            {socialMedia?.map(({ Img, id }) => (
+              <div
+                key={id}
+                className="w-10 h-10 rounded-md grid place-content-center p-2 bg-primary-dark/40 cursor-pointer"
+              >
                 <Img className="w-6 h-6 text-white" />
               </div>
             ))}
@@ -105,8 +108,8 @@ const FormText = () => {
 
       <div className="absolute z-0  w-full h-full inset-0 flex justify-end">
         <div className="grid grid-cols-2 gap-4 h-fit rotate-[45deg]">
-          {arr4.map((_, i) => (
-            <div className="w-20 h-20 rounded-xl bg-white/10" />
+          {arr4?.map((_, i) => (
+            <div key={i} className="w-20 h-20 rounded-xl bg-white/10" />
           ))}
         </div>
       </div>
