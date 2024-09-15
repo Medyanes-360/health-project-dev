@@ -22,36 +22,36 @@ const DiscoverMoreCardContent = ({ data }) => {
     <>
       {/* not responsive yet */}
       <div className={"py-4"}>
-        <CardComponent>
+        <CardComponent className={'!p-0 !rounded-2xl'}>
           <div className="space-y-5">
-            <div className="bg-white-dark py-2 px-5 flex justify-between items-center gap-3">
-              <div className="bg-white w-full mx-auto py-1 text-center">
+            <div className="bg-white-dark p-5 flex justify-between items-center gap-3 rounded-t-2xl">
+              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
                 Clinic
               </div>
-              <div className="bg-white w-full mx-auto py-1 text-center">
+              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
                 Price
               </div>
-              <div className="bg-white w-full mx-auto py-1 text-center">
+              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
                 Doctors
               </div>
-              <div className="bg-white w-full mx-auto py-1 text-center">
+              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
                 Reviews
               </div>
             </div>
-            <div className="flex justify-between gap-20 p-4 h-full">
+            <div className="flex justify-between gap-20 p-8 h-full ">
               <div className="w-full aspect-square overflow-hidden relative">
                 <Image
                   src={image}
                   alt="image"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center rounded-2xl"
                 />
               </div>
 
               <div className="w-full aspect-square flex flex-col justify-between space-y-6">
                 <div className="flex items-center gap-2">
                   <Image
-                    src={clinicIcon}
+                    src={docIcon}
                     width={50}
                     height={50}
                     className="object-cover object-center rounded-full overflow-hidden"
@@ -114,7 +114,7 @@ const DiscoverMoreCardContent = ({ data }) => {
                         className="w-full h-24 relative overflow-hidden cursor-pointer"
                       >
                         <Image
-                          className="object-cover object-center"
+                          className="object-cover object-center rounded-2xl"
                           src={img}
                           fill
                         />
@@ -126,14 +126,14 @@ const DiscoverMoreCardContent = ({ data }) => {
 
               <div className="w-full aspect-square flex flex-col justify-between">
                 <div className="space-y-4">
-                  <div className="flex items-center justify-center gap-2">
+                  <div className="flex items-center justify-center gap-1">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <span key={i} className="text-[#FFAA00] text-3xl ">
+                      <span key={i} className="text-[#FFAA00] text-4xl ">
                         ★
                       </span>
                     ))}
 
-                    <p className="">{stars}</p>
+                    <p className="text-xl">{stars}</p>
                   </div>
                   <p className="text-center">{serviceName}</p>
                   <div className="flex flex-col justify-center gap-1 w-full text-center">
@@ -147,11 +147,11 @@ const DiscoverMoreCardContent = ({ data }) => {
 
                 <div className="w-full space-y-3">
                   <ButtonComponent
-                    className={"!bg-primary !rounded-md !text-fourth !w-full"}
+                    className={"!bg-primary !rounded-md !text-fourth !w-full !text-lg"}
                     title={"Get A Free Quote"}
                   />
                   <ButtonComponent
-                    className={"!text-primary !rounded-md !bg-third/50 !w-full"}
+                    className={"!text-primary !rounded-md !bg-[#EAEAEA] !w-full !text-lg"}
                     title={"Message Us"}
                   />
                 </div>

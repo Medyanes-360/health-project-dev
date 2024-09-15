@@ -3,7 +3,6 @@ import IconInstagram from "@/public/assets/icons/Instagram";
 import IconLinkedin from "@/public/assets/icons/LinkedIn";
 import WhatsappIcon from "@/public/assets/icons/Whatsapp";
 import GetFreeConsolationForm from "./getFreeConsolationForm";
-import CardComponent from "@/globalElements/Card";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 
@@ -60,12 +59,10 @@ const GetFreeConsolation = () => {
           Get a free consolation
         </h1>
 
-        <CardComponent className={'!shadow-md'}>
-          <div className="flex flex-col sm:flex-row">
-            <FormText />
-            <GetFreeConsolationForm />
-          </div>
-        </CardComponent>
+        <div className="flex flex-col sm:flex-row">
+          <FormText />
+          <GetFreeConsolationForm />
+        </div>
       </ExtraLargePageContainer>
     </div>
   );

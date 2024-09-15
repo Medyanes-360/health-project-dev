@@ -53,15 +53,21 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         <div className="flex justify-center mt-4 gap-7">
           <button
             onClick={() => sliderBig.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2 text-fourth"
           >
-            &#8592;
+              <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderBig.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full text-fourth"
-          >
-            &#8594;
+          <button onClick={() => sliderBig.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -80,15 +86,21 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         <div className="flex justify-center mt-4 gap-7">
           <button
             onClick={() => sliderMedium.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
           >
-            &#8592;
+             <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderMedium.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
-          >
-            &#8594;
+          <button onClick={() => sliderMedium.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -105,17 +117,22 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderSmall.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
-          >
-            &#8592;
+          <button onClick={() => sliderSmall.current.slickPrev()}>
+          
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderSmall.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
-          >
-            &#8594;
+          <button onClick={() => sliderSmall.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>

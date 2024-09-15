@@ -52,7 +52,7 @@ const FooterData = () => {
         <div className="w-full lg:w-fit">
             <ButtonComponent
             title ="Request a call"
-            className="text-fourth bg-primary rounded-2xl text-2xl mx-auto lg:mx-0"
+            className="text-fourth bg-primary !rounded-2xl !text-xl mx-auto lg:mx-0 whitespace-nowrap"
             />
         </div>
       </div>

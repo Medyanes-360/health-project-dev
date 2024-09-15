@@ -47,17 +47,21 @@ const MedicalAssessmentCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderBig.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2 text-fourth"
-          >
-            &#8592;
+          <button onClick={() => sliderBig.current.slickPrev()}>
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderBig.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full text-fourth"
-          >
-            &#8594;
+          <button onClick={() => sliderBig.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -73,17 +77,21 @@ const MedicalAssessmentCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderSmall.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2 text-fourth"
-          >
-            &#8592;
+          <button onClick={() => sliderSmall.current.slickPrev()}>
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderSmall.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full text-fourth"
-          >
-            &#8594;
+          <button onClick={() => sliderSmall.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -137,20 +145,26 @@ const CardContent = ({ data }) => {
               </div>
             </div>
 
-            <p className="font-medium px-5 py-4">{description}</p>
+            <div className="px-5 py-4">
+              <p className="font-medium">{description}</p>
+              <p className="text-primary underline cursor-pointer">Read More</p>
+            </div>
           </div>
-          <div className="px-10 py-4 space-y-5">
+          <div className="px-5 py-4 space-y-5">
             <div className="flex justify-between gap-2">
               <ButtonComponent
-                className={"!text-primary !rounded-md !bg-third/50 !w-full"}
+                className={
+                  "!text-primary !rounded-md !bg-[#EAEAEA] !w-full !text-base"
+                }
                 title={"Info"}
               />
               <ButtonComponent
-                className={"!text-fourth !rounded-md !bg-primary !w-full"}
+                className={
+                  "!text-fourth !rounded-md !bg-primary !w-full !text-base"
+                }
                 title={"Enquire"}
               />
             </div>
-            <p className="text-center text-primary">More details</p>
           </div>
         </div>
       </CardComponent>

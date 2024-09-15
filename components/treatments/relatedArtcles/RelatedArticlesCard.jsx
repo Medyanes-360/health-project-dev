@@ -53,15 +53,23 @@ const RelatedArticlesCard = ({ data }) => {
         <div className="flex justify-center mt-4 gap-7">
           <button
             onClick={() => sliderBig.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2 text-fourth"
           >
-            &#8592;
+             <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
           <button
             onClick={() => sliderBig.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full text-fourth"
           >
-            &#8594;
+             <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -80,15 +88,23 @@ const RelatedArticlesCard = ({ data }) => {
         <div className="flex justify-center mt-4 gap-7">
           <button
             onClick={() => sliderMedium.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
           >
-            &#8592;
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
           <button
             onClick={() => sliderMedium.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
           >
-            &#8594;
+             <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -107,15 +123,24 @@ const RelatedArticlesCard = ({ data }) => {
         <div className="flex justify-center mt-4 gap-7">
           <button
             onClick={() => sliderSmall.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
           >
-            &#8592;
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
           <button
             onClick={() => sliderSmall.current.slickNext()}
             className="bg-[#52B8AB] w-8 h-8 rounded-full"
           >
-            &#8594;
+             <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -129,7 +154,7 @@ const CardContent = ({ data }) => {
   const { image, description, icon, name, createdAt, seen } = data;
   return (
     <div className="p-4">
-      <CardComponent className={"!px-3 !py-5"}>
+      <CardComponent className={"!px-3 !py-5 "}>
         <div className="space-y-4 min-h-[450px] sm:min-h-[500px] flex flex-col justify-between">
           <div className="space-y-3">
             <div className="w-full relative aspect-[12/8] overflow-hidden rounded-2xl">
@@ -159,7 +184,15 @@ const CardContent = ({ data }) => {
               </div>
             </div>
 
-            <div className="px-3 py-1 rounded-full bg-primary">👁️ {seen}</div>
+            <div className="px-3 py-1 text-fourth rounded-full bg-primary flex items-center gap-1">
+              <Image
+                src={"/assets/images/eye-visibility.png"}
+                alt=""
+                width={25}
+                height={25}
+              />
+              <p>{seen}</p>
+            </div>
           </div>
         </div>
       </CardComponent>

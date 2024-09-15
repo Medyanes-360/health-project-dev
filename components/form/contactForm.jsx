@@ -49,7 +49,7 @@ const ContactForm = () => {
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     // Basic phone validation (at least 10 characters)
-    const isPhoneValid = phone.trim().length >= 10;
+    const isPhoneValid = phone?.trim().length >= 10;
 
     // Check if either email or phone is valid
     if (!isEmailValid && !isPhoneValid) {
@@ -61,7 +61,7 @@ const ContactForm = () => {
     }
 
     // Validate name (at least 3 characters)
-    if (name.trim().length < 3) {
+    if (name?.trim().length < 3) {
       return {
         isError: true,
         errorContent: "Name must be at least 3 characters long.",
@@ -70,7 +70,7 @@ const ContactForm = () => {
     }
 
     // Validate message (at least 10 characters)
-    if (message.trim().length < 10) {
+    if (message?.trim().length < 10) {
       return {
         isError: true,
         errorContent: "Message must be at least 10 characters long.",

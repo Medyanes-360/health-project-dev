@@ -24,7 +24,7 @@ const BeforeAndAfter = () => {
   const dynamicNumber = 473;
   return (
     <div className="py-20">
-      <ExtraLargePageContainer className="space-y-6">
+      <ExtraLargePageContainer>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
             {dynamicNumber} Before & After Photos

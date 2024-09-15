@@ -30,7 +30,7 @@ const Faqs = () => {
         </div>
 
         <div>
-          <CardComponent>
+          <CardComponent className={'!p-0'}>
             {data?.map(({ description, title }, i) => (
               <ExpandingQuestions
                 key={i}

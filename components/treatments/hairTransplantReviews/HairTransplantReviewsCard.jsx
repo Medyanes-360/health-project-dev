@@ -78,17 +78,21 @@ const HairTransplantReviewsCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7 text-white">
-          <button
-            onClick={() => sliderBig.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2 "
-          >
-            &#8592;
+          <button onClick={() => sliderBig.current.slickPrev()}>
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderBig.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
-          >
-            &#8594;
+          <button onClick={() => sliderBig.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -105,17 +109,21 @@ const HairTransplantReviewsCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="text-white flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderSmall.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
-          >
-            &#8592;
+          <button onClick={() => sliderSmall.current.slickPrev()}>
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderSmall.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
-          >
-            &#8594;
+          <button onClick={() => sliderSmall.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -132,20 +140,21 @@ const CardContent = ({ data }) => {
   return (
     <div className="p-4">
       <CardComponent>
-        <div className="flex flex-col gap-5 justify-center min-h-[300px]">
-          <div className="flex gap-2 items-center">
-            {/* stars */}
-            {starsArray.map((_, i) => (
-              <span key={i} className="text-[#FFAA00] text-xl">
-                ★
-              </span>
-            ))}
-          </div>
-
+        <div className="flex flex-col justify-between gap-5 min-h-[300px]">
           <div>
-            <p>{text}</p>
-          </div>
+            <div className="flex gap-2 items-center">
+              {/* stars */}
+              {starsArray.map((_, i) => (
+                <span key={i} className="text-[#FFAA00] text-xl">
+                  ★
+                </span>
+              ))}
+            </div>
 
+            <div>
+              <p>{text}</p>
+            </div>
+          </div>
           <div className="flex justify-between gap-3 items-center">
             {/* the image job and the name */}
             <div className="flex gap-4 items-center">
@@ -157,7 +166,7 @@ const CardContent = ({ data }) => {
                 alt="picture"
               />
               <div className="space-y-2">
-                <h1 className="font-bold text-lg ">{name}</h1>
+                <h1 className="font-bold ">{name}</h1>
                 <p className="font-light">{job}</p>
               </div>
             </div>
@@ -182,25 +191,27 @@ const SmallCardContent = ({ data }) => {
   return (
     <div className="p-1">
       <CardComponent>
-        <div className="flex flex-col gap-5 justify-center min-h-[350px]">
-          <div className="flex gap-2 items-center">
-            {/* stars */}
-            {starsArray?.map((data, index) => (
-              <span key={index} className="text-[#FFAA00] text-xl">
-                ★
-              </span>
-            ))}
-            <Image
-              src={"/assets/images/Group.png"}
-              className="object-cover object-center rounded-full ml-auto pr-3"
-              width={30}
-              height={30}
-              alt="que"
-            />
-          </div>
-
+        <div className="flex flex-col gap-5 justify-between min-h-[320px]">
           <div>
-            <p className="font-light">{text}</p>
+            <div className="flex gap-2 items-center">
+              {/* stars */}
+              {starsArray?.map((_, index) => (
+                <span key={index} className="text-[#FFAA00] text-xl">
+                  ★
+                </span>
+              ))}
+              <Image
+                src={"/assets/images/Group.png"}
+                className="object-cover object-center rounded-full ml-auto pr-3"
+                width={30}
+                height={30}
+                alt="que"
+              />
+            </div>
+
+            <div>
+              <p className="font-light">{text}</p>
+            </div>
           </div>
 
           <div className="flex justify-between gap-3 items-center">

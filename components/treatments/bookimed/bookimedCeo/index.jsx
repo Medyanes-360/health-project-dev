@@ -23,7 +23,7 @@ const BookimedCeoAssurance = () => {
                 />
               </div>
 
-              <div className="cursor-pointer">
+              <div className="cursor-pointe bg-white w-fit p-1">
                 <IconFacebook
                   width={25}
                   height={25}

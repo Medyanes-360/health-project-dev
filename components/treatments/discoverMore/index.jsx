@@ -8,11 +8,7 @@ const data = [
     location: "Turkey, Istanbul",
     description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
 
-    icons: [
-      "/assets/images/image.png",
-      "/assets/images/image.png",
-      "/assets/images/image.png",
-    ],
+  
 
     docIcon: "/assets/images/image.png",
     docName: "Doctor Dr Fuzun Erdogan",
@@ -58,11 +54,7 @@ const data = [
     location: "Turkey, Istanbul",
     description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
 
-    icons: [
-      "/assets/images/image.png",
-      "/assets/images/image.png",
-      "/assets/images/image.png",
-    ],
+  
 
     docIcon: "/assets/images/image.png",
     docName: "Doctor Dr Fuzun Erdogan",
@@ -90,6 +82,8 @@ const DiscoverMore = () => {
       </h1>
 
       <DiscoverMoreCard data={data} />
+      <p className="text-primary text-center mt-3 underline cursor-pointer">See more detail</p>
+
     </ExtraLargePageContainer>
   );
 };

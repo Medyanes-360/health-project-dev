@@ -28,21 +28,64 @@ const BeforeAndAfterCard = ({ data }) => {
     speed: 400,
     slidesToShow,
     slidesToScroll,
+    dots: true, // Ensure dots are enabled
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) =>
       setCurrentSlide((prev) => ({ ...prev, [screenType]: current })),
     arrows: false, // Disable default arrows
+    appendDots: (dots) => (
+      <div
+        style={{
+          position: "absolute",
+          top: "10px",
+          width: "100%",
+        }}
+      >
+        <ul
+          style={{
+            margin: "0px",
+
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "8px",
+          }}
+          className="w-fit"
+        >
+          {dots}
+        </ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        className={`cursor-pointer transition-all duration-300  ${
+          currentSlide[screenType] / slidesToScroll === i
+            ? "bg-[#52B8AB] w-8 h-3"
+            : "bg-gray-300 w-3 h-3"
+        }`}
+        style={{
+          borderRadius: "999px",
+          display: "inline-block",
+          margin:
+            currentSlide[screenType] / slidesToScroll === i ? "0" : "0 8px",
+          position:
+            currentSlide[screenType] / slidesToScroll === i
+              ? "relative"
+              : "static",
+        }}
+      ></div>
+    ),
   });
 
   const CardContent = ({ image }) => (
-    <div className="p-4">
-      <CardComponent className={"!px-3 !py-5"}>
+    <div className="p-2">
+      <CardComponent className={"!px-5 !py-5 !mt-20 !rounded-2xl"}>
         <div className="w-full relative aspect-[12/9] rounded-2xl">
           <Image
             src={image}
             fill
-            className="object-cover object-center"
+            className="object-cover object-center rounded-2xl"
             alt="image"
           />
         </div>
@@ -64,17 +107,21 @@ const BeforeAndAfterCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderBig.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2 text-fourth"
-          >
-            &#8592;
+          <button onClick={() => sliderBig.current.slickPrev()}>
+            <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
-          <button
-            onClick={() => sliderBig.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full text-fourth"
-          >
-            &#8594;
+          <button onClick={() => sliderBig.current.slickNext()}>
+            <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -91,17 +138,23 @@ const BeforeAndAfterCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderMedium.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
-          >
-            &#8592;
+          <button onClick={() => sliderMedium.current.slickPrev()}>
+          <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
           <button
             onClick={() => sliderMedium.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
           >
-            &#8594;
+              <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
@@ -118,17 +171,23 @@ const BeforeAndAfterCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderSmall.current.slickPrev()}
-            className="bg-gray-300 w-8 h-8 rounded-full mr-2"
-          >
-            &#8592;
+          <button onClick={() => sliderSmall.current.slickPrev()}>
+          <Image
+              src={"/assets/images/arrow-left.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
           <button
             onClick={() => sliderSmall.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
           >
-            &#8594;
+              <Image
+              src={"/assets/images/arrow-right.png"}
+              alt=""
+              width={30}
+              height={30}
+            />
           </button>
         </div>
       </div>
