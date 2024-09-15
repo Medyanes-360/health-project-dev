@@ -22,7 +22,7 @@ const DiscoverMoreCardContent = ({ data }) => {
     <>
       {/* not responsive yet */}
       <div className={"py-4"}>
-        <CardComponent className={'!p-0 !rounded-2xl'}>
+        <CardComponent className={'!p-0 !rounded-2xl !shadow'}>
           <div className="space-y-5">
             <div className="bg-white-dark p-5 flex justify-between items-center gap-3 rounded-t-2xl">
               <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
