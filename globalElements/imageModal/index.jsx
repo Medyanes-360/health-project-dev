@@ -1,5 +1,5 @@
 "use client";
-import { useGlobalStore } from "@/zustand/globalStore";
+import { useGlobalStore } from "@/utils/globalStore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -52,7 +52,7 @@ export default function ImageModal() {
         className="  w-[75%] h-[75%] flex items-center justify-center "
       >
         <div className="flex  relative items-center justify-between  w-full h-full   ">
-          {imageModalOptions.imageSources.length > 1 && (
+          {imageModalOptions.imageSources && (
             <button
               onClick={prevImage}
               className=" rotate-180 hover:scale-110  "
@@ -88,7 +88,7 @@ export default function ImageModal() {
             src={imageSrcToShow}
           />
 
-          {imageModalOptions.imageSources.length > 1 && (
+          {imageModalOptions.imageSources && (
             <button onClick={nextImage} className=" hover:scale-110">
               <svg
                 width="60"

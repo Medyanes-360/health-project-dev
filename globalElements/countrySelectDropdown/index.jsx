@@ -1,3 +1,4 @@
+import { Country } from "country-state-city";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -8,6 +9,7 @@ const CountrySelectDropdown = ({
   countryNames = true,
   toLeft,
   toRight,
+  countriesToDisplayTop = ["TR"],
 }) => {
   //  country data'mızı alıyoruz:
   const dropdownRef = useRef(null);
@@ -21,9 +23,12 @@ const CountrySelectDropdown = ({
 
   const handleFiltering = (e) => {
     setSearchValue(e.currentTarget.value);
-    const filtered = countries.filter((country) =>
-      country.name.toLowerCase().includes(e.target.value.toLowerCase())
+    const filtered = countries.filter(
+      (country) =>
+        country.name.toLowerCase().includes(e.target.value.toLowerCase()) &&
+        countriesToDisplayTop.indexOf(country.isoCode) == -1
     );
+
     setFilteredCountries(filtered);
   };
   const handleSelect = (country) => {
@@ -115,6 +120,60 @@ const CountrySelectDropdown = ({
             />
           </div>
           <div className=" py-1">
+            {/* Her zaman en üstte gösterilecek ülkeler (countriesToDisplayTop) */}
+            {countriesToDisplayTop.map((elem, index) => {
+              const country = Country.getCountryByCode(elem);
+              return (
+                <button
+                  key={index}
+                  title={country.name}
+                  onClick={() => handleSelect(country)}
+                  className="flex items-center w-full truncate   px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                >
+                  <Image
+                    width={32}
+                    height={24}
+                    alt={country.isoCode}
+                    src={`/assets/countryFlags/${country.isoCode}.WEBP`}
+                  />
+
+                  {country.name
+                    .toLowerCase()
+                    .indexOf(searchValue.trim().toLowerCase()) > -1 ? (
+                    // filter value'muz ülkenin isminde geçiyor mu? geçiyorsa bold harflerle yaz, geçmiyorsa düz bırak:
+                    <span className="pl-2">
+                      {country.name.slice(
+                        0,
+                        country.name
+                          .toLowerCase()
+
+                          .indexOf(searchValue.trim().toLowerCase())
+                      )}
+                      <span className="font-semibold">
+                        {country.name.slice(
+                          country.name
+                            .toLowerCase()
+                            .indexOf(searchValue.trim().toLowerCase()),
+                          country.name
+                            .toLowerCase()
+                            .indexOf(searchValue.trim().toLowerCase()) +
+                            searchValue.trim().length
+                        )}
+                      </span>
+                      {country.name.slice(
+                        country.name
+                          .toLowerCase()
+
+                          .indexOf(searchValue.trim().toLowerCase()) +
+                          searchValue.trim().length
+                      )}
+                    </span>
+                  ) : (
+                    <span className="pl-2">{country.name}</span>
+                  )}
+                </button>
+              );
+            })}
             {filteredCountries.map((country) => (
               <button
                 key={country.isoCode}
