@@ -1,6 +1,6 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
+import ClinicCarousel from "./ClinicCarousel";
 
 // Klinik verisi
 const clinicsData = [
@@ -145,9 +145,6 @@ const clinicsData = [
     rating: 3,
   },
 ];
-
-// Dinamik olarak yüklenen carousel bileşeni
-const ClinicCarousel = dynamic(() => import("./ClinicCarousel"), {});
 
 const PopularClinicsComponent = () => {
   return (

@@ -8,24 +8,24 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ClinicCarousel = ({ clinicsData }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [slidesToScroll, setSlidesToScroll] = React.useState(4);
+  const [slidesToShow, setSlidesToShow] = React.useState(4);
 
-  const updateSlidesToScroll = () => {
+  const updateSlidesToShow = () => {
     if (window.innerWidth <= 767) {
-      setSlidesToScroll(1);
+      setSlidesToShow(2); 
     } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-      setSlidesToScroll(2);
+      setSlidesToShow(2); 
     } else {
-      setSlidesToScroll(4);
+      setSlidesToShow(4); 
     }
   };
 
   React.useEffect(() => {
-    updateSlidesToScroll();
-    window.addEventListener("resize", updateSlidesToScroll);
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
 
     return () => {
-      window.removeEventListener("resize", updateSlidesToScroll);
+      window.removeEventListener("resize", updateSlidesToShow);
     };
   }, []);
 
@@ -33,28 +33,12 @@ const ClinicCarousel = ({ clinicsData }) => {
     dots: true,
     infinite: true,
     speed: 400,
-    slidesToShow: slidesToScroll,
-    slidesToScroll: slidesToScroll,
+    slidesToShow: slidesToShow,
+    slidesToScroll: slidesToShow,
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) => setCurrentSlide(current),
     arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
     appendDots: (dots) => (
       <div
         style={{
@@ -78,19 +62,14 @@ const ClinicCarousel = ({ clinicsData }) => {
     customPaging: (i) => (
       <div
         className={`cursor-pointer transition-all duration-300 ${
-          Math.floor(currentSlide / slidesToScroll) === i
+          Math.floor(currentSlide / slidesToShow) === i
             ? "bg-[#52B8AB] w-8 h-3"
             : "bg-gray-300 w-3 h-3"
         }`}
         style={{
           borderRadius: "999px",
           display: "inline-block",
-          margin:
-            Math.floor(currentSlide / slidesToScroll) === i ? "0" : "0 8px",
-          position:
-            Math.floor(currentSlide / slidesToScroll) === i
-              ? "relative"
-              : "static",
+          margin: Math.floor(currentSlide / slidesToShow) === i ? "0" : "0 8px",
         }}
       ></div>
     ),
@@ -99,24 +78,25 @@ const ClinicCarousel = ({ clinicsData }) => {
   return (
     <Slider {...settings}>
       {clinicsData.map((clinic) => (
-        <div key={clinic.id} className="p-4">
-          <div className="border-[0.5px] border-[#52B8AB] rounded-3xl overflow-hidden shadow-md relative mt-4 mb-4">
+        <div key={clinic.id} className="px-2 py-2">
+          <div className="border-[0.5px] border-[#52B8AB] rounded-2xl overflow-hidden shadow-md relative mt-2 mb-2">
             <Image
               src={clinic.image}
               alt={clinic.name}
               width={500}
               height={200}
-              className="w-full h-48 object-cover z-10"
+              className="w-full h-40 object-cover z-10 sm:h-48 lg:h-56"
             />
-            <div className="p-6 bg-white">
-              <h3 className="font-poppins font-bold text-[20px] text-[#1E1E1E] leading-[36px]">
+            <div className="p-3 sm:p-4 lg:p-6 bg-white">
+              <h3 className="font-poppins font-bold text-[16px] sm:text-[18px] lg:text-[20px] text-[#1E1E1E] leading-[22px] sm:leading-[28px] lg:leading-[36px]">
                 {clinic.name}
               </h3>
-              <p className="font-poppins font-light text-[16px] text-[#1E1E1E] leading-[24px] mb-4">
+              <p className="font-poppins font-light text-[14px] sm:text-[16px] lg:text-[18px] text-[#1E1E1E] leading-[20px] sm:leading-[24px] lg:leading-[28px] mb-2 sm:mb-4">
                 {clinic.location}
               </p>
             </div>
-            <div className="absolute bottom-1 right-4 flex space-x-1 mb-2">
+            <div className="absolute bottom-1 right-4 flex space-x-1 mb-0 sm:mb-2 sm:justify-end justify-start">
+              {" "}
               {[...Array(clinic.rating)].map((_, i) => (
                 <Image
                   key={i}
