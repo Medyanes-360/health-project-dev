@@ -1,5 +1,5 @@
 import React from "react";
-import dynamic from "next/dynamic";
+import ServicesCarousel from "./ServicesCarousel";
 
 // Hizmet verileri
 const servicesData = [
@@ -245,17 +245,13 @@ const servicesData = [
   },
 ];
 
-const ServicesCarousel = dynamic(() => import("./ServicesCarousel"));
-
 const OurServicesComponent = () => {
   return (
-    <div className="xl:container mx-auto services-section px-4 py-8 mb-10 mt-8">
+    <section className="relative py-12">
       {/* Başlık Bölümü */}
-      <div className="text-center mb-10">
-        <p className="text-[#52B8AB] font-poppins font-medium text-[14px] leading-[21px]">
-          OUR SERVICES
-        </p>
-        <h2 className="text-[#062126] font-poppins font-medium text-[40px] leading-[60px] mt-2">
+      <div className="text-center mb-12">
+        <p className="text-[#52B8AB] font-medium text-[14px]">OUR SERVICES</p>
+        <h2 className="text-[#062126] font-bold text-[40px] leading-[60px]">
           We Serve In Different <span className="font-bold">Areas For</span>
           <br />
           <span className="font-bold">Our Patients</span>
@@ -263,8 +259,10 @@ const OurServicesComponent = () => {
       </div>
 
       {/* Hizmet Kartları Carousel Bölümü */}
-      <ServicesCarousel servicesData={servicesData} />
-    </div>
+      <div className="container mx-auto px-4">
+        <ServicesCarousel servicesData={servicesData} />
+      </div>
+    </section>
   );
 };
 

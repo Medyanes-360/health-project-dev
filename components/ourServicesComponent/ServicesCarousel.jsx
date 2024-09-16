@@ -8,52 +8,56 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ServicesCarousel = ({ servicesData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slidesToScroll, setSlidesToScroll] = useState(8);
+  const [slidesToScroll, setSlidesToScroll] = useState(4);
+  const [rowsToShow, setRowsToShow] = useState(2);
 
-  const updateSlidesToScroll = () => {
+  const updateSlidesToShow = () => {
     if (window.innerWidth <= 767) {
-      setSlidesToScroll(1);
+      setSlidesToScroll(2);
+      setRowsToShow(1);
     } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-      setSlidesToScroll(6);
+      setSlidesToScroll(2);
+      setRowsToShow(2);
     } else {
-      setSlidesToScroll(8);
+      setSlidesToScroll(4);
+      setRowsToShow(2);
     }
   };
 
   useEffect(() => {
-    updateSlidesToScroll();
-    window.addEventListener("resize", updateSlidesToScroll);
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
 
     return () => {
-      window.removeEventListener("resize", updateSlidesToScroll);
+      window.removeEventListener("resize", updateSlidesToShow);
     };
   }, []);
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 400,
-    slidesToShow: 4,
+    speed: 500,
+    slidesToShow: slidesToScroll,
     slidesToScroll: slidesToScroll,
-    rows: 2,
+    rows: rowsToShow,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     afterChange: (current) => setCurrentSlide(current),
     arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 6,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           rows: 2,
         },
       },
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           rows: 1,
         },
       },
@@ -90,10 +94,6 @@ const ServicesCarousel = ({ servicesData }) => {
           display: "inline-block",
           margin:
             Math.floor(currentSlide / slidesToScroll) === i ? "0" : "0 8px",
-          position:
-            Math.floor(currentSlide / slidesToScroll) === i
-              ? "relative"
-              : "static",
         }}
       ></div>
     ),
@@ -102,16 +102,26 @@ const ServicesCarousel = ({ servicesData }) => {
   return (
     <Slider {...settings}>
       {servicesData.map((service) => (
-        <div key={service.id} className="p-4 mb-6">
-          <div className="service-card group bg-white p-6 rounded-lg shadow-[5px_0_10px_rgba(0,0,0,0.1)] transition-all transform hover:scale-105 relative z-10 overflow-hidden">
+        <div key={service.id} className="p-2 sm:p-4 mb-4">
+          {" "}
+          <div
+            className="service-card relative bg-white p-4 sm:p-6 rounded-lg transition-all duration-300 hover:shadow-none hover:scale-105 group"
+            style={{
+              height: "300px",
+              width: "100%",
+              boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.1)",
+            }}
+          >
             <div
-              className="absolute top-0 left-0 w-full h-full pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+              className="absolute top-0 left-0 w-full h-full pointer-events-none transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:border-teal-500"
               style={{
                 borderRight: "5px solid #52B8AB",
                 borderBottom: "5px solid #52B8AB",
+                borderRadius: "8px",
               }}
             ></div>
-            <div className="relative z-20">
+
+            <div className="relative z-10">
               <div className="mb-4">
                 <Image
                   src={service.icon}
@@ -120,16 +130,17 @@ const ServicesCarousel = ({ servicesData }) => {
                   height={50}
                 />
               </div>
-              <h3 className="font-poppins font-bold text-[16px] md:text-[12px] leading-[16px] text-[#0B8071] mb-2">
+              <h3 className="font-bold text-lg text-[#0B8071] mb-2 text-left">
                 {service.title}
               </h3>
-
-              <p className="font-poppins font-light text-[16px] leading-[24px] text-[#7D7987] py-4">
+              <p className="text-gray-600 mb-4 text-left">
                 {service.description}
               </p>
-              <a href="#" className="text-teal-600 mt-4 block">
-                Read more →
-              </a>
+              <div className="text-left">
+                <a href="#" className="text-[#52B8AB] hover:text-[#0B8071]">
+                  Read more →
+                </a>
+              </div>
             </div>
           </div>
         </div>
