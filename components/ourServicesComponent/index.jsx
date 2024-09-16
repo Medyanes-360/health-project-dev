@@ -1,5 +1,6 @@
 import React from "react";
 import ServicesCarousel from "./ServicesCarousel";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 // Hizmet verileri
 const servicesData = [
@@ -259,9 +260,9 @@ const OurServicesComponent = () => {
       </div>
 
       {/* Hizmet Kartları Carousel Bölümü */}
-      <div className="container mx-auto px-4">
+      <ExtraLargePageContainer>
         <ServicesCarousel servicesData={servicesData} />
-      </div>
+      </ExtraLargePageContainer>
     </section>
   );
 };

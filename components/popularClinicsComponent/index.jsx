@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ClinicCarousel from "./ClinicCarousel";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 // Klinik verisi
 const clinicsData = [
@@ -148,9 +149,9 @@ const clinicsData = [
 
 const PopularClinicsComponent = () => {
   return (
-    <section className="relative">
+    <section className="relative bg-[#AFFFF54F] md:bg-transparent">
       {/* SVG */}
-      <div className="absolute inset-0 flex items-center justify-end top-[-480px] z-[-1]">
+      <div className="absolute inset-0 items-center justify-end top-[-480px] z-[-1] md:flex hidden">
         <Image
           src="/assets/Ellipse108.svg"
           alt="Orta SVG"
@@ -159,7 +160,7 @@ const PopularClinicsComponent = () => {
           priority
         />
       </div>
-      <div className="popular-clinics-section w-full xl:container mx-auto py-8 relative z-10">
+      <ExtraLargePageContainer className="popular-clinics-section w-full py-8 relative z-10">
         {/* Başlık Bölümü */}
         <div className="text-center mb-6">
           <h2 className="text-[40px] font-poppins font-bold text-[#062126] leading-[60px] text-center">
@@ -168,7 +169,7 @@ const PopularClinicsComponent = () => {
         </div>
         {/* Klinik Kartları Bölümü */}
         <ClinicCarousel clinicsData={clinicsData} />
-      </div>
+      </ExtraLargePageContainer>
     </section>
   );
 };
