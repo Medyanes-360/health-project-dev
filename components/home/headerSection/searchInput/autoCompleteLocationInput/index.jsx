@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Country, State } from "country-state-city";
+import Image from "next/image";
 
 // value ve setValue input dışında tutulan useState'in değerleri.
 // toLeft ve toRight, dropdown'un sağa mı sola mı doğru açılacağını belirtir.
@@ -199,7 +200,15 @@ const AutoCompleteLocationInput = ({
 
                     {/* seçenek bir country mi? öyleyse: */}
                     {option.flag && (
-                      <span className="text-xl pl-2">{option.flag}</span>
+                      <span className="text-xl pl-2">
+                        {" "}
+                        <Image
+                          width={24}
+                          height={16}
+                          alt={option.isoCode}
+                          src={`/assets/countryFlags/${option.isoCode}.WEBP`}
+                        />
+                      </span>
                     )}
                     {/* seçenek bir state mi? öyleyse: */}
                     {!option.flag && (
@@ -209,7 +218,18 @@ const AutoCompleteLocationInput = ({
                           {Country.getCountryByCode(option.countryCode).name}
                         </span>
                         <span className="pl-2 text-xl">
-                          {Country.getCountryByCode(option.countryCode).flag}
+                          <Image
+                            width={24}
+                            height={16}
+                            alt={
+                              Country.getCountryByCode(option.countryCode)
+                                .isoCode
+                            }
+                            src={`/assets/countryFlags/${
+                              Country.getCountryByCode(option.countryCode)
+                                .isoCode
+                            }.WEBP`}
+                          />
                         </span>
                       </>
                     )}
@@ -251,7 +271,15 @@ const AutoCompleteLocationInput = ({
                 </span>
                 {/* seçenek bir country mi? öyleyse: */}
                 {option.flag && (
-                  <span className="text-xl pl-2">{option.flag}</span>
+                  <span className="text-xl pl-2">
+                    {" "}
+                    <Image
+                      width={24}
+                      height={16}
+                      alt={option.isoCode}
+                      src={`/assets/countryFlags/${option.isoCode}.WEBP`}
+                    />
+                  </span>
                 )}
                 {/* seçenek bir state mi? öyleyse: */}
                 {!option.flag && (
@@ -261,7 +289,16 @@ const AutoCompleteLocationInput = ({
                       {Country.getCountryByCode(option.countryCode).name}
                     </span>
                     <span className="pl-2 text-xl">
-                      {Country.getCountryByCode(option.countryCode).flag}
+                      <Image
+                        width={24}
+                        height={16}
+                        alt={
+                          Country.getCountryByCode(option.countryCode).isoCode
+                        }
+                        src={`/assets/countryFlags/${
+                          Country.getCountryByCode(option.countryCode).isoCode
+                        }.WEBP`}
+                      />
                     </span>
                   </>
                 )}

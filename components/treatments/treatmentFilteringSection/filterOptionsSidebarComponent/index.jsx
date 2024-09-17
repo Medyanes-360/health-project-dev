@@ -2,7 +2,7 @@
 import ButtonComponent from "@/globalElements/Button";
 import ExpandingList from "./expandingList";
 import RangeSlider from "@/globalElements/rangeSlider";
-import StarSelector from "@/globalElements/starSelector";
+import FiveStars from "@/globalElements/fiveStars";
 import { useState } from "react";
 
 export default function FilterOptionsSidebarComponent() {
@@ -81,11 +81,12 @@ export default function FilterOptionsSidebarComponent() {
           <div className="my-5">
             <ExpandingList title="Booking Score">
               <div className="flex px-5 my-2">
-                <StarSelector
+                <FiveStars
+                  dynamic
                   rating={bookingScore}
                   setRating={setBookingScore}
-                  text="& Up"
                 />
+                <span className="text-sm pl-2">& Up</span>
               </div>
             </ExpandingList>
           </div>

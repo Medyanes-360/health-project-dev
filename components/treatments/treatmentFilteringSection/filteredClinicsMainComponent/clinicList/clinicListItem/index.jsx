@@ -2,6 +2,7 @@
 import ButtonComponent from "@/globalElements/Button";
 import { useGlobalStore } from "@/utils/globalStore";
 import Image from "next/image";
+import Link from "next/link";
 
 const mockImageSources = [
   "/assets/images/clinic1.png",
@@ -21,7 +22,7 @@ export default function ClinicListItem() {
 
   return (
     <div className="relative grid grid-flow-col-dense mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
-      <div className="col-span-3 h-full    flex flex-col justify-center items-center">
+      <div className="col-span-3 h-full  max-w-[280px]   flex flex-col justify-center items-center">
         <Image
           className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
           src={imageSources[0]}
@@ -32,7 +33,7 @@ export default function ClinicListItem() {
           width={100}
           height={100}
         />
-        <div className="grid grid-cols-3 w-full items-center   ">
+        <div className="grid grid-cols-3 w-full max-w-[280px] items-center   ">
           {imageSources.slice(1).map((src, index) => {
             return (
               <Image
@@ -118,10 +119,15 @@ export default function ClinicListItem() {
             className="bg-primary mr-3  text-white font-medium !py-1.5 w-full !text-sm"
             title="Get A Free Quota"
           />
-          <ButtonComponent
-            className="bg-white-dark text-primary font-medium !py-1.5 w-full !text-sm"
-            title="View Deal"
-          />
+          <Link
+            className="w-full"
+            href="/clinic/adem-and-havva-medical-center/hair-transplant"
+          >
+            <ButtonComponent
+              className="bg-white-dark text-primary font-medium !py-1.5 w-full !text-sm"
+              title="View Deal"
+            />
+          </Link>
         </div>
       </div>
       <div className="col-span-2 p-2 shadow-[0px_12px_48px_0px_#BCBCBC1F;]">
