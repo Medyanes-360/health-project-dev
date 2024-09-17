@@ -1,11 +1,9 @@
 "use client";
 import CardComponent from "@/globalElements/Card";
 import QuestionCard from "./QuestionCard";
-import { useContext, useState } from "react";
-import QuestionsContext from "@/context/QuestionsContext";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-
-// data. must have id starts with 1
+import useQuestionStore from "@/utils/questionStore"; 
 
 const questions = [
   {
@@ -42,57 +40,39 @@ const questions = [
 
 const QuestionsSection = () => {
   const router = useRouter();
-  const { answers } = useContext(QuestionsContext);
-  // storing the answers in a global context state
-
+  const { answers } = useQuestionStore(); // Use Zustand store
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  // to toggle between pages
-
   const [error, setError] = useState(false);
-  // to show error if needed
 
   const nextQuestionHandler = () => {
     const s = `answer${currentQuestion}`;
-    // to store the answer in an object
-    // the object name will be called
-    //answer[number] and this number is the id
-    // ex: answer2:Yes, answer4:No
-
     if (questions[currentQuestion - 1].required) {
-      if (answers[s] == undefined || answers[s] == null) {
+      if (answers[s] === undefined || answers[s] === null) {
         setError(true);
         return;
       }
-      // check if required and not answered
     }
 
     if (currentQuestion == questions.length) {
       router.push("/");
       return;
-      // check if the last question
     }
 
     setError(false);
     setCurrentQuestion((prev) => prev + 1);
   };
+
   const prevQuestionHandler = () => {
     setError(false);
     setCurrentQuestion((prev) => prev - 1);
-
-    // previous question
   };
 
   return (
     <div className="w-full min-h-screen bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
-        <CardComponent
-          className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}
-        >
-          {/* using the component cad */}
-          {questions?.map((question) => {
-            //maping theou questions
+        <CardComponent className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}>
+          {questions.map((question) => {
             if (currentQuestion == question.id) {
-              // if the current question does not have the same id, it wont be shown
               return (
                 <QuestionCard
                   question={question.q}
@@ -102,63 +82,46 @@ const QuestionsSection = () => {
               );
             }
           })}
-
+          {/* Progress Bar */}
           <div className="px-6 flex gap-2 items-center">
-            {questions?.map((q , i) => {
+            {questions.map((q, i) => {
               if (q.id == 1) return null;
-              if (currentQuestion > q.id) {
-                return (
-                  <div key={i} className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
-                );
-              } else if (currentQuestion == q.id) {
-                return (
-                  <div key={i} className="bg-primary h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
-                );
-              } else
-                return (
-                  <div key={i} className="bg-[#D9D9D9] h-[10px] w-full rounded-r-md rounded-l-[-0.375rem]" />
-                );
+              return (
+                <div
+                  key={i}
+                  className={`h-[10px] w-full rounded-r-md ${
+                    currentQuestion >= q.id
+                      ? "bg-primary"
+                      : "bg-[#D9D9D9]"
+                  }`}
+                />
+              );
             })}
           </div>
 
           <div className="flex w-full items-center px-6 justify-between">
             <div className="w-fit">
-              <div
-                className={`
-                  "w-fit py-2 px-3 border border-white-dark cursor-pointer mr-auto",
-                  ${currentQuestion == 1 && "hidden"}
-                `}
-                onClick={prevQuestionHandler}
-                // go back
-              >
-                ← Go Back
-              </div>
+              {currentQuestion > 1 && (
+                <div
+                  className="w-fit py-2 px-3 border border-white-dark cursor-pointer mr-auto"
+                  onClick={prevQuestionHandler}
+                >
+                  ← Go Back
+                </div>
+              )}
             </div>
             <div className="w-fit">
               <div
-                className={`
-                  "w-fit py-2 px-3  border-white-dark bg-primary cursor-pointer ml-auto"
-                `}
+                className="w-fit py-2 px-3 border-white-dark bg-primary cursor-pointer ml-auto"
                 onClick={nextQuestionHandler}
               >
-                {questions.length == currentQuestion
-                  ? "Finish"
-                  : "Move Forward →"}
-                {/* move forward of finish */}
+                {questions.length == currentQuestion ? "Finish" : "Move Forward →"}
               </div>
             </div>
           </div>
-          {error && (
-            // error
-            <p className="text-center text-red-500 px-6">
-              *This Question is Needed
-            </p>
-          )}
+          {error && <p className="text-center text-red-500 px-6">*This Question is Needed</p>}
         </CardComponent>
       </div>
-
-      {/* just to make sure everything working just fine */}
-
       <div className="w-[500px] flex justify-center gap-3 flex-nowrap mt-4">
         <pre className="bg-gray-100 p-4 rounded border border-gray-300">
           {JSON.stringify(answers, null, 2)}

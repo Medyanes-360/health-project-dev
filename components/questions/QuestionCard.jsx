@@ -1,12 +1,12 @@
 "use client";
-import QuestionsContext from "@/context/QuestionsContext";
-import { useContext } from "react";
+import useQuestionStore from "@/utils/questionStore";
 
 const QuestionCard = ({ question, id }) => {
-  const { answers, setAnswers } = useContext(QuestionsContext);
+  const { answers, setAnswers } = useQuestionStore(); // Use Zustand store
   const s = `answer${id}`;
+
   const handleOptionChange = (event) => {
-    setAnswers((prev) => ({ ...prev, [s]: event.target.value }));
+    setAnswers({ [s]: event.target.value });
   };
 
   return (
@@ -16,7 +16,6 @@ const QuestionCard = ({ question, id }) => {
           2 Minutes Health Survey for a Free Quote
         </p>
         <h1 className="text-2xl font-bold">{question}</h1>
-        {/*  the question */}
       </div>
       <div className="space-y-1 w-full">
         <div className="w-full h-[40px] border px-4 py-2 flex gap-5">
@@ -24,20 +23,18 @@ const QuestionCard = ({ question, id }) => {
             onChange={handleOptionChange}
             name={id}
             type="radio"
-            value={"Yes"}
+            value="Yes"
             defaultChecked={answers[s] === "Yes"}
-            // the value will be a yes string
           />
           <label>Yes</label>
         </div>
-        <div className="w-full h-[40px] border  px-4 py-2 flex gap-5">
+        <div className="w-full h-[40px] border px-4 py-2 flex gap-5">
           <input
             onChange={handleOptionChange}
             name={id}
             type="radio"
-            value={"No"}
+            value="No"
             defaultChecked={answers[s] === "No"}
-            // the value will be a no string
           />
           <label>No</label>
         </div>
