@@ -1,15 +1,13 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 export default function LocationSection() {
+  const address = " Balkiraz mh Alkış caddesi mamak";
   return (
     <ExtraLargePageContainer className="shadow-[0px_12px_48px_0px_#BCBCBC1F;] rounded-xl p-8">
       <p className="text-2xl font-medium bg-header-gradient bg-clip-text text-fill-transparent text-primary">
         Location
       </p>
-      <p>
-        Cumhuriyet, Cumhuriyet Mahallesi, İncirli Dede Caddesi, No:6/2 Anthill
-        Towers, 34381 Şişli/İstanbul
-      </p>
+      <p>{address}</p>
       <div className="flex mt-8 items-start">
         <span className="mr-6">
           <svg
@@ -60,7 +58,9 @@ export default function LocationSection() {
         <div className="w-full select-none    overflow-hidden h-[450px]">
           <iframe
             className="select-none w-full h-full    "
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241838.13961618845!2d28.864364635046037!3d41.07827556480767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab71622aa86e5%3A0x21ceb7412cc15f9a!2sAnthill%20Residence!5e0!3m2!1str!2str!4v1726602395241!5m2!1str!2str"
+            src={`https://maps.google.com/maps?width=520&height=400&hl=en&q=${encodeURIComponent(
+              address
+            )}&t=&z=15&ie=UTF8&iwloc=B&output=embed`}
             width="800"
             height="450"
             allowfullscreen
