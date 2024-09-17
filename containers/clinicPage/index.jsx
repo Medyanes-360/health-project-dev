@@ -1,5 +1,8 @@
 import { useParams, useSearchParams } from "next/navigation";
 import BreadCrumbComponent from "../../components/clinic/breadCrumbComponent";
+import BeforeAfterComponent from "@/components/clinic/beforeAfterComponent";
+import ProgramDetailsComponent from "@/components/clinic/programDetailsComponent";
+
 
 export default function ClinicPageContainer() {
   const params = useParams();
@@ -9,6 +12,8 @@ export default function ClinicPageContainer() {
   return (
     <div>
       <BreadCrumbComponent />
+      <BeforeAfterComponent />
+      <ProgramDetailsComponent />
       clinic here.
     </div>
   );
