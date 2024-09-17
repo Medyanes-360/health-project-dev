@@ -28,7 +28,7 @@ export default function PatientReviewsListItem() {
     review.location.countryIsoCode
   );
   return (
-    <div className="flex flex-col pb-3  text-[#04285C] ">
+    <div className="flex flex-col pb-3  border-b border-b-[rgba(0,0,0,.24)] mt-3 text-[#04285C] ">
       {/* top */}
       <div className="flex   justify-between  items-center">
         <div className="flex  items-center">
