@@ -5,16 +5,20 @@ import InsuranceAndPayment from "@/components/treatmentBlog/insuranceAndPayment"
 import CheapVeneers from "@/components/treatmentBlog/Top7";
 import Citations from "@/components/treatmentBlog/citations";
 import FaqSection from "@/components/treatmentBlog/faqSection";
+import CompositeVeneers from "@/components/treatmentBlog/compositeVeneers";
+import TypeOfDental from "@/components/treatmentBlog/typeOfDental";
 
 export default function TreatmentBlogPageContainer() {
   return (
     <div>
       <BreadCrumbComponent />
 
+      <TypeOfDental />
+      <CompositeVeneers />
       <BestClinics />
       <BestVenceerPackages />
       <InsuranceAndPayment />
-      <FaqSection/>
+      <FaqSection />
       <CheapVeneers />
       <Citations />
     </div>
