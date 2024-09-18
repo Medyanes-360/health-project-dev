@@ -5,7 +5,7 @@ import BookimedEditorialPolicy from "@/components/treatments/bookimed/bookimedPo
 import BreadCrumbComponent from "@/components/treatments/breadCrumbComponent";
 import DiscoverBestClinicsSection from "@/components/treatments/discoverBestClinicsSection";
 import DiscoverMore from "@/components/treatments/discoverMore";
-import Faqs from "@/components/treatments/faqs";
+import FaqSection from "@/components/treatments/faqSection";
 import GetFreeConsolation from "@/components/treatments/freeConsultationForm";
 import HairTransplantReviews from "@/components/treatments/hairTransplantReviews";
 import HottestPackagesSection from "@/components/treatments/hottestPackagesSection";
@@ -47,7 +47,7 @@ export default function TreatmentPageContainer({ treatment }) {
       <DiscoverMore />
       <MedicalAssessment />
       <RelatedArticles />
-      <Faqs />
+      <FaqSection/>
       <HairTransplantReviews />
       <BookimedEditorialPolicy />
       <BookimedCeoAssurance />
