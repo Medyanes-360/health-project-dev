@@ -9,8 +9,12 @@ import ProgramBenefits from "@/components/clinic/programBenefits";
 import HowItWorks from "@/components/clinic/howItWorks";
 import { clinicPageMockData } from "@/data/mocks/clinicPageMockData";
 
-export default function ClinicPageContainer() {
+export default function ClinicPageContainer({ clinic }) {
+  const reviews = clinic.patientReviews;
+  const address = clinic.location.fullAddress;
+  const faqs = clinic.faqs;
   const data = clinicPageMockData;
+
   return (
     <div>
       <BreadCrumbComponent />
@@ -19,9 +23,9 @@ export default function ClinicPageContainer() {
       <ProgramBenefits data={data} />
       <HowItWorks data={data} />
       {/* Fırat */}
-      <PatientReviewsSection />
-      <LocationSection />
-      <FaqSection />
+      <PatientReviewsSection reviews={reviews} />
+      <LocationSection address={address} />
+      <FaqSection data={faqs} />
       <YouMightAlsoLikeSection />
     </div>
   );
