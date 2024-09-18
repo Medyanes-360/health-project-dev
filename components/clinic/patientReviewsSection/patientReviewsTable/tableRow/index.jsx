@@ -1,13 +1,6 @@
 import Image from "next/image";
 
-export default function TableRow({
-  score,
-  icon,
-  classname,
-
-  title,
-  scoreText,
-}) {
+export default function TableRow({ score, icon, classname, title, scoreText }) {
   return (
     <div
       className={`${classname}  bg-primary-light flex items-center text-[#031F05] justify-between py-2.5 px-3 cursor-pointer`}

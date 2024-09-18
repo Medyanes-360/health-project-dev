@@ -3,7 +3,7 @@ import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import PatientReviewsTable from "./patientReviewsTable";
 import PatientReviewsList from "./patientReviewsList";
 
-export default function PatientReviewsSection() {
+export default function PatientReviewsSection({ reviews }) {
   return (
     <ExtraLargePageContainer className="shadow-[0px_12px_48px_0px_#BCBCBC1F;] rounded-xl p-8">
       <p className="text-2xl font-medium bg-header-gradient bg-clip-text text-fill-transparent text-primary">
@@ -89,7 +89,7 @@ export default function PatientReviewsSection() {
             />
           </svg>
         </span>
-        <PatientReviewsList />
+        <PatientReviewsList reviews={reviews} />
       </div>
     </ExtraLargePageContainer>
   );

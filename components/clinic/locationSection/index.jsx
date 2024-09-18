@@ -1,14 +1,13 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
-export default function LocationSection() {
-  const address = " Balkiraz mh Alkış caddesi mamak";
+export default function LocationSection({ address }) {
   return (
     <ExtraLargePageContainer className="shadow-[0px_12px_48px_0px_#BCBCBC1F;] rounded-xl p-8">
       <p className="text-2xl font-medium bg-header-gradient bg-clip-text text-fill-transparent text-primary">
         Location
       </p>
       <p>{address}</p>
-      <div className="flex mt-8 items-start">
+      <div className="flex relative mt-8 items-start">
         <span className="mr-6">
           <svg
             width="44"
@@ -55,9 +54,15 @@ export default function LocationSection() {
             />
           </svg>
         </span>
-        <div className="w-full select-none    overflow-hidden h-[450px]">
+        <div className="  w-full select-none rounded-3xl  overflow-hidden h-[450px]  ">
           <iframe
-            className="select-none w-full h-full    "
+            style={{
+              // border görünmesin diye width ve height yükseltip margini -2 (border kalınlığı) yapıyoruz
+              width: "100.5%",
+              height: "100.5%",
+              margin: "-2px",
+            }}
+            className="   select-none   h-full   w-full  "
             src={`https://maps.google.com/maps?width=520&height=400&hl=en&q=${encodeURIComponent(
               address
             )}&t=&z=15&ie=UTF8&iwloc=B&output=embed`}

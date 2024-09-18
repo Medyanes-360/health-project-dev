@@ -1,34 +1,18 @@
+"use client";
 import FiveStars from "@/globalElements/fiveStars";
 import { Country } from "country-state-city";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function PatientReviewsListItem() {
+export default function PatientReviewsListItem({ review }) {
   const [isFullText, setIsFullText] = useState(false);
   const [isHelpful, setIsHelpful] = useState(false);
-  const review = {
-    username: "Mehmet Taşkesen",
-    treatment: "Hair Transplant",
-    location: {
-      countryIsoCode: "US",
-    },
-    rating: 4.0,
-    createdAt: 1709758800000,
-    reviewText:
-      "Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.",
-    images: [
-      "/assets/images/clinic1.png",
-      "/assets/images/clinic2.png",
-      "/assets/images/clinic3.png",
-      "/assets/images/clinic1.png",
-      "/assets/images/clinic2.png",
-    ],
-  };
+
   const reviewerCountry = Country.getCountryByCode(
     review.location.countryIsoCode
   );
   return (
-    <div className="flex flex-col pb-3  border-b border-b-[rgba(0,0,0,.24)] mt-3 text-[#04285C] ">
+    <div className="flex flex-col pb-3 w-full  border-b border-b-[rgba(0,0,0,.24)] mt-3 text-[#04285C] ">
       {/* top */}
       <div className="flex   justify-between  items-center">
         <div className="flex  items-center">
@@ -70,15 +54,19 @@ export default function PatientReviewsListItem() {
       <p className="text-sm text-[#6A778B] ">
         {isFullText
           ? review.reviewText
-          : review.reviewText.substring(0, 200).concat("...")}
-        <span
-          onClick={() => {
-            setIsFullText(!isFullText);
-          }}
-          className="pl-2 text-primary cursor-pointer hover:underline"
-        >
-          {isFullText ? "Show Less" : "Read More"}
-        </span>{" "}
+          : review.reviewText
+              .substring(0, 200)
+              .concat(review.reviewText.length > 200 ? "..." : "")}
+        {review.reviewText.length > 200 && (
+          <span
+            onClick={() => {
+              setIsFullText(!isFullText);
+            }}
+            className="pl-2 text-primary cursor-pointer hover:underline"
+          >
+            {isFullText ? "Show Less" : "Read More"}
+          </span>
+        )}
       </p>
 
       {/* Images */}
