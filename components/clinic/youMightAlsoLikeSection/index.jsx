@@ -1,4 +1,4 @@
-import ClinicListItem from "@/components/globalClinicsPage/treatmentFilteringSection/filteredClinicsMainComponent/clinicList/clinicListItem";
+import ClinicListItem from "@/components/treatments/treatmentFilteringSection/filteredClinicsMainComponent/clinicList/clinicListItem";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 export default function YouMightAlsoLikeSection() {
