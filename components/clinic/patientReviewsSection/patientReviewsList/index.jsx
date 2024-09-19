@@ -5,7 +5,7 @@ export default function PatientReviewsList({ reviews }) {
   return (
     <div className="flex-1 flex flex-col items-center ">
       {reviews.map((review, index) => {
-        return <PatientReviewsListItem review={review} />;
+        return <PatientReviewsListItem key={index} review={review} />;
       })}
       <ButtonComponent className="!py-[15px] !px-[60px] mt-3 w-[228px] !rounded-[34px] bg-primary">
         <p className="pr-2.5 text-white">See More </p>
