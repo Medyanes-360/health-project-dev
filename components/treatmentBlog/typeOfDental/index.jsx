@@ -2,7 +2,7 @@ import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import DataTable from "./DataTable";
 
 const TypeOfDental = () => {
-  const VenceerData = [
+  const TypeVenceerData = [
     {
       veneerType: "Mexico",
       compositeVeneers: "290",
@@ -67,7 +67,7 @@ const TypeOfDental = () => {
         </div>
 
         {/* table */}
-        <DataTable data={VenceerData} />
+        <DataTable data={TypeVenceerData} />
       </ExtraLargePageContainer>
     </div>
   );

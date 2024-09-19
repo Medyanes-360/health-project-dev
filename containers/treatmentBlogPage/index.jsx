@@ -7,12 +7,14 @@ import Citations from "@/components/treatmentBlog/citations";
 import FaqSection from "@/components/treatmentBlog/faqSection";
 import CompositeVeneers from "@/components/treatmentBlog/compositeVeneers";
 import TypeOfDental from "@/components/treatmentBlog/typeOfDental";
+import BenefitsOfDental from "@/components/treatmentBlog/BenefitsOfDental";
 
 export default function TreatmentBlogPageContainer() {
   return (
     <div>
       <BreadCrumbComponent />
 
+      <BenefitsOfDental />
       <TypeOfDental />
       <CompositeVeneers />
       <BestClinics />
