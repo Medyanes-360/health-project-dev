@@ -36,11 +36,14 @@ const BestVenceerPackagesCard = ({ data }) => {
 
         <div className="space-y-4 sm:w-[40%] w-full  py-3">
           <div className="flex items-center justify-center gap-1">
+            <div className="flex items-center ">
+
             {[1, 2, 3, 4, 5].map((i) => (
               <span key={i} className="text-[#FFAA00] text-4xl ">
                 ★
               </span>
             ))}
+            </div>
 
             <p className="text-xl">{rate}</p>
           </div>

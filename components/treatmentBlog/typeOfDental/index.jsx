@@ -40,30 +40,31 @@ const TypeOfDental = () => {
             Types of Dental Veneers Available in Mexico
           </h1>
         </div>
+        <div className="space-y-14 bg-[#D9D9D921]">
+          <div className="space-y-2">
+            <h1>
+              If you’d like to improve your smile, veneers in Mexico can be an
+              innovative and affordable cosmetic dental solution when your teeth
+              got:
+            </h1>
 
-        <div className="space-y-2">
-          <h1>
-            If you’d like to improve your smile, veneers in Mexico can be an
-            innovative and affordable cosmetic dental solution when your teeth
-            got:
-          </h1>
-
-          <ul className="space-y-1 list-disc marker:text-[20px] pl-6">
-            <li>colored;</li>
-            <li>damaged;</li>
-            <li>misaligned.</li>
-          </ul>
-          <p>
-            Mexican doctors pay precise attention to minor cosmetic details to
-            place custom dental veneers reasonably. Local dentists take into
-            account individual patients’ teeth characteristics, such as tooth
-            length, proportions, smile line, and natural teeth color, to obtain
-            the perfect outcome.
-          </p>
-          <p>
-            Most clinics in Mexico offer 2 main types of veneers, depending on
-            patients’ needs, expectations, and budget:{" "}
-          </p>
+            <ul className="space-y-1 list-disc marker:text-[20px] pl-6">
+              <li>colored;</li>
+              <li>damaged;</li>
+              <li>misaligned.</li>
+            </ul>
+            <p>
+              Mexican doctors pay precise attention to minor cosmetic details to
+              place custom dental veneers reasonably. Local dentists take into
+              account individual patients’ teeth characteristics, such as tooth
+              length, proportions, smile line, and natural teeth color, to
+              obtain the perfect outcome.
+            </p>
+            <p>
+              Most clinics in Mexico offer 2 main types of veneers, depending on
+              patients’ needs, expectations, and budget:{" "}
+            </p>
+          </div>
         </div>
 
         {/* table */}

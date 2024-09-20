@@ -4,7 +4,7 @@ import ExpandingQuestions from "./expand";
 const Faqs = ({ data }) => {
   return (
     <div className="">
-      <CardComponent className={"!p-0"}>
+      <CardComponent className={"!p-0 !shadow-lg"}>
         {data?.map(({ description, title }, i) => (
           <ExpandingQuestions key={i} description={description} title={title} />
         ))}

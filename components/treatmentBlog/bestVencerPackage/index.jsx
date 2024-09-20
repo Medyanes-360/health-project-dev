@@ -53,8 +53,8 @@ const data = [
 
 const BestVenceerPackages = () => {
   return (
-    <div className="py-20">
-      <ExtraLargePageContainer className={"!space-y-5"}>
+    <div className="py-20 ">
+      <ExtraLargePageContainer className={"!space-y-5 !bg-[#FFFFFF]"}>
         <h1 className="sm:text-2xl text-primary text-center text-xl">
           BestVenceerPackages Venceer Package
         </h1>

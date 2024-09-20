@@ -40,7 +40,7 @@ const BestClinicCards = ({ data }) => {
             display: "flex",
             justifyContent: "start",
             alignItems: "center",
-            gap: "8px",
+            gap: "2px",
           }}
         >
           {dots}
@@ -69,7 +69,7 @@ const BestClinicCards = ({ data }) => {
     <>
       {/* Big screen slider */}
       <div className="hidden lg:block ">
-        <Slider {...generateSliderSettings("big", 3, 3)}>
+        <Slider {...generateSliderSettings("big", 4, 3)}>
           {data?.map((item, index) => (
             <div key={index} className="p-2">
               <CardContent data={item} />

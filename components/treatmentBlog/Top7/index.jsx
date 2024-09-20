@@ -4,7 +4,7 @@ import React from "react";
 
 const CheapVeneers = () => {
   return (
-    <ExtraLargePageContainer className={"!pb-20 "}>
+    <ExtraLargePageContainer className={"!py-20 "}>
       <div className="min-h-[50vh] w-full relative grid place-content-center ">
         <Image
           src={"/assets/images/money.jpg"}

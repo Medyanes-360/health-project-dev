@@ -40,7 +40,7 @@ const CompositeVeneersCard = () => {
             Advantages of composite veneers:
           </h1>
 
-          <ul className="space-y-1 list-disc marker:text-[20px] pl-6">
+          <ul className="space-y-1 list-disc marker:text-[15px] pl-6">
             <li>
               the process of installing can be accomplished in a single visit;
             </li>

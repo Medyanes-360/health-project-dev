@@ -8,27 +8,27 @@ const DataTable = ({ data }) => {
         ))}
   
         {/* Composite Veneers Row */}
-        <div className="bg-gray-100 px-4 py-5">Composite Veneers</div>
+        <div className="bg-[#FFFFFF] px-4 py-5">Composite Veneers</div>
         {data.map((item, index) => (
-          <div key={index} className="bg-gray-100 px-4 py-5">{item.compositeVeneers}</div>
+          <div key={index} className="bg-[#FFFFFF] px-4 py-5">{item.compositeVeneers}</div>
         ))}
   
         {/* Porcelain Veneers Row */}
-        <div className="bg-gray-200 px-4 py-5">Porcelain Veneers</div>
+        <div className="bg-[#FFFFFF] px-4 py-5">Porcelain Veneers</div>
         {data.map((item, index) => (
-          <div key={index} className="bg-gray-200 px-4 py-5">{item.porcelainVeneers}</div>
+          <div key={index} className="bg-[#FFFFFF] px-4 py-5">{item.porcelainVeneers}</div>
         ))}
   
         {/* Lumineers Row */}
-        <div className="bg-gray-100 px-4 py-5">Lumineers</div>
+        <div className="bg-[#FFFFFF] px-4 py-5">Lumineers</div>
         {data.map((item, index) => (
-          <div key={index} className="bg-gray-100 px-4 py-5">{item.Lumineers}</div>
+          <div key={index} className="bg-[#FFFFFF] px-4 py-5">{item.Lumineers}</div>
         ))}
   
         {/* Full Set of 16 Veneers Row */}
-        <div className="bg-gray-200 px-4 py-5">Full Set of 16 Veneers</div>
+        <div className="bg-[#FFFFFF] px-4 py-5">Full Set of 16 Veneers</div>
         {data.map((item, index) => (
-          <div key={index} className="bg-gray-200 px-4 py-5">{item.fullSetOf16veneers}</div>
+          <div key={index} className="bg-[#FFFFFF] px-4 py-5">{item.fullSetOf16veneers}</div>
         ))}
       </div>
     );
