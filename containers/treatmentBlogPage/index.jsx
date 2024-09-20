@@ -11,12 +11,14 @@ import BenefitsOfDental from "@/components/treatmentBlog/BenefitsOfDental";
 import FullSetVeneers from "@/components/treatmentBlog/FullSetVeneers";
 import AveragePrice from "@/components/treatmentBlog/AveragePrice";
 import Comment from "@/components/treatmentBlog/Comment";
+import ClinicalPrice from "@/components/treatmentBlog/ClinicalPrice";
 export default function TreatmentBlogPageContainer() {
   return (
     <div>
       <FullSetVeneers />
       <Comment />
       <AveragePrice />
+      <ClinicalPrice />
       <BreadCrumbComponent />
 
       <BenefitsOfDental />
