@@ -8,8 +8,8 @@ const FormSection = () => {
     <div className="bg-primary/30 lg:bg-transparent mb-20">
       <ExtraLargePageContainer >
         <CardComponent className={"!shadow-none xl:shadow-md"}>
-          <div className="flex gap-7 items-center px-6 py-3">
-            <div className="hidden lg:block flex-1 w-full aspect-[12/8] relative overflow-hidden ">
+          <div className="flex gap-7 items-center px-6 py-3 ">
+            <div className="hidden lg:block flex-1 w-full aspect-[12/11] relative overflow-hidden ">
               {/*right side image */}
               <Image
                 src={"/assets/images/unsplash_kpYmswq9ej0.png"}
