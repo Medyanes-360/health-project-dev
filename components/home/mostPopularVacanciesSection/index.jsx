@@ -8,6 +8,7 @@ import { featureCardMockData } from "@/data/mocks/featureCardMockData";
 const MostPopularVacanciesSection = () => {
   const data = featureCardMockData;
   const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section>
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
@@ -27,11 +28,13 @@ const MostPopularVacanciesSection = () => {
           })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 ">
+        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 ">
           {data[activeIndex].subcategories
             .slice(0, 6)
             .map((category, index) => {
-              return <DepartmentCard key={index} data={category} />;
+              return (
+                <DepartmentCard className={""} key={index} data={category} />
+              );
             })}
 
           {data[activeIndex].subcategories
@@ -40,7 +43,7 @@ const MostPopularVacanciesSection = () => {
               return (
                 <DepartmentCard
                   className="
-                 hidden md:block"
+                 hidden md:block  "
                   key={index}
                   data={category}
                 />
@@ -53,7 +56,7 @@ const MostPopularVacanciesSection = () => {
               return (
                 <DepartmentCard
                   className="
-                 hidden lg:block"
+                 hidden lg:block animate-fadeIn"
                   key={index}
                   data={category}
                 />

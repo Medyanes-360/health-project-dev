@@ -273,7 +273,7 @@ export const treatmentsPageMockData = [
       whatToExpect: {},
       benefits: {},
       payment: {},
-      reviewerId: 3949910,
+      reviewerId: 3949933,
     },
     costsOverview: {
       minimum: 1000,
