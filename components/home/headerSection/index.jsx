@@ -25,8 +25,9 @@ const HeaderSection = () => {
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
         <MotionDiv
-          initial={{ opacity: 0, x: "-100%" }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           <ExtraLargePageContainer className="h-full   py-16 sm:py-auto    text-center flex flex-col justify-center items-center">
