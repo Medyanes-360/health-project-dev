@@ -1,5 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import HeaderSectionSearchInput from "./searchInput";
+import { MotionDiv } from "@/globalElements/motionDiv";
 
 const HeaderSection = () => {
   return (
@@ -23,17 +24,22 @@ const HeaderSection = () => {
         className=" h-full "
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-
-        <ExtraLargePageContainer className="h-full   py-16 sm:py-auto    text-center flex flex-col justify-center items-center">
-          <h1 className="w-3/4 text-lg sm:text-6xl   font-medium leading-[2rem] sm:leading-[4rem]">
-            {" "}
-            World&apos;s Best Advanced <br /> Cross-Border Care
-          </h1>
-          <p className="sm:mt-6 sm:mb-8 my-3  text-xs sm:text-lg">
-            Find The Best Hospitals and Doctors Across the world
-          </p>
-          <HeaderSectionSearchInput />
-        </ExtraLargePageContainer>
+        <MotionDiv
+          initial={{ opacity: 0, x: "-100%" }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+        >
+          <ExtraLargePageContainer className="h-full   py-16 sm:py-auto    text-center flex flex-col justify-center items-center">
+            <h1 className="w-3/4 text-lg sm:text-6xl   font-medium leading-[2rem] sm:leading-[4rem]">
+              {" "}
+              World&apos;s Best Advanced <br /> Cross-Border Care
+            </h1>
+            <p className="sm:mt-6 sm:mb-8 my-3  text-xs sm:text-lg">
+              Find The Best Hospitals and Doctors Across the world
+            </p>
+            <HeaderSectionSearchInput />
+          </ExtraLargePageContainer>
+        </MotionDiv>
       </div>
     </section>
   );
