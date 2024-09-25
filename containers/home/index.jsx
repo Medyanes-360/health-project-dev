@@ -1,10 +1,10 @@
-import FeelTheBenefitComponent from "@/components/feelTheBenefitComponent";
+import FeelTheBenefitComponent from "@/components/home/feelTheBenefitComponent";
 import FormSection from "@/components/form";
 import ContactUsBandComponent from "@/components/home/contactUsBandComponent";
 import HeaderSection from "@/components/home/headerSection";
 import MostPopularVacanciesSection from "@/components/home/mostPopularVacanciesSection";
-import OurServicesComponent from "@/components/ourServicesComponent";
-import PopularClinicsComponent from "@/components/popularClinicsComponent";
+import OurServicesComponent from "@/components/home/ourServicesComponent";
+import PopularClinicsComponent from "@/components/home/popularClinicsComponent";
 import QualifiedMedicalDoctors from "@/components/qualifiedMedicalDoctors/QualifiedMedicalDoctors";
 import Testimonial from "@/components/testimonial";
 

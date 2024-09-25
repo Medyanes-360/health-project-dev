@@ -13,10 +13,16 @@ const Sidebar = () => {
   });
 
   const toggleMenu = (index) => {
-    setOpenMenus((prevState) => ({
-      ...prevState,
-      [index]: !prevState[index],
-    }));
+    setOpenMenus((prevState) => {
+      const newState = {};
+      Object.keys(prevState).forEach((key) => {
+        newState[key] = false;
+      });
+      return {
+        ...newState,
+        [index]: !prevState[index],
+      };
+    });
   };
 
   const handleMenuClick = (index) => {
@@ -29,7 +35,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="h-screen p-4 ">
+    <div className="h-screen p-4">
       <div
         className="bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl
                    xs:w-3/4 sm:w-3/4 md:w-60 lg:w-72 xl:w-80
@@ -50,10 +56,10 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* Menü öğeleri */}
-        <ul className="flex-1 space-y-1 sm:space-y-2">
+        {/* Menü öğeleri - Scrollable area */}
+        <ul className="flex-1 space-y-1 sm:space-y-2 overflow-y-auto scrollbar-thin scrollbar-thumb-[#9fd3cd] scrollbar-track-gray-100 scrollbar-rounded max-h-full">
           {/* Acil Yardım Butonu */}
-          <li className="flex flex-col">
+          <li className="flex flex-col animate-fadeIn">
             <button className="w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center space-x-2 text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none">
               <Image
                 src="/assets/dashboard/emergency.svg"
@@ -69,7 +75,7 @@ const Sidebar = () => {
 
           {/* Menü öğeleri */}
           {menuData.map((menuItem, index) => (
-            <li key={index} className="flex flex-col">
+            <li key={index} className="flex flex-col animate-fadeIn">
               <button
                 onClick={() => handleMenuClick(index)}
                 className={`w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center justify-between focus:outline-none ${
@@ -111,7 +117,7 @@ const Sidebar = () => {
                   {menuItem.items.map((subItem, subIndex) => (
                     <li
                       key={subIndex}
-                      className={`flex items-center cursor-pointer pt-1 ${
+                      className={`flex items-center cursor-pointer pt-1 animate-fadeIn ${
                         activeSubItem.menuIndex === index &&
                         activeSubItem.subIndex === subIndex
                           ? "text-gray-700 font-bold"

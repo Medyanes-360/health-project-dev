@@ -101,5 +101,9 @@ module.exports = {
         { values: theme("transitionDelay") }
       );
     }),
+    require("tailwind-scrollbar"), // Scrollbar eklentisini 
   ],
+  variants: {
+    scrollbar: ["rounded"], // Yuvarlatılmış scrollbar 
+  },
 };
