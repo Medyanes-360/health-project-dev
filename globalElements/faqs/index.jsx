@@ -6,7 +6,7 @@ const Faqs = ({ data }) => {
     <div className="">
       <CardComponent className={"!p-0 !shadow-lg"}>
         {data?.map(({ description, title }, i) => (
-          <ExpandingQuestions key={i} description={description} title={title} />
+          <ExpandingQuestions index={i} key={i} description={description} title={title} />
         ))}
       </CardComponent>
     </div>

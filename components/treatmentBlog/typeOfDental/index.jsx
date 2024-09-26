@@ -48,7 +48,7 @@ const TypeOfDental = () => {
               got:
             </h1>
 
-            <ul className="space-y-1 list-disc marker:text-[20px] pl-6">
+            <ul className="space-y-1 list-disc marker:text-[15px] pl-6">
               <li>colored;</li>
               <li>damaged;</li>
               <li>misaligned.</li>

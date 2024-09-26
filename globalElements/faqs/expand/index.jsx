@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-export default function ExpandingQuestions({ title, description }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+export default function ExpandingQuestions({ title, description, index }) {
+  const [isExpanded, setIsExpanded] = useState(index == 0 ? true : false);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -23,7 +23,9 @@ export default function ExpandingQuestions({ title, description }) {
               `}
           >
             <h1
-              className={` font-medium text-start w-full px-5 ${isExpanded ? "text-white" : "text-secondary"}
+              className={` font-medium text-start w-full px-5 ${
+                isExpanded ? "text-white" : "text-secondary"
+              }
               `}
             >
               {title}
@@ -31,8 +33,8 @@ export default function ExpandingQuestions({ title, description }) {
           </div>
 
           <div
-            className={`px-5 text-3xl transition-all duration-200 ${
-              isExpanded ? " rotate-[45deg] text-white-dark" : ""
+            className={`px-5 text-4xl font-light transition-all duration-200 ${
+              isExpanded ? " rotate-[45deg] text-white-dark" : "text-third"
             }`}
           >
             +

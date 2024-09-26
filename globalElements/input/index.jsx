@@ -53,10 +53,9 @@ const InputType = ({
             countryCallingCodeEditable
             value={value}
             onChange={onChange}
-            className={`  w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${className}
-              
-             ${css ? "custom-phone-input border-none" : ""}
-              `}
+            className={`${className} ${
+              css ? "custom-phone-input" : "custom-phone-input2"
+            }`}
           />
         </div>
       );

@@ -16,11 +16,11 @@ const CheapVeneers = () => {
         <div className="bg-gradient-to-l from-[#F5FFD6] to-[rgba(224,235,191,0)] absolute inset-0 w-full h-full rounded-2xl" />
 
         <div className="relative w-fit space-y-4 sm:px-10 px-4 py-20">
-          <h1 className="sm:text-3xl text-2xl font-bold">
+          <h1 className="sm:text-2xl text-xl font-bold">
             Top 7 destinations to get cheap veneers abroad
           </h1>
 
-          <p className="text-lg sm:text-xl">
+          <p className="text-base sm:text-lg">
             Where to find the cheap veneers is the most frequently asked
             question for thousands of people with dental issues. Keep reading
             and find out the 7 most budget-friendly places worldwide to make
