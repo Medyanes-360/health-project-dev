@@ -32,11 +32,19 @@ export default function FeatureCard({ active, ...props }) {
     <div
       onMouseEnter={startHovering}
       onMouseLeave={stopHovering}
-      className="group hover:shadow-xl hover:scale-105 lg:hover:bg-inherit hover:bg-primary-light  hover:border-primary transition-all duration-200 cursor-pointer rounded-lg flex justify-start  items-center sm:p-2 p-1  border lg:border-none"
+      className={`group ${
+        active && "shadow-xl  lg:bg-inherit bg-primary-light border-primary"
+      } hover:shadow-xl hover:scale-105 lg:hover:bg-inherit hover:bg-primary-light  hover:border-primary transition-all duration-200 cursor-pointer rounded-lg flex justify-start  items-center sm:p-2 p-1  border lg:border-none`}
     >
-      <div className="bg-primary-light    lg:bg-white w-10 h-10   p-2 sm:w-20 sm:p-4  sm:h-16  rounded-md  group-hover:shadow-none  transition-all duration-200  flex items-center justify-center group-hover:bg-primary ">
+      <div
+        className={`bg-primary-light    lg:bg-white w-10 h-10   p-2 sm:w-20 sm:p-4  sm:h-16  rounded-md    transition-all duration-200  flex items-center justify-center ${
+          active && "!bg-primary !shadow-none"
+        } group-hover:bg-primary group-hover:shadow-none`}
+      >
         <Image
-          className=" filter group-hover:brightness-0 group-hover:invert"
+          className={` filter ${
+            active && "!brightness-0 !invert"
+          }  group-hover:brightness-0 group-hover:invert`}
           src={data.icon}
           alt=""
           width={72}
