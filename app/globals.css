@@ -19,6 +19,7 @@
   }
 }
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,21 +27,48 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, supported by Chrome, Firefox, Opera */
+
+  /* Firefox için scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #9fd3cd transparent;
+
+  /* WebKit Tabanlı Tarayıcılar için Scrollbar */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: gray;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #9fd3cd;
+  border-radius: 20px;
+  border: 3px solid gray;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
 }
 
 body {
   height: 100vh !important;
 }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Scrollbar Gizleme Sınıfı */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
+
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none; /* IE ve Edge */
     scrollbar-width: none; /* Firefox */
   }
 }

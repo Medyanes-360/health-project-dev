@@ -57,7 +57,7 @@ const Sidebar = () => {
         </div>
 
         {/* Menü öğeleri - Scrollable area */}
-        <ul className="flex-1 space-y-1 sm:space-y-2 overflow-y-auto scrollbar-thin scrollbar-thumb-[#9fd3cd] scrollbar-track-gray-100 scrollbar-rounded max-h-full">
+        <ul className="flex-1 space-y-1 sm:space-y-2 overflow-y-auto max-h-full">
           {/* Acil Yardım Butonu */}
           <li className="flex flex-col animate-fadeIn">
             <button className="w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center space-x-2 text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none">
