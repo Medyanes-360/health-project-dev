@@ -105,7 +105,7 @@ const ContactForm = () => {
         placeholder="Enter your phone number"
         value={form.phone}
         css={true}
-        className="!w-full !h-[40px] !bg-slate-100 !py-3 !px-5 !border-none !focus:border-primary !rounded-2xl"
+        className="!w-full !h-[40px] !bg-slate-100 !border-none !focus:border-primary !rounded-2xl"
       />
       <CustomInput
         type="input"

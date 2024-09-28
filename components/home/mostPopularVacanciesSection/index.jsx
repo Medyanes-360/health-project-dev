@@ -13,11 +13,11 @@ const MostPopularVacanciesSection = () => {
   return (
     <section>
       {/* component'ın max-widthini xl'a ayarlayan container:  */}
-      <ExtraLargePageContainer className=" ">
+      <ExtraLargePageContainer className="mt-16 ">
         <MotionDiv
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           <div className="   border-primary grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6 mt-5  ">

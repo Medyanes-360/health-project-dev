@@ -109,9 +109,12 @@ const CardContent = ({ data }) => {
   const { img, clinicName, city, rate } = data;
 
   return (
+    <div className="bg-[#FFFFFF1F] hover:bg-black/50 transition-all duration-200 cursor-pointer hover:scale-105">
+
+
     <CardComponent
       className={
-        "!p-2 !bg-[#FFFFFF1F] space-y-2 flex flex-col justify-between min-h-[400px]"
+        "!p-2 space-y-2 flex flex-col justify-between min-h-[330px]"
       }
     >
       <div className="relative aspect-[12/9] overflow-hidden w-full flex justify-end">
@@ -132,6 +135,6 @@ const CardContent = ({ data }) => {
         <h1 className="font-medium text-fourth">{city}</h1>
         <p className="font-light text-fourth">{clinicName}</p>
       </div>
-    </CardComponent>
+    </CardComponent>    </div>
   );
 };

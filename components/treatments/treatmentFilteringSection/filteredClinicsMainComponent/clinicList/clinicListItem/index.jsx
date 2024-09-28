@@ -21,8 +21,8 @@ export default function ClinicListItem() {
   };
 
   return (
-    <div className="relative grid grid-flow-col-dense mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]  border-[#D9D9D91F] px-7 rounded-3xl shadow-lg">
-      <div className="col-span-3 h-full  max-w-[280px]   flex flex-col justify-center items-center">
+    <div className="relative grid grid-flow-col-dens   mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-lg">
+      <div className="col-span-3 h-full  max-w-[280px]    flex flex-col justify-center items-center">
         <Image
           className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
           src={imageSources[0]}
@@ -51,8 +51,8 @@ export default function ClinicListItem() {
           })}
         </div>
       </div>
-      <div className="col-span-4 flex flex-col items-start">
-        <div className="flex items-center">
+      <div className="col-span-4 flex flex-col items-start h-full py-1 justify-between">
+        <div className="flex items-center ">
           <Image
             className="rounded-full w-[44px] h-[44px]"
             src="/assets/mocks/clinicImage.png"
@@ -114,9 +114,9 @@ export default function ClinicListItem() {
             Read more {">>"}
           </span>
         </div>
-        <div className="mt-4 flex justify-between w-full">
+        <div className="mt-4   flex justify-between w-full">
           <ButtonComponent
-            className="bg-primary mr-3  text-white font-medium !py-1.5 w-full !text-sm"
+            className="bg-primary mr-3   text-white font-medium !py-1.5 w-full !text-sm"
             title="Get A Free Quota"
           />
           <Link
@@ -130,7 +130,7 @@ export default function ClinicListItem() {
           </Link>
         </div>
       </div>
-      <div className="col-span-2 p-2 shadow-[0px_12px_48px_0px_#BCBCBC1F;]">
+      <div className="col-span-2  rounded-3xl p-2 shadow-[0px_12px_48px_0px_#BCBCBC1F;]">
         <div className="relative overflow-hidden ">
           <Image
             className="h-32 opacity-50 w-full   rounded-2xl "

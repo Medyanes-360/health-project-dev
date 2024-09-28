@@ -4,10 +4,9 @@ import Faqs from "@/globalElements/faqs";
 export default function FaqSection() {
   const data = [
     {
-      title:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+      title: "How does hair transplant work?",
       description:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+        "Hair transplant helps to renovate the balded areas with healthy growing hair.During the procedure, the doctor replaces the grafts from the hair-breading part of the scalp to a balded area. In 2-3 weeks, the planted hair falls out, but the follicle stays in the same place.In 8-12 months, the healthy, natural-looking and permanent hair starts growing.",
     },
     {
       title:

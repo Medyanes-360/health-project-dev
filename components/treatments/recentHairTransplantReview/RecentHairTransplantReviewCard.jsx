@@ -173,11 +173,11 @@ const CardContent = ({ data }) => {
               </div>
             </div>
             {/* doc data */}
-            <div className="space-y-2">
+            <div className="space-y-2 text-sm">
               <h1>
                 {name} / {operation}
               </h1>
-              <p className="text-sm">
+              <p className="text-xs">
                 {county} {date}
               </p>
             </div>
@@ -185,24 +185,24 @@ const CardContent = ({ data }) => {
             {/* star */}
             <div>
               <h1 className="flex items-center gap-1">
-                <span className="text-[#FFAA00] text-3xl">★</span>
+                <span className="text-[#FFAA00] text-2xl">★</span>
                 {rate}
               </h1>
             </div>
           </div>
 
           <div className="px-6 py-5 space-y-3">
-            <div className="w-full aspect-[12/8] relative overflow-hidden">
+            <div className="w-[90%] mx-auto aspect-[12/8] relative overflow-hidden">
               <Image
                 src={image}
-                alt="icon"
+                alt="img"
                 fill
                 className="object-center object-cover rounded-md"
               />
             </div>
 
-            <h1 className="font-medium">{title}</h1>
-            <p className="font-light">{description}</p>
+            <h1 className="text-sm">{title}</h1>
+            <p className="font-light text-sm">{description}</p>
 
             <div className="flex gap-1">
               {/* location icon */}
@@ -213,7 +213,7 @@ const CardContent = ({ data }) => {
                   alt="img"
                   src={"/assets/images/health.png"}
                 />
-                <p className="text-primary">{hospitalName}</p>
+                <p className="text-primary text-sm">{hospitalName}</p>
               </div>
             </div>
           </div>
