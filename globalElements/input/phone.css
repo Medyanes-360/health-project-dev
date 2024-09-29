@@ -1,0 +1,36 @@
+
+.custom-phone-input2 {
+  padding: 0; /* Ensure the container around the phone input has no padding */
+  padding-left: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.084);
+  
+}
+
+
+.custom-phone-input2 input {
+  background: white;
+  width: 100%;
+  height: 40px;
+}
+
+.custom-phone-input {
+  padding: 0;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.custom-phone-input input {
+  background: #f1f5f9;
+  border: none;
+  height: 40px;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+
+
+.custom-phone-input input:focus {
+  border: none; /* Removes border on focus */
+  box-shadow: none; /* Removes default focus shadow */
+}
