@@ -3,7 +3,7 @@ import CardComponent from "@/globalElements/Card";
 import QuestionCard from "./QuestionCard";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import useQuestionStore from "@/utils/questionStore"; 
+import useQuestionStore from "@/utils/questionStore";
 
 const questions = [
   {
@@ -70,7 +70,9 @@ const QuestionsSection = () => {
   return (
     <div className="w-full min-h-screen bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
-        <CardComponent className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}>
+        <CardComponent
+          className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}
+        >
           {questions.map((question) => {
             if (currentQuestion == question.id) {
               return (
@@ -90,9 +92,7 @@ const QuestionsSection = () => {
                 <div
                   key={i}
                   className={`h-[10px] w-full rounded-r-md ${
-                    currentQuestion >= q.id
-                      ? "bg-primary"
-                      : "bg-[#D9D9D9]"
+                    currentQuestion >= q.id ? "bg-primary" : "bg-[#D9D9D9]"
                   }`}
                 />
               );
@@ -115,11 +115,17 @@ const QuestionsSection = () => {
                 className="w-fit py-2 px-3 border-white-dark bg-primary cursor-pointer ml-auto"
                 onClick={nextQuestionHandler}
               >
-                {questions.length == currentQuestion ? "Finish" : "Move Forward →"}
+                {questions.length == currentQuestion
+                  ? "Finish"
+                  : "Move Forward →"}
               </div>
             </div>
           </div>
-          {error && <p className="text-center text-red-500 px-6">*This Question is Needed</p>}
+          {error && (
+            <p className="text-center text-red-500 px-6">
+              *This Question is Needed
+            </p>
+          )}
         </CardComponent>
       </div>
       <div className="w-[500px] flex justify-center gap-3 flex-nowrap mt-4">

@@ -1,4 +1,4 @@
-import Footer from "@/components/footer";
+import Footer from "@/components/layout/footer";
 import NavigationHeader from "@/components/layout/navigationHeader";
 
 import ImageModal from "@/globalElements/imageModal";

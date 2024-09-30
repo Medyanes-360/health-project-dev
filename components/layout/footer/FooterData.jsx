@@ -19,7 +19,9 @@ const FooterData = () => {
             {/* location */}
             <p>Şirin mahallesi Sancaktepe/ Istanbul</p>
             {/* phone */}
-            <h1 className="text-lg overflow-visible whitespace-nowrap">Call: (321) 428 321 3902</h1>
+            <h1 className="text-lg overflow-visible whitespace-nowrap">
+              Call: (321) 428 321 3902
+            </h1>
           </div>
 
           <div className="space-y-3 flex-1 ">
@@ -27,7 +29,6 @@ const FooterData = () => {
             <p className="font-thin">Became a partner</p>
             <p className="font-thin">Partner login </p>
           </div>
-
 
           <div className="space-y-3 flex-1">
             <p className="mb-1">Patient Safety </p>
@@ -50,10 +51,10 @@ const FooterData = () => {
 
         {/* button */}
         <div className="w-full lg:w-fit">
-            <ButtonComponent
-            title ="Request a call"
+          <ButtonComponent
+            title="Request a call"
             className="text-fourth bg-primary !rounded-2xl !text-xl mx-auto lg:mx-0 whitespace-nowrap"
-            />
+          />
         </div>
       </div>
     </ExtraLargePageContainer>

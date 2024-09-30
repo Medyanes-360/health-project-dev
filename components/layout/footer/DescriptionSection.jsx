@@ -19,7 +19,6 @@ const DescriptionSection = () => {
           turpis.
         </p>
       </ExtraLargePageContainer>
-    
     </div>
   );
 };
