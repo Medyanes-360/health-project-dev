@@ -1,0 +1,52 @@
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import Image from "next/image";
+
+export default function ClinicBanner() {
+  const data = {
+    clinicBannerImage:
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+    clinicImages: [
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+      "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
+    ],
+  };
+
+  return (
+    <ExtraLargePageContainer className="">
+      <div className=" max-h-[440px] rounded-3xl relative w-full overflow-hidden">
+        <Image
+          className=" w-full h-full"
+          src={data.clinicBannerImage}
+          alt=""
+          width={1200}
+          height={440}
+        />
+        <div className="absolute   flex gap-3 bottom-[19px] right-1">
+          {data.clinicImages.slice(0, 4).map((imageSrc, index) => {
+            return (
+              <Image
+                key={index}
+                className=" w-[80px] opacity-60 scale-90 hover:scale-100 border border-transparent hover:opacity-100 cursor-pointer transition-all duration-200 hover:border-primary h-[80px] rounded-xl"
+                src={imageSrc}
+                alt=""
+                width={1200}
+                height={440}
+              />
+            );
+          })}
+          <span className="bg-black/70   border border-transparent scale-90 hover:scale-100 hover:opacity-100 cursor-pointer transition-all duration-200 hover:border-primary  text-white w-[80px] h-[80px] rounded-xl flex items-center justify-center">
+            +{data.clinicImages.length - 4}
+          </span>
+        </div>
+      </div>
+    </ExtraLargePageContainer>
+  );
+}

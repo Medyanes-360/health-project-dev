@@ -1,5 +1,6 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import WillBeDeleted from "@/components/WillBeDeleted";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} font-poppins `}>
-        <main className="overflow-hidden">{children}</main>
+        <main className="overflow-hidden">
+          <WillBeDeleted />
+
+          {children}
+        </main>
       </body>
     </html>
   );

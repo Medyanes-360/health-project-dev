@@ -8,6 +8,10 @@ import YouMightAlsoLikeSection from "@/components/clinic/youMightAlsoLikeSection
 import ProgramBenefits from "@/components/clinic/programBenefits";
 import HowItWorks from "@/components/clinic/howItWorks";
 import { clinicPageMockData } from "@/data/mocks/clinicPageMockData";
+import ClinicBanner from "@/components/clinic/clinicBanner";
+import ProcedureOverview from "@/components/clinic/procedureOverview";
+import FreeConsultationBandComponent from "@/components/clinic/freeConsultationBandComponent";
+import ProcedureSpecialist from "@/components/clinic/procedureSpecialist";
 
 export default function ClinicPageContainer({ clinic }) {
   const reviews = clinic.patientReviews;
@@ -18,6 +22,10 @@ export default function ClinicPageContainer({ clinic }) {
   return (
     <div>
       <BreadCrumbComponent />
+      <ClinicBanner />
+      <ProcedureOverview />
+      <FreeConsultationBandComponent />
+      <ProcedureSpecialist />
       <BeforeAfterComponent />
       <ProgramDetailsComponent />
       <ProgramBenefits data={data} />
