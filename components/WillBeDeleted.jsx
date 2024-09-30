@@ -20,8 +20,8 @@ const WillBeDeleted = () => {
   ];
   return (
     <div className="space-y-2 flex flex-col">
-      {links.map((link) => (
-        <Link className="text-black text-center" href={link}>
+      {links.map((link, index) => (
+        <Link key={index} className="text-black text-center" href={link}>
           {link}
         </Link>
       ))}

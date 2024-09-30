@@ -10,7 +10,7 @@ const mockImageSources = [
   "/assets/images/clinic3.png",
   "/assets/mocks/clinicImage.png",
 ];
-export default function clinicListItem() {
+export default function ClinicListItem() {
   const openImageModal = useGlobalStore((state) => state.openImageModal);
   const imageSources = mockImageSources;
   const handleOpenImageModal = (imageSrc) => {
