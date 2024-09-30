@@ -1,40 +1,38 @@
 "use client";
-import useRegisterStore from "@/utils/authStore/registerStore";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Country, State, City } from "country-state-city";
 
 export default function RegisterComponent() {
-  const {
-    name,
-    email,
-    phoneNumber,
-    country,
-    state,
-    city,
-    password,
-    confirmPassword,
-    setField,
-    cities,
-    states,
-    setCountries,
-    setStates,
-    setCities,
-  } = useRegisterStore();
-
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    country: "",
+    state: "",
+    city: "",
+    password: "",
+    confirmPassword: "",
+  });
   const [passwordError, setPasswordError] = useState("");
+  const [countries, setCountries] = useState([]);
   const [availableStates, setAvailableStates] = useState([]);
   const [availableCities, setAvailableCities] = useState([]);
 
+  // Form alanlarını güncelleme fonksiyonu
+  const setField = (field, value) => {
+    setFormData({ ...formData, [field]: value });
+  };
+
   // Ülkeleri ayarla
   useEffect(() => {
-    const countries = Country.getAllCountries();
-    setCountries(countries); // Zustand state yönetimi ile ayarlama
+    const fetchedCountries = Country.getAllCountries();
+    setCountries(fetchedCountries);
   }, []);
 
-  // Ülke değiştiğinde, eyaletleri güncelle
+  // Ülke değiştiğinde eyaletleri güncelle
   useEffect(() => {
-    if (country) {
-      const states = State.getStatesOfCountry(country);
+    if (formData.country) {
+      const states = State.getStatesOfCountry(formData.country);
       setAvailableStates(states);
       setAvailableCities([]); // Yeni ülke seçildiğinde şehirleri sıfırla
       setField("state", ""); // State'i sıfırla
@@ -43,39 +41,31 @@ export default function RegisterComponent() {
       setAvailableStates([]);
       setAvailableCities([]);
     }
-  }, [country]);
+  }, [formData.country]);
 
-  // Eyalet değiştiğinde, şehirleri güncelle
+  // Eyalet değiştiğinde şehirleri güncelle
   useEffect(() => {
-    if (state) {
-      const cities = City.getCitiesOfState(country, state);
+    if (formData.state) {
+      const cities = City.getCitiesOfState(formData.country, formData.state);
       setAvailableCities(cities);
     } else {
       setAvailableCities([]);
     }
-  }, [state, country]);
+  }, [formData.state, formData.country]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
+    if (formData.password !== formData.confirmPassword) {
       setPasswordError("Passwords don't match");
       return;
     }
     setPasswordError("");
-    console.log("Form submitted:", {
-      name,
-      email,
-      phoneNumber,
-      country,
-      state,
-      city,
-      password,
-      confirmPassword,
-    });
+    console.log("Form submitted:", formData);
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 sm:p-8">
-      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md w-full max-w-xs sm:max-w-md">
+      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md w-full max-w-xs sm:max-w-2xl">
         <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
           Medyanes<span className="text-teal-500">360</span>
         </h2>
@@ -91,7 +81,7 @@ export default function RegisterComponent() {
             <input
               type="text"
               name="name"
-              value={name}
+              value={formData.name}
               onChange={(e) => setField("name", e.target.value)}
               className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder="Enter your name"
@@ -106,7 +96,7 @@ export default function RegisterComponent() {
             <input
               type="tel"
               name="phone"
-              value={phoneNumber}
+              value={formData.phoneNumber}
               onChange={(e) => setField("phoneNumber", e.target.value)}
               className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder="Enter your phone number"
@@ -121,7 +111,7 @@ export default function RegisterComponent() {
             <input
               type="email"
               name="email"
-              value={email}
+              value={formData.email}
               onChange={(e) => setField("email", e.target.value)}
               className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder="Enter your email address"
@@ -133,80 +123,86 @@ export default function RegisterComponent() {
             <div className="w-full sm:w-1/2">
               <label
                 htmlFor="country"
-                className="block text-sm font-medium text-gray-700"
+                className="block  font-medium text-gray-700"
               >
+                {" "}
                 Country<span className="text-red-500">*</span>
               </label>
               <div className="mt-1">
-                <select
+                <input
+                  list="countries"
                   id="country"
                   name="country"
                   required
                   className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
-                  value={country}
+                  value={formData.country}
                   onChange={(e) => setField("country", e.target.value)}
-                >
-                  <option value="">Select a country</option>
-                  {Country.getAllCountries().map((country) => (
+                  placeholder="Select or enter a country"
+                />
+                <datalist id="countries">
+                  {countries.map((country) => (
                     <option key={country.isoCode} value={country.isoCode}>
                       {country.name}
                     </option>
                   ))}
-                </select>
+                </datalist>
               </div>
             </div>
+
+            {/* State */}
             <div className="w-full sm:w-1/2">
               <label
                 htmlFor="state"
-                className="block text-sm font-medium text-gray-700"
+                className="block font-medium text-gray-700"
               >
                 State<span className="text-red-500">*</span>
               </label>
               <div className="mt-1">
-                <select
+                <input
+                  list="states"
                   id="state"
                   name="state"
                   required
                   className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
-                  value={state}
+                  value={formData.state}
                   onChange={(e) => setField("state", e.target.value)}
+                  placeholder="Select or enter a state"
                   disabled={!availableStates.length}
-                >
-                  <option value="">Select a state</option>
+                />
+                <datalist id="states">
                   {availableStates.map((state) => (
                     <option key={state.isoCode} value={state.isoCode}>
                       {state.name}
                     </option>
                   ))}
-                </select>
+                </datalist>
               </div>
             </div>
           </div>
           {/* City */}
-          <div>
-            <label
-              htmlFor="city"
-              className="block text-sm font-medium text-gray-700"
-            >
+          <div className="w-full">
+            <label htmlFor="city" className="block font-medium text-gray-700">
               City<span className="text-red-500">*</span>
             </label>
             <div className="mt-1">
-              <select
+              <input
+                list="cities"
                 id="city"
                 name="city"
                 required
                 className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
-                value={city}
+                value={formData.city}
                 onChange={(e) => setField("city", e.target.value)}
+                placeholder="Select or enter a city"
                 disabled={!availableCities.length}
-              >
-                <option value="">Select a city</option>
+              />
+              <datalist id="cities">
                 {availableCities.map((city) => (
                   <option key={city.name} value={city.name}>
                     {city.name}
                   </option>
                 ))}
-              </select>
+              </datalist>
             </div>
           </div>
           {/* Password */}
@@ -217,7 +213,7 @@ export default function RegisterComponent() {
             <input
               type="password"
               name="password"
-              value={password}
+              value={formData.password}
               onChange={(e) => setField("password", e.target.value)}
               className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder="Enter your password"
@@ -228,7 +224,7 @@ export default function RegisterComponent() {
           <div>
             <label
               htmlFor="confirmPassword"
-              className="block text-sm font-medium text-gray-700"
+              className="block  font-medium text-gray-700"
             >
               Confirm Password<span className="text-red-500">*</span>
             </label>
@@ -240,7 +236,7 @@ export default function RegisterComponent() {
                 required
                 placeholder="Enter your confirm password"
                 className="w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm font-poppins rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500"
-                value={confirmPassword}
+                value={formData.confirmPassword}
                 onChange={(e) => setField("confirmPassword", e.target.value)}
               />
             </div>

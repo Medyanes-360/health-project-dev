@@ -1,21 +1,22 @@
 "use client";
-
-import useLoginStore from "@/utils/authStore/signinStore"; // Store'u içe aktar
+import { useState } from "react";
 
 export default function LoginComponent() {
-  const { email, password, setEmail, setPassword, resetForm } = useLoginStore(); // Zustand store'dan verileri al
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Burada login işlemlerini gerçekleştirin
     console.log("Giriş denemesi:", email, password);
     // İsteğe bağlı olarak formu sıfırlayabilirsiniz
-    // resetForm();
+    // setEmail("");
+    // setPassword("");
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10">
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10">
         <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 lg:mb-8">
           Medyanes<span className="text-teal-500">360</span>
         </h2>

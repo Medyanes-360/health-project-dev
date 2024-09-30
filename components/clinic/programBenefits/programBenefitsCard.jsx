@@ -8,7 +8,7 @@ import ButtonComponent from "@/globalElements/Button";
 
 const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
   return (
-    <div>
+    <div className="mt-10">
       <CardComponent className={" !shadow"}>
         <h1 className=" text-primary text-xl ">
           Read about the program benefits

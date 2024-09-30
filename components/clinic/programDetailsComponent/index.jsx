@@ -9,7 +9,7 @@ const data = {
 
 const ProgramDetails = () => {
   return (
-    <div className="py-20 shadow-lg">
+    <div className="py-10 ">
       <ExtraLargePageContainer>
         <div
           className="p-6 rounded-3xl shadow-md border"
