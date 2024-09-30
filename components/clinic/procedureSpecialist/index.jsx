@@ -26,6 +26,7 @@ export default function ProcedureSpecialist() {
           <div className="flex p-3 justify-between items-center bg-[#F9F9F9] ">
             <div className="flex items-center">
               <Image
+                className="rounded-full"
                 src="/assets/mocks/doctorprofile.png"
                 width={64}
                 height={64}
@@ -33,8 +34,7 @@ export default function ProcedureSpecialist() {
               />
               <div className="ml-3 flex flex-col items-start">
                 <p>
-                  Leyla Arvas <span>•</span>
-                  27 years of experience
+                  Leyla Arvas<span> • </span>27 years of experience
                 </p>
                 <p>Turkey, Istanbul</p>
               </div>
@@ -82,11 +82,11 @@ export default function ProcedureSpecialist() {
               <div className="flex gap-3 items-center justify-between">
                 <ButtonComponent
                   title="Info"
-                  className="!bg-[#EAEAEA] !w-full !py-2 !text-xs !font-semibold !text-primary"
+                  className="!bg-[#EAEAEA] !w-full !py-3 !text-xs !font-semibold !text-primary"
                 ></ButtonComponent>
                 <ButtonComponent
                   title="Enquire"
-                  className="!bg-primary !w-full !py-2 !text-xs !font-semibold !text-white underline"
+                  className="!bg-primary !w-full !py-3 !text-xs !font-semibold !text-white underline"
                 ></ButtonComponent>
               </div>
             </div>

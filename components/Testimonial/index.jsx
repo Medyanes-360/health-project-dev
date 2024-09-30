@@ -1,6 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import TestimonialCard from "./TestimonialCard";
-import { MotionDiv } from "@/globalElements/motionDiv";
+import { MotionDiv } from "@/globalElements/motion";
 
 const Testimonial = () => {
   const data = [

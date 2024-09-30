@@ -1,7 +1,7 @@
 import CustomButton from "@/globalElements/Button";
 import QualifiedMedicalDoctorsCard from "./QualifiedMedicalDoctorsCard";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
-import { MotionDiv } from "@/globalElements/motionDiv";
+import { MotionDiv } from "@/globalElements/motion";
 
 const QualifiedMedicalDoctors = () => {
   const data = [
