@@ -1,5 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import DataTable from "./DataTable";
+import { MotionDiv } from "@/globalElements/motion";
 
 const TypeOfDental = () => {
   const TypeVenceerData = [
@@ -42,12 +43,50 @@ const TypeOfDental = () => {
         </div>
         <div className="space-y-14 bg-[#D9D9D921]">
           <div className="space-y-2">
-            <h1>
-              If you’d like to improve your smile, veneers in Mexico can be an
-              innovative and affordable cosmetic dental solution when your teeth
-              got:
-            </h1>
+            <MotionDiv
+              initial={{
+                y: "30px",
+                opacity: 0,
+              }}
+              whileInView={{
+                y: "0",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+            >
+              <h1>
+                If you’d like to improve your smile, veneers in Mexico can be an
+                innovative and affordable cosmetic dental solution when your
+                teeth got:
+              </h1>
+            </MotionDiv>
+            <MotionDiv
+             initial={{
+              y: "-30px",
+              opacity: 0,
+            }}
+            whileInView={{
+              y: "0",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay:0.2
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            >
 
+           
             <ul className="space-y-1 list-disc marker:text-[15px] pl-6">
               <li>colored;</li>
               <li>damaged;</li>
@@ -63,7 +102,7 @@ const TypeOfDental = () => {
             <p>
               Most clinics in Mexico offer 2 main types of veneers, depending on
               patients’ needs, expectations, and budget:{" "}
-            </p>
+            </p> </MotionDiv>
           </div>
         </div>
 

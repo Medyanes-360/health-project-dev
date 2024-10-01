@@ -1,5 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
 const HowBookimedHelps = () => {
@@ -30,14 +31,54 @@ const HowBookimedHelps = () => {
   ];
   return (
     <div className="pb-20">
-      <ExtraLargePageContainer >
-        <h1 className="mb-7 font-bold text-xl sm:text-2xl">
-          How <span className="text-primary">Bookimed</span> Can Help You
-        </h1>
+      <ExtraLargePageContainer>
+        <MotionDiv
+          initial={{
+            scale: "90%",
+            opacity: 0,
+          }}
+          whileInView={{
+            scale: "100%",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+        >
+          <h1 className="mb-7 font-bold text-xl sm:text-2xl">
+            How <span className="text-primary">Bookimed</span> Can Help You
+          </h1>
+        </MotionDiv>
 
         <div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
           {data.map((items, i) => (
-            <ContentCard key={i} data={items} />
+            <MotionDiv
+              key={i}
+              initial={{
+                y: "30px",
+                opacity: 0,
+              }}
+              whileInView={{
+                y: "0",
+
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3 * (i + 1),
+              }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+            >
+              <ContentCard data={items} />
+            </MotionDiv>
           ))}
         </div>
       </ExtraLargePageContainer>

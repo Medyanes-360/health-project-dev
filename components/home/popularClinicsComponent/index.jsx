@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ClinicCarousel from "./ClinicCarousel";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { MotionDiv } from "@/globalElements/motion";
 
 // Klinik verisi
 const clinicsData = [
@@ -162,11 +163,27 @@ const PopularClinicsComponent = () => {
       </div>
       <ExtraLargePageContainer className="popular-clinics-section w-full py-8 relative z-10">
         {/* Başlık Bölümü */}
-        <div className="text-center mb-6">
+        <MotionDiv
+        initial={{
+          y: "30px",
+          opacity: 0,
+        }}
+        whileInView={{
+          y: "0",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        className="text-center mb-6">
           <h2 className="text-[40px] font-poppins font-bold text-[#062126] leading-[60px] text-center">
             Popular Clinics
           </h2>
-        </div>
+        </MotionDiv>
         {/* Klinik Kartları Bölümü */}
         <ClinicCarousel clinicsData={clinicsData} />
       </ExtraLargePageContainer>

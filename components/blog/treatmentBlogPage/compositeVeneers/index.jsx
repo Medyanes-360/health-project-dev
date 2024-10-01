@@ -1,5 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 
 const CompositeVeneers = () => {
   return (
@@ -18,7 +19,25 @@ const CompositeVeneersCard = () => {
   return (
     <CardComponent className={"!p-6 !bg-[#ECE4FF42]"}>
       <div className="space-y-5">
-        <div className="space-y-2">
+        <MotionDiv
+          initial={{
+            x: "30px",
+            opacity: 0,
+          }}
+          whileInView={{
+            x: "0",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className="space-y-2"
+        >
           <h1 className="text-lg sm:text-xl font-bold">
             Composite Veneers and Their Cost in turkey
           </h1>
@@ -33,9 +52,27 @@ const CompositeVeneersCard = () => {
             stain, break, or chip compared to porcelain veneers. As practice
             shows, the lifespan of such dental veneers is around 5 years.
           </p>
-        </div>
+        </MotionDiv>
 
-        <div className="space-y-2">
+        <MotionDiv
+          initial={{
+            x: "-30px",
+            opacity: 0,
+          }}
+          whileInView={{
+            x: "0",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className="space-y-2"
+        >
           <h1 className="text-lg sm:text-xl font-bold">
             Advantages of composite veneers:
           </h1>
@@ -52,7 +89,7 @@ const CompositeVeneersCard = () => {
             <li>special preparations are not needed;</li>
             <li>lifespan — 5+ years.</li>
           </ul>
-        </div>
+        </MotionDiv>
       </div>
     </CardComponent>
   );

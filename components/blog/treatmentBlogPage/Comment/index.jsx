@@ -1,3 +1,4 @@
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
 const Comment = () => {
@@ -57,7 +58,25 @@ const Comment = () => {
         </div>
 
         {/* Article Content Section */}
-        <div className="rounded-3xl p-6 bg-[#D9D9D921]">
+        <MotionDiv
+          initial={{
+            y: "30px",
+            opacity: 0,
+          }}
+          whileInView={{
+            y: "0",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className="rounded-3xl p-6 bg-[#D9D9D921]"
+        >
           <p className="text-[16px] font-normal leading-[24px] text-left">
             Restorative dentistry is a fast-developing field worldwide: inspired
             by celebrities and influencers, men and women dream of perfect
@@ -77,7 +96,7 @@ const Comment = () => {
             Patients will find well-reputed clinics in Cancun, Tijuana, and
             Playa del Carmen.
           </p>
-        </div>
+        </MotionDiv>
 
         <div className="flex gap-3">
           <Image
@@ -91,7 +110,23 @@ const Comment = () => {
           </h1>
         </div>
 
-        <div className="rounded-3xl bg-[#D9D9D921] p-6 text-[16px]">
+        <MotionDiv
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className="rounded-3xl bg-[#D9D9D921] p-6 text-[16px]"
+        >
           <ul className="list-disc list-inside">
             <li>
               What are the prices for different types of veneers in Mexico?
@@ -101,7 +136,7 @@ const Comment = () => {
               What clinics do provide special prices for veneer installation?
             </li>
           </ul>
-        </div>
+        </MotionDiv>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import ButtonComponent from "@/globalElements/Button";
 import CustomInput from "@/globalElements/input";
 import { useState } from "react";
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 
 const GetFreeConsolationForm = () => {
   const [form, setForm] = useState({
@@ -111,12 +112,31 @@ const GetFreeConsolationForm = () => {
   };
 
   return (
-    <CardComponent
-      className={"!flex-1 !w-full !rounded-none !rounded-r-2xl !shadow "}
+    <MotionDiv
+    className="!flex-1 !w-full"
+      initial={{
+        x: "50px",
+        opacity: 0,
+      }}
+      whileInView={{
+        x: "0",
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: 0.1,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.5,
+      }}
     >
-      <form onSubmit={handleSubmit} className="space-y-4 p-5">
-        <div className="space-y-1">
-          <label htmlFor="phone">Enter your phone number</label>
+      <CardComponent
+        className={"!flex-1 !w-full !rounded-none !rounded-r-2xl !shadow "}
+      >
+        <form onSubmit={handleSubmit} className="space-y-4 p-5">
+          <div className="space-y-1">
+            <label htmlFor="phone">Enter your phone number</label>
 
             <CustomInput
               type="phone"
@@ -126,76 +146,79 @@ const GetFreeConsolationForm = () => {
               value={form.phone}
               className=" !custom-phone-input2  "
             />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="email">Enter your Email</label>
-
-          <CustomInput
-            type="input"
-            name="email"
-            onChange={handleInputChange}
-            placeholder="Enter your Email"
-            value={form.email}
-            className="!w-full !h-[40px] !bg-white py-3 !px-5 !border !rounded-md"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="name">Enter your name</label>
-
-          <CustomInput
-            type="input"
-            name="name"
-            onChange={handleInputChange}
-            placeholder="Enter your name"
-            value={form.name}
-            className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !rounded-md"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="description">Enter your description</label>
-
-          <CustomInput
-            type="textarea"
-            name="description"
-            onChange={handleInputChange}
-            placeholder="Short description"
-            value={form.description}
-            className="!w-full !bg-white !py-3 !px-5 !border !rounded-md"
-          />
-        </div>
-        <div className="flex gap-2 items-center">
-          <input
-            onChange={handleInputChange}
-            name={"agreed"}
-            type="checkbox"
-            checked={form.agreed}
-            className="h-12 w-12"
-          />
-          <div className="flex flex-col gap-1">
-            <label htmlFor="agree">
-              I agree to the Terms of use Privacy policy and receive marketing
-              letters that may be of interest.
-            </label>
-            <label htmlFor="agree">
-              This site is protected by re captcha and the Google Privacy Policy
-              and Terms of Service apply.
-            </label>
           </div>
-        </div>
+          <div className="space-y-1">
+            <label htmlFor="email">Enter your Email</label>
 
-        <div className="w-full flex justify-end">
-          <ButtonComponent
-            className="!bg-primary !text-white !rounded-md !w-[50%] lg:w-fit"
-            type="submit"
-            containerClassName={"flex justify-end w-full"}
-            title={"Send Request"}
-          />
-        </div>
-      </form>
-      {error.isError && (
-        <p className="text-center text-red-600 text-xl">{error.errorContent}</p>
-      )}
-    </CardComponent>
+            <CustomInput
+              type="input"
+              name="email"
+              onChange={handleInputChange}
+              placeholder="Enter your Email"
+              value={form.email}
+              className="!w-full !h-[40px] !bg-white py-3 !px-5 !border !rounded-md"
+            />
+          </div>
+          <div className="space-y-1">
+            <label htmlFor="name">Enter your name</label>
+
+            <CustomInput
+              type="input"
+              name="name"
+              onChange={handleInputChange}
+              placeholder="Enter your name"
+              value={form.name}
+              className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !rounded-md"
+            />
+          </div>
+          <div className="space-y-1">
+            <label htmlFor="description">Enter your description</label>
+
+            <CustomInput
+              type="textarea"
+              name="description"
+              onChange={handleInputChange}
+              placeholder="Short description"
+              value={form.description}
+              className="!w-full !bg-white !py-3 !px-5 !border !rounded-md"
+            />
+          </div>
+          <div className="flex gap-2 items-center">
+            <input
+              onChange={handleInputChange}
+              name={"agreed"}
+              type="checkbox"
+              checked={form.agreed}
+              className="h-12 w-12"
+            />
+            <div className="flex flex-col gap-1">
+              <label htmlFor="agree">
+                I agree to the Terms of use Privacy policy and receive marketing
+                letters that may be of interest.
+              </label>
+              <label htmlFor="agree">
+                This site is protected by re captcha and the Google Privacy
+                Policy and Terms of Service apply.
+              </label>
+            </div>
+          </div>
+
+          <div className="w-full flex justify-end">
+            <ButtonComponent
+              className="!bg-primary !text-white !rounded-md !w-[50%] lg:w-fit"
+              type="submit"
+              containerClassName={"flex justify-end w-full"}
+              title={"Send Request"}
+            />
+          </div>
+        </form>
+        {error.isError && (
+          <p className="text-center text-red-600 text-xl">
+            {error.errorContent}
+          </p>
+        )}
+      </CardComponent>
+    </MotionDiv>
   );
 };
 

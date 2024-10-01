@@ -1,3 +1,4 @@
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
 const FullSetVeneers = () => {
@@ -12,7 +13,23 @@ const FullSetVeneers = () => {
 
   return (
     <div className="py-5 flex justify-center text-white ">
-      <div className="relative w-[1200px] h-[331px] rounded-[24px] bg-white shadow-[0px_12px_24px_-4px_#919EAB1F] ">
+      <MotionDiv
+       initial={{
+        scale: "110%",
+        opacity: 0,
+      }}
+      whileInView={{
+        scale: "100%",
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.5,
+      }}
+      className="relative w-[1200px] h-[331px] rounded-[24px] bg-white shadow-[0px_12px_24px_-4px_#919EAB1F] ">
         <div className="absolute z-10 w-[524px] h-[302px] top-[14px] left-[14px] p-6 border border-white border-opacity-50 bg-[#52B8AB] rounded-[12px] flex flex-col justify-between">
           <div className="flex items-center gap-3">
             <p className="text-white">See our 615 reviews</p>
@@ -47,7 +64,7 @@ const FullSetVeneers = () => {
           height={331}
           className="absolute right-0 top-0"
         />
-      </div>
+      </MotionDiv>
     </div>
   );
 };

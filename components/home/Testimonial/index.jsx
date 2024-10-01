@@ -105,11 +105,10 @@ const Testimonial = () => {
           }}
           transition={{
             duration: 0.5,
-            delay: 0.1,
           }}
           viewport={{
             once: true,
-            amount: 0.5,
+            amount: 0.2,
           }}
           className="flex-1 sm:max-w-[50%] min-h-full sm:border-b-2 sm:border-primary"
         >
@@ -129,11 +128,10 @@ const Testimonial = () => {
           }}
           transition={{
             duration: 0.5,
-            delay: 0.1,
           }}
           viewport={{
             once: true,
-            amount: 0.5,
+            amount: 0.2,
           }}
           className="flex-1 sm:w-fit flex flex-col items-end gap-3"
         >

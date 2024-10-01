@@ -5,6 +5,7 @@ import WhatsappIcon from "@/public/assets/icons/Whatsapp";
 import GetFreeConsolationForm from "./getFreeConsolationForm";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
+import { MotionDiv } from "@/globalElements/motion";
 
 const data = [
   {
@@ -72,7 +73,25 @@ export default GetFreeConsolation;
 
 const FormText = () => {
   return (
-    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative ">
+    <MotionDiv  
+    initial={{
+      x: "-50px",
+      opacity: 0,
+    }}
+    whileInView={{
+      x: "0",
+      opacity: 1,
+    }}
+    transition={{
+      duration: 0.5,
+      delay:0.1
+    }}
+    viewport={{
+      once: true,
+      amount: 0.5,
+    }}
+    
+    className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative ">
       <div className="space-y-10 mx-auto">
         <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
 
@@ -113,6 +132,6 @@ const FormText = () => {
           ))}
         </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 };

@@ -1,3 +1,4 @@
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 import React from "react";
 
@@ -16,7 +17,24 @@ const AveragePrice = () => {
             What Is the Average Price for Veneers in Mexican Clinics?
           </h1>
         </div>
-        <div className="mt-4 h-auto bg-[#D9D9D921] p-6 rounded-3xl">
+        <MotionDiv
+         initial={{
+          y: "30px",
+          opacity: 0,
+        }}
+        whileInView={{
+          y: "0",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+          delay:0.1
+        }}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        className="mt-4 h-auto bg-[#D9D9D921] p-6 rounded-3xl">
           <p className="font-poppins text-base font-normal leading-6 text-left">
             According to the data of dental Bookimed partner clinics located in
             Mexico, the average cost of veneers is $250 per veneer. Depending on
@@ -26,7 +44,7 @@ const AveragePrice = () => {
             profitable to visit Mexico for veneer installation instead of doing
             the same procedure in the USA.
           </p>
-        </div>
+        </MotionDiv>
       </div>
     </div>
   );
