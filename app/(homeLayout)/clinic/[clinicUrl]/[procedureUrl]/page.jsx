@@ -7,32 +7,38 @@ export default function ClinicProcedurePage({ params }) {
   if (!clinic) {
     notFound();
   }
-  // const procedure=proceduresData.find((procedure=>procedure.clinicId==clinic.id))
+  // clinic'i bulduk. peki klinikte böyle bi procedure var mı?
+  const procedure = proceduresData.find(
+    (procedure) => procedure.clinicId == clinic.id
+  );
 
-  // klinik var. fakat klinikte böyle bir procedure yok!
-  // if (!procedure) {
-  //   redirect("/clinic/" + clinic.url);
-  // }
+  // klinik var. fakat klinikte böyle bir procedure yok!:
+  if (!procedure) {
+    redirect("/clinic/" + clinic.url);
+  }
 
   // clinic ve procedure datası alındı. container'a gönder:
 
-  return (
-    <ClinicProcedurePageContainer clinic={clinic} /* procedure={procedure}*/ />
-  );
+  return <ClinicProcedurePageContainer clinic={clinic} procedure={procedure} />;
 }
-const clinicsData = [
+
+//data procedure'e mi ait yoksa clinic'e mi? procedure'e ait bir dataysa proceduresData'ya ekle,
+// clinic'e ait bir dataysa clinicsData'ya ekle (altta)
+// örneğin address datası clinic'e aitken review'lar procedure'e ait.
+const proceduresData = [
   {
     id: 0,
-    name: "Adem and Havva Medical Center",
-    url: "adem-and-havva-medical-center",
-    location: {
-      City: "Şişli", // ilçe
-      stateIsoCode: "34", // şehir
-      countryIsoCode: "TR", // ülke
-      fullAddress:
-        "Cumhuriyet, Cumhuriyet Mahallesi, İncirli Dede Caddesi, No:6/2 Anthill Towers, 34381 Şişli/İstanbul",
+    clinicId: 0, //hangi clinic'in procedure'ü
+    treatment: {
+      // bu procedure hangi treatment'a ait? !! burada sadece treatment için bu sayfada ihtiyaç duyduğumuz bilgiler yeterli. asıl treatment datası /clinics/[treatmentUrl] dizininde.
+      id: 4,
+      title: "Hair Transplant",
+      fullTitle: "Fue Hair Transplant ",
+      url: "hair-transplant",
     },
     faqs: [
+      //clinic'in bu procedure için ayarladığı sıkça sorulan sorular:
+
       {
         title: "How long does a typical treatment take?",
         description:
@@ -49,9 +55,102 @@ const clinicsData = [
           "Accommodation can be included upon request for international patients.",
       },
     ],
-    patientReviews: [
+    reviews: [
+      // clinic'in bu procedure'üne gelen reviewlar:
       {
-        username: "Mehmet Taşkesen",
+        id: 0,
+        user: {
+          id: 123,
+          name: "Veli Taşkesen",
+          location: {
+            countryIsoCode: "US",
+          },
+        },
+
+        treatment: { title: "Hair Transplant" },
+        location: {
+          countryIsoCode: "US",
+        },
+        rating: 4.0,
+        createdAt: 1709758800000,
+        reviewText:
+          "Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.",
+        images: [
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+          "/assets/images/clinic3.png",
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+        ],
+      },
+      {
+        id: 1,
+        user: {
+          id: 456,
+          name: "Mehmet Taşkesen",
+          location: {
+            countryIsoCode: "TR",
+            stateIsoCode: "34",
+          },
+        },
+        treatment: "Hair Transplant",
+        location: {
+          countryIsoCode: "US",
+        },
+        rating: 4.0,
+        createdAt: 1709758800000,
+        reviewText:
+          "Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.",
+        images: [
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+          "/assets/images/clinic3.png",
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+        ],
+      },
+    ],
+  },
+  {
+    id: 1,
+    clinicId: 1, //hangi clinic'in procedure'ü
+    treatment: {
+      id: 0,
+      title: "Breast Augmentation",
+      fullTitle: "Breast Augmentation",
+      url: "breast-augmentation",
+    },
+    faqs: [
+      //clinic'in bu procedure için ayarladığı sıkça sorulan sorular:
+
+      {
+        title: "How long does a typical treatment take?",
+        description:
+          "The duration of treatment varies depending on the procedure but typically lasts between 4 to 6 hours.",
+      },
+      {
+        title: "Do I need a consultation before booking?",
+        description:
+          "Yes, we require an initial consultation to assess your needs and provide personalized recommendations.",
+      },
+      {
+        title: "Is accommodation included in the treatment package?",
+        description:
+          "Accommodation can be included upon request for international patients.",
+      },
+    ],
+    reviews: [
+      // clinic'in bu procedure'üne gelen reviewlar:
+      {
+        id: 0,
+        user: {
+          id: 123,
+          name: "Veli Taşkesen",
+          location: {
+            countryIsoCode: "US",
+          },
+        },
+
         treatment: "Hair Transplant",
         location: {
           countryIsoCode: "US",
@@ -69,7 +168,15 @@ const clinicsData = [
         ],
       },
       {
-        username: "Mehmet Taşkesen",
+        id: 1,
+        user: {
+          id: 456,
+          name: "Mehmet Taşkesen",
+          location: {
+            countryIsoCode: "TR",
+            stateIsoCode: "34",
+          },
+        },
         treatment: "Hair Transplant",
         location: {
           countryIsoCode: "US",
@@ -85,6 +192,124 @@ const clinicsData = [
           "/assets/images/clinic1.png",
           "/assets/images/clinic2.png",
         ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    clinicId: 3, //hangi clinic'in procedure'ü
+    treatment: {
+      id: 1,
+      title: "Rhinoplasty",
+      fullTitle: "Rhinoplasty",
+      url: "rhinoplasty",
+    },
+    faqs: [
+      //clinic'in bu procedure için ayarladığı sıkça sorulan sorular:
+
+      {
+        title: "How long does a typical treatment take?",
+        description:
+          "The duration of treatment varies depending on the procedure but typically lasts between 4 to 6 hours.",
+      },
+      {
+        title: "Do I need a consultation before booking?",
+        description:
+          "Yes, we require an initial consultation to assess your needs and provide personalized recommendations.",
+      },
+      {
+        title: "Is accommodation included in the treatment package?",
+        description:
+          "Accommodation can be included upon request for international patients.",
+      },
+    ],
+    reviews: [
+      // clinic'in bu procedure'üne gelen reviewlar:
+      {
+        id: 0,
+        user: {
+          id: 123,
+          name: "Veli Taşkesen",
+          location: {
+            countryIsoCode: "US",
+          },
+        },
+
+        treatment: "Hair Transplant",
+        location: {
+          countryIsoCode: "US",
+        },
+        rating: 4.0,
+        createdAt: 1709758800000,
+        reviewText:
+          "Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.",
+        images: [
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+          "/assets/images/clinic3.png",
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+        ],
+      },
+      {
+        id: 1,
+        user: {
+          id: 456,
+          name: "Mehmet Taşkesen",
+          location: {
+            countryIsoCode: "TR",
+            stateIsoCode: "34",
+          },
+        },
+        treatment: "Hair Transplant",
+        location: {
+          countryIsoCode: "US",
+        },
+        rating: 4.0,
+        createdAt: 1709758800000,
+        reviewText:
+          "Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.Good afternoon I would like to share feedback about this platform and clinic. Let's begin. I was interested in hair transplantation, because I don’t have any friends or acquaintances in this topic.",
+        images: [
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+          "/assets/images/clinic3.png",
+          "/assets/images/clinic1.png",
+          "/assets/images/clinic2.png",
+        ],
+      },
+    ],
+  },
+];
+
+//kliniklerin datası:
+const clinicsData = [
+  {
+    id: 0,
+    name: "Adem and Havva Medical Center",
+    url: "adem-and-havva-medical-center",
+    location: {
+      City: "Şişli", // ilçe
+      stateIsoCode: "34", // şehir
+      countryIsoCode: "TR", // ülke
+      fullAddress:
+        "Cumhuriyet, Cumhuriyet Mahallesi, İncirli Dede Caddesi, No:6/2 Anthill Towers, 34381 Şişli/İstanbul",
+    },
+    faqs: [
+      //clinic'in faq'ları
+      {
+        title: "How long does a typical treatment take?",
+        description:
+          "The duration of treatment varies depending on the procedure but typically lasts between 4 to 6 hours.",
+      },
+      {
+        title: "Do I need a consultation before booking?",
+        description:
+          "Yes, we require an initial consultation to assess your needs and provide personalized recommendations.",
+      },
+      {
+        title: "Is accommodation included in the treatment package?",
+        description:
+          "Accommodation can be included upon request for international patients.",
       },
     ],
   },
@@ -165,26 +390,6 @@ const clinicsData = [
           "Yes, we offer flexible financing options to accommodate your needs.",
       },
     ],
-    patientReviews: [
-      {
-        username: "Emily Smith",
-        treatment: "Breast Augmentation",
-        location: {
-          countryIsoCode: "US",
-        },
-        rating: 4.5,
-        createdAt: 1703467200000,
-        reviewText:
-          "Very professional staff and surgeons. I am thrilled with the results of my breast augmentation.",
-        images: [
-          "/assets/images/clinic1.png",
-          "/assets/images/clinic2.png",
-          "/assets/images/clinic3.png",
-          "/assets/images/clinic1.png",
-          "/assets/images/clinic2.png",
-        ],
-      },
-    ],
   },
   {
     id: 3,
@@ -212,26 +417,6 @@ const clinicsData = [
         title: "How far in advance should I book?",
         description:
           "We recommend booking at least 2 weeks in advance to ensure availability.",
-      },
-    ],
-    patientReviews: [
-      {
-        username: "Carlos Hernandez",
-        treatment: "Liposuction",
-        location: {
-          countryIsoCode: "ES",
-        },
-        rating: 4.0,
-        createdAt: 1696015200000,
-        reviewText:
-          "The staff was very accommodating and my recovery was smooth. Overall a great experience with Medistanbul Clinic.",
-        images: [
-          "/assets/images/clinic1.png",
-          "/assets/images/clinic2.png",
-          "/assets/images/clinic3.png",
-          "/assets/images/clinic1.png",
-          "/assets/images/clinic2.png",
-        ],
       },
     ],
   },
@@ -263,26 +448,6 @@ const clinicsData = [
           "Yes, follow-up appointments are part of our comprehensive care plan.",
       },
     ],
-    patientReviews: [
-      {
-        username: "Aylin Yıldız",
-        treatment: "Facelift",
-        location: {
-          countryIsoCode: "DE",
-        },
-        rating: 5.0,
-        createdAt: 1686412800000,
-        reviewText:
-          "Amazing care and results. The team at Ankara Medical Center is highly skilled and attentive.",
-        images: [
-          "/assets/images/clinic1.png",
-          "/assets/images/clinic2.png",
-          "/assets/images/clinic3.png",
-          "/assets/images/clinic1.png",
-          "/assets/images/clinic2.png",
-        ],
-      },
-    ],
   },
   {
     id: 5,
@@ -310,20 +475,6 @@ const clinicsData = [
         title: "Is there a warranty on dental procedures?",
         description:
           "We provide a warranty on certain procedures, including implants and crowns.",
-      },
-    ],
-    patientReviews: [
-      {
-        username: "Sophia Turner",
-        treatment: "Dental Implants",
-        location: {
-          countryIsoCode: "AU",
-        },
-        rating: 4.8,
-        createdAt: 1718131200000,
-        reviewText:
-          "Excellent service! My dental implants look natural, and the recovery was quick.",
-        images: ["/assets/images/dental1.png", "/assets/images/dental2.png"],
       },
     ],
   },

@@ -21,7 +21,7 @@ const MostPopularVacanciesSection = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1, duration: 0.5 }}
           >
-            <div className="   border-primary grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6 mt-5  ">
+            <div className="   border-primary grid grid-cols-2 lg:grid-cols-4  gap-3 lg:gap-6 mt-5  ">
               {data.slice(0, 4).map((feature, index) => {
                 return (
                   <div

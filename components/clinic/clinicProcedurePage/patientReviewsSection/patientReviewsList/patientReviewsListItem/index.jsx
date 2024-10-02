@@ -9,19 +9,21 @@ export default function PatientReviewsListItem({ review }) {
   const [isHelpful, setIsHelpful] = useState(false);
 
   const reviewerCountry = Country.getCountryByCode(
-    review.location.countryIsoCode
+    review.user.location.countryIsoCode
   );
+
   return (
     <div className="flex flex-col pb-3 w-full  border-b border-b-[rgba(0,0,0,.24)] mt-3 text-[#04285C] ">
       {/* top */}
       <div className="flex   justify-between  items-center">
         <div className="flex  items-center">
           <span className="bg-[#04285C] h-[44px] w-[44px] rounded-full flex items-center justify-center mr-2   text-[28px] text-white">
-            {review.username[0]}
+            {/* username'in ilk harfini profil yap */}
+            {review.user.name[0]}
           </span>
           <div className="flex text-sm flex-col">
             <p>
-              {review.username} • {review.treatment}
+              {review.user.name} • {review.treatment.title}
             </p>
             <p className="flex items-center">
               <Image

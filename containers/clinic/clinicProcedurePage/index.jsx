@@ -13,10 +13,10 @@ import ProgramDetails from "@/components/clinic/clinicProcedurePage/programDetai
 import YouMightAlsoLikeSection from "@/components/clinic/clinicProcedurePage/youMightAlsoLikeSection";
 import { clinicPageMockData } from "@/data/mocks/clinicPageMockData";
 
-export default function ClinicProcedurePageContainer({ clinic }) {
-  const reviews = clinic.patientReviews;
+export default function ClinicProcedurePageContainer({ clinic, procedure }) {
+  const reviews = procedure.reviews;
   const address = clinic.location.fullAddress;
-  const faqs = clinic.faqs;
+  const faqs = procedure.faqs;
   const data = clinicPageMockData;
 
   return (
