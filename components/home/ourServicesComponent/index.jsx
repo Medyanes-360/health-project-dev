@@ -270,7 +270,7 @@ const OurServicesComponent = () => {
         className="text-center mb-12"
       >
         <p className="text-[#52B8AB] font-medium text-[14px]">OUR SERVICES</p>
-        <h2 className="text-[#062126] font-bold text-[40px] leading-[60px]">
+        <h2 className="text-[#062126]  text-[40px] leading-[60px]">
           We Serve In Different <span className="font-bold">Areas For</span>
           <br />
           <span className="font-bold">Our Patients</span>
@@ -279,7 +279,9 @@ const OurServicesComponent = () => {
 
       {/* Hizmet Kartları Carousel Bölümü */}
       <ExtraLargePageContainer>
-        <ServicesCarousel servicesData={servicesData} />
+        <div className=" mb-20">
+          <ServicesCarousel servicesData={servicesData} />
+        </div>
       </ExtraLargePageContainer>
     </section>
   );
