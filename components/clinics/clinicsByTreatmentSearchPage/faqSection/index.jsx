@@ -6,18 +6,17 @@ export default function FaqSection() {
     {
       title: "How does hair transplant work?",
       description:
-        "Hair transplant helps to renovate the balded areas with healthy growing hair.During the procedure, the doctor replaces the grafts from the hair-breading part of the scalp to a balded area. In 2-3 weeks, the planted hair falls out, but the follicle stays in the same place.In 8-12 months, the healthy, natural-looking and permanent hair starts growing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
-      title:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+      title: "What are the methods of hair transplant?",
       description:
-        "wfwehwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
-      title: "wfwerlkgwerfjw]fhj wfe",
+      title: "Who are the best candidates for hair transplant?",
       description:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe wfwerlkgwerfjwenrfgjkwegfwjwfhj wfe",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
   ];
 

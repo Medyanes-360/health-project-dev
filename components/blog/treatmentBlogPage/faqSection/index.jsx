@@ -4,21 +4,19 @@ import Faqs from "@/globalElements/faqs";
 export default function FaqSection() {
   const data = [
     {
-      title:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+      title: "How does hair transplant work?",
       description:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
-      title:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+      title: "What are the methods of hair transplant?",
       description:
-        "wfwehwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfewfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
-      title: "wfwerlkgwerfjw]fhj wfe",
+      title: "Who are the best candidates for hair transplant?",
       description:
-        "wfwerlkgwerfjwenrfgjkwegfwj fwef wej fwefhwfh wegfweh feh wfhj wfe wfwerlkgwerfjwenrfgjkwegfwjwfhj wfe",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
   ];
 

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion"; // Import framer-motion
 import menuData from "./menuData.json";
 
 const Sidebar = () => {
@@ -41,7 +42,7 @@ const Sidebar = () => {
                    xs:w-3/4 sm:w-3/4 md:w-60 lg:w-72 xl:w-80
                    h-full flex flex-col gap-2"
       >
-        {/* Başlık */}
+        {/* Header */}
         <div className="flex items-center justify-center relative mt-4 mb-2 sm:mt-8">
           <h1 className="pt-2 text-lg sm:text-xl font-bold text-gray-800">
             Medyanes<span className="text-teal-500">360</span>
@@ -56,9 +57,9 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* Menü öğeleri - Scrollable area */}
+        {/* Menu items - Scrollable area */}
         <ul className="flex-1 space-y-1 sm:space-y-2 overflow-y-auto max-h-full">
-          {/* Acil Yardım Butonu */}
+          {/* Emergency Button */}
           <li className="flex flex-col animate-fadeIn">
             <button className="w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center space-x-2 text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none">
               <Image
@@ -73,7 +74,7 @@ const Sidebar = () => {
             </button>
           </li>
 
-          {/* Menü öğeleri */}
+          {/* Menu items */}
           {menuData.map((menuItem, index) => (
             <li key={index} className="flex flex-col animate-fadeIn">
               <button
@@ -112,32 +113,40 @@ const Sidebar = () => {
                   />
                 </div>
               </button>
-              {openMenus[index] && (
-                <ul className="pl-6 mt-1 space-y-1 sm:pl-8 sm:mt-2 sm:space-y-2">
-                  {menuItem.items.map((subItem, subIndex) => (
-                    <li
-                      key={subIndex}
-                      className={`flex items-center cursor-pointer pt-1 animate-fadeIn ${
-                        activeSubItem.menuIndex === index &&
-                        activeSubItem.subIndex === subIndex
-                          ? "text-gray-700 font-bold"
-                          : "text-gray-700"
-                      }`}
-                      onClick={() => handleSubMenuClick(index, subIndex)}
-                    >
-                      <span className="text-[#52B8AB] mr-1 sm:mr-2">•</span>
-                      <span className="text-[0.550rem] sm:text-base">
-                        {subItem.title}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <AnimatePresence>
+                {openMenus[index] && (
+                  <motion.ul
+                    className="pl-6 mt-1 space-y-1 sm:pl-8 sm:mt-2 sm:space-y-2"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {menuItem.items.map((subItem, subIndex) => (
+                      <li
+                        key={subIndex}
+                        className={`flex items-center cursor-pointer pt-1 animate-fadeIn ${
+                          activeSubItem.menuIndex === index &&
+                          activeSubItem.subIndex === subIndex
+                            ? "text-gray-700 font-bold"
+                            : "text-gray-700"
+                        }`}
+                        onClick={() => handleSubMenuClick(index, subIndex)}
+                      >
+                        <span className="text-[#52B8AB] mr-1 sm:mr-2">•</span>
+                        <span className="text-[0.550rem] sm:text-base">
+                          {subItem.title}
+                        </span>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </li>
           ))}
         </ul>
 
-        {/* Alttaki Resim */}
+        {/* Bottom Image */}
         <div className="flex justify-center items-center mt-auto mb-4">
           <Image
             src="/assets/dashboard/sidebar-image.png"
