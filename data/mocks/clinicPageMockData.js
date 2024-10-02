@@ -1,17 +1,3 @@
-export const getClinicPageMockData = (times) => {
-  const result = [];
-  for (let i = 0; i < times; i++) {
-    // result.push(...clinicPageMockData); unique olmayan datalar için direk aynı datayı xtimes kadar döndürebiliriz.
-    result.push({
-      ...clinicPageMockData[0],
-      id: i,
-      url: encodeURI(clinicPageMockData[0].fullTitle),
-    }); // unique olanlarda ise
-    //unique değerleri devamlı değiştirerek dönebiliriz.
-  }
-  return result;
-};
-
 export const clinicPageMockData = {
   clinic: {
     id: 0,

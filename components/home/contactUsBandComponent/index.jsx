@@ -41,12 +41,9 @@ const ContactUsBandComponent = () => {
               <p className="font-[900]">Don&apos;t hesitate to contact us.</p>
             </div>
           </div>
-          <Link
-            className=" w-full  md:w-auto mt-3 md:mt-0"
-            href="/become-a-partner"
-          >
+          <Link className=" w-full  md:w-auto mt-3 md:mt-0" href="/test">
             <ButtonComponent
-              title="Become A Partner"
+              title="Get a Free Quote"
               className=" !w-full truncate  !text-base !font-inter !font-[600] !rounded-[10px]  !py-3 !px-16     !text-black-light !bg-white "
             />
           </Link>

@@ -83,9 +83,9 @@ const MobileNavigationSidebar = (props) => {
               </span>
             </span>
           </div>
-          <Link className="" href="/become-a-partner">
+          <Link className="" href="/test">
             <ButtonComponent
-              title="Become A Partner"
+              title="Get a Free Quote"
               className="text-nowrap !w-full font-inter font-[600] !text-base !rounded-[3px] text-white bg-primary  py-3 px-6 "
             />
           </Link>

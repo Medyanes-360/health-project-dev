@@ -9,7 +9,7 @@ export default function NavigationHeader() {
     <nav>
       <div className="hidden  md:block">
         <NavbarComponent navbarData={data} />
-        <HeaderbarComponent />
+        <HeaderbarComponent navbarData={data} />
       </div>
       <div className="block md:hidden">
         <MobileNavigation sidebarData={data} />
