@@ -51,10 +51,8 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderBig.current.slickPrev()}
-          >
-              <Image
+          <button onClick={() => sliderBig.current.slickPrev()}>
+            <Image
               src={"/assets/images/arrow-left.png"}
               alt=""
               width={30}
@@ -84,10 +82,8 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            onClick={() => sliderMedium.current.slickPrev()}
-          >
-             <Image
+          <button onClick={() => sliderMedium.current.slickPrev()}>
+            <Image
               src={"/assets/images/arrow-left.png"}
               alt=""
               width={30}
@@ -118,7 +114,6 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
           <button onClick={() => sliderSmall.current.slickPrev()}>
-          
             <Image
               src={"/assets/images/arrow-left.png"}
               alt=""

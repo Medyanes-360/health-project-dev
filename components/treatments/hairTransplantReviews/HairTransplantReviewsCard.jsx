@@ -136,6 +136,11 @@ export default HairTransplantReviewsCard;
 const CardContent = ({ data }) => {
   const { stars, text, img, name, job } = data;
   const starsArray = Array.from({ length: stars });
+  const [expanded, setExpanded] = useState(false); // Expanded state
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded); // Toggle the expanded state
+  };
 
   return (
     <div className="p-4">
@@ -152,7 +157,14 @@ const CardContent = ({ data }) => {
             </div>
 
             <div>
-              <p>{text}</p>
+              {/* Conditionally render the text based on expanded state */}
+              <p className={expanded ? "" : "line-clamp-4"}>{text}</p>
+              <button
+                onClick={toggleExpanded}
+                className="text-primary mt-2 underline"
+              >
+                {expanded ? "Show Less" : "Show More"}
+              </button>
             </div>
           </div>
           <div className="flex justify-between gap-3 items-center">
@@ -166,7 +178,7 @@ const CardContent = ({ data }) => {
                 alt="picture"
               />
               <div className="space-y-2">
-                <h1 className="font-bold ">{name}</h1>
+                <h1 className="font-bold">{name}</h1>
                 <p className="font-light">{job}</p>
               </div>
             </div>
@@ -184,9 +196,15 @@ const CardContent = ({ data }) => {
   );
 };
 
+// SmallCardContent component
 const SmallCardContent = ({ data }) => {
   const { stars, text, img, name, job } = data;
   const starsArray = Array.from({ length: stars });
+  const [expanded, setExpanded] = useState(false); // Expanded state
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded); // Toggle the expanded state
+  };
 
   return (
     <div className="p-1">
@@ -210,7 +228,14 @@ const SmallCardContent = ({ data }) => {
             </div>
 
             <div>
-              <p className="font-light">{text}</p>
+              {/* Conditionally render the text based on expanded state */}
+              <p className={expanded ? "" : "line-clamp-4"}>{text}</p>
+              <button
+                onClick={toggleExpanded}
+                className="text-primary mt-2 underline"
+              >
+                {expanded ? "Show Less" : "Show More"}
+              </button>
             </div>
           </div>
 
@@ -225,8 +250,8 @@ const SmallCardContent = ({ data }) => {
                 alt="picture"
               />
               <div className="space-y-2">
-                <h1 className=" font-normal">{name}</h1>
-                <p className=" font-extralight">{job}</p>
+                <h1 className="font-normal">{name}</h1>
+                <p className="font-extralight">{job}</p>
               </div>
             </div>
           </div>
