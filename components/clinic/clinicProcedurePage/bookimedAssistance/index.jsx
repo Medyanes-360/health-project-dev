@@ -1,4 +1,5 @@
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 
 const data = {
   assistance: {
@@ -19,7 +20,25 @@ const BookimedAssistance = () => {
   return (
     <div>
       <CardComponent>
-        <div className="flex items-center mb-2 gap-2">
+        <MotionDiv
+          initial={{
+            scale: "110%",
+            opacity: 0,
+          }}
+          whileInView={{
+            scale: "100%",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className="flex items-center mb-2 gap-2"
+        >
           <svg
             width="56"
             height="56"
@@ -48,17 +67,33 @@ const BookimedAssistance = () => {
           </svg>
 
           <h2 className="text-2xl font-poppins">24/7 Bookimed Assistance</h2>
-        </div>
+        </MotionDiv>
         <ul className=" flex flex-wrap gap-2">
           {data.assistance.services.map((service, index) => (
-            <li
+            <MotionDiv
+              initial={{
+                scale: "90%",
+                opacity: 0,
+              }}
+              whileInView={{
+                scale: "100%",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1 * (1 + index),
+              }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
               key={index}
               className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5"
             >
               <span className="text-lg font-poppins mr-2 whitespace-nowrap">
                 {service.name}:
               </span>
-            </li>
+            </MotionDiv>
           ))}
         </ul>
       </CardComponent>

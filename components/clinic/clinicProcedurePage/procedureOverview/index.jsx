@@ -1,4 +1,5 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
 export default function ProcedureOverview() {
@@ -9,7 +10,24 @@ export default function ProcedureOverview() {
   };
   return (
     <ExtraLargePageContainer className="mt-6">
-      <div className="border shadow-[0px_12px_24px_-4px_#919EAB1F] p-6 rounded-3xl">
+      <MotionDiv 
+          initial={{
+            scale: "90%",
+            opacity: 0,
+          }}
+          whileInView={{
+            scale: "100%",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay:0.1
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+      className="border shadow-[0px_12px_24px_-4px_#919EAB1F] p-6 rounded-3xl">
         <div className="flex justify-between items-center">
           <div className="flex flex-col items-start gap-2.5">
             <p className="text-black font-semibold ">
@@ -95,7 +113,7 @@ export default function ProcedureOverview() {
             </span>
           </div>
         </div>
-      </div>
+      </MotionDiv>
     </ExtraLargePageContainer>
   );
 }

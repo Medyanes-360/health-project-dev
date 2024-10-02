@@ -1,4 +1,5 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
 const data = {
@@ -11,7 +12,23 @@ const ProgramDetails = () => {
   return (
     <div className="py-10 ">
       <ExtraLargePageContainer>
-        <div
+        <MotionDiv
+         initial={{
+          y: "-50px",
+          opacity: 0,
+        }}
+        whileInView={{
+          y: "0",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+          delay:0.1
+        }}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
           className="p-6 rounded-3xl shadow-md border"
           style={{ borderColor: "rgba(217, 217, 217, 0.12)" }}
         >
@@ -35,7 +52,7 @@ const ProgramDetails = () => {
           <div className="py-20">
             <p>{data.programDetails}</p>
           </div>
-        </div>
+        </MotionDiv>
       </ExtraLargePageContainer>
     </div>
   );

@@ -1,4 +1,5 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { MotionDiv } from "@/globalElements/motion";
 
 export default function LocationSection({ address }) {
   return (
@@ -55,7 +56,24 @@ export default function LocationSection({ address }) {
               />
             </svg>
           </span>
-          <div className="  w-full select-none rounded-3xl  overflow-hidden h-[450px]  ">
+          <MotionDiv 
+           initial={{
+            scale: "80%",
+            opacity: 0,
+          }}
+          whileInView={{
+            scale: "100%",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay:0.1
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+           className="  w-full select-none rounded-3xl  overflow-hidden h-[450px]  ">
             <iframe
               style={{
                 // border görünmesin diye width ve height yükseltip margini -2 (border kalınlığı) yapıyoruz
@@ -73,7 +91,7 @@ export default function LocationSection({ address }) {
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>
+          </MotionDiv>
         </div>
       </div>
     </ExtraLargePageContainer>

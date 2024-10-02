@@ -1,4 +1,5 @@
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 import React from "react";
 
 const AdditionalInformations = ({ details }) => {
@@ -28,13 +29,47 @@ const AdditionalInformations = ({ details }) => {
               fill="#292D32"
             />
           </svg>
-
-          <h2 className="text-2xl font-poppins">Additional Informations</h2>
+          <MotionDiv
+            initial={{
+              x: "-50px",
+              opacity: 0,
+            }}
+            whileInView={{
+              x: "0",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+          >
+            <h2 className="text-2xl font-poppins">Additional Informations</h2>
+          </MotionDiv>
         </div>
         <div>
           <ul className=" flex flex-wrap gap-2">
             {details.map((info, index) => (
-              <li
+              <MotionDiv
+                initial={{
+                  x: "50px",
+                  opacity: 0,
+                }}
+                whileInView={{
+                  x: "0",
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2 * (index + 1),
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.5,
+                }}
                 key={index}
                 className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5"
               >
@@ -42,7 +77,7 @@ const AdditionalInformations = ({ details }) => {
                   {info.name}:
                 </span>
                 <span className="text-2xl">{info.icon}</span>
-              </li>
+              </MotionDiv>
             ))}
           </ul>
         </div>

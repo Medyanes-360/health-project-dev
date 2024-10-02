@@ -1,4 +1,5 @@
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 
 const data = {
   duration: {
@@ -54,12 +55,48 @@ const Duration = () => {
               fill="#292D32"
             />
           </svg>
-
-          <h2 className="text-2xl font-poppins">Duration</h2>
+          <MotionDiv
+            initial={{
+              y: "50px",
+              opacity: 0,
+            }}
+            whileInView={{
+              y: "0",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+          >
+            <h2 className="text-2xl font-poppins">Duration</h2>
+          </MotionDiv>
         </div>
-        <div className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5">
+        <MotionDiv
+          initial={{
+            y: "-50px",
+            opacity: 0,
+          }}
+          whileInView={{
+            y: "0",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5"
+        >
           <p>{data.duration.stay}:</p>
-        </div>
+        </MotionDiv>
       </CardComponent>
     </div>
   );

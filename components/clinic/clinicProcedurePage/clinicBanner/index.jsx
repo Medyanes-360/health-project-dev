@@ -1,4 +1,5 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
 export default function ClinicBanner() {
@@ -21,7 +22,25 @@ export default function ClinicBanner() {
 
   return (
     <ExtraLargePageContainer className="">
-      <div className=" max-h-[440px] rounded-3xl relative w-full overflow-hidden">
+      <MotionDiv
+        initial={{
+          scale: "110%",
+          opacity: 0,
+        }}
+        whileInView={{
+          scale: "100%",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+          delay: 0.1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        className=" max-h-[440px] rounded-3xl relative w-full overflow-hidden"
+      >
         <Image
           className=" w-full h-full"
           src={data.clinicBannerImage}
@@ -32,21 +51,40 @@ export default function ClinicBanner() {
         <div className="absolute   flex gap-3 bottom-[19px] right-1">
           {data.clinicImages.slice(0, 4).map((imageSrc, index) => {
             return (
-              <Image
+              <MotionDiv
                 key={index}
-                className=" w-[80px] opacity-60 scale-90 hover:scale-100 border border-transparent hover:opacity-100 cursor-pointer transition-all duration-200 hover:border-primary h-[80px] rounded-xl"
-                src={imageSrc}
-                alt=""
-                width={1200}
-                height={440}
-              />
+                initial={{
+                  x: "-30px",
+                  opacity: 0,
+                }}
+                whileInView={{
+                  x: "0",
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.3 * (index + 1),
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.5,
+                }}
+              >
+                <Image
+                  className=" w-[80px] opacity-60 scale-90 hover:scale-100 border border-transparent hover:opacity-100 cursor-pointer transition-all duration-200 hover:border-primary h-[80px] rounded-xl"
+                  src={imageSrc}
+                  alt=""
+                  width={1200}
+                  height={440}
+                />
+              </MotionDiv>
             );
           })}
           <span className="bg-black/70   border border-transparent scale-90 hover:scale-100 hover:opacity-100 cursor-pointer transition-all duration-200 hover:border-primary  text-white w-[80px] h-[80px] rounded-xl flex items-center justify-center">
             +{data.clinicImages.length - 4}
           </span>
         </div>
-      </div>
+      </MotionDiv>
     </ExtraLargePageContainer>
   );
 }

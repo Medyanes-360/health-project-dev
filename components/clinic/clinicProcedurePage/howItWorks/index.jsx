@@ -1,5 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import CardComponent from "@/globalElements/Card";
+import { MotionDiv } from "@/globalElements/motion";
 import React from "react";
 
 const data = [
@@ -46,7 +47,27 @@ const HowItWorks = () => {
 
           <div className="grid grid-cols-5  gap-4 ">
             {data.map((items, i) => (
-              <ContentCard key={i} data={items} index={i} />
+              <MotionDiv
+                initial={{
+                  y: "50px",
+                  opacity: 0,
+                }}
+                whileInView={{
+                  y: "0px",
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1 * (i + 1),
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.5,
+                }}
+                key={i}
+              >
+                <ContentCard data={items} index={i} />
+              </MotionDiv>
             ))}
           </div>
         </CardComponent>

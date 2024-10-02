@@ -5,14 +5,36 @@ import Transport from "../transport";
 import Duration from "../duration";
 import BookimedAssistance from "../bookimedAssistance";
 import ButtonComponent from "@/globalElements/Button";
+import { MotionDiv } from "@/globalElements/motion";
 
 const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
   return (
     <div className="mt-10">
       <CardComponent className={" !shadow"}>
-        <h1 className=" text-primary text-xl ">
-          Read about the program benefits
-        </h1>
+        <MotionDiv
+          initial={{
+            y: "30px",
+            opacity: 0,
+          }}
+          whileInView={{
+            y: "0px",
+
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+        >
+          <h1 className=" text-primary text-xl ">
+            Read about the program benefits
+          </h1>
+        </MotionDiv>
+
         <MedicalProcedures procedures={medicalProcedures.procedure_list} />
         <AdditionalInformations details={additionalInfo.details} />
         <Transport />
@@ -27,18 +49,56 @@ const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
             </p>
           </div>
           <div className="flex flex-row gap-3 ">
-            <ButtonComponent
-              className={
-                "!bg-[#EAEAEA]  !text-primary px-6 py-2 !rounded-sm !text-lg"
-              }
-              title={"Get Free Personalized Offer"}
-            />
-            <ButtonComponent
-              className={
-                "!text-fourth  !bg-primary px-6 py-2  !rounded-sm !text-lg"
-              }
-              title={"Get Free Personalized Offer"}
-            />
+            <MotionDiv
+              initial={{
+                scale: "110%",
+                opacity: 0,
+              }}
+              whileInView={{
+                scale: "100%",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+            >
+              <ButtonComponent
+                className={
+                  "!bg-[#EAEAEA]  !text-primary px-6 py-2 !rounded-sm !text-lg"
+                }
+                title={"Get Free Personalized Offer"}
+              />
+            </MotionDiv>
+            <MotionDiv
+              initial={{
+                scale: "110%",
+                opacity: 0,
+              }}
+              whileInView={{
+                scale: "100%",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+            >
+              <ButtonComponent
+                className={
+                  "!text-fourth  !bg-primary px-6 py-2  !rounded-sm !text-lg"
+                }
+                title={"Get Free Personalized Offer"}
+              />
+            </MotionDiv>
           </div>
         </div>
       </CardComponent>
