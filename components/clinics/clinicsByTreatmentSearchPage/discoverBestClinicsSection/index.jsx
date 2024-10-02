@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import DiscoverMoreCardContent from "../reusable/DiscoverMoreCard";
+import DiscoverMoreCardContent from "../reusables/DiscoverMoreCard";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const data = [
@@ -8,8 +8,6 @@ const data = [
     clinicName: "Adem and Havva Medical Center",
     location: "Turkey, Istanbul",
     description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
-
-   
 
     docIcon: "/assets/images/image.png",
     docName: "Doctor Dr Fuzun Erdogan",
@@ -54,8 +52,6 @@ const data = [
     clinicName: "Adem and Havva Medical Center",
     location: "Turkey, Istanbul",
     description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
-
-   
 
     docIcon: "/assets/images/image.png",
     docName: "Doctor Dr Fuzun Erdogan",

@@ -14,7 +14,7 @@ import PageHeading from "@/components/clinics/clinicsByTreatmentSearchPage/pageH
 import RecentHairTransplantReview from "@/components/clinics/clinicsByTreatmentSearchPage/recentHairTransplantReview";
 import RelatedArticles from "@/components/clinics/clinicsByTreatmentSearchPage/relatedArtcles";
 import TreatmentCostsSection from "@/components/clinics/clinicsByTreatmentSearchPage/treatmentCostsSection";
-import TreatmentFilteringSection from "@/components/clinics/clinicsByTreatmentSearchPage/treatmentFilteringSection";
+import ClinicSearchSection from "@/components/clinics/reusables/clinicSearchSection";
 import TreatmentOverviewSection from "@/components/clinics/clinicsByTreatmentSearchPage/treatmentOverviewSection";
 import TreatmentQuestionBandComponent from "@/components/clinics/clinicsByTreatmentSearchPage/treatmentQuestionBandComponent";
 
@@ -38,7 +38,7 @@ export default function ClinicsByTreatmentSearchPageContainer({ treatment }) {
           title: treatment.title,
         }}
       />
-      <TreatmentFilteringSection />
+      <ClinicSearchSection />
       <TreatmentQuestionBandComponent data={treatment.bandTestQuestion} />
       <RecentHairTransplantReview />
       <HottestPackagesSection />

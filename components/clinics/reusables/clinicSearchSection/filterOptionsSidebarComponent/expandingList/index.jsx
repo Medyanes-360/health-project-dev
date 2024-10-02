@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
+import { MotionDiv } from "@/globalElements/motion";
 
 export default function ExpandingList({ title, children }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [isShowMore, setIsShowMore] = useState(false);
   const data = [...Array(50)];
   const toggleExpanded = () => {
@@ -47,21 +48,26 @@ export default function ExpandingList({ title, children }) {
       </button>
       {isExpanded && !children && (
         <>
-          <ul className="px-5 max-h-[240px] overflow-x-hidden overflow-y-scroll">
-            {data.slice(0, isShowMore ? 25 : 5).map((e, i) => {
-              return (
-                <li
-                  key={i}
-                  className={`flex my-2  animate-fadeIn  [animation-delay:_0ms]`}
-                >
-                  <div
-                    onClick={selectHandler}
-                    className="!h-6 mr-2 !w-6 border-2 rounded-md border-[#637381] text-primary select-none cursor-pointer flex items-center justify-center  "
-                  ></div>{" "}
-                  item
-                </li>
-              );
-            })}
+          <ul className="px-5  max-h-[200px] overflow-x-hidden overflow-y-scroll">
+            {data
+              .slice(0, isShowMore ? data.length : 5)
+              .map((element, index) => {
+                return (
+                  <MotionDiv
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className={`flex my-2 h-6   `}
+                    transition={{ delay: 0.05 * index }}
+                  >
+                    <div
+                      onClick={selectHandler}
+                      className="!h-6 mr-2 !w-6 border-2 rounded-md border-[#637381] text-primary select-none cursor-pointer flex items-center justify-center  "
+                    ></div>{" "}
+                    item
+                  </MotionDiv>
+                );
+              })}
           </ul>
           <button
             onClick={(e) => {

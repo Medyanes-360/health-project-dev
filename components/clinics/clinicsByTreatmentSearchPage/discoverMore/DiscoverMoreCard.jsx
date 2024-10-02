@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import DiscoverMoreCardContent from "../reusable/DiscoverMoreCard";
+import DiscoverMoreCardContent from "../reusables/DiscoverMoreCard";
 import Image from "next/image";
 
 const DiscoverMoreCard = ({ data }) => {
