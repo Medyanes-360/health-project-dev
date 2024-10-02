@@ -1,6 +1,7 @@
 import React from "react";
 import ServicesCarousel from "./ServicesCarousel";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { MotionDiv } from "@/globalElements/motion";
 
 // Hizmet verileri
 const servicesData = [
@@ -250,14 +251,31 @@ const OurServicesComponent = () => {
   return (
     <section className="relative py-12">
       {/* Başlık Bölümü */}
-      <div className="text-center mb-12">
+      <MotionDiv
+        initial={{
+          y: "30px",
+          opacity: 0,
+        }}
+        whileInView={{
+          y: "0",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        className="text-center mb-12"
+      >
         <p className="text-[#52B8AB] font-medium text-[14px]">OUR SERVICES</p>
         <h2 className="text-[#062126] font-bold text-[40px] leading-[60px]">
           We Serve In Different <span className="font-bold">Areas For</span>
           <br />
           <span className="font-bold">Our Patients</span>
         </h2>
-      </div>
+      </MotionDiv>
 
       {/* Hizmet Kartları Carousel Bölümü */}
       <ExtraLargePageContainer>

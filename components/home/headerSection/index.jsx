@@ -1,6 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import HeaderSectionSearchInput from "./searchInput";
-import { MotionDiv } from "@/globalElements/motionDiv";
+import { MotionDiv } from "@/globalElements/motion";
 
 const HeaderSection = () => {
   return (

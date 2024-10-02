@@ -6,6 +6,7 @@ export const navbarData = {
     { id: 3, title: "Customer Supports", url: "/customer-supports" },
     { id: 4, title: "Login For Clinic", url: "/login/clinic" },
   ],
+  topBarHeight: 52,
   info: {
     phone: "+90-555-635-44-22",
   },

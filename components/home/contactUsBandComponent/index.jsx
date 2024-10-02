@@ -24,7 +24,7 @@ const ContactUsBandComponent = () => {
         className="bg-primary-light h-full flex justify-center"
       >
         {/* component'ın max-widthini xl'a ayarlayan container:  */}
-        <ExtraLargePageContainer className="    py-3 h-full w-full md:py-10  ">
+        <ExtraLargePageContainer className="   md:justify-between  flex flex-col md:flex-row  items-start  md:items-center  py-3 h-full w-full md:py-10  ">
           <div className="flex  items-center   ">
             <Image
               className=""
@@ -41,13 +41,10 @@ const ContactUsBandComponent = () => {
               <p className="font-[900]">Don&apos;t hesitate to contact us.</p>
             </div>
           </div>
-          <Link
-            className=" w-full  md:w-auto mt-3 md:mt-0"
-            href="/become-a-partner"
-          >
+          <Link className=" w-full  md:w-auto mt-3 md:mt-0" href="/test">
             <ButtonComponent
-              title="Become A Partner"
-              className=" w-full truncate !text-base !shadow-[0_12px_48px_0px_#002C6D1A] hover:!shadow-[0_12px_48px_0px_#002C6D1A] hover:!opacity-90 !font-inter !font-[600] !rounded-[10px]  !py-3 !px-16     !text-black-light !bg-white "
+              title="Get a Free Quote"
+              className=" !w-full truncate  !text-base !font-inter !font-[600] !rounded-[10px]  !py-3 !px-16     !text-black-light !bg-white "
             />
           </Link>
         </ExtraLargePageContainer>

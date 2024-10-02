@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/globalElements/motionDiv";
+import { MotionDiv } from "@/globalElements/motion";
 import Link from "next/link";
 
 export default function DepartmentCard({ data, index, className }) {

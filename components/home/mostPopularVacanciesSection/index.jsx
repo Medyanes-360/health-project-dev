@@ -4,7 +4,7 @@ import DepartmentCard from "./departmentCard";
 import FeatureCard from "./featureCard";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import { featureCardMockData } from "@/data/mocks/featureCardMockData";
-import { MotionDiv } from "@/globalElements/motionDiv";
+import { MotionDiv } from "@/globalElements/motion";
 
 const MostPopularVacanciesSection = () => {
   const data = featureCardMockData;

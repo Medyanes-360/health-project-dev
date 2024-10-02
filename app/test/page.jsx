@@ -1,12 +1,11 @@
-import QuestionsSection from '@/components/questions'
-import React from 'react'
+import QuestionsSection from "@/components/test/questions";
 
 const page = () => {
   return (
     <div>
-        <QuestionsSection/>
+      <QuestionsSection />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

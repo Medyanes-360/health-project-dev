@@ -1,14 +1,32 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const WillBeDeleted = () => {
-    const links = [
-        '/', '/treatments/effe/blog', '/treatments/hair-transplant', '/dashboard', '/test', '/auth/login', '/treatments/hair-transplant/adem-and-havva-medical-center?id=0'
-    ]
+  const links = [
+    "/",
+    "/blog",
+    "/blog/hair-transplant",
+    "/clinics",
+    "/clinics/hair-transplant",
+    "/clinic",
+    "/clinic/adem-and-havva-medical-center",
+    "/clinic/adem-and-havva-medical-center/hair-transplant",
+    "/doctor",
+    "/doctor/doctor-url",
+    "/doctors",
+    "/dashboard",
+    "/test",
+    "/login",
+    "/register",
+  ];
   return (
     <div className="space-y-2 flex flex-col">
-        {links.map(link => <Link className="text-black text-center" href={link}>{link}</Link>)}
+      {links.map((link, index) => (
+        <Link key={index} className="text-black text-center" href={link}>
+          {link}
+        </Link>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default WillBeDeleted
+export default WillBeDeleted;
