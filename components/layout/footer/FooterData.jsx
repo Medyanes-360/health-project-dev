@@ -1,21 +1,17 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import ButtonComponent from "@/globalElements/Button";
-import Image from "next/image";
 
 const FooterData = () => {
   return (
-    <ExtraLargePageContainer>
+    <div className="w-full pt-5">
+       <h1 className="text-center text-4xl text-white mb-10">
+        Medyanes<span className="text-primary">360</span>
+       </h1>
       <div className="w-full flex flex-col justify-center lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-12 text-fourth">
         <div className="flex gap-7 flex-col lg:flex-row text-center lg:text-start">
           <div className="space-y-4 flex-1 ">
             {/* logo */}
-            <Image
-              alt="company logo"
-              width={140}
-              height={24}
-              src="/assets/images/company_logo_white.png"
-              className="mx-auto lg:mx-0"
-            />
+
             {/* location */}
             <p>Şirin mahallesi Sancaktepe/ Istanbul</p>
             {/* phone */}
@@ -57,7 +53,7 @@ const FooterData = () => {
           />
         </div>
       </div>
-    </ExtraLargePageContainer>
+    </div>
   );
 };
 

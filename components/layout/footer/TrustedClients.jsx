@@ -4,47 +4,47 @@ import Image from "next/image";
 const TrustedClients = () => {
   const images = [
     {
-      src: "/assets/trustedClients/c1.png",
-      w: 200,
+      src: "/assets/images/l4.png",
+      w: 100,
+      text: "Excellent Patient Experience & Service Quality",
     },
     {
-      src: "/assets/trustedClients/c5.png",
-      w: 150,
-    },
-    {
-      src: "/assets/trustedClients/c3.png",
-      w: 170,
+      src: "/assets/images/l3.png",
+      w: 100,
+      text: "High Security and Quality Standards",
     },
 
     {
-      src: "/assets/trustedClients/c4.png",
-      w: 140,
-    },
-    {
-      src: "/assets/trustedClients/c2.png",
-      w: 160,
+      src: "/assets/images/l2.png",
+      w: 100,
+      text: "Best Medical Startup in Europe",
     },
 
     {
-      src: "/assets/trustedClients/c6.png",
-      w: 150,
+      src: "/assets/images/l1.png",
+      w: 100,
+      text: "Best Medical Tourism Practice",
     },
   ];
   return (
-    <ExtraLargePageContainer>
+    <div className="py-10">
       {/* trusted client logos */}
-      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-1">
+      <div className="flex flex-col lg:flex-row lg:justify-around lg:items-center gap-8 lg:gap-1">
         {images?.map((img, i) => (
-          <Image
-            key={i}
-            src={img.src}
-            width={img.w}
-            height={30}
-            alt="trusted"
-          />
+          <div className="space-y-4 mx-auto">
+            <Image
+              key={i}
+              src={img.src}
+              width={img.w}
+              height={30}
+              alt="trusted"
+              className="mx-auto"
+            />
+            <p className="text-center max-w-[200px] text-fourth font-light">{img.text}</p>
+          </div>
         ))}
       </div>
-    </ExtraLargePageContainer>
+    </div>
   );
 };
 

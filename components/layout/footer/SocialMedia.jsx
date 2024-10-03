@@ -19,18 +19,18 @@ const SocialMedia = () => {
     },
   ];
   return (
-    <ExtraLargePageContainer className="w-full space-y-10 pb-6">
-      <div className="flex items-center justify-center lg:justify-start gap-4">
+    <div className="w-full space-y-10 pt-10 pb-6">
+      <div className="flex items-center justify-center lg:justify-center gap-4">
         {images?.map((Icon) => (
           <div key={Icon.id} className="bg-fourth/30 p-3 rounded-full">
             <Icon.Img className="text-fourth text-xl" />
           </div>
         ))}
       </div>
-      <p className="font-light text-fourth hidden lg:block">
+      <p className=" text-fourth text-center tracking-wider">
         © 2024 Medyanes, All Rights Reserved
       </p>
-    </ExtraLargePageContainer>
+    </div>
   );
 };
 
