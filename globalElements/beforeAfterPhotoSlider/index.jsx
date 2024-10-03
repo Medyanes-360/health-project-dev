@@ -21,7 +21,7 @@ export default function BeforeAfterPhotoSlider({
 
   return (
     <div
-      className={`${containerclassname}   !relative   h-full border-2 border-white `}
+      className={`${containerclassname} w-[${width}]  !relative   h-full border-2 border-white `}
     >
       <div
         style={{
