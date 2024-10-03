@@ -151,12 +151,18 @@ const CardContent = ({ data }) => {
     rate,
   } = data;
 
+  const [expanded, setExpanded] = useState(false); // Expanded state for description
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded); // Toggle the expanded state
+  };
+
   return (
-    <div className="p-4 ">
+    <div className="p-4">
       <CardComponent className={"!p-0 "}>
-        <div className="sm:min-h-[750px]">
+        <div className="sm:min-h-[600px]">
           <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px] rounded-t-2xl">
-            {/* image */}
+            {/* Image */}
             <div className="h-16 w-16 rounded-full grid place-content-center bg-primary/30">
               <div className="w-10 aspect-[12/12] relative overflow-hidden ">
                 <Image
@@ -167,7 +173,8 @@ const CardContent = ({ data }) => {
                 />
               </div>
             </div>
-            {/* doc data */}
+
+            {/* Doctor Data */}
             <div className="space-y-2 text-sm">
               <h1>
                 {name} / {operation}
@@ -177,7 +184,7 @@ const CardContent = ({ data }) => {
               </p>
             </div>
 
-            {/* star */}
+            {/* Rating */}
             <div>
               <h1 className="flex items-center gap-1">
                 <span className="text-[#FFAA00] text-2xl">★</span>
@@ -197,10 +204,24 @@ const CardContent = ({ data }) => {
             </div>
 
             <h1 className="text-sm">{title}</h1>
-            <p className="font-light text-sm">{description}</p>
+
+            {/* Description with toggle */}
+            <p
+              className={`text-sm font-light transition-all duration-300 ${
+                expanded ? "line-clamp-4" : "line-clamp-2"
+              }`}
+            >
+              {description}
+            </p>
+            <button
+              onClick={toggleExpanded}
+              className="text-primary mt-2 underline"
+            >
+              {expanded ? "Show Less" : "Show More"}
+            </button>
 
             <div className="flex gap-1">
-              {/* location icon */}
+              {/* Location icon */}
               <div className="flex gap-2 items-center">
                 <Image
                   width={25}

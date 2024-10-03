@@ -158,7 +158,9 @@ const CardContent = ({ data }) => {
 
             <div>
               {/* Conditionally render the text based on expanded state */}
-              <p className={expanded ? "" : "line-clamp-4"}>{text}</p>
+              <p className={expanded ? "line-clamp-6" : "line-clamp-2"}>
+                {text}
+              </p>
               <button
                 onClick={toggleExpanded}
                 className="text-primary mt-2 underline"
@@ -229,7 +231,9 @@ const SmallCardContent = ({ data }) => {
 
             <div>
               {/* Conditionally render the text based on expanded state */}
-              <p className={expanded ? "" : "line-clamp-4"}>{text}</p>
+              <p className={expanded ? "line-clamp-6" : "line-clamp-2"}>
+                {text}
+              </p>
               <button
                 onClick={toggleExpanded}
                 className="text-primary mt-2 underline"
