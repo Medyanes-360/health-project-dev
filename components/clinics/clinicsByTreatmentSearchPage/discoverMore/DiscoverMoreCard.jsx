@@ -38,20 +38,21 @@ const DiscoverMoreCard = ({ data }) => {
         ))}
       </Slider>
       <div className="flex justify-center mt-4 gap-7">
-        <button onClick={handlePrev}>
-          <Image
-            src={"/assets/images/arrow-left.png"}
-            alt="img"
-            width={30}
-            height={30}
-          />
+        <button
+          className="p-2 rounded-full bg-[#9199A3]/40"
+          onClick={handlePrev}
+        >
+          <Image src={"/assets/icons/left.png"} alt="" width={15} height={15} />
         </button>
-        <button onClick={handleNext}>
+        <button
+          className="p-2 rounded-full bg-[#52B8AB]/40"
+          onClick={handleNext}
+        >
           <Image
-            src={"/assets/images/arrow-right.png"}
-            alt="img"
-            width={30}
-            height={30}
+            src={"/assets/icons/right.png"}
+            alt=""
+            width={15}
+            height={15}
           />
         </button>
       </div>

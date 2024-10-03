@@ -78,7 +78,7 @@ const QuestionsSection = () => {
     <div className="w-full min-h-[90vh] bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
         <CardComponent
-          className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 "}
+          className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 overflow-hidden"}
         >
             {questions.map((question) => {
               if (currentQuestion == question.id) {

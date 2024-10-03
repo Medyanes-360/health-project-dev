@@ -52,23 +52,25 @@ const RelatedArticlesCard = ({ data }) => {
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
           <button
+            className="p-2 rounded-full bg-[#9199A3]/40"
             onClick={() => sliderBig.current.slickPrev()}
           >
-             <Image
-              src={"/assets/images/arrow-left.png"}
+            <Image
+              src={"/assets/icons/left.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
           <button
+            className="p-2 rounded-full bg-[#52B8AB]/40"
             onClick={() => sliderBig.current.slickNext()}
           >
-             <Image
-              src={"/assets/images/arrow-right.png"}
+            <Image
+              src={"/assets/icons/right.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
         </div>
@@ -86,24 +88,26 @@ const RelatedArticlesCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
+        <button
+            className="p-2 rounded-full bg-[#9199A3]/40"
             onClick={() => sliderMedium.current.slickPrev()}
           >
             <Image
-              src={"/assets/images/arrow-left.png"}
+              src={"/assets/icons/left.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
           <button
+            className="p-2 rounded-full bg-[#52B8AB]/40"
             onClick={() => sliderMedium.current.slickNext()}
           >
-             <Image
-              src={"/assets/images/arrow-right.png"}
+            <Image
+              src={"/assets/icons/right.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
         </div>
@@ -121,25 +125,26 @@ const RelatedArticlesCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
+        <button
+            className="p-2 rounded-full bg-[#9199A3]/40"
             onClick={() => sliderSmall.current.slickPrev()}
           >
             <Image
-              src={"/assets/images/arrow-left.png"}
+              src={"/assets/icons/left.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
           <button
+            className="p-2 rounded-full bg-[#52B8AB]/40"
             onClick={() => sliderSmall.current.slickNext()}
-            className="bg-[#52B8AB] w-8 h-8 rounded-full"
           >
-             <Image
-              src={"/assets/images/arrow-right.png"}
+            <Image
+              src={"/assets/icons/right.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
         </div>

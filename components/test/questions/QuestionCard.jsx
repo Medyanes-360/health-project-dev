@@ -5,8 +5,8 @@ const QuestionCard = ({ question, id }) => {
   const { answers, setAnswers } = useQuestionStore(); // Use Zustand store
   const s = `answer${id}`;
 
-  const handleOptionChange = (event) => {
-    setAnswers({ [s]: event.target.value });
+  const handleOptionChange = (value) => {
+    setAnswers({ [s]: value });
   };
 
   return (
@@ -18,29 +18,34 @@ const QuestionCard = ({ question, id }) => {
         <h1 className="text-xl font-semibold">{question}</h1>
       </div>
       <div className="space-y-1 w-full">
-        <div className="w-full h-[40px] border px-4 py-2 flex gap-5">
+        <label
+          className="w-full h-[40px] border px-4 py-2 flex gap-5 cursor-pointer"
+          onClick={() => handleOptionChange("Yes")}
+        >
           <input
-            onChange={handleOptionChange}
+            onChange={() => handleOptionChange("Yes")}
             name={id}
             type="radio"
             value="Yes"
-            defaultChecked={answers[s] === "Yes"}
+            checked={answers[s] === "Yes"}
             className="w-4"
           />
-          <label className="text-third">Yes</label>
-        </div>
-        <div className="w-full h-[40px] border px-4 py-2 flex gap-5">
+          <span className="text-third">Yes</span>
+        </label>
+        <label
+          className="w-full h-[40px] border px-4 py-2 flex gap-5 cursor-pointer"
+          onClick={() => handleOptionChange("No")}
+        >
           <input
-            onChange={handleOptionChange}
+            onChange={() => handleOptionChange("No")}
             name={id}
             type="radio"
             value="No"
-            defaultChecked={answers[s] === "No"}
+            checked={answers[s] === "No"}
             className="w-4"
-
           />
-          <label className="text-third">No</label>
-        </div>
+          <span className="text-third">No</span>
+        </label>
       </div>
     </div>
   );

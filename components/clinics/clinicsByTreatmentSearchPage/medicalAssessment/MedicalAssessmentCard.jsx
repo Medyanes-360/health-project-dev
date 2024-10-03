@@ -47,20 +47,26 @@ const MedicalAssessmentCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button onClick={() => sliderBig.current.slickPrev()}>
+          <button
+            className="p-2 rounded-full bg-[#9199A3]/40"
+            onClick={() => sliderBig.current.slickPrev()}
+          >
             <Image
-              src={"/assets/images/arrow-left.png"}
+              src={"/assets/icons/left.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
-          <button onClick={() => sliderBig.current.slickNext()}>
+          <button
+            className="p-2 rounded-full bg-[#52B8AB]/40"
+            onClick={() => sliderBig.current.slickNext()}
+          >
             <Image
-              src={"/assets/images/arrow-right.png"}
+              src={"/assets/icons/right.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
         </div>
@@ -77,20 +83,26 @@ const MedicalAssessmentCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button onClick={() => sliderSmall.current.slickPrev()}>
+          <button
+            className="p-2 rounded-full bg-[#9199A3]/40"
+            onClick={() => sliderSmall.current.slickPrev()}
+          >
             <Image
-              src={"/assets/images/arrow-left.png"}
+              src={"/assets/icons/left.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
-          <button onClick={() => sliderSmall.current.slickNext()}>
+          <button
+            className="p-2 rounded-full bg-[#52B8AB]/40"
+            onClick={() => sliderSmall.current.slickNext()}
+          >
             <Image
-              src={"/assets/images/arrow-right.png"}
+              src={"/assets/icons/right.png"}
               alt=""
-              width={30}
-              height={30}
+              width={15}
+              height={15}
             />
           </button>
         </div>
