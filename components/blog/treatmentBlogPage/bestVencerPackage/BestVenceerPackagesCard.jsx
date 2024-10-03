@@ -1,3 +1,4 @@
+import BeforeAfterPhotoSlider from "@/globalElements/beforeAfterPhotoSlider";
 import Image from "next/image";
 
 const BestVenceerPackagesCard = ({ data }) => {
@@ -7,11 +8,10 @@ const BestVenceerPackagesCard = ({ data }) => {
       <div className="flex flex-col md:flex-row sm:justify-between gap-6">
         <div className="flex flex-col md:flex-row gap-4 md:flex-1 w-full">
           <div className="aspect-[12/8] rounded-2xl overflow-hidden w-full relative max-w-[400px]">
-            <Image
-              src={img}
-              alt="img"
-              fill
-              className="object-cover object-center"
+            <BeforeAfterPhotoSlider
+              width={"400px"}
+              beforeImageSrc="/assets/images/clinic1.png"
+              afterImageSrc="/assets/images/clinic2.png"
             />
           </div>
           <div className="w-full space-y-3 py-3">
@@ -37,12 +37,11 @@ const BestVenceerPackagesCard = ({ data }) => {
         <div className="space-y-4 sm:w-[40%] w-full  py-3">
           <div className="flex items-center justify-center gap-1">
             <div className="flex items-center ">
-
-            {[1, 2, 3, 4, 5].map((i) => (
-              <span key={i} className="text-[#FFAA00] text-4xl ">
-                ★
-              </span>
-            ))}
+              {[1, 2, 3, 4, 5].map((i) => (
+                <span key={i} className="text-[#FFAA00] text-4xl ">
+                  ★
+                </span>
+              ))}
             </div>
 
             <p className="text-xl">{rate}</p>
@@ -55,7 +54,6 @@ const BestVenceerPackagesCard = ({ data }) => {
             <p>pre package</p>
           </div>
         </div>
-
       </div>
     </div>
   );

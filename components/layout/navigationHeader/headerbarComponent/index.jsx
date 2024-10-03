@@ -10,6 +10,7 @@ const HeaderbarComponent = ({ navbarData }) => {
   const headerBarRef = useRef(null);
   const topBarHeight = navbarData.topBarHeight;
   const headerBarHeight = 80;
+
   useEffect(() => {
     const setHeaderSticky = () => {
       if (

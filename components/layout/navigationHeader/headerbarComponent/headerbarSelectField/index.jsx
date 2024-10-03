@@ -10,6 +10,7 @@ const defaultCountry = "TR";
 
 const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
   const data = diseaseDoctorHospitalMockData;
+
   const countries = Country.getAllCountries();
   const [selectedCountry, setSelectedCountry] = useState(
     countries.find((country) => country.isoCode == defaultCountry)
