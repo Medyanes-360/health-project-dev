@@ -13,6 +13,8 @@ const Sidebar = () => {
     subIndex: null,
   });
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar state
+
   const toggleMenu = (index) => {
     setOpenMenus((prevState) => {
       const newState = {};
@@ -35,26 +37,25 @@ const Sidebar = () => {
     setActiveSubItem({ menuIndex, subIndex });
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="h-screen p-4">
+    <div
+      className={`h-screen transition-all duration-300 ${
+        isSidebarOpen ? "w-72" : "w-10"
+      } relative`}
+    >
       <div
-        className="bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl
-                   xs:w-3/4 sm:w-3/4 md:w-60 lg:w-72 xl:w-80
-                   h-full flex flex-col gap-2"
+        className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl h-full flex flex-col gap-2
+        ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
         {/* Header */}
         <div className="flex items-center justify-center relative mt-4 mb-2 sm:mt-8">
           <h1 className="pt-2 text-lg sm:text-xl font-bold text-gray-800">
             Medyanes<span className="text-teal-500">360</span>
           </h1>
-          <div className="hidden md:flex absolute -right-3 top-0 transform translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-md items-center justify-center">
-            <Image
-              src="/assets/dashboard/arrow-circle-left.svg"
-              alt="Left Arrow Icon"
-              width={32}
-              height={32}
-            />
-          </div>
         </div>
 
         {/* Menu items - Scrollable area */}
@@ -95,7 +96,6 @@ const Sidebar = () => {
                       activeIndex === index ? "brightness-250" : "grayscale"
                     }`}
                   />
-
                   <span className="text-[0.550rem] sm:text-base text-left pl-1">
                     {menuItem.title}
                   </span>
@@ -155,6 +155,25 @@ const Sidebar = () => {
             height={150}
           />
         </div>
+      </div>
+
+      {/* Arrow Icon - Always Visible */}
+      <div
+        onClick={toggleSidebar}
+        className={`cursor-pointer flex absolute -right-3 top-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-md items-center justify-center ${
+          isSidebarOpen ? "" : "rotate-180"
+        }`}
+      >
+        <Image
+          src={
+            isSidebarOpen
+              ? "/assets/dashboard/left.svg"
+              : "/assets/dashboard/right.svg"
+          }
+          alt="Toggle Sidebar Icon"
+          width={25}
+          height={25}
+        />
       </div>
     </div>
   );
