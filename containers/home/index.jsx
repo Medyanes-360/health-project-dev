@@ -7,18 +7,10 @@ import OurServicesComponent from "@/components/home/ourServicesComponent";
 import PopularClinicsComponent from "@/components/home/popularClinicsComponent";
 import QualifiedMedicalDoctors from "@/components/home/QualifiedMedicalDoctors/QualifiedMedicalDoctors";
 import Testimonial from "@/components/home/Testimonial";
-import BeforeAfterPhotoSlider from "@/globalElements/beforeAfterPhotoSlider";
 
 const HomeContainer = () => {
   return (
     <div className="">
-      <div className=" h-56  flex items-center justify-center">
-        <BeforeAfterPhotoSlider
-          width="300px"
-          afterImageSrc="/assets/images/clinic1.png"
-          beforeImageSrc="/assets/images/clinic2.png"
-        />
-      </div>
       <HeaderSection />
       <ContactUsBandComponent />
       <MostPopularVacanciesSection />
