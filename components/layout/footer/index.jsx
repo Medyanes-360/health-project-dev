@@ -3,44 +3,50 @@ import FooterData from "./FooterData";
 import TrustedClients from "./TrustedClients";
 import SocialMedia from "./SocialMedia";
 import DescriptionSection from "./DescriptionSection";
+import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 
 const Footer = () => {
   return (
     <div>
-      <div className="relative w-full min-h-[80vh] ">
-        {/* the footer background image */}
+      <div className="relative w-full min-h-[80vh] py-32 ">
         <Image
           src={"/assets/images/contactUsBandBackgroundImage.jpeg"}
           fill
           alt="footer"
-          className="object-cover brightness-[0.4] w-full h-full absolute z-10"
+          className="object-cover w-full h-full absolute z-10 object-center "
         />
-        {/* the background color */}
-        <div className="absolute z-30 w-full h-full bg-black/50 " />
-        {/* the content */}
-        <div className="relative z-40 w-full h-full ">
-          <div className="absolute -z-10 w-full h-full bg-primary/40 " />
-          <div className="py-20 space-y-10 lg:space-y-5 ">
-            {/* footers data */}
-            <FooterData />
-            {/* clients */}
-            <div className="lg:hidden">
-              <SocialMedia />
-            </div>
-            <TrustedClients />
-            {/* icons */}
-            <div className="hidden lg:block">
-              <SocialMedia />
-            </div>
-          </div>
-        </div>
 
-        <div className="relative z-40 w-full h-full">
-          {/* description */}
-          <DescriptionSection />
-          <p className="font-light text-fourth lg:hidden text-center pb-6">
-            © 2024 Medyanes, All Rights Reserved
-          </p>
+        <div
+          className={
+            "!w-full !h-full !absolute  !z-40 bg-[#00000052] !inset-0 "
+          }
+        />
+        <ExtraLargePageContainer
+          className={
+            "!w-full !h-full !absolute !z-30 !blur-md !inset-0 !p-0 !mx-auto"
+          }
+        >
+          <Image
+            src={"/assets/images/contactUsBandBackgroundImage.jpeg"}
+            fill
+            alt="footer"
+            className="object-cover object-center py-32 rounded-2xl mx-auto"
+          />
+        </ExtraLargePageContainer>
+
+        <div className="relative z-50 w-full h-full ">
+          <ExtraLargePageContainer className={"!p-0 lg:p-0 "}>
+            <div className="space-y-10 lg:space-y-5 p-4 border border-black rounded-2xl mx-auto ">
+              <FooterData />
+              <div className="m-3 bg-third w-full h-[1px] mx-auto" />
+              <TrustedClients />
+              <div className="m-3 bg-third w-full h-[1px] mx-auto" />
+
+              <SocialMedia />
+              <DescriptionSection />
+            
+            </div>
+          </ExtraLargePageContainer>
         </div>
       </div>
     </div>

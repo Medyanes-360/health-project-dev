@@ -44,7 +44,7 @@ const Sidebar = () => {
   return (
     <div
       className={`h-screen transition-all duration-300 ${
-        isSidebarOpen ? "w-72" : "w-10"
+        isSidebarOpen ? "translate-x-0" : "translate-x-[-80%]"
       } relative`}
     >
       <div
