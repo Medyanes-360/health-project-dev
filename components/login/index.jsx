@@ -1,27 +1,23 @@
 "use client";
-import { useFormik } from "formik";
+
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .email("Enter a valid email")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(8, "Password should be of minimum 8 characters length")
+    .required("Password is required"),
+});
+
 export default function LoginComponent() {
-  // Formik yapılandırması
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: Yup.object({
-      email: Yup.string("Enter your email")
-        .email("Enter a valid email")
-        .required("Email is required"),
-      password: Yup.string("Enter your password")
-        .min(8, "Password should be of minimum 8 characters length")
-        .required("Password is required"),
-    }),
-    onSubmit: (values) => {
-      // Giriş işlemleri burada yapılacak
-      console.log("Attempt to enter:", values);
-    },
-  });
+  const handleSubmit = (values) => {
+    // Login operations will be performed here
+    console.log("Attempt to enter:", values);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
@@ -32,72 +28,69 @@ export default function LoginComponent() {
         <h1 className="text-lg sm:text-xl font-semibold text-start text-gray-700 mb-4 sm:mb-6">
           Sign in
         </h1>
-        <form
-          onSubmit={formik.handleSubmit}
-          className="space-y-4 sm:space-y-6 w-full"
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
         >
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Email address or phone number
-              <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="text"
-              placeholder="Enter your email or phone number"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              className={`w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500 ${
-                formik.touched.email && formik.errors.email
-                  ? "border-red-500"
-                  : ""
-              }`}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
-            ) : null}
-          </div>
+          {({ errors, touched }) => (
+            <Form className="space-y-4 sm:space-y-6 w-full">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Email address or phone number
+                  <span className="text-red-500">*</span>
+                </label>
+                <Field
+                  id="email"
+                  name="email"
+                  type="text"
+                  placeholder="Enter your email or phone number"
+                  className={`w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500 ${
+                    touched.email && errors.email ? "border-red-500" : ""
+                  }`}
+                />
+                <ErrorMessage
+                  name="email"
+                  component="p"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
 
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Password<span className="text-red-500">*</span>
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              className={`w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500 ${
-                formik.touched.password && formik.errors.password
-                  ? "border-red-500"
-                  : ""
-              }`}
-            />
-            {formik.touched.password && formik.errors.password ? (
-              <p className="text-red-500 text-sm mt-1">
-                {formik.errors.password}
-              </p>
-            ) : null}
-          </div>
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Password<span className="text-red-500">*</span>
+                </label>
+                <Field
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  className={`w-full px-3 py-2 border-[0.5px] bg-primary bg-opacity-10 border-primary text-sm rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-teal-500 ${
+                    touched.password && errors.password ? "border-red-500" : ""
+                  }`}
+                />
+                <ErrorMessage
+                  name="password"
+                  component="p"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
 
-          <button
-            type="submit"
-            className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
-          >
-            Sign in
-          </button>
-        </form>
+              <button
+                type="submit"
+                className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
+              >
+                Sign in
+              </button>
+            </Form>
+          )}
+        </Formik>
         <div className="text-end mt-4">
           <a href="#" className="text-xs sm:text-sm text-black hover:underline">
             Forgot password?
