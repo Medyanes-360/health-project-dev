@@ -1,5 +1,5 @@
 import BeforeAndAfter from "@/components/clinic/clinicProcedurePage/beforeAfterComponent";
-import BreadCrumbComponent from "@/components/clinic/clinicProcedurePage/breadCrumbComponent";
+import BreadCrumbComponent from "@/globalElements/breadcrumb";
 import ClinicBanner from "@/components/clinic/clinicProcedurePage/clinicBanner";
 import FaqSection from "@/components/clinic/clinicProcedurePage/faqSection";
 import FreeConsultationBandComponent from "@/components/clinic/clinicProcedurePage/freeConsultationBandComponent";
@@ -12,6 +12,7 @@ import ProgramBenefits from "@/components/clinic/clinicProcedurePage/programBene
 import ProgramDetails from "@/components/clinic/clinicProcedurePage/programDetailsComponent";
 import YouMightAlsoLikeSection from "@/components/clinic/clinicProcedurePage/youMightAlsoLikeSection";
 import { clinicPageMockData } from "@/data/mocks/clinicPageMockData";
+import { Country, State } from "country-state-city";
 
 export default function ClinicProcedurePageContainer({ clinic, procedure }) {
   const reviews = procedure.reviews;
@@ -21,7 +22,33 @@ export default function ClinicProcedurePageContainer({ clinic, procedure }) {
 
   return (
     <div>
-      <BreadCrumbComponent />
+      <BreadCrumbComponent
+        customPaths={[
+          {
+            //hair transplant in turkey linki: 'clinic' in yerine hair transplant in turkey yazacak. bu yüzden replace true.
+            replace: true,
+            index: 1,
+            name: `${procedure.treatment.title} in ${
+              Country.getCountryByCode(clinic.location.countryIsoCode).name
+            }`,
+
+            url: `/clinics/${procedure.treatment.url}?Country=${clinic.location.countryIsoCode}`,
+          },
+          {
+            //hair transplant in İstanbul linki: hair transplant in turkey'den sonra yazmasını istiyoruz. bu yüzden replace:false, index:1.
+            replace: false,
+            index: 1,
+            name: `${procedure.treatment.title} in ${
+              State.getStateByCodeAndCountry(
+                clinic.location.stateIsoCode,
+                clinic.location.countryIsoCode
+              ).name
+            }`,
+
+            url: `/clinics/${procedure.treatment.url}?Country=${clinic.location.countryIsoCode}&State=${clinic.location.stateIsoCode}`,
+          },
+        ]}
+      />
       <ClinicBanner />
       <ProcedureOverview />
       <FreeConsultationBandComponent />

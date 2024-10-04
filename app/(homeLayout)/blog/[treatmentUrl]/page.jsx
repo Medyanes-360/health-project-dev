@@ -3,13 +3,14 @@ import { redirect } from "next/navigation";
 
 export default function TreatmentBlogPage({ params }) {
   const treatmentBlogData = treatmentBlogsData.find(
-    (treatmentBlogData) =>
-      treatmentBlogData.treatment.url == params.treatmentUrl
+    (blogData) => blogData.treatment.url == params.treatmentUrl
   );
   // eğer böyle bir treatmentBlogData yoksa blog ana sayfasına yönlendir:
-  if (!treatmentBlogData) redirect("/blog");
+  if (!treatmentBlogData) {
+    redirect("/blog");
+  }
 
-  return <TreatmentBlogPageContainer treatmentBlogData={treatmentBlogData} />;
+  return <TreatmentBlogPageContainer treatmentblogdata={treatmentBlogData} />;
 }
 
 // yukarıdaki container'a gönderilecek data, buradan gidecek:

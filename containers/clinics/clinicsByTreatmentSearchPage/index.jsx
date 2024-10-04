@@ -2,7 +2,7 @@ import BeforeAndAfter from "@/components/clinics/clinicsByTreatmentSearchPage/Be
 import BookimedCeoAssurance from "@/components/clinics/clinicsByTreatmentSearchPage/bookimed/bookimedCeo";
 import HowBookimedHelps from "@/components/clinics/clinicsByTreatmentSearchPage/bookimed/bookimedHelp";
 import BookimedEditorialPolicy from "@/components/clinics/clinicsByTreatmentSearchPage/bookimed/bookimedPolicy";
-import BreadCrumbComponent from "@/components/clinics/clinicsByTreatmentSearchPage/breadCrumbComponent";
+import BreadCrumbComponent from "@/globalElements/breadcrumb";
 import DiscoverBestClinicsSection from "@/components/clinics/clinicsByTreatmentSearchPage/discoverBestClinicsSection";
 import DiscoverMore from "@/components/clinics/clinicsByTreatmentSearchPage/discoverMore";
 import FaqSection from "@/components/clinics/clinicsByTreatmentSearchPage/faqSection";

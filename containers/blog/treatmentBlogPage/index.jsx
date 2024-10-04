@@ -1,5 +1,5 @@
 import BestClinics from "@/components/blog/treatmentBlogPage/bestClinics";
-import BreadCrumbComponent from "@/components/blog/treatmentBlogPage/breadCrumbComponent";
+import BreadCrumbComponent from "@/globalElements/breadcrumb";
 import BestVenceerPackages from "@/components/blog/treatmentBlogPage/bestVencerPackage";
 import InsuranceAndPayment from "@/components/blog/treatmentBlogPage/insuranceAndPayment";
 import CheapVeneers from "@/components/blog/treatmentBlogPage/Top7";
@@ -12,14 +12,26 @@ import FullSetVeneers from "@/components/blog/treatmentBlogPage/FullSetVeneers";
 import AveragePrice from "@/components/blog/treatmentBlogPage/AveragePrice";
 import Comment from "@/components/blog/treatmentBlogPage/Comment";
 import ClinicalPrice from "@/components/blog/treatmentBlogPage/ClinicalPrice";
-export default function TreatmentBlogPageContainer() {
+export default function TreatmentBlogPageContainer({ treatmentblogdata }) {
+  const treatment = treatmentblogdata.treatment;
+
   return (
     <div>
+      <BreadCrumbComponent
+        // Breadcrumb'da örn. Hair Transplant yerine hair-transplant yazdığı için custom path veriyoruz:
+        customPaths={[
+          {
+            replace: true,
+            index: 2,
+            name: treatment.title,
+            url: `/blog/${treatment.url}`,
+          },
+        ]}
+      />
       <FullSetVeneers />
       <Comment />
       <AveragePrice />
       <ClinicalPrice />
-      <BreadCrumbComponent />
 
       <BenefitsOfDental />
       <TypeOfDental />

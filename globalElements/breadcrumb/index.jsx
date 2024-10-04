@@ -5,12 +5,45 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-export default function BreadCrumbComponent({}) {
+export default function BreadCrumbComponent({ customPaths = [] }) {
+  //örnek customPath= {
+  //   replace: false,
+  //   index: 2,
+  //   name: "Hair Transplant",
+  //   url: "/clinics/hair-transplant",
+  // },
+
+  // replace:true, verilen indexteki değerin yerine bu linki koy demek.
+  // replace:false olduğunda ise verilen indexten sonra bunu ekle demek.
+
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
   if (pathNames.length == 0) {
     return null;
   }
+
+  const breadCrumbData = [];
+  // default pathları breadCrumbData'ya ekle
+  pathNames.forEach((elem, index) => {
+    breadCrumbData.push({
+      name: elem,
+      url: `/${pathNames.slice(0, index + 1).join("/")}`,
+    });
+  });
+  //customPath verilmişse, verildikleri indexi breadCrumbData'da olanın yerine koy.
+  customPaths.forEach((elem) => {
+    if (elem.replace) {
+      breadCrumbData[elem.index - 1] = {
+        name: elem.name,
+        url: elem.url,
+      };
+    } else {
+      breadCrumbData.splice(elem.index, 0, {
+        name: elem.name,
+        url: elem.url,
+      });
+    }
+  });
 
   return (
     <ExtraLargePageContainer className=" text-sm  h-16 flex justify-between items-center">
@@ -33,20 +66,22 @@ export default function BreadCrumbComponent({}) {
             </svg>
           </span>
         )}
-        {pathNames.map((link, index) => {
-          let href = `/${pathNames.slice(0, index + 1).join("/")}`;
+        {breadCrumbData.map((elem, index) => {
+          let url = elem.url;
+
+          let name =
+            elem.name[0].toUpperCase() + elem.name.slice(1, elem.name.length);
           let itemClasses =
-            paths === href
+            paths === url
               ? ` mx-2  text-black-disabled [&_a]:cursor-default `
               : "hover:underline mx-2  ";
-          let itemLink = link[0].toUpperCase() + link.slice(1, link.length);
 
           return (
             <React.Fragment key={index}>
               <li className={itemClasses}>
-                <Link href={href}>{itemLink}</Link>
+                <Link href={url}>{name}</Link>
               </li>
-              {pathNames.length !== index + 1 && (
+              {breadCrumbData.length !== index + 1 && (
                 <span className="flex items-center justify-center">
                   {" "}
                   <svg
