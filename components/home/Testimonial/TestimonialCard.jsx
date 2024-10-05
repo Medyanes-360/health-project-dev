@@ -7,12 +7,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const TestimonialCard = ({ data }) => {
-  // { stars, text, img, name, job }
-
   const [currentBigSlide, setCurrentBigSlide] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showMoreStates, setShowMoreStates] = useState(
+    Array(data.length).fill(false)
+  );
 
-  // desktop
+  // Show More handler
+  const toggleShowMore = (index) => {
+    const updatedStates = [...showMoreStates];
+    updatedStates[index] = !updatedStates[index];
+    setShowMoreStates(updatedStates);
+  };
+
+  // Desktop settings
   const BigScreenSettings = {
     dots: true,
     infinite: true,
@@ -65,7 +73,8 @@ const TestimonialCard = ({ data }) => {
       ></div>
     ),
   };
-  // mobile
+
+  // Mobile settings
   const SmallScreenSettings = {
     dots: true,
     infinite: true,
@@ -119,11 +128,9 @@ const TestimonialCard = ({ data }) => {
     ),
   };
 
-  // card component
   return (
     <>
       {/* Big screen settings */}
-
       <div className="hidden lg:block">
         <Slider {...BigScreenSettings}>
           {data.map(({ stars, text, img, name, job }, i) => {
@@ -135,15 +142,32 @@ const TestimonialCard = ({ data }) => {
                   <div className="flex flex-col gap-5 justify-center min-h-[300px]">
                     <div className="flex gap-2 items-center">
                       {/* stars */}
-                      {starsArray.map((i, index) => (
-                        <span key={i} className="text-[#FFAA00] text-xl">
+                      {starsArray.map((_, index) => (
+                        <span key={index} className="text-[#FFAA00] text-xl">
                           ★
                         </span>
                       ))}
                     </div>
 
                     <div>
-                      <p>{text}</p>
+                      <div
+                        className={`transition-all duration-300 ${
+                          showMoreStates[i]
+                            ? "max-h-[150px] overflow-y-scroll" // Scroll only when Show More is clicked
+                            : "max-h-[150px] overflow-hidden" // Hidden scroll initially
+                        }`}
+                        style={{ wordBreak: "break-word" }}
+                      >
+                        {text}
+                      </div>
+                      {text.length > 50 && (
+                        <button
+                          onClick={() => toggleShowMore(i)}
+                          className="text-primary mt-2"
+                        >
+                          {showMoreStates[i] ? "Show Less" : "Show More"}
+                        </button>
+                      )}
                     </div>
 
                     <div className="flex justify-between gap-3 items-center">
@@ -157,10 +181,8 @@ const TestimonialCard = ({ data }) => {
                           alt="picture"
                         />
                         <div className="space-y-2">
-                          <h1 className="font-bold text-lg ">
-                            {name}
-                          </h1>
-                          <p className="font-light">{job}</p>
+                          <h1 className="font-bold text-sm">{name}</h1>
+                          <p className="font-light text-sm">{job}</p>
                         </div>
                       </div>
                       <Image
@@ -179,7 +201,7 @@ const TestimonialCard = ({ data }) => {
         </Slider>
       </div>
 
-      {/* small screen settings */}
+      {/* Small screen settings */}
       <div className="lg:hidden">
         <Slider {...SmallScreenSettings}>
           {data.map(({ stars, text, img, name, job }, i) => {
@@ -187,10 +209,10 @@ const TestimonialCard = ({ data }) => {
 
             return (
               <div key={i} className="p-2">
-                <div className="flex flex-col gap-5 justify-center min-h-[330px]">
+                <div className="flex flex-col gap-5 justify-center h-[330px]">
                   <div className="flex gap-2 items-center">
                     {/* stars */}
-                    {starsArray?.map((data, index) => (
+                    {starsArray?.map((_, index) => (
                       <span key={index} className="text-[#FFAA00] text-xl">
                         ★
                       </span>
@@ -205,7 +227,24 @@ const TestimonialCard = ({ data }) => {
                   </div>
 
                   <div>
-                    <p className="font-light">{text}</p>
+                    <div
+                      className={`transition-all duration-300 ${
+                        showMoreStates[i]
+                          ? "max-h-[150px] overflow-y-scroll" // Scroll only when Show More is clicked
+                          : "max-h-[150px] overflow-hidden" // Hidden scroll initially
+                      }`}
+                      style={{ wordBreak: "break-word" }}
+                    >
+                      {text}
+                    </div>
+                    {text.length > 50 && (
+                      <button
+                        onClick={() => toggleShowMore(i)}
+                        className="text-primary mt-2"
+                      >
+                        {showMoreStates[i] ? "Show Less" : "Show More"}
+                      </button>
+                    )}
                   </div>
 
                   <div className="flex justify-between gap-3 items-center">
@@ -219,8 +258,8 @@ const TestimonialCard = ({ data }) => {
                         alt="picture"
                       />
                       <div className="space-y-2">
-                        <h1 className=" font-normal">{name}</h1>
-                        <p className=" font-extralight">{job}</p>
+                        <h1 className=" font-normal text-sm">{name}</h1>
+                        <p className=" font-extralight text-sm">{job}</p>
                       </div>
                     </div>
                   </div>
