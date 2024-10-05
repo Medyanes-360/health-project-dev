@@ -11,10 +11,14 @@ export default function ClinicSearchSection() {
   //sidebar'ın size'ına göre mainComponent'ın max height'ını değiştiriyoruz:
   useEffect(() => {
     if (!sidebarRef.current) return;
-    setSidebarHeight(sidebarRef.current.getBoundingClientRect().height);
+    setSidebarHeight(
+      sidebarRef.current && sidebarRef.current.getBoundingClientRect().height
+    );
     // sidebar size'ı değiştiğinde haber ver:
     const resizeObserver = new ResizeObserver(() => {
-      setSidebarHeight(sidebarRef.current.getBoundingClientRect().height);
+      setSidebarHeight(
+        sidebarRef.current && sidebarRef.current.getBoundingClientRect().height
+      );
     });
     resizeObserver.observe(sidebarRef.current);
     return () => resizeObserver.disconnect(); // clean up

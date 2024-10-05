@@ -33,7 +33,7 @@ export default function ClinicProcedurePageContainer({ clinic, procedure }) {
               Country.getCountryByCode(clinic.location.countryIsoCode).name
             }`,
 
-            url: `/clinics/${procedure.treatment.url}?Country=${clinic.location.countryIsoCode}`,
+            url: `/clinics/${procedure.treatment.url}?country=${clinic.location.countryIsoCode}`,
           },
           {
             //hair transplant in İstanbul linki: hair transplant in turkey'den sonra yazmasını istiyoruz. bu yüzden replace:false, index:1.
@@ -46,7 +46,7 @@ export default function ClinicProcedurePageContainer({ clinic, procedure }) {
               ).name
             }`,
 
-            url: `/clinics/${procedure.treatment.url}?Country=${clinic.location.countryIsoCode}&State=${clinic.location.stateIsoCode}`,
+            url: `/clinics/${procedure.treatment.url}?country=${clinic.location.countryIsoCode}&state=${clinic.location.stateIsoCode}`,
           },
         ]}
       />

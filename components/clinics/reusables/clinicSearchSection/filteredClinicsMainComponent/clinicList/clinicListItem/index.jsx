@@ -1,40 +1,100 @@
 "use client";
 import ButtonComponent from "@/globalElements/Button";
+import { MotionDiv } from "@/globalElements/motion";
 import { useGlobalStore } from "@/utils/globalStore";
+import { Country, State } from "country-state-city";
 import Image from "next/image";
 import Link from "next/link";
 
-const mockImageSources = [
-  "/assets/images/clinic1.png",
-  "/assets/images/clinic2.png",
-  "/assets/images/clinic3.png",
-  "/assets/mocks/clinicImage.png",
-];
-export default function ClinicListItem() {
+const procedureData = {
+  id: 0,
+  treatment: {
+    // bu procedure hangi treatment'a ait? !! burada sadece treatment için bu sayfada ihtiyaç duyduğumuz bilgiler yeterli. asıl treatment datası /clinics/[treatmentUrl] dizininde.
+    id: 4,
+    title: "Hair Transplant",
+    fullTitle: "Fue Hair Transplant ",
+    url: "hair-transplant",
+  },
+  reviewsCount: 234,
+  clinic: {
+    id: 0,
+    name: "Adem and Havva Medical Center",
+    url: "adem-and-havva-medical-center",
+    location: {
+      City: "Şişli", // ilçe
+      stateIsoCode: "34", // şehir
+      countryIsoCode: "TR", // ülke
+      fullAddress:
+        "Cumhuriyet, Cumhuriyet Mahallesi, İncirli Dede Caddesi, No:6/2 Anthill Towers, 34381 Şişli/İstanbul",
+    },
+    images: [
+      "/assets/images/clinic1.png",
+      "/assets/images/clinic2.png",
+      "/assets/images/clinic3.png",
+      "/assets/mocks/clinicImage.png",
+    ],
+  },
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+  doctor: {
+    id: 0,
+    name: "Dr. Füzun Erdoğan",
+    startingServiceYear: 1999,
+  },
+  packageDetails: {
+    packageName: "FUE hair transplant (4500 Grafts) All Included",
+    packagePrice: 1750,
+    limitDate: "1709758800000",
+    offPercent: 8,
+  },
+  price: 1750,
+};
+
+export default function ClinicListItem({ index, fetchClinics, lastItem }) {
   const openImageModal = useGlobalStore((state) => state.openImageModal);
-  const imageSources = mockImageSources;
+
   const handleOpenImageModal = (imageSrc) => {
     openImageModal({
-      imageSources: imageSources,
+      imageSources: procedure.clinic.images,
       imageSrcToShowFirst: imageSrc,
     });
   };
+  const procedure = procedureData;
 
   return (
-    <div className="relative grid grid-flow-col-dense   mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-lg">
+    <MotionDiv
+      key={index}
+      initial={{ x: "-50px", opacity: 0 }}
+      whileInView={{
+        x: "0px",
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: 0.1,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.5,
+        fallback: false,
+      }}
+      onViewportEnter={lastItem && fetchClinics}
+      className="relative grid grid-flow-col-dense mx-1  mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-md"
+    >
       <div className="col-span-3 h-full w-full  max-w-[280px]    flex flex-col justify-center items-center">
         <Image
           className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
-          src={imageSources[0]}
+          src={procedure.clinic.images[0]}
           onClick={() => {
-            handleOpenImageModal(imageSources[0]);
+            handleOpenImageModal(procedure.clinic.images[0]);
           }}
           alt=""
           width={100}
           height={100}
         />
         <div className="grid grid-cols-3 w-full max-w-[280px] items-center   ">
-          {imageSources.slice(1).map((src, index) => {
+          {procedure.clinic.images.slice(1).map((src, index) => {
             return (
               <Image
                 key={index}
@@ -62,7 +122,7 @@ export default function ClinicListItem() {
           />
           <div className="ml-3 ">
             <p className="font-semibold mb-2 text-sm ">
-              Adem and Havva Medical Center
+              {procedure.clinic.name}
             </p>
             <span className="flex items-center">
               <Image
@@ -73,7 +133,14 @@ export default function ClinicListItem() {
                 height={20}
               />
               <p className="font-semibold text-primary text-sm">
-                Turkey, Istanbul
+                {Country.getCountryByCode(
+                  procedure.clinic.location.countryIsoCode
+                ).name +
+                  ", " +
+                  State.getStateByCodeAndCountry(
+                    procedure.clinic.location.stateIsoCode,
+                    procedure.clinic.location.countryIsoCode
+                  ).name}
               </p>
             </span>
           </div>
@@ -88,7 +155,7 @@ export default function ClinicListItem() {
           />
           <div className="ml-3 ">
             <p className="font-semibold mb-2 text-sm ">
-              Doctor Dr Fuzun Erdogan
+              Doctor {procedure.doctor.name}
             </p>
             <span className="flex items-center">
               <Image
@@ -99,29 +166,34 @@ export default function ClinicListItem() {
                 height={20}
               />
               <p className=" font-medium text-black-light text-sm">
-                27 years of experience
+                {new Date().getFullYear() -
+                  procedure.doctor.startingServiceYear}{" "}
+                years of experience
               </p>
             </span>
           </div>
         </div>
         <div className="">
           <p className="line-clamp-3 text-xs mb-1 text-ellipsis mt-4">
-            Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained
-            international recognition for Technique: FUE hair transplant,
-            Technique: FUE hair transplant,
+            {procedure.description}
           </p>
-          <span className="text-xs font-medium hover:underline cursor-pointer">
+          <Link
+            href={`/clinic/${procedure.clinic.url}/${procedure.treatment.url}#programDetailsSection`}
+            className="text-xs font-medium hover:underline cursor-pointer"
+          >
             Read more {">>"}
-          </span>
+          </Link>
         </div>
         <div className="mt-4   flex justify-between w-full">
-          <ButtonComponent
-            className="bg-primary mr-3   text-white font-medium !py-1.5 w-full !text-sm"
-            title="Get A Free Quota"
-          />
+          <Link className="w-full" href="/test">
+            <ButtonComponent
+              className="bg-primary mr-3   text-white font-medium !py-1.5 w-full !text-sm"
+              title="Get A Free Quota"
+            />
+          </Link>
           <Link
             className="w-full"
-            href="/clinic/adem-and-havva-medical-center/hair-transplant"
+            href={`/clinic/${procedure.clinic.url}/${procedure.treatment.url}`}
           >
             <ButtonComponent
               className="bg-white-dark text-primary font-medium !py-1.5 w-full !text-sm"
@@ -139,11 +211,13 @@ export default function ClinicListItem() {
             width={100}
             height={100}
           />
-          <span className="absolute top-5 rounded-md p-1 px-1.5 text-xs font-light text-nowrap text-white  right-2 bg-[#00B8D9]">
-            Limited-time deal
-          </span>
+          {procedure.packageDetails.limitDate && (
+            <span className="absolute top-5 rounded-md p-1 px-1.5 text-xs font-light text-nowrap text-white  right-2 bg-[#00B8D9]">
+              Limited-time deal
+            </span>
+          )}
           <span className="absolute  top-14 right-2  rounded-md p-1 px-1.5 text-xs text-nowrap font-light text-white  bg-[#EB122B]">
-            -%8 OFF Today
+            -{procedure.packageDetails.offPercent}% OFF Today
           </span>
         </div>
         <div className="flex justify-around mt-3  items-center">
@@ -164,31 +238,20 @@ export default function ClinicListItem() {
               </svg>
             ))}
           </span>
-          <span className="text-sm">234</span>
+          <span className="text-sm">{procedure.reviewsCount}</span>
         </div>
         <div className="mt-3">
           <p className="line-clamp-2 text-center text-2xs font-semibold ">
-            FUE hair transplant (4500 Grafts) All Included
+            {procedure.packageDetails.packageName}
           </p>
         </div>
         <div className="mt-3 flex flex-col items-center text-center">
           <span className="text-[#EB122B] text-[15px] font-semibold">
-            $1750
+            ${procedure.packageDetails.packagePrice}
           </span>
           <span className="text-2xs font-semibold">per package</span>
         </div>
       </div>
-      <div className="absolute h-[65px] w-[110px] py-1  !top-0 right-5 bg-red-500">
-        <p className="text-2xs  line-clamp-3  text-center text-white ">
-          Best selling package this month
-        </p>
-        <span
-          class="w-0 h-0   absolute bottom-0
-  border-l-[55px] border-l-transparent
-  border-b-[10px] border-b-white
-  border-r-[55px] border-r-transparent"
-        ></span>
-      </div>
-    </div>
+    </MotionDiv>
   );
 }

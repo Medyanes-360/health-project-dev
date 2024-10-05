@@ -13,7 +13,7 @@ export default function ClinicProfilePageContainer({ clinic }) {
               Country.getCountryByCode(clinic.location.countryIsoCode).name
             }`,
 
-            url: `/clinics/?Country=${clinic.location.countryIsoCode}`,
+            url: `/clinics/?country=${clinic.location.countryIsoCode}`,
           },
           {
             //hair transplant in İstanbul linki:
@@ -26,7 +26,7 @@ export default function ClinicProfilePageContainer({ clinic }) {
               ).name
             }`,
 
-            url: `/clinics/?Country=${clinic.location.countryIsoCode}&State=${clinic.location.stateIsoCode}`,
+            url: `/clinics/?country=${clinic.location.countryIsoCode}&state=${clinic.location.stateIsoCode}`,
           },
         ]}
       />

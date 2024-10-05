@@ -23,9 +23,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, supported by Chrome, Firefox, Opera */
+  /* -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;  */
   scroll-behavior: smooth;
 
   /* Firefox için scrollbar */
