@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import CustomInput from "@/globalElements/input";
+import ButtonComponent from "@/globalElements/Button";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -108,12 +109,12 @@ const ContactForm = () => {
 
             {/* Submit Button */}
             <div className="w-full flex justify-end">
-              <button
+              <ButtonComponent
                 type="submit"
                 className="bg-primary text-white rounded-2xl w-[50%] lg:w-fit py-2 px-4"
               >
                 Submit
-              </button>
+              </ButtonComponent>
             </div>
 
             {/* Display confirmation message after form submission */}
