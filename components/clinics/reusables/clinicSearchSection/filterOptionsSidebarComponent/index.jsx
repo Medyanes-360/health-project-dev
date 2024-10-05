@@ -3,42 +3,54 @@ import ButtonComponent from "@/globalElements/Button";
 import ExpandingList from "./expandingList";
 import RangeSlider from "@/globalElements/rangeSlider";
 import FiveStars from "@/globalElements/fiveStars";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-export default function FilterOptionsSidebarComponent() {
+export default function FilterOptionsSidebarComponent({ sidebarRef }) {
   const [bookingScore, setBookingScore] = useState(1);
-  // Fixed to Top ??
+
+  //sticky sidebar:
   // useEffect(() => {
-  //   if (window && document) {
-  //     window.onscroll = () => {
-  //       let elem = document.getElementById("filterOptionsSidebar");
-  //       let parent = document.getElementById("filterOptionsSidebarParent");
-  //       let distanceToTop = parent.getBoundingClientRect().top;
-  //       if (
-  //         elem.getBoundingClientRect().height >=
-  //         parent.getBoundingClientRect().bottom
-  //       ) {
-  //         elem.style.position = "absolute";
-  //         elem.style.bottom = " 0 ";
-  //         elem.style.top = "auto";
-  //       } else if (distanceToTop <= 0) {
-  //         elem.style.position = "fixed";
-  //         elem.style.top = "0";
+  //   const setSidebarSticky = () => {
+  //     const parentTop = parentRef.current.getBoundingClientRect().top;
+  //     const parentBottom = parentRef.current.getBoundingClientRect().bottom;
+  //     const sidebarHeight = sidebarRef.current.getBoundingClientRect().height;
+  //     const headerBarHeight = 80; // headerBar Kadar Height vermek zorundayız! -çünkü headerBar'ımız fixed
+
+  //     console.log(
+  //       parentRef.current.getBoundingClientRect().y +
+  //         sidebarHeight -
+  //         parentBottom
+  //     );
+
+  //     if (parentTop <= 0) {
+  //       if (sidebarHeight > parentBottom) {
+  //         sidebarRef.current.classList.remove("!fixed");
+  //         sidebarRef.current.classList.remove(`!top-[${headerBarHeight}px]`);
+  //         parentRef.current.classList.add("items-end");
   //       } else {
-  //         elem.style.position = "static";
-  //         elem.style.top = "0";
+  //         sidebarRef.current.classList.add("!fixed");
+  //         sidebarRef.current.classList.add(`!top-[${headerBarHeight}px]`);
+  //         parentRef.current.classList.remove("items-end");
   //       }
-  //     };
+  //     } else {
+  //       sidebarRef.current.classList.remove("!fixed");
+  //       sidebarRef.current.classList.remove(`!top-[${headerBarHeight}px]`);
+  //     }
+  //   };
+
+  //   if (parentRef.current != null && window != undefined) {
+  //     // sayfa ilk yüklendiğinde:
+  //     setSidebarSticky();
+  //     //scrollandığında:
+  //     window.addEventListener("scroll", setSidebarSticky);
   //   }
-  // }, []);
+  // });
+
   return (
-    <div
-      id="filterOptionsSidebarParent"
-      className="relative min-w-72  max-w-72 h-fit "
-    >
+    <div className="relative   flex  min-w-72 max-w-72   bg-white ">
       <div
-        id="filterOptionsSidebar"
-        className=" h-full py-5 rounded-3xl shadow-lg "
+        ref={sidebarRef}
+        className="  h-fit xh py-5 w-72   rounded-3xl shadow-lg "
       >
         {/* Head */}
         <p className="border-b text-center font-semibold p-4 text-[#212B36] border-b-[#919EAB3D] ">

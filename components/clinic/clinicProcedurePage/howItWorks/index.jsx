@@ -1,7 +1,6 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import CardComponent from "@/globalElements/Card";
 import { MotionDiv } from "@/globalElements/motion";
-import React from "react";
 
 const data = [
   {
@@ -39,7 +38,7 @@ const data = [
 const HowItWorks = () => {
   return (
     <div className="pt-5">
-      <ExtraLargePageContainer>
+      <ExtraLargePageContainer id="howItWorksSection">
         <CardComponent>
           <h1 className=" font-poppins font-semibold  text-xl text-primary">
             How it works

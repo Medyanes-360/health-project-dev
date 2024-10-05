@@ -26,6 +26,7 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, supported by Chrome, Firefox, Opera */
+  scroll-behavior: smooth;
 
   /* Firefox için scrollbar */
   scrollbar-width: thin;

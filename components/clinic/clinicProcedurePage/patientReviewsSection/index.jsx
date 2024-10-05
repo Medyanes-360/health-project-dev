@@ -5,7 +5,7 @@ import PatientReviewsList from "./patientReviewsList";
 
 export default function PatientReviewsSection({ reviews }) {
   return (
-    <ExtraLargePageContainer>
+    <ExtraLargePageContainer id="reviewsSection">
       <div className=" shadow-lg rounded-2xl mt-10 p-5">
         <p className="text-2xl font-medium bg-header-gradient bg-clip-text text-fill-transparent text-primary">
           Patient Reviews

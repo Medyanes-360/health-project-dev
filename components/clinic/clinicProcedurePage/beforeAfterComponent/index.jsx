@@ -24,7 +24,7 @@ const BeforeAndAfter = () => {
   const dynamicNumber = 34;
   return (
     <div className="py-10 ">
-      <ExtraLargePageContainer>
+      <ExtraLargePageContainer id="beforeAndAfterPhotosSection">
         <div
           className="p-6 rounded-3xl shadow-md border"
           style={{ borderColor: "rgba(217, 217, 217, 0.12)" }}

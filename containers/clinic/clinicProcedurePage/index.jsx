@@ -13,6 +13,7 @@ import ProgramDetails from "@/components/clinic/clinicProcedurePage/programDetai
 import YouMightAlsoLikeSection from "@/components/clinic/clinicProcedurePage/youMightAlsoLikeSection";
 import { clinicPageMockData } from "@/data/mocks/clinicPageMockData";
 import { Country, State } from "country-state-city";
+import PageLinkTabs from "@/components/clinic/clinicProcedurePage/pageLinkTabs";
 
 export default function ClinicProcedurePageContainer({ clinic, procedure }) {
   const reviews = procedure.reviews;
@@ -49,7 +50,9 @@ export default function ClinicProcedurePageContainer({ clinic, procedure }) {
           },
         ]}
       />
+      <div className="w-full h-0.5   border border-[#E4E5E8]  "></div>
       <ClinicBanner />
+      <PageLinkTabs />
       <ProcedureOverview />
       <FreeConsultationBandComponent />
       <ProcedureSpecialist />

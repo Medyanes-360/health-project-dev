@@ -9,25 +9,26 @@ export default function ProcedureOverview() {
     clinicRating: 4.6,
   };
   return (
-    <ExtraLargePageContainer className="mt-6">
-      <MotionDiv 
-          initial={{
-            scale: "90%",
-            opacity: 0,
-          }}
-          whileInView={{
-            scale: "100%",
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0.1
-          }}
-          viewport={{
-            once: true,
-            amount: 0.5,
-          }}
-      className="border shadow-[0px_12px_24px_-4px_#919EAB1F] p-6 rounded-3xl">
+    <ExtraLargePageContainer id="overviewSection" className="mt-6 mb-6">
+      <MotionDiv
+        initial={{
+          scale: "90%",
+          opacity: 0,
+        }}
+        whileInView={{
+          scale: "100%",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+          delay: 0.1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        className="border border-[rgba(217,217,217,0.12)] shadow-md  p-6 rounded-3xl"
+      >
         <div className="flex justify-between items-center">
           <div className="flex flex-col items-start gap-2.5">
             <p className="text-black font-semibold ">

@@ -21,8 +21,8 @@ export default function ClinicListItem() {
   };
 
   return (
-    <div className="relative grid grid-flow-col-dens   mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-lg">
-      <div className="col-span-3 h-full  max-w-[280px]    flex flex-col justify-center items-center">
+    <div className="relative grid grid-flow-col-dense   mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-lg">
+      <div className="col-span-3 h-full w-full  max-w-[280px]    flex flex-col justify-center items-center">
         <Image
           className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
           src={imageSources[0]}

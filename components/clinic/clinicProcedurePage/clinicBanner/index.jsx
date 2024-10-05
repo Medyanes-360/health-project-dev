@@ -21,7 +21,7 @@ export default function ClinicBanner() {
   };
 
   return (
-    <ExtraLargePageContainer className="">
+    <ExtraLargePageContainer className="mt-12">
       <MotionDiv
         initial={{
           scale: "110%",

@@ -46,63 +46,68 @@ export default function BreadCrumbComponent({ customPaths = [] }) {
   });
 
   return (
-    <ExtraLargePageContainer className=" text-sm  h-16 flex justify-between items-center">
-      <ul className="flex items-center ">
-        <li className="hover:underline mr-2 ">
-          <Link href={"/"}>Home</Link>
-        </li>
-        {pathNames.length > 0 && (
-          //separator:
-          <span className="flex  items-center justify-center">
-            {" "}
-            <svg
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="2" cy="2" r="2" fill="#919EAB" />
-            </svg>
-          </span>
-        )}
-        {breadCrumbData.map((elem, index) => {
-          let url = elem.url;
+    <>
+      {" "}
+      <ExtraLargePageContainer className=" pb-2 overflow-x-scroll text-sm  h-16 flex justify-between items-center">
+        <ul className="flex items-center ">
+          <li className="hover:underline mr-2 ">
+            <Link href={"/"}>Home</Link>
+          </li>
+          {pathNames.length > 0 && (
+            //separator:
+            <span className="flex  items-center justify-center">
+              {" "}
+              <svg
+                width="4"
+                height="4"
+                viewBox="0 0 4 4"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="2" cy="2" r="2" fill="#919EAB" />
+              </svg>
+            </span>
+          )}
+          {breadCrumbData.map((elem, index) => {
+            let url = elem.url;
 
-          let name =
-            elem.name[0].toUpperCase() + elem.name.slice(1, elem.name.length);
-          let itemClasses =
-            paths === url
-              ? ` mx-2  text-black-disabled [&_a]:cursor-default `
-              : "hover:underline mx-2  ";
+            let name =
+              elem.name[0].toUpperCase() + elem.name.slice(1, elem.name.length);
+            let itemClasses =
+              paths === url
+                ? ` mx-2  text-black-disabled   truncate  [&_a]:cursor-default `
+                : "hover:underline mx-2 truncate   ";
 
-          return (
-            <React.Fragment key={index}>
-              <li className={itemClasses}>
-                <Link href={url}>{name}</Link>
-              </li>
-              {breadCrumbData.length !== index + 1 && (
-                <span className="flex items-center justify-center">
-                  {" "}
-                  <svg
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#919EAB" />
-                  </svg>
-                </span>
-              )}
-            </React.Fragment>
-          );
-        })}
-      </ul>
-      <ButtonComponent
-        className="!text-base py-2 px-6 bg-transparent border-2 border-primary text-primary"
-        title="View Doctors"
-      />
-    </ExtraLargePageContainer>
+            return (
+              <React.Fragment key={index}>
+                <li className={itemClasses}>
+                  <Link className="" href={url}>
+                    {name}
+                  </Link>
+                </li>
+                {breadCrumbData.length !== index + 1 && (
+                  <span className="flex items-center justify-center">
+                    {" "}
+                    <svg
+                      width="4"
+                      height="4"
+                      viewBox="0 0 4 4"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="2" cy="2" r="2" fill="#919EAB" />
+                    </svg>
+                  </span>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </ul>
+        <ButtonComponent
+          className="!text-base !truncate !min-w-fit   py-2 px-6 bg-transparent border-2 border-primary text-primary"
+          title="View Doctors"
+        />
+      </ExtraLargePageContainer>
+    </>
   );
 }

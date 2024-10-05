@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function ProcedureSpecialist() {
   return (
-    <ExtraLargePageContainer>
-      <div className="border shadow-[0px_12px_24px_-4px_#919EAB1F] p-6 rounded-3xl">
+    <ExtraLargePageContainer className="mt-6">
+      <div className="border border-[rgba(217,217,217,0.12)]  shadow-md p-6 rounded-3xl">
         <div className="flex justify-between items-center">
           <p className="font-semibold text-black">Hair Transplant Specialist</p>
           <div className="hover:underline flex items-center cursor:pointer">

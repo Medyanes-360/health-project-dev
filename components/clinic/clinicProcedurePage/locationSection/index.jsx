@@ -3,7 +3,7 @@ import { MotionDiv } from "@/globalElements/motion";
 
 export default function LocationSection({ address }) {
   return (
-    <ExtraLargePageContainer>
+    <ExtraLargePageContainer id="locationSection">
       <div className=" shadow-lg rounded-2xl mt-10 p-5">
         <p className="text-2xl font-medium bg-header-gradient bg-clip-text text-fill-transparent text-primary">
           Location
@@ -56,24 +56,25 @@ export default function LocationSection({ address }) {
               />
             </svg>
           </span>
-          <MotionDiv 
-           initial={{
-            scale: "80%",
-            opacity: 0,
-          }}
-          whileInView={{
-            scale: "100%",
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0.1
-          }}
-          viewport={{
-            once: true,
-            amount: 0.5,
-          }}
-           className="  w-full select-none rounded-3xl  overflow-hidden h-[450px]  ">
+          <MotionDiv
+            initial={{
+              scale: "80%",
+              opacity: 0,
+            }}
+            whileInView={{
+              scale: "100%",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            className="  w-full select-none rounded-3xl  overflow-hidden h-[450px]  "
+          >
             <iframe
               style={{
                 // border görünmesin diye width ve height yükseltip margini -2 (border kalınlığı) yapıyoruz
