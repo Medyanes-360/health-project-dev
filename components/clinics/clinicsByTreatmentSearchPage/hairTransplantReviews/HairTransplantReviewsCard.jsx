@@ -115,7 +115,7 @@ const HairTransplantReviewsCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="text-white flex justify-center mt-4 gap-7">
-        <button
+          <button
             className="p-2 rounded-full bg-[#9199A3]/40"
             onClick={() => sliderSmall.current.slickPrev()}
           >
@@ -148,10 +148,10 @@ export default HairTransplantReviewsCard;
 const CardContent = ({ data }) => {
   const { stars, text, img, name, job } = data;
   const starsArray = Array.from({ length: stars });
-  const [expanded, setExpanded] = useState(false); // Expanded state
+  const [showMore, setShowMore] = useState(false); // Show more state
 
-  const toggleExpanded = () => {
-    setExpanded(!expanded); // Toggle the expanded state
+  const toggleShowMore = () => {
+    setShowMore(!showMore); // Toggle the expanded state
   };
 
   return (
@@ -169,20 +169,28 @@ const CardContent = ({ data }) => {
             </div>
 
             <div>
-              {/* Conditionally render the text based on expanded state */}
-              <p className={expanded ? "line-clamp-6" : "line-clamp-2"}>
-                {text}
-              </p>
-              <button
-                onClick={toggleExpanded}
-                className="text-primary mt-2 underline"
+              {/* Scrollable text based on the "show more" state */}
+              <div
+                className={`transition-all duration-300 ${
+                  showMore
+                    ? "max-h-[150px] overflow-y-scroll" // Show more scrollable area
+                    : "max-h-[150px] overflow-hidden" // Limited height when collapsed
+                }`}
               >
-                {expanded ? "Show Less" : "Show More"}
-              </button>
+                {text}
+              </div>
+              {text.length > 50 && (
+                <button
+                  onClick={toggleShowMore}
+                  className="text-primary mt-2 underline"
+                >
+                  {showMore ? "Show Less" : "Show More"}
+                </button>
+              )}
             </div>
           </div>
           <div className="flex justify-between gap-3 items-center">
-            {/* the image job and the name */}
+            {/* the image, job, and name */}
             <div className="flex gap-4 items-center">
               <Image
                 src={img}
@@ -192,8 +200,8 @@ const CardContent = ({ data }) => {
                 alt="picture"
               />
               <div className="space-y-2">
-                <h1 className="font-bold">{name}</h1>
-                <p className="font-light">{job}</p>
+                <h1 className="font-bold text-sm">{name}</h1>
+                <p className="font-light text-sm">{job}</p>
               </div>
             </div>
             <Image
@@ -210,14 +218,13 @@ const CardContent = ({ data }) => {
   );
 };
 
-// SmallCardContent component
 const SmallCardContent = ({ data }) => {
   const { stars, text, img, name, job } = data;
   const starsArray = Array.from({ length: stars });
-  const [expanded, setExpanded] = useState(false); // Expanded state
+  const [showMore, setShowMore] = useState(false); // Show more state
 
-  const toggleExpanded = () => {
-    setExpanded(!expanded); // Toggle the expanded state
+  const toggleShowMore = () => {
+    setShowMore(!showMore); // Toggle the expanded state
   };
 
   return (
@@ -242,21 +249,29 @@ const SmallCardContent = ({ data }) => {
             </div>
 
             <div>
-              {/* Conditionally render the text based on expanded state */}
-              <p className={expanded ? "line-clamp-6" : "line-clamp-2"}>
-                {text}
-              </p>
-              <button
-                onClick={toggleExpanded}
-                className="text-primary mt-2 underline"
+              {/* Scrollable text based on the "show more" state */}
+              <div
+                className={`transition-all duration-300 ${
+                  showMore
+                    ? "max-h-[100px] overflow-y-scroll" // Show more scrollable area
+                    : "max-h-[50px] overflow-hidden" // Limited height when collapsed
+                }`}
               >
-                {expanded ? "Show Less" : "Show More"}
-              </button>
+                {text}
+              </div>
+              {text.length > 50 && (
+                <button
+                  onClick={toggleShowMore}
+                  className="text-primary mt-2 underline"
+                >
+                  {showMore ? "Show Less" : "Show More"}
+                </button>
+              )}
             </div>
           </div>
 
           <div className="flex justify-between gap-3 items-center">
-            {/* the image job and the name */}
+            {/* the image, job, and name */}
             <div className="flex gap-4 items-center">
               <Image
                 src={img}
@@ -266,8 +281,8 @@ const SmallCardContent = ({ data }) => {
                 alt="picture"
               />
               <div className="space-y-2">
-                <h1 className="font-normal">{name}</h1>
-                <p className="font-extralight">{job}</p>
+                <h1 className="font-normal text-sm">{name}</h1>
+                <p className="font-extralight text-sm">{job}</p>
               </div>
             </div>
           </div>

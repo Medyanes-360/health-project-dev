@@ -91,7 +91,13 @@ export default function LoginComponent() {
             </Form>
           )}
         </Formik>
-        <div className="text-end mt-4">
+        <div className="flex flex-row justify-between  mt-5">
+          <a
+            href="/register"
+            className="text-xs sm:text-sm text-black hover:underline"
+          >
+            Not a member yet?
+          </a>
           <a href="#" className="text-xs sm:text-sm text-black hover:underline">
             Forgot password?
           </a>
