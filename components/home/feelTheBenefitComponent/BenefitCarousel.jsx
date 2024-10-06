@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
@@ -14,7 +12,7 @@ const BenefitCarousel = ({ navFor, sliderRef }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 10000,
     arrows: false,
   };
 

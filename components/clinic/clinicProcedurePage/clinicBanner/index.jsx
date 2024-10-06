@@ -1,5 +1,7 @@
+"use client";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import { MotionDiv } from "@/globalElements/motion";
+import { useGlobalStore } from "@/utils/globalStore";
 import Image from "next/image";
 
 export default function ClinicBanner() {
@@ -18,6 +20,15 @@ export default function ClinicBanner() {
       "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
       "/assets/images/private-clinic-design-build-aspect-ratio.jpg",
     ],
+  };
+  const openImageModal = useGlobalStore((state) => state.openImageModal);
+
+  // sample | ImageModal triggering
+  const handleOpenImageModal = (imageSrc) => {
+    openImageModal({
+      imageSrcToShowFirst: imageSrc,
+      imageSources: data.clinicImages,
+    });
   };
 
   return (
@@ -69,6 +80,7 @@ export default function ClinicBanner() {
                   once: true,
                   amount: 0.5,
                 }}
+                onClick={() => handleOpenImageModal(imageSrc)}
               >
                 <Image
                   className=" w-[80px] opacity-60 scale-90 hover:scale-100 border border-transparent hover:opacity-100 cursor-pointer transition-all duration-200 hover:border-primary h-[80px] rounded-xl"

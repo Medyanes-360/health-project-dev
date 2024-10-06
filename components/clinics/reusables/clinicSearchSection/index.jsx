@@ -25,7 +25,7 @@ export default function ClinicSearchSection() {
   }, []);
 
   return (
-    <ExtraLargePageContainer className="mt-10  !relative    flex ">
+    <ExtraLargePageContainer className="my-10  !relative    flex ">
       <FilterOptionsSidebarComponent sidebarRef={sidebarRef} />
 
       <FilteredClinicsMainComponent maxheight={sidebarHeight} />

@@ -42,7 +42,7 @@ const TypeOfDental = () => {
           </h1>
         </div>
         <div className="space-y-14 bg-[#D9D9D921]">
-          <div className="space-y-2">
+          <div className="space-y-2 p-6">
             <MotionDiv
               initial={{
                 y: "30px",
@@ -68,41 +68,40 @@ const TypeOfDental = () => {
               </h1>
             </MotionDiv>
             <MotionDiv
-             initial={{
-              y: "-30px",
-              opacity: 0,
-            }}
-            whileInView={{
-              y: "0",
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.5,
-              delay:0.2
-            }}
-            viewport={{
-              once: true,
-              amount: 0.5,
-            }}
+              initial={{
+                y: "-30px",
+                opacity: 0,
+              }}
+              whileInView={{
+                y: "0",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
             >
-
-           
-            <ul className="space-y-1 list-disc marker:text-[15px] pl-6">
-              <li>colored;</li>
-              <li>damaged;</li>
-              <li>misaligned.</li>
-            </ul>
-            <p>
-              Mexican doctors pay precise attention to minor cosmetic details to
-              place custom dental veneers reasonably. Local dentists take into
-              account individual patients’ teeth characteristics, such as tooth
-              length, proportions, smile line, and natural teeth color, to
-              obtain the perfect outcome.
-            </p>
-            <p>
-              Most clinics in Mexico offer 2 main types of veneers, depending on
-              patients’ needs, expectations, and budget:{" "}
-            </p> </MotionDiv>
+              <ul className="space-y-1 list-disc marker:text-[15px] pl-6">
+                <li>colored;</li>
+                <li>damaged;</li>
+                <li>misaligned.</li>
+              </ul>
+              <p>
+                Mexican doctors pay precise attention to minor cosmetic details
+                to place custom dental veneers reasonably. Local dentists take
+                into account individual patients’ teeth characteristics, such as
+                tooth length, proportions, smile line, and natural teeth color,
+                to obtain the perfect outcome.
+              </p>
+              <p>
+                Most clinics in Mexico offer 2 main types of veneers, depending
+                on patients’ needs, expectations, and budget:{" "}
+              </p>{" "}
+            </MotionDiv>
           </div>
         </div>
 

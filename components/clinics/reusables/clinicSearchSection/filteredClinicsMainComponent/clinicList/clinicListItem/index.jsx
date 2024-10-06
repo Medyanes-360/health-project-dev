@@ -80,7 +80,7 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
         fallback: false,
       }}
       onViewportEnter={lastItem && fetchClinics}
-      className="relative grid grid-flow-col-dense mx-1  mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-md"
+      className="relative grid grid-flow-col-dense mx-2  mb-3 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-lg"
     >
       <div className="col-span-3 h-full w-full  max-w-[280px]    flex flex-col justify-center items-center">
         <Image

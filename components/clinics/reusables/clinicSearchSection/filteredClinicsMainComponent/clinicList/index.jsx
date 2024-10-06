@@ -35,6 +35,7 @@ export default function ClinicList({ maxheight }) {
               key={index}
             />
             {index == 2 || (index % 8 == 0 && <TrustPilotInfo />)}
+
             {isLoading && index == clinics.length - 1 && "Loading..."}
           </>
         );
