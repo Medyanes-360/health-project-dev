@@ -40,7 +40,7 @@ const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
         <Transport />
         <Duration />
         <BookimedAssistance />
-        <div className="flex flex-row justify-between items-center py-3 px-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center py-3 px-0">
           <div className="flex ">
             <p className="font-semibold text-xl leading-32">
               Program Price <span className="mr-2"></span> {/* Boşluk ekler */}
@@ -48,7 +48,7 @@ const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
               <span className=" text-red-500">$1750</span>
             </p>
           </div>
-          <div className="flex flex-row gap-3 ">
+          <div className=" flex-col items-center lg:flex lg:flex-row lg:gap-3 ">
             <MotionDiv
               initial={{
                 scale: "110%",
@@ -69,7 +69,7 @@ const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
             >
               <ButtonComponent
                 className={
-                  "!bg-[#EAEAEA]  !text-primary px-6 py-2 !rounded-sm !text-lg"
+                  "!bg-[#EAEAEA]  !text-primary px-6 py-2 !rounded-sm !text-lg !my-3 !lg:my-0"
                 }
                 title={"Get Free Personalized Offer"}
               />
@@ -94,7 +94,7 @@ const ProgramBenefitsCard = ({ medicalProcedures, additionalInfo }) => {
             >
               <ButtonComponent
                 className={
-                  "!text-fourth  !bg-primary px-6 py-2  !rounded-sm !text-lg"
+                  "!text-fourth  !bg-primary px-6 py-2  !rounded-sm !text-lg "
                 }
                 title={"Get Free Personalized Offer"}
               />

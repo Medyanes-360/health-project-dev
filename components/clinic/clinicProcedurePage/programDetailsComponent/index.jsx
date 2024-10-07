@@ -49,7 +49,7 @@ const ProgramDetails = () => {
             </div>
           </div>
 
-          <div className="py-20">
+          <div className="py-10">
             <p>{data.programDetails}</p>
           </div>
         </MotionDiv>

@@ -73,7 +73,7 @@ const AdditionalInformations = ({ details }) => {
                 key={index}
                 className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5"
               >
-                <span className="text-lg font-poppins mr-2 whitespace-nowrap">
+                <span className="text-base sm:text-lg font-poppins mr-2 whitespace-normal sm:whitespace-nowrap">
                   {info.name}:
                 </span>
                 <span className="text-2xl">{info.icon}</span>

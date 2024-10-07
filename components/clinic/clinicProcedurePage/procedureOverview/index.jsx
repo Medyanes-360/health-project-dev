@@ -27,30 +27,30 @@ export default function ProcedureOverview() {
           once: true,
           amount: 0.5,
         }}
-        className="border border-[rgba(217,217,217,0.12)] shadow-md  p-6 rounded-3xl"
+        className="border border-[rgba(217,217,217,0.12)] shadow-md p-6 rounded-3xl"
       >
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <div className="flex flex-col items-start gap-2.5">
-            <p className="text-black font-semibold ">
+            <p className="text-black font-semibold text-lg md:text-base">
               FU hair transplant (4500 Grafts) All Included
             </p>
             <span className="text-sm text-black">
-              Adem and Havva Medical Center 
+              Adem and Havva Medical Center
             </span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mt-4 md:mt-0">
             <Image
               src="/assets/icons/locationIcon.svg"
               alt=""
               width={24}
               height={24}
             />
-            <span className=" ml-0.5 font-semibold text-primary">
+            <span className="ml-0.5 font-semibold text-primary text-sm md:text-base">
               Turkey, Istanbul
             </span>
           </div>
         </div>
-        <div className="p-6 bg-[#D9D9D921] mt-6 rounded-3xl">
+        <div className="p-4 md:p-6 bg-[#D9D9D921] mt-6 rounded-3xl">
           <div className="flex items-center ">
             <svg
               width="24"
@@ -69,51 +69,55 @@ export default function ProcedureOverview() {
                 fill="#52B8AB"
               />
             </svg>
-            <p className="font-semibold text-black ml-2.5">
-              {data.patientsRecommendPercent} Clients recommended this clinic
-              reviews
+            <p className="font-semibold text-black ml-2.5 text-sm md:text-base">
+              {data.patientsRecommendPercent}
+            </p>
+            <p className=" ml-5">% Clients recommended this clinic</p>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row items-start md:items-center p-4 md:p-6 bg-[#D9D9D921] mt-6 rounded-3xl">
+          <div className="flex items-center">
+            <div className="flex bg-white rounded-2xl">
+              <Image
+                src="/assets/icons/star.svg"
+                alt=""
+                width={24}
+                height={24}
+              />
+              <p className="font-semibold text-black ml-2.5 text-sm md:text-base">
+                {data.procedureRating}
+              </p>
+            </div>
+            <p className="ml-3 md:ml-5 md:mt-0 text-sm md:text-base">
+              Excellent score based on 161 patient reviews
             </p>
           </div>
+
+          <span className="font-semibold hover:underline text-primary cursor-pointer text-sm md:text-base  md:mt-0 md:ml-auto">
+            Read more
+          </span>
         </div>
-        <div className="p-6 bg-[#D9D9D921] mt-6 rounded-3xl">
-          <div className="flex justify-between items-center ">
-            <div className="flex items-center">
+        <div className="flex flex-col md:flex-row items-start md:items-center p-4 md:p-6 bg-[#D9D9D921] mt-6 rounded-3xl">
+          <div className="flex items-center">
+            <div className="flex items-center bg-white rounded-2xl">
               <Image
                 src="/assets/icons/star.svg"
                 alt=""
                 width={24}
                 height={24}
               />
-              <p className="font-semibold text-black ml-2.5">
-                {data.procedureRating} Excellent score based on 161 patient
-                reviews
-              </p>
+              <p className="font-semibold text-black ml-2.5 text-sm md:text-base">
+                {data.clinicRating}
+              </p>{" "}
             </div>
-            <span className="font-semibold hover:underline text-primary cursor-pointer">
-              {" "}
-              Read more
-            </span>
-          </div>
-        </div>
-        <div className="p-6 bg-[#D9D9D921] mt-6 rounded-3xl">
-          <div className="flex justify-between items-center ">
-            <div className="flex items-center">
-              <Image
-                src="/assets/icons/star.svg"
-                alt=""
-                width={24}
-                height={24}
-              />
-              <p className="font-semibold text-black ml-2.5">
-                {data.clinicRating} About the clinic
-              </p>
-            </div>
-            <span className="font-semibold hover:underline text-primary cursor-pointer">
-              {" "}
-              Read more
-            </span>
-          </div>
-        </div>
+            <p className="ml-3 items-center md:ml-5  md:mt-0 text-sm md:text-base">
+              About the clinic
+            </p>{" "}
+          </div>{" "}
+          <span className="font-semibold hover:underline text-primary cursor-pointer text-sm md:text-base   md:ml-auto">
+            Read more
+          </span>
+        </div>{" "}
       </MotionDiv>
     </ExtraLargePageContainer>
   );

@@ -28,7 +28,7 @@ const BeforeAndAfterCard = ({ data }) => {
     speed: 400,
     slidesToShow,
     slidesToScroll,
-    dots: false, 
+    dots: false,
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) =>
@@ -61,7 +61,7 @@ const BeforeAndAfterCard = ({ data }) => {
 
   const CardContent = ({ image }) => (
     <div className="p-2">
-      <CardComponent className={"!px-5 !py-5 !mt-20 !rounded-2xl"}>
+      <CardComponent className={"!px-5 !py-5 !mt-5 !rounded-2xl"}>
         <div className="w-full relative aspect-[12/9] rounded-2xl">
           <Image
             src={image}

@@ -26,26 +26,24 @@ const MedicalProcedures = ({ procedures }) => {
           </svg>
 
           <MotionDiv
-           initial={{
-            x: "50px",
-            opacity: 0,
-          }}
-          whileInView={{
-            x: "0",
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0.1
-          }}
-          viewport={{
-            once: true,
-            amount: 0.5,
-          }}
-          
+            initial={{
+              x: "50px",
+              opacity: 0,
+            }}
+            whileInView={{
+              x: "0",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
           >
-                      <h2 className="text-2xl font-poppins">Medical Procedures</h2>
-
+            <h2 className="text-2xl font-poppins">Medical Procedures</h2>
           </MotionDiv>
         </div>
         <div>
@@ -71,7 +69,7 @@ const MedicalProcedures = ({ procedures }) => {
                 key={index}
                 className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5"
               >
-                <span className="text-lg font-poppins mr-2 whitespace-nowrap">
+                <span className="text-base sm:text-lg font-poppins mr-2 whitespace-normal sm:whitespace-nowrap">
                   {procedure.name}:
                 </span>
                 <span className="text-2xl">{procedure.icon}</span>

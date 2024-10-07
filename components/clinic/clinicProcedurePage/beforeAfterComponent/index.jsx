@@ -26,7 +26,7 @@ const BeforeAndAfter = () => {
     <div className="py-10 ">
       <ExtraLargePageContainer id="beforeAndAfterPhotosSection">
         <div
-          className="p-6 rounded-3xl shadow-md border"
+          className=" p-6 rounded-3xl shadow-md border"
           style={{ borderColor: "rgba(217, 217, 217, 0.12)" }}
         >
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
