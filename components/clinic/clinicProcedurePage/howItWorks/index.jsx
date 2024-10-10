@@ -40,11 +40,11 @@ const HowItWorks = () => {
     <div className="pt-5">
       <ExtraLargePageContainer id="howItWorksSection">
         <CardComponent>
-          <h1 className=" font-poppins font-semibold  text-xl text-primary">
+          <h1 className="font-poppins font-semibold text-xl text-primary">
             How it works
           </h1>
 
-          <div className="grid grid-cols-5  gap-4 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {data.map((items, i) => (
               <MotionDiv
                 initial={{
@@ -82,13 +82,8 @@ const ContentCard = ({ data, index }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-2xl overflow-hidden min-h-[296px] min-w-[217.6px]">
-      {/* Başlık kısmını kapsayan bölge */}
-      <div className="relative   bg-white-disabled" style={{ height: "108px" }}>
-        {/* Arka plan alanı için kapsayıcı */}
-
-        {/* Sayı ve başlığı kapsayan bölge */}
+      <div className="relative bg-white-dark" style={{ height: "108px" }}>
         <div className="relative flex flex-col items-start">
-          {/* Sayılar başlığın üstünde olacak şekilde konumlandırılır */}
           <div className="flex font-poppins text-black h-[24px] mb-2 p-2">
             {index + 1}/5
           </div>
@@ -98,7 +93,7 @@ const ContentCard = ({ data, index }) => {
         </div>
       </div>
       <div className="p-4">
-        <p className=" font-poppins text-sm">{description}</p>
+        <p className="font-poppins text-sm">{description}</p>
       </div>
     </div>
   );

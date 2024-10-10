@@ -93,7 +93,7 @@ const Duration = () => {
             once: true,
             amount: 0.5,
           }}
-          className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5"
+          className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5 text-base sm:text-lg font-poppins mr-2 whitespace-normal sm:whitespace-nowrap"
         >
           <p>{data.duration.stay}:</p>
         </MotionDiv>

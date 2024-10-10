@@ -48,30 +48,28 @@ const Transport = () => {
             />
           </svg>
           <MotionDiv
-           initial={{
-            y: "-50px",
-            opacity: 0,
-          }}
-          whileInView={{
-            y: "0",
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0.1
-          }}
-          viewport={{
-            once: true,
-            amount: 0.5,
-          }}
-          
+            initial={{
+              y: "-50px",
+              opacity: 0,
+            }}
+            whileInView={{
+              y: "0",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
           >
-          <h2 className="text-2xl font-poppins">Transport</h2>
-
+            <h2 className="text-2xl font-poppins">Transport</h2>
           </MotionDiv>
         </div>
         <MotionDiv
-           initial={{
+          initial={{
             y: "50px",
             opacity: 0,
           }}
@@ -81,13 +79,14 @@ const Transport = () => {
           }}
           transition={{
             duration: 0.5,
-            delay:0.1
+            delay: 0.1,
           }}
           viewport={{
             once: true,
             amount: 0.5,
           }}
-        className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5">
+          className="flex justify-between items-center space-x-1  bg-gray-50 min-h-[60px] w-fit px-5 text-base sm:text-lg font-poppins mr-2 whitespace-normal sm:whitespace-nowrap"
+        >
           <p>{data.transport.description}:</p>
         </MotionDiv>
       </CardComponent>
