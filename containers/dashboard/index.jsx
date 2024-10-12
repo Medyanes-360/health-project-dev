@@ -1,7 +1,13 @@
-import DashboardComponent from "@/components/dashboard";
-
-const DashboardContainer = () => {
-  return <DashboardComponent />;
-};
-
-export default DashboardContainer;
+export default function DashboardPageContainer({ currentPage }) {
+  return (
+    <>
+      {currentPage.name == "Clinic information" && (
+        <p>Clinic İnformation Form</p>
+      )}
+      {currentPage.name == "Clinic Description" && (
+        <p>Clinic Description Form</p>
+      )}
+      {currentPage.name == "Add Video" && <p>Add Video Form</p>}
+    </>
+  );
+}
