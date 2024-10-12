@@ -1,5 +1,5 @@
-import Sidebar from "@/components/dashboard/Sidebar";
-import Topbar from "@/components/dashboard/Topbar";
+import Sidebar from "@/components/clinicDashboard/layout/Sidebar";
+import Topbar from "@/components/clinicDashboard/layout/Topbar";
 
 export default function ClinicDashboardLayout({ children }) {
   return (
