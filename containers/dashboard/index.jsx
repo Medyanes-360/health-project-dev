@@ -1,4 +1,4 @@
-export default function DashboardPageContainer({ currentPage }) {
+export default function ClinicDashboardPageContainer({ currentPage }) {
   return (
     <>
       {currentPage.name == "Clinic information" && (

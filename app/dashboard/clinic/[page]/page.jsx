@@ -2,7 +2,7 @@
 // 2. yöntem bununla ilişkili, page yerine container içinde decodeURIComponent() diyerek direk sayfa ismini alıp öyle renderlayabilriiz componentları -containerdan props geçmek yerine-.
 // örneğin: {decodeURIComponent(params.page)=="Clinic Information" && <ClinicInformationForm/>}
 
-import DashboardPageContainer from "@/containers/dashboard";
+import ClinicDashboardPageContainer from "@/containers/dashboard";
 import { redirect } from "next/navigation";
 
 // 3. yöntem: [page] slug'ını direk url olarak yapmak. eğer böyle yaparsak sidebar listesinin itemlarını tanımladığımız yerde itemlara url propu verebiliriz,
@@ -10,10 +10,10 @@ import { redirect } from "next/navigation";
 
 // 4. yöntem: 2. yöntemin aynı ama 3. gibi kullanılanı. params'ı page.jsx'te çağırmak yerine container içinde çağırıp const params= useParams diyerek, params.page diyip url'yi alırız ve componentları bu url'ye göre renderlarız.
 
-export default function DashboardPage({ params }) {
+export default function ClinicDashboardPage({ params }) {
   // 1. yöntem:
   // hangi sayfada olduğumuzu dashboardData'dan bul.
-  const currentPage = dashboardData.find(
+  const currentPage = clinicDashboardData.find(
     (elem) => elem.name == decodeURIComponent(params.page)
   );
   // eğer sayfa yoksa anasayfaya redirect yap.
@@ -21,7 +21,7 @@ export default function DashboardPage({ params }) {
 
   // eğer bulduysan hangi sayfada olduğumuz bilgisini container'a gönder. container'da conditional rendering yapılsın.:
 
-  return <DashboardPageContainer currentPage={currentPage} />;
+  return <ClinicDashboardPageContainer currentPage={currentPage} />;
 
   // 3. yöntem:
   //   const currentPage = dashboardData.find((elem) => elem.url == params.page);
@@ -29,7 +29,7 @@ export default function DashboardPage({ params }) {
   //   return <DashboardPageContainer currentPage={currentPage} />;
 }
 
-const dashboardData = [
+const clinicDashboardData = [
   {
     id: 0,
     name: "Clinic information",

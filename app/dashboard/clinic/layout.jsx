@@ -1,7 +1,7 @@
 import Sidebar from "@/components/dashboard/Sidebar";
 import Topbar from "@/components/dashboard/Topbar";
 
-export default function DashboardLayout({ children }) {
+export default function ClinicDashboardLayout({ children }) {
   return (
     <div className="flex bg-[#71CCB60F]">
       {/* Sidebar - Sol tarafta yer alacak */}
