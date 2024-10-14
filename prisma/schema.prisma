@@ -8,13 +8,19 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlserver"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  USER
+  ADMIN
+}
 
 model User {
-  id    Int     @id @default(autoincrement())
+  id    String     @id @default(auto()) @map("_id") @db.ObjectId
   email String  @unique
-  name  String?
+  password String 
+  role Role  @default(USER)
+  
 }

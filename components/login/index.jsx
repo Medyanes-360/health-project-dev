@@ -1,22 +1,39 @@
 "use client";
-
-import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { signIn } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 const validationSchema = Yup.object({
   email: Yup.string()
     .email("Enter a valid email")
     .required("Email is required"),
   password: Yup.string()
-    .min(8, "Password should be of minimum 8 characters length")
+    .min(6, "Password should be of minimum 8 characters length")
     .required("Password is required"),
 });
 
 export default function LoginComponent() {
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     // Login operations will be performed here
     console.log("Attempt to enter:", values);
+
+    await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: true,
+      callbackUrl: "/",
+    })
+      .then((res) => {
+        if (res.ok) {
+          redirect("/");
+          // SNACKBAR Giriş işlemi başarılı, yönlendiriliyorsunuz.
+        } else {
+          // SNACKBAR res.error
+        }
+      })
+      .catch((er) => console.error(er))
+      .finally(() => {});
   };
 
   return (

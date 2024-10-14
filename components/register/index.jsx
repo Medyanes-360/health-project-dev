@@ -1,17 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Country, State, City } from "country-state-city";
+import { postAPI } from "@/services/fetchAPI";
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Name is required"),
+  name: Yup.string(),
   email: Yup.string().email("Invalid email").required("Email is required"),
-  phoneNumber: Yup.number().required("Phone number is required"),
-  country: Yup.string().required("Country is required"),
-  state: Yup.string().required("State is required"),
-  city: Yup.string().required("City is required"),
+  phoneNumber: Yup.number(),
+  country: Yup.string(),
+  state: Yup.string(),
+  city: Yup.string(),
   password: Yup.string()
     .min(6, "Password must be at least 6 characters")
     .required("Password is required"),
@@ -46,6 +47,26 @@ export default function RegisterComponent() {
     setAvailableCities(cities);
   };
 
+  const submitHandler = async (values) => {
+    const userToAdd = {
+      email: values.email,
+      password: values.password,
+    };
+
+    await postAPI("/auth/register", { ...userToAdd })
+      .then((res) => {
+        if (res.success) {
+          // SNACKBAR Kayıt işlemi başarılı, yönlendiriliyorsunuz.
+
+          console.log(res);
+        } else {
+          // SNACKBAR res.error
+        }
+      })
+      .catch((err) => console.error(err))
+      .finally(() => {});
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 sm:p-8">
       <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md w-full max-w-xs sm:max-w-2xl">
@@ -69,6 +90,7 @@ export default function RegisterComponent() {
           validationSchema={validationSchema}
           onSubmit={(values, { setSubmitting }) => {
             console.log("Form submitted:", values);
+            submitHandler(values);
             setSubmitting(false);
           }}
         >
