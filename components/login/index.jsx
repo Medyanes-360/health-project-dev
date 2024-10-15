@@ -105,6 +105,15 @@ export default function LoginComponent() {
               >
                 Sign in
               </button>
+              {/* GitHub ile giriş yapma  */}
+              <div className="mt-6">
+                <button
+                  className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
+                  onClick={() => signIn("github")}
+                >
+                  Sign in with GitHub
+                </button>
+              </div>
             </Form>
           )}
         </Formik>
