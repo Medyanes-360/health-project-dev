@@ -2,7 +2,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signIn } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation"; // useRouter import
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -14,26 +14,25 @@ const validationSchema = Yup.object({
 });
 
 export default function LoginComponent() {
+  const router = useRouter(); // router instance
+
   const handleSubmit = async (values) => {
     // Login operations will be performed here
     console.log("Attempt to enter:", values);
 
-    await signIn("credentials", {
+    const res = await signIn("credentials", {
       email: values.email,
       password: values.password,
-      redirect: true,
-      callbackUrl: "/",
-    })
-      .then((res) => {
-        if (res.ok) {
-          redirect("/");
-          // SNACKBAR Giriş işlemi başarılı, yönlendiriliyorsunuz.
-        } else {
-          // SNACKBAR res.error
-        }
-      })
-      .catch((er) => console.error(er))
-      .finally(() => {});
+      redirect: false, // disable automatic redirect
+    });
+
+    if (res.ok) {
+      router.push("/"); // Navigate to homepage on successful login
+      // Show success message (e.g., Snackbar or Toast)
+    } else {
+      // Show error message (e.g., Snackbar or Toast)
+      console.log(res.error);
+    }
   };
 
   return (
@@ -105,19 +104,28 @@ export default function LoginComponent() {
               >
                 Sign in
               </button>
-              {/* GitHub ile giriş yapma  */}
+              {/* Auth ile giriş yapma  */}
               <div className="mt-6">
                 <button
-                  className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
-                  onClick={() => signIn("github")}
+                  className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
+                  onClick={() => signIn("linkedin")}
                 >
-                  Sign in with GitHub
+                  Sign in with Linkedin
+                </button>
+              </div>
+
+              <div className="mt-6">
+                <button
+                  className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
+                  onClick={() => signIn("twitter")}
+                >
+                  Sign in with Twitter
                 </button>
               </div>
             </Form>
           )}
         </Formik>
-        <div className="flex flex-row justify-between  mt-5">
+        <div className="flex flex-row justify-between mt-5">
           <a
             href="/register"
             className="text-xs sm:text-sm text-black hover:underline"
