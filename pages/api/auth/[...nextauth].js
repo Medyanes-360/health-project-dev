@@ -65,8 +65,9 @@ const authOptions = {
               id: userFromDB.id,
               name: userFromDB.name,
               email: userFromDB.email,
+              role: userFromDB.role,
             };
-
+            console.log(user);
             if (user) {
               return user;
             }
