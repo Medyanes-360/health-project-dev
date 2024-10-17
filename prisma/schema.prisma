@@ -15,6 +15,16 @@ datasource db {
 enum Role {
   USER
   ADMIN
+  DOCTOR
+  CLINIC
+  HOSPITAL
+  DEPARTMENT
+  STAFF_1
+  STAFF_2
+  STAFF_3
+  STAFF_4
+  AGENCY
+
 }
 
 model User {

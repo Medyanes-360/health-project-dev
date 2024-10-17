@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { postAPI } from "@/services/fetchAPI";
 import LinkedInProvider from "next-auth/providers/linkedin";
 import TwitterProvider from "next-auth/providers/twitter";
+import GoogleProvider from "next-auth/providers/google";
 
 const authOptions = {
   providers: [
@@ -16,6 +17,10 @@ const authOptions = {
       clientId: process.env.TWITTER_CLIENT_ID,
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
       version: "2.0", //bunu yazmazsak hata alıyoruz.
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
 
     CredentialsProvider({

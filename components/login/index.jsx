@@ -108,7 +108,16 @@ export default function LoginComponent() {
               <div className="mt-6">
                 <button
                   className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
-                  onClick={() => signIn("linkedin")}
+                  onClick={() => signIn("google", { callbackUrl: "/" })}
+                >
+                  Sign in with Google
+                </button>
+              </div>
+
+              <div className="mt-6">
+                <button
+                  className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
+                  onClick={() => signIn("linkedin", { callbackUrl: "/" })}
                 >
                   Sign in with Linkedin
                 </button>
@@ -117,7 +126,7 @@ export default function LoginComponent() {
               <div className="mt-6">
                 <button
                   className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
-                  onClick={() => signIn("twitter")}
+                  onClick={() => signIn("twitter", { callbackUrl: "/" })}
                 >
                   Sign in with Twitter
                 </button>
