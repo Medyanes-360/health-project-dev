@@ -3,6 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation"; // useRouter import
+import { SlSocialGoogle } from "react-icons/sl";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { TiSocialTwitter } from "react-icons/ti";
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -104,13 +107,17 @@ export default function LoginComponent() {
               >
                 Sign in
               </button>
+              <p className=" text-center font-poppins">-Or Sign in with-</p>
               {/* Auth ile giriş yapma  */}
               <div className="mt-6">
                 <button
                   className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
                   onClick={() => signIn("google", { callbackUrl: "/" })}
                 >
-                  Sign in with Google
+                  <div className="flex items-center">
+                    <SlSocialGoogle className="" />{" "}
+                    <p className="flex-1 text-center">Sign in with Google</p>{" "}
+                  </div>
                 </button>
               </div>
 
@@ -119,7 +126,10 @@ export default function LoginComponent() {
                   className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
                   onClick={() => signIn("linkedin", { callbackUrl: "/" })}
                 >
-                  Sign in with Linkedin
+                  <div className="flex items-center">
+                    <SlSocialLinkedin className="" />{" "}
+                    <p className="flex-1 text-center">Sign in with Linkedin</p>{" "}
+                  </div>
                 </button>
               </div>
 
@@ -128,7 +138,10 @@ export default function LoginComponent() {
                   className="w-full bg-primary text-white py-2 px-4 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
                   onClick={() => signIn("twitter", { callbackUrl: "/" })}
                 >
-                  Sign in with Twitter
+                  <div className="flex items-center">
+                    <TiSocialTwitter className="" />{" "}
+                    <p className="flex-1 text-center">Sign in with Twitter</p>{" "}
+                  </div>
                 </button>
               </div>
             </Form>
