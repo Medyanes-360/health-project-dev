@@ -1,4 +1,3 @@
-import AssistantBox from "@/components/layout/assistantBox";
 import Footer from "@/components/layout/footer";
 import NavigationHeader from "@/components/layout/navigationHeader";
 
@@ -11,7 +10,7 @@ export default function HomeLayout({ children }) {
 
       {children}
       <ImageModal />
-      <AssistantBox />
+
       <Footer />
     </div>
   );

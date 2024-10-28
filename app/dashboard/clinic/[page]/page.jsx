@@ -2,7 +2,7 @@
 // 2. yöntem bununla ilişkili, page yerine container içinde decodeURIComponent() diyerek direk sayfa ismini alıp öyle renderlayabilriiz componentları -containerdan props geçmek yerine-.
 // örneğin: {decodeURIComponent(params.page)=="Clinic Information" && <ClinicInformationForm/>}
 
-import ClinicDashboardPageContainer from "@/containers/dashboard";
+import ClinicDashboardPageContainer from "@/containers/clinicDashboard";
 import { redirect } from "next/navigation";
 
 // 3. yöntem: [page] slug'ını direk url olarak yapmak. eğer böyle yaparsak sidebar listesinin itemlarını tanımladığımız yerde itemlara url propu verebiliriz,

@@ -23,7 +23,7 @@ const Comment = () => {
           {comments.map((comment, index) => (
             <div
               key={index}
-              className="flex items-center justify-center mb-4 md:mb-0"
+              className="flex items-center justify-start mb-4 md:mb-0"
             >
               <Image
                 src={comment.image}
