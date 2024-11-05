@@ -1,3 +1,4 @@
+import ClinicImagesSection from "@/components/clinic/clinicProfilePage/clinicImagesSection";
 import BreadCrumbComponent from "@/globalElements/breadcrumb";
 import { Country, State } from "country-state-city";
 export default function ClinicProfilePageContainer({ clinic }) {
@@ -30,7 +31,7 @@ export default function ClinicProfilePageContainer({ clinic }) {
           },
         ]}
       />
-      <p className="text-3xl my-10">Clinic Profili. </p>
+      <ClinicImagesSection images={clinic.images} />
     </>
   );
 }

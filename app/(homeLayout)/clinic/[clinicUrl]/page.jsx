@@ -37,6 +37,13 @@ const clinicsData = [
           "Accommodation can be included upon request for international patients.",
       },
     ],
+    images: [
+      "/assets/images/clinic-image1.png",
+      "/assets/images/clinic-image2.png",
+      "/assets/images/clinic-image3.png",
+      "/assets/images/clinic-image4.png",
+      "/assets/images/clinic-image1.png",
+    ],
     patientReviews: [
       {
         username: "Mehmet Taşkesen",
@@ -104,6 +111,13 @@ const clinicsData = [
           "Accommodation can be included upon request for international patients.",
       },
     ],
+    images: [
+      "/assets/images/clinic-image1.png",
+      "/assets/images/clinic-image2.png",
+      "/assets/images/clinic-image3.png",
+      "/assets/images/clinic-image4.png",
+      "/assets/images/clinic-image1.png",
+    ],
     patientReviews: [
       {
         username: "John Doe",
@@ -152,6 +166,13 @@ const clinicsData = [
         description:
           "Yes, we offer flexible financing options to accommodate your needs.",
       },
+    ],
+    images: [
+      "/assets/images/clinic-image1.png",
+      "/assets/images/clinic-image2.png",
+      "/assets/images/clinic-image3.png",
+      "/assets/images/clinic-image4.png",
+      "/assets/images/clinic-image1.png",
     ],
     patientReviews: [
       {
@@ -202,6 +223,13 @@ const clinicsData = [
           "We recommend booking at least 2 weeks in advance to ensure availability.",
       },
     ],
+    images: [
+      "/assets/images/clinic-image1.png",
+      "/assets/images/clinic-image2.png",
+      "/assets/images/clinic-image3.png",
+      "/assets/images/clinic-image4.png",
+      "/assets/images/clinic-image1.png",
+    ],
     patientReviews: [
       {
         username: "Carlos Hernandez",
@@ -251,6 +279,13 @@ const clinicsData = [
           "Yes, follow-up appointments are part of our comprehensive care plan.",
       },
     ],
+    images: [
+      "/assets/images/clinic-image1.png",
+      "/assets/images/clinic-image2.png",
+      "/assets/images/clinic-image3.png",
+      "/assets/images/clinic-image4.png",
+      "/assets/images/clinic-image1.png",
+    ],
     patientReviews: [
       {
         username: "Aylin Yıldız",
@@ -299,6 +334,13 @@ const clinicsData = [
         description:
           "We provide a warranty on certain procedures, including implants and crowns.",
       },
+    ],
+    images: [
+      "/assets/images/clinic-image1.png",
+      "/assets/images/clinic-image2.png",
+      "/assets/images/clinic-image3.png",
+      "/assets/images/clinic-image4.png",
+      "/assets/images/clinic-image1.png",
     ],
     patientReviews: [
       {
