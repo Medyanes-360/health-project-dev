@@ -43,11 +43,11 @@ export default function ClinicImagesSection({ images }) {
               handleOpenImageModal(images[0]);
             }}
             className={
-              "border bg-third/60 backdrop-blur-md text-bgDarkWhite gap-1 md:gap-2 !text-xs absolute bottom-4 right-4 z-50 !px-2 md:!px-5 !py-1 flex items-center justify-center rounded-xl w-fit"
+              "border bg-third/60 backdrop-blur-md text-bgDarkWhite gap-1 md:gap-2 !text-xs absolute bottom-4 right-4 z-50 !px-2 md:!px-5 !py-1 flex  rounded-xl w-fit"
             }
           >
-            <IconCamera className=" text-lg md:text-xl" />
-            <p className="flex jus items-center">See all</p>
+            <IconCamera className="text-lg md:text-xl" />
+            <p>See all</p>
           </ButtonComponent>
         </div>
       </div>
