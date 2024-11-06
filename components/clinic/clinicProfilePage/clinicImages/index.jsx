@@ -5,7 +5,7 @@ import Image from "next/image";
 import ButtonComponent from "@/globalElements/Button";
 import IconCamera from "@/public/assets/icons/CameraIcon";
 
-export default function ClinicImagesSection({ images }) {
+export default function ClinicImages({ images }) {
   const openImageModal = useGlobalStore((state) => state.openImageModal);
   const handleOpenImageModal = (imageSrc) => {
     openImageModal({
@@ -13,6 +13,7 @@ export default function ClinicImagesSection({ images }) {
       imageSrcToShowFirst: imageSrc,
     });
   };
+
   return (
     <ExtraLargePageContainer>
       <div className="grid grid-cols-3 md:grid-cols-2 h-full w-full justify-center gap-2 md:gap-4">
@@ -27,6 +28,7 @@ export default function ClinicImagesSection({ images }) {
           {images.slice(1).map((src, index) => {
             return (
               <Image
+                key={index}
                 className={`h-full w-full p-0.5 rounded-2xl md:flex ${
                   // Mobilde son iki resmi gizler
                   index >= 2 ? "hidden" : ""

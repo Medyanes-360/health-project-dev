@@ -1,4 +1,6 @@
-import ClinicImagesSection from "@/components/clinic/clinicProfilePage/clinicImagesSection";
+import ClinicImages from "@/components/clinic/clinicProfilePage/clinicImages";
+import CoutriesForTreatment from "@/components/clinic/clinicProfilePage/coutriesForTreatment";
+import PopularClinics from "@/components/clinic/clinicProfilePage/popularClinics";
 import BreadCrumbComponent from "@/globalElements/breadcrumb";
 import { Country, State } from "country-state-city";
 export default function ClinicProfilePageContainer({ clinic }) {
@@ -31,7 +33,9 @@ export default function ClinicProfilePageContainer({ clinic }) {
           },
         ]}
       />
-      <ClinicImagesSection images={clinic.images} />
+      <ClinicImages images={clinic.images} />
+      <PopularClinics />
+      <CoutriesForTreatment />
     </>
   );
 }
