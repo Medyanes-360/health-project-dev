@@ -17,10 +17,7 @@ export default function ClinicImagesSection({ images }) {
     <ExtraLargePageContainer>
       <div className="grid grid-cols-3 md:grid-cols-2 h-full w-full justify-center gap-2 md:gap-4">
         <Image
-          onClick={() => {
-            handleOpenImageModal(images[0]);
-          }}
-          className="h-full w-full p-0.5 rounded-3xl col-span-2 md:col-span-1 cursor-pointer hover:opacity-90 "
+          className="h-full w-full p-0.5 rounded-3xl col-span-2 md:col-span-1"
           src={images[0]}
           alt=""
           width={1000}
@@ -30,11 +27,7 @@ export default function ClinicImagesSection({ images }) {
           {images.slice(1).map((src, index) => {
             return (
               <Image
-                key={index}
-                onClick={() => {
-                  handleOpenImageModal(images[index + 1]);
-                }}
-                className={`h-full w-full p-0.5 rounded-2xl cursor-pointer hover:opacity-90  md:flex ${
+                className={`h-full w-full p-0.5 rounded-2xl md:flex ${
                   // Mobilde son iki resmi gizler
                   index >= 2 ? "hidden" : ""
                 } `}
@@ -50,10 +43,10 @@ export default function ClinicImagesSection({ images }) {
               handleOpenImageModal(images[0]);
             }}
             className={
-              "border bg-third/60 backdrop-blur-md text-bgDarkWhite gap-2 !text-xs absolute bottom-4 right-4 z-50 !px-3 md:!px-5 !py-1 flex items-center justify-center rounded-xl w-fit"
+              "border bg-third/60 backdrop-blur-md text-bgDarkWhite gap-1 md:gap-2 !text-xs absolute bottom-4 right-4 z-50 !px-2 md:!px-5 !py-1 flex items-center justify-center rounded-xl w-fit"
             }
           >
-            <IconCamera />
+            <IconCamera className=" text-lg md:text-xl" />
             <p className="flex jus items-center">See all</p>
           </ButtonComponent>
         </div>
