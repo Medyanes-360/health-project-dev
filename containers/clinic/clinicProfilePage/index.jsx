@@ -3,6 +3,7 @@ import CoutriesForTreatment from "@/components/clinic/clinicProfilePage/coutries
 import PopularClinics from "@/components/clinic/clinicProfilePage/popularClinics";
 import BreadCrumbComponent from "@/globalElements/breadcrumb";
 import { Country, State } from "country-state-city";
+
 export default function ClinicProfilePageContainer({ clinic }) {
   return (
     <>

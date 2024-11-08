@@ -38,11 +38,11 @@ const clinicsData = [
       },
     ],
     images: [
-      "/assets/images/clinic-image1.png",
-      "/assets/images/clinic-image2.png",
-      "/assets/images/clinic-image3.png",
-      "/assets/images/clinic-image4.png",
-      "/assets/images/clinic-image1.png",
+      "/assets/images/mock-clinic-image1.png",
+      "/assets/images/mock-clinic-image2.png",
+      "/assets/images/mock-clinic-image3.png",
+      "/assets/images/mock-clinic-image4.png",
+      "/assets/images/mock-clinic-image1.png",
     ],
     patientReviews: [
       {
@@ -112,11 +112,11 @@ const clinicsData = [
       },
     ],
     images: [
-      "/assets/images/clinic-image1.png",
-      "/assets/images/clinic-image2.png",
-      "/assets/images/clinic-image3.png",
-      "/assets/images/clinic-image4.png",
-      "/assets/images/clinic-image1.png",
+      "/assets/images/mock-clinic-image1.png",
+      "/assets/images/mock-clinic-image2.png",
+      "/assets/images/mock-clinic-image3.png",
+      "/assets/images/mock-clinic-image4.png",
+      "/assets/images/mock-clinic-image1.png",
     ],
     patientReviews: [
       {
@@ -168,11 +168,11 @@ const clinicsData = [
       },
     ],
     images: [
-      "/assets/images/clinic-image1.png",
-      "/assets/images/clinic-image2.png",
-      "/assets/images/clinic-image3.png",
-      "/assets/images/clinic-image4.png",
-      "/assets/images/clinic-image1.png",
+      "/assets/images/mock-clinic-image1.png",
+      "/assets/images/mock-clinic-image2.png",
+      "/assets/images/mock-clinic-image3.png",
+      "/assets/images/mock-clinic-image4.png",
+      "/assets/images/mock-clinic-image1.png",
     ],
     patientReviews: [
       {
@@ -224,11 +224,11 @@ const clinicsData = [
       },
     ],
     images: [
-      "/assets/images/clinic-image1.png",
-      "/assets/images/clinic-image2.png",
-      "/assets/images/clinic-image3.png",
-      "/assets/images/clinic-image4.png",
-      "/assets/images/clinic-image1.png",
+      "/assets/images/mock-clinic-image1.png",
+      "/assets/images/mock-clinic-image2.png",
+      "/assets/images/mock-clinic-image3.png",
+      "/assets/images/mock-clinic-image4.png",
+      "/assets/images/mock-clinic-image1.png",
     ],
     patientReviews: [
       {
@@ -280,11 +280,11 @@ const clinicsData = [
       },
     ],
     images: [
-      "/assets/images/clinic-image1.png",
-      "/assets/images/clinic-image2.png",
-      "/assets/images/clinic-image3.png",
-      "/assets/images/clinic-image4.png",
-      "/assets/images/clinic-image1.png",
+      "/assets/images/mock-clinic-image1.png",
+      "/assets/images/mock-clinic-image2.png",
+      "/assets/images/mock-clinic-image3.png",
+      "/assets/images/mock-clinic-image4.png",
+      "/assets/images/mock-clinic-image1.png",
     ],
     patientReviews: [
       {
@@ -336,11 +336,11 @@ const clinicsData = [
       },
     ],
     images: [
-      "/assets/images/clinic-image1.png",
-      "/assets/images/clinic-image2.png",
-      "/assets/images/clinic-image3.png",
-      "/assets/images/clinic-image4.png",
-      "/assets/images/clinic-image1.png",
+      "/assets/images/mock-clinic-image1.png",
+      "/assets/images/mock-clinic-image2.png",
+      "/assets/images/mock-clinic-image3.png",
+      "/assets/images/mock-clinic-image4.png",
+      "/assets/images/mock-clinic-image1.png",
     ],
     patientReviews: [
       {

@@ -3,7 +3,12 @@ import Link from "next/link";
 import { Country } from "country-state-city";
 
 const data = {
-  treatment: "Hair transplant",
+  treatment: {
+    id: 4,
+    title: "Hair Transplant",
+    fullTitle: "Fue Hair Transplant ",
+    url: "hair-transplant",
+  },
   locations: [
     {
       countryIsoCode: "TR",
@@ -20,7 +25,7 @@ export default function CoutriesForTreatment() {
   return (
     <ExtraLargePageContainer>
       {/* Heading: */}
-      <div className="bg-white p-10 shadow rounded-3xl gap-4 flex flex-col">
+      <div className="bg-white p-10 shadow-[0px_12px_24px_-4px_#919EAB1F] rounded-3xl gap-4 flex flex-col mb-60">
         <div className="flex items-center">
           <h1 className="text-2xl text-primary">Coutries for treatment</h1>
         </div>
@@ -32,15 +37,10 @@ export default function CoutriesForTreatment() {
                 className="p-4 md:p-6 bg-[#f9f9f9] rounded-3xl flex flex-col"
               >
                 <Link
-                  // Treatment ismini link için dönüştürür
-                  href={`/clinics/${data.treatment
-                    .replace(/\s+/g, "-")
-                    .toLowerCase()}?country=${location.countryIsoCode}&state=${
-                    location.stateIsoCode
-                  }`}
+                  href={`/clinics/${data.treatment.url}?country=${location.countryIsoCode}&state=${location.stateIsoCode}`}
                   className=""
                 >
-                  {data.treatment} in{" "}
+                  {data.treatment.title} in{" "}
                   {/* Ülkenin koduna göre ülke ismini getirir */}
                   {Country.getCountryByCode(location.countryIsoCode).name}
                 </Link>
