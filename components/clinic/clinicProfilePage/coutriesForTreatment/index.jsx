@@ -32,13 +32,10 @@ export default function CoutriesForTreatment() {
         <div className="flex flex-col gap-2">
           {data.locations.map((location, i) => {
             return (
-              <div
-                key={i}
-                className="p-4 md:p-6 bg-[#f9f9f9] rounded-3xl flex flex-col"
-              >
+              <div key={i} className="">
                 <Link
                   href={`/clinics/${data.treatment.url}?country=${location.countryIsoCode}&state=${location.stateIsoCode}`}
-                  className=""
+                  className="p-4 md:p-6 bg-[#f9f9f9] hover:bg-third/10 transition-all duration-200 rounded-3xl flex flex-col"
                 >
                   {data.treatment.title} in{" "}
                   {/* Ülkenin koduna göre ülke ismini getirir */}

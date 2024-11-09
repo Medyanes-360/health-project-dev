@@ -45,21 +45,20 @@ export default function ImageModal() {
   return (
     <div
       onClick={closeImageModal}
-      className="fixed left-0 w-[100vw] h-[100vh] top-0   overflow-hidden z-[50000]  bg-black/80   flex items-center justify-center"
+      className="fixed left-0 w-full h-[100vh] top-0  z-[5000000]  bg-black/80   flex items-center justify-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="  w-[75%] h-[75%] flex items-center justify-center "
+        className="w-[95%] h-[95%]  md:w-[75%] md:h-[75%] flex items-center justify-center "
       >
-        <div className="flex  relative items-center justify-between  w-full h-full   ">
+        <div className="flex items-center justify-between  gap-1  w-full h-full">
           {imageModalOptions.imageSources && (
             <button
               onClick={prevImage}
-              className=" rotate-180 hover:scale-110  "
+              className="rotate-180 hover:scale-110 transition-all duration-200 scale-40"
             >
               <svg
-                width="60"
-                height="60"
+                className="w-9 md:w-14 h-9 md:h-14"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -75,24 +74,22 @@ export default function ImageModal() {
               </svg>
             </button>
           )}
-
-          <Image
-            className="
-                max-h-[100%]
-                !w-[90%]
-                m-auto
-                "
-            width={100}
-            height={50}
-            alt=""
-            src={imageSrcToShow}
-          />
-
+          <div className="flex items-center justify-between  w-full h-full">
+            <Image
+              className=""
+              width={1280}
+              height={720}
+              alt=""
+              src={imageSrcToShow}
+            />
+          </div>
           {imageModalOptions.imageSources && (
-            <button onClick={nextImage} className=" hover:scale-110">
+            <button
+              onClick={nextImage}
+              className=" hover:scale-110 transition-all duration-200"
+            >
               <svg
-                width="60"
-                height="60"
+                className="w-9 md:w-14 h-9 md:h-14"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
