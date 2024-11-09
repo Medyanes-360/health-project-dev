@@ -49,9 +49,9 @@ export default function ImageModal() {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[95%] h-[95%]  md:w-[75%] md:h-[75%] flex items-center justify-center "
+        className="w-[95%]   md:w-[75%]  flex items-center justify-center "
       >
-        <div className="flex items-center justify-between  gap-1  w-full h-full">
+        <div className="flex items-center justify-between  gap-1  w-full ">
           {imageModalOptions.imageSources && (
             <button
               onClick={prevImage}
