@@ -1,5 +1,4 @@
 import HowItWorks from "@/components/clinic/clinicProfilePage/howItWorks";
-import LocationSection from "@/components/clinic/clinicProcedurePage/locationSection";
 import AboutClinic from "@/components/clinic/clinicProfilePage/aboutClinic";
 import BeforeAndAfterPictures from "@/components/clinic/clinicProfilePage/beforeAndAfterPictures";
 import ClinicImages from "@/components/clinic/clinicProfilePage/clinicImages";
@@ -51,8 +50,8 @@ export default function ClinicProfilePageContainer({ clinic }) {
       />
       <ClinicImages images={clinic.images} />
       <DirectTabs />
-      <ExtraLargePageContainer className="flex gap-8 ">
-        <div className=" shadow-lg rounded-2xl  p-5 ">
+      <ExtraLargePageContainer className="!relative flex  gap-8 ">
+        <div className=" shadow-lg flex-1  rounded-2xl  p-5 ">
           <Overview />
           <DentalTreatmentDropDown />
           <BeforeAndAfterPictures />
@@ -61,7 +60,7 @@ export default function ClinicProfilePageContainer({ clinic }) {
           <HowItWorks />
           <GetAFreeConsultation />
         </div>
-        <GetAFreeQuote className="" />
+        <GetAFreeQuote />
       </ExtraLargePageContainer>
       <PopularClinics />
       <CoutriesForTreatment />
