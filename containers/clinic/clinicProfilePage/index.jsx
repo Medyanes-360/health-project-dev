@@ -2,7 +2,9 @@ import HowItWorks from "@/components/clinic/clinicProfilePage/howItWorks";
 import LocationSection from "@/components/clinic/clinicProcedurePage/locationSection";
 import AboutClinic from "@/components/clinic/clinicProfilePage/aboutClinic";
 import BeforeAndAfterPictures from "@/components/clinic/clinicProfilePage/beforeAndAfterPictures";
-import ClinicImagesSection from "@/components/clinic/clinicProfilePage/clinicImagesSection";
+import ClinicImages from "@/components/clinic/clinicProfilePage/clinicImages";
+import CoutriesForTreatment from "@/components/clinic/clinicProfilePage/coutriesForTreatment";
+import PopularClinics from "@/components/clinic/clinicProfilePage/popularClinics";
 import DentalTreatmentDropDown from "@/components/clinic/clinicProfilePage/dentalTreatmentDropDown";
 import DirectTabs from "@/components/clinic/clinicProfilePage/directTabs";
 import Overview from "@/components/clinic/clinicProfilePage/overview";
@@ -47,7 +49,7 @@ export default function ClinicProfilePageContainer({ clinic }) {
           },
         ]}
       />
-      <ClinicImagesSection images={clinic.images} />
+      <ClinicImages images={clinic.images} />
       <DirectTabs />
       <ExtraLargePageContainer className="flex gap-8 ">
         <div className=" shadow-lg rounded-2xl  p-5 ">
@@ -61,6 +63,8 @@ export default function ClinicProfilePageContainer({ clinic }) {
         </div>
         <GetAFreeQuote className="" />
       </ExtraLargePageContainer>
+      <PopularClinics />
+      <CoutriesForTreatment />
     </>
   );
 }

@@ -19,9 +19,9 @@ export default function PackageCard() {
     });
   };
   return (
-    <div className="w-[392px] shadow-[0px_12px_24px_-4px_#919EAB1F] overflow-hidden max-w-[400px] self-center  h-full rounded-xl">
+    <div className="w-full shadow-[0px_12px_24px_-4px_#919EAB1F] overflow-hidden max-w-[392px] self-center h-full rounded-3xl">
       {/* Card Header */}
-      <div className="bg-[#F9F9F9] p-3 grid  grid-cols-3   items-center justify-between w-full ">
+      <div className="bg-[#F9F9F9] p-3 grid grid-cols-3 items-center justify-between w-full ">
         <div className="flex flex-col col-span-2   ">
           <p className="text-[#383333]  font-medium">{clinicData.clinicName}</p>
           <span className="text-xs  mt-3 text-[#7D7987]">
@@ -29,14 +29,15 @@ export default function PackageCard() {
           </span>
         </div>
 
-        <div className="flex col-span-1   items-center   ">
+        <div className="flex col-span-1 gap-1 items-center">
           <Image
             src="/assets/icons/locationIcon_filled.svg"
             alt=""
+            className="w-[24px] h-[24px]"
             width={24}
             height={24}
           />
-          <span className="text-nowrap truncate text-xs text-[#7D7987]">
+          <span className="text-wrap text-xs text-[#7D7987]">
             {" "}
             {clinicData.clinicLocation}
           </span>
@@ -46,11 +47,11 @@ export default function PackageCard() {
       <div className="p-6 flex flex-col mt-2.5 ">
         <Image
           onClick={(e) => handleOpenImageModal(clinicData.img)}
-          className="w-full max-h-[255px] rounded-3xl "
+          className="w-full h-full rounded-3xl cursor-pointer"
           src={clinicData.img}
           alt=""
           width={344}
-          height={255}
+          height={239}
         />
         <div className="flex text-sm flex-col gap-6 mt-3.5 mb-3 pl-1.5">
           <span className=" gap-3 flex items-center ">
