@@ -81,9 +81,21 @@ export const diseaseDoctorHospitalMockData = [
   { name: "Selin Öztürk", type: "doctor" },
 ];
 export const popularSuggestionsMockData = [
-  { name: "Oncology", type: "disease" },
-  { name: "Endocrinology", type: "disease" },
-  { name: "Infertility", type: "disease" },
-  { name: "Mental Health", type: "disease" },
-  { name: "Cardiology", type: "disease" },
+  { name: "Hair Transplant", type: "treatment" },
+  { name: "Breast Augmentation", type: "treatment" },
+  { name: "Rhinoplasty", type: "treatment" },
+  { name: "Liposuction", type: "treatment" },
+  { name: "Dental Implants", type: "treatment" },
 ];
+
+export const treatmentDoctorClinicMockData = [
+  { name: "Hair Transplant", type: "treatment", url: "hair-transplant" },
+  { name: "Yasemin Şahin", type: "doctor", url: "yasemin-sahin" },
+  { name: "Barış Demir", type: "doctor", url: "baris-demir" },
+  { name: "Selin Öztürk", type: "doctor", url: "selin-ozturk" },
+  { name: "Adem And Havva Medical Center", type: "clinic", url: "adem-and-havva-medical-center" },
+  { name: "Global Health Clinic", type: "clinic", url: "global-health-clinic", },
+  { name: "Akay Hastanesi", type: "clinic", url: "akay-hastanesi" },
+  { name: "VM Medical Park Ankara", type: "clinic", url: "vm-medical-park-ankara" },
+  { name: "Koru Ankara Hastanesi", type: "clinic", url: "koru-ankara-hastanesi" },
+]
