@@ -14,7 +14,7 @@ export default function PopularClinics() {
         <PackageCard />
         <PackageCard />
       </div>
-      <div className="w-full flex justify-end py-8">
+      <div className="w-full flex justify-center md:justify-end py-8">
         <Link href={"/clinics"} className="text-xl font-bold">
           See All Clinics
         </Link>
