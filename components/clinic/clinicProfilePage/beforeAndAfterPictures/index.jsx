@@ -51,12 +51,17 @@ export default function BeforeAndAfterPictures() {
   return (
     <div id="beforeAndAfterPhotosDiv">
       <div className="py-8 flex flex-col gap-2">
-        <h2 className="font-medium text-lg sm:text-2xl">{data.texts.title}</h2>
+        <h2 className="font-poppins text-lg font-semibold leading-6">
+          {data.texts.title}
+        </h2>
 
         <p>{data.text_1}</p>
-        <a className=""> {data.texts.text} </a>
+        <a className="font-poppins text-sm text-[0.86rem] leading-6">
+          {" "}
+          {data.texts.text}{" "}
+        </a>
       </div>
-      <div className="flex items-center justify-center ">
+      <div className="flex items-center justify-center h-[600px]">
         <div className="cursor-pointer mr-4" onClick={prevSlide}>
           <Image
             src="/assets/clinic/arrow-square-left.svg"
@@ -66,7 +71,7 @@ export default function BeforeAndAfterPictures() {
           />
         </div>
 
-        <div className="max-w-[1400px] h-[780px] w-full m-auto px-4 relative">
+        <div className="max-w-[800px] h-[600px] w-full m-auto px-4 relative ">
           <div
             style={{ backgroundImage: `url(${data.slides[currentIndex].url})` }}
             className="w-full h-full rounded-2xl bg-center bg-cover transition-all duration-500 ease-in-out"
