@@ -11,6 +11,7 @@ const clinicsData = [
     name: "Clinic 1",
     location: "Sancaktepe/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -18,6 +19,7 @@ const clinicsData = [
     name: "Clinic 1",
     location: "Sancaktepe/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -25,6 +27,7 @@ const clinicsData = [
     name: "Clinic 1",
     location: "Sancaktepe/Istanbul",
     image: "/assets/images/clinic3.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -32,6 +35,7 @@ const clinicsData = [
     name: "Clinic 1",
     location: "Sancaktepe/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -39,6 +43,7 @@ const clinicsData = [
     name: "Clinic XYZ",
     location: "Kadikoy/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -46,6 +51,7 @@ const clinicsData = [
     name: "Clinic XYZ",
     location: "Kadikoy/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -53,6 +59,7 @@ const clinicsData = [
     name: "Clinic XYZ",
     location: "Kadikoy/Istanbul",
     image: "/assets/images/clinic3.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -60,6 +67,7 @@ const clinicsData = [
     name: "Clinic XYZ",
     location: "Kadikoy/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -67,6 +75,7 @@ const clinicsData = [
     name: "Clinic DEF",
     location: "Besiktas/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -74,6 +83,7 @@ const clinicsData = [
     name: "Clinic DEF",
     location: "Besiktas/Istanbul",
     image: "/assets/images/clinic3.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -81,6 +91,7 @@ const clinicsData = [
     name: "Clinic DEF",
     location: "Besiktas/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -88,6 +99,7 @@ const clinicsData = [
     name: "Clinic DEF",
     location: "Besiktas/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 5,
   },
   {
@@ -95,6 +107,7 @@ const clinicsData = [
     name: "Clinic MNO",
     location: "Sisli/Istanbul",
     image: "/assets/images/clinic3.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -102,6 +115,7 @@ const clinicsData = [
     name: "Clinic MNO",
     location: "Sisli/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -109,6 +123,7 @@ const clinicsData = [
     name: "Clinic MNO",
     location: "Sisli/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -116,6 +131,7 @@ const clinicsData = [
     name: "Clinic MNO",
     location: "Sisli/Istanbul",
     image: "/assets/images/clinic3.png",
+    url: "adem-and-havva-medical-center",
     rating: 4,
   },
   {
@@ -123,6 +139,7 @@ const clinicsData = [
     name: "Clinic PQR",
     location: "Beyoglu/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 3,
   },
   {
@@ -130,6 +147,7 @@ const clinicsData = [
     name: "Clinic PQR",
     location: "Beyoglu/Istanbul",
     image: "/assets/images/clinic2.png",
+    url: "adem-and-havva-medical-center",
     rating: 3,
   },
   {
@@ -137,6 +155,7 @@ const clinicsData = [
     name: "Clinic PQR",
     location: "Beyoglu/Istanbul",
     image: "/assets/images/clinic3.png",
+    url: "adem-and-havva-medical-center",
     rating: 3,
   },
   {
@@ -144,6 +163,7 @@ const clinicsData = [
     name: "Clinic PQR",
     location: "Beyoglu/Istanbul",
     image: "/assets/images/clinic1.png",
+    url: "adem-and-havva-medical-center",
     rating: 3,
   },
 ];
