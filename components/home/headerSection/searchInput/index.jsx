@@ -29,14 +29,11 @@ const HeaderSectionSearchInput = () => {
       case "doctor":
         router.push(`/doctor/${searchValue.url}`);
         break;
-
       case "treatment":
         router.push(
           `/clinics/${searchValue.url}?country=${locationValue.countryCode}`
         );
         break;
-      default:
-        router.push(`/clinics?${locationValue.countryCode}`);
     }
 
     console.log("*************");
