@@ -35,14 +35,10 @@ const HeaderSectionSearchInput = () => {
         );
         break;
     }
-
-    console.log("*************");
-    console.log("location:");
-    console.log(locationValue);
-    console.log("---");
-    console.log("search value:");
-    console.log(searchValue);
-    console.log("*************");
+    setSearchValue({
+      name: "",
+      type: false,
+    });
   };
   return (
     <>

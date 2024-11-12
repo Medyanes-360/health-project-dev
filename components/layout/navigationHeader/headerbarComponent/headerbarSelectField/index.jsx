@@ -10,16 +10,19 @@ import { useState } from "react";
 
 const defaultCountry = "TR";
 
-const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
+const HeaderbarSelectField = ({
+  flags,
+  countryNames,
+  placeholder,
+  toggleSidebar,
+}) => {
   const data = treatmentDoctorClinicMockData;
-
   const countries = Country.getAllCountries();
   const [selectedCountry, setSelectedCountry] = useState(
     countries.find((country) => country.isoCode == defaultCountry)
   );
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
-  console.log(selectedCountry);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,13 +39,20 @@ const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
         );
         break;
     }
+    if (toggleSidebar) {
+      toggleSidebar();
+    }
+    setSearchValue({
+      name: "",
+      type: false,
+    });
   };
 
   return (
     // TODO: Grid olsun ve proplarla ayarlansın, Flag'lerin kalitesi, input width'i , dropdownlar focus gittiğinde otomatik kapanacak ,
     <form
       onSubmit={handleSubmit}
-      className="bg-white h-11 w-[481px] flex items-center  border rounded-md py-2 "
+      className="bg-white h-11 md:w-[481px] flex items-center border rounded-md py-2 "
     >
       <CountrySelectDropdown
         countries={countries}
@@ -76,7 +86,7 @@ const HeaderbarSelectField = ({ flags, countryNames, placeholder }) => {
               background:
                 "linear-gradient(325.39deg, #4EC9E5 6.94%, #2EAECB 94.28%)",
             }}
-            className="mr-2  !py-2 flex text-base font-[600] bg-primary !rounded-[4px] !px-5 text-white"
+            className="mr-2 !py-2 flex text-base font-[600] bg-primary !rounded-[4px] !px-4 md:!px-5 text-white"
           >
             <Image
               className="filter brightness-0 invert"

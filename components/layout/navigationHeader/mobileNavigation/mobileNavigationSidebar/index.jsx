@@ -6,6 +6,8 @@ import Link from "next/link";
 
 const MobileNavigationSidebar = (props) => {
   const sidebarData = props.sidebarData;
+  console.log(props);
+
   return (
     <div
       onClick={props.toggleSidebar}
@@ -48,6 +50,7 @@ const MobileNavigationSidebar = (props) => {
           <HeaderbarSelectField
             flags
             countryNames={false}
+            toggleSidebar={props.toggleSidebar}
             // placeholder length'ini istediğimiz length'e getirmek için space bırakıyoruz.
             placeholder="Search..             "
           />
