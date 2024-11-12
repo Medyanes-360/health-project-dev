@@ -76,19 +76,26 @@ export default function GetAFreeQuote() {
     >
       <div
         ref={cardRef}
-        className="  shadow-md  rounded-2xl   !w-[300px] !h-[250px] p-5 bg-white"
+        className="  shadow-md  rounded-2xl   !w-[300px] !h-[300px] p-5 bg-white flex flex-col items-center gap-8 justify-center"
       >
         <div className="flex   flex-col items-center justify-center space-y-3  ">
-          <h1 className="text-xl sm:text-2xl text-center">{data.title}</h1>
-          <p className="text-center">{data.description}</p>
+          <h1 className="ont-poppins text-sm font-medium leading-5 text-center">
+            {data.title}
+          </h1>
+          <p className="text-center font-poppins text-xs font-medium leading-5 text-[#0B8071]  ">
+            {data.description}
+          </p>
           <div className="flex items-center justify-center space-x-2 text-center ">
             {data.icons.map((iconData) => (
-              <div key={iconData.id}>
+              <div
+                key={iconData.id}
+                className="w-[28.16px] h-[29.86px] p-[8.14px] pt-2.5 gap-[6.79px] rounded-tl-[3.39px] rounded-br-[0px] rounded-bl-[0px] rounded-tr-[0px]  bg-[#52B8AB24]"
+              >
                 {/* Render the icon directly as a React component */}
                 <iconData.Img
-                  className="p-1 rounded-md border-[1.36px] text-[#0B8071] bg-[#52B8AB24] flex items-center justify-center"
-                  width={20}
-                  height={20}
+                  className=" text-[#0B8071]  flex items-center justify-center"
+                  width={11.88}
+                  height={13.57}
                 />
               </div>
             ))}
@@ -96,7 +103,7 @@ export default function GetAFreeQuote() {
         </div>
         <ButtonComponent
           className={
-            "!bg-primary !rounded-md !text-fourth !w-full !text-lg underline"
+            "!bg-primary !rounded-md font-inter !text-base text-white font-semibold leading-6  underline w-[181px] h-[50px] font-inter text-base font-semibold leading-[24px] !p-4 "
           }
           title={"Get A Free Quote"}
         />

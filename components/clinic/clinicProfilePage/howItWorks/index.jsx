@@ -22,16 +22,25 @@ const data = {
 
 const HowItWorks = () => {
   return (
-    <div className="flex items-center justify-between gap-4 mt-4 mb-4">
-      <h2 className="text-[#04285C] text-base "> {data.title} </h2>
-      <ul className="list-disc">
-        {data.texts.map((item, textIndex) => (
-          <li key={textIndex} className="text-sm mt-2 mb-2 text-[#04285C] ">
-            {item.text}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="flex items-center justify-between gap-4 mt-8 mb-8">
+        <h2 className="text-[#04285C] font-poppins text-base font-medium leading-5  ">
+          {" "}
+          {data.title}{" "}
+        </h2>
+        <ul className="list-disc">
+          {data.texts.map((item, textIndex) => (
+            <li
+              key={textIndex}
+              className="font-poppins text-sm font-normal leading-5 text-[#04285C] "
+            >
+              {item.text}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <hr className="mb-8"></hr>
+    </>
   );
 };
 
