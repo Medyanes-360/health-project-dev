@@ -59,7 +59,7 @@ const HeaderbarComponent = ({ navbarData }) => {
                 src="/assets/images/company_logo.png"
               />
             </div>
-            <HeaderbarSelectField placeholder="Enter the disease, hospital or doctor" />
+            <HeaderbarSelectField placeholder="Enter the treatment, clinic or doctor" />
           </div>
           <div className="flex ">
             <div className="hidden mr-5 min-[1135px]:flex items-center ">
