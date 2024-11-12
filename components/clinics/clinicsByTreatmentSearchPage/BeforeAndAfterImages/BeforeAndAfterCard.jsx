@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BeforeAfterPhotoSlider from "@/globalElements/beforeAfterPhotoSlider";
 
 const BeforeAndAfterCard = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState({
@@ -12,6 +13,8 @@ const BeforeAndAfterCard = ({ data }) => {
     medium: 0,
     small: 0,
   });
+
+  const [isHovered, setIsHovered] = useState(false);
 
   // References for sliders to control them manually
   const sliderBig = useRef(null);
@@ -28,7 +31,7 @@ const BeforeAndAfterCard = ({ data }) => {
     speed: 400,
     slidesToShow,
     slidesToScroll,
-    dots: true, // Ensure dots are enabled
+    dots: false,
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (current) =>
@@ -57,36 +60,24 @@ const BeforeAndAfterCard = ({ data }) => {
         </ul>
       </div>
     ),
-    customPaging: (i) => (
-      <div
-        className={`cursor-pointer transition-all duration-300  ${
-          currentSlide[screenType] / slidesToScroll === i
-            ? "bg-[#52B8AB] w-8 h-3"
-            : "bg-gray-300 w-3 h-3"
-        }`}
-        style={{
-          borderRadius: "999px",
-          display: "inline-block",
-          margin:
-            currentSlide[screenType] / slidesToScroll === i ? "0" : "0 8px",
-          position:
-            currentSlide[screenType] / slidesToScroll === i
-              ? "relative"
-              : "static",
-        }}
-      ></div>
-    ),
   });
 
-  const CardContent = ({ image }) => (
+  const CardContent = ({ images }) => (
     <div className="p-2">
-      <CardComponent className={"!px-5 !py-5 !mt-20 !rounded-2xl"}>
-        <div className="w-full relative aspect-[12/9] rounded-2xl">
-          <Image
-            src={image}
-            fill
-            className="object-cover object-center rounded-2xl"
-            alt="image"
+      <CardComponent className={"!px-5 !py-5 !mt-5 !rounded-2xl"}>
+        <div
+          // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+          className="w-full relative aspect-[12/9] rounded-2xl"
+        >
+          <BeforeAfterPhotoSlider
+            width={"400px"}
+            beforeImageSrc={images[0]}
+            afterImageSrc={images[1]}
+            containerclassname={"object-cover object-center rounded-2xl"}
           />
         </div>
       </CardComponent>
@@ -100,6 +91,7 @@ const BeforeAndAfterCard = ({ data }) => {
         <Slider
           {...createSliderSettings(3, 3, "big", sliderBig)}
           ref={sliderBig}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} {...item} />
@@ -107,26 +99,20 @@ const BeforeAndAfterCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-          <button
-            className="p-2 rounded-full bg-[#9199A3]/40"
-            onClick={() => sliderBig.current.slickPrev()}
-          >
+          <button onClick={() => sliderBig.current.slickPrev()}>
             <Image
-              src={"/assets/icons/left.png"}
+              src={"/assets/images/arrow-left.png"}
               alt=""
-              width={15}
-              height={15}
+              width={30}
+              height={30}
             />
           </button>
-          <button
-            className="p-2 rounded-full bg-[#52B8AB]/40"
-            onClick={() => sliderBig.current.slickNext()}
-          >
+          <button onClick={() => sliderBig.current.slickNext()}>
             <Image
-              src={"/assets/icons/right.png"}
+              src={"/assets/images/arrow-right.png"}
               alt=""
-              width={15}
-              height={15}
+              width={30}
+              height={30}
             />
           </button>
         </div>
@@ -137,6 +123,7 @@ const BeforeAndAfterCard = ({ data }) => {
         <Slider
           {...createSliderSettings(2, 2, "medium", sliderMedium)}
           ref={sliderMedium}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} {...item} />
@@ -144,26 +131,20 @@ const BeforeAndAfterCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-        <button
-            className="p-2 rounded-full bg-[#9199A3]/40"
-            onClick={() => sliderMedium.current.slickPrev()}
-          >
+          <button onClick={() => sliderMedium.current.slickPrev()}>
             <Image
-              src={"/assets/icons/left.png"}
+              src={"/assets/images/arrow-left.png"}
               alt=""
-              width={15}
-              height={15}
+              width={30}
+              height={30}
             />
           </button>
-          <button
-            className="p-2 rounded-full bg-[#52B8AB]/40"
-            onClick={() => sliderMedium.current.slickNext()}
-          >
+          <button onClick={() => sliderMedium.current.slickNext()}>
             <Image
-              src={"/assets/icons/right.png"}
+              src={"/assets/images/arrow-right.png"}
               alt=""
-              width={15}
-              height={15}
+              width={30}
+              height={30}
             />
           </button>
         </div>
@@ -174,6 +155,7 @@ const BeforeAndAfterCard = ({ data }) => {
         <Slider
           {...createSliderSettings(1, 1, "small", sliderSmall)}
           ref={sliderSmall}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} {...item} />
@@ -181,26 +163,20 @@ const BeforeAndAfterCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-        <button
-            className="p-2 rounded-full bg-[#9199A3]/40"
-            onClick={() => sliderSmall.current.slickPrev()}
-          >
+          <button onClick={() => sliderSmall.current.slickPrev()}>
             <Image
-              src={"/assets/icons/left.png"}
+              src={"/assets/images/arrow-left.png"}
               alt=""
-              width={15}
-              height={15}
+              width={30}
+              height={30}
             />
           </button>
-          <button
-            className="p-2 rounded-full bg-[#52B8AB]/40"
-            onClick={() => sliderSmall.current.slickNext()}
-          >
+          <button onClick={() => sliderSmall.current.slickNext()}>
             <Image
-              src={"/assets/icons/right.png"}
+              src={"/assets/images/arrow-right.png"}
               alt=""
-              width={15}
-              height={15}
+              width={30}
+              height={30}
             />
           </button>
         </div>
