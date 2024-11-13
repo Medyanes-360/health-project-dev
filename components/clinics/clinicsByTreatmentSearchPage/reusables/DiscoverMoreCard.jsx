@@ -18,16 +18,16 @@ const DiscoverMoreCardContent = ({ data }) => {
     price,
   } = data;
   const [image, setImage] = useState(clinicImages[0]);
-  const [activeTab, setActiveTab] = useState("clinic"); // State to manage active tab
+  const [activeTab, setActiveTab] = useState("clinic");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    setIsModalOpen(true); // Open the modal when a tab is clicked
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
   };
 
   return (
