@@ -50,7 +50,7 @@ const HeaderbarComponent = ({ navbarData }) => {
         >
           <div className="flex  ">
             {" "}
-            <div className=" flex items-center justify-center">
+            <Link className=" flex items-center justify-center" href="/">
               <Image
                 className="mr-4 "
                 alt="company logo"
@@ -58,7 +58,7 @@ const HeaderbarComponent = ({ navbarData }) => {
                 height={24}
                 src="/assets/images/company_logo.png"
               />
-            </div>
+            </Link>
             <HeaderbarSelectField placeholder="Enter the treatment, clinic or doctor" />
           </div>
           <div className="flex ">
