@@ -1,14 +1,13 @@
 "use client";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ExpandingQuestions({ title, description, index }) {
-  const [isExpanded, setIsExpanded] = useState(index === 0);
-
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
-  };
-
+export default function ExpandingQuestions({
+  title,
+  description,
+  index,
+  isExpanded,
+  onToggle,
+}) {
   return (
     <div className="my-1 flex justify-between gap-5 w-full ">
       <div className="flex-1">
@@ -17,7 +16,7 @@ export default function ExpandingQuestions({ title, description, index }) {
           className={`flex cursor-pointer items-center justify-between w-full transition-all duration-200 rounded-t-2xl ${
             isExpanded ? "bg-primary" : ""
           }`}
-          onClick={toggleExpanded}
+          onClick={() => onToggle(index)} // Trigger the toggle in parent
         >
           <div className="w-full px-2 py-3 rounded-t-xl flex-1">
             <h1
