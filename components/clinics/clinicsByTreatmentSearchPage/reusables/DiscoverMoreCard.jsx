@@ -18,27 +18,99 @@ const DiscoverMoreCardContent = ({ data }) => {
     price,
   } = data;
   const [image, setImage] = useState(clinicImages[0]);
+  const [activeTab, setActiveTab] = useState("clinic"); // State to manage active tab
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    setIsModalOpen(true); // Open the modal when a tab is clicked
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
   return (
     <>
-      {/* not responsive yet */}
-      <div className={"py-4"}>
-        <CardComponent className={'!p-0 !rounded-2xl !shadow'}>
+      {isModalOpen && (
+        <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg space-y-4 max-w-sm w-full">
+            <div className="flex justify-between items-center">
+              <h2 className="text-xl font-bold">
+                {activeTab === "clinic" && "Clinic Overview"}
+                {activeTab === "price" && "Price Information"}
+                {activeTab === "doctors" && "Doctor Details"}
+                {activeTab === "reviews" && "Reviews"}
+              </h2>
+              <button onClick={closeModal} className="text-xl">
+                x
+              </button>
+            </div>
+            <div>
+              {/* Conditionally render content based on active tab */}
+              {activeTab === "clinic" && (
+                <div>
+                  <h3 className="font-semibold">Clinic: {clinicName}</h3>
+                  <p>{description}</p>
+                  <p>Location: {location}</p>
+                </div>
+              )}
+              {activeTab === "price" && (
+                <div>
+                  <h3 className="font-semibold">Price: ${price}</h3>
+                  <p>Service: {serviceName}</p>
+                </div>
+              )}
+              {activeTab === "doctors" && (
+                <div>
+                  <h3 className="font-semibold">Doctor: {docName}</h3>
+                  <p>{docExperience} years of experience</p>
+                </div>
+              )}
+              {activeTab === "reviews" && (
+                <div>
+                  <h3 className="font-semibold">Reviews</h3>
+                  <p>Rating: {stars}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Main Card */}
+      <div className="py-4">
+        <CardComponent className="!p-0 !rounded-2xl !shadow">
           <div className="space-y-5">
             <div className="bg-white-dark p-5 flex justify-between items-center gap-3 rounded-t-2xl">
-              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
+              {/* Tab Buttons */}
+              <button
+                className="bg-white w-full py-1 text-center rounded-md"
+                onClick={() => handleTabClick("clinic")}
+              >
                 Clinic
-              </div>
-              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
+              </button>
+              <button
+                className="bg-white w-full py-1 text-center rounded-md"
+                onClick={() => handleTabClick("price")}
+              >
                 Price
-              </div>
-              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
+              </button>
+              <button
+                className="bg-white w-full py-1 text-center rounded-md"
+                onClick={() => handleTabClick("doctors")}
+              >
                 Doctors
-              </div>
-              <div className="bg-white w-full mx-auto py-1 text-center rounded-md">
+              </button>
+              <button
+                className="bg-white w-full py-1 text-center rounded-md"
+                onClick={() => handleTabClick("reviews")}
+              >
                 Reviews
-              </div>
+              </button>
             </div>
-            <div className="flex justify-between gap-20 p-8 h-full ">
+
+            <div className="flex justify-between gap-20 p-8 h-full">
               <div className="w-full aspect-square overflow-hidden relative">
                 <Image
                   src={image}
@@ -57,12 +129,11 @@ const DiscoverMoreCardContent = ({ data }) => {
                     className="object-cover object-center rounded-full overflow-hidden"
                     alt="clickIcon"
                   />
-
                   <div className="space-y-2">
                     <h1 className="font-bold">{clinicName}</h1>
                     <div className="flex items-center gap-1">
                       <Image
-                        src={"/assets/images/location.png"}
+                        src="/assets/images/location.png"
                         alt="img"
                         width={20}
                         height={20}
@@ -84,17 +155,15 @@ const DiscoverMoreCardContent = ({ data }) => {
                     className="object-cover object-center rounded-full overflow-hidden"
                     alt="clickIcon"
                   />
-
                   <div className="space-y-2">
                     <h1 className="font-bold">{docName}</h1>
                     <div className="flex gap-1 items-center">
                       <Image
-                        src={"/assets/images/timer.png"}
+                        src="/assets/images/timer.png"
                         alt="img"
                         width={20}
                         height={20}
                       />
-                      
                       <p className="text-primary">
                         {docExperience} years of experience
                       </p>
@@ -139,8 +208,9 @@ const DiscoverMoreCardContent = ({ data }) => {
                   <p className="text-center">{serviceName}</p>
                   <div className="flex flex-col justify-center gap-1 w-full text-center">
                     <p>
-                      {" "}
-                      <span className="text-red-500 font-bold text-3xl">${price}</span>
+                      <span className="text-red-500 font-bold text-3xl">
+                        ${price}
+                      </span>
                     </p>
                     <p>pre package</p>
                   </div>
@@ -148,11 +218,15 @@ const DiscoverMoreCardContent = ({ data }) => {
 
                 <div className="w-full space-y-3">
                   <ButtonComponent
-                    className={"!bg-primary !rounded-md !text-fourth !w-full !text-lg"}
+                    className={
+                      "!bg-primary !rounded-md !text-fourth !w-full !text-lg"
+                    }
                     title={"Get A Free Quote"}
                   />
                   <ButtonComponent
-                    className={"!text-primary !rounded-md !bg-[#EAEAEA] !w-full !text-lg"}
+                    className={
+                      "!text-primary !rounded-md !bg-[#EAEAEA] !w-full !text-lg"
+                    }
                     title={"Message Us"}
                   />
                 </div>
