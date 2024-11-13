@@ -103,22 +103,42 @@ export default function Component() {
     }
   };
 
+  const chatVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { type: "spring", stiffness: 300, damping: 30 },
+    },
+    exit: { opacity: 0, y: 50, scale: 0.9, transition: { duration: 0.2 } },
+  };
+
+  const messageVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 500, damping: 30 },
+    },
+  };
+
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed bottom-5 right-5 flex justify-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="bg-white shadow-lg rounded-lg overflow-hidden"
+            className="absolute bottom-16 right-0 z-10 bg-white shadow-lg rounded-lg overflow-hidden"
             style={{
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.7)",
             }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, height: "auto", width: "20rem" }}
-            exit={{ opacity: 0, height: 0, width: 0 }}
-            transition={{ duration: 0.3 }}
+            variants={chatVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            <div className="p-4">
+            <div className="p-4 w-80">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-semibold">
                   Sağlık Turizmi Asistanı
@@ -133,64 +153,77 @@ export default function Component() {
                 </motion.button>
               </div>
               <div className="space-y-4 h-64 overflow-y-auto">
-                {messages.map((msg, index) => (
-                  <div
-                    key={index}
-                    className={`flex ${
-                      msg.type === "user" ? "justify-end" : "justify-start"
-                    }`}
-                  >
-                    <div
-                      className={`max-w-[80%] p-3 rounded-lg relative ${
-                        msg.type === "user"
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted"
+                <AnimatePresence>
+                  {messages.map((msg, index) => (
+                    <motion.div
+                      key={index}
+                      className={`flex ${
+                        msg.type === "user" ? "justify-end" : "justify-start"
                       }`}
+                      variants={messageVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="hidden"
                     >
-                      {msg.text}
-                      {msg.subcategories && (
-                        <div className="mt-2 space-y-2">
-                          {msg.subcategories.map((sub, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => handleSubcategoryClick(sub)}
-                              className="block w-full text-left bg-gray-100 hover:bg-gray-200 p-2 rounded-lg"
-                            >
-                              {sub.title}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                      <div
+                        className={`max-w-[80%] p-3 rounded-lg relative ${
+                          msg.type === "user"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted"
+                        }`}
+                      >
+                        {msg.text}
+                        {msg.subcategories && (
+                          <div className="mt-2 space-y-2">
+                            {msg.subcategories.map((sub, idx) => (
+                              <button
+                                key={idx}
+                                onClick={() => handleSubcategoryClick(sub)}
+                                className="block w-full text-left bg-gray-100 hover:bg-gray-200 p-2 rounded-lg"
+                              >
+                                {sub.title}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
                 <div ref={chatEndRef} />
               </div>
               <div className="mt-4">
                 {categories.map((category) => (
-                  <button
+                  <motion.button
                     key={category.id}
                     onClick={() => handleOptionClick(category)}
                     className="block w-full bg-orange-500 text-white text-left p-3 rounded-lg mt-2 hover:bg-orange-600"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     {category.title}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      {!isOpen && (
-        <motion.button
-          className="w-14 h-14 bg-orange-500 rounded-full flex justify-center items-center shadow-lg hover:bg-orange-600"
-          onClick={() => setIsOpen(true)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <AiOutlineMessage size={28} color="white" />
-        </motion.button>
-      )}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            className="w-14 h-14 bg-orange-500 rounded-full flex justify-center items-center shadow-lg hover:bg-orange-600"
+            onClick={() => setIsOpen(true)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+          >
+            <AiOutlineMessage size={28} color="white" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
