@@ -104,10 +104,14 @@ export default function Location({ address }) {
       <div className="flex items-center justify-between text-[#04285C] mb-8">
         <div className="flex gap-4 items-center ">
           <Image src={data.icon} width={40} height={40} />
-          <span className="w-[150px]">{data.text}</span>
+          <span className="w-[150px] font-poppins text-sm font-normal leading-5">
+            {data.text}
+          </span>
         </div>
         <div>
-          <span>{data.date}</span>
+          <span className="font-poppins text-sm font-normal leading-5 ">
+            {data.date}
+          </span>
         </div>
       </div>
       <hr></hr>

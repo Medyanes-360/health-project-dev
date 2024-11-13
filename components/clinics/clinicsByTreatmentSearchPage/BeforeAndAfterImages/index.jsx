@@ -3,19 +3,19 @@ import BeforeAndAfterCard from "./BeforeAndAfterCard";
 
 const data = [
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
 ];
 

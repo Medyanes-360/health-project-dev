@@ -5,9 +5,11 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BeforeAfterPhotoSlider from "@/globalElements/beforeAfterPhotoSlider";
 
 const RecentHairTransplantReviewCard = ({ data }) => {
   // array of {icon, rate, name, operation, county, date, image, title, description, hospitalName}
+  const [isHovered, setIsHovered] = useState(false);
 
   const [currentSlide, setCurrentSlide] = useState({
     big: 0,
@@ -37,6 +39,115 @@ const RecentHairTransplantReviewCard = ({ data }) => {
     arrows: false, // Disable default arrows
   });
 
+  const CardContent = ({ data }) => {
+    const {
+      icon,
+      name,
+      operation,
+      county,
+      date,
+      images,
+      title,
+      description,
+      hospitalName,
+      rate,
+    } = data;
+
+    const [expanded, setExpanded] = useState(false); // Expanded state for description
+
+    const toggleExpanded = () => {
+      setExpanded(!expanded); // Toggle the expanded state
+    };
+
+    return (
+      <div className="p-4">
+        <CardComponent className={"!p-0 "}>
+          <div className="sm:min-h-[600px]">
+            <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px] rounded-t-2xl">
+              {/* Image */}
+              <div className="h-16 w-16 rounded-full grid place-content-center bg-primary/30">
+                <div className="w-10 aspect-[12/12] relative overflow-hidden ">
+                  <Image
+                    src={icon}
+                    alt="icon"
+                    fill
+                    className="object-center object-cover rounded-md"
+                  />
+                </div>
+              </div>
+
+              {/* Doctor Data */}
+              <div className="space-y-2 text-sm">
+                <h1>
+                  {name} / {operation}
+                </h1>
+                <p className="text-xs">
+                  {county} {date}
+                </p>
+              </div>
+
+              {/* Rating */}
+              <div>
+                <h1 className="flex items-center gap-1">
+                  <span className="text-[#FFAA00] text-2xl">★</span>
+                  {rate}
+                </h1>
+              </div>
+            </div>
+
+            <div className="px-6 py-5 space-y-3">
+              <div
+                // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onTouchStart={() => setIsHovered(true)}
+                onTouchEnd={() => setIsHovered(false)}
+                className="w-full relative aspect-[12/9] rounded-2xl"
+              >
+                <BeforeAfterPhotoSlider
+                  width={"400px"}
+                  beforeImageSrc={images[0]}
+                  afterImageSrc={images[1]}
+                  containerclassname={"object-cover object-center rounded-2xl"}
+                />
+              </div>
+
+              <h1 className="text-sm">{title}</h1>
+
+              {/* Description with toggle */}
+              <p
+                className={`text-sm font-light transition-all duration-300 ${
+                  expanded ? "line-clamp-4" : "line-clamp-2"
+                }`}
+              >
+                {description}
+              </p>
+              <button
+                onClick={toggleExpanded}
+                className="text-primary mt-2 underline"
+              >
+                {expanded ? "Show Less" : "Show More"}
+              </button>
+
+              <div className="flex gap-1">
+                {/* Location icon */}
+                <div className="flex gap-2 items-center">
+                  <Image
+                    width={25}
+                    height={25}
+                    alt="img"
+                    src={"/assets/images/health.png"}
+                  />
+                  <p className="text-primary text-sm">{hospitalName}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardComponent>
+      </div>
+    );
+  };
+
   return (
     <>
       {/* Big Slider */}
@@ -44,6 +155,7 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         <Slider
           {...createSliderSettings(3, 3, "big", sliderBig)}
           ref={sliderBig}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} data={item} />
@@ -81,6 +193,7 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         <Slider
           {...createSliderSettings(2, 2, "medium", sliderMedium)}
           ref={sliderMedium}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} data={item} />
@@ -88,7 +201,7 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-        <button
+          <button
             className="p-2 rounded-full bg-[#9199A3]/40"
             onClick={() => sliderMedium.current.slickPrev()}
           >
@@ -118,6 +231,7 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         <Slider
           {...createSliderSettings(1, 1, "small", sliderSmall)}
           ref={sliderSmall}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} data={item} />
@@ -125,7 +239,7 @@ const RecentHairTransplantReviewCard = ({ data }) => {
         </Slider>
         {/* Custom forward and back buttons */}
         <div className="flex justify-center mt-4 gap-7">
-        <button
+          <button
             className="p-2 rounded-full bg-[#9199A3]/40"
             onClick={() => sliderSmall.current.slickPrev()}
           >
@@ -154,105 +268,3 @@ const RecentHairTransplantReviewCard = ({ data }) => {
 };
 
 export default RecentHairTransplantReviewCard;
-
-const CardContent = ({ data }) => {
-  const {
-    icon,
-    name,
-    operation,
-    county,
-    date,
-    image,
-    title,
-    description,
-    hospitalName,
-    rate,
-  } = data;
-
-  const [expanded, setExpanded] = useState(false); // Expanded state for description
-
-  const toggleExpanded = () => {
-    setExpanded(!expanded); // Toggle the expanded state
-  };
-
-  return (
-    <div className="p-4">
-      <CardComponent className={"!p-0 "}>
-        <div className="sm:min-h-[600px]">
-          <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px] rounded-t-2xl">
-            {/* Image */}
-            <div className="h-16 w-16 rounded-full grid place-content-center bg-primary/30">
-              <div className="w-10 aspect-[12/12] relative overflow-hidden ">
-                <Image
-                  src={icon}
-                  alt="icon"
-                  fill
-                  className="object-center object-cover rounded-md"
-                />
-              </div>
-            </div>
-
-            {/* Doctor Data */}
-            <div className="space-y-2 text-sm">
-              <h1>
-                {name} / {operation}
-              </h1>
-              <p className="text-xs">
-                {county} {date}
-              </p>
-            </div>
-
-            {/* Rating */}
-            <div>
-              <h1 className="flex items-center gap-1">
-                <span className="text-[#FFAA00] text-2xl">★</span>
-                {rate}
-              </h1>
-            </div>
-          </div>
-
-          <div className="px-6 py-5 space-y-3">
-            <div className="w-[90%] mx-auto aspect-[12/8] relative overflow-hidden">
-              <Image
-                src={image}
-                alt="img"
-                fill
-                className="object-center object-cover rounded-md"
-              />
-            </div>
-
-            <h1 className="text-sm">{title}</h1>
-
-            {/* Description with toggle */}
-            <p
-              className={`text-sm font-light transition-all duration-300 ${
-                expanded ? "line-clamp-4" : "line-clamp-2"
-              }`}
-            >
-              {description}
-            </p>
-            <button
-              onClick={toggleExpanded}
-              className="text-primary mt-2 underline"
-            >
-              {expanded ? "Show Less" : "Show More"}
-            </button>
-
-            <div className="flex gap-1">
-              {/* Location icon */}
-              <div className="flex gap-2 items-center">
-                <Image
-                  width={25}
-                  height={25}
-                  alt="img"
-                  src={"/assets/images/health.png"}
-                />
-                <p className="text-primary text-sm">{hospitalName}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </CardComponent>
-    </div>
-  );
-};

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 const ClinicCarousel = ({ clinicsData }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -12,11 +13,11 @@ const ClinicCarousel = ({ clinicsData }) => {
 
   const updateSlidesToShow = () => {
     if (window.innerWidth <= 767) {
-      setSlidesToShow(2); 
+      setSlidesToShow(2);
     } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-      setSlidesToShow(2); 
+      setSlidesToShow(2);
     } else {
-      setSlidesToShow(4); 
+      setSlidesToShow(4);
     }
   };
 
@@ -78,7 +79,11 @@ const ClinicCarousel = ({ clinicsData }) => {
   return (
     <Slider {...settings}>
       {clinicsData.map((clinic) => (
-        <div key={clinic.id} className="px-2 py-2">
+        <Link
+          href={`clinic/${clinic.url}`}
+          key={clinic.id}
+          className="px-2 py-2"
+        >
           <div className="border-[0.5px] border-[#52B8AB] rounded-2xl overflow-hidden shadow-md relative mt-2 mb-2">
             <Image
               src={clinic.image}
@@ -109,7 +114,7 @@ const ClinicCarousel = ({ clinicsData }) => {
               ))}
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </Slider>
   );

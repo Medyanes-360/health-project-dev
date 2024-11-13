@@ -8,7 +8,7 @@ const data = [
     operation: "Hair Transplant",
     county: "Saudi Arabia",
     date: "Jan 15, 2823", // here we will use formatter function,
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
     title:
       "Thank you very much to her for her timely and quick help throughout the entire period",
     description:
@@ -23,7 +23,7 @@ const data = [
     operation: "Hair Transplant",
     county: "Turkey",
     date: "Feb 28, 2823",
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
     title: "Amazing experience with great staff",
     description:
       "The whole process was smooth from start to finish. Special thanks to Dr. Omar for his professionalism and constant support. Highly recommend this clinic.",
@@ -36,7 +36,7 @@ const data = [
     operation: "Hair Transplant",
     county: "United Arab Emirates",
     date: "Mar 10, 2823",
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
     title: "Incredible results, beyond my expectations",
     description:
       "The results are amazing, and the staff were very friendly and professional. I am extremely satisfied with the care and outcome. A big thank you to the whole team!",
@@ -49,7 +49,7 @@ const data = [
     operation: "Hair Transplant",
     county: "Qatar",
     date: "Apr 5, 2823",
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
     title: "Thankful for the wonderful service",
     description:
       "I couldn’t be happier with the results. The doctor was fantastic, and the staff was always there to help me with every concern. Highly recommend!",

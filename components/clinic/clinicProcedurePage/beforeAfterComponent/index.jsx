@@ -4,19 +4,19 @@ import Image from "next/image";
 
 const data = [
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
   {
-    image: "/assets/images/beforeAfter.png",
+    images: ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
   },
 ];
 

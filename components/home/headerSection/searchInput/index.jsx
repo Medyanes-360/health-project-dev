@@ -1,33 +1,44 @@
 "use client";
 import AutoCompleteInput from "@/globalElements/autoCompleteInput";
-
 import ButtonComponent from "@/globalElements/Button";
 import Image from "next/image";
 import { useState } from "react";
 import AutoCompleteLocationInput from "./autoCompleteLocationInput";
 import {
-  diseaseDoctorHospitalMockData,
   popularSuggestionsMockData,
+  treatmentDoctorClinicMockData,
 } from "@/data/mocks/searchInputMockData";
+import { useRouter } from "next/navigation";
 
 const HeaderSectionSearchInput = () => {
   const suggestions = popularSuggestionsMockData;
-  const diseaseSearchFieldData = diseaseDoctorHospitalMockData;
+  const treatmentSearchFieldData = treatmentDoctorClinicMockData;
   const [searchValue, setSearchValue] = useState("");
   const [locationValue, setLocationValue] = useState("");
+  const router = useRouter();
 
   const autoFillSuggestionHandler = (suggestion) => {
     setSearchValue(suggestion);
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("*************");
-    console.log("location:");
-    console.log(locationValue);
-    console.log("---");
-    console.log("search value:");
-    console.log(searchValue);
-    console.log("*************");
+    switch (searchValue.type) {
+      case "clinic":
+        router.push(`/clinic/${searchValue.url}`);
+        break;
+      case "doctor":
+        router.push(`/doctor/${searchValue.url}`);
+        break;
+      case "treatment":
+        router.push(
+          `/clinics/${searchValue.url}?country=${locationValue.countryCode}`
+        );
+        break;
+    }
+    setSearchValue({
+      name: "",
+      type: false,
+    });
   };
   return (
     <>
@@ -47,8 +58,8 @@ const HeaderSectionSearchInput = () => {
               />
 
               <AutoCompleteInput
-                placeholder={"Enter the disease, hospital or doctor"}
-                data={diseaseSearchFieldData}
+                placeholder={"Enter the treatment, clinic or doctor"}
+                data={treatmentSearchFieldData}
                 value={searchValue}
                 setValue={setSearchValue}
                 inputclassname={"text-sm  sm:pl-10  pr-2   sm:text-base "}

@@ -23,7 +23,7 @@ export default function AdditionalServicesDropdown() {
       <ul class="flex flex-col gap-2 w-full  ">
         <li>
           <details class="group " open>
-            <summary class="bg-[#eef8f7] flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-14">
+            <summary class="bg-[#eef8f7] flex items-center justify-between gap-2 p-[1.5rem] font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-[72px]">
               <span class="flex gap-2">
                 {/* <img
                       class="w-6 h-6 rounded-lg"
@@ -31,7 +31,7 @@ export default function AdditionalServicesDropdown() {
                       alt=""
                     /> */}
 
-                <span className="font-light font-poppins">
+                <span className="font-poppins text-sm font-semibold leading-6 text-[#637381]">
                   Additional Services{" "}
                 </span>
               </span>

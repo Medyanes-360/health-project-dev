@@ -60,13 +60,16 @@ export default function GetAFreeConsultationForm() {
           }}
         >
           {({ isSubmitting, values, setFieldValue, errors, touched }) => (
-            <Form className="space-y-4 p-5 text-[#061C3D]">
+            <Form className="space-y-4 p-5 text-[#061C3D] flex flex-col gap-4">
               {/* Phone input */}
               <div className="space-y-1 text-start">
-                <label htmlFor="phone" className="text-sm">
+                <label
+                  htmlFor="phone"
+                  className="font-lexend text-sm font-light leading-5 text-left text-[#061C3D]"
+                >
                   Enter your phone number
                 </label>
-                <div className="space-y-1">
+                <div className="space-y-1 h-[48px] ">
                   <Field
                     as={CustomInput}
                     type="input"
@@ -82,10 +85,13 @@ export default function GetAFreeConsultationForm() {
 
               {/* Email input */}
               <div className="space-y-1 text-start">
-                <label htmlFor="email" className="text-sm">
+                <label
+                  htmlFor="email"
+                  className="font-lexend text-sm font-light leading-5 text-left text-[#061C3D]"
+                >
                   Enter your email
                 </label>
-                <div className="space-y-1">
+                <div className="space-y-1 h-[48px]">
                   <Field
                     as={CustomInput}
                     type="input"
@@ -101,10 +107,13 @@ export default function GetAFreeConsultationForm() {
 
               {/* Description input */}
               <div className="space-y-1 text-start">
-                <label htmlFor="description" className="text-sm">
+                <label
+                  htmlFor="description"
+                  className="font-lexend text-sm font-light leading-5 text-left text-[#061C3D]"
+                >
                   Enter your description
                 </label>
-                <div className="space-y-1">
+                <div className="space-y-1 h-[48px]">
                   <Field
                     as={CustomInput}
                     type="input"
@@ -121,26 +130,34 @@ export default function GetAFreeConsultationForm() {
               </div>
 
               {/* Agreement checkbox */}
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-start h-[70px] ">
                 <Field type="checkbox" name="agreed" className="h-5 w-5" />
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="agree" className="text-start text-sm">
+                  <label
+                    htmlFor="agree"
+                    className="text-start text-sm font-poppins text-sm font-normal leading-5"
+                  >
                     I agree to the Terms of use, Privacy policy, and receive
                     marketing letters that may be of interest.
                   </label>
-                  <label htmlFor="agree" className="text-start text-sm">
+                  <label
+                    htmlFor="agree"
+                    className="text-start text-sm font-poppins text-sm font-normal leading-5"
+                  >
                     This site is protected by reCAPTCHA and the Google Privacy
                     Policy and Terms of Service apply.
                   </label>
                 </div>
               </div>
               {errors.agreed && touched.agreed && (
-                <div className="text-red-600 text-sm">{errors.agreed}</div>
+                <div className="text-red-600 text-sm space-y-10 ">
+                  {errors.agreed}
+                </div>
               )}
 
-              <div className="w-full flex justify-start">
+              <div className="w-full flex justify-start fixed bottom-[50px] ">
                 <ButtonComponent
-                  className="!bg-primary !text-white !rounded-md "
+                  className="!bg-primary !text-white !rounded-md font-lexend text-[17px] font-medium leading-[56px] w-[216px] h-[56px] "
                   type="submit"
                   containerClassName={"flex justify-end w-full"}
                   title={isSubmitting ? "Submitting..." : "Mesaj Gönder --> "}
@@ -153,7 +170,13 @@ export default function GetAFreeConsultationForm() {
 
         {/* Submission error message */}
         {submitError && (
-          <p className="text-center text-red-600 text-xl">{submitError}</p>
+          <p
+            className="margin-top: 5px;
+  font-size: 0.875rem; /* Daha küçük font boyutu */
+  color: #e63946; /* Hata mesajları için kırmızı renk */"
+          >
+            {submitError}
+          </p>
         )}
       </CardComponent>
     </MotionDiv>

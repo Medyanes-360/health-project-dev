@@ -2,36 +2,52 @@ import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 
 export default function DentalTreatmentDropDown() {
-  const data = [
-    {
-      sub_heading_5: "Treatments prices in the clinic",
-      text_5:
-        "Last price update — 29.04.2024. Prices can be changed depending on the medical case and doctor's recommendations.",
-    },
-  ];
+  const data = {
+    sub_heading_5: "Treatments prices in the clinic",
+    text_5:
+      "Last price update — 29.04.2024. Prices can be changed depending on the medical case and doctor's recommendations.",
+    treatments: [
+      {
+        name: "Computer-assisted dental implant",
+        priceRange: "$470 - $772",
+      },
+      {
+        name: "Computer-assisted dental implant",
+        priceRange: "$200 - $350",
+      },
+      {
+        name: "Computer-assisted dental implant",
+        priceRange: "$150 - $250",
+      },
+      {
+        name: "Computer-assisted dental implant",
+        priceRange: "$500 - $900",
+      },
+      {
+        name: "Computer-assisted dental implant",
+        priceRange: "$100 - $200",
+      },
+    ],
+  };
+
   return (
     <div id="DentalTreatmentDropDown">
-      <div className="">
-        <h2 className="font-medium text-lg sm:text-2xl">
+      <div className="flex flex-col gap-8">
+        <h2 className="font-poppins text-lg font-semibold leading-6">
           {data.sub_heading_5}
         </h2>
-
-        <p>{data.text_5}</p>
+        <p className="font-poppins text-sm font-normal text-[0.85rem] leading-6 ">
+          {data.text_5}
+        </p>
       </div>
-      {/* /* Treatments prices in the clinic dropdown start
-       */}
-      <ul class="flex flex-col gap-2 w-full mx-auto ">
-        <li>
-          <details class="group" open>
-            <summary class="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-14">
-              <span class="flex gap-2">
-                {/* <img
-                      class="w-6 h-6 rounded-lg"
-                      src="https://lh3.googleusercontent.com/a/AGNmyxbSlMgTRzE3_SMIxpDAhpNad-_CN5_tmph1NQ1KhA=s96-c"
-                      alt=""
-                    /> */}
 
-                <span className="font-light font-poppins">
+      {/* Treatments prices in the clinic dropdown start */}
+      <ul className="flex flex-col gap-2 w-full mx-auto mt-8">
+        <li>
+          <details className="group" open>
+            <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-[54px] ">
+              <span className="flex gap-2">
+                <span className="font-poppins text-sm font-normal leading-[22px] text-[#637381]">
                   Dental Treatment
                 </span>
               </span>
@@ -43,37 +59,36 @@ export default function DentalTreatmentDropDown() {
                 height={24}
                 className="transition group-open:rotate-180"
               />
-              {/* <svg
-                    class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg> */}
             </summary>
 
-            <article class="px-4 pb-4 w-full mb-4">
-              <div class="bg-[#D9D9D91F] shadow-md rounded-md p-4 mx-auto  mt-8 w-full">
+            <article className="px-4 pb-4 w-full mb-4">
+              <div className="bg-[#D9D9D91F] shadow-md rounded-md p-2 mx-auto mt-8 w-full">
                 <div className="flex items-center justify-around bg-[#EFEFEF] h-14 rounded">
-                  <h2 class="text-sm font-medium ">Treatment</h2>
-                  <h2 class="text-sm font-medium ">Price</h2>
+                  <h2 className="font-poppins text-xs font-semibold leading-6 w-[140%] text-center ">
+                    Treatment
+                  </h2>
+                  <h2 className="font-poppins text-xs font-semibold leading-6 w-1/2 text-center">
+                    Price
+                  </h2>
                 </div>
 
                 <ul>
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
-                        Computer-assisted dental implant
-                      </span>
-                    </div>
-                    <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light ">$470 - $772</span>
+                  {/* Mapping over treatments data to generate the list */}
+                  {data.treatments.map((treatment, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center justify-between  border-gray-300 bg-[#FFFFFF]  mt-2.5 h-[54px] rounded"
+                    >
+                      <div className="flex items-center w-6/12 justify-center">
+                        <span className="align-center text-[#212B36] w-fit font-poppins text-sm font-normal leading-[22px]">
+                          {treatment.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center w-6/12 w-fit justify-between gap-20">
+                        <span className="font-poppins text-sm font-normal leading-[22px] text-[#637381]">
+                          {treatment.priceRange}
+                        </span>
+                      </div>
                       <Image
                         src={"/assets/clinic/arrow-square-right.svg"}
                         alt="arrow-square-right"
@@ -81,85 +96,16 @@ export default function DentalTreatmentDropDown() {
                         height={24}
                         className="mr-4"
                       />
-                    </div>
-                  </li>{" "}
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
-                        Computer-assisted dental implant
-                      </span>
-                    </div>
-                    <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
-                      <Image
-                        src={"/assets/clinic/arrow-square-right.svg"}
-                        alt="arrow-square-right"
-                        width={24}
-                        height={24}
-                        className="mr-4"
-                      />
-                    </div>
-                  </li>{" "}
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
-                        Computer-assisted dental implant
-                      </span>
-                    </div>
-                    <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
-                      <Image
-                        src={"/assets/clinic/arrow-square-right.svg"}
-                        alt="arrow-square-right"
-                        width={24}
-                        height={24}
-                        className="mr-4"
-                      />
-                    </div>
-                  </li>{" "}
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
-                        Computer-assisted dental implant
-                      </span>
-                    </div>
-                    <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
-                      <Image
-                        src={"/assets/clinic/arrow-square-right.svg"}
-                        alt="arrow-square-right"
-                        width={24}
-                        height={24}
-                        className="mr-4"
-                      />
-                    </div>
-                  </li>
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
-                        Computer-assisted dental implant
-                      </span>
-                    </div>
-                    <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
-                      <Image
-                        src={"/assets/clinic/arrow-square-right.svg"}
-                        alt="arrow-square-right"
-                        width={24}
-                        height={24}
-                        className="mr-4"
-                      />
-                    </div>
-                  </li>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </article>
           </details>
         </li>
       </ul>
-      {/* /* Treatments prices in the clinic dropdown end
-       */}
-      <hr></hr>
+      {/* Treatments prices in the clinic dropdown end */}
+      <hr />
     </div>
   );
 }

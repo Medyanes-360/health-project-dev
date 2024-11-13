@@ -60,8 +60,10 @@ export default function GetAFreeConsultation() {
       }}
       className="flex text-fourth justify-center  flex items-center py-5 sm:py-0 relative  h-[644px] "
     >
-      <div className="flex flex-col items-start justify-center gap-20 w-6/12 bg-primary h-full w-full pl-8  rounded-l-2xl">
-        <h1 className="text-sm ">{texts.textTop}</h1>
+      <div className="flex flex-col items-start justify-center gap-20 w-6/12 bg-primary h-full w-[45%] pl-8  rounded-l-2xl">
+        <h1 className="font-lexend text-sm font-semibold leading-[44px] tracking-[-0.015em] ">
+          {texts.textTop}
+        </h1>
 
         <div className="w-full space-y-3">
           {items.map(({ Img, text, iconText, id }) => (
@@ -77,8 +79,10 @@ export default function GetAFreeConsultation() {
               </div>
 
               <div className="flex flex-col ">
-                <span className="text-xl opacity-15">{iconText}</span>
-                <span className="text-xl leading-7 font-['Lexend'] ">
+                <span className="font-lexend text-sm font-normal leading-[14px] tracking-[0.01em] opacity-50">
+                  {iconText}
+                </span>
+                <span className="font-lexend text-lg font-light leading-7 ">
                   {text}
                 </span>
               </div>
@@ -88,8 +92,10 @@ export default function GetAFreeConsultation() {
 
         <div className="space-y-3">
           <div className="flex gap-4 items-center justify-center ">
-            <hr className="border-[2px] w-14 rounded  border-white  "></hr>
-            <p>{texts.textBottom}</p>
+            <hr className="w-[21.71px] h-0 gap-0 border-t-[1.36px] border-solid border-[#FFFFFF] opacity-1  "></hr>
+            <p className="font-lexend text-[10.86px] font-normal leading-[16.29px]">
+              {texts.textBottom}
+            </p>
           </div>
 
           <div className="flex gap-1">
@@ -104,7 +110,7 @@ export default function GetAFreeConsultation() {
           </div>
         </div>
       </div>
-      <div className="w-6/12 text-red text-center h-full rounded-r-2xl">
+      <div className="w-6/12 text-red text-center h-full rounded-r-2xl w-[65%]">
         <GetAFreeConsultationForm />
       </div>
     </MotionDiv>

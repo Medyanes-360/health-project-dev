@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BeforeAfterPhotoSlider from "@/globalElements/beforeAfterPhotoSlider";
 
 const BeforeAndAfterCard = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState({
@@ -12,6 +13,8 @@ const BeforeAndAfterCard = ({ data }) => {
     medium: 0,
     small: 0,
   });
+
+  const [isHovered, setIsHovered] = useState(false);
 
   // References for sliders to control them manually
   const sliderBig = useRef(null);
@@ -59,15 +62,22 @@ const BeforeAndAfterCard = ({ data }) => {
     ),
   });
 
-  const CardContent = ({ image }) => (
+  const CardContent = ({ images }) => (
     <div className="p-2">
       <CardComponent className={"!px-5 !py-5 !mt-5 !rounded-2xl"}>
-        <div className="w-full relative aspect-[12/9] rounded-2xl">
-          <Image
-            src={image}
-            fill
-            className="object-cover object-center rounded-2xl"
-            alt="image"
+        <div
+          // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+          className="w-full relative aspect-[12/9] rounded-2xl"
+        >
+          <BeforeAfterPhotoSlider
+            width={"400px"}
+            beforeImageSrc={images[0]}
+            afterImageSrc={images[1]}
+            containerclassname={"object-cover object-center rounded-2xl"}
           />
         </div>
       </CardComponent>
@@ -81,6 +91,7 @@ const BeforeAndAfterCard = ({ data }) => {
         <Slider
           {...createSliderSettings(3, 3, "big", sliderBig)}
           ref={sliderBig}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} {...item} />
@@ -112,6 +123,7 @@ const BeforeAndAfterCard = ({ data }) => {
         <Slider
           {...createSliderSettings(2, 2, "medium", sliderMedium)}
           ref={sliderMedium}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} {...item} />
@@ -143,6 +155,7 @@ const BeforeAndAfterCard = ({ data }) => {
         <Slider
           {...createSliderSettings(1, 1, "small", sliderSmall)}
           ref={sliderSmall}
+          swipe={!isHovered}
         >
           {data.map((item, i) => (
             <CardContent key={i} {...item} />
