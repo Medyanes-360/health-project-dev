@@ -26,18 +26,17 @@ export default function BeforeAfterPhotoSlider({
       <div
         style={{
           backgroundImage: `url(${beforeImageSrc})`,
-          backgroundSize: `${width} 100%`,
+          // backgroundSize: `${width} 100%`,
         }}
-        className="   absolute top-0 left-0 w-full h-full bg-no-repeat "
+        className="absolute top-0 left-0 bg-center bg-cover w-full h-full bg-no-repeat"
       ></div>
       <div
         ref={foregroundImgRef}
         style={{
           backgroundImage: `url(${afterImageSrc})`,
-
           backgroundSize: `${width} 100%`,
         }}
-        className=" w-[50%]  absolute top-0 left-0  h-full bg-no-repeat "
+        className=" w-[50%] absolute top-0 left-0 bg-cover h-full bg-no-repeat "
       ></div>
       <input
         type="range"
