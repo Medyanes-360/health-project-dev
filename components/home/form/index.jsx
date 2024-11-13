@@ -12,7 +12,7 @@ const FormSection = () => {
           <div className="flex gap-7 items-center px-6 py-3 ">
             <MotionDiv
               initial={{
-                x: "100px",
+                x: "-100px", // Start from outside the left edge
                 opacity: 0,
               }}
               whileInView={{
@@ -39,7 +39,7 @@ const FormSection = () => {
             </MotionDiv>
             <MotionDiv
               initial={{
-                x: "-100px",
+                x: "100px", // Start from outside the right edge
                 opacity: 0,
               }}
               whileInView={{
