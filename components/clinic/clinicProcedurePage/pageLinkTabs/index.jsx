@@ -16,7 +16,9 @@ export default function PageLinkTabs() {
           "fixed",
           "bg-white",
           "border-y-4",
-          "border-gray-100"
+          "border-gray-100",
+          "transition-all",
+          "duration-300"
         );
         headerBarRef.current.classList.remove("bg-transparent");
 
@@ -26,7 +28,9 @@ export default function PageLinkTabs() {
           "fixed",
           "bg-white",
           "border-y-4",
-          "border-gray-100"
+          "border-gray-100",
+          "transition-all",
+          "duration-300"
         );
       }
     };
