@@ -37,7 +37,6 @@ export default function GetAFreeQuote() {
   // sticky :
 
   useEffect(() => {
-    console.log(cardRef.current);
     const setCardSticky = () => {
       const parentTop = parentRef.current.getBoundingClientRect().top;
       const parentBottom = parentRef.current.getBoundingClientRect().bottom;

@@ -22,14 +22,19 @@ export default function DirectTabs() {
 
   const headerBarRef = useRef(null);
   const topBarHeight = 520;
-  let headerBarHeight = 100;
+  let headerBarHeight = 80;
 
   useEffect(() => {
     const setHeaderSticky = () => {
-      if (window.scrollY > topBarHeight && headerBarRef.current) {
+      if (
+        window.scrollY > topBarHeight + headerBarHeight &&
+        headerBarRef.current
+      ) {
         headerBarRef.current.classList.add("fixed");
-        headerBarHeight = 0;
-      } else if (window.scrollY <= topBarHeight && headerBarRef.current) {
+      } else if (
+        window.scrollY <= topBarHeight + headerBarHeight &&
+        headerBarRef.current
+      ) {
         headerBarRef.current.classList.remove("fixed");
       }
     };
@@ -45,12 +50,12 @@ export default function DirectTabs() {
 
   return (
     <div className="w-full  h-full" style={{ height: `${headerBarHeight}px` }}>
-      <div ref={headerBarRef} className="top-0 w-full  z-[10000000]">
+      <div ref={headerBarRef} className="top-0 w-full  z-[5000000000000] ">
         <ExtraLargePageContainer
-          className=" py-3"
+          className=" "
           style={{ height: `${headerBarHeight}px` }}
         >
-          <div className="flex items-center px-6 justify-between bg-[#eef8f7] h-20 rounded-xl">
+          <div className="flex items-center px-6 justify-between bg-white border-b h-20 rounded-xl">
             {tabs.map((tab, index) => (
               <span
                 key={index}
