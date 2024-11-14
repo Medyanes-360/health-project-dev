@@ -101,6 +101,12 @@ export default function Location({ address }) {
           </MotionDiv>
         </div>
       </div>
+      <div className="mb-8 p-[0.2rem] sm:hidden block text-left">
+        <p className="font-poppins text-sm font-normal leading-6 ">
+          Félemelet 5a, Szent István krt. 4-Kapucsengő: 26, 1137, Budapest,
+          Hungary
+        </p>
+      </div>
       <div className="flex items-center justify-between text-[#04285C] mb-8">
         <div className="flex gap-4 items-center ">
           <Image src={data.icon} width={40} height={40} />
@@ -108,8 +114,8 @@ export default function Location({ address }) {
             {data.text}
           </span>
         </div>
-        <div>
-          <span className="font-poppins text-sm font-normal leading-5 ">
+        <div className="text-end">
+          <span className="font-poppins text-sm font-normal leading-5  ">
             {data.date}
           </span>
         </div>
