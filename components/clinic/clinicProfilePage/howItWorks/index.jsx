@@ -23,12 +23,12 @@ const data = {
 const HowItWorks = () => {
   return (
     <>
-      <div className="flex items-center justify-between gap-4 mt-8 mb-8">
+      <div className="flex items-start justify-between gap-4 mt-8 mb-8 flex-col sm:flex-row sm:items-center">
         <h2 className="text-[#04285C] font-poppins text-base font-medium leading-5  ">
           {" "}
           {data.title}{" "}
         </h2>
-        <ul className="list-disc">
+        <ul className="list-disc pl-6 sm:pl-0">
           {data.texts.map((item, textIndex) => (
             <li
               key={textIndex}
