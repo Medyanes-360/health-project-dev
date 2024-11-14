@@ -8,13 +8,9 @@ export default function BeforeAndAfterPictures() {
   const data = {
     slides: [
       ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
-
       ["/assets/images/clinic1.png", "/assets/images/beforeAfter.png"],
-
       ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
-
       ["/assets/images/clinic1.png", "/assets/images/beforeAfter.png"],
-
       ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
     ],
     texts: {
@@ -56,7 +52,8 @@ export default function BeforeAndAfterPictures() {
           {data.texts.text}{" "}
         </a>
       </div>
-      <div className="flex items-center justify-center h-[600px]">
+
+      <div className="flex items-center justify-center h-[400px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
         <div className="cursor-pointer mr-4" onClick={prevSlide}>
           <Image
             src="/assets/clinic/arrow-square-left.svg"
@@ -65,12 +62,14 @@ export default function BeforeAndAfterPictures() {
             height={30}
           />
         </div>
+
         <BeforeAfterPhotoSlider
-          width={"832px"}
+          width="832px"
           beforeImageSrc={data.slides[currentIndex][0]}
           afterImageSrc={data.slides[currentIndex][1]}
-          containerclassname={"!w-full !h-full"}
+          containerclassname="!w-full !h-full"
         />
+
         <div className="cursor-pointer ml-4" onClick={nextSlide}>
           <Image
             src="/assets/clinic/arrow-square-right.svg"
