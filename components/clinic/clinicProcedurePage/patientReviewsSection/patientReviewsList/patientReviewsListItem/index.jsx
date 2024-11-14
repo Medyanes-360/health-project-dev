@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function PatientReviewsListItem({ review }) {
   const [isFullText, setIsFullText] = useState(false);
   const [isHelpful, setIsHelpful] = useState(false);
-  const openImageModal = useGlobalStore((state) => state.openImageModal);
+  const openImageModal = useGlobalStore((state) => state.openImageModal); //zustand store
   const reviewerCountry = Country.getCountryByCode(
     review.user.location.countryIsoCode
   );
