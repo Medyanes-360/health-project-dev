@@ -39,7 +39,9 @@ export default function GetAFreeConsultationForm() {
       viewport={{ once: true, amount: 0.5 }}
     >
       <CardComponent
-        className={"!flex-1 !w-full !rounded-none !rounded-r-2xl !shadow"}
+        className={
+          "!flex-1 !w-full !rounded-none !rounded-r-2xl  sm:shadow shadow-none h-[650px] md:h-full "
+        }
       >
         <Formik
           initialValues={{
@@ -60,7 +62,7 @@ export default function GetAFreeConsultationForm() {
           }}
         >
           {({ isSubmitting, values, setFieldValue, errors, touched }) => (
-            <Form className="space-y-4 p-5 text-[#061C3D] flex flex-col gap-4">
+            <Form className="space-y-4 p-[0] md:p-5 text-[#061C3D] flex flex-col gap-4 !sm:mb-12 mb-0">
               {/* Phone input */}
               <div className="space-y-1 text-start">
                 <label
@@ -130,7 +132,7 @@ export default function GetAFreeConsultationForm() {
               </div>
 
               {/* Agreement checkbox */}
-              <div className="flex gap-2 items-start h-[70px] ">
+              <div className="flex gap-2 items-start h-[70px] mb-[0] !md:mb-5  ">
                 <Field type="checkbox" name="agreed" className="h-5 w-5" />
                 <div className="flex flex-col gap-1">
                   <label
@@ -149,18 +151,18 @@ export default function GetAFreeConsultationForm() {
                   </label>
                 </div>
               </div>
-              {errors.agreed && touched.agreed && (
-                <div className="text-red-600 text-sm space-y-10 ">
-                  {errors.agreed}
-                </div>
-              )}
 
-              <div className="w-full flex justify-start fixed bottom-[50px] ">
+              <div className="w-full flex justify-start fixed sm:bottom-[20px] bottom-[0px] flex-col gap-[0rem] text-start ">
+                {errors.agreed && touched.agreed && (
+                  <div className="text-red-600 text-sm w-[250px]    ">
+                    {errors.agreed}
+                  </div>
+                )}
                 <ButtonComponent
                   className="!bg-primary !text-white !rounded-md font-lexend text-[17px] font-medium leading-[56px] w-[216px] h-[56px] "
                   type="submit"
                   containerClassName={"flex justify-end w-full"}
-                  title={isSubmitting ? "Submitting..." : "Mesaj Gönder --> "}
+                  title={isSubmitting ? "Submitting..." : "Mesaj Gönder"}
                   disabled={isSubmitting}
                 />
               </div>
@@ -171,7 +173,7 @@ export default function GetAFreeConsultationForm() {
         {/* Submission error message */}
         {submitError && (
           <p
-            className="margin-top: 5px;
+            className="
   font-size: 0.875rem; /* Daha küçük font boyutu */
   color: #e63946; /* Hata mesajları için kırmızı renk */"
           >

@@ -71,11 +71,11 @@ export default function GetAFreeQuote() {
   return (
     <div
       ref={parentRef}
-      className="   min-h-full    flex  w-full md:max-w-[300px] md:min-w-[300px] "
+      className="   min-h-full    flex  w-full lg:max-w-[300px] lg:min-w-[300px] "
     >
       <div
         ref={cardRef}
-        className="  shadow-md  rounded-2xl   !w-full md:!w-[300px] !h-[300px] p-5 bg-white flex flex-col items-center gap-8 justify-center"
+        className="  shadow-md  rounded-2xl   !w-full lg:!w-[300px] !h-[300px] p-5 bg-white flex flex-col items-center gap-8 justify-center"
       >
         <div className="flex   flex-col items-center justify-center space-y-3  ">
           <h1 className="ont-poppins text-sm font-medium leading-5 text-center">
