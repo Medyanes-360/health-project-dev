@@ -51,7 +51,7 @@ export default function ClinicProfilePageContainer({ clinic }) {
       <ClinicImages images={clinic.images} />
       <DirectTabs />
       <ExtraLargePageContainer className="!relative flex flex-col gap-8 mt-[20px] md:flex-row flex-col-reverse">
-        <div className="shadow-lg flex-1 rounded-2xl p-5">
+        <div className="shadow-lg flex-1 rounded-2xl p-1 sm:p-5">
           <Overview />
           <DentalTreatmentDropDown />
           <BeforeAndAfterPictures />
