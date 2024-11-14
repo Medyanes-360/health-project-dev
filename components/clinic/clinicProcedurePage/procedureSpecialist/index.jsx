@@ -8,7 +8,7 @@ export default function ProcedureSpecialist() {
       <div className="border border-[rgba(217,217,217,0.12)] shadow-md p-6 rounded-3xl">
         <div className="flex justify-between items-center mb-4">
           <p className="font-semibold text-black">Hair Transplant Specialist</p>
-          <div className="hover:underline flex items-center cursor-pointer">
+          <div className="hover:underline flex items-center cursor-default">
             <Image
               src="/assets/icons/healthIcon.svg"
               alt="health icon"
@@ -47,7 +47,7 @@ export default function ProcedureSpecialist() {
                 />
                 <span className="ml-1">Good</span>
               </div>
-              <span className="mt-1 cursor-pointer hover:opacity-100 transition-opacity opacity-70 underline">
+              <span className="mt-1 cursor-default hover:opacity-100 transition-opacity opacity-70 underline">
                 48 patient reviews
               </span>
             </div>
