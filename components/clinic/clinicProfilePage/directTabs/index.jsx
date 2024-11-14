@@ -61,7 +61,7 @@ export default function DirectTabs() {
           style={{ height: `${headerBarHeight}px` }}
           ref={headerBarRef}
         >
-          <div className="flex items-center px-6 justify-between bg-white h-20 rounded-xl">
+          <div className="flex items-center  justify-between bg-white h-20 rounded-xl text-center">
             {tabs.map((tab, index) => (
               <span
                 key={index}
@@ -69,6 +69,7 @@ export default function DirectTabs() {
                   setActiveTabIndex(index);
                   scrollToSection(tab.id);
                 }}
+                className={index === 2 ? "w-[100px] sm:w-auto lg:w-auto" : ""}
               >
                 <Link
                   href={`#${tab.id}`}
