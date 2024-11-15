@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import StarIcon from "@/public/assets/icons/StarIcon";
 
 const TestimonialCard = ({ data }) => {
   const [currentBigSlide, setCurrentBigSlide] = useState(0);
@@ -139,12 +140,12 @@ const TestimonialCard = ({ data }) => {
             return (
               <div key={i} className="p-4">
                 <CardComponent>
-                  <div className="flex flex-col gap-5 justify-center min-h-[300px]">
-                    <div className="flex gap-2 items-center">
+                  <div className="flex flex-col gap-4 justify-center min-h-[300px]">
+                    <div className="flex gap-[2px] items-center">
                       {/* stars */}
                       {starsArray.map((_, index) => (
                         <span key={index} className="text-[#FFAA00] text-xl">
-                          ★
+                          <StarIcon />
                         </span>
                       ))}
                     </div>
@@ -158,7 +159,7 @@ const TestimonialCard = ({ data }) => {
                         }`}
                         style={{ wordBreak: "break-word" }}
                       >
-                        {text}
+                        &quot;{text}&quot;
                       </div>
                       {text.length > 50 && (
                         <button
@@ -187,7 +188,7 @@ const TestimonialCard = ({ data }) => {
                       </div>
                       <Image
                         src={"/assets/images/Group.png"}
-                        className="object-cover object-center rounded-full"
+                        className="object-cover object-center"
                         width={30}
                         height={30}
                         alt="que"
@@ -202,7 +203,7 @@ const TestimonialCard = ({ data }) => {
       </div>
 
       {/* Small screen settings */}
-      <div className="lg:hidden">
+      <div className="lg:hidden ">
         <Slider {...SmallScreenSettings}>
           {data.map(({ stars, text, img, name, job }, i) => {
             const starsArray = Array.from({ length: stars });
@@ -210,18 +211,18 @@ const TestimonialCard = ({ data }) => {
             return (
               <div key={i} className="p-2">
                 <div className="flex flex-col gap-5 justify-center h-[330px]">
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-[1px] items-center">
                     {/* stars */}
                     {starsArray?.map((_, index) => (
                       <span key={index} className="text-[#FFAA00] text-xl">
-                        ★
+                        <StarIcon />
                       </span>
                     ))}
                     <Image
                       src={"/assets/images/Group.png"}
-                      className="object-cover object-center rounded-full ml-auto pr-3"
-                      width={30}
-                      height={30}
+                      className="object-cover object-center ml-auto pr-3"
+                      width={28}
+                      height={28}
                       alt="que"
                     />
                   </div>
