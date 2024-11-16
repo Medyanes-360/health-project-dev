@@ -10,15 +10,18 @@ export default function CostsTable({ data }) {
       <table className="w-full  text-sm text-center rtl:text-right ">
         <thead className="text-xs bg-[#F4F6F8] text-[#637381]   uppercase  ">
           <tr>
-            <th scope="col" className="px-6 py-3 font-semibold"></th>
+            <th
+              scope="col"
+              className="md:px-6 px-[0.5rem] py-3 font-semibold"
+            ></th>
 
-            <th scope="col" className="px-6 py-3 font-semibold">
+            <th scope="col" className="md:px-6 px-[0.5rem] py-3 font-semibold">
               Turkey
             </th>
-            <th scope="col" className="px-6 py-3 font-semibold">
+            <th scope="col" className="md:px-6 px-[0.5rem] py-3 font-semibold">
               Mexico
             </th>
-            <th scope="col" className="px-6 py-3 font-semibold ">
+            <th scope="col" className="md:px-6 px-[0.5rem] py-3 font-semibold ">
               United States of America
             </th>
           </tr>
@@ -27,13 +30,17 @@ export default function CostsTable({ data }) {
           <tr className="bg-white border-b   hover:bg-gray-50 ">
             <th
               scope="row"
-              className="px-6 py-4 font-normal  text-left whitespace-nowrap "
+              className=" md:px-6 px-[0.5rem] py-4 font-normal  text-left whitespace-normal md:whitespace-nowrap"
             >
-              FUE hair transplant
+              FUE hair <br></br> transplant
             </th>
-            <td className="px-6 py-4">from $1671</td>
-            <td className="px-6 py-4">from $4000</td>
-            <td className="px-6 py-4">
+            <td className="md:px-6 px-[0.1rem] py-4">
+              from <br /> $1671
+            </td>
+            <td className="md:px-6 px-[0.1rem] py-4">
+              from <br /> $4000
+            </td>
+            <td className="md:px-6 px-[0.1rem] py-4">
               {" "}
               <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
                 from $4000
@@ -43,13 +50,17 @@ export default function CostsTable({ data }) {
           <tr className="bg-white border-b  hover:bg-gray-50 ">
             <th
               scope="row"
-              className="px-6 py-4 font-normal text-left whitespace-nowrap "
+              className="md:px-6 px-[0.5rem] py-4 font-normal  text-left whitespace-normal md:whitespace-nowrap"
             >
-              FUE hair transplant{" "}
+              FUE hair <br></br> transplant{" "}
             </th>
-            <td className="px-6 py-4">from $1671</td>
-            <td className="px-6 py-4">from $4000</td>
-            <td className="px-6 py-4">
+            <td className="md:px-6 px-[0.5rem] py-4">
+              from <br /> $1671
+            </td>
+            <td className="md:px-6 px-[0.5rem] py-4">
+              from <br /> $4000
+            </td>
+            <td className="md:px-6 px-[0.5rem] py-4">
               {" "}
               <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
                 from $4000
@@ -59,13 +70,17 @@ export default function CostsTable({ data }) {
           <tr className="bg-white border-b hover:bg-gray-50 ">
             <th
               scope="row"
-              className="px-6 py-4 font-normal text-left  whitespace-nowrap "
+              className="px-6 py-4 font-normal text-left  whitespace-nowrap md:px-6 px-[0.5rem] py-4 font-normal  text-left whitespace-normal md:whitespace-nowrap "
             >
-              FUE hair transplant{" "}
+              FUE hair <br></br> transplant{" "}
             </th>
-            <td className="px-6 py-4">from $1671</td>
-            <td className="px-6 py-4">from $4000</td>
-            <td className="px-6 py-4">
+            <td className="md:px-6 px-[0.5rem] py-4">
+              from <br /> $1671
+            </td>
+            <td className="md:px-6 px-[0.5rem] py-4">
+              from <br /> $4000
+            </td>
+            <td className="md:px-6 px-[0.5rem] py-4">
               <span className="bg-[#36B37E29] text-[#1B806A] py-0.5 px-2 rounded-md">
                 from $4000
               </span>
