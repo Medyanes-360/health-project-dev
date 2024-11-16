@@ -106,7 +106,7 @@ const HairTransplantReviewsCard = ({ data }) => {
       {/* Small Screen Slider */}
       <div className="lg:hidden">
         <Slider
-          {...createSliderSettings(2, 2, "small", sliderSmall)}
+          {...createSliderSettings(1, 1, "small", sliderSmall)}
           ref={sliderSmall}
         >
           {data?.map((item, i) => (
@@ -230,7 +230,7 @@ const SmallCardContent = ({ data }) => {
   return (
     <div className="p-1">
       <CardComponent>
-        <div className="flex flex-col gap-5 justify-between min-h-[320px]">
+        <div className="flex flex-col gap-2  min-h-[294px]">
           <div>
             <div className="flex gap-2 items-center">
               {/* stars */}
@@ -248,10 +248,10 @@ const SmallCardContent = ({ data }) => {
               />
             </div>
 
-            <div>
+            <div className="text-[16px] ">
               {/* Scrollable text based on the "show more" state */}
               <div
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-300   ${
                   showMore
                     ? "max-h-[100px] overflow-y-scroll" // Show more scrollable area
                     : "max-h-[50px] overflow-hidden" // Limited height when collapsed
@@ -259,7 +259,7 @@ const SmallCardContent = ({ data }) => {
               >
                 {text}
               </div>
-              {text.length > 50 && (
+              {text.length > 100 && (
                 <button
                   onClick={toggleShowMore}
                   className="text-primary mt-2 underline"
