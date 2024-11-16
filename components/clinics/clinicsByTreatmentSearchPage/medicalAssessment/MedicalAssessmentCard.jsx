@@ -128,16 +128,16 @@ const CardContent = ({ data }) => {
                   alt="image"
                   width={50}
                   height={50}
-                  className="object-center object-cover rounded-full"
+                  className="w-[64px] f-[64px] lg:object-center lg:object-cover rounded-full"
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="text-[14px] space-y-2">
                 <h1>{docName} • Hair transplant</h1>
                 <p>{location}</p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 hidden lg:block">
                 <h1 className>
                   <span className="text-[#FFAA00] text-3xl">★</span>
                   Good
