@@ -137,14 +137,14 @@ export default function GetAFreeConsultationForm() {
                 <div className="flex flex-col gap-1">
                   <label
                     htmlFor="agree"
-                    className="text-start text-sm font-poppins text-sm font-normal leading-5"
+                    className="text-start text-sm font-poppins  font-normal leading-5"
                   >
                     I agree to the Terms of use, Privacy policy, and receive
                     marketing letters that may be of interest.
                   </label>
                   <label
                     htmlFor="agree"
-                    className="text-start text-sm font-poppins text-sm font-normal leading-5"
+                    className="text-start  font-poppins text-sm font-normal leading-5"
                   >
                     This site is protected by reCAPTCHA and the Google Privacy
                     Policy and Terms of Service apply.

@@ -16,8 +16,8 @@ const validationSchema = Yup.object().shape({
     .email("Please provide a valid email address.")
     .required("Email is required."),
   phone: Yup.string()
-  .required("Phone number is required")
-  .min(10, "Phone number should be at least 10 digits"),
+    .required("Phone number is required")
+    .min(10, "Phone number should be at least 10 digits"),
   description: Yup.string()
     .min(10, "Description must be at least 10 characters long.")
     .required("Description is required."),
@@ -151,7 +151,7 @@ const GetFreeConsolationForm = () => {
 
               <div className="w-full flex justify-end">
                 <ButtonComponent
-                  className="!bg-primary !text-white !rounded-md !w-[50%] lg:w-fit"
+                  className="!bg-primary !text-white !rounded-md  w-fit lg:w-fit"
                   type="submit"
                   containerClassName={"flex justify-end w-full"}
                   title={isSubmitting ? "Submitting..." : "Send Request"}
