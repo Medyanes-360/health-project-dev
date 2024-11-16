@@ -110,7 +110,7 @@ const DiscoverMoreCardContent = ({ data }) => {
               </button>
             </div>
 
-            <div className="flex justify-between gap-20 p-8 h-full">
+            <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-20 p-8 h-full">
               <div className="w-full aspect-square overflow-hidden relative">
                 <Image
                   src={image}
@@ -121,7 +121,7 @@ const DiscoverMoreCardContent = ({ data }) => {
               </div>
 
               <div className="w-full aspect-square flex flex-col justify-between space-y-6">
-                <div className="flex items-center gap-2">
+                <div className="flex  items-center gap-2">
                   <Image
                     src={docIcon}
                     width={50}
@@ -130,7 +130,9 @@ const DiscoverMoreCardContent = ({ data }) => {
                     alt="clickIcon"
                   />
                   <div className="space-y-2">
-                    <h1 className="font-bold">{clinicName}</h1>
+                    <h1 className=" text-sm font-bold lg:font-bold">
+                      {clinicName}
+                    </h1>
                     <div className="flex items-center gap-1">
                       <Image
                         src="/assets/images/location.png"
@@ -144,7 +146,7 @@ const DiscoverMoreCardContent = ({ data }) => {
                 </div>
 
                 <div>
-                  <p>{description}</p>
+                  <p className=" text-[12px] font-semibold">{description}</p>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -156,7 +158,9 @@ const DiscoverMoreCardContent = ({ data }) => {
                     alt="clickIcon"
                   />
                   <div className="space-y-2">
-                    <h1 className="font-bold">{docName}</h1>
+                    <h1 className="text-sm font-bold lg:font-bold">
+                      {docName}
+                    </h1>
                     <div className="flex gap-1 items-center">
                       <Image
                         src="/assets/images/timer.png"
@@ -172,7 +176,7 @@ const DiscoverMoreCardContent = ({ data }) => {
                 </div>
 
                 <div>
-                  <p>Surgeons portfolio</p>
+                  <p className="text-[12px]">Surgeons portfolio</p>
                   <div className="w-full flex items-center justify-between gap-[1px]">
                     {clinicImages?.map((img, i) => (
                       <div

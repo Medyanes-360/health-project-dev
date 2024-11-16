@@ -34,9 +34,9 @@ const HairTransplantReviews = () => {
   ];
 
   return (
-    <ExtraLargePageContainer className="pb-20 space-y-6">
+    <ExtraLargePageContainer className="pb-20 mt-10 space-y-6">
       {/* header */}
-      <div className="flex items-center justify-between gap-5">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
         <h1 className="font-bold text-xl sm:text-2xl text-secondary">
           Recent Hair Transplant Reviews
         </h1>

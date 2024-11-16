@@ -45,7 +45,7 @@ const data = [
 
 const MedicalAssessment = () => {
   return (
-    <div className="pb-20">
+    <div className="flex flex-col lg:flex-row pb-20">
       <ExtraLargePageContainer className=" space-y-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
           <h1 className="font-bold text-xl sm:text-2xl text-secondary">
