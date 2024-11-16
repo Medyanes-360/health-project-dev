@@ -58,9 +58,9 @@ export default function GetAFreeConsultation() {
         once: true,
         amount: 0.5,
       }}
-      className="flex text-fourth justify-center  flex items-center py-5 sm:py-0 relative  h-[644px] "
+      className="flex-col text-fourth justify-center  flex items-center py-5 sm:py-0 relative  h-auto md:h-[644px] sm:flex-row "
     >
-      <div className="flex flex-col items-start justify-center gap-20 w-6/12 bg-primary h-full w-[45%] pl-8  rounded-l-2xl">
+      <div className="flex flex-col items-start justify-center gap-20 md:w-6/12 bg-primary h-[650px] md:h-full w-[45%] p-8   sm:rounded-l-2xl rounded-tl-[20px] sm:rounded-tr-[0px] rounded-tr-[20px] rounded-br-none rounded-bl-none  w-full  ">
         <h1 className="font-lexend text-sm font-semibold leading-[44px] tracking-[-0.015em] ">
           {texts.textTop}
         </h1>
@@ -110,7 +110,7 @@ export default function GetAFreeConsultation() {
           </div>
         </div>
       </div>
-      <div className="w-6/12 text-red text-center h-full rounded-r-2xl w-[65%]">
+      <div className="md:w-6/12 text-red text-center h-full rounded-r-2xl md:w-[65%] w:full ">
         <GetAFreeConsultationForm />
       </div>
     </MotionDiv>
