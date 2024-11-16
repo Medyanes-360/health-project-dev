@@ -118,14 +118,14 @@ const GetFreeConsolationForm = () => {
         <div className="space-y-1">
           <label htmlFor="phone">Enter your phone number</label>
 
-            <CustomInput
-              type="phone"
-              name="phone"
-              onChange={handlePhoneChange}
-              placeholder="Enter your phone number"
-              value={form.phone}
-              className=" !custom-phone-input2  "
-            />
+          <CustomInput
+            type="phone"
+            name="phone"
+            onChange={handlePhoneChange}
+            placeholder="Enter your phone number"
+            value={form.phone}
+            className=" !custom-phone-input2  "
+          />
         </div>
         <div className="space-y-1">
           <label htmlFor="email">Enter your Email</label>

@@ -72,7 +72,7 @@ export default GetFreeConsolation;
 
 const FormText = () => {
   return (
-    <div className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative ">
+    <div className="bg-primary px-5  text-fourth flex-1 lg:rounded-l-2xl  flex items-center py-5 sm:py-0 relative ">
       <div className="space-y-10 mx-auto">
         <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
 
