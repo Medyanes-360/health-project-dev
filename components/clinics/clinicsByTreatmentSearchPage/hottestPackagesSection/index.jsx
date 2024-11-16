@@ -10,7 +10,7 @@ export default function HottestPackagesSection() {
           Discover the Hottest Hair transplant Packages of the Season
         </h1>
       </div>
-      <div className="flex gap-3  items-center justify-center ">
+      <div className="flex flex-col lg:flex-row gap-3  items-center justify-center ">
         <PackageCard />
         <PackageCard />
         <PackageCard />

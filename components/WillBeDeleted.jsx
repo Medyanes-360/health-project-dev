@@ -32,7 +32,7 @@ const WillBeDeleted = () => {
     if (session.data) console.log(session.data.user);
   });
   return (
-    <div className="space-y-2 fixed  top-32 z-[100000]  bg-red-300 left-0 w-fit  flex flex-col">
+    <div className="space-y-2 fixed  top-44 z-[100000]  bg-red-300 left-0 w-fit  flex flex-col">
       <div>
         <p>
           Kullanıcı email:{" "}
