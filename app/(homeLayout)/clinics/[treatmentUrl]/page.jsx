@@ -37,7 +37,10 @@ const treatmentsData = [
         bestPrice: 1500,
         processedRequestCount: 110449,
       },
-      relatedProceduresAndCosts: {},
+      relatedProceduresAndCosts: {
+        title: "All-on-4 Dental Implants - from 1651$",
+        text: "This therapy restores a full set of teeth using four implants per jaw, offering durability, comfort, and a natural look.",
+      },
       howItworks: {},
       whatToExpect: {},
       benefits: {},

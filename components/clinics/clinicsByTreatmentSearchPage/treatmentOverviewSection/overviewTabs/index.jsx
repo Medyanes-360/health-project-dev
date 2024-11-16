@@ -107,7 +107,7 @@ export default function OverviewTabs({ data }) {
         <div
           className={`${openPanel == 1 ? "block" : "hidden"} animate-fadeIn`}
         >
-          <PanelTwo />
+          <PanelTwo data={overview.relatedProceduresAndCosts} />
         </div>
         <div
           className={`${openPanel == 2 ? "block" : "hidden"} animate-fadeIn`}
