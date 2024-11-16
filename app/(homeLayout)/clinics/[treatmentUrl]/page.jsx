@@ -41,7 +41,26 @@ const treatmentsData = [
         title: "All-on-4 Dental Implants - from 1651$",
         text: "This therapy restores a full set of teeth using four implants per jaw, offering durability, comfort, and a natural look.",
       },
-      howItworks: {},
+      howItworks: {
+        title: "How to find best offer with Bookimed?",
+        texts: [
+          {
+            text: "Discover options on the website: deals, clinics, and doctors.",
+          },
+          {
+            text: "Select your favorites.",
+          },
+          {
+            text: "Share photos or describe your issue.",
+          },
+          {
+            text: "Send a request.",
+          },
+          {
+            text: "Receive free offers for your needs with prices and details.",
+          },
+        ],
+      },
       whatToExpect: {},
       benefits: {},
       payment: {},
