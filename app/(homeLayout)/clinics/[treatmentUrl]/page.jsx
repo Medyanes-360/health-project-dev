@@ -93,7 +93,36 @@ const treatmentsData = [
           },
         ],
       },
-      benefits: {},
+      benefits: [
+        {
+          svg: "/assets/icons/like-outlined.svg",
+          text: "100% free, non-binding assessment of your case after photos download.",
+        },
+        {
+          svg: "/assets/icons/note.svg",
+          text: "Instant FREE personalized offers to make the right choice.",
+        },
+        {
+          svg: "/assets/icons/binocular.svg",
+          text: "Expert guidance in choosing the perfect Dental Treatment doctor and clinic.",
+        },
+        {
+          svg: "/assets/icons/gift.svg",
+          text: "Special packages and exclusive prices for our patients.",
+        },
+        {
+          svg: "/assets/icons/calender.svg",
+          text: "24/7 Bookimed guidance at no cost, guaranteed.",
+        },
+        {
+          svg: "/assets/icons/search.svg",
+          text: "Hassle-free translation of your medical documents for clinics.",
+        },
+        {
+          svg: "/assets/icons/multi.svg",
+          text: "Multilingual staff — no language barrier with Bookimed coordinator.",
+        },
+      ],
       payment: {},
       reviewerId: 3949919,
     },
