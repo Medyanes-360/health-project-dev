@@ -80,20 +80,20 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
         fallback: false,
       }}
       onViewportEnter={lastItem && fetchClinics}
-      className="relative grid grid-flow-col-dense mx-2 mr-3  mb-4 grid-cols-9 gap-5 h-[386px] items-center border min-w-[900px]   border-[#D9D9D91F] px-7 py-14 rounded-3xl shadow-lg"
+      className="relative grid md:grid-flow-col-dense md:grid-cols-9 gap-5 md:h-[386px] items-center border md:min-w-[900px] border-[#D9D9D91F] px-3 md:px-7 py-5 md:py-14 rounded-3xl shadow-lg"
     >
-      <div className="col-span-3 h-full w-full  max-w-[280px]    flex flex-col justify-center items-center">
+      <div className="md:col-span-3 h-full w-full md:max-w-[280px] flex flex-col justify-center items-center">
         <Image
-          className="h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
+          className="h-full md:h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
           src={procedure.clinic.images[0]}
           onClick={() => {
             handleOpenImageModal(procedure.clinic.images[0]);
           }}
           alt=""
-          width={100}
-          height={100}
+          width={1000}
+          height={1000}
         />
-        <div className="grid grid-cols-3 w-full max-w-[280px] items-center   ">
+        <div className="grid grid-cols-3 w-full md:max-w-[280px] items-center">
           {procedure.clinic.images.slice(1).map((src, index) => {
             return (
               <Image
@@ -101,17 +101,17 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
                 onClick={() => {
                   handleOpenImageModal(src);
                 }}
-                className="h-20 w-full p-0.5  rounded-2xl cursor-pointer hover:opacity-90 "
+                className="h-full md:h-20 w-full p-0.5 rounded-2xl cursor-pointer hover:opacity-90 "
                 src={src}
                 alt=""
-                width={100}
-                height={100}
+                width={1000}
+                height={1000}
               />
             );
           })}
         </div>
       </div>
-      <div className="col-span-4 flex flex-col items-start h-full py-1 justify-between">
+      <div className="md:col-span-4 flex flex-col items-start h-full py-1 justify-between">
         <div className="flex items-center ">
           <Image
             className="rounded-full w-[44px] h-[44px]"
@@ -184,11 +184,11 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
             Read more {">>"}
           </Link>
         </div>
-        <div className="mt-4   flex justify-between w-full">
+        <div className="mt-4 gap-3 flex justify-between w-full">
           <Link className="w-full" href="/test">
             <ButtonComponent
-              className="bg-primary mr-3   text-white font-medium !py-1.5 w-full !text-sm"
-              title="Get A Free Quota"
+              className="bg-primary !px-0 text-white font-medium !py-1.5 w-full !text-sm"
+              title="Get A Free Quote"
             />
           </Link>
           <Link
@@ -202,14 +202,14 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
           </Link>
         </div>
       </div>
-      <div className="col-span-2  rounded-3xl p-2 shadow-[0px_12px_48px_0px_#BCBCBC1F;]">
+      <div className="md:col-span-2 hidden md:flex flex-col rounded-3xl p-2 shadow-[0px_12px_48px_0px_#BCBCBC1F;]">
         <div className="relative overflow-hidden ">
           <Image
             className="h-32 opacity-50 w-full   rounded-2xl "
             src="/assets/mocks/clinicImage.png"
             alt=""
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
           />
           {procedure.packageDetails.limitDate && (
             <span className="absolute top-5 rounded-md p-1 px-1.5 text-xs font-light text-nowrap text-white  right-2 bg-[#00B8D9]">

@@ -2,14 +2,15 @@ import Image from "next/image";
 
 export default function TrustPilotInfo() {
   return (
-    <div className="flex my-4 w-full border-primary-dark  border rounded-3xl px-8 py-7 bg-primary-light items-center justify-between">
-      <div className="flex items-center max-w-[80%] ">
+    <div className="flex flex-col md:flex-row my-4 w-full border-primary-dark border rounded-3xl p-4 md:px-8 md:py-7 bg-primary-light md:items-center justify-between gap-6">
+      <div className="flex flex-col gap-8 md:gap-0 md:flex-row md:items-center md:max-w-[80%]">
         <svg
           width="48"
           height="48"
           viewBox="0 0 25 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-7 md:w-12 h-7 md:h-12"
         >
           <path
             opacity="0.4"
@@ -21,18 +22,18 @@ export default function TrustPilotInfo() {
             fill="#0B8071"
           />
         </svg>
-        <div className="flex flex-col ml-5">
-          <p className="text-primary-dark font-medium text-xl mb-2">
+        <div className="flex flex-col md:ml-5">
+          <p className="text-primary-dark font-medium text-sm leading-[22px] md:text-xl mb-2">
             We&apos;re rated “Excellent” on TrustPilot
           </p>
-          <p className="text-sm">
+          <p className="text-xs leading-3 md:text-sm">
             We&apos;re rated “Excellent” on TrustPilot <br />
             At Bookimed, we put your health first with safe and easy solutions.
             Our quality care is proven by excellent reviews from patients.
           </p>
         </div>
       </div>
-      <div className="flex flex-col ">
+      <div className="flex flex-col">
         <span className="flex items-center mb-5">
           {[...Array(5)].map((e, index) => (
             <Image

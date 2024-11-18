@@ -16,7 +16,7 @@ export default function ClinicList({ maxheight }) {
       setIsLoading(false);
     }, 1000);
   };
-  console.log(clinics);
+
   return (
     <div
       style={{
@@ -24,7 +24,9 @@ export default function ClinicList({ maxheight }) {
         overflowY: "scroll",
         overflowX: "visible",
       }}
-      className="flex flex-col items-center"
+      className={`flex flex-col items-center ${
+        maxheight == 0 ? "!max-h-[720px]" : ""
+      }`}
     >
       {clinics.map((clinic, index) => {
         return (

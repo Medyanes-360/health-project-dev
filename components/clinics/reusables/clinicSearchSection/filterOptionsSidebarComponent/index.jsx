@@ -47,7 +47,7 @@ export default function FilterOptionsSidebarComponent({ sidebarRef }) {
   // });
 
   return (
-    <div className="relative   flex  min-w-72 max-w-72   bg-white ">
+    <div className="relative hidden md:flex  min-w-72 max-w-72   bg-white ">
       <div
         ref={sidebarRef}
         className="  h-fit xh py-5 w-72   rounded-3xl shadow-lg "
