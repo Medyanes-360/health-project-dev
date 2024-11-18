@@ -61,7 +61,38 @@ const treatmentsData = [
           },
         ],
       },
-      whatToExpect: {},
+      whatToExpect: {
+        title: "Step-by-Step Roadmap",
+
+        items: [
+          {
+            color: "#F22F46",
+            day: "Day 1",
+            listItems: [
+              "Arrival in the country, VIP transfer to the 4* hotel.",
+              "Rest and acclimatize to the new environment.",
+            ],
+          },
+          {
+            color: "#6F88FF",
+            day: "Day 2",
+            listItems: [
+              "Visit to the dental clinic for initial consultation.",
+              "Meet the dental surgeon and discuss the procedure.",
+              "Undergo necessary medical tests and dental scans.",
+            ],
+          },
+          {
+            color: "#12A52A",
+            day: "Day 3",
+            listItems: [
+              "Preparation for the All-on-4 Dental Implants procedure.",
+              "Procedure under local anesthesia, lasting about 2-3 hours.",
+              "Implants are placed in the jawbone.",
+            ],
+          },
+        ],
+      },
       benefits: {},
       payment: {},
       reviewerId: 3949919,
