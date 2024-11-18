@@ -123,7 +123,26 @@ const treatmentsData = [
           text: "Multilingual staff — no language barrier with Bookimed coordinator.",
         },
       ],
-      payment: {},
+      payment: {
+        text: "Bookimed ensures transparent and secure payments. Patients pay at the clinic with no additional fees.",
+        titleTop: "Available Payment Methods:",
+        titleBottom: "How to Secure an Appointment:",
+        svgs: [
+          "/assets/icons/visa.svg",
+          "/assets/icons/paypal.svg",
+          "/assets/icons/mastercard.svg",
+        ],
+        listItems: ["Documents: Passport and ticket copies.", "OR", "Deposit:"],
+        nestedListItems: [
+          {
+            title: "Deposit",
+            subItems: [
+              "Bookimed deposit: $200 or €200.",
+              "Clinic deposit: Pay a set percentage in advance.",
+            ],
+          },
+        ],
+      },
       reviewerId: 3949919,
     },
     costsOverview: {
