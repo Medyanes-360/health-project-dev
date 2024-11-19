@@ -2,6 +2,11 @@
 import Link from "next/link";
 import DiscoverMoreCardContent from "../reusables/DiscoverMoreCard";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { useState } from "react";
+import Price from "../reusables/Price";
+import Doctors from "../reusables/Doctors";
+import Reviews from "../reusables/Reviews";
+import Clinic from "../reusables/Clinic";
 
 const data = [
   {
@@ -9,14 +14,16 @@ const data = [
     location: "Turkey, Istanbul",
     description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
 
-    docIcon: "/assets/images/image.png",
+    centerIcon: "/assets/images/clinic.png",
+    docIcon: "/assets/images/doctor.png",
     docName: "Doctor Dr Fuzun Erdogan",
     docExperience: 27,
 
+    centerImage: "/assets/images/center.png",
+
     clinicImages: [
-      "/assets/images/656062cbcb546_b1.png",
-      "/assets/images/656062cbcb54_b1.png",
-      "/assets/images/656062cbcb546_b1.png",
+      "/assets/images/clinic-image.png",
+      "/assets/images/clinic-image-1.png",
     ],
 
     stars: 32,
@@ -24,53 +31,80 @@ const data = [
     serviceName: "FUE hair transplant (4500 Grafts) All Included",
 
     price: "1750",
-  },
-  {
-    clinicName: "Adem and Havva Medical Center",
-    location: "Turkey, Istanbul",
-    description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
-
-    clinicIcon: "/assets/images/image.png",
-
-    docIcon: "/assets/images/image.png",
-    docName: "Doctor Dr Fuzun Erdogan",
-    docExperience: 27,
-
-    clinicImages: [
-      "/assets/images/656062cbcb546_b1.png",
-      "/assets/images/656062cbcb546_b1.png",
-      "/assets/images/656062cbcb546_b1.png",
+    accreditations: [
+      "/assets/icons/iso.svg",
+      "/assets/images/tcsb.png",
+      "/assets/images/choice.png",
     ],
-
-    stars: 32,
-
-    serviceName: "FUE hair transplant (4500 Grafts) All Included",
-
-    price: "1750",
   },
-  {
-    clinicName: "Adem and Havva Medical Center",
-    location: "Turkey, Istanbul",
-    description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
+  // {
+  //   clinicName: "Adem and Havva Medical Center",
+  //   location: "Turkey, Istanbul",
+  //   description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
 
-    docIcon: "/assets/images/image.png",
-    docName: "Doctor Dr Fuzun Erdogan",
-    docExperience: 27,
+  //   clinicIcon: "/assets/images/image.png",
 
-    clinicImages: [
-      "/assets/images/656062cbcb546_b1.png",
-      "/assets/images/656062cbcb546_b1.png",
-      "/assets/images/656062cbcb546_b1.png",
-    ],
+  //   docIcon: "/assets/images/doctor.png",
+  //   docName: "Doctor Dr Fuzun Erdogan",
+  //   docExperience: 27,
 
-    stars: 32,
+  //   clinicImages: [
+  //     "/assets/images/656062cbcb546_b1.png",
+  //     "/assets/images/656062cbcb546_b1.png",
+  //     "/assets/images/656062cbcb546_b1.png",
+  //   ],
 
-    serviceName: "FUE hair transplant (4500 Grafts) All Included",
+  //   stars: 32,
 
-    price: "1750",
-  },
+  //   serviceName: "FUE hair transplant (4500 Grafts) All Included",
+
+  //   price: "1750",
+  // },
+  // {
+  //   clinicName: "Adem and Havva Medical Center",
+  //   location: "Turkey, Istanbul",
+  //   description: `Technique: FUE hair transplant, 4500 Grafts Dr. Fuzun Erdogan gained international recognition for... Read more`,
+
+  //   docIcon: "/assets/images/image.png",
+  //   docName: "Doctor Dr Fuzun Erdogan",
+  //   docExperience: 27,
+
+  //   clinicImages: [
+  //     "/assets/images/656062cbcb546_b1.png",
+  //     "/assets/images/656062cbcb546_b1.png",
+  //     "/assets/images/656062cbcb546_b1.png",
+  //   ],
+
+  //   stars: 32,
+
+  //   serviceName: "FUE hair transplant (4500 Grafts) All Included",
+
+  //   price: "1750",
+  // },
 ];
+const tabLabels = ["Clinic", "Price", "Doctors", "Reviews"];
+
 export default function DiscoverBestClinicsSection() {
+  const [openPanel, setOpenPanel] = useState(0);
+
+  const clickHandler = (e) => {
+    setOpenPanel(parseInt(e.target.dataset.overviewtabid));
+  };
+
+  // const renderPanelContent = () => {
+  //   switch (openPanel) {
+  //     case 0:
+  //       return <DiscoverMoreCardContent data={data[0]} />;
+  //     case 1:
+  //       return <Price />;
+  //     case 2:
+  //       return <Doctors />;
+  //     case 3:
+  //       return <Reviews />;
+  //     default:
+  //       return null;
+  //   }
+  // };
   return (
     <ExtraLargePageContainer>
       {/* Heading: */}
@@ -86,11 +120,49 @@ export default function DiscoverBestClinicsSection() {
         </div>
         <span className="text-sm">227 Verified Options and Prices</span>
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col ">
+        <div className="bg-white-dark p-5 flex justify-between items-center gap-3 rounded-t-2xl ">
+          {tabLabels.map((label, index) => (
+            <button
+              key={index}
+              onClick={clickHandler}
+              data-overviewtabid={index}
+              className={`${
+                openPanel === index ? "!bg-[#52B8AB] !text-white" : ""
+              } bg-white w-full py-1 text-center rounded-[33px] font-public-sans text-[14px] font-normal leading-[22px]"
+ `}
+              type="button"
+            >
+              {label}
+            </button>
+          ))}
+        </div>
         {/* Clinic cards */}
-        <DiscoverMoreCardContent data={data[0]} />
-        <DiscoverMoreCardContent data={data[0]} />
-        <DiscoverMoreCardContent data={data[0]} />
+        {/* <div
+          className={`${openPanel == 0 ? "block" : "hidden"} animate-fadeIn`}
+        >
+          <DiscoverMoreCardContent data={data[0]} />
+        </div>
+        <div
+          className={`${openPanel == 1 ? "block" : "hidden"} animate-fadeIn`}
+        >
+          <Price />
+        </div> */}
+        {/* <DiscoverMoreCardContent data={data[0]} />
+        <DiscoverMoreCardContent data={data[0]} /> */}
+        {tabLabels.map((_, index) => (
+          <div
+            key={index}
+            className={`${
+              openPanel === index ? "block" : "hidden"
+            } animate-fadeIn`}
+          >
+            {openPanel === 0 && <Clinic data={data[0]} />}
+            {openPanel === 1 && <Price />}
+            {openPanel === 2 && <Doctors />} {/* Doctors bileşeni örnek */}
+            {openPanel === 3 && <Reviews />} {/* Reviews bileşeni örnek */}
+          </div>
+        ))}
       </div>
       <div className="flex items-center justify-center mt-6 text-primary font-semibold hover:underline">
         <Link href="/">See more deals</Link>
