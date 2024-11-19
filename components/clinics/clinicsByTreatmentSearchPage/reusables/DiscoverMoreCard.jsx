@@ -20,19 +20,24 @@ const DiscoverMoreCardContent = ({ data }) => {
   const [image, setImage] = useState(clinicImages[0]);
   const [activeTab, setActiveTab] = useState("clinic");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openPanel, setOpenPanel] = useState(0);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
+
+  const clickHandler = (e) => {
+    setOpenPanel(e.target.dataset.overviewtabid);
   };
 
   return (
     <>
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
           <div className="bg-white p-8 rounded-lg space-y-4 max-w-sm w-full">
             <div className="flex justify-between items-center">
@@ -47,7 +52,6 @@ const DiscoverMoreCardContent = ({ data }) => {
               </button>
             </div>
             <div>
-              {/* Conditionally render content based on active tab */}
               {activeTab === "clinic" && (
                 <div>
                   <h3 className="font-semibold">Clinic: {clinicName}</h3>
@@ -76,39 +80,51 @@ const DiscoverMoreCardContent = ({ data }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Main Card */}
       <div className="py-4">
         <CardComponent className="!p-0 !rounded-2xl !shadow">
           <div className="space-y-5">
-            <div className="bg-white-dark p-5 flex justify-between items-center gap-3 rounded-t-2xl">
-              {/* Tab Buttons */}
+            {/* <div className="bg-white-dark p-5 flex justify-between items-center gap-3 rounded-t-2xl">
               <button
-                className="bg-white w-full py-1 text-center rounded-md"
-                onClick={() => handleTabClick("clinic")}
+                onClick={clickHandler}
+                data-overviewtabid="0"
+                className={`${
+                  openPanel == 0 && "bg-emerald-400 !text-black "
+                }  bg-white w-full py-1 text-center rounded-md`}
+                type="button"
               >
-                Clinic
+                Takeaways
               </button>
               <button
-                className="bg-white w-full py-1 text-center rounded-md"
-                onClick={() => handleTabClick("price")}
+                onClick={clickHandler}
+                data-overviewtabid="1"
+                className={`${
+                  openPanel == 1 && "bg-emerald-400 !text-black "
+                }  bg-white w-full py-1 text-center rounded-md`}
               >
                 Price
               </button>
               <button
-                className="bg-white w-full py-1 text-center rounded-md"
-                onClick={() => handleTabClick("doctors")}
+                onClick={clickHandler}
+                data-overviewtabid="2"
+                className={`${
+                  openPanel == 2 && "bg-emerald-400 !text-black "
+                }  bg-white w-full py-1 text-center rounded-md`}
               >
                 Doctors
               </button>
               <button
-                className="bg-white w-full py-1 text-center rounded-md"
-                onClick={() => handleTabClick("reviews")}
+                onClick={clickHandler}
+                data-overviewtabid="3"
+                className={`${
+                  openPanel == 3 && "bg-emerald-400 !text-black "
+                }  bg-white w-full py-1 text-center rounded-md`}
               >
                 Reviews
               </button>
-            </div>
+            </div> */}
 
             <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-20 p-8 h-full">
               <div className="w-full aspect-square overflow-hidden relative">
