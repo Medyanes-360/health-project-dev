@@ -122,12 +122,12 @@ export default function OverviewTabs({ data }) {
         <div
           className={`${openPanel == 4 ? "block" : "hidden"} animate-fadeIn`}
         >
-          <PanelFive />
+          <PanelFive data={overview.benefits} />
         </div>
         <div
           className={`${openPanel == 5 ? "block" : "hidden"} animate-fadeIn`}
         >
-          <PanelSix />
+          <PanelSix data={overview.payment} />
         </div>
       </div>
     </div>
