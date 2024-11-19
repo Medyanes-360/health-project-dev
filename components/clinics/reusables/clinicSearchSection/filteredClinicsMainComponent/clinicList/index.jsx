@@ -24,7 +24,7 @@ export default function ClinicList({ maxheight }) {
         overflowY: "scroll",
         overflowX: "visible",
       }}
-      className={`flex flex-col items-center ${
+      className={` no-scrollbar flex flex-col items-center ${
         maxheight == 0 ? "!max-h-[720px]" : ""
       }`}
     >
