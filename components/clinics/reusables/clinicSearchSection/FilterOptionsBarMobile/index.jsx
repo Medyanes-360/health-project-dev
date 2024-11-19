@@ -20,6 +20,25 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
     e.stopPropagation(); // Prevent click from bubbling up to the overlay
   };
 
+  const [startY, setStartY] = useState(null);
+  const [isDraggedDown, setIsDraggedDown] = useState(false);
+
+  const handleTouchMove = (e) => {
+    const currentY = e.touches[0].clientY;
+
+    if (startY === null) {
+      // Record the starting position on the first move
+      setStartY(currentY);
+      return;
+    }
+
+    // Detect downward drag
+    if (currentY - startY > 30) {
+      // Threshold for downward movement
+      handleFilterModal();
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -38,16 +57,22 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
             }}
             exit={{ y: "80px", x: "0px", opacity: 0 }}
             transition={{
-              duration: 0.3,
+              duration: 0.2,
             }}
             className="h-4/6 w-full bg-white rounded-t-3xl"
           >
             <div className="relative flex w-full h-full">
               <div className="w-full shadow-lg h-full flex flex-col items-center">
                 {/* Head */}
-                <p className="border-b text-center font-semibold p-4 text-[#212B36] border-b-[#919EAB3D] w-9/12 mb-1">
-                  Filters
-                </p>
+                <div
+                  onTouchMove={handleTouchMove}
+                  className="w-full flex flex-col items-center justify-center"
+                >
+                  <div className="mt-4 -mb-1  w-24 h-[5px] bg-black/10 border-black/10 rounded-full"></div>
+                  <p className="border-b text-center font-semibold p-4 text-[#212B36] border-b-[#919EAB3D] w-9/12 mb-1">
+                    Filters
+                  </p>
+                </div>
                 {/* Body */}
                 <div className="h-[420px] no-scrollbar overflow-y-scroll w-full">
                   <div className="my-5 px-5 ">
