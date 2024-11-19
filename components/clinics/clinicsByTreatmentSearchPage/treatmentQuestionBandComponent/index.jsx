@@ -27,16 +27,16 @@ export default function TreatmentQuestionBandComponent({ data }) {
           }}
           className="bg-primary-light h-full flex justify-center"
         >
-          <div className="h-full font-medium font-inter w-full md:py-10 py-3  flex flex-col  md:flex-row  justify-between items-start md:items-center">
-            <div className="flex text-white flex-col items-center justify-center w-full">
-              <p>{text}</p>
-              <p className="text-sm my-3.5">{question}</p>
-              <div className="flex">
+          <div className="h-full font-medium font-inter w-full md:py-10 p-3 flex flex-col md:flex-row justify-between items-start md:items-center">
+            <div className="flex text-white flex-col items-center justify-center w-full gap-3 text-center">
+              <p className="flex">{text}</p>
+              <p className="text-sm">{question}</p>
+              <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
                 {options.map((option, index) => {
                   return (
                     <ButtonComponent
                       key={index}
-                      className="bg-[#EAEAEA]  !text-xs mr-1.5 text-primary"
+                      className="bg-[#EAEAEA]  !text-xs text-primary"
                       title={option}
                     />
                   );
