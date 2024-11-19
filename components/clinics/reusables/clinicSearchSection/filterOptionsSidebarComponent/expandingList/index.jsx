@@ -26,7 +26,7 @@ export default function ExpandingList({ title, children }) {
         className="flex  text-sm py-1 px-5  hover:bg-gray-200   items-center justify-between w-full"
         onClick={toggleExpanded}
       >
-        <p>{title}</p>
+        <p className="font-semibold">{title}</p>
         <span>
           <svg
             width="25"

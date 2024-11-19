@@ -61,7 +61,7 @@ export default function FilterOptionsSidebarComponent({ sidebarRef }) {
           <div className="my-5 px-5 ">
             <label
               htmlFor="medium-range"
-              className="block   font-semibold text-gray-900 dark:text-white"
+              className="block font-semibold text-gray-900 dark:text-white"
             >
               Price range
             </label>

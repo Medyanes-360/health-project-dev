@@ -51,7 +51,7 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
                 {/* Body */}
                 <div className="h-[420px] no-scrollbar overflow-y-scroll w-full">
                   <div className="my-5 px-5 ">
-                    <p>Price range</p>
+                    <p className="font-semibold">Price range</p>
                     {/* pure css ile price range verebilmek için iki inputu birleştirmek gerekiyor. bkz: https://stackoverflow.com/questions/4753946/html-slider-with-two-inputs-possible  */}
                     <div className=" ">
                       <RangeSlider
@@ -91,7 +91,7 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
                   </div>
                 </div>
                 <div className="flex items-center justify-end grow w-full">
-                  <ButtonComponent className="border mx-5  py-[11px] font-semibold   !text-[15px] w-full">
+                  <ButtonComponent className="border mx-5  py-[11px] font-semibold !text-[15px] w-full">
                     <svg
                       width="20"
                       height="20"
