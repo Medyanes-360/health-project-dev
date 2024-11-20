@@ -14,27 +14,24 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
   //     isOpen ? setIsOpen(false) : setIsOpen(true);
   //   };
   const [bookingScore, setBookingScore] = useState(1);
+  const [startY, setStartY] = useState(null);
 
   // Content'e tıklandığında modal'ın kapanmasını engeller.
   const handleContentClick = (e) => {
     e.stopPropagation(); // Prevent click from bubbling up to the overlay
   };
 
-  const [startY, setStartY] = useState(null);
-  const [isDraggedDown, setIsDraggedDown] = useState(false);
-
   const handleTouchMove = (e) => {
     const currentY = e.touches[0].clientY;
 
     if (startY === null) {
-      // Record the starting position on the first move
+      // Başlangıç pozisyonu
       setStartY(currentY);
       return;
     }
 
-    // Detect downward drag
-    if (currentY - startY > 30) {
-      // Threshold for downward movement
+    // Aşağı hareket
+    if (currentY - startY > 20) {
       handleFilterModal();
     }
   };
@@ -45,17 +42,17 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
         <div
           // Modal overlay'e tıklandığında modal'ı gizler
           onClick={handleFilterModal}
-          className="fixed left-0 w-full h-[100vh] top-0 z-[5000000] bg-black/80 flex md:hidden items-end justify-center"
+          className="fixed left-0 w-full h-[100vh] top-0 z-[999999999999] bg-black/80 flex md:hidden items-end justify-center touch-none"
         >
           <MotionDiv
             onClick={handleContentClick}
-            initial={{ y: "80px", x: "0px", opacity: 0 }}
+            initial={{ opacity: 0, y: "80px", x: "0px" }}
             whileInView={{
               x: "0px",
               y: "0px",
               opacity: 1,
             }}
-            exit={{ y: "80px", x: "0px", opacity: 0 }}
+            exit={{ opacity: 0, y: "40px", x: "0px" }}
             transition={{
               duration: 0.2,
             }}
