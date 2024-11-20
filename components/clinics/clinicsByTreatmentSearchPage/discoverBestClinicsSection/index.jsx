@@ -83,7 +83,26 @@ const data = [
   // },
 ];
 const tabLabels = ["Clinic", "Price", "Doctors", "Reviews"];
-
+const doctorsData = [
+  {
+    name: "Leyla Arvas",
+    speciality: "Hair transplant",
+    location: "🇺🇦Turkey, Istanbul",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    score: "Excellent score",
+    reviews: "137",
+  },
+  {
+    name: "John Doe",
+    speciality: "Plastic Surgery",
+    location: "🇺🇸USA, New York",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    score: "Very Good",
+    reviews: "200",
+  },
+];
 export default function DiscoverBestClinicsSection() {
   const [openPanel, setOpenPanel] = useState(0);
 
@@ -159,8 +178,8 @@ export default function DiscoverBestClinicsSection() {
           >
             {openPanel === 0 && <Clinic data={data[0]} />}
             {openPanel === 1 && <Price />}
-            {openPanel === 2 && <Doctors />} {/* Doctors bileşeni örnek */}
-            {openPanel === 3 && <Reviews />} {/* Reviews bileşeni örnek */}
+            {openPanel === 2 && <Doctors data={doctorsData} />}{" "}
+            {openPanel === 3 && <Reviews />}
           </div>
         ))}
       </div>
