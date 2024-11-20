@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const TreatmentList = ({ treatments }) => {
   return (
-    <article className="px-0 sm:px-4 pb-4 w-full mb-4">
-      <div className="bg-[#D9D9D91F] shadow-md rounded-md p-2 mx-auto mt-8 w-full">
+    <article className="pb-0 w-full mb-0 ">
+      <div className="bg-[#D9D9D91F] shadow-md rounded-2xl p-2 mx-auto mt-4 w-full">
         <div className="flex items-center justify-around bg-[#EFEFEF] h-14 rounded">
           <h2 className="font-poppins text-xs font-semibold leading-6 w-[100%] text-end sm:text-center p-[1rem] sm:p-[0rem]">
             Treatment
@@ -41,7 +41,7 @@ const TreatmentList = ({ treatments }) => {
         </ul>
       </div>
     </article>
-  );
-};
+  )
+}
 
 export default TreatmentList;

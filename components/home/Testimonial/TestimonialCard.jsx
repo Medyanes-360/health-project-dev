@@ -271,7 +271,7 @@ const TestimonialCard = ({ data }) => {
         </Slider>
       </div>
     </>
-  );
-};
+  )
+}
 
 export default TestimonialCard;

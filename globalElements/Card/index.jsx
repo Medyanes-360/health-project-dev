@@ -13,5 +13,5 @@ export default function CardComponent({
     >
       <div className="flex flex-col gap-5">{children}</div>
     </div>
-  );
-}
+  )
+}  

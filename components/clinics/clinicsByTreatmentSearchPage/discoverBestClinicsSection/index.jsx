@@ -87,7 +87,7 @@ const doctorsData = [
   {
     name: "Leyla Arvas",
     speciality: "Hair transplant",
-    location: "🇺🇦Turkey, Istanbul",
+    location: "🇺🇦 Turkey, Istanbul",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     score: "Excellent score",
@@ -96,7 +96,7 @@ const doctorsData = [
   {
     name: "John Doe",
     speciality: "Plastic Surgery",
-    location: "🇺🇸USA, New York",
+    location: "🇺🇸 USA, New York",
     image:
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     score: "Very Good",
@@ -150,7 +150,7 @@ export default function DiscoverBestClinicsSection() {
   return (
     <ExtraLargePageContainer>
       {/* Heading: */}
-      <div className="flex mt-16 mb-9 justify-between   items-center">
+      <div className="hidden md:flex mt-16 mb-9 justify-between items-center  ">
         <div>
           <h1 className="text-xl font-bold">
             Discover the Best Hair transplant Clinics
@@ -210,5 +210,5 @@ export default function DiscoverBestClinicsSection() {
         <Link href="/">See more deals</Link>
       </div>
     </ExtraLargePageContainer>
-  );
+  )
 }

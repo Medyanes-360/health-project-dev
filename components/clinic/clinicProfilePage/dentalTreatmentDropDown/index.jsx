@@ -32,7 +32,7 @@ export default function DentalTreatmentDropDown() {
   };
 
   return (
-    <div id="DentalTreatmentDropDown">
+    <div id="DentalTreatmentDropDown ">
       <div className="flex flex-col gap-8">
         <h2 className="font-poppins text-lg font-semibold leading-6">
           {data.sub_heading_5}
@@ -46,7 +46,7 @@ export default function DentalTreatmentDropDown() {
       <ul className="flex flex-col gap-2 w-full mx-auto mt-8">
         <li>
           <details className="group" open>
-            <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-[54px] ">
+            <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-[54px]  mb-8 ">
               <span className="flex gap-2">
                 <span className="font-poppins text-sm font-normal leading-[22px] text-[#637381]">
                   Dental Treatment
@@ -67,7 +67,7 @@ export default function DentalTreatmentDropDown() {
         </li>
       </ul>
       {/* Treatments prices in the clinic dropdown end */}
-      <hr />
+      <hr className="mt-8"  />
     </div>
-  );
+  )
 }

@@ -27,8 +27,8 @@ const treatmentsData = {
 
 export default function Price() {
   return (
-    <CardComponent>
-      <TreatmentList treatments={treatmentsData.treatments} />;
+    <CardComponent className="rounded-t-none rounded-b-2xl !p-0 !m-0">
+      <TreatmentList treatments={treatmentsData.treatments} className="" />
     </CardComponent>
   );
 }

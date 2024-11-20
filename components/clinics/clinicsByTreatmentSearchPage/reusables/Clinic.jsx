@@ -20,8 +20,7 @@ export default function Clinic({ data }) {
   } = data;
 
   return (
-    <div className="">
-      <CardComponent className="rounded-t-none rounded-b-2xl">
+      <CardComponent className="rounded-t-none rounded-b-2xl !p-0 !m-0">
         <div className="space-y-5">
           {" "}
           <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-20 p-8 h-full">
@@ -34,7 +33,7 @@ export default function Clinic({ data }) {
               />
             </div>
 
-            <div className="w-full aspect-square flex flex-col justify-between space-y-6">
+            <div className="w-full flex flex-col justify-between space-y-6">
               <div className="flex  items-center gap-2">
                 <Image
                   src={centerIcon}
@@ -123,7 +122,7 @@ export default function Clinic({ data }) {
               </div>
             </div>
 
-            <div className="w-full aspect-square flex flex-col justify-between">
+            <div className="w-full  flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-1">
                   {[1, 2, 3, 4, 5].map((i) => (
@@ -163,6 +162,5 @@ export default function Clinic({ data }) {
           </div>
         </div>
       </CardComponent>
-    </div>
   );
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Reviews({ data }) {
   return (
-    <CardComponent className="!p-0">
+    <CardComponent className="rounded-t-none rounded-b-2xl !p-0 !m-0">
       <ul>
         {data.map((item, index) => (
           <li

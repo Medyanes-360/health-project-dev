@@ -16,7 +16,7 @@ const QualifiedMedicalDoctorsCard = ({ icon, title, description }) => {
         <p className="text-third text-lg">{description}</p>
       </div>
     </CardComponent>
-  );
-};
+  )
+}
 
 export default QualifiedMedicalDoctorsCard;
