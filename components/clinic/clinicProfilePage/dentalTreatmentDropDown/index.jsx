@@ -32,7 +32,7 @@ export default function DentalTreatmentDropDown() {
   };
 
   return (
-    <div id="DentalTreatmentDropDown ">
+    <div id="DentalTreatmentDropDown">
       <div className="flex flex-col gap-8">
         <h2 className="font-poppins text-lg font-semibold leading-6">
           {data.sub_heading_5}
