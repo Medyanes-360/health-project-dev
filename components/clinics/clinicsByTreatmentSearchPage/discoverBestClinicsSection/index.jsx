@@ -103,6 +103,29 @@ const doctorsData = [
     reviews: "200",
   },
 ];
+const reviewsData = [
+  {
+    speciality: "Hair transplant Name",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    score: "Excellent score",
+    reviews: "137",
+  },
+  {
+    speciality: "Hair transplant Name",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    score: "Excellent score",
+    reviews: "137",
+  },
+  {
+    speciality: "Hair transplant Name",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    score: "Excellent score",
+    reviews: "137",
+  },
+];
 export default function DiscoverBestClinicsSection() {
   const [openPanel, setOpenPanel] = useState(0);
 
@@ -179,7 +202,7 @@ export default function DiscoverBestClinicsSection() {
             {openPanel === 0 && <Clinic data={data[0]} />}
             {openPanel === 1 && <Price />}
             {openPanel === 2 && <Doctors data={doctorsData} />}{" "}
-            {openPanel === 3 && <Reviews />}
+            {openPanel === 3 && <Reviews data={reviewsData} />}
           </div>
         ))}
       </div>
