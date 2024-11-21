@@ -6,7 +6,7 @@ export default function PanelTwo({ data }) {
     <div className="flex items-center gap-4">
       <div>
         {" "}
-        <Image src="/assets/icons/like.svg" alt="" width={24} height={24} />
+        <Image src="/assets/icons/like.svg" alt="" width={40} height={40} />
       </div>
       <div>
         <span className="font-poppins text-[12px] font-bold leading-[32px] text-left decoration-none decoration-skip-[ink]">

@@ -42,13 +42,13 @@ export default function TreatmentOverviewSection({ data }) {
   );
 
   return (
-    <ExtraLargePageContainer className="grid py-8 mt-6 grid-cols-3 justify-between items-start">
-      <div className="col-span-2    ">
+    <ExtraLargePageContainer className="grid py-8 mt-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-between items-start gap-[1rem]  " >
+      <div className="col-span-2 shadow-[0px_12px_24px_0px] shadow-[#C7C7C714] border border-[1px] border-[#0000001F] rounded-[32px] h-full p-[1rem]  ">
         <h2 className="text-[#FE7443] mb-4 font-semibold">{title} Overview</h2>
         <OverviewTabs data={overview} />
       </div>
-      <div className="col-span-1 shadow-sm h-fit  px-[12px] py-[17px]  rounded-[32px]">
-        <div className=" flex    flex-col items-center text-center">
+      <div className="col-span-2 md:col-span-1   shadow-[0px_12px_24px_0px] shadow-[#C7C7C714] border border-[1px] border-[#0000001F]  rounded-[32px] h-full p-[2rem] flex items-center">
+        <div className=" flex    flex-col items-center text-center ">
           <Image
             className=" rounded-full"
             src={reviewer.imgSrc}

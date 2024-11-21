@@ -30,13 +30,13 @@ export default function OverviewTabs({ data }) {
   return (
     <div className="overflow-hidden">
       <div className="mb-4   no-scrollbar overflow-scroll ">
-        <div className="flex py-3 flex-nowrap w-full -mb-px text-sm font-medium text-center">
+        <div className="flex py-3 flex-nowrap w-full -mb-px text-sm font-medium text-center justify-between">
           <button
             onClick={clickHandler}
             data-overviewtabid="0"
             className={`${
               openPanel == 0 && "!border-b-primary !text-black "
-            }  inline-block   text-sm text-nowrap  p-4 border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
+            }  inline-block   text-sm text-nowrap   border-b-[3px] border-b-transparent text-black-disabled rounded-t-lg`}
             type="button"
           >
             Takeaways

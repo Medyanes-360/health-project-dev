@@ -9,7 +9,7 @@ export default function PanelFour({ data }) {
         </span>
       </div>
       <div className="flex flex-col gap-1">
-        <div className="flex gap-1 justify-between p-4">
+        <div className="flex gap-1 justify-between p-4 items-start md:flex-nowrap flex-wrap">
           {items.map((item, index) => (
             <div
               key={index}
