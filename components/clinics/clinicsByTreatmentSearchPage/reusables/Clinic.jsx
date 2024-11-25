@@ -68,7 +68,7 @@ export default function Clinic({ data }) {
                 </h1>
                 <div className="flex gap-4 items-center">
                   {accreditations.map((item, index) => (
-                    <Image src={item} alt={item} width={30} height={30} />
+                    <Image src={item} alt={item} width={30} height={30} key={index} />
                   ))}
                 </div>
               </div>

@@ -8,6 +8,8 @@ export default function PageLinkTabs() {
   const headerBarRef = useRef(null);
   const topBarHeight = 520;
   let headerBarHeight = 80;
+  const [isSticky, setIsSticky] = useState(false);
+
 
   useEffect(() => {
     const setHeaderSticky = () => {
@@ -22,7 +24,7 @@ export default function PageLinkTabs() {
         );
         headerBarRef.current.classList.remove("bg-transparent");
 
-        headerBarHeight = 0;
+        setIsSticky(true);
       } else if (window.scrollY <= topBarHeight && headerBarRef.current) {
         headerBarRef.current.classList.remove(
           "fixed",
@@ -32,6 +34,8 @@ export default function PageLinkTabs() {
           "transition-all",
           "duration-300"
         );
+        setIsSticky(false);
+
       }
     };
 

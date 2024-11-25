@@ -11,7 +11,7 @@ export default function Doctors({ data }) {
             className="flex justify-between gap-x-6 p-2 m-2 bg-[#F9F9F9] items-center rounded-[10px]"
           >
             <div className="flex min-w-0 gap-x-4 md:w-[33%] w-[full] ">
-              <img
+              <Image
                 className="size-12 flex-none rounded-full bg-gray-50"
                 src={item.image}
                 alt={item.name}
@@ -27,7 +27,7 @@ export default function Doctors({ data }) {
             </div>
             <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-start">
               <div className="flex gap-2">
-                <img
+                <Image
                   src="/assets/icons/star.svg"
                   alt="star"
                   width={24}

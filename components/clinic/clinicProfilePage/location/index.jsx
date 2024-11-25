@@ -109,7 +109,7 @@ export default function Location({ address }) {
       </div>
       <div className="flex items-center justify-between text-[#04285C] mb-8">
         <div className="flex gap-4 items-center ">
-          <Image src={data.icon} width={40} height={40} />
+          <Image src={data.icon} width={40} height={40} alt={data.icon} />
           <span className="w-[150px] font-poppins text-sm font-normal leading-5">
             {data.text}
           </span>

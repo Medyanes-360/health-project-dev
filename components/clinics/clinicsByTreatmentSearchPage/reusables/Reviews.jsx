@@ -19,7 +19,7 @@ export default function Reviews({ data }) {
             </div>
             <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-start  md:w-[33%] w-[full]">
               <div className="flex gap-2">
-                <img
+                <Image
                   src="/assets/icons/star.svg"
                   alt="star"
                   width={24}
