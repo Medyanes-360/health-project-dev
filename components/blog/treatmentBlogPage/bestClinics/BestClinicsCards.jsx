@@ -109,7 +109,7 @@ const CardContent = ({ data }) => {
   const { img, clinicName, city, rate } = data;
 
   return (
-    <div className="bg-[#FFFFFF1F] hover:bg-black/50 transition-all duration-200 cursor-pointer hover:scale-105 rounded-2xl">
+    <div className="bg-[#00000091] hover:bg-black/50 transition-all duration-200 cursor-pointer hover:scale-105 rounded-2xl">
 
 
     <CardComponent
