@@ -15,6 +15,8 @@ export default function Doctors({ data }) {
                 className="size-12 flex-none rounded-full bg-gray-50"
                 src={item.image}
                 alt={item.name}
+                width={24}
+                height={24}
               />
               <div className="min-w-0 flex-auto">
                 <p className="text-sm/6 font-semibold text-gray-900">
