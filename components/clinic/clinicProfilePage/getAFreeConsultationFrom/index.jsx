@@ -40,7 +40,7 @@ export default function GetAFreeConsultationForm() {
     >
       <CardComponent
         className={
-          "!flex-1 !w-full !rounded-none !rounded-r-2xl  sm:shadow shadow-none h-[650px] md:h-full "
+          "!flex-1 !w-full !rounded-none !rounded-r-2xl  sm:shadow shadow-none !h-[650px] !md:h-full  "
         }
       >
         <Formik
