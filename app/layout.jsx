@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import WillBeDeleted from "@/components/WillBeDeleted";
 import { SessionProvider } from "next-auth/react";
+import AssistanChat from "@/components/assistant/assistantChat";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children, session }) {
             <WillBeDeleted />
 
             {children}
+            <AssistanChat />
           </main>
         </SessionProvider>
       </body>

@@ -7,11 +7,18 @@ import BeforeAfterPhotoSlider from "@/globalElements/beforeAfterPhotoSlider";
 export default function BeforeAndAfterPictures() {
   const data = {
     slides: [
-      ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
-      ["/assets/images/clinic1.png", "/assets/images/beforeAfter.png"],
-      ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
-      ["/assets/images/clinic1.png", "/assets/images/beforeAfter.png"],
-      ["/assets/images/beforeAfter.png", "/assets/images/clinic1.png"],
+      [
+        "/assets/images/mock-clinic-image2.png",
+        "/assets/images/mock-clinic-image1.png",
+      ],
+      [
+        "/assets/images/mock-clinic-image1.png",
+        "/assets/images/mock-clinic-image2.png",
+      ],
+      [
+        "/assets/images/mock-clinic-image2.png",
+        "/assets/images/mock-clinic-image1.png",
+      ],
     ],
     texts: {
       title: "Before and After Pictures (8)",
@@ -63,12 +70,12 @@ export default function BeforeAndAfterPictures() {
           />
         </div>
 
-        <BeforeAfterPhotoSlider
-          width="832px"
-          beforeImageSrc={data.slides[currentIndex][0]}
-          afterImageSrc={data.slides[currentIndex][1]}
-          containerclassname="!w-full !h-full"
-        />
+        <div className="relative flex w-full h-full justify-center items-center">
+          <BeforeAfterPhotoSlider
+            beforeImageSrc={data.slides[currentIndex][0]}
+            afterImageSrc={data.slides[currentIndex][1]}
+          />
+        </div>
 
         <div className="cursor-pointer ml-4" onClick={nextSlide}>
           <Image

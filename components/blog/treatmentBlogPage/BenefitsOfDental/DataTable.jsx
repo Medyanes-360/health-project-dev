@@ -1,6 +1,6 @@
 const DataTable = ({ data }) => {
   return (
-    <div className="grid grid-cols-5 text-center rounded-2xl overflow-hidden">
+    <div className="grid grid-cols-5 text-start rounded-2xl overflow-hidden">
       {/* Header Row */}
       <div className="bg-[#ECE4FF] px-4 text-black py-5">Veneer Type</div>
       {data.map((item, index) => (
