@@ -54,18 +54,18 @@ const arr4 = [{}, {}, {}, {}];
 
 const GetFreeConsolation = () => {
   return (
-    <div className="pb-20">
+    <ExtraLargePageContainer className="pb-20">
       <>
         <h1 className="font-bold text-xl sm:text-2xl text-secondary mb-5 text-center">
           Get a free consolation
         </h1>
 
-        <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col md:flex-row">
           <FormText />
           <GetFreeConsolationForm />
         </div>
       </>
-    </div>
+    </ExtraLargePageContainer>
   );
 };
 
@@ -90,10 +90,12 @@ const FormText = () => {
         once: true,
         amount: 0.5,
       }}
-      className="bg-primary px-5  text-fourth flex-1 rounded-l-2xl flex items-center py-5 sm:py-0 relative "
+      className="flex-col text-fourth  flex items-center py-5 sm:py-0 relative  h-auto md:h-[650px] sm:flex-row "
     >
-      <div className="space-y-10 mx-auto">
-        <h1 className="text-xl sm:text-2xl">Countries for treatment</h1>
+      <div className="flex flex-col items-start justify-center gap-20 md:w-6/12 bg-primary h-[650px] md:h-full w-[45%] p-8   md:rounded-l-2xl rounded-tl-[20px] md:rounded-tr-[0px] rounded-tr-[20px] rounded-br-none rounded-bl-none  !w-full  ">
+        <h1 className="font-lexend text-sm font-semibold leading-[44px] tracking-[-0.015em] ">
+          Countries for treatment
+        </h1>
 
         <div className="w-full space-y-3">
           {data?.map(({ country }, i) => (
@@ -103,20 +105,27 @@ const FormText = () => {
                 alt="img"
                 width={30}
                 height={30}
+                className="rotate-90"
               />
-              <p className="text-2xl">{`${country}`}</p>
+              <p class="font-poppins text-[20px] font-light leading-[28px]">{`${country}`}</p>
             </div>
           ))}
         </div>
 
         <div className="space-y-3">
-          <p>Bizimle iletişime geçin:</p>
+          <div className="flex gap-4 items-center justify-center ">
+            <hr className="w-[21.71px] h-0 gap-0 border-t-[1.36px] border-solid border-[#FFFFFF] opacity-1  "></hr>
+
+            <p className="font-lexend text-[10.86px] font-normal leading-[16.29px]">
+              Bizimle iletişime geçin:
+            </p>
+          </div>
 
           <div className="flex gap-1">
             {socialMedia?.map(({ Img, id }) => (
               <div
                 key={id}
-                className="w-10 h-10 rounded-md grid place-content-center p-2 bg-primary-dark/40 cursor-pointer"
+                className="w-10 h-10 rounded-md grid place-content-center p-2 bg-[#FFFFFF14] cursor-pointer"
               >
                 <Img className="w-6 h-6 text-white" />
               </div>
