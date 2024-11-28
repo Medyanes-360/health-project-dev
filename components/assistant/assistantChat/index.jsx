@@ -48,7 +48,7 @@ const categories = [
   },
 ];
 
-export default function Component() {
+export default function AssistanChat() {
   const [messages, setMessages] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const chatEndRef = useRef(null);
@@ -124,7 +124,7 @@ export default function Component() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 flex justify-end">
+    <div className="fixed bottom-5 right-5 flex justify-end z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
