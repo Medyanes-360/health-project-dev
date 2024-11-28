@@ -83,16 +83,19 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
       className="relative grid md:grid-flow-col-dense md:grid-cols-9 gap-5 md:h-[386px] items-center border md:min-w-[900px] border-[#D9D9D91F] px-3 md:px-7 py-5 md:py-14 rounded-3xl shadow-lg"
     >
       <div className="md:col-span-3 h-full w-full md:max-w-[280px] flex flex-col justify-center items-center">
-        <Image
-          className="h-full md:h-48 w-full p-0.5  rounded-3xl cursor-pointer hover:opacity-90"
-          src={procedure.clinic.images[0]}
-          onClick={() => {
-            handleOpenImageModal(procedure.clinic.images[0]);
-          }}
-          alt=""
-          width={1000}
-          height={1000}
-        />
+        <div className="w-full h-full flex">
+          <Image
+            className="h-full md:h-48 w-full p-0.5  rounded-3xl cursor-pointer  transition-all duration-200 hover:brightness-75"
+            src={procedure.clinic.images[0]}
+            onClick={() => {
+              handleOpenImageModal(procedure.clinic.images[0]);
+            }}
+            alt=""
+            width={1000}
+            height={1000}
+          />
+        </div>
+
         <div className="grid grid-cols-3 w-full md:max-w-[280px] items-center">
           {procedure.clinic.images.slice(1).map((src, index) => {
             return (
@@ -101,7 +104,7 @@ export default function ClinicListItem({ index, fetchClinics, lastItem }) {
                 onClick={() => {
                   handleOpenImageModal(src);
                 }}
-                className="h-full md:h-20 w-full p-0.5 rounded-2xl cursor-pointer hover:opacity-90 "
+                className="h-full md:h-20 w-full p-0.5 rounded-2xl cursor-pointer transition-all duration-200 hover:brightness-75"
                 src={src}
                 alt=""
                 width={1000}
