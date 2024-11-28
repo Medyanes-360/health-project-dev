@@ -42,11 +42,11 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
           transition: "transform .6s ease-out",
           transform: isOpen ? "translateY(0%)" : "translateY(100%)",
           width: "100%",
-          height: "70%",
+          height: "65%",
         }}
-        className="fixed bg-white flex flex-col justiy-between bottom-0 rounded-t-3xl mb-4"
+        className="fixed bg-white flex flex-col justiy-between bottom-0 rounded-t-3xl"
       >
-        <div className="relative flex w-full">
+        <div className="relative h-full flex w-full">
           <div className="w-full shadow-lg h-full flex flex-col items-center">
             {/* Head */}
             <div
@@ -59,7 +59,7 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
               </p>
             </div>
             {/* Body */}
-            <div className="h-[420px] no-scrollbar overflow-y-scroll w-full">
+            <div className="min-h-[420px] no-scrollbar h-full overflow-y-scroll w-full">
               <div className="my-5 px-5 ">
                 <p className="font-semibold">Price range</p>
                 {/* pure css ile price range verebilmek için iki inputu birleştirmek gerekiyor. bkz: https://stackoverflow.com/questions/4753946/html-slider-with-two-inputs-possible  */}
@@ -100,7 +100,7 @@ export const FilterOptionsBarMobile = ({ handleFilterModal, isOpen }) => {
                 </ExpandingList>
               </div>
             </div>
-            <div className="flex flex-col items-center p-3 grow w-full">
+            <div className="flex flex-col items-center p-4 justify-end w-full">
               <ButtonComponent className="border mx-5 py-[11px] font-semibold !text-[15px] w-full">
                 <svg
                   width="20"
