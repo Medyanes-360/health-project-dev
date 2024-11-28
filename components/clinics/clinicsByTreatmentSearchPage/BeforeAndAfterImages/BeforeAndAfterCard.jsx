@@ -74,10 +74,8 @@ const BeforeAndAfterCard = ({ data }) => {
           className="w-full relative aspect-[12/9] rounded-2xl"
         >
           <BeforeAfterPhotoSlider
-            width={"400px"}
             beforeImageSrc={images[0]}
             afterImageSrc={images[1]}
-            containerclassname={"object-cover object-center rounded-2xl"}
           />
         </div>
       </CardComponent>
