@@ -4,14 +4,13 @@ import Image from "next/image";
 const BestVenceerPackagesCard = ({ data }) => {
   const { img, clinicName, location, description, rate, price } = data;
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <div className="flex flex-col md:flex-row sm:justify-between gap-6">
         <div className="flex flex-col md:flex-row gap-4 md:flex-1 w-full">
-          <div className="aspect-[12/8] rounded-2xl overflow-hidden w-full relative max-w-[400px]">
+          <div className=" rounded-2xl overflow-hidden w-full h-80 md:h-full relative max-w-[400px]">
             <BeforeAfterPhotoSlider
-              width={"400px"}
-              beforeImageSrc="/assets/images/clinic1.png"
-              afterImageSrc="/assets/images/clinic2.png"
+              beforeImageSrc="/assets/images/mock-clinic-image2.png"
+              afterImageSrc="/assets/images/mock-clinic-image1.png"
             />
           </div>
           <div className="w-full space-y-3 py-3">
