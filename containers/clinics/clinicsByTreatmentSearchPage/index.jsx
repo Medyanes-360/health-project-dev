@@ -17,8 +17,32 @@ import TreatmentCostsSection from "@/components/clinics/clinicsByTreatmentSearch
 import ClinicSearchSection from "@/components/clinics/reusables/clinicSearchSection";
 import TreatmentOverviewSection from "@/components/clinics/clinicsByTreatmentSearchPage/treatmentOverviewSection";
 import TreatmentQuestionBandComponent from "@/components/clinics/clinicsByTreatmentSearchPage/treatmentQuestionBandComponent";
+import IconFacebook from "@/public/assets/icons/FaceBook";
+import IconInstagram from "@/public/assets/icons/Instagram";
+import IconLinkedin from "@/public/assets/icons/LinkedIn";
+import WhatsappIcon from "@/public/assets/icons/Whatsapp";
+// GetFreeConsolation data start
+const data = [
+  { country: "Hair transplant in Poland", countryCode: "PL" },
+  { country: "Hair transplant in Germany", countryCode: "DE" },
+  { country: "Hair transplant in Spain", countryCode: "ES" },
+  { country: "Hair transplant in Republic of Korea", countryCode: "KR" },
+  { country: "Hair transplant in Mexico", countryCode: "MX" },
+  { country: "Hair transplant in Thailand", countryCode: "TH" },
+  { country: "Hair transplant in Turkey", countryCode: "TR" },
+];
+
+const socialMedia = [
+  { Img: IconInstagram, id: 1 },
+  { Img: IconFacebook, id: 2 },
+  { Img: IconLinkedin, id: 3 },
+  { Img: WhatsappIcon, id: 4 },
+];
+// GetFreeConsolation data end
+
 
 export default function ClinicsByTreatmentSearchPageContainer({ treatment }) {
+  
   return (
     <>
       {" "}
@@ -52,7 +76,7 @@ export default function ClinicsByTreatmentSearchPageContainer({ treatment }) {
       <BookimedEditorialPolicy />
       <BookimedCeoAssurance />
       <HowBookimedHelps />
-      <GetFreeConsolation />
+      <GetFreeConsolation data={data} socialMedia={socialMedia} />
     </>
   );
 }

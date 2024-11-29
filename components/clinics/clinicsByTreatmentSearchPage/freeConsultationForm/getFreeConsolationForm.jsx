@@ -155,7 +155,7 @@ const GetFreeConsolationForm = () => {
                   </div>
                 )}
                 <ButtonComponent
-                  className="!bg-primary !text-white !rounded-md font-lexend text-[17px] font-medium leading-[56px] w-[216px] h-[56px] mt-4 "
+                  className="!bg-primary !text-white !rounded-md font-lexend text-[17px] font-medium leading-[56px] w-[216px] h-[56px] t-4 "
                   type="submit"
                   containerClassName={"flex justify-end w-full"}
                   title={isSubmitting ? "Submitting..." : "Mesaj Gönder"}
