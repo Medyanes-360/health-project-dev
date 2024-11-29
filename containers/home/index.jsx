@@ -7,6 +7,7 @@ import OurServicesComponent from "@/components/home/ourServicesComponent";
 import PopularClinicsComponent from "@/components/home/popularClinicsComponent";
 import QualifiedMedicalDoctors from "@/components/home/QualifiedMedicalDoctors/QualifiedMedicalDoctors";
 import Testimonial from "@/components/home/Testimonial";
+import ContanctFormSection from "@/components/home/form";
 
 const HomeContainer = () => {
   return (
@@ -20,7 +21,7 @@ const HomeContainer = () => {
       <ContactUsBandComponent />
       <Testimonial />
       <QualifiedMedicalDoctors />
-      <FormSection />
+      <ContanctFormSection />
     </div>
   );
 };

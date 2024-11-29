@@ -25,7 +25,7 @@ const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div>
+    <div className="flex w-full">
       <Formik
         initialValues={{
           phone: "",
@@ -41,7 +41,7 @@ const ContactForm = () => {
         }}
       >
         {({ values, handleSubmit, setFieldValue }) => (
-          <Form onSubmit={handleSubmit} className="space-y-4">
+          <Form onSubmit={handleSubmit} className="flex w-full gap-2 flex-col">
             {/* Custom Phone Input */}
             <div>
               <CustomInput
@@ -55,11 +55,13 @@ const ContactForm = () => {
                 onChange={(value) => setFieldValue("phone", value)}
                 className="w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
               />
-              <ErrorMessage
-                name="phone"
-                component="div"
-                className="text-red-600"
-              />
+              <div className="text-red-600 flex w-full mt-1 min-h-6">
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className="text-red-600"
+                />
+              </div>
             </div>
 
             {/* Name Input */}
@@ -69,11 +71,13 @@ const ContactForm = () => {
                 placeholder="Enter your name"
                 className="w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
               />
-              <ErrorMessage
-                name="name"
-                component="div"
-                className="text-red-600"
-              />
+              <div className="text-red-600 flex w-full mt-1 min-h-6">
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="text-red-600"
+                />
+              </div>
             </div>
 
             {/* Email Input */}
@@ -84,11 +88,13 @@ const ContactForm = () => {
                 placeholder="Enter your email"
                 className="w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
               />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="text-red-600"
-              />
+              <div className="text-red-600 flex w-full mt-1 min-h-6">
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-600"
+                />
+              </div>
             </div>
 
             {/* Message Input */}
@@ -100,26 +106,28 @@ const ContactForm = () => {
                 className="w-full bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
                 rows={5}
               />
-              <ErrorMessage
-                name="message"
-                component="div"
-                className="text-red-600"
-              />
+              <div className="text-red-600 flex w-full mt-1 min-h-6">
+                <ErrorMessage
+                  name="message"
+                  component="div"
+                  className="text-red-600"
+                />
+              </div>
             </div>
 
             {/* Submit Button */}
             <div className="w-full flex justify-end">
               <ButtonComponent
                 type="submit"
-                className="bg-primary text-white rounded-2xl w-[50%] lg:w-fit py-2 px-4"
+                className="bg-primary text-white !rounded-xl w-[50%] lg:w-fit px-20 md:px-8 md:py-4"
               >
-                Submit
+                <p className=" md:text-xl">Submit</p>
               </ButtonComponent>
             </div>
 
             {/* Display confirmation message after form submission */}
             {submitted && (
-              <p className="text-green-600 text-center mt-4">
+              <p className="text-green-600 text-center mt-2">
                 Form submitted successfully!
               </p>
             )}

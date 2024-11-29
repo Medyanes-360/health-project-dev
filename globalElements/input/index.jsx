@@ -82,7 +82,10 @@ const CustomInput = ({
     <div>
       <InputType
         name={name}
-        className={className}
+        className={`
+          w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl 
+          ${className}
+        `}
         onChange={onChange}
         placeholder={placeholder}
         type={type}
