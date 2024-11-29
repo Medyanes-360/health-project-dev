@@ -6,28 +6,36 @@ import GetFreeConsolationForm from "./getFreeConsolationForm";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 import { MotionDiv } from "@/globalElements/motion";
+import Link from "next/link";
 
 const data = [
   {
     country: "Hair transplant in Poland",
+    countryCode: "PL",
   },
   {
     country: "Hair transplant in Germany",
+    countryCode: "DE",
   },
   {
     country: "Hair transplant in Spain",
+    countryCode: "ES",
   },
   {
-    country: "Hair transplant in Republic of korea",
+    country: "Hair transplant in Republic of Korea",
+    countryCode: "KR",
   },
   {
     country: "Hair transplant in Mexico",
+    countryCode: "MX",
   },
   {
     country: "Hair transplant in Thailand",
+    countryCode: "TH",
   },
   {
     country: "Hair transplant in Turkey",
+    countryCode: "TR",
   },
 ];
 
@@ -52,7 +60,7 @@ const socialMedia = [
 
 const arr4 = [{}, {}, {}, {}];
 
-const GetFreeConsolation = () => {
+const GetFreeConsolation = ({ data, socialMedia }) => {
   return (
     <ExtraLargePageContainer className="pb-20">
       <>
@@ -61,7 +69,7 @@ const GetFreeConsolation = () => {
         </h1>
 
         <div className="flex flex-col md:flex-row">
-          <FormText />
+          <FormText data={data} socialMedia={socialMedia} />
           <GetFreeConsolationForm />
         </div>
       </>
@@ -71,7 +79,8 @@ const GetFreeConsolation = () => {
 
 export default GetFreeConsolation;
 
-const FormText = () => {
+
+const FormText = ({ data, socialMedia }) => {
   return (
     <MotionDiv
       initial={{
@@ -97,8 +106,8 @@ const FormText = () => {
           Countries for treatment
         </h1>
 
-        <div className="w-full space-y-3">
-          {data?.map(({ country }, i) => (
+        <div className="w-full space-y-3 z-50 ">
+          {data?.map(({ country, countryCode }, i) => (
             <div key={i} className="flex items-center gap-3">
               <Image
                 src={"/assets/images/sms.png"}
@@ -107,12 +116,17 @@ const FormText = () => {
                 height={30}
                 className="rotate-90"
               />
-              <p class="font-poppins text-[20px] font-light leading-[28px]">{`${country}`}</p>
+              <Link
+                href={`/clinics/treatment?country=${countryCode}`}
+                className="font-poppins text-[20px] font-light leading-[28px]"
+              >
+                {country}
+              </Link>
             </div>
           ))}
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 z-50">
           <div className="flex gap-4 items-center justify-center ">
             <hr className="w-[21.71px] h-0 gap-0 border-t-[1.36px] border-solid border-[#FFFFFF] opacity-1  "></hr>
 
@@ -120,15 +134,15 @@ const FormText = () => {
               Bizimle iletişime geçin:
             </p>
           </div>
-
-          <div className="flex gap-1">
+          <div className="flex gap-1 ">
             {socialMedia?.map(({ Img, id }) => (
-              <div
+              <Link
                 key={id}
                 className="w-10 h-10 rounded-md grid place-content-center p-2 bg-[#FFFFFF14] cursor-pointer"
+                href="/"
               >
                 <Img className="w-6 h-6 text-white" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -136,11 +150,14 @@ const FormText = () => {
 
       <div className="absolute z-0  w-full h-full inset-0 flex justify-end">
         <div className="grid grid-cols-2 gap-4 h-fit rotate-[45deg]">
-          {arr4?.map((_, i) => (
-            <div key={i} className="w-20 h-20 rounded-xl bg-white/10" />
-          ))}
+          {Array(4)
+            ?.fill({})
+            .map((_, i) => (
+              <div key={i} className="w-20 h-20 rounded-xl bg-white/10" />
+            ))}
         </div>
       </div>
     </MotionDiv>
   );
 };
+
