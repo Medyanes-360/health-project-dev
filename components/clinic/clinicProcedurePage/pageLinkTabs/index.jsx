@@ -58,7 +58,7 @@ export default function PageLinkTabs() {
           className="mt-6 py-3"
           style={{ height: `${headerBarHeight}px` }}
         >
-          <div className="flex px-6 justify-between">
+          <div className="flex px-6 justify-between overflow-y-scroll items-center justify-between gap-4">
             <span
               onClick={() => {
                 setActiveTabIndex(0);
@@ -68,7 +68,7 @@ export default function PageLinkTabs() {
                 href="#overviewSection"
                 className={`${
                   activeTabIndex == 0 && "!border-b-primary !text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] flex width-[100px] `}
               >
                 Overview
               </Link>
@@ -85,7 +85,7 @@ export default function PageLinkTabs() {
                 }}
                 className={`${
                   activeTabIndex == 1 && "border-b-primary text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200  text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200  text-[#9199A3]  flex width-[100px] `}
               >
                 Before & After Photos
               </Link>
@@ -102,7 +102,7 @@ export default function PageLinkTabs() {
                 }}
                 className={`${
                   activeTabIndex == 2 && "border-b-primary text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3]  flex width-[100px]`}
               >
                 Program Details
               </Link>
@@ -119,7 +119,7 @@ export default function PageLinkTabs() {
                 }}
                 className={`${
                   activeTabIndex == 3 && "border-b-primary text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] flex width-[100px] `}
               >
                 How It Works
               </Link>
@@ -137,7 +137,7 @@ export default function PageLinkTabs() {
                 }}
                 className={`${
                   activeTabIndex == 4 && "border-b-primary text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3]  flex width-[100px] `}
               >
                 Reviews
               </Link>
@@ -154,7 +154,7 @@ export default function PageLinkTabs() {
                 }}
                 className={`${
                   activeTabIndex == 5 && "border-b-primary text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3]  flex width-[100px] `}
               >
                 Location{" "}
               </Link>
@@ -171,7 +171,7 @@ export default function PageLinkTabs() {
                 }}
                 className={`${
                   activeTabIndex == 6 && "border-b-primary text-[#212B36]"
-                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3] `}
+                } py-3 border-b-2 cursor-pointer border-b-transparent  font-semibold text-sm hover:text-[#212B36] transition-all duration-200 text-[#9199A3]  flex width-[100px] `}
               >
                 FAQ{" "}
               </Link>
