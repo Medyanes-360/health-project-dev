@@ -48,11 +48,11 @@ export default function BreadCrumbComponent({ customPaths = [] }) {
   return (
     <>
       {" "}
-      <ExtraLargePageContainer className=" pb-2   text-sm  h-16 flex items-center justify-center  ">
-        <div className="grid  w-full  grid-cols-12  items-center ">
-          <ul className="flex  col-span-10 items-center ">
+      <ExtraLargePageContainer className=" pb-2   text-sm  flex items-center justify-center  ">
+        <div className="flex   w-full justify-between  items-center ">
+          <ul className="flex flex-wrap ">
             <li className="hover:underline mr-2 ">
-              <Link href={"/"}>Home</Link>
+              <Link href={"/"} className="sm:text-[14px] text-[10px]" >Home</Link>
             </li>
             {pathNames.length > 0 && (
               //separator:
@@ -83,7 +83,10 @@ export default function BreadCrumbComponent({ customPaths = [] }) {
               return (
                 <React.Fragment key={index}>
                   <li className={itemClasses}>
-                    <Link className="" href={url}>
+                    <Link
+                      class="font-poppins sm:text-[14px] text-[10px] font-normal leading-[22px] text-left decoration-skip-ink-none"
+                      href={url}
+                    >
                       {name}
                     </Link>
                   </li>
@@ -105,11 +108,12 @@ export default function BreadCrumbComponent({ customPaths = [] }) {
               );
             })}
           </ul>
-
-          <ButtonComponent
-            className="!text-base     col-span-2   !truncate !min-w-fit   py-2 !px-2 !w-full bg-transparent border-2 border-primary text-primary"
-            title="View Doctors"
-          />
+          <div>
+            <ButtonComponent
+              className="font-inter  font-semibold leading-[24px] !truncate w-[152px] h-[32px] !sm:text-[1.25rem] !text-[1rem]  !py-2 !px-2  bg-transparent border-2 border-primary text-[#52B8AB]"
+              title="View Doctors"
+            />
+          </div>
         </div>
       </ExtraLargePageContainer>
     </>
