@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function ContentBlock() {
   return (
-    <div className="w-full p-6 mb-96 border bg-white border-fifth rounded-3xl shadow-custom1 flex flex-col gap-6 h-full">
+    <div className="w-full p-6 mb-96 border bg-white border-fifth rounded-3xl shadow-custom1 flex flex-col gap-4 md:gap-6 h-full">
       {/*article main*/}
-      <div className="flex items-center justify-between h-[54px]">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-between md:h-[54px] gap-6 md:gap-0">
+        <div className="flex flex-col md:flex-row items-center gap-3">
           <Image
             src="/assets/blog/article1.jpg"
             alt="article1"
@@ -18,7 +18,7 @@ export default function ContentBlock() {
             <p className="text-sm font-normal">Anna Leonova</p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row items-center gap-3">
           <Image
             src="/assets/blog/article2.jpg"
             alt="article2"
@@ -31,16 +31,18 @@ export default function ContentBlock() {
             <p className="text-sm font-normal">Anna Leonova</p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between gap-3 w-full md:w-auto">
           <Image
             src="/assets/blog/icon1.png"
             alt=""
             width={54}
             height={54}
-            className=""
+            className="size-10 md:w-[54px] md:h-[54px]"
           />
           <div className="text-secondary">
-            <div className="font-medium text-[15px]">Updated: 05.11.2021</div>
+            <div className="font-medium text-xs md:text-[15px] text-end">
+              Updated: 05.11.2021
+            </div>
             <p className="text-xs font-normal text-neutral-400">
               Minutes to read: 9 minutes
             </p>
@@ -48,7 +50,7 @@ export default function ContentBlock() {
         </div>
       </div>
       {/*paragraph*/}
-      <div className="p-6 bg-fifth rounded-3xl">
+      <div className="p-2 text-xs md:text-base md:p-6 bg-fifth rounded-3xl text-center md:text-start">
         <div>
           Restorative dentistry is a fast-developing field worldwide: inspired
           by celebrities and influencers, men and women dream of perfect teeth.
@@ -85,11 +87,13 @@ export default function ContentBlock() {
       {/*keep*/}
       <div className="flex items-center gap-3 text-secondary">
         <Image src="/assets/blog/icon2.png" alt="" width={24} height={24} />
-        <p>Keep reading the article to explore:</p>
+        <p className="text-sm md:text-base">
+          Keep reading the article to explore:
+        </p>
       </div>
-      {/*paragraph*/}
-      <div className="p-6 bg-fifth rounded-3xl">
-        <ul className="list-disc list-inside">
+      {/*ul*/}
+      <div className="p-6 bg-fifth rounded-3xl text-xs md:text-base">
+        <ul className="list-disc list-inside space-y-3">
           <li>What are the prices for different types of veneers in Mexico?</li>
           <li>How much can you save in Mexico?</li>
           <li>
