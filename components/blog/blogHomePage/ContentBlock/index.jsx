@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ContentBlock() {
   return (
-    <div className="w-full p-6 mb-96 border bg-white border-fifth rounded-3xl shadow-custom1 flex flex-col gap-4 md:gap-6 h-full">
+    <div className="w-full p-6 border bg-white border-fifth rounded-3xl shadow-custom1 flex flex-col gap-4 md:gap-6 h-full">
       {/*article main*/}
       <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-between md:h-[54px] gap-6 md:gap-0">
         <div className="flex flex-col md:flex-row items-center gap-3">
@@ -51,38 +51,36 @@ export default function ContentBlock() {
       </div>
       {/*paragraph*/}
       <div className="p-2 text-xs md:text-base md:p-6 bg-fifth rounded-3xl text-center md:text-start">
-        <div>
-          Restorative dentistry is a fast-developing field worldwide: inspired
-          by celebrities and influencers, men and women dream of perfect teeth.
-          Famous people choose dental{" "}
-          <a
-            href="https://en.m.wikipedia.org/wiki/Veneer_(dentistry)"
-            target="_blank"
-            className="underline"
-          >
-            veneers
-          </a>{" "}
-          in Mexico to shine on red carpets while you can shine in your life,
-          too. Everybody has a chance to look like a star: installing veneers is
-          the easiest and fastest way to get a brilliant smile. The process is
-          pretty simple: a professional dentist puts a thin layer of enamel on
-          the front tooth surface to improve its shape, color and hide damages.
-          Fix dental imperfections fast – all you need is to find a proper
-          clinic and an experienced doctor to manage the process. Mexico is a
-          well-known destination for medical tourism. Patients from the USA,
-          Canada, the UK visit the country every year, looking for affordable
-          and high-quality medical assistance. Mexico has developed its
-          dentistry field to a highly professional level. About{" "}
-          <a
-            href="https://en.m.wikipedia.org/wiki/Veneer_(dentistry)"
-            target="_blank"
-            className="underline"
-          >
-            150,000+ dentists
-          </a>{" "}
-          work here, and 93% of them are with a bachelor’s degree. Patients will
-          find well-reputed clinics in Cancun, Tijuana, and Playa del Carmen.
-        </div>
+        Restorative dentistry is a fast-developing field worldwide: inspired by
+        celebrities and influencers, men and women dream of perfect teeth.
+        Famous people choose dental{" "}
+        <a
+          href="https://en.m.wikipedia.org/wiki/Veneer_(dentistry)"
+          target="_blank"
+          className="underline"
+        >
+          veneers
+        </a>{" "}
+        in Mexico to shine on red carpets while you can shine in your life, too.
+        Everybody has a chance to look like a star: installing veneers is the
+        easiest and fastest way to get a brilliant smile. The process is pretty
+        simple: a professional dentist puts a thin layer of enamel on the front
+        tooth surface to improve its shape, color and hide damages. Fix dental
+        imperfections fast – all you need is to find a proper clinic and an
+        experienced doctor to manage the process. Mexico is a well-known
+        destination for medical tourism. Patients from the USA, Canada, the UK
+        visit the country every year, looking for affordable and high-quality
+        medical assistance. Mexico has developed its dentistry field to a highly
+        professional level. About{" "}
+        <a
+          href="https://en.m.wikipedia.org/wiki/Veneer_(dentistry)"
+          target="_blank"
+          className="underline"
+        >
+          150,000+ dentists
+        </a>{" "}
+        work here, and 93% of them are with a bachelor’s degree. Patients will
+        find well-reputed clinics in Cancun, Tijuana, and Playa del Carmen.
       </div>
       {/*keep*/}
       <div className="flex items-center gap-3 text-secondary">

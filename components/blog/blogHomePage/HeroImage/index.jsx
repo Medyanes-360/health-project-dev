@@ -12,7 +12,7 @@ export default function HeroImage() {
 
   return (
     <>
-      <div className="mt-[60px] mb-[32px] md:flex w-full relative hidden">
+      <div className="md:flex w-full relative hidden">
         {/*Card*/}
         <div className="bg-secondary !w-[524px] h-[302px] absolute top-[14px] left-[14px] rounded-[12px] p-6 flex flex-col gap-[26px] z-50">
           <div className="flex items-center gap-3">
