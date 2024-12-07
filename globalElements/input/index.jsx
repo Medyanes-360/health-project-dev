@@ -2,7 +2,8 @@
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import "./phone.css";
-const InputType = ({
+
+const CustomInput = ({
   type,
   inputType = "text",
   placeholder,
@@ -63,39 +64,6 @@ const InputType = ({
     default:
       return null; // Handle unexpected type
   }
-};
-
-const CustomInput = ({
-  type,
-  className = "",
-  inputType,
-  placeholder,
-  onChange,
-  value,
-  name,
-  css,
-  ...props
-}) => {
-  // type only input or textarea
-
-  return (
-    <div>
-      <InputType
-        name={name}
-        className={`
-          w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl 
-          ${className}
-        `}
-        onChange={onChange}
-        placeholder={placeholder}
-        type={type}
-        inputType={inputType}
-        value={value}
-        css={css}
-        {...props}
-      />
-    </div>
-  );
 };
 
 export default CustomInput;

@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import CustomInput from "@/globalElements/input";
+import Input from "@/globalElements/input";
 import ButtonComponent from "@/globalElements/Button";
+import CustomInput from "@/globalElements/input";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -40,7 +41,15 @@ const ContactForm = () => {
           resetForm(); // Reset form after submission
         }}
       >
-        {({ values, handleSubmit, setFieldValue }) => (
+        {({
+          values,
+          touched,
+          errors,
+          handleChange,
+          handleBlur,
+          setFieldValue,
+          handleSubmit,
+        }) => (
           <Form onSubmit={handleSubmit} className="flex w-full gap-2 flex-col">
             {/* Custom Phone Input */}
             <div>
@@ -53,7 +62,9 @@ const ContactForm = () => {
                 international
                 value={values.phone}
                 onChange={(value) => setFieldValue("phone", value)}
-                className="w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
+                className={`w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${
+                  touched.phone && errors.phone ? "border-red-600 border-2" : ""
+                }`}
               />
               <div className="text-red-600 flex w-full mt-1 min-h-6">
                 <ErrorMessage
@@ -69,7 +80,9 @@ const ContactForm = () => {
               <Field
                 name="name"
                 placeholder="Enter your name"
-                className="w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
+                className={`w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${
+                  touched.name && errors.name ? "border-red-600 border-2" : ""
+                }`}
               />
               <div className="text-red-600 flex w-full mt-1 min-h-6">
                 <ErrorMessage
@@ -86,7 +99,9 @@ const ContactForm = () => {
                 name="email"
                 type="email"
                 placeholder="Enter your email"
-                className="w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
+                className={`w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${
+                  touched.email && errors.email ? "border-red-600 border-2" : ""
+                }`}
               />
               <div className="text-red-600 flex w-full mt-1 min-h-6">
                 <ErrorMessage
@@ -103,7 +118,11 @@ const ContactForm = () => {
                 as="textarea"
                 name="message"
                 placeholder="Enter your message"
-                className="w-full bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl"
+                className={`w-full bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl  ${
+                  touched.message && errors.message
+                    ? "border-red-600 border-2"
+                    : ""
+                }`}
                 rows={5}
               />
               <div className="text-red-600 flex w-full mt-1 min-h-6">
