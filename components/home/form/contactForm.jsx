@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Input from "@/globalElements/input";
 import ButtonComponent from "@/globalElements/Button";
-import CustomInput from "@/globalElements/input";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -41,31 +41,27 @@ const ContactForm = () => {
           resetForm(); // Reset form after submission
         }}
       >
-        {({
-          values,
-          touched,
-          errors,
-          handleChange,
-          handleBlur,
-          setFieldValue,
-          handleSubmit,
-        }) => (
+        {({ values, touched, errors, setFieldValue, handleSubmit }) => (
           <Form onSubmit={handleSubmit} className="flex w-full gap-2 flex-col">
             {/* Custom Phone Input */}
             <div>
-              <CustomInput
-                css={true}
-                name="phone"
-                type={"phone"}
-                defaultCountry="TR"
-                placeholder="Enter phone number"
-                international
-                value={values.phone}
-                onChange={(value) => setFieldValue("phone", value)}
-                className={`w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${
-                  touched.phone && errors.phone ? "border-red-600 border-2" : ""
+              {/*içiçe iki inputun sınırlarının çakışmaması için*/}
+              <div
+                className={` flex w-full h-fit flex-col rounded-2xl ${
+                  touched.phone && errors.phone ? "border-red-600 border" : ""
                 }`}
-              />
+              >
+                <Field
+                  component={PhoneInput}
+                  defaultCountry="TR"
+                  placeholder="Enter phone number"
+                  international
+                  countryCallingCodeEditable
+                  value={values.phone}
+                  onChange={(value) => setFieldValue("phone", value)}
+                  className={`home-Input custom-phone-input`}
+                />
+              </div>
               <div className="text-red-600 flex w-full mt-1 min-h-6">
                 <ErrorMessage
                   name="phone"
@@ -80,8 +76,8 @@ const ContactForm = () => {
               <Field
                 name="name"
                 placeholder="Enter your name"
-                className={`w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${
-                  touched.name && errors.name ? "border-red-600 border-2" : ""
+                className={`home-Input ${
+                  touched.name && errors.name ? "border-red-600 border" : ""
                 }`}
               />
               <div className="text-red-600 flex w-full mt-1 min-h-6">
@@ -99,8 +95,8 @@ const ContactForm = () => {
                 name="email"
                 type="email"
                 placeholder="Enter your email"
-                className={`w-full h-[40px] bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl ${
-                  touched.email && errors.email ? "border-red-600 border-2" : ""
+                className={`home-Input ${
+                  touched.email && errors.email ? "border-red-600 border" : ""
                 }`}
               />
               <div className="text-red-600 flex w-full mt-1 min-h-6">
@@ -118,9 +114,9 @@ const ContactForm = () => {
                 as="textarea"
                 name="message"
                 placeholder="Enter your message"
-                className={`w-full bg-slate-100 py-3 px-5 focus:border-primary rounded-2xl  ${
+                className={`home-Input !min-h-[146px]  ${
                   touched.message && errors.message
-                    ? "border-red-600 border-2"
+                    ? "border-red-600 border"
                     : ""
                 }`}
                 rows={5}
