@@ -1,5 +1,5 @@
 "use client";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import { useState, useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";

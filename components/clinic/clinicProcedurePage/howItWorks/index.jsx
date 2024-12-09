@@ -1,5 +1,5 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import { MotionDiv } from "@/globalElements/motion";
 
 const data = [

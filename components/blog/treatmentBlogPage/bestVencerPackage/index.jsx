@@ -1,7 +1,7 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import React from "react";
 import BestVenceerPackagesCard from "./BestVenceerPackagesCard";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 
 const data = [
   {
@@ -59,11 +59,13 @@ const BestVenceerPackages = () => {
           BestVenceerPackages Venceer Package
         </h1>
 
-        <CardComponent className="!gird grid-cols-1 !gap-4">
-          {data?.map((item, i) => (
-            <BestVenceerPackagesCard key={i} data={item} />
-          ))}
-        </CardComponent>
+        <div className=" card !gird grid-cols-1 !gap-4">
+          <div className="card-children">
+            {data?.map((item, i) => (
+              <BestVenceerPackagesCard key={i} data={item} />
+            ))}
+          </div>
+        </div>
       </ExtraLargePageContainer>
     </div>
   );

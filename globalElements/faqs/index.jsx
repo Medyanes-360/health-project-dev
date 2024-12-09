@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import ExpandingQuestions from "./expand";
 
 const Faqs = ({ data }) => {

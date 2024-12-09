@@ -1,5 +1,5 @@
 "use client";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import { useState, useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -61,87 +61,89 @@ const RecentHairTransplantReviewCard = ({ data }) => {
 
     return (
       <div className="p-4">
-        <CardComponent className={"!p-0 "}>
-          <div className="sm:min-h-[600px]">
-            <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px] rounded-t-2xl">
-              {/* Image */}
-              <div className="h-16 w-16 rounded-full grid place-content-center bg-primary/30">
-                <div className="w-10 aspect-[12/12] relative overflow-hidden ">
-                  <Image
-                    src={icon}
-                    alt="icon"
-                    fill
-                    className="object-center object-cover rounded-md"
-                  />
+        <div className={"card !p-0 "}>
+          <div className="card-children">
+            <div className="sm:min-h-[600px]">
+              <div className="bg-white-dark flex gap-2 items-center px-3 py-5 justify-between sm:min-h-[150px] rounded-t-2xl">
+                {/* Image */}
+                <div className="h-16 w-16 rounded-full grid place-content-center bg-primary/30">
+                  <div className="w-10 aspect-[12/12] relative overflow-hidden ">
+                    <Image
+                      src={icon}
+                      alt="icon"
+                      fill
+                      className="object-center object-cover rounded-md"
+                    />
+                  </div>
+                </div>
+
+                {/* Doctor Data */}
+                <div className="space-y-2 text-sm">
+                  <h1>
+                    {name} / {operation}
+                  </h1>
+                  <p className="text-xs">
+                    {county} {date}
+                  </p>
+                </div>
+
+                {/* Rating */}
+                <div>
+                  <h1 className="flex items-center gap-1">
+                    <span className="text-[#FFAA00] text-2xl">★</span>
+                    {rate}
+                  </h1>
                 </div>
               </div>
 
-              {/* Doctor Data */}
-              <div className="space-y-2 text-sm">
-                <h1>
-                  {name} / {operation}
-                </h1>
-                <p className="text-xs">
-                  {county} {date}
-                </p>
-              </div>
-
-              {/* Rating */}
-              <div>
-                <h1 className="flex items-center gap-1">
-                  <span className="text-[#FFAA00] text-2xl">★</span>
-                  {rate}
-                </h1>
-              </div>
-            </div>
-
-            <div className="px-6 py-5 space-y-3">
-              <div
-                // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onTouchStart={() => setIsHovered(true)}
-                onTouchEnd={() => setIsHovered(false)}
-                className="w-full relative aspect-[12/9] rounded-2xl"
-              >
-                <BeforeAfterPhotoSlider
-                  beforeImageSrc={images[0]}
-                  afterImageSrc={images[1]}
-                />
-              </div>
-
-              <h1 className="text-sm">{title}</h1>
-
-              {/* Description with toggle */}
-              <p
-                className={`text-sm font-light transition-all duration-300 ${
-                  expanded ? "line-clamp-4" : "line-clamp-2"
-                }`}
-              >
-                {description}
-              </p>
-              <button
-                onClick={toggleExpanded}
-                className="text-primary mt-2 underline"
-              >
-                {expanded ? "Show Less" : "Show More"}
-              </button>
-
-              <div className="flex gap-1">
-                {/* Location icon */}
-                <div className="flex gap-2 items-center">
-                  <Image
-                    width={25}
-                    height={25}
-                    alt="img"
-                    src={"/assets/images/health.png"}
+              <div className="px-6 py-5 space-y-3">
+                <div
+                  // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  onTouchStart={() => setIsHovered(true)}
+                  onTouchEnd={() => setIsHovered(false)}
+                  className="w-full relative aspect-[12/9] rounded-2xl"
+                >
+                  <BeforeAfterPhotoSlider
+                    beforeImageSrc={images[0]}
+                    afterImageSrc={images[1]}
                   />
-                  <p className="text-primary text-sm">{hospitalName}</p>
+                </div>
+
+                <h1 className="text-sm">{title}</h1>
+
+                {/* Description with toggle */}
+                <p
+                  className={`text-sm font-light transition-all duration-300 ${
+                    expanded ? "line-clamp-4" : "line-clamp-2"
+                  }`}
+                >
+                  {description}
+                </p>
+                <button
+                  onClick={toggleExpanded}
+                  className="text-primary mt-2 underline"
+                >
+                  {expanded ? "Show Less" : "Show More"}
+                </button>
+
+                <div className="flex gap-1">
+                  {/* Location icon */}
+                  <div className="flex gap-2 items-center">
+                    <Image
+                      width={25}
+                      height={25}
+                      alt="img"
+                      src={"/assets/images/health.png"}
+                    />
+                    <p className="text-primary text-sm">{hospitalName}</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </CardComponent>
+        </div>
       </div>
     );
   };

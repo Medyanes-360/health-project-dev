@@ -1,5 +1,5 @@
 import ButtonComponent from "@/globalElements/Button";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import Image from "next/image";
 
 export default function Clinic({ data }) {
@@ -20,7 +20,8 @@ export default function Clinic({ data }) {
   } = data;
 
   return (
-      <CardComponent className="rounded-t-none rounded-b-2xl !p-0 !m-0">
+    <div className="card rounded-t-none rounded-b-2xl !p-0 !m-0">
+      <div className="card-children">
         <div className="space-y-5">
           {" "}
           <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-20 p-8 h-full">
@@ -68,7 +69,13 @@ export default function Clinic({ data }) {
                 </h1>
                 <div className="flex gap-4 items-center">
                   {accreditations.map((item, index) => (
-                    <Image src={item} alt={item} width={30} height={30} key={index} />
+                    <Image
+                      src={item}
+                      alt={item}
+                      width={30}
+                      height={30}
+                      key={index}
+                    />
                   ))}
                 </div>
               </div>
@@ -161,6 +168,7 @@ export default function Clinic({ data }) {
             </div>
           </div>
         </div>
-      </CardComponent>
+      </div>
+    </div>
   );
 }

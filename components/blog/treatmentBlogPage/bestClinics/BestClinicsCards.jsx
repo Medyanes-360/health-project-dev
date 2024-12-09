@@ -3,7 +3,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import Image from "next/image";
 
 const BestClinicCards = ({ data }) => {
@@ -110,31 +110,32 @@ const CardContent = ({ data }) => {
 
   return (
     <div className="bg-[#00000091] hover:bg-black/50 transition-all duration-200 cursor-pointer hover:scale-105 rounded-2xl">
+      <div
+        className={
+          "card !p-2 space-y-2 flex flex-col justify-between min-h-[330px]"
+        }
+      >
+        <div className="card-children">
+          {" "}
+          <div className="relative aspect-[12/9] overflow-hidden w-full flex justify-end">
+            <div className="absolute z-10 m-2 bg-[#FFFFFF52] flex items-center gap-2 rounded-3xl py-1 px-3">
+              <span className="text-[#FFAA00] text-3xl">★</span>
 
-
-    <CardComponent
-      className={
-        "!p-2 space-y-2 flex flex-col justify-between min-h-[330px]"
-      }
-    >
-      <div className="relative aspect-[12/9] overflow-hidden w-full flex justify-end">
-        <div className="absolute z-10 m-2 bg-[#FFFFFF52] flex items-center gap-2 rounded-3xl py-1 px-3">
-          <span className="text-[#FFAA00] text-3xl">★</span>
-
-          <h1 className="text-fourth text-xl">{rate}</h1>
+              <h1 className="text-fourth text-xl">{rate}</h1>
+            </div>
+            <Image
+              src={img}
+              alt="img"
+              className="object-center object-cover rounded-2xl"
+              fill
+            />
+          </div>
+          <div className="space-y-1.5">
+            <h1 className="font-medium text-fourth">{city}</h1>
+            <p className="font-light text-fourth">{clinicName}</p>
+          </div>
         </div>
-        <Image
-          src={img}
-          alt="img"
-          className="object-center object-cover rounded-2xl"
-          fill
-        />
-      </div>
-
-      <div className="space-y-1.5">
-        <h1 className="font-medium text-fourth">{city}</h1>
-        <p className="font-light text-fourth">{clinicName}</p>
-      </div>
-    </CardComponent>    </div>
+      </div>{" "}
+    </div>
   );
 };

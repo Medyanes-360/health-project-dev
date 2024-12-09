@@ -1,5 +1,5 @@
 "use client";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import { useState, useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -64,21 +64,23 @@ const BeforeAndAfterCard = ({ data }) => {
 
   const CardContent = ({ images }) => (
     <div className="p-2">
-      <CardComponent className={"!px-5 !py-5 !mt-5 !rounded-2xl"}>
-        <div
-          // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onTouchStart={() => setIsHovered(true)}
-          onTouchEnd={() => setIsHovered(false)}
-          className="w-full relative aspect-[12/9] flex items-center rounded-2xl"
-        >
-          <BeforeAfterPhotoSlider
-            beforeImageSrc={images[0]}
-            afterImageSrc={images[1]}
-          />
+      <div className={"card !px-5 !py-5 !mt-5 !rounded-2xl"}>
+        <div className="card-children">
+          <div
+            // Mouse image'ın üstüne geldiğinde slider'ın swap özelliğini kapatır.
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={() => setIsHovered(true)}
+            onTouchEnd={() => setIsHovered(false)}
+            className="w-full relative aspect-[12/9] flex items-center rounded-2xl"
+          >
+            <BeforeAfterPhotoSlider
+              beforeImageSrc={images[0]}
+              afterImageSrc={images[1]}
+            />
+          </div>
         </div>
-      </CardComponent>
+      </div>
     </div>
   );
 

@@ -1,4 +1,4 @@
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import Image from "next/image";
 import ContactForm from "./contactForm";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";

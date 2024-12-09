@@ -77,9 +77,12 @@ const QuestionsSection = () => {
   return (
     <div className="w-full min-h-[90vh] bg-white-dark grid place-content-center">
       <div className="xl:container space-y-4 px-4">
-        <CardComponent
-          className={" sm:max-w-[500px] !mx-auto !bg-fourth !py-14 overflow-hidden"}
+        <div
+          className={
+            "card sm:max-w-[500px] !mx-auto !bg-fourth !py-14 overflow-hidden"
+          }
         >
+          <div className="card-children">
             {questions.map((question) => {
               if (currentQuestion == question.id) {
                 return (
@@ -88,54 +91,54 @@ const QuestionsSection = () => {
                     initial={{ x: isMovingForward ? 200 : -200, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.5, ease: "easeIn" }}
-
                   >
                     <QuestionCard question={question.q} id={question.id} />
                   </MotionDiv>
                 );
               }
             })}
-          {/* Progress Bar */}
-          <div className="px-6 flex gap-2 items-center">
-            {questions.map((q, i) => {
-              if (q.id == 1) return null;
-              return (
-                <div
-                  key={i}
-                  className={`h-[10px] w-full rounded-r-md transition-all duration-500 ${
-                    currentQuestion >= q.id ? "bg-primary" : "bg-[#D9D9D9]"
-                  }`}
-                />
-              );
-            })}
-          </div>
+            {/* Progress Bar */}
+            <div className="px-6 flex gap-2 items-center">
+              {questions.map((q, i) => {
+                if (q.id == 1) return null;
+                return (
+                  <div
+                    key={i}
+                    className={`h-[10px] w-full rounded-r-md transition-all duration-500 ${
+                      currentQuestion >= q.id ? "bg-primary" : "bg-[#D9D9D9]"
+                    }`}
+                  />
+                );
+              })}
+            </div>
 
-          <div className="flex w-full items-center px-6 justify-between">
-            <div className="w-fit">
-              {currentQuestion > 1 && (
+            <div className="flex w-full items-center px-6 justify-between">
+              <div className="w-fit">
+                {currentQuestion > 1 && (
+                  <ButtonComponent
+                    className="w-fit !px-3 !py-1 !text-base border !border-third cursor-pointer mr-auto !text-third"
+                    onClick={prevQuestionHandler}
+                  >
+                    ← Go Back
+                  </ButtonComponent>
+                )}
+              </div>
+              <div className="w-fit">
                 <ButtonComponent
-                  className="w-fit !px-3 !py-1 !text-base border !border-third cursor-pointer mr-auto !text-third"
-                  onClick={prevQuestionHandler}
+                  className="w-fit !px-3 !py-1 !text-base border-white-dark bg-primary cursor-pointer ml-auto !text-fourth"
+                  onClick={nextQuestionHandler}
                 >
-                  ← Go Back
+                  {questions.length == currentQuestion ? "Finish" : "Next →"}
                 </ButtonComponent>
-              )}
+              </div>
             </div>
-            <div className="w-fit">
-              <ButtonComponent
-                className="w-fit !px-3 !py-1 !text-base border-white-dark bg-primary cursor-pointer ml-auto !text-fourth"
-                onClick={nextQuestionHandler}
-              >
-                {questions.length == currentQuestion ? "Finish" : "Next →"}
-              </ButtonComponent>
-            </div>
+            {error && (
+              <p className="text-center text-red-500 px-6">
+                *This Question is Needed
+              </p>
+            )}
           </div>
-          {error && (
-            <p className="text-center text-red-500 px-6">
-              *This Question is Needed
-            </p>
-          )}
-        </CardComponent>
+        </div>
       </div>
       <div className="w-[500px] flex justify-center gap-3 flex-nowrap mt-4">
         <pre className="bg-gray-100 p-4 rounded border border-gray-300">

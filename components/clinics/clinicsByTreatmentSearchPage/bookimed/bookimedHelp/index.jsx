@@ -1,5 +1,5 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import { MotionDiv } from "@/globalElements/motion";
 import Image from "next/image";
 
@@ -92,13 +92,15 @@ const ContentCard = ({ data }) => {
   const { description, icon, title } = data;
 
   return (
-    <CardComponent className={"!w-full !h-full !rounded-2xl"}>
-      <div className="space-y-3">
-        <Image src={icon} alt="icon" width={70} height={70} />
-        <h1 className="text-xl sm:text-2xl">{title}</h1>
+    <div className={"card !w-full !h-full !rounded-2xl"}>
+      <div className="card-children">
+        <div className="space-y-3">
+          <Image src={icon} alt="icon" width={70} height={70} />
+          <h1 className="text-xl sm:text-2xl">{title}</h1>
 
-        <p>{description}</p>
+          <p>{description}</p>
+        </div>
       </div>
-    </CardComponent>
+    </div>
   );
 };

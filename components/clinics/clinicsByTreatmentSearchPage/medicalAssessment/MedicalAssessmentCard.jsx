@@ -1,6 +1,6 @@
 "use client";
 import ButtonComponent from "@/globalElements/Button";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -118,68 +118,72 @@ const CardContent = ({ data }) => {
 
   return (
     <div className="p-4">
-      <CardComponent className={"!p-0 !space-y-7"}>
-        <div className="flex flex-col justify-between sm:min-h-[900px]">
-          <div className="space-y-5">
-            <div className="flex justify-between gap-1 items-center bg-white-dark px-5 py-4 rounded-t-2xl">
-              <div>
-                <Image
-                  src={icon}
-                  alt="image"
-                  width={50}
-                  height={50}
-                  className="w-[64px] f-[64px] lg:object-center lg:object-cover rounded-full"
+      <div className={"card !p-0 !space-y-7"}>
+        <div className="card-children">
+          <div className="flex flex-col justify-between sm:min-h-[900px]">
+            <div className="space-y-5">
+              <div className="flex justify-between gap-1 items-center bg-white-dark px-5 py-4 rounded-t-2xl">
+                <div>
+                  <Image
+                    src={icon}
+                    alt="image"
+                    width={50}
+                    height={50}
+                    className="w-[64px] f-[64px] lg:object-center lg:object-cover rounded-full"
+                  />
+                </div>
+
+                <div className="text-[14px] space-y-2">
+                  <h1>{docName} • Hair transplant</h1>
+                  <p>{location}</p>
+                </div>
+
+                <div className="space-y-2 hidden lg:block">
+                  <h1 className>
+                    <span className="text-[#FFAA00] text-3xl">★</span>
+                    Good
+                  </h1>
+
+                  <p>{reviews} Patient verified reviews</p>
+                </div>
+              </div>
+              <div className="px-5 py-4">
+                <div className="w-full aspect-[12/8] relative overflow-hidden ">
+                  <Image
+                    src={image}
+                    alt="alt"
+                    fill
+                    className="object-center object-cover rounded-2xl"
+                  />
+                </div>
+              </div>
+
+              <div className="px-5 py-4">
+                <p className="font-medium">{description}</p>
+                <p className="text-primary underline cursor-pointer">
+                  Read More
+                </p>
+              </div>
+            </div>
+            <div className="px-5 py-4 space-y-5">
+              <div className="flex justify-between gap-2">
+                <ButtonComponent
+                  className={
+                    "!text-primary !rounded-md !bg-[#EAEAEA] !w-full !text-base"
+                  }
+                  title={"Info"}
+                />
+                <ButtonComponent
+                  className={
+                    "!text-fourth !rounded-md !bg-primary !w-full !text-base"
+                  }
+                  title={"Enquire"}
                 />
               </div>
-
-              <div className="text-[14px] space-y-2">
-                <h1>{docName} • Hair transplant</h1>
-                <p>{location}</p>
-              </div>
-
-              <div className="space-y-2 hidden lg:block">
-                <h1 className>
-                  <span className="text-[#FFAA00] text-3xl">★</span>
-                  Good
-                </h1>
-
-                <p>{reviews} Patient verified reviews</p>
-              </div>
-            </div>
-            <div className="px-5 py-4">
-              <div className="w-full aspect-[12/8] relative overflow-hidden ">
-                <Image
-                  src={image}
-                  alt="alt"
-                  fill
-                  className="object-center object-cover rounded-2xl"
-                />
-              </div>
-            </div>
-
-            <div className="px-5 py-4">
-              <p className="font-medium">{description}</p>
-              <p className="text-primary underline cursor-pointer">Read More</p>
-            </div>
-          </div>
-          <div className="px-5 py-4 space-y-5">
-            <div className="flex justify-between gap-2">
-              <ButtonComponent
-                className={
-                  "!text-primary !rounded-md !bg-[#EAEAEA] !w-full !text-base"
-                }
-                title={"Info"}
-              />
-              <ButtonComponent
-                className={
-                  "!text-fourth !rounded-md !bg-primary !w-full !text-base"
-                }
-                title={"Enquire"}
-              />
             </div>
           </div>
         </div>
-      </CardComponent>
+      </div>
     </div>
   );
 };

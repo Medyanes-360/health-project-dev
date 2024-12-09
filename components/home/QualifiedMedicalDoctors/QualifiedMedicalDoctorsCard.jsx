@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 
 const QualifiedMedicalDoctorsCard = ({ icon, title, description }) => {
   return (

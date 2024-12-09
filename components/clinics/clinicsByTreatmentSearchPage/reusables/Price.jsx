@@ -1,4 +1,4 @@
-import CardComponent from "@/globalElements/Card";
+//import CardComponent from "@/globalElements/Card";
 import TreatmentList from "@/globalElements/treatmentList";
 const treatmentsData = {
   treatments: [
@@ -27,8 +27,10 @@ const treatmentsData = {
 
 export default function Price() {
   return (
-    <CardComponent className="rounded-t-none rounded-b-2xl !p-0 !m-0">
-      <TreatmentList treatments={treatmentsData.treatments} className="" />
-    </CardComponent>
+    <div className="card rounded-t-none rounded-b-2xl !p-0 !m-0">
+      <div className="card-children">
+        <TreatmentList treatments={treatmentsData.treatments} className="" />
+      </div>
+    </div>
   );
 }
