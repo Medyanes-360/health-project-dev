@@ -12,18 +12,20 @@ const Faqs = ({ data }) => {
 
   return (
     <div className="">
-      <CardComponent>
-        {data?.map(({ description, title }, i) => (
-          <ExpandingQuestions
-            key={i}
-            index={i}
-            title={title}
-            description={description}
-            isExpanded={expandedIndex === i}
-            onToggle={handleToggle}
-          />
-        ))}
-      </CardComponent>
+      <div className="card">
+        <div className="card-children">
+          {data?.map(({ description, title }, i) => (
+            <ExpandingQuestions
+              key={i}
+              index={i}
+              title={title}
+              description={description}
+              isExpanded={expandedIndex === i}
+              onToggle={handleToggle}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

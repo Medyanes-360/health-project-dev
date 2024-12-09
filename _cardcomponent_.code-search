@@ -1,0 +1,58 @@
+# Query: <cardcomponent>
+# ContextLines: 1
+
+11 results - 10 files
+
+components/clinic/clinicProcedurePage/additionalInformation/index.jsx:
+  7      <div>
+  8:       <CardComponent>
+  9          <div className="flex items-center mb-2 gap-2">
+
+components/clinic/clinicProcedurePage/bookimedAssistance/index.jsx:
+  21      <div>
+  22:       <CardComponent>
+  23          <MotionDiv
+
+components/clinic/clinicProcedurePage/duration/index.jsx:
+  13      <div>
+  14:       <CardComponent>
+  15          <div className="flex items-center mb-2 gap-2">
+
+components/clinic/clinicProcedurePage/howItWorks/index.jsx:
+  41        <ExtraLargePageContainer id="howItWorksSection">
+  42:         <CardComponent>
+  43            <h1 className="font-poppins font-semibold text-xl text-primary">
+
+components/clinic/clinicProcedurePage/medicalProcedures/index.jsx:
+  6      <div>
+  7:       <CardComponent>
+  8          <div className="flex items-center mb-2 gap-2">
+
+components/clinic/clinicProcedurePage/transport/index.jsx:
+  13      <div>
+  14:       <CardComponent>
+  15          <div className="flex items-center mb-2 gap-2">
+
+components/clinics/clinicsByTreatmentSearchPage/hairTransplantReviews/HairTransplantReviewsCard.jsx:
+  158      <div className="p-4">
+  159:       <CardComponent>
+  160          <div className="flex flex-col justify-between gap-5 min-h-[300px]">
+
+  231      <div className="p-1">
+  232:       <CardComponent>
+  233          <div className="flex flex-col gap-2  min-h-[294px]">
+
+components/home/QualifiedMedicalDoctors/QualifiedMedicalDoctorsCard.jsx:
+  5    return (
+  6:            
+  7        <div className="flex flex-col gap-5">
+
+components/home/Testimonial/TestimonialCard.jsx:
+  141                <div key={i} className="p-4">
+  142:                 <CardComponent>
+  143                    <div className="flex flex-col gap-4 justify-center min-h-[300px]">
+
+globalElements/faqs/index.jsx:
+  14      <div className="">
+  15:       <CardComponent>
+  16          {data?.map(({ description, title }, i) => (

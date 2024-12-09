@@ -39,37 +39,39 @@ const HowItWorks = () => {
   return (
     <div className="pt-5">
       <ExtraLargePageContainer id="howItWorksSection">
-        <CardComponent>
-          <h1 className="font-poppins font-semibold text-xl text-primary">
-            How it works
-          </h1>
+        <div className="card">
+          <div className="card-children">
+            <h1 className="font-poppins font-semibold text-xl text-primary">
+              How it works
+            </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {data.map((items, i) => (
-              <MotionDiv
-                initial={{
-                  y: "50px",
-                  opacity: 0,
-                }}
-                whileInView={{
-                  y: "0px",
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.1 * (i + 1),
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.5,
-                }}
-                key={i}
-              >
-                <ContentCard data={items} index={i} />
-              </MotionDiv>
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {data.map((items, i) => (
+                <MotionDiv
+                  initial={{
+                    y: "50px",
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: "0px",
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1 * (i + 1),
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.5,
+                  }}
+                  key={i}
+                >
+                  <ContentCard data={items} index={i} />
+                </MotionDiv>
+              ))}
+            </div>
           </div>
-        </CardComponent>
+        </div>
       </ExtraLargePageContainer>
     </div>
   );

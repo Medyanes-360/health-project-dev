@@ -139,63 +139,65 @@ const TestimonialCard = ({ data }) => {
 
             return (
               <div key={i} className="p-4">
-                <CardComponent>
-                  <div className="flex flex-col gap-4 justify-center min-h-[300px]">
-                    <div className="flex gap-[2px] items-center">
-                      {/* stars */}
-                      {starsArray.map((_, index) => (
-                        <span key={index} className="text-[#FFAA00] text-xl">
-                          <StarIcon />
-                        </span>
-                      ))}
-                    </div>
-
-                    <div>
-                      <div
-                        className={`transition-all duration-300 ${
-                          showMoreStates[i]
-                            ? "max-h-[150px] overflow-y-scroll" // Scroll only when Show More is clicked
-                            : "max-h-[150px] overflow-hidden" // Hidden scroll initially
-                        }`}
-                        style={{ wordBreak: "break-word" }}
-                      >
-                        &quot;{text}&quot;
+                <div className="card">
+                  <div className="card-children">
+                    <div className="flex flex-col gap-4 justify-center min-h-[300px]">
+                      <div className="flex gap-[2px] items-center">
+                        {/* stars */}
+                        {starsArray.map((_, index) => (
+                          <span key={index} className="text-[#FFAA00] text-xl">
+                            <StarIcon />
+                          </span>
+                        ))}
                       </div>
-                      {text.length > 50 && (
-                        <button
-                          onClick={() => toggleShowMore(i)}
-                          className="text-primary mt-2"
+
+                      <div>
+                        <div
+                          className={`transition-all duration-300 ${
+                            showMoreStates[i]
+                              ? "max-h-[150px] overflow-y-scroll" // Scroll only when Show More is clicked
+                              : "max-h-[150px] overflow-hidden" // Hidden scroll initially
+                          }`}
+                          style={{ wordBreak: "break-word" }}
                         >
-                          {showMoreStates[i] ? "Show Less" : "Show More"}
-                        </button>
-                      )}
-                    </div>
-
-                    <div className="flex justify-between gap-3 items-center">
-                      {/* the image job and the name */}
-                      <div className="flex gap-4 items-center">
-                        <Image
-                          src={img}
-                          className="object-cover object-center rounded-full"
-                          width={40}
-                          height={40}
-                          alt="picture"
-                        />
-                        <div className="space-y-2">
-                          <h1 className="font-bold text-sm">{name}</h1>
-                          <p className="font-light text-sm">{job}</p>
+                          &quot;{text}&quot;
                         </div>
+                        {text.length > 50 && (
+                          <button
+                            onClick={() => toggleShowMore(i)}
+                            className="text-primary mt-2"
+                          >
+                            {showMoreStates[i] ? "Show Less" : "Show More"}
+                          </button>
+                        )}
                       </div>
-                      <Image
-                        src={"/assets/images/Group.png"}
-                        className="object-cover object-center"
-                        width={30}
-                        height={30}
-                        alt="que"
-                      />
+
+                      <div className="flex justify-between gap-3 items-center">
+                        {/* the image job and the name */}
+                        <div className="flex gap-4 items-center">
+                          <Image
+                            src={img}
+                            className="object-cover object-center rounded-full"
+                            width={40}
+                            height={40}
+                            alt="picture"
+                          />
+                          <div className="space-y-2">
+                            <h1 className="font-bold text-sm">{name}</h1>
+                            <p className="font-light text-sm">{job}</p>
+                          </div>
+                        </div>
+                        <Image
+                          src={"/assets/images/Group.png"}
+                          className="object-cover object-center"
+                          width={30}
+                          height={30}
+                          alt="que"
+                        />
+                      </div>
                     </div>
                   </div>
-                </CardComponent>
+                </div>
               </div>
             );
           })}
@@ -271,7 +273,7 @@ const TestimonialCard = ({ data }) => {
         </Slider>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default TestimonialCard;

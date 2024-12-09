@@ -72,3 +72,12 @@ body {
     scrollbar-width: none; /* Firefox */
   }
 }
+
+@layer components {
+  .card {
+    @apply shadow-md rounded-2xl p-4;
+  }
+  .card-children {
+    @apply flex flex-col gap-5;
+  }
+}

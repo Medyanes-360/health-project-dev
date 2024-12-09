@@ -156,64 +156,66 @@ const CardContent = ({ data }) => {
 
   return (
     <div className="p-4">
-      <CardComponent>
-        <div className="flex flex-col justify-between gap-5 min-h-[300px]">
-          <div>
-            <div className="flex gap-2 items-center">
-              {/* stars */}
-              {starsArray.map((_, i) => (
-                <span key={i} className="text-[#FFAA00] text-xl">
-                  ★
-                </span>
-              ))}
-            </div>
-
+      <div className="card">
+        <div className="card-children">
+          <div className="flex flex-col justify-between gap-5 min-h-[300px]">
             <div>
-              {/* Scrollable text based on the "show more" state */}
-              <div
-                className={`transition-all duration-300 ${
-                  showMore
-                    ? "max-h-[150px] overflow-y-scroll" // Show more scrollable area
-                    : "max-h-[150px] overflow-hidden" // Limited height when collapsed
-                }`}
-              >
-                {text}
+              <div className="flex gap-2 items-center">
+                {/* stars */}
+                {starsArray.map((_, i) => (
+                  <span key={i} className="text-[#FFAA00] text-xl">
+                    ★
+                  </span>
+                ))}
               </div>
-              {text.length > 50 && (
-                <button
-                  onClick={toggleShowMore}
-                  className="text-primary mt-2 underline"
+
+              <div>
+                {/* Scrollable text based on the "show more" state */}
+                <div
+                  className={`transition-all duration-300 ${
+                    showMore
+                      ? "max-h-[150px] overflow-y-scroll" // Show more scrollable area
+                      : "max-h-[150px] overflow-hidden" // Limited height when collapsed
+                  }`}
                 >
-                  {showMore ? "Show Less" : "Show More"}
-                </button>
-              )}
-            </div>
-          </div>
-          <div className="flex justify-between gap-3 items-center">
-            {/* the image, job, and name */}
-            <div className="flex gap-4 items-center">
-              <Image
-                src={img}
-                className="object-cover object-center rounded-full"
-                width={40}
-                height={40}
-                alt="picture"
-              />
-              <div className="space-y-2">
-                <h1 className="font-bold text-sm">{name}</h1>
-                <p className="font-light text-sm">{job}</p>
+                  {text}
+                </div>
+                {text.length > 50 && (
+                  <button
+                    onClick={toggleShowMore}
+                    className="text-primary mt-2 underline"
+                  >
+                    {showMore ? "Show Less" : "Show More"}
+                  </button>
+                )}
               </div>
             </div>
-            <Image
-              src={"/assets/images/Group.png"}
-              className="object-cover object-center rounded-full"
-              width={30}
-              height={30}
-              alt="que"
-            />
+            <div className="flex justify-between gap-3 items-center">
+              {/* the image, job, and name */}
+              <div className="flex gap-4 items-center">
+                <Image
+                  src={img}
+                  className="object-cover object-center rounded-full"
+                  width={40}
+                  height={40}
+                  alt="picture"
+                />
+                <div className="space-y-2">
+                  <h1 className="font-bold text-sm">{name}</h1>
+                  <p className="font-light text-sm">{job}</p>
+                </div>
+              </div>
+              <Image
+                src={"/assets/images/Group.png"}
+                className="object-cover object-center rounded-full"
+                width={30}
+                height={30}
+                alt="que"
+              />
+            </div>
           </div>
         </div>
-      </CardComponent>
+      </div>
     </div>
   );
 };
@@ -229,65 +231,67 @@ const SmallCardContent = ({ data }) => {
 
   return (
     <div className="p-1">
-      <CardComponent>
-        <div className="flex flex-col gap-2  min-h-[294px]">
-          <div>
-            <div className="flex gap-2 items-center">
-              {/* stars */}
-              {starsArray?.map((_, index) => (
-                <span key={index} className="text-[#FFAA00] text-xl">
-                  ★
-                </span>
-              ))}
-              <Image
-                src={"/assets/images/Group.png"}
-                className="object-cover object-center rounded-full ml-auto pr-3"
-                width={30}
-                height={30}
-                alt="que"
-              />
-            </div>
-
-            <div className="text-[16px] ">
-              {/* Scrollable text based on the "show more" state */}
-              <div
-                className={`transition-all duration-300   ${
-                  showMore
-                    ? "max-h-[100px] overflow-y-scroll" // Show more scrollable area
-                    : "max-h-[50px] overflow-hidden" // Limited height when collapsed
-                }`}
-              >
-                {text}
+      <div className="card">
+        <div className="card-children">
+          <div className="flex flex-col gap-2  min-h-[294px]">
+            <div>
+              <div className="flex gap-2 items-center">
+                {/* stars */}
+                {starsArray?.map((_, index) => (
+                  <span key={index} className="text-[#FFAA00] text-xl">
+                    ★
+                  </span>
+                ))}
+                <Image
+                  src={"/assets/images/Group.png"}
+                  className="object-cover object-center rounded-full ml-auto pr-3"
+                  width={30}
+                  height={30}
+                  alt="que"
+                />
               </div>
-              {text.length > 100 && (
-                <button
-                  onClick={toggleShowMore}
-                  className="text-primary mt-2 underline"
-                >
-                  {showMore ? "Show Less" : "Show More"}
-                </button>
-              )}
-            </div>
-          </div>
 
-          <div className="flex justify-between gap-3 items-center">
-            {/* the image, job, and name */}
-            <div className="flex gap-4 items-center">
-              <Image
-                src={img}
-                className="object-cover object-center rounded-full"
-                width={40}
-                height={40}
-                alt="picture"
-              />
-              <div className="space-y-2">
-                <h1 className="font-normal text-sm">{name}</h1>
-                <p className="font-extralight text-sm">{job}</p>
+              <div className="text-[16px] ">
+                {/* Scrollable text based on the "show more" state */}
+                <div
+                  className={`transition-all duration-300   ${
+                    showMore
+                      ? "max-h-[100px] overflow-y-scroll" // Show more scrollable area
+                      : "max-h-[50px] overflow-hidden" // Limited height when collapsed
+                  }`}
+                >
+                  {text}
+                </div>
+                {text.length > 100 && (
+                  <button
+                    onClick={toggleShowMore}
+                    className="text-primary mt-2 underline"
+                  >
+                    {showMore ? "Show Less" : "Show More"}
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="flex justify-between gap-3 items-center">
+              {/* the image, job, and name */}
+              <div className="flex gap-4 items-center">
+                <Image
+                  src={img}
+                  className="object-cover object-center rounded-full"
+                  width={40}
+                  height={40}
+                  alt="picture"
+                />
+                <div className="space-y-2">
+                  <h1 className="font-normal text-sm">{name}</h1>
+                  <p className="font-extralight text-sm">{job}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </CardComponent>
+      </div>
     </div>
   );
 };
