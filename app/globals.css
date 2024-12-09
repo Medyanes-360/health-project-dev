@@ -73,15 +73,12 @@ body {
   }
 }
 
-.card {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  border-radius: 16px;
-  padding: 16px;
-}
-
-.card-children {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+@layer components {
+  .card {
+    @apply shadow-md rounded-2xl p-4;
+  }
+  .card-children {
+    @apply flex flex-col gap-5;
+  }
 }
 
