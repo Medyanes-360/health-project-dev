@@ -102,6 +102,11 @@ module.exports = {
       );
     }),
     require("tailwind-scrollbar"), // Scrollbar eklentisini 
+    function ({ addUtilities }) {
+      addUtilities({
+        ".home-Input": { "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem", "borderRadius": "1rem", "width": "100%", "height": "40px", "background": "#f1f5f9" }
+      });
+    },
   ],
   variants: {
     scrollbar: ["rounded"], // Yuvarlatılmış scrollbar 

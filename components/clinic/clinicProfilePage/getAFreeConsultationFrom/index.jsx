@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ButtonComponent from "@/globalElements/Button";
-import CustomInput from "@/globalElements/input";
 import CardComponent from "@/globalElements/Card";
 import { MotionDiv } from "@/globalElements/motion";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 // Validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -72,13 +73,25 @@ export default function GetAFreeConsultationForm() {
                   Enter your phone number
                 </label>
                 <div className="space-y-1 h-[48px] ">
-                  <Field
-                    as={CustomInput}
-                    type="input"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !rounded-md"
-                  />
+                  {/*içiçe iki inputun sınırlarının çakışmaması için*/}
+                  <div
+                    className={` flex w-full h-fit flex-col rounded-2xl ${
+                      touched.phone && errors.phone
+                        ? "border-red-600 border"
+                        : ""
+                    }`}
+                  >
+                    <Field
+                      component={PhoneInput}
+                      defaultCountry="TR"
+                      placeholder="Enter phone number"
+                      international
+                      countryCallingCodeEditable
+                      value={values.phone}
+                      onChange={(value) => setFieldValue("phone", value)}
+                      className={`home-Input custom-phone-input`}
+                    />
+                  </div>
                   {errors.phone && touched.phone && (
                     <div className="text-red-600 text-sm">{errors.phone}</div>
                   )}
@@ -95,11 +108,13 @@ export default function GetAFreeConsultationForm() {
                 </label>
                 <div className="space-y-1 h-[48px]">
                   <Field
-                    as={CustomInput}
-                    type="input"
                     name="email"
                     placeholder="Enter your email"
-                    className="!w-full !h-[40px] !bg-white py-3 !px-5 !border !rounded-md"
+                    className={`home-Input ${
+                      touched.email && errors.email
+                        ? "border-red-600 border"
+                        : ""
+                    }`}
                   />
                   {errors.email && touched.email && (
                     <div className="text-red-600 text-sm">{errors.email}</div>
@@ -117,11 +132,13 @@ export default function GetAFreeConsultationForm() {
                 </label>
                 <div className="space-y-1 h-[48px]">
                   <Field
-                    as={CustomInput}
-                    type="input"
                     name="description"
                     placeholder="Short description"
-                    className="!w-full !h-[40px] !bg-white !py-3 !px-5 !border !rounded-md"
+                    className={`home-Input ${
+                      touched.description && errors.description
+                        ? "border-red-600 border"
+                        : ""
+                    }`}
                   />
                   {errors.description && touched.description && (
                     <div className="text-red-600 text-sm">
