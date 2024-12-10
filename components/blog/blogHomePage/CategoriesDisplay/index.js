@@ -2,25 +2,16 @@ import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 import Link from "next/link";
 import CategoriesDisplayItem from "@/components/blog/blogHomePage/GridItem/CategoriesDisplayItem";
-import { blogCardData, topBlog } from "@/data/componentData/blogs";
-
-const items = [
-  { name: "Aroma Therapy", value: 2 },
-  { name: "Audio Massage", value: 2 },
-  { name: "Medical", value: 2 },
-  { name: "Physiotherapy", value: 2 },
-  { name: "Reiki", value: 2 },
-  { name: "Sanitize", value: 2 },
-  { name: "Sanitize", value: 2 },
-  { name: "Sanitize", value: 2 },
-  { name: "Sanitize", value: 2 },
-  { name: "Sanitize", value: 2 },
-];
+import {
+  categoryItem,
+  blogCardData,
+  topBlog,
+} from "@/data/componentData/blogs";
 
 export default function CategoriesDisplay() {
   return (
     <ExtraLargePageContainer>
-      <div className="mb-[2000px] mt-[22px] flex flex-col gap-3 md:gap-0">
+      <div className="mb-[2000px] mt-[22px] flex flex-col gap-6 md:gap-0">
         <Image
           src="/assets/blogs/img1.jpg"
           alt="doctor"
@@ -29,7 +20,24 @@ export default function CategoriesDisplay() {
           className="h-[123px] object-cover object-center w-full rounded-[11px] md:hidden"
           sizes="(max-width: 768px) 100vw, 200px"
         />
-        {/*mobile menu buraya gelecek*/}
+        {/*mobile menu */}
+        <div class="scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-[62px] overflow-y-scroll font-poppins text-sm flex items-center justify-start gap-5  md:hidden">
+          <Link
+            href="#"
+            className="whitespace-nowrap rounded bg-[#52B8AB] py-1 px-6 text-white"
+          >
+            All
+          </Link>
+          {categoryItem.map((item, index) => (
+            <Link
+              href="#"
+              key="index"
+              className="text-[#6A778B] whitespace-nowrap"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
         <div className="flex flex-col md:flex-row md:gap-5">
           {/*Left*/}
           <div className="md:basis-[20%] hidden md:block">
@@ -38,7 +46,7 @@ export default function CategoriesDisplay() {
                 <div className="text-center flex items-center justify-center bg-[#52B8AB] rounded h-[28px] py-4 font-semibold font-inter mb-4 text-white">
                   All Categories
                 </div>
-                {items.map((item, index) => (
+                {categoryItem.map((item, index) => (
                   <div
                     className="flex items-center font-poppins text-sm"
                     key={index}

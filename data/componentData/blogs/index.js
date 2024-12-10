@@ -1,3 +1,16 @@
+export const categoryItem = [
+  { name: "Aroma Therapy", value: 2 },
+  { name: "Audio Massage", value: 2 },
+  { name: "Medical", value: 2 },
+  { name: "Physiotherapy", value: 2 },
+  { name: "Reiki", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+];
+
 export const topBlog = [
   {
     imageSrc: "/assets/blogs/1.png",
