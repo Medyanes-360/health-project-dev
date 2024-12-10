@@ -1,17 +1,20 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 import Link from "next/link";
+import CategoriesDisplayItem from "@/components/blog/blogHomePage/GridItem/CategoriesDisplayItem";
+import { blogCardData, topBlog } from "@/data/componentData/blogs";
 
 const items = [
   { name: "Aroma Therapy", value: 2 },
-  { name: "Audio Massage", value: 5 },
-  { name: "Medical", value: 3 },
-  { name: "Physiotherapy", value: 4 },
-  { name: "Reiki", value: 1 },
-  { name: "Sanitize", value: 8 },
-  { name: "Sanitize", value: 9 },
-  { name: "Sanitize", value: 6 },
-  { name: "Sanitize", value: 7 },
+  { name: "Audio Massage", value: 2 },
+  { name: "Medical", value: 2 },
+  { name: "Physiotherapy", value: 2 },
+  { name: "Reiki", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
+  { name: "Sanitize", value: 2 },
 ];
 
 export default function CategoriesDisplay() {
@@ -27,33 +30,82 @@ export default function CategoriesDisplay() {
           sizes="(max-width: 768px) 100vw, 200px"
         />
         {/*mobile menu buraya gelecek*/}
-        <div className="hidden md:flex flex-row h-screen gap-10">
+        <div className="flex flex-col md:flex-row md:gap-5">
           {/*Left*/}
-          <div className="basis-[22%]">
-            <div className="text-center flex items-center justify-center bg-[#52B8AB] rounded h-[28px] py-4 font-semibold font-inter mb-4 text-white">
-              <h1>All Categories</h1>
-            </div>
-            <div>
-              {items.map((item, index) => (
-                <div className="flex justify-between items-center font-poppins text-sm space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src="/assets/blogs/arrow-right.png"
-                      alt="arrow-right"
-                      width={18}
-                      height={18}
-                    />
-                    <Link href="#" key={index} className="text-[#6A778B]">
-                      {item.name}
-                    </Link>
-                  </div>
-                  <div>{item.value}</div>
+          <div className="md:basis-[20%] hidden md:block">
+            <div className="flex flex-col justify-between h-full">
+              <div className="px-4 flex flex-col gap-5">
+                <div className="text-center flex items-center justify-center bg-[#52B8AB] rounded h-[28px] py-4 font-semibold font-inter mb-4 text-white">
+                  All Categories
                 </div>
-              ))}
+                {items.map((item, index) => (
+                  <div
+                    className="flex items-center font-poppins text-sm"
+                    key={index}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/assets/blogs/arrow-right.png"
+                        alt="arrow-right"
+                        width={18}
+                        height={22}
+                      />
+                      <Link
+                        href="#"
+                        key={index}
+                        className="text-[#6A778B] whitespace-nowrap"
+                      >
+                        {item.name}
+                      </Link>
+                    </div>
+                    <div className="w-full text-end text-sm text-[#090909]">
+                      {item.value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {/*alt*/}
+              <div className="border-[#F9F9F9] rounded-3xl py-3 w-full px-4 pb-[29px] shadow">
+                <h1 className="font-semibold text-lg leading-[32px]">
+                  Top blog
+                </h1>
+                <hr class="h-px mt-[10px] mb-3 bg-gray-200 border-0 opacity-60" />
+                <div className="space-y-3">
+                  {topBlog.map((item, index) => (
+                    <div key={index}>
+                      <div className="flex flex-col gap-1">
+                        <div className="flex gap-1 items-center">
+                          <Image
+                            src={item.imageSrc}
+                            alt={item.altText}
+                            width={0}
+                            height={0}
+                            className="object-contain max-w-[12px] size-3"
+                            sizes="(max-width: 768px) 100vw, 200px"
+                          />
+                          <div className="font-poppins text-sm leading-[22px]">
+                            {item.title}
+                          </div>
+                        </div>
+                        <div className="text-end font-medium text-[10px] text-[#9199A3]">
+                          {item.date}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           {/*Right*/}
-          <div className="basis-3/4 bg-red-500"></div>
+          <div className="md:basis-[80%] w-full">
+            {/*grid*/}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-2">
+              {blogCardData.map((item, index) => (
+                <CategoriesDisplayItem key={index} item={item} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </ExtraLargePageContainer>
