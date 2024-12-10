@@ -7,10 +7,15 @@ const BestVenceerPackagesCard = ({ data }) => {
     <div className="w-full h-full">
       <div className="flex flex-col md:flex-row sm:justify-between gap-6">
         <div className="flex flex-col md:flex-row gap-4 md:flex-1 w-full">
-          <div className=" rounded-2xl overflow-hidden w-full h-80 md:h-full relative max-w-[400px]">
-            <BeforeAfterPhotoSlider
-              beforeImageSrc="/assets/images/mock-clinic-image2.png"
-              afterImageSrc="/assets/images/mock-clinic-image1.png"
+          <div className="rounded-2xl overflow-hidden flex  h-80 md:h-full relative   w-full ">
+            <Image
+              src={"/assets/images/mock-clinic-image1.png"}
+              alt="img"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+              className="h-full w-full"
             />
           </div>
           <div className="w-full space-y-3 py-3">
@@ -33,7 +38,7 @@ const BestVenceerPackagesCard = ({ data }) => {
           </div>
         </div>
 
-        <div className="space-y-4 sm:w-[40%] w-full  py-3">
+        <div className="space-y-4 w-full md:w-[40%] py-3">
           <div className="flex items-center justify-center gap-1">
             <div className="flex items-center ">
               {[1, 2, 3, 4, 5].map((i) => (
