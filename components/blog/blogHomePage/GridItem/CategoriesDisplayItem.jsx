@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CategoriesDisplayItem({ item }) {
   return (
-    <div className="flex flex-col gap-3 md:gap-1 rounded-xl w-fit border p-1">
+    <div className="flex flex-col gap-3 md:gap-1 rounded-xl w-fit border p-2 md:p-1">
       <Image
         src={item.imageSrc}
         alt="doctor"
