@@ -104,7 +104,17 @@ module.exports = {
     require("tailwind-scrollbar"), // Scrollbar eklentisini 
     function ({ addUtilities }) {
       addUtilities({
-        ".home-Input": { "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem", "borderRadius": "1rem", "width": "100%", "height": "40px", "background": "#f1f5f9" }
+        ".home-Input": { "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem", "borderRadius": "1rem", "width": "100%", "height": "40px", "background": "#f1f5f9" },
+        ".card": {
+          boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+          borderRadius: "1rem", 
+          padding: "1rem"       
+        },
+        ".card-children": {
+          display: "flex",
+          flexDirection: "column",
+          gap: "1.25rem" 
+        },
       });
     },
   ],

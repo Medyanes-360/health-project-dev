@@ -1,0 +1,154 @@
+# Query: globalElements/Card
+# ContextLines: 1
+
+32 results - 32 files
+
+components/blog/treatmentBlogPage/bestClinics/BestClinicsCards.jsx:
+  5  import "slick-carousel/slick/slick-theme.css";
+  6: //import CardComponent from "@/globalElements/Card";
+  7  import Image from "next/image";
+
+components/blog/treatmentBlogPage/bestVencerPackage/index.jsx:
+  3  import BestVenceerPackagesCard from "./BestVenceerPackagesCard";
+  4: //import CardComponent from "@/globalElements/Card";
+  5  
+
+components/blog/treatmentBlogPage/compositeVeneers/index.jsx:
+  1  import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProcedurePage/additionalInformation/index.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProcedurePage/beforeAfterComponent/BeforeAfter.jsx:
+  1  "use client";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { useState, useRef } from "react";
+
+components/clinic/clinicProcedurePage/bookimedAssistance/index.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProcedurePage/duration/index.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProcedurePage/howItWorks/index.jsx:
+  1  import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProcedurePage/medicalProcedures/index.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProcedurePage/programBenefits/programBenefitsCard.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import MedicalProcedures from "../medicalProcedures";
+
+components/clinic/clinicProcedurePage/transport/index.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProfilePage/getAFreeConsultationFrom/index.jsx:
+  5  import ButtonComponent from "@/globalElements/Button";
+  6: //import CardComponent from "@/globalElements/Card";
+  7  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinic/clinicProfilePage/howItWorks/index.jsx:
+  1  import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinics/clinicsByTreatmentSearchPage/BeforeAndAfterImages/BeforeAndAfterCard.jsx:
+  1  "use client";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { useState, useRef } from "react";
+
+components/clinics/clinicsByTreatmentSearchPage/bookimed/bookimedHelp/index.jsx:
+  1  import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinics/clinicsByTreatmentSearchPage/freeConsultationForm/getFreeConsolationForm.jsx:
+  5  import ButtonComponent from "@/globalElements/Button";
+  6: //import CardComponent from "@/globalElements/Card";
+  7  import { MotionDiv } from "@/globalElements/motion";
+
+components/clinics/clinicsByTreatmentSearchPage/hairTransplantReviews/HairTransplantReviewsCard.jsx:
+  1  "use client";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { useState, useRef } from "react";
+
+components/clinics/clinicsByTreatmentSearchPage/medicalAssessment/MedicalAssessmentCard.jsx:
+  2  import ButtonComponent from "@/globalElements/Button";
+  3: //import CardComponent from "@/globalElements/Card";
+  4  import { useRef, useState } from "react";
+
+components/clinics/clinicsByTreatmentSearchPage/recentHairTransplantReview/RecentHairTransplantReviewCard.jsx:
+  1  "use client";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { useState, useRef } from "react";
+
+components/clinics/clinicsByTreatmentSearchPage/relatedArtcles/RelatedArticlesCard.jsx:
+  1  "use client";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { useState, useRef } from "react";
+
+components/clinics/clinicsByTreatmentSearchPage/reusables/Clinic.jsx:
+  1  import ButtonComponent from "@/globalElements/Button";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import Image from "next/image";
+
+components/clinics/clinicsByTreatmentSearchPage/reusables/DiscoverMoreCard.jsx:
+  1  import ButtonComponent from "@/globalElements/Button";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import Image from "next/image";
+
+components/clinics/clinicsByTreatmentSearchPage/reusables/Doctors.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import Image from "next/image";
+
+components/clinics/clinicsByTreatmentSearchPage/reusables/Price.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import TreatmentList from "@/globalElements/treatmentList";
+
+components/clinics/clinicsByTreatmentSearchPage/reusables/Reviews.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import Image from "next/image";
+
+components/clinics/clinicsSearchPage/bookimed/bookimedHelp/index.jsx:
+  1  import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import Image from "next/image";
+
+components/clinics/clinicsSearchPage/freeConsultationForm/getFreeConsolationForm.jsx:
+  4  import { useState } from "react";
+  5: //import CardComponent from "@/globalElements/Card";
+  6  import PhoneInput from "react-phone-number-input";
+
+components/home/form/index.jsx:
+  1: //import CardComponent from "@/globalElements/Card";
+  2  import Image from "next/image";
+
+components/home/QualifiedMedicalDoctors/QualifiedMedicalDoctorsCard.jsx:
+  1  import Image from "next/image";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  
+
+components/home/Testimonial/TestimonialCard.jsx:
+  1  "use client";
+  2: //import CardComponent from "@/globalElements/Card";
+  3  import { useState } from "react";
+
+components/test/questions/index.jsx:
+  1  "use client";
+  2: import CardComponent from "@/globalElements/Card";
+  3  import QuestionCard from "./QuestionCard";
+
+globalElements/faqs/index.jsx:
+  2  import { useState } from "react";
+  3: //import CardComponent from "@/globalElements/Card";
+  4  import ExpandingQuestions from "./expand";
