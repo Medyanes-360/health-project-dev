@@ -1,7 +1,7 @@
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import Image from "next/image";
 import Link from "next/link";
-import CategoriesDisplayItem from "@/components/blog/blogHomePage/GridItem/CategoriesDisplayItem";
+import Index from "@/components/blog/blogHomePage/CategoriesDisplayGridItem";
 import {
   categoryItem,
   blogCardData,
@@ -110,7 +110,7 @@ export default function CategoriesDisplay() {
             {/*grid*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-2">
               {blogCardData.map((item, index) => (
-                <CategoriesDisplayItem key={index} item={item} />
+                <Index key={index} item={item} />
               ))}
             </div>
           </div>

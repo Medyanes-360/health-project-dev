@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function CategoriesDisplayItem({ item }) {
+export default function Index({ item }) {
   return (
     <div className="flex flex-col gap-3 md:gap-1 rounded-xl w-fit border p-2 md:p-1">
       <Image
@@ -9,6 +9,7 @@ export default function CategoriesDisplayItem({ item }) {
         width={250}
         height={300}
         className="object-cover object-center rounded-lg w-full max-h-[280px] md:max-h-[285px]"
+        sizes="(max-width: 768px) 100vw, 200px"
       />
       <div
         className={`py-[4px] px-3 w-fit rounded-[29px] text-white text-[10px] font-medium font-poppins hidden md:block ${
