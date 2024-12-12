@@ -74,7 +74,8 @@ body {
 }
 
 /* react-phone-number-input kütüphanesi için  */
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 }
 
