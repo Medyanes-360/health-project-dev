@@ -25,7 +25,6 @@ export default function RootLayout({ children, session }) {
         <SessionProvider session={session}>
           <main className="overflow-hidden">
             <WillBeDeleted />
-
             {children}
             <AssistanChat />
           </main>

@@ -68,7 +68,7 @@ export default function RegisterComponent() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 sm:p-8">
+    <div className="min-h-screen flex pt-20 justify-center bg-gray-100 p-4 sm:p-8">
       <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md w-full max-w-xs sm:max-w-2xl">
         <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
           Medyanes<span className="text-teal-500">360</span>
