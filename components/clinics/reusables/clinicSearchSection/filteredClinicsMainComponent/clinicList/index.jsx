@@ -14,14 +14,14 @@ export default function ClinicList({ maxheight }) {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    handleResize(); 
-    window.addEventListener("resize", handleResize); 
+    handleResize();
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const fetchClinics = async (newPage = page) => {
     if (isLoading || !hasMore) return;
-    setIsLoading(true);
+    setIsLoading(true); // Yükleme başlıyor
 
     setTimeout(() => {
       const newClinics = Array(5)
@@ -30,14 +30,15 @@ export default function ClinicList({ maxheight }) {
       setClinics((prev) =>
         newPage === 1 ? newClinics : [...prev, ...newClinics]
       );
-      if (newClinics.length < 5) setHasMore(false);
-      setIsLoading(false);
-      setPage(newPage);
+      if (newClinics.length < 5) setHasMore(false); // Daha fazla veri yok
+      setIsLoading(false); // Yükleme tamamlandı
+      setPage(newPage); // Sayfayı güncelle
     }, 1000);
   };
 
+  // İlk veri yüklemesi
   useEffect(() => {
-    fetchClinics(1); // İlk sayfayı yükle
+    fetchClinics(1);
   }, []);
 
   return (
@@ -57,7 +58,6 @@ export default function ClinicList({ maxheight }) {
           {(index + 1) % 3 === 0 && <TrustPilotInfo />}
         </div>
       ))}
-      {isLoading && <div>Loading...</div>}
       {!hasMore && <div>No more clinics to show.</div>}
 
       {/* Mobilde Previous/Next */}
@@ -84,16 +84,19 @@ export default function ClinicList({ maxheight }) {
       )}
 
       {/* Büyük Ekranda Load More */}
-      {!isMobile && hasMore && (
+      {!isMobile && hasMore && clinics.length > 0 && !isLoading && (
         <button
           onClick={() => fetchClinics(page + 1)}
           disabled={isLoading}
-          className="px-4 py-2 mt-4 bg-blue-500 text-white rounded"
+          className="px-4 py-2 mt-4 bg-primary text-white rounded"
         >
           Load More
         </button>
       )}
+
+      {isLoading && (
+        <div className="px-4 py-2 mt-4 bg-primary text-white rounded">Loading...</div>
+      )}
     </div>
   );
 }
-
