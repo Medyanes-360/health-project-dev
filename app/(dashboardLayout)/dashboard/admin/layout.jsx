@@ -5,12 +5,13 @@ export default function ClinicDashboardLayout({ children }) {
   return (
     <div className="flex bg-[#71CCB60F]">
       {/* Sidebar - Sol tarafta yer alacak */}
-      <div
-        className={`h-screen bg-white transition-all duration-300 
-         
-     relative`}
-      >
-        Admin Sidebar component
+      <div className={`h-screen transition-all duration-300 relative`}>
+        <div
+          className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl h-full flex flex-col gap-2
+       `}
+        >
+          Admin Sidebar component
+        </div>
       </div>
 
       {/* Main content area */}

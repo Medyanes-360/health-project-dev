@@ -1,5 +1,5 @@
-import ClinicDashboardPageContainer from "@/containers/clinicDashboard";
+import ClinicAdminPageContainer from "@/containers/clinicAdmin";
 
 export default function ClinicAdminPage() {
-  return <></>;
+  return <ClinicAdminPageContainer />;
 }

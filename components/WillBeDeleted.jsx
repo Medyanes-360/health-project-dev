@@ -20,6 +20,7 @@ const WillBeDeleted = () => {
     "/doctor/doctor-url",
     "/doctors",
     "/dashboard",
+    "/dashboard/admin",
     "/test",
     "/login",
     "/register",
