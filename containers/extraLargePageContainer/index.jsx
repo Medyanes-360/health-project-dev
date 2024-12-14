@@ -7,6 +7,6 @@ const ExtraLargePageContainer = ({ id, children, className, style }) => {
     >
       {children}
     </div>
-  )
-}
+  );
+};
 export default ExtraLargePageContainer;

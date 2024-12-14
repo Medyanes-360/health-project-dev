@@ -1,55 +1,95 @@
-"use-client";
+import Link from "next/link";
+
+("use-client");
 import "./styles.css";
+import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
+import { GoArrowRight } from "react-icons/go";
+import { IoCalendarOutline } from "react-icons/io5";
+
+/*style="transform: translateY(-50%) translateX(-33.3333%) scale(0.666667); left: 75%; opacity: 0.444444; z-index: 1;" */
 
 export const BlogCarousel = () => {
   let cards = [
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/1.jpg"
+          title="Aesthetic Tourism"
+          date="1 Sep, 2021"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/4.jpg"
+          title="Aesthetic Tourism"
+          date="2 Sep, 2021"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/2.jpg"
+          title="Aesthetic Tourism"
+          date="3 Sep, 2021"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/3.jpg"
+          title="Aesthetic Tourism"
+          date="4 Sep, 2021"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/4.jpg"
+          title="Aesthetic Tourism"
+          date="5 Sep, 2021"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/1.jpg"
+          title="Aesthetic Tourism"
+          date="6 Sep, 2021"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <Card />,
+      content: (
+        <Card
+          imageSrc="/assets/blogs/crousel/3.jpg"
+          title="Aesthetic Tourism"
+          date="7 Sep, 2021"
+        />
+      ),
     },
-  ]; /*.map((element, index) => {
-    return { ...element, onClick: () => setGoToSlide(index) };
-  });*/
+  ];
 
   return (
     <ExtraLargePageContainer>
-      <CustomCarousel
-        cards={cards}
-        height="500px"
-        width="90%"
-        margin="0 auto"
-        offset={2}
-        showArrows={false}
-      />
+      <CustomCarousel cards={cards} offset={2} showArrows={false} />
     </ExtraLargePageContainer>
   );
 };
@@ -69,9 +109,7 @@ const CustomCarousel = (props) => {
   }, [props.offset, props.showArrows]);
 
   return (
-    <div
-      style={{ width: props.width, height: props.height, margin: props.margin }}
-    >
+    <div className="w-full h-[497px] mx-auto my-40 text-center bg-[#e4eeed] rounded-3xl">
       <Carousel
         slides={cards}
         goToSlide={goToSlide}
@@ -82,65 +120,38 @@ const CustomCarousel = (props) => {
     </div>
   );
 };
-const Card = (props) => {
+const Card = ({ imageSrc, title, date }) => {
   const CARDSIZE = 150;
-  const CARDWIDTH = CARDSIZE * 2;
+  const CARDWIDTH = 321;
   const CARDBORDERRADIUS = CARDSIZE * 0.1;
-  //TITLE
-  const CARDTITLEPOS = CARDWIDTH * 0.21;
-  //IMG
-  const CARDIMGHEIGHT = CARDSIZE * 0.5;
-  const CARDIMGWIDTH = CARDWIDTH * 0.9;
-  const CARDIMGMARGINTOP = CARDSIZE * 0.02;
-  //TEXT
-  const CARDTXTHEIGHT = CARDSIZE * 0.4;
-  const CARDTXTWIDTH = CARDWIDTH * 0.9;
-  const CARDTXTMARGIN = CARDSIZE * 0.05;
 
   return (
-    <div
-      className="cardContainer"
-      style={{
-        height: CARDSIZE,
-        width: CARDWIDTH,
-        borderRadius: CARDBORDERRADIUS,
-      }}
-    >
-      <div className="titleContainer">
-        <div id="title" style={{ right: CARDTITLEPOS }}>
-          TITLE
+    <div className="flex items-center rounded-xl relative w-[321px] h-[406px] overflow-hidden">
+      <Image
+        src={imageSrc}
+        width={1920}
+        height={1080}
+        alt="carousel"
+        className="!object-fill cursor-pointer w-full h-full"
+        quality={100}
+      />
+      <div className="absolute text-white bottom-0 flex flex-col items-center justify-start gap-[15px] px-4 w-full h-[105px]">
+        <div className="flex items-center gap-3 font-poppins">
+          <h1 className="text-sm uppercase py-[4.5px] px-[9px] rounded-xl text-black bg-[#FFC759]">
+            {title}
+          </h1>
+          <div className="flex items-center gap-[4px]">
+            <IoCalendarOutline />
+            <p className="text-sm">{date}</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-[6px] self-start pl-[20px] w-full">
+          <Link href="#" className="text-xs">
+            Read More
+          </Link>
+          <GoArrowRight />
         </div>
       </div>
-      <div
-        className="cardImgContainer"
-        style={{
-          height: CARDIMGHEIGHT,
-          width: CARDIMGWIDTH,
-          borderRadius: CARDBORDERRADIUS,
-          marginTop: CARDIMGMARGINTOP,
-        }}
-      >
-        <img
-          src="https://picsum.photos/800/200/?random"
-          alt="1"
-          style={{
-            height: CARDIMGHEIGHT,
-            width: CARDIMGWIDTH,
-            borderRadius: CARDBORDERRADIUS,
-          }}
-        />
-      </div>
-
-      <div
-        className="cardTextContainer"
-        style={{
-          height: CARDTXTHEIGHT,
-          width: CARDTXTWIDTH,
-          borderRadius: CARDBORDERRADIUS,
-          marginTop: CARDTXTMARGIN,
-          marginBottom: CARDTXTMARGIN,
-        }}
-      ></div>
     </div>
   );
 };

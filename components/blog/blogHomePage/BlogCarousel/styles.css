@@ -1,42 +1,44 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+.css-doq0dk {
+  overflow: hidden !important;
 }
 
-.cardContainer {
-  background-color: blue;
-  /*margin: 20px;*/
-  display: flex;
-  flex-direction: column;
-  flex-grow: 2;
-  align-items: center;
-  box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.4);
-}
-.titleContainer {
-  background-color: white;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  margin-top: 5px;
-}
-#title {
-  flex-grow: 3;
-  position: relative;
+.css-doq0dk .css-1fzpoyk:nth-child(1) {
+  transform: translateY(-50%) translateX(-33.3333%) scale(0.8) !important;
+  left: -10% !important;
+  transition:
+    transform 1s ease-in-out,
+    left 1s ease-in-out !important;
 }
 
-#rating {
-  width: 40%;
-  background-color: orange;
-  flex-direction: row;
-}
-.cardImgContainer {
-  background-color: green;
-}
-
-.cardImgContainer img {
-  object-fit: fill;
+.css-doq0dk .css-1fzpoyk:nth-child(2) {
+  transform: translateY(-50%) translateX(-66.6667%) scale(0.9) !important;
+  left: 25% !important;
+  transition:
+    transform 1s ease-in-out,
+    left 1s ease-in-out !important;
 }
 
-.cardTextContainer {
-  background-color: red;
+.css-doq0dk .css-1fzpoyk:nth-child(4) {
+  transform: translateY(-50%) translateX(-33.3333%) scale(0.9) !important;
+  left: 75% !important;
+  transition:
+    transform 1s ease-in-out,
+    left 1s ease-in-out !important;
+}
+
+.css-doq0dk .css-1fzpoyk:nth-child(5) {
+  transform: translateY(-50%) translateX(-66.6667%) scale(0.8) !important;
+  left: 110% !important;
+  transition:
+    transform 1s ease-in-out,
+    left 1s ease-in-out !important;
+}
+
+.css-1fzpoyk {
+  opacity: 1 !important;
+}
+
+.css-1fzpoyk img {
+  width: 100% !important;
+  object-fit: cover !important;
 }
