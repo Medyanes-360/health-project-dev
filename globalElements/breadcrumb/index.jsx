@@ -52,7 +52,9 @@ export default function BreadCrumbComponent({ customPaths = [] }) {
         <div className="flex   w-full justify-between  items-center ">
           <ul className="flex flex-wrap ">
             <li className="hover:underline mr-2 ">
-              <Link href={"/"} className="sm:text-[14px] text-[10px]" >Home</Link>
+              <Link href={"/"} className="sm:text-[14px] text-[10px]">
+                Home
+              </Link>
             </li>
             {pathNames.length > 0 && (
               //separator:
@@ -84,7 +86,7 @@ export default function BreadCrumbComponent({ customPaths = [] }) {
                 <React.Fragment key={index}>
                   <li className={itemClasses}>
                     <Link
-                      class="font-poppins sm:text-[14px] text-[10px] font-normal leading-[22px] text-left decoration-skip-ink-none"
+                      className="font-poppins sm:text-[14px] text-[10px] font-normal leading-[22px] text-left decoration-skip-ink-none"
                       href={url}
                     >
                       {name}

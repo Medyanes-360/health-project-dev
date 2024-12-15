@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 ("use-client");
 import "./styles.css";
+import Link from "next/link";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
@@ -10,8 +9,6 @@ import { config } from "react-spring";
 import ExtraLargePageContainer from "@/containers/extraLargePageContainer";
 import { GoArrowRight } from "react-icons/go";
 import { IoCalendarOutline } from "react-icons/io5";
-
-/*style="transform: translateY(-50%) translateX(-33.3333%) scale(0.666667); left: 75%; opacity: 0.444444; z-index: 1;" */
 
 export const BlogCarousel = () => {
   let cards = [
@@ -109,7 +106,7 @@ const CustomCarousel = (props) => {
   }, [props.offset, props.showArrows]);
 
   return (
-    <div className="w-full h-[497px] mx-auto my-40 text-center bg-[#e4eeed] rounded-3xl">
+    <div className="w-full h-[497px] mt-[50px] mb-[40px] text-center bg-[#e4eeed] rounded-3xl hidden md:block">
       <Carousel
         slides={cards}
         goToSlide={goToSlide}
@@ -121,16 +118,12 @@ const CustomCarousel = (props) => {
   );
 };
 const Card = ({ imageSrc, title, date }) => {
-  const CARDSIZE = 150;
-  const CARDWIDTH = 321;
-  const CARDBORDERRADIUS = CARDSIZE * 0.1;
-
   return (
-    <div className="flex items-center rounded-xl relative w-[321px] h-[406px] overflow-hidden">
+    <div className="flex items-center rounded-xl relative w-[321px] h-[406px] overflow-hidden select-none">
       <Image
         src={imageSrc}
-        width={1920}
-        height={1080}
+        width={600}
+        height={600}
         alt="carousel"
         className="!object-fill cursor-pointer w-full h-full"
         quality={100}
@@ -146,7 +139,7 @@ const Card = ({ imageSrc, title, date }) => {
           </div>
         </div>
         <div className="flex items-center gap-[6px] self-start pl-[20px] w-full">
-          <Link href="#" className="text-xs">
+          <Link href="#" className="text-xs font-lexend">
             Read More
           </Link>
           <GoArrowRight />

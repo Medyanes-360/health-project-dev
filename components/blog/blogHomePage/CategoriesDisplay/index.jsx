@@ -12,16 +12,21 @@ export default function CategoriesDisplay() {
   return (
     <ExtraLargePageContainer>
       <div className="mb-[2000px] mt-[22px] flex flex-col gap-6 md:gap-0">
-        <Image
-          src="/assets/blogs/img1.jpg"
-          alt="doctor"
-          width={200}
-          height={200}
-          className="h-[123px] object-cover object-center w-full rounded-[11px] md:hidden"
-          sizes="(max-width: 768px) 100vw, 200px"
-        />
+        <div className="relative md:hidden">
+          <Image
+            src="/assets/blogs/img1.jpg"
+            alt="doctor"
+            width={200}
+            height={200}
+            className="h-[123px] object-cover object-center w-full rounded-[11px]"
+            sizes="(max-width: 768px) 100vw, 200px"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-white text-[28px] font-lexend">Blogs</span>
+          </div>
+        </div>
         {/*mobile menu */}
-        <div class="scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-[62px] overflow-y-scroll font-poppins text-sm flex items-center justify-start gap-5  md:hidden">
+        <div className="scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-[62px] overflow-y-scroll font-poppins text-sm flex items-center justify-start gap-5  md:hidden">
           <Link
             href="#"
             className="whitespace-nowrap rounded bg-[#52B8AB] py-1 px-6 text-white"
@@ -31,7 +36,7 @@ export default function CategoriesDisplay() {
           {categoryItem.map((item, index) => (
             <Link
               href="#"
-              key="index"
+              key={index}
               className="text-[#6A778B] whitespace-nowrap"
             >
               {item.name}
@@ -77,7 +82,7 @@ export default function CategoriesDisplay() {
                 <h1 className="font-semibold text-lg leading-[32px]">
                   Top blog
                 </h1>
-                <hr class="h-px mt-[10px] mb-3 bg-gray-200 border-0 opacity-60" />
+                <hr className="h-px mt-[10px] mb-3 bg-gray-200 border-0 opacity-60" />
                 <div className="space-y-3">
                   {topBlog.map((item, index) => (
                     <div key={index}>
