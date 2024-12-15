@@ -36,7 +36,7 @@ const BenefitsOfDental = () => {
   return (
     <div className="pb-20">
       <ExtraLargePageContainer className={"space-y-14"}>
-        <div class="bg-gradient-to-r from-[#52B8AB] to-[#EF1BC0] rounded-xl px-4 py-5">
+        <div className="bg-gradient-to-r from-[#52B8AB] to-[#EF1BC0] rounded-xl px-4 py-5">
           <h1 className="font-bold text-xl sm:text-2xl text-white">
             Types of Dental Veneers Available in Mexico
           </h1>

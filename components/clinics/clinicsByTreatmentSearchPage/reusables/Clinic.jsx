@@ -89,7 +89,7 @@ export default function Clinic({ data }) {
                 />
 
                 <div className="space-y-2">
-                  <h1 class="font-poppins text-[14px] font-semibold leading-[22px] text-center">
+                  <h1 className="font-poppins text-[14px] font-semibold leading-[22px] text-center">
                     {docName}
                   </h1>
                   <div className="flex gap-1 items-center">
@@ -99,7 +99,7 @@ export default function Clinic({ data }) {
                       width={20}
                       height={20}
                     />
-                    <p class="font-poppins text-[10px] font-semibold leading-[22px] text-center">
+                    <p className="font-poppins text-[10px] font-semibold leading-[22px] text-center">
                       {docExperience} years of experience
                     </p>
                   </div>

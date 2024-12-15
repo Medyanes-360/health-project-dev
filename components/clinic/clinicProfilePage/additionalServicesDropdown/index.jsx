@@ -20,13 +20,13 @@ export default function AdditionalServicesDropdown() {
       </div>
       {/* /* Treatments prices in the clinic dropdown start
        */}
-      <ul class="flex flex-col gap-2 w-full  ">
+      <ul className="flex flex-col gap-2 w-full  ">
         <li>
-          <details class="group " open>
-            <summary class="bg-[#eef8f7] flex items-center justify-between gap-2 p-[1.5rem] font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-[72px]">
-              <span class="flex gap-2">
+          <details className="group " open>
+            <summary className="bg-[#eef8f7] flex items-center justify-between gap-2 p-[1.5rem] font-medium marker:content-none hover:cursor-pointer border-x border-y rounded-xl h-[72px]">
+              <span className="flex gap-2">
                 {/* <img
-                      class="w-6 h-6 rounded-lg"
+                      className="w-6 h-6 rounded-lg"
                       src="https://lh3.googleusercontent.com/a/AGNmyxbSlMgTRzE3_SMIxpDAhpNad-_CN5_tmph1NQ1KhA=s96-c"
                       alt=""
                     /> */}
@@ -44,7 +44,7 @@ export default function AdditionalServicesDropdown() {
                 className="transition group-open:rotate-180"
               />
               {/* <svg
-                    class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                    className="w-5 h-5 text-gray-500 transition group-open:rotate-90"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -58,22 +58,22 @@ export default function AdditionalServicesDropdown() {
                   </svg> */}
             </summary>
 
-            <article class="px-4 pb-4 w-full mb-4">
-              <div class="bg-[#D9D9D91F] shadow-md rounded-md p-4 mx-auto  mt-8 w-full">
+            <article className="px-4 pb-4 w-full mb-4">
+              <div className="bg-[#D9D9D91F] shadow-md rounded-md p-4 mx-auto  mt-8 w-full">
                 <div className="flex items-center justify-around bg-[#EFEFEF] h-14 rounded">
-                  <h2 class="text-sm font-medium ">Service 1 </h2>
-                  <h2 class="text-sm font-medium ">Service 2</h2>
+                  <h2 className="text-sm font-medium ">Service 1 </h2>
+                  <h2 className="text-sm font-medium ">Service 2</h2>
                 </div>
 
                 {/* <ul>
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
+                  <li className="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
+                    <div className="flex items-center w-7/12 justify-center">
+                      <span className=" align-center font-light w-fit ">
                         Computer-assisted dental implant
                       </span>
                     </div>
                     <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light ">$470 - $772</span>
+                      <span className="text-gray-800 font-light ">$470 - $772</span>
                       <Image
                         src={"/assets/clinic/arrow-square-right.svg"}
                         alt="arrow-square-right"
@@ -83,14 +83,14 @@ export default function AdditionalServicesDropdown() {
                       />
                     </div>
                   </li>{" "}
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
+                  <li className="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
+                    <div className="flex items-center w-7/12 justify-center">
+                      <span className=" align-center font-light w-fit ">
                         Computer-assisted dental implant
                       </span>
                     </div>
                     <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
+                      <span className="text-gray-800 font-light">$470 - $772</span>
                       <Image
                         src={"/assets/clinic/arrow-square-right.svg"}
                         alt="arrow-square-right"
@@ -100,14 +100,14 @@ export default function AdditionalServicesDropdown() {
                       />
                     </div>
                   </li>{" "}
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
+                  <li className="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
+                    <div className="flex items-center w-7/12 justify-center">
+                      <span className=" align-center font-light w-fit ">
                         Computer-assisted dental implant
                       </span>
                     </div>
                     <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
+                      <span className="text-gray-800 font-light">$470 - $772</span>
                       <Image
                         src={"/assets/clinic/arrow-square-right.svg"}
                         alt="arrow-square-right"
@@ -117,14 +117,14 @@ export default function AdditionalServicesDropdown() {
                       />
                     </div>
                   </li>{" "}
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
+                  <li className="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
+                    <div className="flex items-center w-7/12 justify-center">
+                      <span className=" align-center font-light w-fit ">
                         Computer-assisted dental implant
                       </span>
                     </div>
                     <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
+                      <span className="text-gray-800 font-light">$470 - $772</span>
                       <Image
                         src={"/assets/clinic/arrow-square-right.svg"}
                         alt="arrow-square-right"
@@ -134,14 +134,14 @@ export default function AdditionalServicesDropdown() {
                       />
                     </div>
                   </li>
-                  <li class="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
-                    <div class="flex items-center w-7/12 justify-center">
-                      <span class=" align-center font-light w-fit ">
+                  <li className="flex items-center justify-between py-2 border-gray-300 bg-[#FFFFFF] mb-2.5 mt-2.5 h-14 rounded">
+                    <div className="flex items-center w-7/12 justify-center">
+                      <span className=" align-center font-light w-fit ">
                         Computer-assisted dental implant
                       </span>
                     </div>
                     <div className="flex items-center w-5/12 w-fit justify-between gap-20">
-                      <span class="text-gray-800 font-light">$470 - $772</span>
+                      <span className="text-gray-800 font-light">$470 - $772</span>
                       <Image
                         src={"/assets/clinic/arrow-square-right.svg"}
                         alt="arrow-square-right"

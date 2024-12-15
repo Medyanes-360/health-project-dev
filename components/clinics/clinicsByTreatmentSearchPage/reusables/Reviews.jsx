@@ -13,7 +13,7 @@ export default function Reviews({ data }) {
             >
               <div className="flex min-w-0 gap-x-4 md:w-[33%] w-[full] ">
                 <div className="min-w-0 flex-auto">
-                  <p class="font-poppins text-[16px] font-medium leading-[32px] text-left text-[#383333] ">
+                  <p className="font-poppins text-[16px] font-medium leading-[32px] text-left text-[#383333] ">
                     {item.speciality}
                   </p>
                 </div>
