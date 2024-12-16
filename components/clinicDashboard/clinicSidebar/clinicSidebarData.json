@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Clinic information",
+    "children": [],
+    "icon": "/assets/dashboard/home-hashtag.svg",
+    "route": ""
+  },
+  {
+    "title": "Clinic description",
+    "children": [],
+    "icon": "/assets/dashboard/stickynote.svg",
+    "route": ""
+  },
+  {
+    "title": "Add video",
+    "children": [],
+    "icon": "/assets/dashboard/video-play.svg",
+    "route": ""
+  },
+  {
+    "title": "Pictures",
+    "children": [],
+    "icon": "/assets/dashboard/camera.svg",
+    "route": ""
+  },
+  {
+    "title": "Currency",
+    "children": [],
+    "icon": "/assets/dashboard/card-coin.svg",
+    "route": ""
+  },
+  {
+    "title": "Opening hours",
+    "children": [],
+    "icon": "/assets/dashboard/calendar-tick.svg",
+    "route": ""
+  },
+  {
+    "title": "Premises",
+    "children": [],
+    "icon": "/assets/dashboard/edit.svg",
+    "route": ""
+  },
+  {
+    "title": "Clinic services",
+    "children": [],
+    "icon": "/assets/dashboard/heart.svg",
+    "route": ""
+  },
+  {
+    "title": "Payment information",
+    "children": [],
+    "icon": "/assets/dashboard/card-tick.svg",
+    "route": ""
+  },
+  {
+    "title": "Travel services",
+    "children": [],
+    "icon": "/assets/dashboard/airplane.svg",
+    "route": ""
+  },
+  {
+    "title": "Insurances",
+    "children": [],
+    "icon": "/assets/dashboard/book.svg",
+    "route": ""
+  },
+  {
+    "title": "Languages",
+    "children": [],
+    "icon": "/assets/dashboard/language-square.svg",
+    "route": ""
+  },
+  {
+    "title": "Accreditations",
+    "children": [],
+    "icon": "/assets/dashboard/element-plus.svg",
+    "route": ""
+  },
+  {
+    "title": "Export enquiries",
+    "children": [],
+    "icon": "/assets/dashboard/import.svg",
+    "route": ""
+  }
+]
