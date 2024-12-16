@@ -1,20 +1,18 @@
 "use client";
-
 import { useRef } from "react";
 
-export const TimeInputWithLabel = (props) => {
+export const DatePickerWithLabel = (props) => {
   ///////// Formik ile uyumlu proplar///////////
   //  <Field
-  //  component={TimeInputWithLabel}
-  //  time="time"
-  //  label="Time"
-  //  error={errors.time}
-  //  isTouched={touched.time}
+  //  component={DatePickerWithLabel}
+  //  name="date"
+  //  label="date"
+  //  error={errors.date}
+  //  isTouched={touched.date}
   //  onBlur={handleBlur}
   //  onChange={handleChange}
   // />
-  console.log(props);
-  const timePicker = useRef(null);
+  const datePicker = useRef(null);
   return (
     <div className="flex flex-col h-full w-full relative">
       <label
@@ -26,9 +24,9 @@ export const TimeInputWithLabel = (props) => {
       </label>
       <input
         {...props}
-        ref={timePicker}
-        onClick={() => timePicker.current.showPicker()}
-        type="time"
+        ref={datePicker}
+        onClick={() => datePicker.current.showPicker()}
+        type="date"
         name={props.field.name}
         className={` cursor-pointer flex flex-col justify-center w-full rounded-lg min-h-[40px] border ${
           props.isTouched && props.error
