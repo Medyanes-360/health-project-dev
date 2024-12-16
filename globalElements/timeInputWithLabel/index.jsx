@@ -1,15 +1,20 @@
-export const InputWithLabel = (props) => {
+"use client";
+
+import { useRef } from "react";
+
+export const TimeInputWithLabel = (props) => {
   ///////// Formik ile uyumlu proplar///////////
   //  <Field
-  //  component={InputWithLabel}
-  //  name="name"
-  //  label="Name"
-  //  error={errors.name}
-  //  isTouched={touched.name}
+  //  component={TimeInputWithLabel}
+  //  time="time"
+  //  label="Time"
+  //  error={errors.time}
+  //  isTouched={touched.time}
   //  onBlur={handleBlur}
   //  onChange={handleChange}
   // />
-
+  console.log(props);
+  const timePicker = useRef(null);
   return (
     <div className="flex flex-col h-full w-full relative">
       <label
@@ -21,8 +26,11 @@ export const InputWithLabel = (props) => {
       </label>
       <input
         {...props}
+        ref={timePicker}
+        onClick={() => timePicker.current.showPicker()}
+        type="time"
         name={props.field.name}
-        className={`flex flex-col w-full rounded-lg min-h-[40px] border ${
+        className={` cursor-pointer flex flex-col justify-center w-full rounded-lg min-h-[40px] border ${
           props.isTouched && props.error
             ? "border-red-600 border"
             : "border-[#919EAB52]"

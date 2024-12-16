@@ -1,5 +1,6 @@
 export const SelectWithLabel = (props) => {
   ///////// Formik ile uyumlu proplar///////////
+  //  <Field
   //  component={SelectWithLabel}
   //  as="select"
   //  name="name"
@@ -9,6 +10,7 @@ export const SelectWithLabel = (props) => {
   //  isTouched={touched.name}
   //  onBlur={handleBlur}
   //  onChange={handleChange}
+  // />
 
   return (
     <div className="flex flex-col h-full w-full relative">
