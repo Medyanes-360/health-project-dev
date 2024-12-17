@@ -83,6 +83,7 @@ export const PremisesForm = () => {
                 </div>
                 <InputWithLabel
                   label="Description"
+                  disabled={!values.parking.isAvailable}
                   name="parking.description"
                   placeholder="Description"
                   error={errors.name}
@@ -101,6 +102,7 @@ export const PremisesForm = () => {
                 </div>
                 <InputWithLabel
                   label="Description"
+                  disabled={!values.disabledAccess.isAvailable}
                   name="disabledAccess.description"
                   placeholder="Description"
                   error={errors.name}
@@ -119,6 +121,7 @@ export const PremisesForm = () => {
                 </div>
                 <InputWithLabel
                   label="Description"
+                  disabled={!values.publicTransport.isAvailable}
                   name="publicTransport.description"
                   placeholder="Description"
                   error={errors.name}
@@ -137,6 +140,7 @@ export const PremisesForm = () => {
                 </div>
                 <InputWithLabel
                   label="Description"
+                  disabled={!values.accessWithoutSteps.isAvailable}
                   name="accessWithoutSteps.description"
                   placeholder="Description"
                   error={errors.name}
@@ -155,6 +159,7 @@ export const PremisesForm = () => {
                 </div>
                 <InputWithLabel
                   label="Description"
+                  disabled={!values.disabledParking.isAvailable}
                   name="disabledParking.description"
                   placeholder="Description"
                   error={errors.name}
