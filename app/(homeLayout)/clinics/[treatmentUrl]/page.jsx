@@ -6,7 +6,7 @@ export default function ClinicsByTreatmentSearchPage({ params }) {
   // (res) => res.json()
 
   const currentTreatment = treatmentsData.find(
-    (elem) => elem.url == params.treatmentUrl
+    (elem) => elem.url == params.treatmentUrl,
   );
   //treatment'i fetchledik, eğer treatment yoksa? :
   if (!currentTreatment) {
@@ -120,7 +120,7 @@ const treatmentsData = [
         },
         {
           svg: "/assets/icons/multi.svg",
-          text: "Multilingual staff — no language barrier with Bookimed coordinator.",
+          text: "Multilingual staff — no languages barrier with Bookimed coordinator.",
         },
       ],
       payment: {

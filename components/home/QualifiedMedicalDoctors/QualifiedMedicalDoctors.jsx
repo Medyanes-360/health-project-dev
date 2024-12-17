@@ -20,7 +20,7 @@ const QualifiedMedicalDoctors = () => {
       icon: "/assets/images/globe.png",
       title: "More than 7+ languages",
       description:
-        "You feel the freedom to speak your language with our qualified doctors.",
+        "You feel the freedom to speak your languages with our qualified doctors.",
     },
     {
       icon: "/assets/images/indeterminate_question_box.png", // Resolve icon path
