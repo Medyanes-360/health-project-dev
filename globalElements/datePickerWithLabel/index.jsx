@@ -1,14 +1,17 @@
-export const InputWithLabel = (props) => {
+"use client";
+import { useRef } from "react";
+
+export const DatePickerWithLabel = (props) => {
   ///////// Formik ile uyumlu proplar///////////
 
-  //  component={InputWithLabel}
-  //  name="name"
-  //  label="Name"
-  //  error={errors.name}
-  //  touched={touched.name}
+  //  name="date"
+  //  label="date"
+  //  error={errors.date}
+  //  touched={touched.date}
   //  onBlur={handleBlur}
   //  onChange={handleChange}
 
+  const datePicker = useRef(null);
   return (
     <div className="flex flex-col h-full w-full relative">
       <label
@@ -20,8 +23,11 @@ export const InputWithLabel = (props) => {
       </label>
       <input
         {...props}
+        ref={datePicker}
+        onClick={() => datePicker.current.showPicker()}
+        type="date"
         name={props.name}
-        className={`flex flex-col w-full rounded-lg min-h-[40px] border ${
+        className={` cursor-pointer flex flex-col justify-center w-full rounded-lg min-h-[40px] border ${
           props.touched && props.error
             ? "border-red-600 border"
             : "border-[#919EAB52]"
