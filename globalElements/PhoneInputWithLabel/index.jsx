@@ -7,7 +7,7 @@ export const PhoneInputWithLabel = (props) => {
   //  name="phone"
   //  label="phone"
   //  error={errors.phone}
-  //  isTouched={touched.phone}
+  //  touched={touched.phone}
   //  onBlur={handleBlur}
   //  onChange={(value) => setFieldValue("phone", value)}
   //  component={PhoneInput}
@@ -20,12 +20,12 @@ export const PhoneInputWithLabel = (props) => {
   return (
     <div
       className={`relative flex w-full h-fit flex-col rounded-2xl border ${
-        props.isTouched && props.error ? "border-red-600" : "border-[#919EAB]"
+        props.touched && props.error ? "border-red-600" : "border-[#919EAB]"
       }`}
     >
       <label
         className={` ${
-          props.isTouched && props.error ? "text-red-600" : "text-[#919EAB]"
+          props.touched && props.error ? "text-red-600" : "text-[#919EAB]"
         } text-xs font-light absolute left-6 -top-2 bg-white`}
       >
         {props.label}
