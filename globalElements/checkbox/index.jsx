@@ -1,7 +1,12 @@
 export const Checkbox = (props) => {
   return (
     <label className="flex items-center cursor-pointer">
-      <input type="checkbox" className="hidden peer" />
+      <input
+        {...props}
+        name={props.name}
+        type="checkbox"
+        className="hidden peer"
+      />
       <span className=" transition-all duration-100 w-5 h-5 bg-white border-2 rounded-md flex items-center justify-center peer-checked:bg-[#637381] border-[#637381]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
