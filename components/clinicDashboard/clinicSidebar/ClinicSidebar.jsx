@@ -87,7 +87,6 @@ const ClinicSidebar = () => {
                 </div>
 
               </button>
-  
             </li>
           ))}
         </ul>
