@@ -47,7 +47,7 @@ export default function LanguageSelector() {
 
   return (
     <ExtraLargePageContainer>
-      <div className="py-8 px-3 font-inter flex flex-col gap-8">
+      <div className="py-8 px-3 font-inter flex flex-col gap-8 bg-white rounded-[32px]">
         <h1 className="text-xl font-semibold">Languages</h1>
         <p className="font-medium">
           Languages Only add languages in which your clinic can deal with
