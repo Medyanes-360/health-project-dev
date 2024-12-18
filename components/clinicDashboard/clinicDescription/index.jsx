@@ -3,11 +3,11 @@ import { Formik, Form } from "formik";
 import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
 import RichTextEditor from "@/globalElements/richTextEditor";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const ClinicDescriptionForm = () => {
   const validationSchema = Yup.object().shape({
-    description: Yup.object(),
+    description: Yup.array(),
   });
 
   const [value, setValue] = useState([
@@ -16,7 +16,7 @@ export const ClinicDescriptionForm = () => {
       children: [{ text: "" }],
     },
   ]);
-
+  const formikRef = useRef(null);
   return (
     <div className="flex w-full py-8 px-3 font-inter flex-col gap-8 bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)]">
       <h1 className="text-xl font-semibold">Clinic Description</h1>
@@ -29,6 +29,7 @@ export const ClinicDescriptionForm = () => {
       </p>
 
       <Formik
+        innerRef={formikRef}
         initialValues={{
           description: {
             type: "paragaph",
@@ -42,12 +43,13 @@ export const ClinicDescriptionForm = () => {
           resetForm(); // Reset form after submission
         }}
       >
-        {({ setFieldValue, handleSubmit }) => {
+        {({ setFieldValue, handleSubmit, values }) => {
           // Rich text editor valusunu manuel olarak form state'ine ekler
           useEffect(() => {
-            setFieldValue(() => "description", value);
+            setFieldValue("description", value);
             console.log("effect");
-          }, [value, setFieldValue]);
+          }, [value]);
+
           return (
             <Form
               onSubmit={handleSubmit}
