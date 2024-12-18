@@ -21,7 +21,7 @@ const LanguageSelectDropdown = ({ toLeft, toRight }) => {
   // HTML'den alma:
   // document.querySelector("html").lang
   // browser'dan user'ın en çok tercih ettiği dili alma:
-  // navigator.language
+  // navigator.languages
   const [selectedLanguage, setSelectedLanguage] = useState({
     name: "English",
     countryCode: "US",
