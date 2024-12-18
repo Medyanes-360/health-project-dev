@@ -2,16 +2,20 @@
 import { Formik, Form } from "formik";
 import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
-import { Toggle } from "@/globalElements/toggle";
-import { InputWithLabel } from "@/globalElements/inputWithLabel";
+import RichTextEditor from "@/globalElements/richTextEditor";
+import { useEffect, useState } from "react";
 
 export const ClinicDescriptionForm = () => {
   const validationSchema = Yup.object().shape({
-    parking: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
+    description: Yup.object(),
   });
+
+  const [value, setValue] = useState([
+    {
+      type: "paragaph",
+      children: [{ text: "" }],
+    },
+  ]);
 
   return (
     <div className="flex w-full py-8 px-3 font-inter flex-col gap-8 bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)]">
@@ -23,11 +27,12 @@ export const ClinicDescriptionForm = () => {
         Please do not include contact information such as email, phone number or
         website address. Extra formatting will be cleaned from this text.
       </p>
+
       <Formik
         initialValues={{
-          parking: {
-            isAvailable: false,
-            description: "",
+          description: {
+            type: "paragaph",
+            children: [{ text: "" }],
           },
         }}
         validationSchema={validationSchema}
@@ -37,30 +42,23 @@ export const ClinicDescriptionForm = () => {
           resetForm(); // Reset form after submission
         }}
       >
-        {({
-          values,
-          touched,
-          errors,
-          setFieldValue,
-          handleSubmit,
-          handleBlur,
-          handleChange,
-        }) => {
+        {({ setFieldValue, handleSubmit }) => {
+          // Rich text editor valusunu manuel olarak form state'ine ekler
+          useEffect(() => {
+            setFieldValue(() => "description", value);
+            console.log("effect");
+          }, [value, setFieldValue]);
           return (
             <Form
               onSubmit={handleSubmit}
               className="flex w-full flex-col gap-8"
             >
               <div className="w-full flex gap-3 flex-col">
-                <InputWithLabel
-                  label="Description"
-                  disabled={!values.parking.isAvailable}
-                  name="parking.description"
+                <RichTextEditor
+                  name="description"
                   placeholder="Description"
-                  error={errors.name}
-                  touched={touched.name}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
+                  value={value}
+                  setValue={setValue}
                 />
               </div>
 

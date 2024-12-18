@@ -4,7 +4,7 @@ import { PremisesForm } from "../PremisesForm";
 
 export const ClinicForms = ({ preference }) => {
   return (
-    <div className="flex-1 p-6 overflow-y-auto">
+    <div className="flex-1 w-full h-screen p-6 overflow-y-auto">
       <LanguageSelector />
       <ClinicDescriptionForm />
       <PremisesForm />

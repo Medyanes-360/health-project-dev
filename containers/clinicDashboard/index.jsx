@@ -8,21 +8,11 @@ export default function ClinicDashboardPageContainer() {
   const [preference, setPreference] = useState("clinic-information");
 
   return (
-    <div className="flex bg-[#71CCB60F] flex-1 overflow-y-auto">
+    <div className="flex bg-[#71CCB60F] h-screen overflow-hidden">
       {/* Dashboard Sidebar component */}
-      <div className={`h-screen transition-all duration-300 relative`}>
-        <div
-          className={`
-       `}
-        >
-          {/* Clinic Information <br /> Clinic description */}
-          <ClinicSidebar/>
-        </div>
-      </div>
-      <div className="flex-1 flex flex-col">
-        {/* Içerik dinamik olarak sidebarda seçilen preference'a göre değişecek */}
-        <ClinicForms preference={preference} />
-      </div>
+      <ClinicSidebar />
+      {/* Içerik dinamik olarak sidebarda seçilen preference'a göre değişecek */}
+      <ClinicForms preference={preference} />
     </div>
   );
 }
