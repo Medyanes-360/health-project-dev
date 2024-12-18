@@ -39,7 +39,7 @@ const ClinicSidebar = () => {
       } relative`}
     >
       <div
-        className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl h-full flex flex-col gap-2
+        className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl flex flex-col gap-2
         ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
         {/* Header */}

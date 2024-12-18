@@ -12,7 +12,7 @@ export default function ClinicDashboardPageContainer() {
       {/* Dashboard Sidebar component */}
       <div className={`h-screen transition-all duration-300 relative`}>
         <div
-          className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl h-full flex flex-col gap-2
+          className={`
        `}
         >
           {/* Clinic Information <br /> Clinic description */}
