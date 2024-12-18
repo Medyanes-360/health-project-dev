@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
 import { Toggle } from "@/globalElements/toggle";
@@ -12,7 +11,7 @@ export const PremisesForm = () => {
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    publicTransport: Yup.object().shape({
+    publicTransportAccess: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
@@ -20,7 +19,7 @@ export const PremisesForm = () => {
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    disabledAccess: Yup.object().shape({
+    accessableToDisabledPeople: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
@@ -38,7 +37,7 @@ export const PremisesForm = () => {
             isAvailable: false,
             description: "",
           },
-          publicTransport: {
+          publicTransportAccess: {
             isAvailable: false,
             description: "",
           },
@@ -46,7 +45,7 @@ export const PremisesForm = () => {
             isAvailable: false,
             description: "",
           },
-          disabledAccess: {
+          accessableToDisabledPeople: {
             isAvailable: false,
             description: "",
           },
@@ -96,14 +95,14 @@ export const PremisesForm = () => {
                 <div className="w-full flex justify-between">
                   <h3>Accessible to disabled people</h3>
                   <Toggle
-                    name="disabledAccess.isAvailable"
+                    name="accessableToDisabledPeople.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.disabledAccess.isAvailable}
-                  name="disabledAccess.description"
+                  disabled={!values.accessableToDisabledPeople.isAvailable}
+                  name="accessableToDisabledPeople.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -115,14 +114,14 @@ export const PremisesForm = () => {
                 <div className="w-full flex justify-between">
                   <h3>Public transport access</h3>
                   <Toggle
-                    name="publicTransport.isAvailable"
+                    name="publicTransportAccess.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.publicTransport.isAvailable}
-                  name="publicTransport.description"
+                  disabled={!values.publicTransportAccess.isAvailable}
+                  name="publicTransportAccess.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
