@@ -1,8 +1,7 @@
 "use client";
 
-import Topbar from "@/components/clinicDashboard/layout/Topbar";
 import { useState } from "react";
-import LanguageSelector from "@/components/clinicDashboard/clinicDashboardPage/languages";
+import { ClinicForms } from "@/components/clinicDashboard/clinicForms";
 
 export default function ClinicDashboardPageContainer() {
   const [preference, setPreference] = useState("clinic-information");
@@ -19,11 +18,8 @@ export default function ClinicDashboardPageContainer() {
         </div>
       </div>
       <div className="flex-1 flex flex-col">
-        <Topbar />
         {/* Içerik dinamik olarak sidebarda seçilen preference'a göre değişecek */}
-        <div className="flex-1 p-6 overflow-y-auto">
-          <LanguageSelector />
-        </div>
+        <ClinicForms preference={preference} />
       </div>
     </div>
   );
