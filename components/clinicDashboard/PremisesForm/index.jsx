@@ -30,7 +30,14 @@ export const PremisesForm = () => {
   });
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full py-8 px-3 font-inter flex-col gap-8 bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)]">
+      <h1 className="text-xl font-semibold">Premises</h1>
+      <p>Preview my changes (remember to save first!)</p>
+      <p>
+        This section is for details of your clinic's premises. You should tick
+        yes for those that apply to your clinic. If you are unsure of a service,
+        you may tick neither and return to this list later.
+      </p>
       <Formik
         initialValues={{
           parking: {
@@ -73,7 +80,7 @@ export const PremisesForm = () => {
           return (
             <Form
               onSubmit={handleSubmit}
-              className="flex w-full gap-2 flex-col px-10"
+              className="flex w-full flex-col gap-8"
             >
               <div className="w-full flex gap-3 flex-col">
                 <div className="w-full flex justify-between">
@@ -172,9 +179,9 @@ export const PremisesForm = () => {
               <div className="w-full flex justify-end">
                 <ButtonComponent
                   type="submit"
-                  className="bg-primary !py-2 text-white !rounded-xl w-[174px] "
+                  className="bg-primary !py-2 !px-4 text-white !rounded-lg !w-[174px] "
                 >
-                  <p className="text-sm">Submit</p>
+                  <p className="text-sm">save</p>
                 </ButtonComponent>
               </div>
 
