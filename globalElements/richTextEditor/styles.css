@@ -5,9 +5,7 @@
 [data-slate-placeholder="true"] {
   padding-top: 10px;
 }
-[data-slate-string="true"] {
-  padding: 10px;
-}
+
 [data-slate-editor="true"]:focus-visible {
   outline: none;
 }
