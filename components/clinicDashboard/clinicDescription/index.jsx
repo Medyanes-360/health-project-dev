@@ -58,7 +58,7 @@ export const ClinicDescriptionForm = () => {
               <div className="w-full flex gap-3 flex-col">
                 <RichTextEditor
                   name="description"
-                  placeholder="Description"
+                  placeholder="Write something awesome..."
                   value={value}
                   setValue={setValue}
                 />

@@ -8,7 +8,7 @@ export default function ClinicDashboardPageContainer() {
   const [preference, setPreference] = useState("clinic-information");
 
   return (
-    <div className="flex bg-[#71CCB60F] h-screen overflow-hidden">
+    <div className="flex bg-[#71CCB60F] overflow-hidden">
       {/* Dashboard Sidebar component */}
       <ClinicSidebar />
       {/* Içerik dinamik olarak sidebarda seçilen preference'a göre değişecek */}

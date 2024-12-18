@@ -13,7 +13,7 @@ const Leaf = ({ attributes, children, leaf }) => {
   children = getMarked(leaf, children);
   return <span {...attributes}>{children}</span>;
 };
-const SlateEditor = ({ value, setValue, onChange }) => {
+const SlateEditor = ({ value, setValue, onChange, placeholder  }) => {
   const [editor] = useState(() => withReact(createEditor()));
 
   const handleEditorChange = (newValue) => {
@@ -40,7 +40,7 @@ const SlateEditor = ({ value, setValue, onChange }) => {
         </div>
         <div className=" px-2 py-2">
           <Editable
-            placeholder="Write something awesome..."
+            placeholder={placeholder}
             renderElement={renderElement}
             renderLeaf={renderLeaf}
           />

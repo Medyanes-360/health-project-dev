@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFocused, useSelected, useSlateStatic } from 'slate-react'
+//import { useFocused, useSelected, useSlateStatic } from 'slate-react'
 
 import {removeLink} from '../../utils/link.js'
 import unlink from '../../Toolbar/toolbarIcons/unlink.svg'
