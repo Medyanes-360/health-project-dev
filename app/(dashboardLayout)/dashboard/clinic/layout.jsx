@@ -4,7 +4,7 @@ export default function ClinicDashboardLayout({ children }) {
   return (
     <div className="flex bg-[#71CCB60F]">
       {/* Sidebar - Sol tarafta yer alacak */}
-      <ClinicSidebar />
+      {/* <ClinicSidebar /> */}
 
       {/* Main content area */}
       <div className="flex-1 flex flex-col">

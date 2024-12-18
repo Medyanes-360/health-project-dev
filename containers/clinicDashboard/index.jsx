@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ClinicForms } from "@/components/clinicDashboard/clinicForms";
+import ClinicSidebar from "@/components/clinicDashboard/clinicSidebar/ClinicSidebar";
 
 export default function ClinicDashboardPageContainer() {
   const [preference, setPreference] = useState("clinic-information");
@@ -14,7 +15,8 @@ export default function ClinicDashboardPageContainer() {
           className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl h-full flex flex-col gap-2
        `}
         >
-          Clinic Information <br /> Clinic description
+          {/* Clinic Information <br /> Clinic description */}
+          <ClinicSidebar/>
         </div>
       </div>
       <div className="flex-1 flex flex-col">
