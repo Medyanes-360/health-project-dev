@@ -84,7 +84,6 @@ select:focus {
 .custom-phone-input2 {
   padding: 0; /* Ensure the container around the phone input has no padding */
   padding-left: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.084);
 }
 
 .custom-phone-input2 input {
