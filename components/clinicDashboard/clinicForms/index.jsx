@@ -5,6 +5,7 @@ import { PaymentInformationForm } from "../PaymentInformationForm";
 import { PremisesForm } from "../PremisesForm";
 import HealthForm from "@/components/clinicDashboard/healthForm";
 import { TravelServicesForm } from "../travelServicesForm";
+import ClinicServiceForm from "@/components/clinicDashboard/clinicServiceForm";
 
 export const ClinicForms = ({ preference }) => {
   return (
@@ -14,6 +15,7 @@ export const ClinicForms = ({ preference }) => {
       <LanguageSelector />
       <ClinicDescriptionForm />
       <PremisesForm />
+      <ClinicServiceForm />
       <PaymentInformationForm />
       <TravelServicesForm />
     </div>
