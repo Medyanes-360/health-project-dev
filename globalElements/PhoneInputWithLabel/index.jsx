@@ -21,7 +21,7 @@ export const PhoneInputWithLabel = (props) => {
   return (
     <div
       className={`relative flex w-full h-fit flex-col rounded-2xl border ${
-        props.touched && props.error ? "border-red-600" : "border-[#919EAB]"
+        props.touched && props.error ? "border-red-600" : "border-[#919EAB52]"
       }`}
     >
       <label
