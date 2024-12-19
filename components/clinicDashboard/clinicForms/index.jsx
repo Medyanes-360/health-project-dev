@@ -2,6 +2,7 @@ import LanguageSelector from "../clinicDashboardPage/languages";
 import { ClinicDescriptionForm } from "../clinicDescription";
 import { PaymentInformationForm } from "../PaymentInformationForm";
 import { PremisesForm } from "../PremisesForm";
+import { TravelServicesForm } from "../travelServicesForm";
 
 export const ClinicForms = ({ preference }) => {
   return (
@@ -10,6 +11,7 @@ export const ClinicForms = ({ preference }) => {
       <ClinicDescriptionForm />
        <PremisesForm />
       <PaymentInformationForm/>
+      <TravelServicesForm/>
     </div>
   );
 };
