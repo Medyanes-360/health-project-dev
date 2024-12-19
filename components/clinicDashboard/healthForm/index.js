@@ -7,23 +7,15 @@ import { InputWithLabel } from "@/globalElements/inputWithLabel";
 
 export default function HealthForm() {
   const validationSchema = Yup.object().shape({
-    parking: Yup.object().shape({
+    privatePatientsWelcome: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    publicTransportAccess: Yup.object().shape({
+    publicHealthInsurance: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    accessWithoutSteps: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    accessableToDisabledPeople: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    disabledParking: Yup.object().shape({
+    dentalPlansAccepted: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
@@ -38,23 +30,15 @@ export default function HealthForm() {
       </p>
       <Formik
         initialValues={{
-          parking: {
+          privatePatientsWelcome: {
             isAvailable: false,
             description: "",
           },
-          publicTransportAccess: {
+          publicHealthInsurance: {
             isAvailable: false,
             description: "",
           },
-          accessWithoutSteps: {
-            isAvailable: false,
-            description: "",
-          },
-          accessableToDisabledPeople: {
-            isAvailable: false,
-            description: "",
-          },
-          disabledParking: {
+          dentalPlansAccepted: {
             isAvailable: false,
             description: "",
           },
@@ -83,12 +67,15 @@ export default function HealthForm() {
               <div className="w-full flex gap-3 flex-col">
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Private Patients Welcome</h3>
-                  <Toggle name="parking.isAvailable" onChange={handleChange} />
+                  <Toggle
+                    name="privatePatientsWelcome.isAvailable"
+                    onChange={handleChange}
+                  />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.parking.isAvailable}
-                  name="parking.description"
+                  disabled={!values.privatePatientsWelcome.isAvailable}
+                  name="privatePatientsWelcome.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -101,13 +88,13 @@ export default function HealthForm() {
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Public Health Insurance</h3>
                   <Toggle
-                    name="accessableToDisabledPeople.isAvailable"
+                    name="publicHealthInsurance.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.accessableToDisabledPeople.isAvailable}
+                  disabled={!values.publicHealthInsurance.isAvailable}
                   name="accessableToDisabledPeople.description"
                   placeholder="Description"
                   error={errors.name}
@@ -120,14 +107,14 @@ export default function HealthForm() {
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Dental Plans Accepted</h3>
                   <Toggle
-                    name="publicTransportAccess.isAvailable"
+                    name="dentalPlansAccepted.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.publicTransportAccess.isAvailable}
-                  name="publicTransportAccess.description"
+                  disabled={!values.dentalPlansAccepted.isAvailable}
+                  name="dentalPlansAccepted.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}

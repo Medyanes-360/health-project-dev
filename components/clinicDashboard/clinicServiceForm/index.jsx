@@ -7,23 +7,23 @@ import { InputWithLabel } from "@/globalElements/inputWithLabel";
 
 export default function ClinicServiceForm() {
   const validationSchema = Yup.object().shape({
-    parking: Yup.object().shape({
+    emergencyService: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    publicTransportAccess: Yup.object().shape({
+    textMessageReminders: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    accessWithoutSteps: Yup.object().shape({
+    homeVisits: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    accessableToDisabledPeople: Yup.object().shape({
+    openTwentyFour: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    disabledParking: Yup.object().shape({
+    openWeekends: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
@@ -38,23 +38,23 @@ export default function ClinicServiceForm() {
       </p>
       <Formik
         initialValues={{
-          parking: {
+          emergencyService: {
             isAvailable: false,
             description: "",
           },
-          publicTransportAccess: {
+          textMessageReminders: {
             isAvailable: false,
             description: "",
           },
-          accessWithoutSteps: {
+          homeVisits: {
             isAvailable: false,
             description: "",
           },
-          accessableToDisabledPeople: {
+          openTwentyFour: {
             isAvailable: false,
             description: "",
           },
-          disabledParking: {
+          openWeekends: {
             isAvailable: false,
             description: "",
           },
@@ -83,12 +83,15 @@ export default function ClinicServiceForm() {
               <div className="w-full flex gap-3 flex-col">
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Emergency service</h3>
-                  <Toggle name="parking.isAvailable" onChange={handleChange} />
+                  <Toggle
+                    name="emergencyService.isAvailable"
+                    onChange={handleChange}
+                  />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.parking.isAvailable}
-                  name="parking.description"
+                  disabled={!values.emergencyService.isAvailable}
+                  name="emergencyService.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -100,14 +103,14 @@ export default function ClinicServiceForm() {
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Text message reminders</h3>
                   <Toggle
-                    name="accessableToDisabledPeople.isAvailable"
+                    name="textMessageReminders.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.accessableToDisabledPeople.isAvailable}
-                  name="accessableToDisabledPeople.description"
+                  disabled={!values.textMessageReminders.isAvailable}
+                  name="textMessageReminders.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -119,14 +122,14 @@ export default function ClinicServiceForm() {
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Home visits</h3>
                   <Toggle
-                    name="publicTransportAccess.isAvailable"
+                    name="homeVisits.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.publicTransportAccess.isAvailable}
-                  name="publicTransportAccess.description"
+                  disabled={!values.homeVisits.isAvailable}
+                  name="homeVisits.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -138,14 +141,14 @@ export default function ClinicServiceForm() {
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Open 24 hours</h3>
                   <Toggle
-                    name="accessWithoutSteps.isAvailable"
+                    name="openTwentyFour.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.accessWithoutSteps.isAvailable}
-                  name="accessWithoutSteps.description"
+                  disabled={!values.openTwentyFour.isAvailable}
+                  name="openTwentyFour.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -157,14 +160,14 @@ export default function ClinicServiceForm() {
                 <div className="w-full flex justify-between">
                   <h3 className="font-medium">Open weekends</h3>
                   <Toggle
-                    name="disabledParking.isAvailable"
+                    name="openWeekends.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
                   label="Description"
-                  disabled={!values.disabledParking.isAvailable}
-                  name="disabledParking.description"
+                  disabled={!values.openWeekends.isAvailable}
+                  name="openWeekends.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
