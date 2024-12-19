@@ -1,4 +1,5 @@
 import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 export const PhoneInputWithLabel = (props) => {
   ///////// Formik ile uyumlu proplar///////////
@@ -19,8 +20,8 @@ export const PhoneInputWithLabel = (props) => {
   // />
   return (
     <div
-      className={`relative flex w-full h-fit flex-col rounded-2xl border ${
-        props.touched && props.error ? "border-red-600" : "border-[#919EAB]"
+      className={`relative flex w-full h-fit flex-col rounded-lg border ${
+        props.touched && props.error ? "border-red-600" : "border-[#919EAB52]"
       }`}
     >
       <label
