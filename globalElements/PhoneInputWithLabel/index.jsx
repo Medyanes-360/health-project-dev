@@ -1,4 +1,5 @@
 import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 export const PhoneInputWithLabel = (props) => {
   ///////// Formik ile uyumlu proplar///////////
