@@ -13,7 +13,7 @@ const Leaf = ({ attributes, children, leaf }) => {
   children = getMarked(leaf, children);
   return <span {...attributes}>{children}</span>;
 };
-const SlateEditor = ({ value, setValue, onChange, placeholder  }) => {
+const SlateEditor = ({ value, setValue, onChange, placeholder }) => {
   const [editor] = useState(() => withReact(createEditor()));
 
   const handleEditorChange = (newValue) => {
@@ -38,7 +38,7 @@ const SlateEditor = ({ value, setValue, onChange, placeholder  }) => {
         <div className=" border-b px-2 py-2">
           <Toolbar handleCodeToText={handleCodeToText} />
         </div>
-        <div className=" px-2 py-2">
+        <div className="min-h-[146px] px-2 py-2">
           <Editable
             placeholder={placeholder}
             renderElement={renderElement}
