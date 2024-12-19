@@ -21,7 +21,7 @@ export const InputWithLabel = (props) => {
       <input
         {...props}
         name={props.name}
-        className={`flex flex-col w-full rounded-lg min-h-[40px] border ${
+        className={`flex flex-col w-full rounded-lg min-h-[40px] border placeholder:text-[#212B36] font-poppins ${
           props.touched && props.error
             ? "border-red-600 border"
             : "border-[#919EAB52]"
