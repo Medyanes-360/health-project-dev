@@ -8,34 +8,13 @@ import { PhoneInputWithLabel } from "@/globalElements/PhoneInputWithLabel";
 
 export const ClinicOverviewForm = () => {
   const validationSchema = Yup.object().shape({
-    clinic: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    addressLineFirst: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    addressLineSecond: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    city: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    state: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    zipCode: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
-    email: Yup.object().shape({
-      isAvailable: Yup.boolean(),
-      description: Yup.string(),
-    }),
+    clinic: Yup.string().required("required"),
+    addressLineFirst: Yup.string().required("required"),
+    addressLineSecond: Yup.string().required("required"),
+    city: Yup.string().required("required"),
+    state: Yup.string().required("required"),
+    zipCode: Yup.string().required("required"),
+    email: Yup.string().required("required"),
     phone: Yup.string()
       .required("Phone number is required")
       .matches(/^\+[1-9]\d{1,14}$/, "Invalid phone number"),
@@ -51,36 +30,15 @@ export const ClinicOverviewForm = () => {
 
       <Formik
         initialValues={{
-          parking: {
-            isAvailable: false,
-            description: "",
-          },
-          addressLineFirst: {
-            isAvailable: false,
-            description: "",
-          },
-          addressLineSecond: {
-            isAvailable: false,
-            description: "",
-          },
-          city: {
-            isAvailable: false,
-            description: "",
-          },
-          state: {
-            isAvailable: false,
-            description: "",
-          },
-          zipCode: {
-            isAvailable: false,
-            description: "",
-          },
-          email: {
-            isAvailable: false,
-            description: "",
-          },
+          clinic: "",
+          addressLineFirst: "",
+          addressLineSecond:"",
+          city:"",
+          state: "",
+          zipCode: "",
+          email: "",
           phone: "",
-          mobile:""
+          mobile: "",
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
@@ -106,7 +64,7 @@ export const ClinicOverviewForm = () => {
               <div className="w-full flex gap-3 flex-col">
                 <InputWithLabel
                   label="Clinic name"
-                  name="clinic.description"
+                  name="clinic"
                   placeholder="Clinic name"
                   error={errors.name}
                   touched={touched.name}
@@ -118,7 +76,7 @@ export const ClinicOverviewForm = () => {
                 <div className="w-full flex justify-between"></div>
                 <InputWithLabel
                   label="Address line 1"
-                  name="addressLineFirst.description"
+                  name="addressLineFirst"
                   placeholder="Address line 1"
                   error={errors.name}
                   touched={touched.name}
@@ -130,7 +88,7 @@ export const ClinicOverviewForm = () => {
                 <div className="w-full flex justify-between"></div>
                 <InputWithLabel
                   label="Address line 2"
-                  name="addressLineSecond.description"
+                  name="addressLineSecond"
                   placeholder="Address line 2"
                   error={errors.name}
                   touched={touched.name}
@@ -142,7 +100,7 @@ export const ClinicOverviewForm = () => {
                 <div className="w-full flex justify-between"></div>
                 <InputWithLabel
                   label="City"
-                  name="city.description"
+                  name="city"
                   placeholder="City"
                   error={errors.name}
                   touched={touched.name}
@@ -154,7 +112,7 @@ export const ClinicOverviewForm = () => {
                 <div className="w-full flex justify-between"></div>
                 <InputWithLabel
                   label="State"
-                  name="state.description"
+                  name="state"
                   placeholder="State"
                   error={errors.name}
                   touched={touched.name}
@@ -166,7 +124,7 @@ export const ClinicOverviewForm = () => {
                 <div className="w-full flex justify-between"></div>
                 <InputWithLabel
                   label="Zip/postal code"
-                  name="zipCode.description"
+                  name="zipCode"
                   placeholder="Zip/postal code"
                   error={errors.name}
                   touched={touched.name}
@@ -192,7 +150,7 @@ export const ClinicOverviewForm = () => {
                 <div className="w-full flex justify-between"></div>
                 <InputWithLabel
                   label="Email"
-                  name="email.description"
+                  name="email"
                   placeholder="Email"
                   error={errors.name}
                   touched={touched.name}
