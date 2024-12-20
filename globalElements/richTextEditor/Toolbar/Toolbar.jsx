@@ -86,9 +86,9 @@ const Toolbar = (props) => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex  flex-wrap">
       {toolbarGroups.map((group, index) => (
-        <span key={index} className=" flex items-center">
+        <span key={index} className=" flex items-center ">
           {group.map((element) => {
             switch (element.type) {
               case "block":

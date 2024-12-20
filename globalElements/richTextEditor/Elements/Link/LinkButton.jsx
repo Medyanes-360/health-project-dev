@@ -34,7 +34,7 @@ const LinkButton = (props) => {
   return (
     <div ref={linkInputRef} className="popup-wrapper">
       <Button
-        className={showInput ? "clicked" : ""}
+        className={`${showInput ? "clicked" : ""} h-full flex items-center`}
         active={isBlockActive(editor, "link")}
         format={"link"}
         onClick={toggleLink}
