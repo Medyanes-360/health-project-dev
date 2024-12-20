@@ -75,12 +75,12 @@ body {
   }
 }
 
-/* react-phone-number-input kütüphanesi için  */
 input:focus,
 select:focus {
   outline: none;
 }
 
+/* react-phone-number-input kütüphanesi için  */
 .custom-phone-input2 {
   padding: 0; /* Ensure the container around the phone input has no padding */
   padding-left: 1rem;
