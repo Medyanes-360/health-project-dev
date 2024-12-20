@@ -6,18 +6,24 @@ import { PremisesForm } from "../PremisesForm";
 import HealthForm from "@/components/clinicDashboard/healthForm";
 import { TravelServicesForm } from "../travelServicesForm";
 import ClinicServiceForm from "@/components/clinicDashboard/clinicServiceForm";
+import LocationMaker from "../locationMaker";
 
 export const ClinicForms = ({ preference }) => {
   return (
     <div className="flex-1 w-full p-6 overflow-y-auto">
-      <ClinicOverviewForm />
-      <HealthForm />
+      <div className="flex gap-4 p-[1rem]">
+        {" "}
+        <ClinicOverviewForm />
+        <LocationMaker />
+      </div>
+
+      {/* <HealthForm />
       <LanguageSelector />
       <ClinicDescriptionForm />
       <PremisesForm />
       <ClinicServiceForm />
       <PaymentInformationForm />
-      <TravelServicesForm />
+      <TravelServicesForm /> */}
     </div>
   );
 };
