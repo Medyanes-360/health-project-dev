@@ -14,7 +14,9 @@ export const ClinicOverviewForm = () => {
     city: Yup.string().required("required"),
     state: Yup.string().required("required"),
     zipCode: Yup.string().required("required"),
-    email: Yup.string().required("required"),
+    email: Yup.string()
+      .email("Invalid email adress")
+      .required("Email is required"),
     phone: Yup.string()
       .required("Phone number is required")
       .matches(/^\+[1-9]\d{1,14}$/, "Invalid phone number"),
@@ -32,8 +34,8 @@ export const ClinicOverviewForm = () => {
         initialValues={{
           clinic: "",
           addressLineFirst: "",
-          addressLineSecond:"",
-          city:"",
+          addressLineSecond: "",
+          city: "",
           state: "",
           zipCode: "",
           email: "",
@@ -78,8 +80,8 @@ export const ClinicOverviewForm = () => {
                   label="Address line 1"
                   name="addressLineFirst"
                   placeholder="Address line 1"
-                  error={errors.name}
-                  touched={touched.name}
+                  error={errors.addressLineFirst}
+                  touched={touched.addressLineFirst}
                   onBlur={handleBlur}
                   onChange={handleChange}
                 />
@@ -90,8 +92,8 @@ export const ClinicOverviewForm = () => {
                   label="Address line 2"
                   name="addressLineSecond"
                   placeholder="Address line 2"
-                  error={errors.name}
-                  touched={touched.name}
+                  error={errors.addressLineSecond}
+                  touched={touched.addressLineSecond}
                   onBlur={handleBlur}
                   onChange={handleChange}
                 />
@@ -102,8 +104,8 @@ export const ClinicOverviewForm = () => {
                   label="City"
                   name="city"
                   placeholder="City"
-                  error={errors.name}
-                  touched={touched.name}
+                  error={errors.city}
+                  touched={touched.city}
                   onBlur={handleBlur}
                   onChange={handleChange}
                 />
@@ -114,8 +116,8 @@ export const ClinicOverviewForm = () => {
                   label="State"
                   name="state"
                   placeholder="State"
-                  error={errors.name}
-                  touched={touched.name}
+                  error={errors.state}
+                  touched={touched.state}
                   onBlur={handleBlur}
                   onChange={handleChange}
                 />
@@ -126,8 +128,8 @@ export const ClinicOverviewForm = () => {
                   label="Zip/postal code"
                   name="zipCode"
                   placeholder="Zip/postal code"
-                  error={errors.name}
-                  touched={touched.name}
+                  error={errors.zipCode}
+                  touched={touched.zipCode}
                   onBlur={handleBlur}
                   onChange={handleChange}
                 />
@@ -152,8 +154,8 @@ export const ClinicOverviewForm = () => {
                   label="Email"
                   name="email"
                   placeholder="Email"
-                  error={errors.name}
-                  touched={touched.name}
+                  error={errors.email}
+                  touched={touched.email}
                   onBlur={handleBlur}
                   onChange={handleChange}
                 />
