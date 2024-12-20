@@ -76,10 +76,16 @@ const ClinicSidebar = () => {
                     alt={`${menuItem.title} icon`}
                     width={20}
                     height={20}
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      objectFit: "contain",
+                    }}
                     className={`${
                       activeIndex === index ? "brightness-250" : "grayscale"
                     }`}
                   />
+
                   <span className="text-[0.550rem] sm:text-base text-left pl-1">
                     {menuItem.title}
                   </span>
@@ -94,8 +100,13 @@ const ClinicSidebar = () => {
                           : "/assets/dashboard/arrow-right.svg"
                       }
                       alt="Toggle Icon"
-                      width={14}
-                      height={14}
+                      width={20}
+                      height={20}
+                      style={{
+                        width: "20px",
+                        height: "20px",
+                        objectFit: "contain",
+                      }}
                     />
                   </div>
                 )}
@@ -128,8 +139,13 @@ const ClinicSidebar = () => {
               : "/assets/dashboard/right.svg"
           }
           alt="Toggle Sidebar Icon"
-          width={25}
-          height={25}
+          width={20}
+          height={20}
+          style={{
+            width: "20px",
+            height: "20px",
+            objectFit: "contain",
+          }}
         />
       </div>
     </div>
