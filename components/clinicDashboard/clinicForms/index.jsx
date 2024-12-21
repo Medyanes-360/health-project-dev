@@ -8,6 +8,7 @@ import { TravelServicesForm } from "../travelServicesForm";
 import ClinicServiceForm from "@/components/clinicDashboard/clinicServiceForm";
 import LocationMaker from "../locationMaker";
 import OpeningHours from "../openingHours";
+import AddPictures from "../addPictures";
 
 export const ClinicForms = ({ preference }) => {
   return (
@@ -25,7 +26,8 @@ export const ClinicForms = ({ preference }) => {
       <ClinicServiceForm />
       <PaymentInformationForm />
       <TravelServicesForm /> */}
-      <OpeningHours />
+      {/* <OpeningHours /> */}
+      <AddPictures/>
     </div>
   );
 };
