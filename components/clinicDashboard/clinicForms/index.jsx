@@ -9,25 +9,27 @@ import ClinicServiceForm from "@/components/clinicDashboard/clinicServiceForm";
 import LocationMaker from "../locationMaker";
 import OpeningHours from "../openingHours";
 import AddPictures from "../addPictures";
+import CurrencySelector from "@/components/clinicDashboard/currencySelector";
 
 export const ClinicForms = ({ preference }) => {
   return (
     <div className="flex-1 w-full p-6 overflow-y-auto">
-      {/* <div className="flex gap-4 p-[1rem]">
-        {" "}
-        <ClinicOverviewForm />
-        <LocationMaker />
-      </div> */}
+      {/*<div className="flex gap-4 p-[1rem]">*/}
+      {/*  {" "}*/}
+      {/*  <ClinicOverviewForm />*/}
+      {/*  <LocationMaker />*/}
+      {/*</div>*/}
 
-      {/* <HealthForm />
-      <LanguageSelector />
-      <ClinicDescriptionForm />
-      <PremisesForm />
-      <ClinicServiceForm />
-      <PaymentInformationForm />
-      <TravelServicesForm /> */}
-      {/* <OpeningHours /> */}
-      <AddPictures/>
+      {/*<HealthForm />*/}
+      {/*<LanguageSelector />*/}
+      {/*<ClinicDescriptionForm />*/}
+      <CurrencySelector />
+      {/*<PremisesForm />*/}
+      {/*<ClinicServiceForm />*/}
+      {/*<PaymentInformationForm />*/}
+      {/*<TravelServicesForm />*/}
+      {/*<OpeningHours />*/}
+      {/*<AddPictures />*/}
     </div>
   );
 };
