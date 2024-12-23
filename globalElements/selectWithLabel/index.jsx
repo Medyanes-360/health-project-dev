@@ -1,4 +1,5 @@
 export const SelectWithLabel = (props) => {
+  const { touched, error, name, label, options, ...rest } = props;
   ///////// Formik ile uyumlu proplar///////////
 
   //  name="name"
@@ -13,19 +14,17 @@ export const SelectWithLabel = (props) => {
     <div className="flex flex-col h-full w-full relative">
       <label
         className={`bg-white ${
-          props.touched && props.error ? "text-red-600" : "text-[#919EAB]"
+          touched && error ? "text-red-600" : "text-[#919EAB]"
         } text-xs font-light absolute left-6 -top-2 `}
       >
-        {props.label}
+        {label}
       </label>
       <select
         style={{ WebkitAppearance: "none", backgroundPositionX: "97%" }}
-        {...props}
-        name={props.name}
+        {...rest}
+        name={name}
         className={`bg-[url('/assets/icons/selectArrow.svg')] bg-right bg-no-repeat flex flex-col w-full rounded-lg min-h-[40px] border ${
-          props.touched && props.error
-            ? "border-red-600 border"
-            : "border-[#919EAB52]"
+          touched && error ? "border-red-600 border" : "border-[#919EAB52]"
         }  py-2 px-4 `}
       >
         {/* Boş seçenek */}

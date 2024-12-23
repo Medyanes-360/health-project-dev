@@ -30,13 +30,13 @@ export default function LanguageSelector() {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log("Form submitted", values);
+          // console.log("Form submitted", values);
           setSubmitted(true);
           resetForm(); // Reset form after submission
         }}
       >
         {({ values, handleSubmit, handleChange }) => {
-          console.log(values);
+          // console.log(values);
 
           return (
             <Form

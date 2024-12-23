@@ -19,18 +19,18 @@ export const Checkbox = (props) => {
         >
           <g
             fill="#ffffff"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             stroke="none"
-            stroke-width="1"
-            stroke-linecap="butt"
-            stroke-linejoin="miter"
-            stroke-miterlimit="10"
-            stroke-dasharray=""
-            stroke-dashoffset="0"
-            font-family="none"
-            font-weight="none"
-            font-size="none"
-            text-anchor="none"
+            strokeWidth="1"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeMiterlimit="10"
+            strokeDasharray=""
+            strokeDashoffset="0"
+            fontFamily="none"
+            fontWeight="none"
+            fontSize="none"
+            textAnchor="none"
           >
             <g transform="scale(10.66667,10.66667)">
               <path d="M19.28125,5.28125l-10.28125,10.28125l-4.28125,-4.28125l-1.4375,1.4375l5,5l0.71875,0.6875l0.71875,-0.6875l11,-11z"></path>

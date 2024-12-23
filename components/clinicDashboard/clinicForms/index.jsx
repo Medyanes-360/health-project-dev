@@ -10,6 +10,7 @@ import LocationMaker from "../locationMaker";
 import OpeningHours from "../openingHours";
 import AddPictures from "../addPictures";
 import CurrencySelector from "@/components/clinicDashboard/currencySelector";
+import AddVideo from "@/components/clinicDashboard/addVideo";
 
 export const ClinicForms = ({ preference }) => {
   return (
@@ -20,16 +21,17 @@ export const ClinicForms = ({ preference }) => {
       {/*  <LocationMaker />*/}
       {/*</div>*/}
 
-      {/*<HealthForm />*/}
-      {/*<LanguageSelector />*/}
-      {/*<ClinicDescriptionForm />*/}
+      <HealthForm />
+      <LanguageSelector />
+      <ClinicDescriptionForm />
       <CurrencySelector />
-      {/*<PremisesForm />*/}
-      {/*<ClinicServiceForm />*/}
-      {/*<PaymentInformationForm />*/}
-      {/*<TravelServicesForm />*/}
-      {/*<OpeningHours />*/}
-      {/*<AddPictures />*/}
+      <PremisesForm />
+      <ClinicServiceForm />
+      <PaymentInformationForm />
+      <TravelServicesForm />
+      <OpeningHours />
+      <AddVideo />
+      <AddPictures />
     </div>
   );
 };

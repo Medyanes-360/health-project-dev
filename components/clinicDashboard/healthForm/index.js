@@ -45,7 +45,7 @@ export default function HealthForm() {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log("Form submitted", values);
+          // console.log("Form submitted", values);
           setSubmitted(true);
           resetForm(); // Reset form after submission
         }}
