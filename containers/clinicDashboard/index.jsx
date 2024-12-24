@@ -10,6 +10,8 @@ export default function ClinicDashboardPageContainer() {
   return (
     <div className="flex bg-[#71CCB60F] overflow-hidden">
       {/* Dashboard Sidebar component */}
+
+      {/* Hidden on Mobile */}
       <ClinicSidebar />
       {/* Içerik dinamik olarak sidebarda seçilen preference'a göre değişecek */}
       <ClinicForms preference={preference} />

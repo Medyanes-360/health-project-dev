@@ -35,8 +35,8 @@ const ClinicSidebar = () => {
   return (
     <div
       className={`transition-all duration-300 ${
-        isSidebarOpen ? "translate-x-0" : "translate-x-[-80%]"
-      } relative`}
+        isSidebarOpen ? "translate-x-0" : "translate-x-[-80%] w-0"
+      } relative hidden md:flex`}
     >
       <div
         className={`bg-white shadow-md px-2 py-2 sm:px-4 sm:py-3 rounded-3xl flex flex-col gap-2 h-full
@@ -129,7 +129,7 @@ const ClinicSidebar = () => {
       <div
         onClick={toggleSidebar}
         className={`cursor-pointer flex absolute -right-3 top-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-md items-center justify-center ${
-          isSidebarOpen ? "" : "rotate-180 -right-10"
+          isSidebarOpen ? "" : "rotate-180 -right-12"
         }`}
       >
         <Image
