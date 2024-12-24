@@ -1,5 +1,5 @@
 "use client";
-import AssistanChat from "@/components/assistant/assistantChat";
+
 import { SessionProvider } from "next-auth/react";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
@@ -26,7 +26,6 @@ export default function RootLayout({ children, session }) {
           <main className="overflow-hidden">
             <WillBeDeleted />
             {children}
-            <AssistanChat />
           </main>
         </SessionProvider>
       </body>

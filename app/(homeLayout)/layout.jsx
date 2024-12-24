@@ -1,3 +1,4 @@
+import AssistanChat from "@/components/assistant/assistantChat";
 import Footer from "@/components/layout/footer";
 import NavigationHeader from "@/components/layout/navigationHeader";
 
@@ -10,6 +11,7 @@ export default function HomeLayout({ children }) {
       {children}
       <ImageModal />
       <Footer />
+      <AssistanChat />
     </div>
   );
 }
