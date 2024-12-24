@@ -117,7 +117,7 @@ const AddPictures = () => {
 
               <button
                 onClick={() => handleDeletePhoto(index)}
-                className="absolute top-2 right-2 bg-red-600 text-white text-xs p-1 rounded-full"
+                className="absolute top-2 right-2 bg-red-600 text-white text-xs w-[20px] h-[20px] text-center rounded-full"
               >
                 X
               </button>
