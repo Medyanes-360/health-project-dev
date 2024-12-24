@@ -6,6 +6,7 @@ import Image from "next/image";
 
 const AddPictures = () => {
   const [uploadedPhotos, setUploadedPhotos] = useState([]);
+  const [fileErrors, setFileErrors] = useState([]);
 
   // Formik setup
   const formik = useFormik({
@@ -19,33 +20,57 @@ const AddPictures = () => {
             .test(
               "fileSize",
               "File is too large. Max size is 5MB.",
-              (value) => value && value.size <= 5 * 1024 * 1024 // 5MB
+              (value) => value && value.size <= 5 * 1024 * 1024 // 5MB kontrolü
             )
             .test(
               "fileFormat",
               "Unsupported file format. Only .jpg, .jpeg, .png are allowed.",
-              (value) => value && /\.(jpg|jpeg|png)$/i.test(value.name) // Regex for allowed file types
+              (value) => value && /\.(jpg|jpeg|png)$/i.test(value.name) // Uygun dosya formatları
             )
         )
         .required("At least one image is required"),
     }),
     onSubmit: (values) => {
-      // Handle file submission if needed
+      // Dosya gönderimi işleme
       console.log("Files to upload:", values.files);
       console.log("Submitted");
     },
   });
 
   const handleFileChange = (e) => {
-    const files = Array.from(e.target.files); // FileList'i Array'e dönüştür
-    const filePreviews = files.map((file) => URL.createObjectURL(file));
-    setUploadedPhotos((prev) => [...prev, ...filePreviews]);
-    formik.setFieldValue("files", [...formik.values.files, ...files]);
+    const files = Array.from(e.target.files);
+    const validFiles = [];
+    const errors = [];
+
+    // Dosya kontrolü
+    files.forEach((file) => {
+      if (file.size > 5 * 1024 * 1024) {
+        errors.push(`${file.name} is too large. Max size is 5MB.`);
+      } else if (!/\.(jpg|jpeg|png)$/i.test(file.name)) {
+        errors.push(`${file.name} has an unsupported format.`);
+      } else {
+        validFiles.push(file);
+      }
+    });
+
+    // Hataları göster
+    if (errors.length > 0) {
+      setFileErrors(errors);
+      setTimeout(() => setFileErrors([]), 5000); // Hataları 5 saniye sonra temizle
+    }
+
+    if (validFiles.length > 0) {
+      const filePreviews = validFiles.map((file) => URL.createObjectURL(file));
+      setUploadedPhotos((prev) => [...prev, ...filePreviews]);
+      formik.setFieldValue("files", [...formik.values.files, ...validFiles]);
+    }
   };
 
   const handleDeletePhoto = (index) => {
     const updatedPhotos = uploadedPhotos.filter((_, i) => i !== index);
+    const updatedFiles = formik.values.files.filter((_, i) => i !== index);
     setUploadedPhotos(updatedPhotos);
+    formik.setFieldValue("files", updatedFiles);
   };
 
   return (
@@ -83,11 +108,15 @@ const AddPictures = () => {
           id="files"
           name="files"
           multiple
-          accept=".jpg,.jpeg,.png" // Restricting file types in the file picker
-          // style={{ display: "none" }}
+          accept=".jpg,.jpeg,.png"
           className="absolute w-full h-full opacity-0 cursor-pointer"
           onChange={handleFileChange}
         />
+        {fileErrors.map((error, index) => (
+          <div key={index} className="text-red-500 text-sm mt-2">
+            {error}
+          </div>
+        ))}
         {formik.touched.files && formik.errors.files && (
           <div className="text-red-500 text-sm">{formik.errors.files}</div>
         )}
@@ -96,7 +125,7 @@ const AddPictures = () => {
       {/* Uploaded Photos Section */}
       <div className="mt-8">
         <p className="text-lg font-medium mb-1">Ex Photos</p>
-        <div className="grid grid-cols-3 gap-4 bg-[#F4F6F8] border border-[#919EAB52] p-4 rounded-[8px] ">
+        <div className="grid grid-cols-3 gap-4 bg-[#F4F6F8] border border-[#919EAB52] p-4 rounded-[8px]">
           {uploadedPhotos.length === 0 && (
             <p className="text-gray-500 col-span-3 text-center">
               No photos uploaded yet.
@@ -114,7 +143,6 @@ const AddPictures = () => {
                 style={{ objectFit: "cover" }}
                 className="rounded-lg"
               />
-
               <button
                 onClick={() => handleDeletePhoto(index)}
                 className="absolute top-2 right-2 bg-red-600 text-white text-xs w-[20px] h-[20px] text-center rounded-full"
