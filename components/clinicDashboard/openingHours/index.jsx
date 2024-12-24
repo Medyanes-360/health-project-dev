@@ -77,21 +77,10 @@ const OpeningHours = () => {
           handleSubmit,
           handleBlur,
         }) => (
-          <Form
-            onSubmit={handleSubmit}
-            className="flex w-full flex-col gap-8"
-          >
-            <div style={{ display: "flex", gap: "16px", height: "100vh" }}>
+          <Form onSubmit={handleSubmit} className="flex w-full flex-col gap-8">
+            <div className="flex flex-col xl:flex-row gap-4 xl:gap-8">
               {groupedLabels.map((group, colIndex) => (
-                <div
-                  key={colIndex}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "8px",
-                    width: "100%",
-                  }}
-                >
+                <div key={colIndex} className="flex flex-col gap-8 w-full">
                   {group.map((label, index) => (
                     <TimePickerWithLabel
                       key={`${colIndex}-${index}`}
@@ -109,6 +98,7 @@ const OpeningHours = () => {
                 </div>
               ))}
             </div>
+
             <div className="w-full flex justify-end">
               <ButtonComponent
                 type="submit"
