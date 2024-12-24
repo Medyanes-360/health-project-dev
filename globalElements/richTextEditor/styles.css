@@ -22,19 +22,6 @@ blockquote {
   color: #aaa;
   font-style: italic;
 }
-table,
-th,
-td {
-  border: 1px solid black;
-}
-table {
-  border-collapse: collapse;
-}
-button {
-  background-color: white;
-  border: none;
-  opacity: 0.5;
-}
 .btnActive {
   opacity: 1;
 }
@@ -49,13 +36,7 @@ button {
   height: fit-content;
   padding: 12px 10px;
 }
-table {
-  width: 100%;
-}
-td {
-  height: 50px;
-  padding: 0 5px;
-}
+
 .popup-wrapper {
   display: inline;
   position: relative;
@@ -69,16 +50,11 @@ td {
   height: fit-content;
   z-index: 1;
 }
-button {
-  cursor: pointer;
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 [data-slate-node="element"] {
   margin: 10px 0;
-}
-html {
-  scroll-behavior: smooth;
 }
