@@ -41,7 +41,7 @@ const AddPictures = () => {
     const filePreviews = files.map((file) => URL.createObjectURL(file));
     setUploadedPhotos((prev) => [...prev, ...filePreviews]);
     formik.setFieldValue("files", [...formik.values.files, ...files]);
-};
+  };
 
   const handleDeletePhoto = (index) => {
     const updatedPhotos = uploadedPhotos.filter((_, i) => i !== index);
@@ -61,7 +61,7 @@ const AddPictures = () => {
       {/* Upload Section */}
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-[#F4F6F8] border border-[#919EAB52] w-full h-[240px] rounded-[8px] flex items-center justify-center"
+        className="bg-[#F4F6F8] border border-[#919EAB52] w-full h-[240px] rounded-[8px] flex items-center justify-center relative"
       >
         <div
           onClick={() => document.getElementById("files").click()}
@@ -84,7 +84,8 @@ const AddPictures = () => {
           name="files"
           multiple
           accept=".jpg,.jpeg,.png" // Restricting file types in the file picker
-          style={{ display: "none" }}
+          // style={{ display: "none" }}
+          className="absolute w-full h-full opacity-0 cursor-pointer"
           onChange={handleFileChange}
         />
         {formik.touched.files && formik.errors.files && (
