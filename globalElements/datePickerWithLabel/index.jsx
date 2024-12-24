@@ -13,7 +13,7 @@ export const DatePickerWithLabel = (props) => {
 
   const datePicker = useRef(null);
   return (
-    <div className="flex flex-col h-full w-full relative">
+    <div className="flex min-w-[250px] flex-col h-full w-full relative">
       <label
         className={`bg-white ${
           props.touched && props.error ? "text-red-600" : "text-[#919EAB]"

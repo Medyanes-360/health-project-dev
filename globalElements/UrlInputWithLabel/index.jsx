@@ -14,7 +14,7 @@ export const UrlInputWithLabel = ({ field, form, label, placeholder }) => {
 
   return (
     <div
-      className={`bg-[#F4F6F8] flex w-full h-fit rounded-lg border-dashed border ${
+      className={`bg-[#F4F6F8] flex min-w-[250px] w-full h-fit rounded-lg border-dashed border ${
         touched && error ? "border-red-600" : "border-[#919EAB52]"
       }`}
     >

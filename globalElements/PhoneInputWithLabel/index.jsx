@@ -20,7 +20,7 @@ export const PhoneInputWithLabel = (props) => {
   // />
   return (
     <div
-      className={`relative flex w-full h-fit flex-col rounded-lg border ${
+      className={`relative min-w-[250px] flex w-full h-fit flex-col rounded-lg border ${
         props.touched && props.error ? "border-red-600" : "border-[#919EAB52]"
       }`}
     >

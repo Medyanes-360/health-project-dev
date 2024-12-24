@@ -13,7 +13,7 @@ export const TimePickerWithLabel = (props) => {
 
   const timePicker = useRef(null);
   return (
-    <div className="flex flex-col h-full w-full relative">
+    <div className="flex flex-col h-full w-full relative min-w-[250px]">
       <label
         className={`bg-white ${
           props.touched && props.error ? "text-red-600" : "text-[#919EAB]"

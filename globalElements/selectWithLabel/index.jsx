@@ -11,7 +11,7 @@ export const SelectWithLabel = (props) => {
   //  onChange={handleChange}
 
   return (
-    <div className="flex flex-col h-full w-full relative">
+    <div className="flex flex-col h-full w-full relative min-w-[250px]">
       <label
         className={`bg-white ${
           touched && error ? "text-red-600" : "text-[#919EAB]"
