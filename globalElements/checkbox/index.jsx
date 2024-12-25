@@ -12,8 +12,8 @@ export const Checkbox = (props) => {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="100"
-          height="100"
+          width="20"
+          height="20"
           viewBox="-10,0,280,240"
           fill="#FFFFFF"
         >
