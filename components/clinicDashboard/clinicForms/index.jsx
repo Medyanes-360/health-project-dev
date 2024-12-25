@@ -11,6 +11,7 @@ import OpeningHours from "../openingHours";
 import AddPictures from "../addPictures";
 import CurrencySelector from "@/components/clinicDashboard/currencySelector";
 import AddVideo from "@/components/clinicDashboard/addVideo";
+import ExportEnquiries from "../exportEnquiries";
 
 export const ClinicForms = ({ preference }) => {
   return (
@@ -32,6 +33,7 @@ export const ClinicForms = ({ preference }) => {
       <OpeningHours />
       <AddVideo />
       <AddPictures />
+      <ExportEnquiries/>
     </div>
   );
 };
