@@ -43,7 +43,7 @@ export default function LanguageSelector() {
               onSubmit={handleSubmit}
               className="flex w-full flex-col items-center gap-8"
             >
-              <div className="flex w-full items-center gap-10">
+              <div className="flex flex-wrap w-full items-center gap-10">
                 <div className=" flex gap-2">
                   <Checkbox name="english" onChange={handleChange} />
                   <p className="select-none" htmlFor="english">

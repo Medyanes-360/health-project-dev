@@ -24,7 +24,7 @@ export default function RootLayout({ children, session }) {
       <body className={`${inter.variable} ${poppins.variable} font-poppins `}>
         <SessionProvider session={session}>
           <main className="overflow-hidden">
-            <WillBeDeleted />
+            {/*<WillBeDeleted />*/}
             {children}
           </main>
         </SessionProvider>

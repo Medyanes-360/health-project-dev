@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const MobileNavigationSidebar = (props) => {
   const sidebarData = props.sidebarData;
-  console.log(props);
+  // console.log(props);
 
   return (
     <div

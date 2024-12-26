@@ -20,6 +20,7 @@ export default function CurrencySelector() {
       </p>
       <Formik
         initialValues={{ currency: "" }}
+        np
         validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log("Seçilen döviz:", values.currency);

@@ -14,7 +14,7 @@ import AddVideo from "@/components/clinicDashboard/addVideo";
 
 export const ClinicForms = ({ preference }) => {
   return (
-    <div className="flex-1 w-full p-6 overflow-y-auto">
+    <div className="flex-1 w-full p-6 overflow-y-auto mb-20 md:mb-0">
       {/*<div className="flex gap-4 p-[1rem]">*/}
       {/*  {" "}*/}
       {/*  <ClinicOverviewForm />*/}
