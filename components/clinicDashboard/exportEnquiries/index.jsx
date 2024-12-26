@@ -1,20 +1,46 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
+import * as Yup from "yup";
 import ButtonComponent from "@/globalElements/Button";
 import { DatePickerWithLabel } from "@/globalElements/datePickerWithLabel";
+import { formatDate, toHtmlDateFormat } from "./dateUtils";
 
-const formatDate = (date) => {
-  if (!date || isNaN(new Date(date).getTime())) {
-    return ""; // Geçersiz tarihleri işlemez, boş string döner
-  }
-  const d = new Date(date);
-  const year = d.getFullYear();
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${day}.${month}.${year}`;
-};
+const validationSchema = Yup.object().shape({
+  picked: Yup.string()
+    .required("Please select an export option"),
+  startDate: Yup.string()
+    .required("Start date is required")
+    .test("valid-date", "Invalid date format", (value) => {
+      if (!value) return false;
+      return /^\d{2}\.\d{2}\.\d{4}$/.test(value);
+    }),
+  endDate: Yup.string()
+    .required("End date is required")
+    .test("valid-date", "Invalid date format", (value) => {
+      if (!value) return false;
+      return /^\d{2}\.\d{2}\.\d{4}$/.test(value);
+    })
+    .test("date-range", "End date must be after start date", function(value) {
+      const { startDate } = this.parent;
+      if (!startDate || !value) return true;
+      const start = new Date(startDate.split('.').reverse().join('-'));
+      const end = new Date(value.split('.').reverse().join('-'));
+      return end >= start;
+    })
+});
 
 const ExportEnquiries = () => {
+  const handleSubmit = async (values, { setSubmitting }) => {
+    try {
+      // Add your API call here
+      console.log(values);
+    } catch (error) {
+      console.error('Export failed:', error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <div className="w-full bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)] p-[1rem]">
       <h1 className="text-xl font-medium mb-8">Export enquiries</h1>
@@ -23,13 +49,13 @@ const ExportEnquiries = () => {
         <Formik
           initialValues={{
             picked: "",
-            startDate: "", // Tarih alanı için başlangıç değeri
+            startDate: "",
+            endDate: ""
           }}
-          onSubmit={(values) => {
-            console.log(values);
-          }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
         >
-          {({ values, errors, touched, setFieldValue }) => (
+          {({ values, errors, touched, setFieldValue, handleBlur, isSubmitting }) => (
             <Form>
               <div
                 role="group"
@@ -56,40 +82,47 @@ const ExportEnquiries = () => {
                   <Field type="radio" name="picked" value="All enquiries" />
                   All enquiries
                 </label>
+                {errors.picked && touched.picked && (
+                  <div className="text-red-500 text-sm">{errors.picked}</div>
+                )}
               </div>
-              <div>
-                <h2 className="mb-4 mt-4 font-small">Start date:</h2>
-                <input
-                  type="date"
-                  name="startDate"
-                  className="border rounded p-2 w-full"
-                  value={values.startDate}
-                  errors={errors.startDate}
-                  touched={touched.startDate}
-                  onChange={(e) => {
-                    const formattedDate = formatDate(e.target.value); // Tarih formatını ayarla
-                    setFieldValue("startDate", formattedDate); // Formik state'ini güncelle
-                  }}
-                />
+              <h2 className="mb-4 mt-4 font-small" >Start date</h2>
+
+              <div className="mt-4 flex gap-4">
                 <DatePickerWithLabel
-                  type="date"
-                  name="endDate"
-                  className="border rounded p-2 w-full"
-                  value={values.endDate}
-                  errors={errors.endDate}
-                  touched={touched.endDate}
+                  name="startDate"
+                  label="Start date"
+                  value={toHtmlDateFormat(values.startDate)}
+                  error={errors.startDate}
+                  touched={touched.startDate}
+                  onBlur={handleBlur}
                   onChange={(e) => {
-                    const formattedDate = formatDate(e.target.value); // Tarih formatını ayarla
-                    setFieldValue("endDate", formattedDate); // Formik state'ini güncelle
+                    const formattedDate = formatDate(e.target.value);
+                    setFieldValue("startDate", formattedDate);
+                  }}
+                />
+
+                <DatePickerWithLabel
+                  name="endDate"
+                  label="End date"
+                  value={toHtmlDateFormat(values.endDate)}
+                  error={errors.endDate}
+                  touched={touched.endDate}
+                  onBlur={handleBlur}
+                  onChange={(e) => {
+                    const formattedDate = formatDate(e.target.value);
+                    setFieldValue("endDate", formattedDate);
                   }}
                 />
               </div>
+
               <div className="w-full flex justify-end mt-6">
                 <ButtonComponent
                   type="submit"
+                  disabled={isSubmitting}
                   className="bg-primary !py-2 !px-4 text-white !rounded-lg !w-[174px]"
                 >
-                  <p className="text-sm">Save</p>
+                  <p className="text-sm">{isSubmitting ? 'Saving...' : 'Save'}</p>
                 </ButtonComponent>
               </div>
             </Form>
