@@ -8,12 +8,11 @@ import * as Yup from "yup";
 export default function AddVideo() {
   const validationSchema = Yup.object().shape({
     url: Yup.string()
-      .url("Geçerli bir URL giriniz.")
       .matches(
         /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
-        "Enter correct url!",
+        "Enter correct url!"
       )
-      .required("Please enter website"),
+      .required("Required"),
   });
 
   const initialValues = {
@@ -52,30 +51,23 @@ export default function AddVideo() {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          // console.log("submit!", values);
-          resetForm({
-            values: initialValues,
-            errors: {},
-            touched: {},
-          });
-
+          console.log("submit!", values);
+          resetForm();
           setSubmitting(false);
         }}
       >
-        {({ errors, touched, values }) => {
-          // console.log("Touched:", touched);
-          // console.log("Error:", error);
-          // console.log("values", values);
-
+        {({ errors, touched, values, handleBlur, handleChange }) => {
           return (
             <Form className="flex flex-col gap-6">
-              <Field
+              <UrlInputWithLabel
                 name="url"
                 label="Add Link:"
-                placeholder="www.youtube.com"
-                component={UrlInputWithLabel}
+                placeholder="www"
                 error={errors.url}
-                touched={touched?.url}
+                touched={touched.url}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.url}
               />
               <ErrorMessage
                 name="url"

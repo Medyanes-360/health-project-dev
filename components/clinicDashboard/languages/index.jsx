@@ -35,8 +35,6 @@ export default function LanguageSelector() {
         }}
       >
         {({ values, handleSubmit, handleChange }) => {
-          console.log(values);
-
           return (
             <Form
               onSubmit={handleSubmit}

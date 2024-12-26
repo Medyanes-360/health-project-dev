@@ -86,7 +86,6 @@ export const PaymentInformationForm = () => {
           // Rich text editor valusunu manuel olarak form state'ine ekler
           useEffect(() => {
             setFieldValue("description", value);
-            console.log("effect");
           }, [value]);
           return (
             <Form

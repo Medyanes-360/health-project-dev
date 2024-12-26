@@ -12,6 +12,7 @@ import AddPictures from "../addPictures";
 import CurrencySelector from "@/components/clinicDashboard/currencySelector";
 import AddVideo from "@/components/clinicDashboard/addVideo";
 import ExportEnquiries from "../exportEnquiries";
+import { AccreditationsForm } from "../accreditationsForm";
 
 export const ClinicForms = ({ preference }) => {
   return (
@@ -32,8 +33,9 @@ export const ClinicForms = ({ preference }) => {
       <TravelServicesForm />
       <OpeningHours />
       <AddVideo />
+      <AccreditationsForm />
       <AddPictures />
-      <ExportEnquiries/>
+      <ExportEnquiries />
     </div>
   );
 };
