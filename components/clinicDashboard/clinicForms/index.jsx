@@ -13,16 +13,12 @@ import CurrencySelector from "@/components/clinicDashboard/currencySelector";
 import AddVideo from "@/components/clinicDashboard/addVideo";
 import ExportEnquiries from "../exportEnquiries";
 import { AccreditationsForm } from "../accreditationsForm";
+import ClinicInformation from "../clinicInformation";
 
 export const ClinicForms = ({ preference }) => {
   return (
     <div className="flex-1 w-full p-6 overflow-y-auto mb-20 md:mb-0">
-      {/*<div className="flex gap-4 p-[1rem]">*/}
-      {/*  {" "}*/}
-      {/*  <ClinicOverviewForm />*/}
-      {/*  <LocationMaker />*/}
-      {/*</div>*/}
-
+      <ClinicInformation />
       <HealthForm />
       <LanguageSelector />
       <ClinicDescriptionForm />
