@@ -88,7 +88,7 @@ const ExportEnquiries = () => {
               </div>
               <h2 className="mb-4 mt-4 font-small" >Start date</h2>
 
-              <div className="mt-4 flex gap-4">
+              <div className="mt-4 md:flex-row flex flex-col gap-4">
                 <DatePickerWithLabel
                   name="startDate"
                   label="Start date"
