@@ -3,37 +3,46 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
-const Dropdown = ({ item, index, activeSubItem, handleSubMenuClick }) => {
-  const isOpen = activeSubItem[index] || false;
-
+const Dropdown = ({
+  item,
+  index,
+  activeSubItem,
+  handleSubMenuClick,
+  setPreference,
+  activePreference,
+}) => {
   return (
-    <div>
-      {/* Alt menüyü açma kısmı */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.ul
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-          >
-            {item.children.map((subItem, subIndex) => (
-              <li
-                key={subIndex}
-                onClick={() => handleSubMenuClick(index, subIndex)} // Alt menü tıklanırsa
-                className={
-                  activeSubItem.menuIndex === index &&
-                  activeSubItem.subIndex === subIndex
-                    ? "font-bold"
-                    : ""
-                }
-              >
-                <Link href={subItem.route || "#"}>{subItem.title}</Link>
+    <AnimatePresence>
+      {activeSubItem[index] && (
+        <motion.div
+          initial={{ height: 0 }}
+          animate={{ height: "auto" }}
+          exit={{ height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden"
+        >
+          <ul className="pl-8 space-y-1">
+            {item.children.map((child, childIndex) => (
+              <li key={childIndex}>
+                <button
+                  onClick={() => {
+                    handleSubMenuClick(index);
+                    setPreference(child.preference);
+                  }}
+                  className={`w-full rounded-lg px-3 py-2 text-left text-sm ${
+                    activePreference === child.preference
+                      ? "bg-[#52B8AB] bg-opacity-10 text-[#52B8AB]"
+                      : "text-gray-700"
+                  } hover:bg-[#52B8AB] hover:bg-opacity-10 hover:text-[#52B8AB]`}
+                >
+                  {child.title}
+                </button>
               </li>
             ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-    </div>
+          </ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

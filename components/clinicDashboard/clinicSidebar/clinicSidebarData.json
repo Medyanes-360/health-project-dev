@@ -8,84 +8,98 @@
       }
     ],
     "icon": "/assets/dashboard/home-hashtag.svg",
-    "route": ""
+    "route": "",
+    "preference": "clinic-information"
   },
   {
     "title": "Clinic description",
     "children": [],
     "icon": "/assets/dashboard/stickynote.svg",
-    "route": ""
+    "route": "",
+    "preference": "clinic-description"
   },
   {
     "title": "Add video",
     "children": [],
     "icon": "/assets/dashboard/video-play.svg",
-    "route": ""
+    "route": "",
+    "preference": "video"
   },
   {
     "title": "Pictures",
     "children": [],
     "icon": "/assets/dashboard/camera.svg",
-    "route": ""
+    "route": "",
+    "preference": "pictures"
   },
   {
     "title": "Currency",
     "children": [],
     "icon": "/assets/dashboard/card-coin.svg",
-    "route": ""
+    "route": "",
+    "preference": "currency"
   },
   {
     "title": "Opening hours",
     "children": [],
     "icon": "/assets/dashboard/calendar-tick.svg",
-    "route": ""
+    "route": "",
+    "preference": "hours"
   },
   {
     "title": "Premises",
     "children": [],
     "icon": "/assets/dashboard/edit.svg",
-    "route": ""
+    "route": "",
+    "preference": "premises"
   },
   {
     "title": "Clinic services",
     "children": [],
     "icon": "/assets/dashboard/health.svg",
-    "route": ""
+    "route": "",
+    "preference": "services"
   },
   {
     "title": "Payment information",
     "children": [],
     "icon": "/assets/dashboard/card-tick.svg",
-    "route": ""
+    "route": "",
+    "preference": "payment"
   },
   {
     "title": "Travel services",
     "children": [],
     "icon": "/assets/dashboard/airplane.svg",
-    "route": ""
+    "route": "",
+    "preference": "travel"
   },
   {
     "title": "Insurances",
     "children": [],
     "icon": "/assets/dashboard/book.svg",
-    "route": ""
+    "route": "",
+    "preference": "insurances"
   },
   {
     "title": "Languages",
     "children": [],
     "icon": "/assets/dashboard/language-square.svg",
-    "route": ""
+    "route": "",
+    "preference": "languages"
   },
   {
     "title": "Accreditations",
     "children": [],
     "icon": "/assets/dashboard/element-plus.svg",
-    "route": ""
+    "route": "",
+    "preference": "accreditations"
   },
   {
     "title": "Export enquiries",
     "children": [],
     "icon": "/assets/dashboard/import.svg",
-    "route": ""
+    "route": "",
+    "preference": "enquiries"
   }
 ]

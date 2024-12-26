@@ -3,10 +3,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import clinicSidebarData from "./clinicSidebarData.json";
 import { AnimatePresence, motion } from "framer-motion";
-import Dropdown from "./Dropdown"; // Dropdown bileşenini import edin
+import Dropdown from "./Dropdown";
 
-const ClinicSidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar state
+const ClinicSidebar = ({ setPreference, activePreference }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [activeIndex, setActiveIndex] = useState(null);
   const [openMenus, setOpenMenus] = useState({});
 
@@ -14,9 +14,12 @@ const ClinicSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const handleMenuClick = (index) => {
+  const handleMenuClick = (index, itemPreference) => {
     setActiveIndex(index);
     toggleMenu(index);
+    if (itemPreference) {
+      setPreference(itemPreference);
+    }
   };
 
   const toggleMenu = (index) => {
@@ -48,13 +51,17 @@ const ClinicSidebar = () => {
             Medyanes<span className="text-teal-500">360</span>
           </h1>
         </div>
+
         {/* Menu items - Scrollable area */}
         <ul className="flex-1 space-y-1 sm:space-y-2 overflow-y-auto max-h-full no-scrollbar">
-          {/* Emergency Button */}
+          {/* Profile preferences button */}
           <li className="flex flex-col animate-fadeIn">
-            <button className="w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center space-x-2 text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none">
+            <button
+              onClick={() => setPreference("clinic-information")}
+              className="w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center space-x-2 text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none"
+            >
               <span className="font-inter text-[16px] font-semibold leading-[22px] text-left decoration-skip-ink-0">
-                Profile preferences{" "}
+                Profile preferences
               </span>
             </button>
           </li>
@@ -63,9 +70,9 @@ const ClinicSidebar = () => {
           {clinicSidebarData.map((menuItem, index) => (
             <li key={index} className="flex flex-col animate-fadeIn">
               <button
-                onClick={() => handleMenuClick(index)}
+                onClick={() => handleMenuClick(index, menuItem.preference)}
                 className={`w-full h-10 sm:h-12 rounded-lg px-2 py-1 sm:px-3 sm:py-2 flex items-center justify-between focus:outline-none ${
-                  activeIndex === index
+                  activePreference === menuItem.preference
                     ? "bg-[#52B8AB] bg-opacity-10 text-[#52B8AB]"
                     : "text-gray-700"
                 } hover:bg-[#52B8AB] hover:bg-opacity-10 hover:text-[#52B8AB]`}
@@ -82,15 +89,15 @@ const ClinicSidebar = () => {
                       objectFit: "contain",
                     }}
                     className={`${
-                      activeIndex === index ? "brightness-250" : "grayscale"
+                      activePreference === menuItem.preference
+                        ? "brightness-250"
+                        : "grayscale"
                     }`}
                   />
-
                   <span className="text-[0.550rem] sm:text-base text-left pl-1">
                     {menuItem.title}
                   </span>
                 </div>
-                {/* Eğer item.children varsa, yön okunu render et */}
                 {menuItem.children && menuItem.children.length > 0 && (
                   <div className="flex items-center">
                     <Image
@@ -112,20 +119,22 @@ const ClinicSidebar = () => {
                 )}
               </button>
 
-              {/* Eğer item.children varsa, Dropdown bileşenini render et */}
               {menuItem.children && menuItem.children.length > 0 && (
                 <Dropdown
                   item={menuItem}
                   index={index}
                   activeSubItem={openMenus}
                   handleSubMenuClick={toggleMenu}
+                  setPreference={setPreference}
+                  activePreference={activePreference}
                 />
               )}
             </li>
           ))}
         </ul>
       </div>
-      {/* Arrow Icon - Always Visible */}
+
+      {/* Arrow Icon */}
       <div
         onClick={toggleSidebar}
         className={`cursor-pointer flex absolute -right-3 top-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-md items-center justify-center ${

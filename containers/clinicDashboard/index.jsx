@@ -15,7 +15,10 @@ export default function ClinicDashboardPageContainer() {
       {/* ClinicSidebarMobile */}
       {/* Hidden on Mobile */}
       <MobileDashboardSidebar navbarData={navbarData} />
-      <ClinicSidebar />
+      <ClinicSidebar
+        setPreference={setPreference}
+        activePreference={preference}
+      />
       {/*Içerik dinamik olarak sidebarda seçilen preference'a göre değişecek */}
       <ClinicForms preference={preference} />
     </div>

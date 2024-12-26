@@ -16,22 +16,44 @@ import { AccreditationsForm } from "../accreditationsForm";
 import ClinicInformation from "../clinicInformation";
 
 export const ClinicForms = ({ preference }) => {
+  const renderForm = () => {
+    switch (preference) {
+      case "clinic-information":
+        return <ClinicInformation />;
+      case "insurances":
+        return <HealthForm />;
+      case "languages":
+        return <LanguageSelector />;
+      case "clinic-description":
+        return <ClinicDescriptionForm />;
+      case "currency":
+        return <CurrencySelector />;
+      case "premises":
+        return <PremisesForm />;
+      case "services":
+        return <ClinicServiceForm />;
+      case "payment":
+        return <PaymentInformationForm />;
+      case "travel":
+        return <TravelServicesForm />;
+      case "hours":
+        return <OpeningHours />;
+      case "video":
+        return <AddVideo />;
+      case "accreditations":
+        return <AccreditationsForm />;
+      case "pictures":
+        return <AddPictures />;
+      case "enquiries":
+        return <ExportEnquiries />;
+      default:
+        return <div>?</div>;
+    }
+  };
+
   return (
     <div className="flex-1 w-full p-6 overflow-y-auto mb-20 md:mb-0">
-      <ClinicInformation />
-      <HealthForm />
-      <LanguageSelector />
-      <ClinicDescriptionForm />
-      <CurrencySelector />
-      <PremisesForm />
-      <ClinicServiceForm />
-      <PaymentInformationForm />
-      <TravelServicesForm />
-      <OpeningHours />
-      <AddVideo />
-      <AccreditationsForm />
-      <AddPictures />
-      <ExportEnquiries />
+      {renderForm()}
     </div>
   );
 };
