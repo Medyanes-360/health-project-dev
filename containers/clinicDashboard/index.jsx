@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { navbarData } from "@/data/componentData/navbar";
 import { ClinicForms } from "@/components/clinicDashboard/clinicForms";
 import ClinicSidebar from "@/components/clinicDashboard/clinicSidebar/ClinicSidebar";
 import MobileDashboardSidebar from "components/clinicDashboard/mobileDashboardSidebar";
@@ -14,7 +13,10 @@ export default function ClinicDashboardPageContainer() {
       {/* Dashboard Sidebar component */}
       {/* ClinicSidebarMobile */}
       {/* Hidden on Mobile */}
-      <MobileDashboardSidebar navbarData={navbarData} />
+      <MobileDashboardSidebar
+        setPreference={setPreference}
+        activePreference={preference}
+      />
       <ClinicSidebar
         setPreference={setPreference}
         activePreference={preference}
