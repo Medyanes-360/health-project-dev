@@ -4,6 +4,7 @@ export const Toggle = (props) => {
     <label className="inline-flex items-center cursor-pointer">
       <input
         {...props}
+        checked={props.value}
         name={props.name}
         type="checkbox"
         className="sr-only peer"

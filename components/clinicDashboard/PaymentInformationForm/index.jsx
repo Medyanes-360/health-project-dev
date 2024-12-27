@@ -9,33 +9,120 @@ import { useEffect, useState } from "react";
 
 export const PaymentInformationForm = () => {
   const validationSchema = Yup.object().shape({
-    parking: Yup.object().shape({
+    discounts: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    publicTransportAccess: Yup.object().shape({
+    paymentPlans: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    accessWithoutSteps: Yup.object().shape({
+    freeInitialConsultation: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    accessableToDisabledPeople: Yup.object().shape({
+    cheques: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
-    disabledParking: Yup.object().shape({
+    creditCards: Yup.object().shape({
       isAvailable: Yup.boolean(),
       description: Yup.string(),
     }),
+    paymentDescription: Yup.array(),
   });
+
   const [value, setValue] = useState([
     {
       type: "paragaph",
-      children: [{ text: "" }],
+      children: [
+        {
+          text: "Text ",
+        },
+        {
+          text: "Bold",
+          bold: true,
+        },
+      ],
     },
   ]);
+
+  const [initialValues, setInititalValues] = useState({
+    discounts: {
+      isAvailable: false,
+      description: "",
+    },
+    paymentPlans: {
+      isAvailable: false,
+      description: "",
+    },
+    freeInitialConsultation: {
+      isAvailable: false,
+      description: "",
+    },
+    cheques: {
+      isAvailable: false,
+      description: "",
+    },
+    creditCards: {
+      isAvailable: false,
+      description: "",
+    },
+    paymentDescription: [
+      {
+        type: "paragaph",
+        children: [
+          {
+            text: "Text ",
+          },
+          {
+            text: "Bold",
+            bold: true,
+          },
+        ],
+      },
+    ],
+  });
+  useEffect(() => {
+    const data = {
+      discounts: {
+        isAvailable: true,
+        description: "99%",
+      },
+      paymentPlans: {
+        isAvailable: true,
+        description: "Plan 1",
+      },
+      freeInitialConsultation: {
+        isAvailable: true,
+        description: "Free consultation",
+      },
+      cheques: {
+        isAvailable: true,
+        description: "full checkup",
+      },
+      creditCards: {
+        isAvailable: true,
+        description: "Visa",
+      },
+      paymentDescription: [
+        {
+          type: "paragaph",
+          children: [
+            {
+              text: "Text ",
+            },
+            {
+              text: "Bold",
+              bold: true,
+            },
+          ],
+        },
+      ],
+    };
+    setInititalValues(data);
+  }, []);
+
   return (
     <div className="flex w-full py-8 px-3 font-inter flex-col gap-8 bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)]">
       <h1 className="text-xl font-semibold">Payment information</h1>
@@ -45,33 +132,11 @@ export const PaymentInformationForm = () => {
         neither and return to this list later.
       </p>
       <Formik
-        initialValues={{
-          parking: {
-            isAvailable: false,
-            description: "",
-          },
-          publicTransportAccess: {
-            isAvailable: false,
-            description: "",
-          },
-          accessWithoutSteps: {
-            isAvailable: false,
-            description: "",
-          },
-          accessableToDisabledPeople: {
-            isAvailable: false,
-            description: "",
-          },
-          disabledParking: {
-            isAvailable: false,
-            description: "",
-          },
-        }}
+        enableReinitialize
+        initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={(values, { resetForm }) => {
+        onSubmit={(values) => {
           console.log("Form submitted", values);
-          setSubmitted(true);
-          resetForm(); // Reset form after submission
         }}
       >
         {({
@@ -95,12 +160,17 @@ export const PaymentInformationForm = () => {
               <div className="w-full flex gap-3 flex-col">
                 <div className="w-full flex justify-between">
                   <h3>Discounts</h3>
-                  <Toggle name="parking.isAvailable" onChange={handleChange} />
+                  <Toggle
+                    value={values.discounts.isAvailable}
+                    name="discounts.isAvailable"
+                    onChange={handleChange}
+                  />
                 </div>
                 <InputWithLabel
+                  value={values.discounts.description}
                   label="Description"
-                  disabled={!values.parking.isAvailable}
-                  name="parking.description"
+                  disabled={!values.discounts.isAvailable}
+                  name="discounts.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -112,14 +182,16 @@ export const PaymentInformationForm = () => {
                 <div className="w-full flex justify-between">
                   <h3>Payment plans</h3>
                   <Toggle
-                    name="accessableToDisabledPeople.isAvailable"
+                    value={values.paymentPlans.isAvailable}
+                    name="paymentPlans.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
+                  value={values.paymentPlans.description}
                   label="Description"
-                  disabled={!values.accessableToDisabledPeople.isAvailable}
-                  name="accessableToDisabledPeople.description"
+                  disabled={!values.paymentPlans.isAvailable}
+                  name="paymentPlans.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -131,14 +203,16 @@ export const PaymentInformationForm = () => {
                 <div className="w-full flex justify-between">
                   <h3>Free initial comsultation</h3>
                   <Toggle
-                    name="publicTransportAccess.isAvailable"
+                    value={values.freeInitialConsultation.isAvailable}
+                    name="freeInitialConsultation.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
+                  value={values.freeInitialConsultation.description}
                   label="Description"
-                  disabled={!values.publicTransportAccess.isAvailable}
-                  name="publicTransportAccess.description"
+                  disabled={!values.freeInitialConsultation.isAvailable}
+                  name="freeInitialConsultation.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -150,14 +224,16 @@ export const PaymentInformationForm = () => {
                 <div className="w-full flex justify-between">
                   <h3>Cheques</h3>
                   <Toggle
-                    name="accessWithoutSteps.isAvailable"
+                    value={values.cheques.isAvailable}
+                    name="cheques.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
+                  value={values.cheques.description}
                   label="Description"
-                  disabled={!values.accessWithoutSteps.isAvailable}
-                  name="accessWithoutSteps.description"
+                  disabled={!values.cheques.isAvailable}
+                  name="cheques.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -169,14 +245,16 @@ export const PaymentInformationForm = () => {
                 <div className="w-full flex justify-between">
                   <h3>Credit cards</h3>
                   <Toggle
-                    name="disabledParking.isAvailable"
+                    value={values.creditCards.isAvailable}
+                    name="creditCards.isAvailable"
                     onChange={handleChange}
                   />
                 </div>
                 <InputWithLabel
+                  value={values.creditCards.description}
                   label="Description"
-                  disabled={!values.disabledParking.isAvailable}
-                  name="disabledParking.description"
+                  disabled={!values.creditCards.isAvailable}
+                  name="creditCards.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
@@ -184,28 +262,11 @@ export const PaymentInformationForm = () => {
                   onChange={handleChange}
                 />
               </div>
+
               <div className="w-full flex gap-3 flex-col">
-                <div className="w-full flex justify-between">
-                  <h3>Payment description</h3>
-                  <Toggle
-                    name="disabledParking.isAvailable"
-                    onChange={handleChange}
-                  />
-                </div>
-                <InputWithLabel
-                  label="Description"
-                  disabled={!values.disabledParking.isAvailable}
-                  name="disabledParking.description"
-                  placeholder="Description"
-                  error={errors.name}
-                  touched={touched.name}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="w-full flex gap-3 flex-col">
+                <h3>Payment description</h3>
                 <RichTextEditor
-                  name="description"
+                  name="paymentDescription"
                   placeholder="Please enter any other information about payment methods, credit or offers that would be important for prospective patients"
                   value={value}
                   setValue={setValue}

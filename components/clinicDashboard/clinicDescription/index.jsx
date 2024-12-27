@@ -10,12 +10,58 @@ export const ClinicDescriptionForm = () => {
     description: Yup.array(),
   });
 
+  const [initialValues, setInititalValues] = useState({
+    description: [
+      {
+        type: "paragaph",
+        children: [
+          {
+            text: "Text ",
+          },
+          {
+            text: "Bold",
+            bold: true,
+          },
+        ],
+      },
+    ],
+  });
+
+  useEffect(() => {
+    const data = {
+      description: [
+        {
+          type: "paragaph",
+          children: [
+            {
+              text: "Text ",
+            },
+            {
+              text: "Boldasdasd",
+              bold: true,
+            },
+          ],
+        },
+      ],
+    };
+    setInititalValues(data);
+  }, []);
+
   const [value, setValue] = useState([
     {
       type: "paragaph",
-      children: [{ text: "" }],
+      children: [
+        {
+          text: "Text ",
+        },
+        {
+          text: "Bold",
+          bold: true,
+        },
+      ],
     },
   ]);
+
   const formikRef = useRef(null);
   return (
     <div className="flex w-full py-8 px-3 font-inter flex-col gap-8 bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)]">
@@ -29,18 +75,12 @@ export const ClinicDescriptionForm = () => {
       </p>
 
       <Formik
+        enableReinitialize
         innerRef={formikRef}
-        initialValues={{
-          description: {
-            type: "paragaph",
-            children: [{ text: "" }],
-          },
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           console.log("Form submitted", values);
-          setSubmitted(true);
-          resetForm(); // Reset form after submission
         }}
       >
         {({ setFieldValue, handleSubmit, values }) => {
@@ -58,7 +98,7 @@ export const ClinicDescriptionForm = () => {
                 <RichTextEditor
                   name="description"
                   placeholder="Write something awesome..."
-                  value={value}
+                  value={values.description}
                   setValue={setValue}
                 />
               </div>
