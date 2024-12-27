@@ -4,7 +4,7 @@ import LocationMaker from '../locationMaker'
 
 const ClinicInformation = () => {
   return (
-    <div className="flex gap-4 p-[1rem]">
+    <div className="flex md:flex-row flex-col gap-4 p-[1rem]">
     {" "}
     <ClinicOverviewForm />
     <LocationMaker />

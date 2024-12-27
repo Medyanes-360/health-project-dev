@@ -6,14 +6,14 @@ const LocationMaker = () => {
   const districts = ["Esenyurt", "Avcilar", "Buyukcekmece","Istanbul","Istanbul Province"];
 
   return (
-    <div className=" flex flex-col justify-between w-[600px] bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)] p-[1rem]">
+    <div className=" flex flex-col gap-[1rem] justify-between w-auto bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)] p-[1rem]">
       {" "}
       <span>location marker</span>{" "}
       <Image
         src="/assets/images/locationMaker.png"
         height={300}
         width={300}
-        className="w-screen h-[70%]"
+        className="w-[100%] h-[70%]"
       />
       <ButtonComponent
         type="submit"
