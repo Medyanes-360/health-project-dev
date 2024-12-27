@@ -4,8 +4,56 @@ import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
 import { Toggle } from "@/globalElements/toggle";
 import { InputWithLabel } from "@/globalElements/inputWithLabel";
+import { useEffect, useState } from "react";
 
 export const PremisesForm = () => {
+  const [initialValues, setInitialValues] = useState({
+    parking: {
+      isAvailable: false,
+      description: "",
+    },
+    publicTransportAccess: {
+      isAvailable: false,
+      description: "",
+    },
+    accessWithoutSteps: {
+      isAvailable: false,
+      description: "",
+    },
+    accessableToDisabledPeople: {
+      isAvailable: false,
+      description: "",
+    },
+    disabledParking: {
+      isAvailable: false,
+      description: "",
+    },
+  });
+  useEffect(() => {
+    // Mock data - replace with actual API call later
+    setInitialValues({
+      parking: {
+        isAvailable: true,
+        description: "Available parking spaces for 10 cars",
+      },
+      publicTransportAccess: {
+        isAvailable: true,
+        description: "Bus stop within 100m",
+      },
+      accessWithoutSteps: {
+        isAvailable: true,
+        description: "Ramp access available",
+      },
+      accessableToDisabledPeople: {
+        isAvailable: true,
+        description: "Full wheelchair accessibility",
+      },
+      disabledParking: {
+        isAvailable: true,
+        description: "2 dedicated disabled parking spots",
+      },
+    });
+  }, []);
   const validationSchema = Yup.object().shape({
     parking: Yup.object().shape({
       isAvailable: Yup.boolean(),
@@ -39,33 +87,13 @@ export const PremisesForm = () => {
         you may tick neither and return to this list later.
       </p>
       <Formik
-        initialValues={{
-          parking: {
-            isAvailable: false,
-            description: "",
-          },
-          publicTransportAccess: {
-            isAvailable: false,
-            description: "",
-          },
-          accessWithoutSteps: {
-            isAvailable: false,
-            description: "",
-          },
-          accessableToDisabledPeople: {
-            isAvailable: false,
-            description: "",
-          },
-          disabledParking: {
-            isAvailable: false,
-            description: "",
-          },
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
+        enableReinitialize={true} // Important to handle initialValues updates
         onSubmit={(values, { resetForm }) => {
           console.log("Form submitted", values);
           setSubmitted(true);
-          resetForm(); // Reset form after submission
+          resetForm();
         }}
       >
         {({
