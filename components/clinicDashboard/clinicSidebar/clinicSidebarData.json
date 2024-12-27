@@ -1,12 +1,7 @@
 [
   {
     "title": "Clinic information",
-    "children": [
-      {
-        "title": "Hinkle Horns",
-        "route": "/products/hinkle-horns"
-      }
-    ],
+    "children": [],
     "icon": "/assets/dashboard/home-hashtag.svg",
     "route": "",
     "preference": "clinic-information"
