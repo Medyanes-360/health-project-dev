@@ -4,8 +4,41 @@ import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
 import { Toggle } from "@/globalElements/toggle";
 import { InputWithLabel } from "@/globalElements/inputWithLabel";
+import { useEffect, useState } from "react";
 
 export default function HealthForm() {
+  const [initialValues, setInitialValues] = useState({
+    privatePatientsWelcome: {
+      isAvailable: false,
+      description: "",
+    },
+    publicHealthInsurance: {
+      isAvailable: false,
+      description: "",
+    },
+    dentalPlansAccepted: {
+      isAvailable: false,
+      description: "",
+    },
+  });
+
+  useEffect(() => {
+    // Mock data - replace with actual API call later
+    setInitialValues({
+      privatePatientsWelcome: {
+        isAvailable: true,
+        description: "We welcome private patients",
+      },
+      publicHealthInsurance: {
+        isAvailable: true,
+        description: "All major public insurance accepted",
+      },
+      dentalPlansAccepted: {
+        isAvailable: true,
+        description: "Most dental plans are accepted",
+      },
+    });
+  }, []);
   const validationSchema = Yup.object().shape({
     privatePatientsWelcome: Yup.object().shape({
       isAvailable: Yup.boolean(),
@@ -29,23 +62,10 @@ export default function HealthForm() {
         neither and return to this list later.
       </p>
       <Formik
-        initialValues={{
-          privatePatientsWelcome: {
-            isAvailable: false,
-            description: "",
-          },
-          publicHealthInsurance: {
-            isAvailable: false,
-            description: "",
-          },
-          dentalPlansAccepted: {
-            isAvailable: false,
-            description: "",
-          },
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          // console.log("Form submitted", values);
+          console.log("Form submitted", values);
           setSubmitted(true);
           resetForm(); // Reset form after submission
         }}
@@ -95,7 +115,7 @@ export default function HealthForm() {
                 <InputWithLabel
                   label="Description"
                   disabled={!values.publicHealthInsurance.isAvailable}
-                  name="accessableToDisabledPeople.description"
+                  name="publicHealthInsurance.description"
                   placeholder="Description"
                   error={errors.name}
                   touched={touched.name}
