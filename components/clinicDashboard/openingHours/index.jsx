@@ -1,7 +1,7 @@
 import { TimePickerWithLabel } from "@/globalElements/timePickerWithLabel";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ButtonComponent from "@/globalElements/Button";
 
 const OpeningHours = () => {
@@ -53,10 +53,35 @@ const OpeningHours = () => {
   );
 
   // Initial Values
-  const initialValues = labels.reduce((values, label) => {
-    values[label.replace(/ /g, "_")] = "08:00"; // Her biri için başlangıç saati 08:00
-    return values;
-  }, {});
+  // const initialValues = labels.reduce((values, label) => {
+  //   values[label.replace(/ /g, "_")] = "08:00"; // Her biri için başlangıç saati 08:00
+  //   return values;
+  // }, {});
+
+  const [initialValues, setInitialValues] = useState(
+    labels.reduce((values, label) => {
+      values[label.replace(/ /g, "_")] = "";
+      return values;
+    }, {})
+  );
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Mock data - this would be replaced with API call later
+    const mockData = labels.reduce((values, label) => {
+      values[label.replace(/ /g, "_")] = "09:00";
+      return values;
+    }, {});
+    
+    setInitialValues(mockData);
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>; 
+  }
+
 
   return (
     <div className="bg-white rounded-[32px] shadow-[0px_4px_6px_0px_rgba(199, 199, 199, 0.08)] p-[1rem]">
@@ -64,6 +89,7 @@ const OpeningHours = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
+        enableReinitialize={true} 
         onSubmit={(values, { resetForm }) => {
           console.log("Form submitted", values); // Konsolda veriler görünmeli
           resetForm(); // Formu sıfırla
