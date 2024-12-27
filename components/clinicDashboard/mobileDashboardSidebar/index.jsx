@@ -41,17 +41,15 @@ export default function MobileDashboardSidebar({
 
   return (
     <div className="md:hidden">
-      <div className="h-full mb-14 bg-white w-full">
-        <div className="z-[50000] w-full fixed bottom-0 h-14 bg-white px-4 py-2.5">
-          <Image
-            src="/assets/icons/hamburgerMenuIcon.svg"
-            className="cursor-pointer ml-auto"
-            onClick={toggleSidebar}
-            width={36}
-            height={36}
-            alt="menu"
-          />
-        </div>
+      <div className="z-[50000] w-full fixed bottom-0 h-14 px-4 py-2.5">
+        <Image
+          src="/assets/icons/hamburgerMenuIcon.svg"
+          className="cursor-pointer ml-auto"
+          onClick={toggleSidebar}
+          width={36}
+          height={36}
+          alt="menu"
+        />
       </div>
 
       <div
@@ -66,7 +64,7 @@ export default function MobileDashboardSidebar({
 
           position: "fixed",
         }}
-        className={`fixed top-0 z-[50000] bg-black/80 w-full h-full`}
+        className={`fixed top-0 z-[20000] bg-black/80 w-full h-full`}
       >
         <div
           onClick={(e) => {
