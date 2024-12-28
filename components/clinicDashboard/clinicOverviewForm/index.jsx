@@ -1,12 +1,39 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
-import { Toggle } from "@/globalElements/toggle";
 import { InputWithLabel } from "@/globalElements/inputWithLabel";
 import { PhoneInputWithLabel } from "@/globalElements/PhoneInputWithLabel";
 
 export const ClinicOverviewForm = () => {
+  const [initialValues, setInitialValues] = useState({
+    clinic: "",
+    addressLineFirst: "",
+    addressLineSecond: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    email: "",
+    phone: "",
+    mobile: "",
+  });
+
+  useEffect(() => {
+    setInitialValues({
+      clinic: "Medyanes 360",
+      addressLineFirst: "123 Wellness Blvd",
+      addressLineSecond: "Suite 400",
+      city: "Health City",
+      state: "Healthy State",
+      zipCode: "12345",
+      email: "contact@happyhealth.com",
+      phone: "555-1234",
+      mobile: "555-5678",
+    });
+  }, []);
+
   const validationSchema = Yup.object().shape({
     clinic: Yup.string().required("required"),
     addressLineFirst: Yup.string().required("required"),
@@ -31,17 +58,7 @@ export const ClinicOverviewForm = () => {
       <p>Preview my changes (remember to save first!)</p>
 
       <Formik
-        initialValues={{
-          clinic: "",
-          addressLineFirst: "",
-          addressLineSecond: "",
-          city: "",
-          state: "",
-          zipCode: "",
-          email: "",
-          phone: "",
-          mobile: "",
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           console.log("Form submitted", values);

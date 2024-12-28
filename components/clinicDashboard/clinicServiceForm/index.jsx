@@ -1,4 +1,6 @@
 "use client";
+
+import { useState, useEffect } from "react";
 import { Formik, Form } from "formik";
 import ButtonComponent from "@/globalElements/Button";
 import * as Yup from "yup";
@@ -6,6 +8,54 @@ import { Toggle } from "@/globalElements/toggle";
 import { InputWithLabel } from "@/globalElements/inputWithLabel";
 
 export default function ClinicServiceForm() {
+  const [initialValues, setInitialValues] = useState({
+    emergencyService: {
+      isAvailable: false,
+      description: "",
+    },
+    textMessageReminders: {
+      isAvailable: false,
+      description: "",
+    },
+    homeVisits: {
+      isAvailable: false,
+      description: "",
+    },
+    openTwentyFour: {
+      isAvailable: false,
+      description: "",
+    },
+    openWeekends: {
+      isAvailable: false,
+      description: "",
+    },
+  });
+
+  useEffect(() => {
+    setInitialValues({
+      emergencyService: {
+        isAvailable: true,
+        description: "Emergency services are available 24/7.",
+      },
+      textMessageReminders: {
+        isAvailable: true,
+        description: "We send text message reminders for appointments.",
+      },
+      homeVisits: {
+        isAvailable: false,
+        description: "Home visits are not available at the moment.",
+      },
+      openTwentyFour: {
+        isAvailable: true,
+        description: "We are open 24 hours a day, 7 days a week.",
+      },
+      openWeekends: {
+        isAvailable: true,
+        description: "We are open on weekends as well.",
+      },
+    });
+  }, []);
+
   const validationSchema = Yup.object().shape({
     emergencyService: Yup.object().shape({
       isAvailable: Yup.boolean(),
@@ -37,28 +87,7 @@ export default function ClinicServiceForm() {
         neither and return to this list later.
       </p>
       <Formik
-        initialValues={{
-          emergencyService: {
-            isAvailable: false,
-            description: "",
-          },
-          textMessageReminders: {
-            isAvailable: false,
-            description: "",
-          },
-          homeVisits: {
-            isAvailable: false,
-            description: "",
-          },
-          openTwentyFour: {
-            isAvailable: false,
-            description: "",
-          },
-          openWeekends: {
-            isAvailable: false,
-            description: "",
-          },
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           console.log("Form submitted", values);

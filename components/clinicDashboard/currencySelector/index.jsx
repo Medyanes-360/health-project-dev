@@ -1,12 +1,18 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { SelectWithLabel } from "@/globalElements/selectWithLabel";
 import ButtonComponent from "@/globalElements/Button";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 export default function CurrencySelector() {
+  const [initialValues, setInitialValues] = useState({ currency: "" });
   const currencyOptions = ["TRY", "USD", "EUR"];
+
+  useEffect(() => {
+    setInitialValues({ currency: "USD" });
+  }, []);
 
   const validationSchema = Yup.object({
     currency: Yup.string().required("Lütfen bir döviz seçin."),
@@ -19,7 +25,7 @@ export default function CurrencySelector() {
         Only add languages in which your clinic can deal with patients.
       </p>
       <Formik
-        initialValues={{ currency: "" }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log("Seçilen döviz:", values.currency);
